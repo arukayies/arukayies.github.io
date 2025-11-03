@@ -44,7 +44,7 @@ archives: ["2024年10月"]
 
 ## 行きのタイ乗り継ぎ
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_3976-768x1024.jpg" alt="" class="wp-image-5005" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_3976-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3976-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3976.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_3976.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ロンドンまでの飛行機は「タイ国際航空」で向かったため、**タイで8時間の乗り継ぎ**がありました。
 
@@ -70,7 +70,7 @@ archives: ["2024年10月"]
 
 ## ブダベスト
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-1024x768.jpg" alt="" class="wp-image-5409" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4892.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4892.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 この旅メインの「**ブダベスト**」です。
 
@@ -87,7 +87,7 @@ archives: ["2024年10月"]
 
 ## パリ
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4939-768x1024.jpg" alt="" class="wp-image-5483" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4939-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4939-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4939.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_4939.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ヨーロッパー３カ国目最後は「パリ」です。
 
@@ -103,7 +103,7 @@ archives: ["2024年10月"]
 
 ## 帰りのタイ乗り継ぎ
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5037-1024x768.jpg" alt="" class="wp-image-5545" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5037-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5037-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5037-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5037.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_5037.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 帰りの乗り継ぎも同じくタイで8時間待機する必要がありました。
 
