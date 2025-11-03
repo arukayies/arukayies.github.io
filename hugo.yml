@@ -41,7 +41,7 @@ module:
 params:
   author:
     name: arukayies
-    url: https://arukayies.github.io/homepage/
+    url: https://arukayies.github.io/
   description: DIYネタについてまとめてます。
   icon: image/icon.png
   images:
@@ -61,7 +61,7 @@ params:
       instagram: arukayies
       youtube: https://www.youtube.com/channel/UCoO5ZwX9e7jToe7eo-h62HQ
       github: arukayies
-      other: https://arukayies.github.io/homepage/
+      other: https://arukayies.github.io/
 
 outputs:
   home:
