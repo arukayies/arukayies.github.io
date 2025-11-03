@@ -320,7 +320,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
 
 検索条件はGmailで検索する文字と同じ動作をします。<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" width="967" height="53" src="https://arukayies.com/wp-content/uploads/2020/04/メール検索.png" alt="" class="wp-image-2927" style="aspect-ratio:714/39" srcset="https://arukayies.com/wp-content/uploads/2020/04/メール検索.png 967w, https://arukayies.com/wp-content/uploads/2020/04/メール検索-300x16.png 300w, https://arukayies.com/wp-content/uploads/2020/04/メール検索-768x42.png 768w" sizes="(max-width: 967px) 100vw, 967px" /> <figcaption class="wp-element-caption">Gmai検索バー</figcaption></figure> 
+{{< custom-figure src="メール検索.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">Gmai検索バー</figcaption></figure> 
 
 通知したメールにはスターを付けるために、検索条件には**&#8221; -is:starred&#8221;**を追加しており、
 
@@ -543,7 +543,7 @@ function getMailBody() {
 
 イメージはこんな感じです！<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="661" height="562" src="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.32.52.png" alt="" class="wp-image-2937" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.32.52.png 661w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.32.52-300x255.png 300w" sizes="(max-width: 661px) 100vw, 661px" /> <figcaption class="wp-element-caption">動作イメージ</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2020-04-27-1.32.52.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">動作イメージ</figcaption></figure> 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
   <div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-check block-box">

@@ -278,9 +278,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 <img loading="lazy" decoding="async" width="1024" height="521" src="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_22_36_28-1024x521.png" alt="" class="wp-image-4573" srcset="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_22_36_28-1024x521.png 1024w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_22_36_28-300x153.png 300w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_22_36_28-768x390.png 768w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_22_36_28.png 1306w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**pushmessage_sticker** を実行する</figcaption></figure> 
 
-実行すると、LINEに **スタンプメッセージ** が送られます！<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa276905ff5.png" alt="" /> </figure> 
+実行すると、LINEに **スタンプメッセージ** が送られます！{{< custom-figure src="img_5dfa276905ff5.png" title="" Fit="1280x1280 webp q90" >}} 
 
 [スタンプリスト][1]から使えるスタンプが一覧で確認できます。
 

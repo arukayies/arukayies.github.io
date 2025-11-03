@@ -123,4 +123,4 @@ archives: ["2019年8月"]
 ## 観察30日目
 
 一気に葉っぱの大きさが成長してきました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3fd3f0519.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3fd3f0519.jpg" title="" Fit="1280x1280 webp q90" >}}

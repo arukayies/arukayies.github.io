@@ -250,9 +250,7 @@ imageID = Number(imageID&#91;"id"])</code></pre>
 
 ## 実際に自動投稿してみた結果
 
-このような感じに記事を自動投稿できます！<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="803" height="280" src="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-22.56.18.png" alt="" class="wp-image-2194" srcset="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-22.56.18.png 803w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-22.56.18-300x105.png 300w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-22.56.18-768x268.png 768w" sizes="(max-width: 803px) 100vw, 803px" /> </figure> 
+このような感じに記事を自動投稿できます！{{< custom-figure src="スクリーンショット-2020-02-08-22.56.18.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ## まとめ
 

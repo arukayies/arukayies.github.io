@@ -79,11 +79,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="620" height="354" src="https://arukayies.com/wp-content/uploads/2024/10/費用内訳.png" alt="" class="wp-image-5570" srcset="https://arukayies.com/wp-content/uploads/2024/10/費用内訳.png 620w, https://arukayies.com/wp-content/uploads/2024/10/費用内訳-300x171.png 300w, https://arukayies.com/wp-content/uploads/2024/10/費用内訳-120x68.png 120w, https://arukayies.com/wp-content/uploads/2024/10/費用内訳-160x90.png 160w" sizes="(max-width: 620px) 100vw, 620px" /></figure>
+    {{< custom-figure src="費用内訳.png" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="816" height="440" src="https://arukayies.com/wp-content/uploads/2024/10/image-1.png" alt="" class="wp-image-5569" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-1.png 816w, https://arukayies.com/wp-content/uploads/2024/10/image-1-300x162.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-1-768x414.png 768w" sizes="(max-width: 816px) 100vw, 816px" /></figure>
+    {{< custom-figure src="image-1.png" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 

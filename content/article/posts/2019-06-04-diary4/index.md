@@ -121,4 +121,4 @@ archives: ["2019年6月"]
 ## 29日目
 
 水菜っぽさが見えてきました!  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee738719a5.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee738719a5.jpg" title="" Fit="1280x1280 webp q90" >}}

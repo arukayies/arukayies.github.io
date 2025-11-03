@@ -123,6 +123,6 @@ archives: ["2019年9月"]
 ## 観察62日目
 
 🌿を切り取った成果か、蕾らしきものが育ってきました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa41c06edf5.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa41c06edf5.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa41c15a768.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa41c15a768.jpg" title="" Fit="1280x1280 webp q90" >}}

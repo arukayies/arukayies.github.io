@@ -84,7 +84,7 @@ IKEAで購入した**アルティシマ**の様子です。
 見比べてみると、葉っぱが増えていて健康そうです！
 
 3か月前↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa30d8ee2f9.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa30d8ee2f9.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回↓ (水耕栽培装置に挟まれこじんまりしてます。)  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa30d94d979.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa30d94d979.jpg" title="" Fit="1280x1280 webp q90" >}}

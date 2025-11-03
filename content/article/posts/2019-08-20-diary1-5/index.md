@@ -79,4 +79,4 @@ archives: ["2019年8月"]
 ## 発芽
 
 左のちょびっと出ている🌱がコマツナです！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3c141a4d2.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3c141a4d2.jpg" title="" Fit="1280x1280 webp q90" >}}

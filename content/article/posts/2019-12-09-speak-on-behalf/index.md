@@ -161,7 +161,7 @@ archives: ["2019年12月"]
 
 ## 動作の流れ
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa1fc3362be.png" alt="" style="aspect-ratio:492/362" /> </figure> 
+{{< custom-figure src="img_5dfa1fc3362be.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 <div class="wp-block-cocoon-blocks-caption-box-1 caption-box block-box has-border-color has-key-color-border-color cocoon-block-caption-box">
   <div class="caption-box-label block-box-label box-label fab-pencil">
@@ -376,11 +376,11 @@ GASを使ってLINE BOTを作成する記事を以前書いているので、参
 
 ### 「代理発言　送信テスト」とLINEでしゃべる
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa1fc37deba.jpg" alt="" style="aspect-ratio:375/390" /> <figcaption class="wp-element-caption">管理グループ</figcaption></figure> 
+{{< custom-figure src="img_5dfa1fc37deba.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">管理グループ</figcaption></figure> 
 
 ### 「グルチャに送信」を押下する
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa1fc3c0a74.jpg" alt="" style="aspect-ratio:375/382" /> <figcaption class="wp-element-caption">管理グループ</figcaption></figure> <figure class="wp-block-image aligncenter size-large is-resized"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa1fc419eba.jpg" alt="" style="aspect-ratio:375/667" /><figcaption class="wp-element-caption">雑談グループ</figcaption></figure> 
+{{< custom-figure src="img_5dfa1fc3c0a74.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">管理グループ</figcaption></figure> <figure class="wp-block-image aligncenter size-large is-resized">{{< custom-figure src="img_5dfa1fc419eba.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">雑談グループ</figcaption></figure> 
 
 <p class="has-text-align-center">
   <span class="marker-under-red"><strong>雑談用グループに代理でLINE BOTが発言してくれます！</strong></span>
@@ -388,7 +388,7 @@ GASを使ってLINE BOTを作成する記事を以前書いているので、参
 
 ### 「連絡用に送信」を押下する
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa1fc481313.jpg" alt="" style="aspect-ratio:375/388" /> <figcaption class="wp-element-caption">管理グループ</figcaption></figure> <figure class="wp-block-image aligncenter size-large is-resized"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa1fc4d0857.png" alt="" style="aspect-ratio:375/667" /><figcaption class="wp-element-caption">連絡用グループ</figcaption></figure> 
+{{< custom-figure src="img_5dfa1fc481313.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">管理グループ</figcaption></figure> <figure class="wp-block-image aligncenter size-large is-resized">{{< custom-figure src="img_5dfa1fc4d0857.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">連絡用グループ</figcaption></figure> 
 
 <p class="has-text-align-center">
   <strong><span class="marker-under-blue">今度は連絡用グループに代理でLINE BOTが発言してくれます！</span></strong>

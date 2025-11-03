@@ -30,7 +30,7 @@ archives: ["2019年9月"]
 
 私が育てていたミズナの育成状況をまとめて紹介します！
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfeeb7c2ccf0.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfeeb7c2ccf0.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## 種植え
 

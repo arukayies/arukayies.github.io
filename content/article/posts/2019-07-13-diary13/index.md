@@ -118,4 +118,4 @@ archives: ["2019年7月"]
 
 根本が枯れてきたので、ついに水菜を撤去しました。  
 最後に収穫できた分はこちらになります。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfedcbd50065.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfedcbd50065.jpg" title="" Fit="1280x1280 webp q90" >}}

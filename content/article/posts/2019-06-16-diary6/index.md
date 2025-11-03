@@ -121,6 +121,6 @@ archives: ["2019年6月"]
 ## 41日目
 
 もういつ収穫しても良さそうです！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee42c5b0df.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfee42c5b0df.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee42d2a014.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee42d2a014.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -52,7 +52,7 @@ archives: ["2019年7月"]
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div><figure class="wp-block-image aligncenter is-resized">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3293bb113.gif" alt="" style="aspect-ratio:356/237" /> <figcaption class="wp-element-caption">LINEBOTが動いている様子</figcaption></figure> 
+{{< custom-figure src="img_5dfa3293bb113.gif" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">LINEBOTが動いている様子</figcaption></figure> 
 
 運営の手助けやコミュニケーションのきっかけになればと思い、
 
@@ -162,11 +162,11 @@ archives: ["2019年7月"]
 
 2　右上の『 **ログイン** 』を押下します。<figure class="wp-block-image aligncenter size-full">
 
-<img loading="lazy" decoding="async" width="1580" height="780" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developer】ログイン押下.jpg" alt="【LINE Developers】ログイン押下" class="wp-image-2955" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developer】ログイン押下.jpg 1580w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developer】ログイン押下-300x148.jpg 300w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developer】ログイン押下-1024x506.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developer】ログイン押下-768x379.jpg 768w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developer】ログイン押下-1536x758.jpg 1536w" sizes="(max-width: 1580px) 100vw, 1580px" /> <figcaption class="wp-element-caption">【LINE Developers】ログイン押下</figcaption></figure> 
+{{< custom-figure src="【LINE-Developer】ログイン押下.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】ログイン押下</figcaption></figure> 
 
 3　『 **LINEアカウントでログイン** 』を押下します。<figure class="wp-block-image aligncenter size-full">
 
-<img loading="lazy" decoding="async" width="555" height="605" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】LINEアカウントでログイン.png" alt="【LINE Developers】LINEアカウントでログイン" class="wp-image-2956" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】LINEアカウントでログイン.png 555w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】LINEアカウントでログイン-275x300.png 275w" sizes="(max-width: 555px) 100vw, 555px" /> <figcaption class="wp-element-caption">【LINE Developers】LINEアカウントでログイン</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】LINEアカウントでログイン.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】LINEアカウントでログイン</figcaption></figure> 
 
 4　メールアドレスとパスワードを入力して、『 **ログイン** 』を押下します。
 
@@ -174,11 +174,11 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="488" height="523" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】メールアドレスとパスワードでログイン.png" alt="【LINE Developers】メールアドレスとパスワードでログイン" class="wp-image-2957" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】メールアドレスとパスワードでログイン.png 488w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】メールアドレスとパスワードでログイン-280x300.png 280w" sizes="(max-width: 488px) 100vw, 488px" /><figcaption class="wp-element-caption">【LINE Developers】メールアドレスとパスワードでログイン</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="【LINE-Developers】メールアドレスとパスワードでログイン.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">【LINE Developers】メールアドレスとパスワードでログイン</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="491" height="588" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】QRコードでログイン.png" alt="【LINE Developers】QRコードでログイン" class="wp-image-2958" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】QRコードでログイン.png 491w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】QRコードでログイン-251x300.png 251w" sizes="(max-width: 491px) 100vw, 491px" /><figcaption class="wp-element-caption">【LINE Developers】QRコードでログイン</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="【LINE-Developers】QRコードでログイン.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">【LINE Developers】QRコードでログイン</figcaption></figure>
   </div>
 </div>
 
@@ -186,17 +186,17 @@ archives: ["2019年7月"]
 
 <span class="number">1　</span>『 **作成** 』を押下します。<figure class="wp-block-image aligncenter size-full">
 
-<img loading="lazy" decoding="async" width="1602" height="280" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダーを作成.png" alt="【LINE Developers】プロバイダーを作成.png" class="wp-image-2959" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダーを作成.png 1602w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダーを作成-300x52.png 300w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダーを作成-1024x179.png 1024w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダーを作成-768x134.png 768w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダーを作成-1536x268.png 1536w" sizes="(max-width: 1602px) 100vw, 1602px" /> <figcaption class="wp-element-caption">【LINE Developers】プロバイダーを作成.png</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】プロバイダーを作成.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】プロバイダーを作成.png</figcaption></figure> 
 
 <span class="number">2　</span>プロバイダー名を入力し、『 **作成** 』を押下します。<figure class="wp-block-image aligncenter size-full">
 
-<img loading="lazy" decoding="async" width="1318" height="544" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダー名を入力し作成を押下する.png" alt="【LINE Developers】プロバイダー名を入力し作成を押下する.png" class="wp-image-2960" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダー名を入力し作成を押下する.png 1318w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダー名を入力し作成を押下する-300x124.png 300w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダー名を入力し作成を押下する-1024x423.png 1024w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】プロバイダー名を入力し作成を押下する-768x317.png 768w" sizes="(max-width: 1318px) 100vw, 1318px" /> <figcaption class="wp-element-caption">【LINE Developers】プロバイダー名を入力し作成を押下する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】プロバイダー名を入力し作成を押下する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】プロバイダー名を入力し作成を押下する</figcaption></figure> 
 
 ## LINE Messaging APIのチャンネルを作成する
 
 <span class="number">1　</span>プロバイダーが作成されたら、『 **Messaging API** 』を押下します。<figure class="wp-block-image aligncenter size-full">
 
-<img loading="lazy" decoding="async" width="1337" height="668" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-APIを押下する.png" alt="【LINE Developers】Messaging APIを押下する" class="wp-image-2961" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-APIを押下する.png 1337w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-APIを押下する-300x150.png 300w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-APIを押下する-1024x512.png 1024w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-APIを押下する-768x384.png 768w" sizes="(max-width: 1337px) 100vw, 1337px" /> <figcaption class="wp-element-caption">【LINE Developers】Messaging APIを押下する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】Messaging-APIを押下する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】Messaging APIを押下する</figcaption></figure> 
 
 <span class="number">2　</span>チャンネルの情報を作成します。
 
@@ -206,7 +206,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-full is-resized">
 
-<img loading="lazy" decoding="async" width="495" height="272" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネルアイコンを登録する.png" alt="【LINE Developers】チャンネルアイコンを登録する" class="wp-image-2962" style="aspect-ratio:495/272" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネルアイコンを登録する.png 495w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネルアイコンを登録する-300x165.png 300w" sizes="(max-width: 495px) 100vw, 495px" /> <figcaption class="wp-element-caption">【LINE Developers】チャンネルアイコンを登録する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】チャンネルアイコンを登録する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】チャンネルアイコンを登録する</figcaption></figure> 
 
 使用したフリーアイコンはこちらです。
 
@@ -258,7 +258,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="624" height="187" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネル名を入力する.png" alt="【LINE Developers】チャンネル名を入力する" class="wp-image-2963" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネル名を入力する.png 624w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネル名を入力する-300x90.png 300w" sizes="(max-width: 624px) 100vw, 624px" /> <figcaption class="wp-element-caption">【LINE Developers】チャンネル名を入力する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】チャンネル名を入力する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】チャンネル名を入力する</figcaption></figure> 
 
 <ul class="wp-block-list">
   <li>
@@ -266,7 +266,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="594" height="168" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネル説明を入力する.png" alt="【LINE Developers】チャンネル説明を入力する" class="wp-image-2964" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネル説明を入力する.png 594w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】チャンネル説明を入力する-300x85.png 300w" sizes="(max-width: 594px) 100vw, 594px" /> <figcaption class="wp-element-caption">【LINE Developers】チャンネル説明を入力する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】チャンネル説明を入力する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】チャンネル説明を入力する</figcaption></figure> 
 
 <ul class="wp-block-list">
   <li>
@@ -274,7 +274,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="467" height="127" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】大業種を選択する.png" alt="【LINE Developers】大業種を選択する" class="wp-image-2965" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】大業種を選択する.png 467w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】大業種を選択する-300x82.png 300w" sizes="(max-width: 467px) 100vw, 467px" /> <figcaption class="wp-element-caption">【LINE Developers】大業種を選択する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】大業種を選択する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】大業種を選択する</figcaption></figure> 
 
 <ul class="wp-block-list">
   <li>
@@ -282,7 +282,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="479" height="128" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】小業種を選択する.png" alt="【LINE Developers】小業種を選択する" class="wp-image-2966" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】小業種を選択する.png 479w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】小業種を選択する-300x80.png 300w" sizes="(max-width: 479px) 100vw, 479px" /> <figcaption class="wp-element-caption">【LINE Developers】小業種を選択する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】小業種を選択する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】小業種を選択する</figcaption></figure> 
 
 <ul class="wp-block-list">
   <li>
@@ -290,7 +290,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="458" height="168" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】メールアドレスを入力する.png" alt="【LINE Developers】メールアドレスを入力する" class="wp-image-2967" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】メールアドレスを入力する.png 458w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】メールアドレスを入力する-300x110.png 300w" sizes="(max-width: 458px) 100vw, 458px" /> <figcaption class="wp-element-caption">【LINE Developers】メールアドレスを入力する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】メールアドレスを入力する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】メールアドレスを入力する</figcaption></figure> 
 
 <ul class="wp-block-list">
   <li>
@@ -298,7 +298,7 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="592" height="155" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】任意プライバシーポリシーURLを入力する.png" alt="【LINE Developers】(任意)プライバシーポリシーURLを入力する" class="wp-image-2968" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】任意プライバシーポリシーURLを入力する.png 592w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】任意プライバシーポリシーURLを入力する-300x79.png 300w" sizes="(max-width: 592px) 100vw, 592px" /> <figcaption class="wp-element-caption">【LINE Developers】(任意)プライバシーポリシーURLを入力する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】任意プライバシーポリシーURLを入力する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】(任意)プライバシーポリシーURLを入力する</figcaption></figure> 
 
 <ul class="wp-block-list">
   <li>
@@ -306,17 +306,17 @@ archives: ["2019年7月"]
   </li>
 </ul><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="523" height="137" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】任意サービス利用規約URLを入力する.png" alt="【LINE Developers】(任意)サービス利用規約URLを入力する" class="wp-image-2969" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】任意サービス利用規約URLを入力する.png 523w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】任意サービス利用規約URLを入力する-300x79.png 300w" sizes="(max-width: 523px) 100vw, 523px" /> <figcaption class="wp-element-caption">【LINE Developers】(任意)サービス利用規約URLを入力する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】任意サービス利用規約URLを入力する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】(任意)サービス利用規約URLを入力する</figcaption></figure> 
 
 3　規約に同意し、『 **作成** 』を押下します。<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="556" height="368" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】規約に同意し、作成を押下する.png" alt="【LINE Developers】規約に同意し、作成を押下する" class="wp-image-2970" style="aspect-ratio:556/368" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】規約に同意し、作成を押下する.png 556w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】規約に同意し、作成を押下する-300x199.png 300w" sizes="(max-width: 556px) 100vw, 556px" /> <figcaption class="wp-element-caption">【LINE Developers】規約に同意し、作成を押下する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】規約に同意し、作成を押下する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】規約に同意し、作成を押下する</figcaption></figure> 
 
 ## チャンネルアクセストークンを発行する
 
 <span class="number">1　</span>『 **Messaging API設定** 』を押下します。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="850" height="467" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-API設定を押下する.png" alt="【LINE Developers】Messaging API設定を押下する" class="wp-image-2971" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-API設定を押下する.png 850w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-API設定を押下する-300x165.png 300w, https://arukayies.com/wp-content/uploads/2020/05/【LINE-Developers】Messaging-API設定を押下する-768x422.png 768w" sizes="(max-width: 850px) 100vw, 850px" /> <figcaption class="wp-element-caption">【LINE Developers】Messaging API設定を押下する</figcaption></figure> 
+{{< custom-figure src="【LINE-Developers】Messaging-API設定を押下する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE Developers】Messaging API設定を押下する</figcaption></figure> 
 
 <span class="number">2　</span>一番下にある『 **チャンネルアクセストークン** 』の『 **発行** 』を押下する。<figure class="wp-block-image aligncenter size-large">
 

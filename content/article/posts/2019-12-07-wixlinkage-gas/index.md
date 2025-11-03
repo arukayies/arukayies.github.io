@@ -106,7 +106,7 @@ archives: ["2019年12月"]
 ## 動作の流れ
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222d3b788.png" alt="" /></figure>
+  {{< custom-figure src="img_5dfa222d3b788.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 <div class="wp-block-cocoon-blocks-caption-box-1 caption-box block-box has-border-color has-key-color-border-color">
@@ -193,7 +193,7 @@ archives: ["2019年12月"]
 スプレッドシートで取得するとこんな感じになります。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222d7a2f7.png" alt="" /></figure>
+  {{< custom-figure src="img_5dfa222d7a2f7.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## GASを使ってWixのデータベースに書き込む
@@ -211,25 +211,25 @@ archives: ["2019年12月"]
 #### ホームページ編集画面からサイドバーを開く
 
 <div class="wp-block-image is-style-default">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222de4ed2.png" alt="" width="619" height="334" /></figure>
+  {{< custom-figure src="img_5dfa222de4ed2.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### Backendを開く
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222e3e583.png" alt="" width="397" height="335" /></figure>
+  {{< custom-figure src="img_5dfa222e3e583.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### jsファイルを作成する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222edf55f.png" alt="" width="220" height="193" /></figure>
+  {{< custom-figure src="img_5dfa222edf55f.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### http-function.jsを作成する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222f2ec9d.png" alt="" width="391" height="263" /></figure>
+  {{< custom-figure src="img_5dfa222f2ec9d.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### http-function.jsの中身
@@ -237,7 +237,7 @@ archives: ["2019年12月"]
 #### Wixにhttp-function.jsを登録する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa222fae577.png" alt="" width="718" height="369" /></figure>
+  {{< custom-figure src="img_5dfa222fae577.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ### データベースの作成
@@ -245,13 +245,13 @@ archives: ["2019年12月"]
 #### 新規コレクションを作成する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2232bca34.png" alt="" width="252" height="111" /></figure>
+  {{< custom-figure src="img_5dfa2232bca34.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### 必要なフィールドを作成する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa223315543.png" alt="" width="720" height="367" /></figure>
+  {{< custom-figure src="img_5dfa223315543.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ### データベースとの連携
@@ -259,25 +259,25 @@ archives: ["2019年12月"]
 #### 連携させたい箇所にデータベースをリンクさせる
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2235e8c28.png" alt="" width="510" height="349" /></figure>
+  {{< custom-figure src="img_5dfa2235e8c28.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### データセットを設定する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2237eb097.png" alt="" width="299" height="592" /></figure>
+  {{< custom-figure src="img_5dfa2237eb097.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### テキストとデータベースを接続する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2238b1c74.png" alt="" width="453" height="151" /></figure>
+  {{< custom-figure src="img_5dfa2238b1c74.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### テキストを接続する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa223a60200.png" alt="" width="331" height="389" /></figure>
+  {{< custom-figure src="img_5dfa223a60200.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## 運用方法

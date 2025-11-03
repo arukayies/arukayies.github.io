@@ -267,11 +267,9 @@ GASのスクリプトプロパティの追加手順は過去の記事で紹介�
 
 ## 『確認テンプレートメッセージ』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23250153e.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa23250153e.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
-ボタンそれぞれを押したときのログはこちら<figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa232537cf4.jpg" alt="" /> </figure> 
+ボタンそれぞれを押したときのログはこちら{{< custom-figure src="img_5dfa232537cf4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 その他のアクションについては別記事で紹介しています。
 

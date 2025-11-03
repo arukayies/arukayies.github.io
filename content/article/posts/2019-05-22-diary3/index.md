@@ -121,6 +121,6 @@ archives: ["2019年5月"]
 ## 16日目
 
 ちょっと早いかもしれないですが、<span class="marker"><strong>水耕栽培システム</strong></span>へ苗を移植しました。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee97771552.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfee97771552.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee977e5695.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee977e5695.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -269,7 +269,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 イメージマップを使用するために５つの画像をサーバー等に配置する必要があります。  
 公式ドキュメントの「[画像の設定方法][1]」を参照してください。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="260" height="220" src="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット-2021-03-04-21.59.20.png" alt="" class="wp-image-4600" /> <figcaption class="wp-element-caption">サーバー等に画像を設置する</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2021-03-04-21.59.20.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">サーバー等に画像を設置する</figcaption></figure> 
 
 ## 『イメージマップメッセージ』を送るサンプルコード
 
@@ -283,43 +283,25 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 ### 4つのタップ領域を持つ画像のメッセージ例
 
-「hello」をタップすると、**「hello」と返します**<figure class="wp-block-image aligncenter is-resized">
+「hello」をタップすると、**「hello」と返します**{{< custom-figure src="img_5dfa25db576e7.png" title="" Fit="1280x1280 webp q90" >}} 
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25db576e7.png" alt="" /> </figure> 
+「world」をタップすると、**「world」と返します**{{< custom-figure src="img_5dfa25dc0c51c.png" title="" Fit="1280x1280 webp q90" >}} 
 
-「world」をタップすると、**「world」と返します**<figure class="wp-block-image aligncenter is-resized">
+「goolge」をタップすると、**「google」を開きます**{{< custom-figure src="img_5dfa25dca8dc8.png" title="" Fit="1280x1280 webp q90" >}} 
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25dc0c51c.png" alt="" /> </figure> 
-
-「goolge」をタップすると、**「google」を開きます**<figure class="wp-block-image aligncenter is-resized">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25dca8dc8.png" alt="" /> </figure> 
-
-「yahoo」をタップすると、**「yahoo」を開きます**<figure class="wp-block-image aligncenter is-resized">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25dd4c42f.png" alt="" /> </figure> 
+「yahoo」をタップすると、**「yahoo」を開きます**{{< custom-figure src="img_5dfa25dd4c42f.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ### 画像と動画を組み合わせたメッセージ例
 
-これを送信するとこんな感じに受信します<figure class="wp-block-image aligncenter is-resized">
+これを送信するとこんな感じに受信します{{< custom-figure src="img_5dfa25de00903.png" title="" Fit="1280x1280 webp q90" >}} 
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25de00903.png" alt="" /> </figure> 
+動画をタップし{{< custom-figure src="img_5dfa25dec9a31.png" title="" Fit="1280x1280 webp q90" >}} 
 
-動画をタップし<figure class="wp-block-image aligncenter is-resized">
+「See More」をタップすると、**externalLink**で指定したリンクに遷移します。{{< custom-figure src="img_5dfa25df96a88.png" title="" Fit="1280x1280 webp q90" >}} 
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25dec9a31.png" alt="" /> </figure> 
+「google」をタップすると、**「googleがタップされました」と返します**{{< custom-figure src="img_5dfa25e0445e1.png" title="" Fit="1280x1280 webp q90" >}} 
 
-「See More」をタップすると、**externalLink**で指定したリンクに遷移します。<figure class="wp-block-image aligncenter is-resized">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25df96a88.png" alt="" /> </figure> 
-
-「google」をタップすると、**「googleがタップされました」と返します**<figure class="wp-block-image aligncenter is-resized">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25e0445e1.png" alt="" /> </figure> 
-
-「yahoo」をタップすると、**「yahooがタップされました」と返します**<figure class="wp-block-image aligncenter is-resized">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25e124b2b.png" alt="" /> </figure> 
+「yahoo」をタップすると、**「yahooがタップされました」と返します**{{< custom-figure src="img_5dfa25e124b2b.png" title="" Fit="1280x1280 webp q90" >}} 
 
 映像：ＮＨＫクリエイティブ・ライブラリー
 

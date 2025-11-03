@@ -123,6 +123,6 @@ archives: ["2019年7月"]
 ## 観察18日目
 
 天気が悪く日照不足かな？と心配でしたが、順調に育ってます！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3225ef0d0.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa3225ef0d0.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa32269b971.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa32269b971.jpg" title="" Fit="1280x1280 webp q90" >}}

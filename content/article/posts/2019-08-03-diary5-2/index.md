@@ -123,6 +123,6 @@ archives: ["2019年8月"]
 ## 観察43日目
 
 ここまで育つとルッコラ特有のゴマのような香りが強いです！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2db32e975.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa2db32e975.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2db3be80d.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa2db3be80d.jpg" title="" Fit="1280x1280 webp q90" >}}

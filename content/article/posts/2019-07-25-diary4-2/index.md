@@ -38,10 +38,10 @@ archives: ["2019年7月"]
 ## 観察34日目
 
 一部大きく育っているものだけ収穫し、パスタに和えてみました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa315f88f9e.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa315f88f9e.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa31602a88f.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa31602a88f.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3160b525d.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa3160b525d.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa316105be9.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa316105be9.jpg" title="" Fit="1280x1280 webp q90" >}}

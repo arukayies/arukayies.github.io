@@ -260,11 +260,11 @@ archives: ["2020年6月"]
 
 『ファイル』→『New』→『HTMLファイル』を選択します。ファイル名は『index』にします。<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="524" height="357" src="https://arukayies.com/wp-content/uploads/2020/06/HTMLファイルを選択.png" alt="HTMLファイルを選択" class="wp-image-3725" style="aspect-ratio:524/357" srcset="https://arukayies.com/wp-content/uploads/2020/06/HTMLファイルを選択.png 524w, https://arukayies.com/wp-content/uploads/2020/06/HTMLファイルを選択-300x204.png 300w" sizes="(max-width: 524px) 100vw, 524px" /> <figcaption class="wp-element-caption">HTMLファイルを作成</figcaption></figure> 
+{{< custom-figure src="HTMLファイルを選択.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">HTMLファイルを作成</figcaption></figure> 
 
 index.htmlに以下を貼り付けます<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="874" height="523" src="https://arukayies.com/wp-content/uploads/2020/06/index.html-のコードを貼り付ける.png" alt="index.html のコードを貼り付ける" class="wp-image-3727" style="aspect-ratio:714/427" srcset="https://arukayies.com/wp-content/uploads/2020/06/index.html-のコードを貼り付ける.png 874w, https://arukayies.com/wp-content/uploads/2020/06/index.html-のコードを貼り付ける-300x180.png 300w, https://arukayies.com/wp-content/uploads/2020/06/index.html-のコードを貼り付ける-768x460.png 768w" sizes="(max-width: 874px) 100vw, 874px" /> <figcaption class="wp-element-caption">index.htmlを貼り付ける</figcaption></figure> 
+{{< custom-figure src="index.html-のコードを貼り付ける.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">index.htmlを貼り付ける</figcaption></figure> 
 
 #### **width と height**を変更する
 
@@ -322,7 +322,7 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
 
 取得したURLは次の手順で使います！<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="513" height="310" src="https://arukayies.com/wp-content/uploads/2020/06/スクリプトを公開.png" alt="スクリプトを公開" class="wp-image-3728" style="aspect-ratio:513/310" srcset="https://arukayies.com/wp-content/uploads/2020/06/スクリプトを公開.png 513w, https://arukayies.com/wp-content/uploads/2020/06/スクリプトを公開-300x181.png 300w" sizes="(max-width: 513px) 100vw, 513px" /> <figcaption class="wp-element-caption">スクリプトを公開</figcaption></figure> 
+{{< custom-figure src="スクリプトを公開.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">スクリプトを公開</figcaption></figure> 
 
 ## アイキャッチ画像の設定を入力するスプレッドシートを作成
 
@@ -377,7 +377,7 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
 
 コピーしたスプレッドシートを開き、スクリプトエディタを開きます。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="788" height="459" src="https://arukayies.com/wp-content/uploads/2020/06/スクリプトエディタを開く.png" alt="スクリプトエディタを開く" class="wp-image-3732" srcset="https://arukayies.com/wp-content/uploads/2020/06/スクリプトエディタを開く.png 788w, https://arukayies.com/wp-content/uploads/2020/06/スクリプトエディタを開く-300x175.png 300w, https://arukayies.com/wp-content/uploads/2020/06/スクリプトエディタを開く-768x447.png 768w" sizes="(max-width: 788px) 100vw, 788px" /> <figcaption class="wp-element-caption">スクリプトエディタを開く</figcaption></figure> 
+{{< custom-figure src="スクリプトエディタを開く.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">スクリプトエディタを開く</figcaption></figure> 
 
 ### createEyecatchImage.js のコードを貼り付ける
 
@@ -515,7 +515,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" width="706" height="437" src="https://arukayies.com/wp-content/uploads/2020/06/ボタンにスクリプトを割り当て.png" alt="ボタンにスクリプトを割り当て" class="wp-image-3741" srcset="https://arukayies.com/wp-content/uploads/2020/06/ボタンにスクリプトを割り当て.png 706w, https://arukayies.com/wp-content/uploads/2020/06/ボタンにスクリプトを割り当て-300x186.png 300w" sizes="(max-width: 706px) 100vw, 706px" /><figcaption class="wp-element-caption">ボタンにスクリプトを割り当て</figcaption></figure>
+    <figure class="wp-block-image aligncenter size-large">{{< custom-figure src="ボタンにスクリプトを割り当て.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">ボタンにスクリプトを割り当て</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
@@ -539,7 +539,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
       背景画像のURLはこちらです。
     </p><figure class="wp-block-image size-large">
     
-    <img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/gas-background.png" alt="背景画像" /><figcaption class="wp-element-caption">背景画像</figcaption></figure>
+    {{< custom-figure src="gas-background.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">背景画像</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
@@ -547,7 +547,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
       生成された画像はこちらです。
     </p><figure class="wp-block-image size-large">
     
-    <img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/create-eyecatchimage-sample.png" alt="合成された画像" /><figcaption class="wp-element-caption">合成された画像</figcaption></figure>
+    {{< custom-figure src="create-eyecatchimage-sample.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">合成された画像</figcaption></figure>
   </div>
 </div>
 
@@ -607,11 +607,11 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/5_1200x250.png" alt="メインタイトルの画像" /><figcaption class="wp-element-caption">メインタイトルの画像</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="5_1200x250.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">メインタイトルの画像</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/5_500x130.png" alt="サブタイトルの画像" /><figcaption class="wp-element-caption">サブタイトルの画像</figcaption></figure> 
+    <figure class="wp-block-image size-large">{{< custom-figure src="5_500x130.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">サブタイトルの画像</figcaption></figure> 
     
     <p>
     </p>
@@ -630,7 +630,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 WordPressのメディアライブラリに反映される情報を事前に設定できます。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="706" height="316" src="https://arukayies.com/wp-content/uploads/2020/06/アイキャッチ画像の設定例.png" alt="アイキャッチ画像の設定例" class="wp-image-3753" srcset="https://arukayies.com/wp-content/uploads/2020/06/アイキャッチ画像の設定例.png 706w, https://arukayies.com/wp-content/uploads/2020/06/アイキャッチ画像の設定例-300x134.png 300w" sizes="(max-width: 706px) 100vw, 706px" /> <figcaption class="wp-element-caption">アイキャッチ画像の設定例</figcaption></figure> <figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="441" src="https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1024x441.jpg" alt="メディアライブラリ" class="wp-image-3751" srcset="https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1024x441.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-300x129.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-768x331.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1536x662.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-2048x882.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">メディアライブラリ</figcaption></figure> 
+{{< custom-figure src="アイキャッチ画像の設定例.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">アイキャッチ画像の設定例</figcaption></figure> <figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="441" src="https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1024x441.jpg" alt="メディアライブラリ" class="wp-image-3751" srcset="https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1024x441.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-300x129.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-768x331.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1536x662.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-2048x882.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">メディアライブラリ</figcaption></figure> 
 
 ### 『画像生成』ボタンを押下する
 
@@ -638,7 +638,7 @@ WordPressのメディアライブラリに反映される情報を事前に設�
 
 <span class="fz-36px"><strong><span class="fz-20px">これが生成される画像です！！！！！</span></strong></span><figure class="wp-block-image aligncenter size-large is-resized">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/create-eyecatchimage-sample.png" alt="合成された画像" style="aspect-ratio:714/374" /> <figcaption class="wp-element-caption">合成された画像</figcaption></figure> 
+{{< custom-figure src="create-eyecatchimage-sample.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">合成された画像</figcaption></figure> 
 
 ## まとめ
 
@@ -654,7 +654,7 @@ WordPressのメディアライブラリに反映される情報を事前に設�
       構想から完成まで4ヶ月ぐらいかかってしまいました。。。
     </p><figure class="wp-block-image size-large is-resized">
     
-    <img loading="lazy" decoding="async" width="833" height="315" src="https://arukayies.com/wp-content/uploads/2020/06/フラグ.png" alt="2月の記事内容" class="wp-image-3760" style="aspect-ratio:496/187" srcset="https://arukayies.com/wp-content/uploads/2020/06/フラグ.png 833w, https://arukayies.com/wp-content/uploads/2020/06/フラグ-300x113.png 300w, https://arukayies.com/wp-content/uploads/2020/06/フラグ-768x290.png 768w" sizes="(max-width: 833px) 100vw, 833px" /><figcaption class="wp-element-caption">2月の記事・・・。</figcaption></figure>
+    {{< custom-figure src="フラグ.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">2月の記事・・・。</figcaption></figure>
   </div>
 </div>
 

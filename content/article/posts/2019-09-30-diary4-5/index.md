@@ -165,6 +165,6 @@ archives: ["2019年9月"]
 ## 観察42日目
 
 Newシステムに移行しました！　まるで植物工場のようだ！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3b21da53c.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3b21da53c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3b23cd374.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3b23cd374.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -123,4 +123,4 @@ archives: ["2019年9月"]
 ## 観察53日目
 
 天井に進出してきました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff41ac2ef46.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff41ac2ef46.jpg" title="" Fit="1280x1280 webp q90" >}}

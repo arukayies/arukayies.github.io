@@ -276,7 +276,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 実行すると、LINEに **動画メッセージ** が送られます！<figure class="wp-block-image">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa271fe6127.png" alt="" /> <figcaption class="wp-element-caption">映像：ＮＨＫクリエイティブ・ライブラリー</figcaption></figure> 
+{{< custom-figure src="img_5dfa271fe6127.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">映像：ＮＨＫクリエイティブ・ライブラリー</figcaption></figure> 
 
 映像：ＮＨＫクリエイティブ・ライブラリー
 

@@ -276,9 +276,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 <img loading="lazy" decoding="async" width="1024" height="505" src="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_23_17_26-1024x505.png" alt="" class="wp-image-4578" srcset="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_23_17_26-1024x505.png 1024w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_23_17_26-300x148.png 300w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_23_17_26-768x379.png 768w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_23_17_26.png 1272w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**pushmessage_image** を実行する</figcaption></figure> 
 
-実行すると、LINEに **画像メッセージ** が送られます！<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa274738ac8.png" alt="" /> </figure> 
+実行すると、LINEに **画像メッセージ** が送られます！{{< custom-figure src="img_5dfa274738ac8.png" title="" Fit="1280x1280 webp q90" >}} 
 
 
 

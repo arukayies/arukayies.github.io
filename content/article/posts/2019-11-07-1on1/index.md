@@ -43,7 +43,7 @@ archives: ["2019年11月"]
 
 ## 独自でやってきた『1on1』の方法①
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25a2104b3.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa25a2104b3.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 Googleカレンダーで2週間毎のスケジュールを先に押さえる。だいたい3ヶ月分。  
 カレンダーの説明にはこんなことを書いている。
@@ -63,7 +63,7 @@ Googleカレンダーで2週間毎のスケジュールを先に押さえる。�
 
 ## 独自でやってきた『1on1』の方法②
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25a246144.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa25a246144.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 カレンダーに書いてたものをスプレッドシートに書くようになった。  
 スプレッドシートには事前に目標を書いてもらう。  
@@ -79,7 +79,7 @@ Googleカレンダーで2週間毎のスケジュールを先に押さえる。�
 
 ## 読んで感じたこと
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25a278df8.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa25a278df8.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 状況把握のために、いろいろ質問し常に相手のことを知ろうと  
 より**知ることが重要と思っていた**が、違ったみたいだ。

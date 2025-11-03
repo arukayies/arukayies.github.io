@@ -84,7 +84,7 @@ IKEAで購入した**アルティシマ**の様子です。
 もう天井につきそうです。大きな鉢へ植え替えを検討中です。
 
 5か月前↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef8474d225.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef8474d225.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回↓ (水耕栽培装置をずらしたい・・・)  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef8489c468.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfef8489c468.jpg" title="" Fit="1280x1280 webp q90" >}}

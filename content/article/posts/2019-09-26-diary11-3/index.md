@@ -165,9 +165,9 @@ archives: ["2019年9月"]
 ## 観察76日目
 
 一部枯れてしまいました。。。（動揺隠せず、画像がブレブレ）  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa4bbd6c5dc.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa4bbd6c5dc.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 8株中3株が枯れてしまっています。。。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa4bbe71a66.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa4bbe71a66.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa4bbf84d20.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa4bbf84d20.jpg" title="" Fit="1280x1280 webp q90" >}}

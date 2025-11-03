@@ -386,11 +386,11 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="428" height="338" src="https://arukayies.com/wp-content/uploads/2024/09/image-1.png" alt="" class="wp-image-4871" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-1.png 428w, https://arukayies.com/wp-content/uploads/2024/09/image-1-300x237.png 300w" sizes="(max-width: 428px) 100vw, 428px" /></figure>
+    {{< custom-figure src="image-1.png" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="404" height="405" src="https://arukayies.com/wp-content/uploads/2024/09/image-2.png" alt="" class="wp-image-4872" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-2.png 404w, https://arukayies.com/wp-content/uploads/2024/09/image-2-300x300.png 300w, https://arukayies.com/wp-content/uploads/2024/09/image-2-150x150.png 150w" sizes="(max-width: 404px) 100vw, 404px" /></figure>
+    {{< custom-figure src="image-2.png" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -406,7 +406,7 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 ### スケジュールを決める
 
-<img loading="lazy" decoding="async" width="302" height="214" src="https://arukayies.com/wp-content/uploads/2024/09/image-5.png" alt="" class="wp-image-4876" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-5.png 302w, https://arukayies.com/wp-content/uploads/2024/09/image-5-300x213.png 300w" sizes="(max-width: 302px) 100vw, 302px" /> </figure> 
+{{< custom-figure src="image-5.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 **この時点**で決まったスケジュールはこちら。
 
@@ -514,7 +514,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### タイ国際航空の座席指定は無料！
 
-<img loading="lazy" decoding="async" width="656" height="88" src="https://arukayies.com/wp-content/uploads/2024/09/image-7.png" alt="" class="wp-image-4895" style="width:665px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-7.png 656w, https://arukayies.com/wp-content/uploads/2024/09/image-7-300x40.png 300w" sizes="(max-width: 656px) 100vw, 656px" /> </figure> 
+{{< custom-figure src="image-7.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 予約時にオプションで座席指定できそうだったので課金しましたが、おそらく**払わなくても座席指定できることが分かりました。**（なぜか行きの便だけオプションがあって、帰りの便はオプションが表示されず😇）
 

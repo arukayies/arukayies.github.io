@@ -53,7 +53,7 @@ archives: ["2019年7月"]
 
 『 <strong>サンプル</strong> 』と発言すると、『 <strong>サンプルサンプルサンプル</strong> 』と返してくれるLINE BOTを作る手順を紹介します！<figure class="wp-block-image aligncenter">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa326c0486c.gif" alt="LINEBOTが動作している様子" /> <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
+{{< custom-figure src="img_5dfa326c0486c.gif" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
 
 <div class="cstmreba">
   <div class="kaerebalink-box">
@@ -242,18 +242,18 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="253" height="253" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】新規を押下する.png" alt="【Google】新規を押下する" class="wp-image-2982" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】新規を押下する.png 253w, https://arukayies.com/wp-content/uploads/2020/05/【Google】新規を押下する-150x150.png 150w, https://arukayies.com/wp-content/uploads/2020/05/【Google】新規を押下する-100x100.png 100w" sizes="(max-width: 253px) 100vw, 253px" /><figcaption class="wp-element-caption"><strong>新規</strong> を押下する</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】新規を押下する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>新規</strong> を押下する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="313" height="270" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】その他を押下する.png" alt="【Google】その他を押下する" class="wp-image-2983" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】その他を押下する.png 313w, https://arukayies.com/wp-content/uploads/2020/05/【Google】その他を押下する-300x259.png 300w" sizes="(max-width: 313px) 100vw, 313px" /><figcaption class="wp-element-caption"><strong>その他</strong> を押下する</figcaption></figure> 
+    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】その他を押下する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>その他</strong> を押下する</figcaption></figure> 
     
     <p>
     </p>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="302" height="235" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】Google-Apps-Scriptを押下する.png" alt="【Google】Google Apps Scriptを押下する" class="wp-image-2984" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】Google-Apps-Scriptを押下する.png 302w, https://arukayies.com/wp-content/uploads/2020/05/【Google】Google-Apps-Scriptを押下する-300x233.png 300w" sizes="(max-width: 302px) 100vw, 302px" /><figcaption class="wp-element-caption"><strong>Google Apps Script</strong> を押下する</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】Google-Apps-Scriptを押下する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>Google Apps Script</strong> を押下する</figcaption></figure>
   </div>
 </div>
 
@@ -261,11 +261,11 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="683" height="341" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_12_57_21.png" alt="" class="wp-image-4502" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_12_57_21.png 683w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_12_57_21-300x150.png 300w" sizes="(max-width: 683px) 100vw, 683px" /><figcaption class="wp-element-caption"><strong>無題のプロジェクト</strong> を選択する</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット_2021-02-27_12_57_21.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>無題のプロジェクト</strong> を選択する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="414" height="247" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_00_59.png" alt="" class="wp-image-4503" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_00_59.png 414w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_00_59-300x179.png 300w" sizes="(max-width: 414px) 100vw, 414px" /><figcaption class="wp-element-caption">プロジェクト名を入力し、<strong>名前を変更</strong> を押下する</figcaption></figure> 
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット_2021-02-27_13_00_59.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">プロジェクト名を入力し、<strong>名前を変更</strong> を押下する</figcaption></figure> 
     
     <p>
     </p>
@@ -282,7 +282,7 @@ archives: ["2019年7月"]
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="422" height="300" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.04.08.png" alt="" class="wp-image-4505" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.04.08.png 422w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.04.08-300x213.png 300w" sizes="(max-width: 422px) 100vw, 422px" /><figcaption class="wp-element-caption"><strong>main</strong> に名前を変える</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.04.08.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>main</strong> に名前を変える</figcaption></figure>
   </div>
 </div>
 
@@ -329,11 +329,11 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="485" height="326" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.06.41.png" alt="" class="wp-image-4506" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.06.41.png 485w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.06.41-300x202.png 300w" sizes="(max-width: 485px) 100vw, 485px" /><figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.06.41.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="786" height="544" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.08.38.png" alt="" class="wp-image-4507" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.08.38.png 786w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.08.38-300x208.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.08.38-768x532.png 768w" sizes="(max-width: 786px) 100vw, 786px" /><figcaption class="wp-element-caption"><strong>messageController</strong> を貼り付ける</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.08.38.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>messageController</strong> を貼り付ける</figcaption></figure>
   </div>
 </div>
 
@@ -363,7 +363,7 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="485" height="326" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.06.41.png" alt="" class="wp-image-4506" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.06.41.png 485w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット-2021-02-27-13.06.41-300x202.png 300w" sizes="(max-width: 485px) 100vw, 485px" /><figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.06.41.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
@@ -398,11 +398,11 @@ LINEで返信する処理を行います。
 
 <span class="number">2　『 <strong>デプロイ</strong> 』>『 <strong>新しいデプロイ </strong>』を押下します。</span><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="808" height="642" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_16_16-2.png" alt="" class="wp-image-4510" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_16_16-2.png 808w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_16_16-2-300x238.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_16_16-2-768x610.png 768w" sizes="(max-width: 808px) 100vw, 808px" /> <figcaption class="wp-element-caption">『 **デプロイ** 』>『 **新しいデプロイ** 』を押下する</figcaption></figure> 
+{{< custom-figure src="スクリーンショット_2021-02-27_13_16_16-2.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">『 **デプロイ** 』>『 **新しいデプロイ** 』を押下する</figcaption></figure> 
 
 <span class="number">3　アクセス出来るユーザーを『 <strong>全員 </strong>』に変更し、</span>『 **デプロイ** 』を押下します。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="802" height="627" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_21_06-2.png" alt="" class="wp-image-4512" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_21_06-2.png 802w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_21_06-2-300x235.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_21_06-2-768x600.png 768w" sizes="(max-width: 802px) 100vw, 802px" /> <figcaption class="wp-element-caption">アクセス出来るユーザーを『 **全員** 』に変更し、**デプロイ** を押下する</figcaption></figure> 
+{{< custom-figure src="スクリーンショット_2021-02-27_13_21_06-2.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">アクセス出来るユーザーを『 **全員** 』に変更し、**デプロイ** を押下する</figcaption></figure> 
 
 <span class="number">4　</span>承認画面が表示されるので、下の赤枠の順に押下します。
 
@@ -419,29 +419,29 @@ LINEで返信する処理を行います。
       </div>
     </div><figure class="wp-block-image size-large">
     
-    <img loading="lazy" decoding="async" width="788" height="620" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_24_02.png" alt="" class="wp-image-4513" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_24_02.png 788w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_24_02-300x236.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_24_02-768x604.png 768w" sizes="(max-width: 788px) 100vw, 788px" /><figcaption class="wp-element-caption">承認1</figcaption></figure>
+    {{< custom-figure src="スクリーンショット_2021-02-27_13_24_02.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認1</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="509" height="573" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認2.png" alt="承認2" class="wp-image-2999" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認2.png 509w, https://arukayies.com/wp-content/uploads/2020/05/【Google】承認2-266x300.png 266w" sizes="(max-width: 509px) 100vw, 509px" /><figcaption class="wp-element-caption">承認2</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】承認2.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認2</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="698" height="344" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認3.png" alt="承認3" class="wp-image-3000" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認3.png 698w, https://arukayies.com/wp-content/uploads/2020/05/【Google】承認3-300x148.png 300w" sizes="(max-width: 698px) 100vw, 698px" /><figcaption class="wp-element-caption">承認3</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】承認3.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認3</figcaption></figure>
   </div>
 </div>
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="669" height="436" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認4.png" alt="承認4" class="wp-image-3001" style="aspect-ratio:238/155" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認4.png 669w, https://arukayies.com/wp-content/uploads/2020/05/【Google】承認4-300x196.png 300w" sizes="(max-width: 669px) 100vw, 669px" /><figcaption class="wp-element-caption">承認4</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="【Google】承認4.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認4</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="505" height="737" src="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認5.png" alt="承認5" class="wp-image-3002" style="aspect-ratio:238/347" srcset="https://arukayies.com/wp-content/uploads/2020/05/【Google】承認5.png 505w, https://arukayies.com/wp-content/uploads/2020/05/【Google】承認5-206x300.png 206w" sizes="(max-width: 505px) 100vw, 505px" /><figcaption class="wp-element-caption">承認5</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="【Google】承認5.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認5</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="814" height="641" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_25_17.png" alt="" class="wp-image-4514" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_25_17.png 814w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_25_17-300x236.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_13_25_17-768x605.png 768w" sizes="(max-width: 814px) 100vw, 814px" /><figcaption class="wp-element-caption">承認6</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット_2021-02-27_13_25_17.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認6</figcaption></figure>
   </div>
 </div>
 
@@ -523,7 +523,7 @@ LINEチャンネル基本設定の遷移先は過去の記事を参考にして�
 
 設定したBOTを友だち登録します。チャンネル基本設定のQRコードから友達登録してください。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="792" height="548" src="https://arukayies.com/wp-content/uploads/2020/05/【LINE】友達登録.png" alt="【LINE】友達登録" class="wp-image-3007" srcset="https://arukayies.com/wp-content/uploads/2020/05/【LINE】友達登録.png 792w, https://arukayies.com/wp-content/uploads/2020/05/【LINE】友達登録-300x208.png 300w, https://arukayies.com/wp-content/uploads/2020/05/【LINE】友達登録-768x531.png 768w" sizes="(max-width: 792px) 100vw, 792px" /> <figcaption class="wp-element-caption">【LINE】友達登録</figcaption></figure> 
+{{< custom-figure src="【LINE】友達登録.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE】友達登録</figcaption></figure> 
 
 
 
@@ -539,7 +539,7 @@ LINEチャンネル基本設定の遷移先は過去の記事を参考にして�
   </ul>
 </div><figure class="wp-block-image aligncenter">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa326c0486c.gif" alt="LINEBOTが動作している様子" /> <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
+{{< custom-figure src="img_5dfa326c0486c.gif" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
 
 ## まとめ
 

@@ -123,9 +123,7 @@ archives: ["2019年9月"]
   </div>
 </div>
 
-そしてこれが今回自作した<span class="marker"><strong>水耕栽培装置【2号機】</strong></span>です。↓<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284a95ad0.jpg" alt="" /> </figure> 
+そしてこれが今回自作した<span class="marker"><strong>水耕栽培装置【2号機】</strong></span>です。↓{{< custom-figure src="img_5dfa284a95ad0.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 作成した流れを紹介します！
 
@@ -195,41 +193,33 @@ archives: ["2019年9月"]
     <div class="booklink-footer">
     </div>
   </div>
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284b24163.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa284b24163.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <ul class="wp-block-list">
   <li>
-    パイプ(コーナンで2,270円)<br /><figure><img loading="lazy" decoding="async" width="680" height="420" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284b57773.jpg" /></figure><br /><figure><img loading="lazy" decoding="async" width="680" height="420" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284b7662c.jpg" /></figure><br />
+    パイプ(コーナンで2,270円)<br />{{< custom-figure src="img_5dfa284b57773.jpg" title="" Fit="1280x1280 webp q90" >}}<br />{{< custom-figure src="img_5dfa284b7662c.jpg" title="" Fit="1280x1280 webp q90" >}}<br />
   </li>
 </ul>
 
 ## 1号機の撤去
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284b95e14.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284b95e14.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 <span class="number">1</span>苗を一時的に避難させます！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284bc9365.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284bc9365.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">2</span>ゴーヤは蔓が絡まっているため、この状態で待機させることにします。。。時間との勝負です！  
 
 
 ## 作る手順
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284c60ca9.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284c60ca9.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 買ってきたパイプを切断します！（部屋が切り屑で大変なことなります　笑）  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284ca7782.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284ca7782.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 切断面をなめらかにします。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284d41fb9.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284d41fb9.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 使っている工具はこちらです。愛用してます！
 
@@ -269,19 +259,13 @@ archives: ["2019年9月"]
     <div class="booklink-footer">
     </div>
   </div>
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284ddaa6f.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa284ddaa6f.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 現時点で仮組してみます。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284e10a2a.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284e10a2a.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 植栽バスケットを設置する箇所に目印書きます。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284e55bb7.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284e55bb7.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ホールソーで穴を開けていきます！
 
@@ -321,46 +305,30 @@ archives: ["2019年9月"]
     <div class="booklink-footer">
     </div>
   </div>
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284eb3680.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa284eb3680.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 開けた穴をなめらかにしていきます！　※部屋で作業しないほうが良いです　笑  
-<figure class="wp-block-image aligncenter">
+{{< custom-figure src="img_5dfa284f06550.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284f06550.jpg" alt="" /> </figure> 
-
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284f57fcb.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284f57fcb.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 一気に組み立てていきます！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284fec5fe.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa284fec5fe.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 植栽バスケットに避難させた苗をセットしていきます。まずは適当な大きなにスポンジをカットします。  
 
 
 こんな感じにカット  
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa285036697.jpg" width="680" height="420" /> <figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa284b24163.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa285036697.jpg" title="" Fit="1280x1280 webp q90" >}} {{< custom-figure src="img_5dfa284b24163.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 スポンジに切り込みを入れて、苗を挟み込むように植栽バスケットにセットします  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28509bdc4.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa28509bdc4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 残りのすべての苗も同様にセットしていき、パイプの穴にはめ込みます！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2850ddeda.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa2850ddeda.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ちなみに今回は『耐寒耐圧耐藻ホース』を使っています！　これなら汚れないはず・・・！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28517410a.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa28517410a.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 
 
@@ -406,7 +374,7 @@ archives: ["2019年9月"]
 
 ## まとめ
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28529cea2.gif" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa28529cea2.gif" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 これで簡単にさらにたくさんの野菜を育てていきたいと思います！  
 

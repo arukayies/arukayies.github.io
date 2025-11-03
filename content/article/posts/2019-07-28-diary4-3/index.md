@@ -123,6 +123,6 @@ archives: ["2019年7月"]
 ## 観察16日目
 
 水耕栽培装置に植え替えしました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3010d065c.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa3010d065c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa30116d28d.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa30116d28d.jpg" title="" Fit="1280x1280 webp q90" >}}

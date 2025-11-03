@@ -123,4 +123,4 @@ archives: ["2019年8月"]
 ## 観察25日目
 
 ある程度根が張ったので、水耕栽培装置に植え替えました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3efe19599.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3efe19599.jpg" title="" Fit="1280x1280 webp q90" >}}

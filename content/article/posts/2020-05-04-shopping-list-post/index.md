@@ -206,7 +206,7 @@ BOTの作成方法は過去記事を参考にしてください！
 
 ちなみに私はこんなBOTを作成しました！<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="511" height="417" src="https://arukayies.com/wp-content/uploads/2020/05/お買い物BOT.png" alt="お買い物BOT" class="wp-image-3018" srcset="https://arukayies.com/wp-content/uploads/2020/05/お買い物BOT.png 511w, https://arukayies.com/wp-content/uploads/2020/05/お買い物BOT-300x245.png 300w" sizes="(max-width: 511px) 100vw, 511px" /> <figcaption class="wp-element-caption">お買い物BOT</figcaption></figure> 
+{{< custom-figure src="お買い物BOT.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">お買い物BOT</figcaption></figure> 
 
 ## 【LINE】リッチメニューを作成する
 
@@ -294,7 +294,7 @@ BOTの作成方法は過去記事を参考にしてください！
 
 6　**大**の**4分割**の**テンプレート**を選択します。<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="622" height="637" src="https://arukayies.com/wp-content/uploads/2020/05/テンプレート大を選択.png" alt="テンプレート大4分割を選択" class="wp-image-3024" style="aspect-ratio:622/637" srcset="https://arukayies.com/wp-content/uploads/2020/05/テンプレート大を選択.png 622w, https://arukayies.com/wp-content/uploads/2020/05/テンプレート大を選択-293x300.png 293w" sizes="(max-width: 622px) 100vw, 622px" /> <figcaption class="wp-element-caption">テンプレート大4分割を選択</figcaption></figure> 
+{{< custom-figure src="テンプレート大を選択.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">テンプレート大4分割を選択</figcaption></figure> 
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -310,11 +310,11 @@ BOTの作成方法は過去記事を参考にしてください！
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="915" height="623" src="https://arukayies.com/wp-content/uploads/2020/05/画像を設定.png" alt="画像をアップロード" class="wp-image-3026" style="aspect-ratio:357/243" srcset="https://arukayies.com/wp-content/uploads/2020/05/画像を設定.png 915w, https://arukayies.com/wp-content/uploads/2020/05/画像を設定-300x204.png 300w, https://arukayies.com/wp-content/uploads/2020/05/画像を設定-768x523.png 768w" sizes="(max-width: 915px) 100vw, 915px" /><figcaption class="wp-element-caption">画像をアップロード</figcaption></figure>
+    <figure class="wp-block-image aligncenter size-large is-resized">{{< custom-figure src="画像を設定.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">画像をアップロード</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="278" height="366" src="https://arukayies.com/wp-content/uploads/2020/05/画像の例.png" alt="画像の例" class="wp-image-3027" style="aspect-ratio:278/366" srcset="https://arukayies.com/wp-content/uploads/2020/05/画像の例.png 278w, https://arukayies.com/wp-content/uploads/2020/05/画像の例-228x300.png 228w" sizes="(max-width: 278px) 100vw, 278px" /><figcaption class="wp-element-caption">画像の例</figcaption></figure> 
+    <figure class="wp-block-image aligncenter size-large is-resized">{{< custom-figure src="画像の例.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">画像の例</figcaption></figure> 
     
     <p>
     </p>
@@ -509,7 +509,7 @@ BOTの作成方法は過去記事を参考にしてください！
 | TOKEN | LINEのトークン | LINEのトークンを登録してください。              |
 | LIST  | 初期値       | ここに買い物リストが保存されます。『初期値』と登録してください。 |<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="618" height="299" src="https://arukayies.com/wp-content/uploads/2020/05/スクリプトプロパティ.png" alt="スクリプトプロパティ" class="wp-image-3036" style="aspect-ratio:618/299" srcset="https://arukayies.com/wp-content/uploads/2020/05/スクリプトプロパティ.png 618w, https://arukayies.com/wp-content/uploads/2020/05/スクリプトプロパティ-300x145.png 300w" sizes="(max-width: 618px) 100vw, 618px" /> <figcaption class="wp-element-caption">スクリプトプロパティ</figcaption></figure> 
+{{< custom-figure src="スクリプトプロパティ.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">スクリプトプロパティ</figcaption></figure> 
 
 ## 【Google】ウェブアプリケーションの公開URLを取得する
 

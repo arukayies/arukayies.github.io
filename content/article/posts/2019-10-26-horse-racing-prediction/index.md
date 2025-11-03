@@ -129,7 +129,7 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
 
 を取得してきました。
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27abaa37b.png" width="680" height="420" />  
+{{< custom-figure src="img_5dfa27abaa37b.png" title="" Fit="1280x1280 webp q90" >}}  
 <span style="color: gray;"><strong>アレ・・・カタカナ名の人がうまく取得できてない</strong></span>
 
 ## スコアの算出方法は？
@@ -159,7 +159,7 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
 <span style="color: orange;"><strong>３位</strong></span>　ダノンプレミアム
 
 **東京**競馬場、**芝**コース、**曇**でスコアを算出した結果です↓  
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27ac1e238.png" width="680" height="420" />  
+{{< custom-figure src="img_5dfa27ac1e238.png" title="" Fit="1280x1280 webp q90" >}}  
 <span style="color: gray;"><strong>カタカナ名の人だけ「Mデムーロ」→「デムーロ」のように算出</strong></span>
 
 <span style="color: red;"><strong>１位</strong></span>　アーモンドアイ  
@@ -176,15 +176,15 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
 
 ## 天皇賞行ってきました！
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27ac9f3d7.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa27ac9f3d7.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27ad3ca88.jpg" width="680" height="420" />  
+{{< custom-figure src="img_5dfa27ad3ca88.jpg" title="" Fit="1280x1280 webp q90" >}}  
 事前に予想した馬番は <span style="color: red;"><strong>2-13-5</strong></span>  
 3連単と3連複で500円ずつ購入しました！
 
 ## 結果は・・・？？？
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27adc8e09.jpg" width="680" height="420" />  
+{{< custom-figure src="img_5dfa27adc8e09.jpg" title="" Fit="1280x1280 webp q90" >}}  
 結果は <span style="color: red;"><strong>2-9-5</strong></span>
 
 **2位だけ、2位だけが・・・・！！！！**惜しくも外れてしまいました。。。

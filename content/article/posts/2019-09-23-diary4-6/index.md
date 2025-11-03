@@ -81,22 +81,22 @@ IKEAで購入した**アルティシマ**の様子です。
 ## 観察166日目
 
 アルティシマの植替を行います！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3554bf9df.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3554bf9df.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 鉢からアルティシマを抜きます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff35567d0ff.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff35567d0ff.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 新しい鉢に鉢底ネットを敷きます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff355734561.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff355734561.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 軽石を入れます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3557dd32d.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3557dd32d.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 アルティシマを植えます！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff355896407.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff355896407.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 土の乾燥防止に化粧石を敷きます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3559569d2.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3559569d2.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 生まれ変わったアルティシマの完成です！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3559bd7ed.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3559bd7ed.jpg" title="" Fit="1280x1280 webp q90" >}}

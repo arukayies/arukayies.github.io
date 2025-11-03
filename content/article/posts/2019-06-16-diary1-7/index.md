@@ -36,4 +36,4 @@ archives: ["2019年6月"]
 
 葉っぱが所々で、ちょっと元気がなさそうです。  
 とりあえず日光がよく当たり、適度に水を与えてみたいと思います。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfeef0d20bb3.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfeef0d20bb3.jpg" title="" Fit="1280x1280 webp q90" >}}

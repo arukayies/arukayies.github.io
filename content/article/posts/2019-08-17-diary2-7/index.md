@@ -84,7 +84,7 @@ archives: ["2019年8月"]
 見比べてみると、葉っぱが増えていて健康そうです！
 
 2か月前↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef5d89ff82.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef5d89ff82.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef5d9253c3.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfef5d9253c3.jpg" title="" Fit="1280x1280 webp q90" >}}

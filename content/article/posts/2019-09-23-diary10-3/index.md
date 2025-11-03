@@ -165,7 +165,7 @@ archives: ["2019年9月"]
 ## 観察73日目
 
 水耕栽培装置2号機に植替するために一時避難です  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa4b469766f.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa4b469766f.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 窓際にオクラを1列に移動させました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa4b472c522.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa4b472c522.jpg" title="" Fit="1280x1280 webp q90" >}}

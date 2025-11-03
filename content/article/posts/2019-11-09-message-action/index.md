@@ -270,7 +270,7 @@ GASのスクリプトプロパティの追加手順は過去の記事で紹介�
 
 ## 『メッセージアクション』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25538d770.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa25538d770.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 その他のアクションについては別記事で紹介しています。
 

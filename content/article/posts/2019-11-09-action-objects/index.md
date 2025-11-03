@@ -165,9 +165,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a0b71e8.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a0b71e8.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## メッセージアクション
 
@@ -213,9 +211,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a1031e6.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a1031e6.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## URIアクション
 
@@ -261,9 +257,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a13fdf0.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a13fdf0.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## 日時選択アクション
 
@@ -309,9 +303,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a17f87b.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a17f87b.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## カメラアクション
 
@@ -357,9 +349,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a1d9d9c.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a1d9d9c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## カメラロールアクション
 
@@ -405,9 +395,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a2249d8.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a2249d8.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## 位置情報アクション
 
@@ -453,9 +441,7 @@ Botが実行できる[アクションオブジェクト][2]のまとめになり
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa23a25eaa4.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa23a25eaa4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="cstmreba">
   <div class="kaerebalink-box">

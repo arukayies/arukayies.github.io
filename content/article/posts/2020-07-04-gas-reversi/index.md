@@ -165,55 +165,55 @@ docs.google.com
 </div></a>
 </div>
 Googleアカウントにログインしてる状態で上記シートにアクセスします。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="436" height="376" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.56.41.png" alt="ファイル → コピー作成 と順に押します。" class="wp-image-4050" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.56.41.png 436w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.56.41-300x259.png 300w" sizes="(max-width: 436px) 100vw, 436px" /> <figcaption class="wp-element-caption">ファイル → コピーを作成 と順に押します。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-21.56.41.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">ファイル → コピーを作成 と順に押します。</figcaption></figure>
 ファイル → コピーを作成 と順に押します。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="368" height="327" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.57.51.png" alt="好きなところにコピーを保存してください。" class="wp-image-4051" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.57.51.png 368w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.57.51-300x267.png 300w" sizes="(max-width: 368px) 100vw, 368px" /> <figcaption class="wp-element-caption">好きなところにコピーを保存してください。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-21.57.51.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">好きなところにコピーを保存してください。</figcaption></figure>
 好きなところにコピーを保存してください。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="901" height="790" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.59.57.png" alt="ファイル名とかシート名変えても問題ありません。" class="wp-image-4052" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.59.57.png 901w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.59.57-300x263.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-21.59.57-768x673.png 768w" sizes="(max-width: 901px) 100vw, 901px" /> <figcaption class="wp-element-caption">ファイル名とかシート名変えても問題ありません。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-21.59.57.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">ファイル名とかシート名変えても問題ありません。</figcaption></figure>
 ファイル名とかシート名変えても問題ありません。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ## スクリプトの実行権限を許可する
-<img loading="lazy" decoding="async" width="608" height="368" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.03.36.png" alt="初回のみスクリプトの実行を許可する必要があります。続行 を押します。" class="wp-image-4054" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.03.36.png 608w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.03.36-300x182.png 300w" sizes="(max-width: 608px) 100vw, 608px" /> <figcaption class="wp-element-caption">**初回のみ**スクリプトの実行を許可する必要があります。**続行** を押します。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.03.36.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**初回のみ**スクリプトの実行を許可する必要があります。**続行** を押します。</figcaption></figure>
 **初回のみ**スクリプトの実行を許可する必要があります。
 **対戦開始ボタン**を押したあとに、**続行** を押します。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="552" height="578" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット_2020-07-04_22_04_53.png" alt="アカウントを選択します。" class="wp-image-4055" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット_2020-07-04_22_04_53.png 552w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット_2020-07-04_22_04_53-287x300.png 287w" sizes="(max-width: 552px) 100vw, 552px" /> <figcaption class="wp-element-caption">**アカウント**を選択します。</figcaption></figure>
+{{< custom-figure src="スクリーンショット_2020-07-04_22_04_53.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**アカウント**を選択します。</figcaption></figure>
 **アカウント**を選択します。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="698" height="367" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.06.03.png" alt="詳細リンクを押します。" class="wp-image-4057" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.06.03.png 698w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.06.03-300x158.png 300w" sizes="(max-width: 698px) 100vw, 698px" /> <figcaption class="wp-element-caption">**詳細**リンクを押します。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.06.03.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**詳細**リンクを押します。</figcaption></figure>
 **詳細**リンクを押します。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="654" height="458" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.07.06.png" alt="オセロ（安全ではないページ）に移動リンクを押します。" class="wp-image-4058" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.07.06.png 654w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.07.06-300x210.png 300w" sizes="(max-width: 654px) 100vw, 654px" /> <figcaption class="wp-element-caption">**オセロ（安全ではないページ）に移動**リンクを押します。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.07.06.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**オセロ（安全ではないページ）に移動**リンクを押します。</figcaption></figure>
 **オセロ（安全ではないページ）に移動**リンクを押します。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="495" height="691" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット_2020-07-04_22_08_23.png" alt="許可を押します。" class="wp-image-4059" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット_2020-07-04_22_08_23.png 495w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット_2020-07-04_22_08_23-215x300.png 215w" sizes="(max-width: 495px) 100vw, 495px" /> <figcaption class="wp-element-caption">**許可**を押します。</figcaption></figure>
+{{< custom-figure src="スクリーンショット_2020-07-04_22_08_23.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**許可**を押します。</figcaption></figure>
 **許可**を押します。<figure class="wp-block-image aligncenter size-large is-resized">
-<img loading="lazy" decoding="async" width="525" height="334" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.17.47.png" alt="このメッセージボックスが表示されたら完了です。" class="wp-image-4063" style="aspect-ratio:525/334" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.17.47.png 525w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.17.47-300x191.png 300w" sizes="(max-width: 525px) 100vw, 525px" /> <figcaption class="wp-element-caption">このメッセージボックスが表示されたら完了です。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.17.47.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">このメッセージボックスが表示されたら完了です。</figcaption></figure>
 もう一度**対戦開始ボタン**を押し、このメッセージボックスが表示されたら完了です。
 これで遊ぶ準備はできました！
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ## オセロで遊ぶ
-<img loading="lazy" decoding="async" width="854" height="600" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.12.24.png" alt="先攻は黒固定です。" class="wp-image-4061" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.12.24.png 854w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.12.24-300x211.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.12.24-768x540.png 768w" sizes="(max-width: 854px) 100vw, 854px" /> <figcaption class="wp-element-caption">先攻は黒固定です。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.12.24.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">先攻は黒固定です。</figcaption></figure>
 先攻は黒固定です。
 ### 石の置き方
-<img loading="lazy" decoding="async" width="858" height="606" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.13.31.png" alt="コピーして貼り付ける" class="wp-image-4062" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.13.31.png 858w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.13.31-300x212.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.13.31-768x542.png 768w" sizes="(max-width: 858px) 100vw, 858px" /> <figcaption class="wp-element-caption">コピーして貼り付ける</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.13.31.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">コピーして貼り付ける</figcaption></figure>
 石の置き方はコピペです。コピーして置きたいところに貼り付けます。<figure class="wp-block-image size-large">
-<img loading="lazy" decoding="async" width="854" height="606" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.19.00.png" alt="メッセージ内にどちらの順番か示されます。" class="wp-image-4064" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.19.00.png 854w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.19.00-300x213.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.19.00-768x545.png 768w" sizes="(max-width: 854px) 100vw, 854px" /> <figcaption class="wp-element-caption">メッセージ内にどちらかの順番か示されます。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.19.00.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">メッセージ内にどちらかの順番か示されます。</figcaption></figure>
 石は自動でひっくり返され、メッセージ内にどちらかの順番か示されます。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ### パスする
-<img loading="lazy" decoding="async" width="924" height="607" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.51.00.png" alt="置けない場合はパスすることで相手の番にターンが移ります。" class="wp-image-4070" style="aspect-ratio:714/469" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.51.00.png 924w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.51.00-300x197.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.51.00-768x505.png 768w" sizes="(max-width: 924px) 100vw, 924px" /> <figcaption class="wp-element-caption">置けない場合はパスすることで相手の番にターンが移ります。</figcaption></figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.51.00.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">置けない場合はパスすることで相手の番にターンが移ります。</figcaption></figure>
 置けない場合はパスすることで相手の番にターンが移ります。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ### 勝敗
-<img loading="lazy" decoding="async" width="936" height="610" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.28.14.png" alt="" class="wp-image-4066" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.28.14.png 936w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.28.14-300x196.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.28.14-768x501.png 768w" sizes="(max-width: 936px) 100vw, 936px" /> </figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.28.14.png" title="" Fit="1280x1280 webp q90" >}} </figure>
 すべての石の合計が**64**になると、石の多いほうが**<span class="bold-blue">勝ち</span>**となります。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ### エラーになるパターン
-<img loading="lazy" decoding="async" width="857" height="604" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.21.46.png" alt="" class="wp-image-4065" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.21.46.png 857w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.21.46-300x211.png 300w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-22.21.46-768x541.png 768w" sizes="(max-width: 857px) 100vw, 857px" /> </figure>
+{{< custom-figure src="スクリーンショット-2020-07-04-22.21.46.png" title="" Fit="1280x1280 webp q90" >}} </figure>
 順番が違ったり、置けない場所に置いたりすると<span class="bold-red">エラー</span>になります。
 また、置かれた石は<span class="bold-red">削除</span>されます。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
@@ -260,8 +260,7 @@ GASのイベントオブジェクトから、セルの行・列の位置を取�
 #### 置かれた場所から8方向をチェック
 置かれた場所から 8方向の状態をチェックします。
 置かれた場所が壁、自分の石、空白の場合は、次の処理には移りません。<figure class="wp-block-image aligncenter size-large">
-<img loading="lazy" decoding="async" width="564" height="554" src="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-23.33.41.png" alt="オセロを作りながらマクロVBAを学ぼう№3
-参考：エクセルの神髄 ｜ Copyright© 2010 鵜原パソコンソフト研究所" class="wp-image-4077" srcset="https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-23.33.41.png 564w, https://arukayies.com/wp-content/uploads/2020/07/スクリーンショット-2020-07-04-23.33.41-300x295.png 300w" sizes="(max-width: 564px) 100vw, 564px" /> <figcaption class="wp-element-caption">オセロを作りながらマクロVBAを学ぼう№3
+{{< custom-figure src="スクリーンショット-2020-07-04-23.33.41.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">オセロを作りながらマクロVBAを学ぼう№3
 参考：エクセルの神髄 ｜ Copyright© 2010&nbsp;[鵜原パソコンソフト研究所][1]</figcaption></figure>
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>

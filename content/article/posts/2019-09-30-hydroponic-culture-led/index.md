@@ -129,9 +129,7 @@ archives: ["2019年9月"]
   </div></a>
 </div>
 
-これが今回作成した<span class="marker"><strong>植物育成LEDライト</strong></span>がON/OFFしている様子です。↓<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2817134a9.gif" alt="" /> </figure> 
+これが今回作成した<span class="marker"><strong>植物育成LEDライト</strong></span>がON/OFFしている様子です。↓{{< custom-figure src="img_5dfa2817134a9.gif" title="" Fit="1280x1280 webp q90" >}} 
 
 ライトのON/OFFはRaspberry Piを使って、<span class="marker"><strong>日の出・日の入時刻で連動するように自動制御</strong></span>しています！
 
@@ -225,10 +223,10 @@ Raspberry Piを使ったライトの自動制御はこちらをご覧くださ�
 
 <ul class="wp-block-list">
   <li>
-    LEDライト(100均)<br /><figure><img loading="lazy" decoding="async" width="680" height="420" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28175aea4.jpg" /></figure>
+    LEDライト(100均)<br />{{< custom-figure src="img_5dfa28175aea4.jpg" title="" Fit="1280x1280 webp q90" >}}
   </li>
   <li>
-    ランプシェード的なやつ(100均)<br /><figure><img loading="lazy" decoding="async" width="680" height="420" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281790e65.jpg" /></figure>
+    ランプシェード的なやつ(100均)<br />{{< custom-figure src="img_5dfa281790e65.jpg" title="" Fit="1280x1280 webp q90" >}}
   </li>
 </ul>
 
@@ -352,12 +350,10 @@ Raspberry Piを使ったライトの自動制御はこちらをご覧くださ�
 
 ## 作る手順
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2818087c5.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa2818087c5.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 キャンドゥで購入したLEDライトです。明るさはこのぐらいです。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281851f85.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa281851f85.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ランプシェードは台所のゴミ受けがちょうどステンレスで光を反射して良さそう！と思い購入してみました。これを穴開けて、LEDライトを通せばいい感じになるんじゃないかなー？と思い。。。  
 
@@ -400,19 +396,13 @@ Raspberry Piを使ったライトの自動制御はこちらをご覧くださ�
     <div class="booklink-footer">
     </div>
   </div>
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2818ac2e5.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa2818ac2e5.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ぜんぜん開かないんですよね。。。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2818efe67.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa2818efe67.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 LEDライトを解体して、ランプシェードと見比べて構想を練り直します。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28194d142.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa28194d142.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 こうしてみました！  
 
@@ -455,31 +445,23 @@ LEDライトを解体して、ランプシェードと見比べて構想を練�
     <div class="booklink-footer">
     </div>
   </div>
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28199761c.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa28199761c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 これを量産して、6個作りました！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2819d6b12.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa2819d6b12.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 Raspberry PiとLEDライトを接続します！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281a748d5.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa281a748d5.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ポートが足りないので、USBハブを経由してます。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281acf8b4.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa281acf8b4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">5</span>あとは光を当てたい箇所にいい感じに取り付けたら完成です！  
 
 
 ## LEDライトのランプシェードあり・なしの明るさ比較
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281b7a5b7.png" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa281b7a5b7.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 気持ちランプシェード**あり**のほうが光量ありそうな気がします・・・？  
 
@@ -487,9 +469,7 @@ Raspberry PiとLEDライトを接続します！
 スマホアプリで照度を計測してみました
 
 ランプシェードなし：423lx  
-ランプシェードあり：**642lx**<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281ca6ebe.png" alt="" /> </figure> 
+ランプシェードあり：**642lx**{{< custom-figure src="img_5dfa281ca6ebe.png" title="" Fit="1280x1280 webp q90" >}} 
 
 確かな効果があるようです！！！  
 
@@ -497,9 +477,7 @@ Raspberry PiとLEDライトを接続します！
 ## まとめ
 
 専用の植物育成ライトだと<span style="color: blue;">青</span>と<span style="color: red;">赤</span>の<span style="color: fuchsia;">怪しいライト</span>がほとんどです。  
-はたして、100均のLEDライトでどのくらい効果があるのでしょうか。。。<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa281d6dda7.jpg" alt="" /> </figure> 
+はたして、100均のLEDライトでどのくらい効果があるのでしょうか。。。{{< custom-figure src="img_5dfa281d6dda7.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="cstmreba">
   <div class="kaerebalink-box">

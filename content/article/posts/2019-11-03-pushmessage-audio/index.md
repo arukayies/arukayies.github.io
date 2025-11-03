@@ -276,7 +276,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 実行すると、LINEに **音声メッセージ** が送られます！<figure class="wp-block-image aligncenter">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa264ed78f9.png" alt="" /> <figcaption class="wp-element-caption">音声：効果音ラボ</figcaption></figure> 
+{{< custom-figure src="img_5dfa264ed78f9.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">音声：効果音ラボ</figcaption></figure> 
 
 その他のアクションについては別記事で紹介しています。
 

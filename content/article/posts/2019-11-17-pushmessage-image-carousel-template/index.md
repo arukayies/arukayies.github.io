@@ -265,12 +265,10 @@ GASのスクリプトプロパティの追加手順は過去の記事で紹介�
 
 ## 『画像カルーセルテンプレートメッセージ』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa22ac0c7be.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa22ac0c7be.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 例では3つのアクションをカラムオブジェクトに含めています。  
-1つのカラムに対して、1つのアクションのみが割り当てる事ができるようです。<figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa22ac4980a.jpg" alt="" /> </figure> 
+1つのカラムに対して、1つのアクションのみが割り当てる事ができるようです。{{< custom-figure src="img_5dfa22ac4980a.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 その他のアクションについては別記事で紹介しています。
 

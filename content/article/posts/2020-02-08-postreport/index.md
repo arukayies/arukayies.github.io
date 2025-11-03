@@ -118,9 +118,7 @@ WordPressのサイトを持っている前提で話をすすめます！
 
 <img loading="lazy" decoding="async" width="1024" height="389" src="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-1024x389.png" alt="" class="wp-image-2179" srcset="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-1024x389.png 1024w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-300x114.png 300w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-768x291.png 768w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-1536x583.png 1536w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10.png 1592w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
 
-ユーザ名とパスワードが表示されるので、これを控えておいてください。<figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="522" height="183" src="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_18_22.png" alt="" class="wp-image-2180" srcset="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_18_22.png 522w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_18_22-300x105.png 300w" sizes="(max-width: 522px) 100vw, 522px" /> </figure> 
+ユーザ名とパスワードが表示されるので、これを控えておいてください。{{< custom-figure src="スクリーンショット_2020-02-08_20_18_22.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ## GASを使ってWordPressに自動投稿するコード
 
@@ -134,9 +132,7 @@ var content = 'これは自動投稿です。';</pre>
 
 ## 実際に自動投稿してみた結果
 
-このような感じに記事を自動投稿できます！<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="809" height="285" src="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-20.46.16.png" alt="" class="wp-image-2184" srcset="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-20.46.16.png 809w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-20.46.16-300x106.png 300w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット-2020-02-08-20.46.16-768x271.png 768w" sizes="(max-width: 809px) 100vw, 809px" /> </figure> 
+このような感じに記事を自動投稿できます！{{< custom-figure src="スクリーンショット-2020-02-08-20.46.16.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ## まとめ
 

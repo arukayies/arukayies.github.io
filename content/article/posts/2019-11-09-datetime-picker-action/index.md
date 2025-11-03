@@ -317,7 +317,7 @@ GASの公開URLをLINEに登録する方法はこちらを確認してくださ�
 
 ## 『日時選択アクション』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa24fd054ab.jpg" alt="" /> </figure> <figure class="wp-block-image"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa24fd5e175.jpg" alt="" /></figure> 
+{{< custom-figure src="img_5dfa24fd054ab.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="img_5dfa24fd5e175.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 日時を送信すると、レスポンスに「<span class="marker"><strong>:{&#8220;data&#8221;:&#8221;action=settime&#8221;,&#8221;params&#8221;:{&#8220;datetime&#8221;:&#8221;2017-12-25T00:00&#8243;}</strong></span>」と返ってきます。
 

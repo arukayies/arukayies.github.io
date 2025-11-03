@@ -125,7 +125,7 @@ archives: ["2019年8月"]
 土に植え替えて3日目なんですが、成長早すぎませんか？
 
 土に植えた時↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3e097ced2.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3e097ced2.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 3日後↓(左に植えてるのはコマツナです)  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3e0b19882.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3e0b19882.jpg" title="" Fit="1280x1280 webp q90" >}}

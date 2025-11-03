@@ -123,6 +123,6 @@ archives: ["2019年9月"]
 ## 観察55日目
 
 高さ制限あるのでオクラ自身が斜めになりつつ育っています。。。！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa42a4d3718.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa42a4d3718.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa42a5bb54d.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa42a5bb54d.jpg" title="" Fit="1280x1280 webp q90" >}}

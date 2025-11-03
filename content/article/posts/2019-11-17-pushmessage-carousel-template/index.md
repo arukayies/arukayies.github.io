@@ -265,11 +265,9 @@ GASのスクリプトプロパティの追加手順は過去の記事で紹介�
 
 ## 『カルーセルテンプレートメッセージ』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa22e66a9f5.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa22e66a9f5.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
-例では3つのアクションをカラムオブジェクトに含めています。<figure class="wp-block-image">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa22e6ac611.jpg" alt="" /> </figure> 
+例では3つのアクションをカラムオブジェクトに含めています。{{< custom-figure src="img_5dfa22e6ac611.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 その他のアクションについては別記事で紹介しています。
 

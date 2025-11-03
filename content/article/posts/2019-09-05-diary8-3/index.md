@@ -124,6 +124,6 @@ archives: ["2019年9月"]
 
 上の葉だけを残して、ばっさりと🌿を切り取りました。。。！  
 果たして吉と出るのか・・・。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa422382742.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa422382742.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa422497f4b.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa422497f4b.jpg" title="" Fit="1280x1280 webp q90" >}}

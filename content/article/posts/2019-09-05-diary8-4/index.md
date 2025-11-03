@@ -123,4 +123,4 @@ archives: ["2019年9月"]
 ## 観察39日目
 
 上手いことネットに絡まりながら順調に成長しています！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff4131af5ad.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff4131af5ad.jpg" title="" Fit="1280x1280 webp q90" >}}

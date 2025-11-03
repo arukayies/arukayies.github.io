@@ -127,4 +127,4 @@ archives: ["2019年6月"]
   </div>
 </div>
 
-<img loading="lazy" decoding="async" class="alignnone size-medium" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa32fe05eff.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa32fe05eff.jpg" title="" Fit="1280x1280 webp q90" >}}

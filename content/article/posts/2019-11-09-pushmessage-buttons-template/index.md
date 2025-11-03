@@ -276,9 +276,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 <img loading="lazy" decoding="async" width="1024" height="388" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-28_17_03_56-1024x388.png" alt="" class="wp-image-4536" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-28_17_03_56-1024x388.png 1024w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-28_17_03_56-300x114.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-28_17_03_56-768x291.png 768w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-28_17_03_56.png 1413w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**pushmessage\_buttons\_template** を実行する</figcaption></figure> 
 
-実行すると、LINEに **ボタンテンプレートメッセージ** が送られます！<figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="750" height="700" src="https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636192301.334029.jpg" alt="" class="wp-image-4537" srcset="https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636192301.334029.jpg 750w, https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636192301.334029-300x280.jpg 300w" sizes="(max-width: 750px) 100vw, 750px" /> </figure> 
+実行すると、LINEに **ボタンテンプレートメッセージ** が送られます！{{< custom-figure src="LINE_capture_636192301.334029.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 「 **TOPを開く** 」を選択すると「 **指定したURL** 」を開きます！<figure class="wp-block-image aligncenter size-large">
 

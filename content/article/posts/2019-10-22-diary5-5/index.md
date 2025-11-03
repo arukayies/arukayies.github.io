@@ -165,8 +165,8 @@ archives: ["2019年10月"]
 ## 観察64日目
 
 これはもう収穫しても良さそうです！！！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3b9c87ebd.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3b9c87ebd.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3b9e8361f.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3b9e8361f.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3b9f88a8c.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3b9f88a8c.jpg" title="" Fit="1280x1280 webp q90" >}}

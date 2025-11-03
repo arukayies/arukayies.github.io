@@ -48,9 +48,7 @@ archives: ["2019年9月"]
 
 この植物育成LEDライトをRaspberry Piを使って、<span class="marker"><strong>日没・日の出時刻に自動ON・OFF</strong></span>させてみたので、そのコードを紹介します！
 
-実際にライトがON・OFFしている様子です↓<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27ec5a0c9.gif" alt="" /> </figure> 
+実際にライトがON・OFFしている様子です↓{{< custom-figure src="img_5dfa27ec5a0c9.gif" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="cstmreba">
   <div class="kaerebalink-box">

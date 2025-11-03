@@ -121,4 +121,4 @@ archives: ["2019年6月"]
 ## 38日目
 
 みんな日光に向いててかわいく見えてきました。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee4ba74f05.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee4ba74f05.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -59,7 +59,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-2 sbs-stn sbp-r sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/f_f_object_117_s512_f_object_117_0bg.png" alt="偉い人" class="speech-icon-image" /></figure>
+    {{< custom-figure src="f_f_object_117_s512_f_object_117_0bg.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="speech-name">
       偉い人
@@ -266,7 +266,7 @@ archives: ["2020年4月"]
 これが今の環境です。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="592" height="789" src="https://arukayies.com/wp-content/uploads/2020/04/改造前のデスク環境.jpg" alt="" class="wp-image-2515" srcset="https://arukayies.com/wp-content/uploads/2020/04/改造前のデスク環境.jpg 592w, https://arukayies.com/wp-content/uploads/2020/04/改造前のデスク環境-225x300.jpg 225w" sizes="(max-width: 592px) 100vw, 592px" /></figure>
+  {{< custom-figure src="改造前のデスク環境.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁に固定しています！
@@ -313,7 +313,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-3 sbs-stn sbp-r sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/f_f_object_153_s512_f_object_153_0bg.png" alt="妻" class="speech-icon-image" /></figure>
+    {{< custom-figure src="f_f_object_153_s512_f_object_153_0bg.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="speech-name">
       妻
@@ -451,7 +451,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 身長から理想の高さを計算してくれるサイトを発見！
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="585" height="295" src="https://arukayies.com/wp-content/uploads/2020/04/デスク高.png" alt="" class="wp-image-2540" srcset="https://arukayies.com/wp-content/uploads/2020/04/デスク高.png 585w, https://arukayies.com/wp-content/uploads/2020/04/デスク高-300x151.png 300w" sizes="(max-width: 585px) 100vw, 585px" /><figcaption>机の高さ</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="デスク高.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>机の高さ</figcaption></figure>
 </div>
 
 机の高さは<span class="marker-red"><strong>64cm</strong></span>
@@ -475,7 +475,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 いろんな検索した結果、こんなイメージのPCデスクを作成することにします。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="660" height="660" src="https://arukayies.com/wp-content/uploads/2020/04/ba5adc21770f5ab5e936890e0c28c1ab062592d4.jpg" alt="" class="wp-image-2549" srcset="https://arukayies.com/wp-content/uploads/2020/04/ba5adc21770f5ab5e936890e0c28c1ab062592d4.jpg 660w, https://arukayies.com/wp-content/uploads/2020/04/ba5adc21770f5ab5e936890e0c28c1ab062592d4-300x300.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/ba5adc21770f5ab5e936890e0c28c1ab062592d4-150x150.jpg 150w, https://arukayies.com/wp-content/uploads/2020/04/ba5adc21770f5ab5e936890e0c28c1ab062592d4-100x100.jpg 100w" sizes="(max-width: 660px) 100vw, 660px" /><figcaption>Yasuさん https://roomclip.jp/myroom/605910</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="ba5adc21770f5ab5e936890e0c28c1ab062592d4.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>Yasuさん https://roomclip.jp/myroom/605910</figcaption></figure>
 </div>
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">

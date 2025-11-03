@@ -122,4 +122,4 @@ archives: ["2019年6月"]
 
 <span class="marker"><strong>水菜は再生する</strong></span>そうです。  
 小さい🌱も育ちきるまで、まだまだ育て続けたいと思います！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee17cce571.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee17cce571.jpg" title="" Fit="1280x1280 webp q90" >}}

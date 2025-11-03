@@ -270,7 +270,7 @@ GASのスクリプトプロパティの追加手順は過去の記事で紹介�
 
 ## 『位置情報アクション』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa242d10d60.jpg" alt="" /> </figure> <figure class="wp-block-image"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa242d5adf8.jpg" alt="" /></figure> 
+{{< custom-figure src="img_5dfa242d10d60.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="img_5dfa242d5adf8.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 位置情報を送ったレスポンスに住所・緯度・経度があるので、いろいろ使えそうですね。
 

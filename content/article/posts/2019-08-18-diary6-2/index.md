@@ -123,6 +123,6 @@ archives: ["2019年8月"]
 ## 観察58日目
 
 ほとんど収穫してサラダで食べました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3cea9af4d.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa3cea9af4d.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3cebad6f4.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa3cebad6f4.jpg" title="" Fit="1280x1280 webp q90" >}}

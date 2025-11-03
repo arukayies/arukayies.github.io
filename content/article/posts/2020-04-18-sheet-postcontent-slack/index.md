@@ -85,7 +85,7 @@ archives: ["2020年4月"]
 
 Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/実行後.png" alt="" class="wp-image-2848" width="714" height="95" srcset="https://arukayies.com/wp-content/uploads/2020/04/実行後.png 871w, https://arukayies.com/wp-content/uploads/2020/04/実行後-300x40.png 300w, https://arukayies.com/wp-content/uploads/2020/04/実行後-768x102.png 768w" sizes="(max-width: 714px) 100vw, 714px" /> <figcaption>こんな感じに飛ぶ</figcaption></figure> 
+{{< custom-figure src="実行後.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>こんな感じに飛ぶ</figcaption></figure> 
 
 ちなみに1個目の『入力したら勝手に日付入る＆名前入る』はこちらです。
 
@@ -302,7 +302,7 @@ Scopesエリアの「chat:write」を選択します。
 
 Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/実行後.png" alt="" class="wp-image-2848" width="714" height="95" srcset="https://arukayies.com/wp-content/uploads/2020/04/実行後.png 871w, https://arukayies.com/wp-content/uploads/2020/04/実行後-300x40.png 300w, https://arukayies.com/wp-content/uploads/2020/04/実行後-768x102.png 768w" sizes="(max-width: 714px) 100vw, 714px" /> <figcaption>こんな感じに飛ぶ</figcaption></figure> 
+{{< custom-figure src="実行後.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>こんな感じに飛ぶ</figcaption></figure> 
 
 ## まとめ
 

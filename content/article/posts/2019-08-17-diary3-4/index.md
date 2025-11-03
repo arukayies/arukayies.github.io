@@ -167,12 +167,12 @@ archives: ["2019年8月"]
 ある程度根が出てきたので、100均の製氷皿に土を詰めた  
 <span class="marker"><strong>自作発芽キット</strong></span>に植え替えます！
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3d5675980.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3d5675980.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 こんな感じになりました。
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3d5821e61.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff3d5821e61.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 まだ幼いので、日光を遮るためにアルミシートで屋根代わりです。
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff3d58d2af4.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff3d58d2af4.jpg" title="" Fit="1280x1280 webp q90" >}}

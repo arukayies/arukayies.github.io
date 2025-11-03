@@ -124,6 +124,6 @@ archives: ["2019年8月"]
 
 苗の配置を変えたりしてみましたが、、、  
 高さがもういっぱい、いっぱいです。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa4326a9ce8.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa4326a9ce8.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa43278d808.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa43278d808.jpg" title="" Fit="1280x1280 webp q90" >}}

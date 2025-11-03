@@ -315,7 +315,7 @@ GASの公開URLをLINEに登録する方法はこちらを確認してくださ�
 
 ## 『ポストバックアクション』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa25746fbbe.jpg" alt="" /> </figure> <figure class="wp-block-image"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2574b1db2.jpg" alt="" /></figure> 
+{{< custom-figure src="img_5dfa25746fbbe.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="img_5dfa2574b1db2.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 「ポストバック1」 をタップすると、レスポンスに「<span class="marker"><strong>&#8220;data&#8221;: &#8220;action=postback１&#8221;</strong></span>」と返ってきます。
 

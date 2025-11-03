@@ -122,6 +122,6 @@ archives: ["2019年7月"]
 
 種から育て２ヶ月経過しました  
 枯れてはいませんが、成長も止まっているように見えます。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfeddf0d5f3d.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfeddf0d5f3d.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfeddf28de44.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfeddf28de44.jpg" title="" Fit="1280x1280 webp q90" >}}

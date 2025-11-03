@@ -349,7 +349,7 @@ GASでコーディングする方法は前回の記事を参照お願いしま�
   </li>
 </ul><figure class="wp-block-image aligncenter is-resized">
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa287f5a4fd.png" alt="買い物リスト" style="aspect-ratio:336/365" /> <figcaption class="wp-element-caption">買い物リスト</figcaption></figure> <figure class="wp-block-image aligncenter is-resized"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa287fa479c.gif" alt="買い物リストを通知する様子" style="aspect-ratio:600/400" /><figcaption class="wp-element-caption">買い物リストを通知する様子</figcaption></figure> 
+{{< custom-figure src="img_5dfa287f5a4fd.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">買い物リスト</figcaption></figure> <figure class="wp-block-image aligncenter is-resized">{{< custom-figure src="img_5dfa287fa479c.gif" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">買い物リストを通知する様子</figcaption></figure> 
 
 ## まとめ
 

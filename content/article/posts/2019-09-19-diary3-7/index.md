@@ -88,7 +88,7 @@ archives: ["2019年9月"]
 暖かい気候が続いたからか、葉っぱがいっぱいです！
 
 3か月前↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef70535b9c.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef70535b9c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef7067d732.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfef7067d732.jpg" title="" Fit="1280x1280 webp q90" >}}

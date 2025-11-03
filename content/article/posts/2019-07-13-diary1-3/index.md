@@ -79,10 +79,10 @@ archives: ["2019年7月"]
 ## 発芽前の準備
 
 オクラの種は殻が硬い為、水に浸して発芽させます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa414ce255e.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa414ce255e.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 発芽後はスポンジの発芽キットに植えていきます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa414d1cad9.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa414d1cad9.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 こんな感じに植えてみました  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa414d63062.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa414d63062.jpg" title="" Fit="1280x1280 webp q90" >}}

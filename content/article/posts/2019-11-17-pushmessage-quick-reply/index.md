@@ -372,16 +372,12 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 <img loading="lazy" decoding="async" width="1024" height="291" src="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_14_32_17-1024x291.png" alt="" class="wp-image-4526" srcset="https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_14_32_17-1024x291.png 1024w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_14_32_17-300x85.png 300w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_14_32_17-768x219.png 768w, https://arukayies.com/wp-content/uploads/2021/02/スクリーンショット_2021-02-27_14_32_17.png 1388w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**pushmessage\_quick\_reply** を実行する</figcaption></figure> 
 
-実行すると、LINEに **クイックリプライボタンメッセージ** が送られます！<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa227d58934.jpg" alt="" /> </figure> 
+実行すると、LINEに **クイックリプライボタンメッセージ** が送られます！{{< custom-figure src="img_5dfa227d58934.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
-「 **寿司** 」を選択すると「 **寿司をタップしました！** 」と返ってきます！<figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="750" height="278" src="https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636096477.293758.jpg" alt="" class="wp-image-4523" srcset="https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636096477.293758.jpg 750w, https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636096477.293758-300x111.jpg 300w" sizes="(max-width: 750px) 100vw, 750px" /> </figure> 
+「 **寿司** 」を選択すると「 **寿司をタップしました！** 」と返ってきます！{{< custom-figure src="LINE_capture_636096477.293758.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 その他のアクションについては別記事で紹介しています。
 

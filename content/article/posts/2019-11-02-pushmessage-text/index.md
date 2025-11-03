@@ -276,9 +276,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 <img loading="lazy" decoding="async" width="1024" height="479" src="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_21_56_06-1024x479.png" alt="" class="wp-image-4562" srcset="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_21_56_06-1024x479.png 1024w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_21_56_06-300x140.png 300w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_21_56_06-768x359.png 768w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-02_21_56_06.png 1288w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**pushmessage_text** を実行する</figcaption></figure> 
 
-実行すると、LINEに **テキストメッセージ** が送られます！<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa27880adb1.png" alt="" /> </figure> 
+実行すると、LINEに **テキストメッセージ** が送られます！{{< custom-figure src="img_5dfa27880adb1.png" title="" Fit="1280x1280 webp q90" >}} 
 
 [Unicodeコードポイント表][1]から使える絵文字が一覧で確認できます。
 

@@ -272,9 +272,7 @@ LINE Developersで **チャンネルアクセストークン** を取得して�
 
 ## 『ユーザID』を取得してみた結果
 
-LINE BOTにメッセージを送ると、**ユーザID** を返信してくれます！<figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="750" height="298" src="https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636179728_011168.jpg" alt="" class="wp-image-4531" srcset="https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636179728_011168.jpg 750w, https://arukayies.com/wp-content/uploads/2021/02/LINE_capture_636179728_011168-300x119.jpg 300w" sizes="(max-width: 750px) 100vw, 750px" /> </figure> 
+LINE BOTにメッセージを送ると、**ユーザID** を返信してくれます！{{< custom-figure src="LINE_capture_636179728_011168.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="cstmreba">
   <div class="kaerebalink-box">

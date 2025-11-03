@@ -121,4 +121,4 @@ archives: ["2019年5月"]
 ## 11日目
 
 5cmぐらい成長しました。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee9f54512c.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee9f54512c.jpg" title="" Fit="1280x1280 webp q90" >}}

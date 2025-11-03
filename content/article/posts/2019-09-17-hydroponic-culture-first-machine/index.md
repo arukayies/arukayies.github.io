@@ -38,9 +38,7 @@ archives: ["2019年9月"]
 自宅で野菜を作ってみたくて、<span class="marker"><strong>水耕栽培</strong></span>に興味を持った「くら」です！
 
 これが実際に自作した<span class="marker"><strong>水耕栽培装置</strong></span>です。↓  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa33333c351.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa33333c351.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回は私が自作した水耕栽培装置を紹介します！
 
@@ -161,7 +159,7 @@ archives: ["2019年9月"]
 
 ## 設置場所
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3333c9dfc.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3333c9dfc.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 日光が当たる出窓に設置することにします。  
 
@@ -376,7 +374,7 @@ archives: ["2019年9月"]
 
 <div class="cstmreba">
   <div class="kaerebalink-box">
-    <figure><a rel="nofollow noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhaikanbuhin%2F00377978%2F" target="_blank"><img decoding="async" style="border: none;" src="https://arukayies.com/wp-content/uploads/2019/12/00377978_01.jpg" /></a></figure><figure><img loading="lazy" decoding="async" style="border: none;" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" /></figure>
+    <figure><a rel="nofollow noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhaikanbuhin%2F00377978%2F" target="_blank">{{< custom-figure src="00377978_01.jpg" title="" Fit="1280x1280 webp q90" >}}</a></figure><figure><img loading="lazy" decoding="async" style="border: none;" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" /></figure>
     
     <div class="kaerebalink-image">
     </div>
@@ -505,42 +503,28 @@ archives: ["2019年9月"]
 
 ## 作る手順
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3334ab4d7.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3334ab4d7.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 <span class="number">1</span>100均の突っ張り棒とワイヤーネットを使って、コンテナを支える支柱を作成します。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa333506017.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa333506017.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">2</span>塩ビ管をこんな長さに切断します。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa33358fd56.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa33358fd56.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">3</span>コンテナに穴を開け、給水栓とバブルソケットはOリングを介して接続します。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3335c4246.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3335c4246.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">4</span>塩ビ管とエルボを組み合わせて、オーバーフロー機構を作成します。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3336045c7.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3336045c7.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">5</span>塩ビ管の角度を調整することで、<span class="marker"><strong>コンテナ内の水位を調整</strong></span>することができます！  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3336920fa.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3336920fa.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">6</span>苗を植える分だけ、蓋に穴を開けます。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3336db07c.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3336db07c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">7</span>支柱を作成した場所にコンテナを設置していきます。  
-<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3337777c6.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa3337777c6.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">8</span>日光を遮断させるために、各コンテナにアルミシートをかぶせます。日光を遮断させないと<span style="color: green;">藻</span>の発生で大変なことになります。。。  
 
@@ -577,9 +561,7 @@ wikipediaには「**水生の光合成真核生物全般を指す**」って書�
 
 <div class="box">
   <span class="box-title">ポイント①</span><span style="color: green;">藻</span>の栄養素となる<b>日光</b>を遮断するのが狙いです。
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa333839887.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa333839887.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 
 
@@ -589,18 +571,14 @@ wikipediaには「**水生の光合成真核生物全般を指す**」って書�
 
 <div class="box">
   <span class="box-title">ポイント②</span>徹底的に<span style="color: green;">藻</span>の栄養素となる<b>日光</b>を遮断！
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa3338dd5a9.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa3338dd5a9.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 
 
 ### 失敗した対策
 
 ２か月経過した状況です。  
-<span style="color: green;">藻</span>の発生が明らかです。。。<figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa33399c213.jpg" alt="" /> </figure> 
+<span style="color: green;">藻</span>の発生が明らかです。。。{{< custom-figure src="img_5dfa33399c213.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 
 
@@ -609,15 +587,13 @@ wikipediaには「**水生の光合成真核生物全般を指す**」って書�
 
 <div class="box2">
   <span class="box-title">失敗</span><span style="color: green;">藻</span>の栄養素となる日光を遮断し切れてなかった。
-</div><figure class="wp-block-image aligncenter">
-
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa333a23d8b.jpg" alt="" /> </figure> 
+</div>{{< custom-figure src="img_5dfa333a23d8b.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 
 
 ## まとめ
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa33333c351.jpg" alt="" /> </figure> 
+{{< custom-figure src="img_5dfa33333c351.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 水耕栽培を始めるための準備が整いました！  
 

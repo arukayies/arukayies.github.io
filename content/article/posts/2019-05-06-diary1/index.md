@@ -127,4 +127,4 @@ archives: ["2019年5月"]
 100均のケースにスポンジを敷き詰め、保温遮熱シートで日光を遮断した自作プランターです。  
 スポンジには水をたっぷり含ませています。  
 また、乾かないようにトイレットペーパーを上から被せています。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfeea5901ddb.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfeea5901ddb.jpg" title="" Fit="1280x1280 webp q90" >}}

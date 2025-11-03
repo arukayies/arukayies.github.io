@@ -36,4 +36,4 @@ archives: ["2019年4月"]
 
 背丈が伸びてきたので、支柱で支えています。あと名札つけました。  
 アルティシマなんで、『あーちゃん』っていうニックネームです　笑。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa2c0b15f40.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa2c0b15f40.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -447,7 +447,7 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 解決するためには<span class="fz-22px"><span class="bold-red">ヘッドレスト</span></span>が必要です。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="555" height="526" src="https://arukayies.com/wp-content/uploads/2020/04/ヘッドレストとは.png" alt="" class="wp-image-2700" srcset="https://arukayies.com/wp-content/uploads/2020/04/ヘッドレストとは.png 555w, https://arukayies.com/wp-content/uploads/2020/04/ヘッドレストとは-300x284.png 300w" sizes="(max-width: 555px) 100vw, 555px" /><figcaption>ヘッドレストは赤丸の部分です</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="ヘッドレストとは.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ヘッドレストは赤丸の部分です</figcaption></figure>
 </div>
 
 ## ヘッドレスト的なものを作ってみる

@@ -106,7 +106,7 @@ archives: ["2020年4月"]
 ### 赤枠の部分にコードを貼り付ける
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/コードを追加する.png" alt="" class="wp-image-2814" width="456" height="341" srcset="https://arukayies.com/wp-content/uploads/2020/04/コードを追加する.png 912w, https://arukayies.com/wp-content/uploads/2020/04/コードを追加する-300x224.png 300w, https://arukayies.com/wp-content/uploads/2020/04/コードを追加する-768x574.png 768w" sizes="(max-width: 456px) 100vw, 456px" /><figcaption>コードを追加</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="コードを追加する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>コードを追加</figcaption></figure>
 </div>
 
 貼り付けるコードはこちら↓
@@ -144,7 +144,7 @@ archives: ["2020年4月"]
 
 好きな名前で保存してください。<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/プロジェクト名を保存する.png" alt="" class="wp-image-2821" width="714" height="291" srcset="https://arukayies.com/wp-content/uploads/2020/04/プロジェクト名を保存する.png 932w, https://arukayies.com/wp-content/uploads/2020/04/プロジェクト名を保存する-300x122.png 300w, https://arukayies.com/wp-content/uploads/2020/04/プロジェクト名を保存する-768x313.png 768w" sizes="(max-width: 714px) 100vw, 714px" /> <figcaption>プロジェクト名の保存</figcaption></figure> 
+{{< custom-figure src="プロジェクト名を保存する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>プロジェクト名の保存</figcaption></figure> 
 
 ## スクリプトを実行する
 

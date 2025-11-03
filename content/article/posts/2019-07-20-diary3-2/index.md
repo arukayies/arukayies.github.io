@@ -123,6 +123,6 @@ archives: ["2019年7月"]
 ## 観察29日目
 
 およそ１か月経過しました。ちょっと成長が遅い気がします。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa31c54c318.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa31c54c318.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa31c609f4a.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa31c609f4a.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -122,4 +122,4 @@ archives: ["2019年6月"]
 
 ついに<span class="marker"><strong>水耕栽培システムの初収穫</strong></span>です！  
 収穫後、水菜はサラダで美味しく頂きました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfee24aa6ae2.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfee24aa6ae2.jpg" title="" Fit="1280x1280 webp q90" >}}

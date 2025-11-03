@@ -270,7 +270,7 @@ GASのスクリプトプロパティの追加手順は過去の記事で紹介�
 
 ## 『カメラロールアクション』を送った結果
 
-<img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa249b77f31.jpg" alt="" /> </figure> <figure class="wp-block-image"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa249bb7f46.jpg" alt="" /></figure> 
+{{< custom-figure src="img_5dfa249b77f31.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="img_5dfa249bb7f46.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 画像を送ったレスポンスに含まれる<span class="marker"><strong>&#8220;image&#8221;,&#8221;id&#8221;</strong></span>で  
 画像データを取得することができます。

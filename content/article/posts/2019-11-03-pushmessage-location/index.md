@@ -276,9 +276,7 @@ LINEの **ユーザID** の調べ方はこの手順で確認できます。
 
 <img loading="lazy" decoding="async" width="1024" height="514" src="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-04_21_22_34-1024x514.png" alt="" class="wp-image-4593" srcset="https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-04_21_22_34-1024x514.png 1024w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-04_21_22_34-300x150.png 300w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-04_21_22_34-768x385.png 768w, https://arukayies.com/wp-content/uploads/2021/03/スクリーンショット_2021-03-04_21_22_34.png 1332w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**pushmessage_location** を実行する</figcaption></figure> 
 
-実行すると、LINEに **位置情報メッセージ** が送られます！<figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="750" height="486" src="https://arukayies.com/wp-content/uploads/2021/03/LINE_capture_636553402.764755.jpg" alt="" class="wp-image-4594" srcset="https://arukayies.com/wp-content/uploads/2021/03/LINE_capture_636553402.764755.jpg 750w, https://arukayies.com/wp-content/uploads/2021/03/LINE_capture_636553402.764755-300x194.jpg 300w" sizes="(max-width: 750px) 100vw, 750px" /> </figure> 
+実行すると、LINEに **位置情報メッセージ** が送られます！{{< custom-figure src="LINE_capture_636553402.764755.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 その他のアクションについては別記事で紹介しています。
 

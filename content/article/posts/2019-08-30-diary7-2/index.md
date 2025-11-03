@@ -124,6 +124,6 @@ archives: ["2019年8月"]
 
 根本が枯れはじめ、どうやらここらが限界のようです。  
 残りを収穫してサラダで頂きました！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa33b932180.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa33b932180.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa33ba3d3d6.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa33ba3d3d6.jpg" title="" Fit="1280x1280 webp q90" >}}

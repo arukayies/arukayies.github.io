@@ -123,7 +123,7 @@ archives: ["2019年8月"]
 ## 観察33日目
 
 100均でネットを購入し、頭上に設置しました  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff409c62058.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dff409c62058.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 イメージとしてはぶどう園みたく、ゴーヤが実ればうれしいです　笑　↓  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dff409e00175.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dff409e00175.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -85,22 +85,22 @@ archives: ["2019年9月"]
 ## 観察100日目
 
 ガジュマルの植替を行います！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68b54333.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef68b54333.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 鉢からガジュマルを抜きます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68c129cd.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef68c129cd.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 新しい鉢に鉢底ネットを敷きます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68cc4ad4.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef68cc4ad4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 軽石を入れます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68d882f2.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef68d882f2.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ガジュマルを植えます！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68e5edf0.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef68e5edf0.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 土の乾燥防止に化粧石を敷きます  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68eeeb74.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfef68eeeb74.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 生まれ変わったガジュマルの完成です！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfef68faf4fc.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfef68faf4fc.jpg" title="" Fit="1280x1280 webp q90" >}}

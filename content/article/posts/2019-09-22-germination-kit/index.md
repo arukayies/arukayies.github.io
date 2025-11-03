@@ -39,7 +39,7 @@ archives: ["2019年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="nofollow noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fshizen-midori%2F10000886%2F" target="_blank"><img decoding="async" style="border: none;" src="https://arukayies.com/wp-content/uploads/2019/12/1_142316611.jpg" /></a><img loading="lazy" decoding="async" style="border: none;" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" />
+      <a rel="nofollow noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fitem.rakuten.co.jp%2Fshizen-midori%2F10000886%2F" target="_blank">{{< custom-figure src="1_142316611.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" style="border: none;" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" />
     </div>
     
     <div class="kaerebalink-info">
@@ -86,7 +86,7 @@ archives: ["2019年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="nofollow noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoholife%2Fvermi100%2F" target="_blank"><img decoding="async" style="border: none;" src="https://arukayies.com/wp-content/uploads/2019/12/imgrc0065839510.jpg" /></a><img loading="lazy" decoding="async" style="border: none;" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" />
+      <a rel="nofollow noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fitem.rakuten.co.jp%2Ftoholife%2Fvermi100%2F" target="_blank">{{< custom-figure src="imgrc0065839510.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" style="border: none;" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" />
     </div>
     
     <div class="kaerebalink-info">
@@ -124,17 +124,17 @@ archives: ["2019年9月"]
 ## 作る手順
 
 <span class="number">1</span>製氷皿に穴を開けます。水がこっから抜ける想定です。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28a1e4d54.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa28a1e4d54.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">2</span>この鉢底ネットを各製氷皿の大きさにカットし、はめ込んでいきます。  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28a237c51.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa28a237c51.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28a2807e4.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa28a2807e4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <span class="number">3</span>あとはここにバーミキュライト入れるだけです！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28a2cbfdc.jpg" width="680" height="420" /> 
+{{< custom-figure src="img_5dfa28a2cbfdc.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ## 使ってみた
 
 ゴーヤを植えた時の様子です！  
-<img loading="lazy" decoding="async" class="size-medium aligncenter" src="https://arukayies.com/wp-content/uploads/2019/12/img_5dfa28a3239b4.jpg" width="680" height="420" />
+{{< custom-figure src="img_5dfa28a3239b4.jpg" title="" Fit="1280x1280 webp q90" >}}
