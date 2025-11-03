@@ -39,9 +39,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -91,7 +89,7 @@ archives: ["2024年10月"]
 
 ## 日本→ロンドン→ブダペスト→パリ→日本の航空券は2人で約60万
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/09/IMG_4036-1024x768.jpg" alt="" class="wp-image-5208" srcset="https://arukayies.com/wp-content/uploads/2024/09/IMG_4036-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4036-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4036-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4036.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="161" src="https://arukayies.com/wp-content/uploads/2024/10/image-2-1024x161.png" alt="" class="wp-image-5572" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-2-1024x161.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-2-300x47.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-2-768x121.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-2.png 1248w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4036-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-2-1024x161.png" title="" Fit="1280x1280 webp q90" >}} 
 
 100万円の半分以上を占めるのは航空券です。ANA、JAL等でヨーロッパに行くと、片道だけで50万超えるのでとても悩みました。ヨーロッパへ行こう！と決心したのも2ヶ月前とかなので、早割もなかったです。
 
@@ -103,9 +101,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -159,7 +155,7 @@ archives: ["2024年10月"]
 
 ## ロンドン2泊、ブダペスト3泊、パリ2泊の宿泊費は約16万
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4822-1024x768.jpg" alt="" class="wp-image-5299" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4822-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4822-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4822-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4822.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="194" src="https://arukayies.com/wp-content/uploads/2024/10/image-3-1024x194.png" alt="" class="wp-image-5573" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-3-1024x194.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-3-300x57.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-3-768x146.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-3.png 1244w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4822-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-3-1024x194.png" title="" Fit="1280x1280 webp q90" >}} 
 
 航空券の次に悩んだのは各地の宿泊場所です。日本と同じような基準で選んでいったのですが、1番気になるのは**治安でした**。
 
@@ -173,9 +169,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -239,19 +233,19 @@ archives: ["2024年10月"]
 
 ### ロンドン2泊の食費は2人で約3.3万
 
-<img loading="lazy" decoding="async" width="1024" height="765" src="https://arukayies.com/wp-content/uploads/2024/09/IMG_4035-1024x765.jpg" alt="" class="wp-image-5206" srcset="https://arukayies.com/wp-content/uploads/2024/09/IMG_4035-1024x765.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4035-300x224.jpg 300w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4035-768x574.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4035.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="167" src="https://arukayies.com/wp-content/uploads/2024/10/image-4-1024x167.png" alt="" class="wp-image-5577" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-4-1024x167.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-4-300x49.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-4-768x125.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-4-1536x251.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-4.png 1580w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4035-1024x765.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-4-1024x167.png" title="" Fit="1280x1280 webp q90" >}} 
 
 フィッシュ&チップスとビール、イングリッシュブレックファーストだけは食べる！という夢を達成しました。
 
 ### ブダベスト3泊の食費は2人で約3.1万
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4899-768x1024.jpg" alt="" class="wp-image-5419" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4899-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4899-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4899.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="197" src="https://arukayies.com/wp-content/uploads/2024/10/image-5-1024x197.png" alt="" class="wp-image-5578" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-5-1024x197.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-5-300x58.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-5-768x148.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-5-1536x296.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-5.png 1580w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4899-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-5-1024x197.png" title="" Fit="1280x1280 webp q90" >}} 
 
 朝食付きのホテルへ宿泊だったのと夕食はスーパーで買った軽食で済ませていました。
 
 ### パリ2泊の食費は2人で約3.6万
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-1024x768.jpg" alt="" class="wp-image-5508" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4994.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="273" src="https://arukayies.com/wp-content/uploads/2024/10/image-6-1024x273.png" alt="" class="wp-image-5579" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-6-1024x273.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-6-300x80.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-6-768x205.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-6-1536x410.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-6.png 1582w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4994-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-6-1024x273.png" title="" Fit="1280x1280 webp q90" >}} 
 
 初日に現地のビストロを訪れ、残りは各観光地でサンドウィッチ（カスクート）をよく食べてました。
 
@@ -259,25 +253,25 @@ archives: ["2024年10月"]
 
 ### バンコク観光の費用は約2.4万
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_3976-768x1024.jpg" alt="" class="wp-image-5005" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_3976-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3976-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3976.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="165" src="https://arukayies.com/wp-content/uploads/2024/10/image-7-1024x165.png" alt="" class="wp-image-5583" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-7-1024x165.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-7-300x48.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-7-768x123.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-7-1536x247.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-7.png 1580w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_3976-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-7-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
 
 帰りの乗り継ぎ時に行ったマッサージが割高でした。疲れは取れたので後悔はしていません。
 
 ### ロンドン観光の費用は約0.9万
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/09/IMG_4018-768x1024.jpg" alt="" class="wp-image-5103" srcset="https://arukayies.com/wp-content/uploads/2024/09/IMG_4018-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4018-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4018.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="165" src="https://arukayies.com/wp-content/uploads/2024/10/image-8-1024x165.png" alt="" class="wp-image-5584" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-8-1024x165.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-8-300x48.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-8-768x124.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-8-1536x248.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-8.png 1588w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4018-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-8-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
 
 博物館と建造物を見るだけだったので、**３カ国の中で一番観光費用は安かったです。**
 
 ### ブダベスト観光の費用は約2.4万
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4842-1024x768.jpg" alt="" class="wp-image-5341" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4842-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4842-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4842-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4842.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="385" src="https://arukayies.com/wp-content/uploads/2024/10/image-9-1024x385.png" alt="" class="wp-image-5585" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-9-1024x385.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-9-300x113.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-9-768x289.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-9-1536x578.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-9.png 1584w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4842-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-9-1024x385.png" title="" Fit="1280x1280 webp q90" >}} 
 
 3泊4日とこの旅行で一番長く滞在しましたが、**物価が日本より少し安い**こともありこのぐらいとなりました。
 
 ### パリ観光の費用は約3.9万
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-1024x768.jpg" alt="" class="wp-image-5481" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4936.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="226" src="https://arukayies.com/wp-content/uploads/2024/10/image-10-1024x226.png" alt="" class="wp-image-5586" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-10-1024x226.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-10-300x66.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-10-768x169.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-10-1536x339.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-10.png 1586w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4936-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-10-1024x226.png" title="" Fit="1280x1280 webp q90" >}} 
 
 **最後にお土産を買い込んだので、一番高くなりました**。
 
@@ -291,19 +285,19 @@ archives: ["2024年10月"]
 
 ### バンコクの移動費は2人で約3,600円
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_3967-1024x768.jpg" alt="" class="wp-image-5008" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_3967-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3967-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3967-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_3967.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="88" src="https://arukayies.com/wp-content/uploads/2024/10/image-11-1024x88.png" alt="" class="wp-image-5594" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-11-1024x88.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-11-300x26.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-11-768x66.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-11-1536x132.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-11.png 1586w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_3967-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-11-1024x88.png" title="" Fit="1280x1280 webp q90" >}} 
 
 行きのタイ乗り継ぎ時のみ観光するため電車に乗りました。
 
 ### ロンドンの公共交通機関はクレカタッチでらくらく！移動費は2人で約6,000円
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/09/IMG_4011-768x1024.jpg" alt="" class="wp-image-5093" srcset="https://arukayies.com/wp-content/uploads/2024/09/IMG_4011-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4011-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4011.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="195" src="https://arukayies.com/wp-content/uploads/2024/10/image-12-1024x195.png" alt="" class="wp-image-5595" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-12-1024x195.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-12-300x57.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-12-768x147.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-12-1536x293.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-12.png 1582w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4011-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-12-1024x195.png" title="" Fit="1280x1280 webp q90" >}} 
 
 クレカタッチで地下鉄も二階建てバスも乗車できて便利でした。クレカ明細から合計金額を算出しています。
 
 ### ブダベストではBudapestGoを使ってスマホで乗れる！移動費は2人で約7,300円
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4845-768x1024.jpg" alt="" class="wp-image-5346" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4845-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4845-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4845.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="278" src="https://arukayies.com/wp-content/uploads/2024/10/image-13-1024x278.png" alt="" class="wp-image-5596" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-13-1024x278.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-13-300x81.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-13-768x208.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-13-1536x417.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-13.png 1578w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_4845-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-13-1024x278.png" title="" Fit="1280x1280 webp q90" >}} 
 
 BudapestGoというアプリをインストールすることで、トラム・バス・地下鉄と3種類乗車しました。
 
@@ -315,9 +309,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -355,7 +347,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
 
 ### Navigoを使えば日本のSuicaと変わらず移動できる！パリでの移動費は2人で約1.4万円
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5007-768x1024.jpg" alt="" class="wp-image-5518" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5007-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5007-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5007.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="228" src="https://arukayies.com/wp-content/uploads/2024/10/image-14-1024x228.png" alt="" class="wp-image-5597" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-14-1024x228.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-14-300x67.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-14-768x171.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image-14-1536x342.png 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-14.png 1580w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure> 
+{{< custom-figure src="IMG_5007-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-14-1024x228.png" title="" Fit="1280x1280 webp q90" >}} 
 
 パリではNavigoをiPhoneに設定して、バス・地下鉄・高速鉄道と3種類乗車しました。
 
@@ -367,9 +359,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -444,9 +434,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66fb8c4ad58b7-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

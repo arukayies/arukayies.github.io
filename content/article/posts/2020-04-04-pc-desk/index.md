@@ -37,7 +37,7 @@ archives: ["2020年4月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -75,7 +75,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -89,7 +89,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -111,7 +111,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -125,7 +125,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -139,7 +139,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-3 sbs-stn sbp-r sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/f_f_object_153_s512_f_object_153_0bg-150x150.png" alt="妻" class="speech-icon-image" /></figure>
+    {{< custom-figure src="f_f_object_153_s512_f_object_153_0bg-150x150.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="speech-name">
       妻
@@ -155,7 +155,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -192,7 +192,7 @@ archives: ["2020年4月"]
 </p>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/04/PCデスク全体-1024x768.jpg" alt="" class="wp-image-2756" srcset="https://arukayies.com/wp-content/uploads/2020/04/PCデスク全体-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/PCデスク全体-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/PCデスク全体-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/PCデスク全体-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/PCデスク全体-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>写真立てとかあるのでモザイクかけてます</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="PCデスク全体-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>写真立てとかあるのでモザイクかけてます</figcaption></figure>
 </div>
 
 <p class="has-text-align-center">
@@ -204,7 +204,7 @@ archives: ["2020年4月"]
 </p>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/04/スタンディングデスク全体-1024x768.jpg" alt="" class="wp-image-2757" srcset="https://arukayies.com/wp-content/uploads/2020/04/スタンディングデスク全体-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/スタンディングデスク全体-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/スタンディングデスク全体-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/スタンディングデスク全体-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/スタンディングデスク全体-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>いろいろモザイクかけてます</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="スタンディングデスク全体-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>いろいろモザイクかけてます</figcaption></figure>
 </div>
 
 <p class="has-text-align-center">
@@ -221,9 +221,7 @@ archives: ["2020年4月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/pc-chair-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/pc-chair-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/pc-chair-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/pc-chair-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/pc-chair-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="pc-chair-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -464,9 +462,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 
 サイズが決まったので、DIYするPCデスクのイメージを固めます。
 
-ちなみに、、、使う材料はすでに決まっています。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_4709-1024x768.jpg" alt="" class="wp-image-2547" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_4709-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/IMG_4709-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/IMG_4709-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_4709-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_4709-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+ちなみに、、、使う材料はすでに決まっています。{{< custom-figure src="IMG_4709-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 大量の2×4材と薄い板。買ったはいいが3年ぐらいベット下に熟成されておりました。笑
 
@@ -531,7 +527,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F14cd96483887293eaafe284d644ceae8%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/14_10010004963041301054_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F14cd96483887293eaafe284d644ceae8%2F" target="_blank">{{< custom-figure src="14_10010004963041301054_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -650,13 +646,9 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
   </blockquote>
 </div></figure> 
 
-さっそく、<span class="fz-20px">お部屋の中</span>で**じゃんじゃん切っていきます！**<figure class="wp-block-image size-large">
+さっそく、<span class="fz-20px">お部屋の中</span>で**じゃんじゃん切っていきます！**{{< custom-figure src="IMG_0830-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0830-768x1024.jpg" alt="" class="wp-image-2588" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0830-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0830-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0830-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0830-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0830-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
-
-部屋の中だけど、<span class="fz-20px">木くず</span>気にせず**じゃんじゃん切っていきます！**<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0835-768x1024.jpg" alt="" class="wp-image-2589" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0835-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0835-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0835-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0835-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0835-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+部屋の中だけど、<span class="fz-20px">木くず</span>気にせず**じゃんじゃん切っていきます！**{{< custom-figure src="IMG_0835-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 2時間ぐらいですべて切り終わりました。
 
@@ -669,7 +661,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F1d265082237c258629709c8dadd68dc3%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/6_10010004905009396375_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F1d265082237c258629709c8dadd68dc3%2F" target="_blank">{{< custom-figure src="6_10010004905009396375_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -707,7 +699,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F99f00555cec32bc1ad7f34431f70babf%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/5_10010004905034060012_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F99f00555cec32bc1ad7f34431f70babf%2F" target="_blank">{{< custom-figure src="5_10010004905034060012_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -754,11 +746,11 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0839-768x1024.jpg" alt="" class="wp-image-2597" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0839-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0839-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0839-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0839-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0839-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_0839-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0840-768x1024.jpg" alt="" class="wp-image-2598" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0840-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0840-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0840-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0840-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0840-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_0840-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -771,7 +763,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 スタンディングデスクから組み立てました！
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0842-768x1024.jpg" alt="" class="wp-image-2615" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0842-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0842-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0842-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0842-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0842-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+  {{< custom-figure src="IMG_0842-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 使ってる工具は『ブラックアンドデッカー』です！
@@ -779,7 +771,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fd093c512e6c329267e8d2c10f27bfa76%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/2_10010004536178862301_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fd093c512e6c329267e8d2c10f27bfa76%2F" target="_blank">{{< custom-figure src="2_10010004536178862301_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -825,7 +817,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 途中まで組み立てた様子です！
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0843-768x1024.jpg" alt="" class="wp-image-2616" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0843-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0843-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0843-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0843-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0843-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+  {{< custom-figure src="IMG_0843-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## 【3/29(日) 22時】ついに完成！
@@ -836,15 +828,15 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0857-768x1024.jpg" alt="" class="wp-image-2632" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0857-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0857-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0857-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0857-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0857-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_0857-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0858-768x1024.jpg" alt="" class="wp-image-2633" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0858-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0858-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0858-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0858-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0858-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_0858-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0859-1024x768.jpg" alt="" class="wp-image-2634" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0859-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0859-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0859-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0859-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0859-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_0859-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -867,15 +859,15 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0854-768x1024.jpg" alt="" class="wp-image-2629" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0854-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0854-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0854-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0854-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0854-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_0854-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0855-1024x768.jpg" alt="" class="wp-image-2630" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0855-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0855-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0855-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0855-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0855-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_0855-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/04/IMG_0856-1024x768.jpg" alt="" class="wp-image-2631" srcset="https://arukayies.com/wp-content/uploads/2020/04/IMG_0856-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0856-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0856-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0856-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/IMG_0856-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_0856-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -934,7 +926,7 @@ PCデスクの材料費は合計、**<span class="fz-22px">￥</span><span class
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -952,7 +944,7 @@ PCデスクの材料費は合計、**<span class="fz-22px">￥</span><span class
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>

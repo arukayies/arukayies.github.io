@@ -37,9 +37,7 @@ archives: ["2019年7月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary10-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary10-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary10-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary10-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary10-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary10-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -83,10 +81,10 @@ archives: ["2019年7月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      <img data-src="https://arukayies.com/wp-content/uploads/2019/09/hydroponic_culture_first_machine.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
+      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        <img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/09/hydroponic_culture_first_machine.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
+        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">

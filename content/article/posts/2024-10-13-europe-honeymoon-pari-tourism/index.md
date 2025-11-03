@@ -36,9 +36,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -78,9 +76,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-67071813cc15b-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-67071813cc15b-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-67071813cc15b-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-67071813cc15b-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-67071813cc15b-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-67071813cc15b-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -122,9 +118,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -164,7 +158,7 @@ archives: ["2024年10月"]
 
 ## 1日目：治安に不安のあるフランスへ到着
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4915-1024x768.jpg" alt="" class="wp-image-5448" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4915-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4915-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4915-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4915.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4915-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 この旅最終目的地のフランスへと到着しました。
 
@@ -173,12 +167,12 @@ archives: ["2024年10月"]
 楽天モバイルの通信料はちょうど6日目ぐらいに使い切り、**1,000円2GBをチャージすることで帰国まで快適に使えました。無料分2GBもあったのが助かりました**。
 
 
-<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> <img loading="lazy" decoding="async" border="0" width="300" height="250" alt="" src="https://arukayies.com/wp-content/uploads/2024/10/31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" /></a><img loading="lazy" decoding="async" border="0" width="1" height="1" src="https://arukayies.com/wp-content/uploads/2024/10/img_66fe59b996a7f.gif" alt="" /> 
+<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> {{< custom-figure src="31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" title="" Fit="1280x1280 webp q90" >}}</a>{{< custom-figure src="img_66fe59b996a7f.gif" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/4_eu-5gb.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="4_eu-5gb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -217,11 +211,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4917-768x1024.jpg" alt="" class="wp-image-5450" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4917-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4917-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4917.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4917-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4916-768x1024.jpg" alt="" class="wp-image-5451" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4916-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4916-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4916.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4916-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -275,11 +269,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="473" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1-473x1024.jpg" alt="" class="wp-image-5453" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1-473x1024.jpg 473w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1-139x300.jpg 139w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1-768x1662.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1-710x1536.jpg 710w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1-946x2048.jpg 946w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4918-1.jpg 1170w" sizes="(max-width: 473px) 100vw, 473px" /></figure>
+    {{< custom-figure src="IMG_4918-1-473x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="473" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4919-473x1024.png" alt="" class="wp-image-5454" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4919-473x1024.png 473w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4919-139x300.png 139w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4919-768x1662.png 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4919-710x1536.png 710w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4919-946x2048.png 946w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4919.png 1170w" sizes="(max-width: 473px) 100vw, 473px" /></figure>
+    {{< custom-figure src="IMG_4919-473x1024.png" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -395,11 +389,11 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4922-768x1024.jpg" alt="" class="wp-image-5457" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4922-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4922-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4922.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4922-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4920-768x1024.jpg" alt="" class="wp-image-5458" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4920-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4920-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4920.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4920-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -419,9 +413,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
   </li>
 </ul>
 
-線路沿いは落書きだらけで、電車内の窓ガラスも傷だらけで確かに治安が悪そうな雰囲気はありましたが、油断しなければ大丈夫という感想です。<figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4923-768x1024.jpg" alt="" class="wp-image-5460" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4923-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4923-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4923.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+線路沿いは落書きだらけで、電車内の窓ガラスも傷だらけで確かに治安が悪そうな雰囲気はありましたが、油断しなければ大丈夫という感想です。{{< custom-figure src="IMG_4923-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 乗り換え1回、およそ空港から1時間で「<a rel="noopener" href="https://www.agoda.com/ja-jp/hotel-le-cardinal/hotel/paris-fr.html" target="_blank" title="">ホテル ル カルディナル (Hotel Le Cardinal)</a>」へと到着です。
 
@@ -476,11 +468,11 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4925-768x1024.jpg" alt="" class="wp-image-5463" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4925-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4925-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4925.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4925-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4926-768x1024.jpg" alt="" class="wp-image-5464" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4926-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4926-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4926.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4926-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -490,11 +482,11 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4927-768x1024.jpg" alt="" class="wp-image-5465" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4927-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4927-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4927.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4927-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4928-768x1024.jpg" alt="" class="wp-image-5466" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4928-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4928-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4928.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4928-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -504,11 +496,11 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4929-768x1024.jpg" alt="" class="wp-image-5467" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4929-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4929-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4929.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4929-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4930-768x1024.jpg" alt="" class="wp-image-5468" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4930-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4930-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4930.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4930-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -520,11 +512,11 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4931-1024x768.jpg" alt="" class="wp-image-5469" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4931-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4931-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4931-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4931.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4931-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4932-768x1024.jpg" alt="" class="wp-image-5470" style="width:227px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4932-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4932-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4932.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4932-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -576,7 +568,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 ### 21時：パリのスーパー「Supermarché Diagonal」へ
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4933-768x1024.jpg" alt="" class="wp-image-5473" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4933-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4933-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4933.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_4933-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ホテルから出てすぐのとこにあったスーパーに帰る前に寄りました。
 
@@ -638,7 +630,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 ### 9時：フランスといえば朝はパン屋で贅沢に
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4934-1024x768.jpg" alt="" class="wp-image-5477" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4934-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4934-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4934-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4934.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4934-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 パリの日の出は朝の８時過ぎと日本と比べると遅いです。なので朝ごはんもゆっくりめの9時に出かけました。
 
@@ -690,7 +682,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 ### 10時：凱旋門
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-1024x768.jpg" alt="" class="wp-image-5481" style="width:840px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4936-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4936.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4936-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 凱旋門です。パン屋さんから歩きと電車で20分とすぐ着きました。
 
@@ -745,11 +737,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4939-768x1024.jpg" alt="" class="wp-image-5483" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4939-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4939-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4939.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4939-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4938-768x1024.jpg" alt="" class="wp-image-5484" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4938-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4938-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4938.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4938-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -804,11 +796,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4982-768x1024.jpg" alt="" class="wp-image-5487" style="width:230px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4982-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4982-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4982.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4982-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4981-1024x768.jpg" alt="" class="wp-image-5488" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4981-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4981-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4981-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4981.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4981-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -908,11 +900,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4978-768x1024.jpg" alt="" class="wp-image-5489" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4978-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4978-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4978.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4978-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4979-768x1024.jpg" alt="" class="wp-image-5490" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4979-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4979-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4979.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4979-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -920,11 +912,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4984-768x1024.jpg" alt="" class="wp-image-5492" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4984-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4984-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4984.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4984-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4985-768x1024.jpg" alt="" class="wp-image-5493" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4985-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4985-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4985.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4985-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -988,17 +980,17 @@ Exitは空港まではあったので、油断してました。
 
 ### 16時：サン・シュルピス教会
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4986-1024x768.jpg" alt="" class="wp-image-5496" style="width:840px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4986-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4986-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4986-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4986.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4986-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 映画・小説「**ダヴィンチコード**」の舞台となった教会です。ルーブル美術館前に寄りました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4988-768x1024.jpg" alt="" class="wp-image-5499" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4988-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4988-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4988.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4988-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4987-1-768x1024.jpg" alt="" class="wp-image-5500" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4987-1-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4987-1-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4987-1.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4987-1-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1047,7 +1039,7 @@ Exitは空港まではあったので、油断してました。
 
 ### 17時：最後の観光地ルーブル美術館へ！
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4991-1024x768.jpg" alt="" class="wp-image-5502" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4991-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4991-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4991-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4991.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4991-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 教会からバスに乗りルーブル美術館へとやってきました。
 
@@ -1158,35 +1150,35 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4992-768x1024.jpg" alt="" class="wp-image-5505" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4992-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4992-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4992.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">モナ・リザだけ強そうな警備員いました。</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4992-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">モナ・リザだけ強そうな警備員いました。</figcaption></figure>
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4996-768x1024.jpg" alt="" class="wp-image-5506" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4996-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4996-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4996.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /><figcaption class="wp-element-caption">「ミロのヴィーナス」教科書で見るやつ。</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4996-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">「ミロのヴィーナス」教科書で見るやつ。</figcaption></figure>
   </div>
 </div>
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4997-1024x768.jpg" alt="" class="wp-image-5507" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4997-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4997-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4997-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4997.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">「民衆を導く自由の女神」</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4997-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">「民衆を導く自由の女神」</figcaption></figure>
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-1024x768.jpg" alt="" class="wp-image-5508" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4994-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4994.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">休憩時に食べたカスクートとビール</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4994-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">休憩時に食べたカスクートとビール</figcaption></figure>
   </div>
 </div><figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4998-1024x768.jpg" alt="" class="wp-image-5509" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4998-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4998-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4998-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4998.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">ルーブル美術館のライトアップ</figcaption></figure> 
+{{< custom-figure src="IMG_4998-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">ルーブル美術館のライトアップ</figcaption></figure> 
 
 ### 21時：フランスのクイズ・ミリオネアの賞金は100万€！
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4999-1024x768.jpg" alt="" class="wp-image-5511" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4999-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4999-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4999-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4999.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4999-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5001-1024x768.jpg" alt="" class="wp-image-5512" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5001-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5001-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5001-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5001.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_5001-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1204,7 +1196,7 @@ Exitは空港まではあったので、油断してました。
 
 ### 8時30分：スーパー1店舗目「MONOPRIX」
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5002-1024x768.jpg" alt="" class="wp-image-5514" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5002-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5002-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5002-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5002.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_5002-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 まずはホテルから歩いて15分ぐらいのところにあった「MONOPRIX」というスーパーへ。
 
@@ -1256,7 +1248,7 @@ Exitは空港まではあったので、油断してました。
 
 ### 9時：スーパー2店舗目「Carrefour Market」
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5003-1024x768.jpg" alt="" class="wp-image-5515" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5003-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5003-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5003-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5003.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_5003-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 続いて向かったのが「Carrefour Market」です。先ほどの「MONOPRIX」より大きい店舗でした。
 
@@ -1316,11 +1308,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5008-768x1024.jpg" alt="" class="wp-image-5517" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5008-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5008-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5008.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5008-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5007-768x1024.jpg" alt="" class="wp-image-5518" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5007-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5007-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5007.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5007-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1336,9 +1328,7 @@ Exitは空港まではあったので、油断してました。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1376,11 +1366,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5006-1024x768.jpg" alt="" class="wp-image-5520" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5006-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5006-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5006-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5006.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_5006-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5005-768x1024.jpg" alt="" class="wp-image-5521" style="width:227px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5005-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5005-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5005.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5005-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1392,17 +1382,17 @@ Exitは空港まではあったので、油断してました。
 
 ### 12時：シャルル・ド・ゴール国際空港〜出発エリア内〜
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5010-1024x768.jpg" alt="" class="wp-image-5522" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5010-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5010-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5010-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5010.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_5010-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 保安検査、出国審査を経て出発エリア内へと到着しました。出国審査はパスポートを機械で読み取らせ、顔写真を撮影するだけと簡単です。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5011-768x1024.jpg" alt="" class="wp-image-5523" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5011-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5011-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5011.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5011-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5012-768x1024.jpg" alt="" class="wp-image-5524" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5012-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5012-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5012.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5012-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1412,11 +1402,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="576" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5013-576x1024.jpg" alt="" class="wp-image-5525" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5013-576x1024.jpg 576w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5013-169x300.jpg 169w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5013-768x1365.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5013-864x1536.jpg 864w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5013.jpg 960w" sizes="(max-width: 576px) 100vw, 576px" /></figure>
+    {{< custom-figure src="IMG_5013-576x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="576" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5014-576x1024.jpg" alt="" class="wp-image-5526" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5014-576x1024.jpg 576w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5014-169x300.jpg 169w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5014-768x1365.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5014-864x1536.jpg 864w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5014.jpg 960w" sizes="(max-width: 576px) 100vw, 576px" /></figure>
+    {{< custom-figure src="IMG_5014-576x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1428,11 +1418,11 @@ Exitは空港まではあったので、油断してました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5015-768x1024.jpg" alt="" class="wp-image-5527" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5015-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5015-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5015.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5015-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_5016-768x1024.jpg" alt="" class="wp-image-5528" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_5016-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5016-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_5016.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_5016-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -1454,10 +1444,10 @@ Exitは空港まではあったので、油断してました。
       <span class="fa"></span>
     </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
     
-    <img data-src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="" class=" internal-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
     <noscript>
-      <img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="" class=" internal-blogcard-thumb-image" width="160" height="90" />
+      {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     </noscript></figure>
     
     <div class="blogcard-content internal-blogcard-content">
@@ -1495,9 +1485,7 @@ Exitは空港まではあったので、油断してました。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/1-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/1-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/1-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/1-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/1-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="1-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1539,9 +1527,7 @@ Exitは空港まではあったので、油断してました。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

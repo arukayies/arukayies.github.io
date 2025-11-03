@@ -386,7 +386,7 @@ yucatio.hatenablog.com
 ## まとめ
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box cocoon-block-balloon">
 <div class="speech-person">
-<figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+{{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 <div class="speech-balloon">
 <p>

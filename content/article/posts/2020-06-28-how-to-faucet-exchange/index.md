@@ -38,7 +38,7 @@ archives: ["2020年6月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -52,7 +52,7 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -112,7 +112,7 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -137,7 +137,7 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -154,7 +154,7 @@ archives: ["2020年6月"]
     <div class="cstmreba">
       <div class="kaerebalink-box">
         <div class="kaerebalink-image">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F57d43767a083d250c246b804b8807d08%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/2_10010004984824449602_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F57d43767a083d250c246b804b8807d08%2F" target="_blank">{{< custom-figure src="2_10010004984824449602_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
         </div>
         
         <div class="kaerebalink-info">
@@ -196,7 +196,7 @@ archives: ["2020年6月"]
       我が家の高さを確認してみましょう。
     </p><figure class="wp-block-image size-large">
     
-    <img loading="lazy" decoding="async" width="767" height="1024" src="https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-767x1024.jpg" alt="水栓までの高さ" class="wp-image-3923" srcset="https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-767x1024.jpg 767w, https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-768x1026.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-1150x1536.jpg 1150w, https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-1534x2048.jpg 1534w, https://arukayies.com/wp-content/uploads/2020/06/洗濯機の高さ-scaled.jpg 1917w" sizes="(max-width: 767px) 100vw, 767px" /><figcaption>水栓までの高さ</figcaption></figure> 
+    {{< custom-figure src="洗濯機の高さ-767x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>水栓までの高さ</figcaption></figure> 
     
     <p>
       <span class="fz-36px">1,010mm</span>
@@ -217,7 +217,7 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -257,7 +257,7 @@ archives: ["2020年6月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F149375d67daef3ff9ee0e230fbfcf5b1%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/2_10010004972353049363_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F149375d67daef3ff9ee0e230fbfcf5b1%2F" target="_blank">{{< custom-figure src="2_10010004972353049363_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -300,7 +300,7 @@ archives: ["2020年6月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/2_10010004972353604005_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">{{< custom-figure src="2_10010004972353604005_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -343,7 +343,7 @@ archives: ["2020年6月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fc63a3cc964e25694574e8a54aeaa641c%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/1_10010004977292212526_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fc63a3cc964e25694574e8a54aeaa641c%2F" target="_blank">{{< custom-figure src="1_10010004977292212526_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -387,11 +387,11 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1196-1024x768.jpg" alt="こんな箱に入ってます" class="wp-image-4015" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1196-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1196-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1196-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1196-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1196-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>こんな箱に入ってます</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_1196-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>こんな箱に入ってます</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-1024x768.jpg" alt="右に回すと水が止まります" class="wp-image-4016" width="357" height="267" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2048x1536.jpg 2048w" sizes="(max-width: 357px) 100vw, 357px" /><figcaption>右に回すと水が止まります</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1197-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>右に回すと水が止まります</figcaption></figure>
   </div>
 </div>
 
@@ -404,11 +404,11 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1185-1024x768.jpg" alt="取り外し前" class="wp-image-4017" width="324" height="242" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1185-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1185-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1185-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1185-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1185-2048x1536.jpg 2048w" sizes="(max-width: 324px) 100vw, 324px" /><figcaption>取り外し前</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1185-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>取り外し前</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1186-768x1024.jpg" alt="取り外し後" class="wp-image-4018" width="253" height="337" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1186-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1186-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1186-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1186-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1186-scaled.jpg 1920w" sizes="(max-width: 253px) 100vw, 253px" /><figcaption>取り外し後</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1186-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>取り外し後</figcaption></figure>
   </div>
 </div>
 
@@ -417,7 +417,7 @@ archives: ["2020年6月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/2_10010004972353604005_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">{{< custom-figure src="2_10010004972353604005_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -455,7 +455,7 @@ archives: ["2020年6月"]
 ## 取り付け口を掃除する
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1187-768x1024.jpg" alt="古い歯ブラシで掃除する" class="wp-image-4019" width="714" height="952" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1187-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1187-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1187-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1187-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1187-scaled.jpg 1920w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>古い歯ブラシで掃除する</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="IMG_1187-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>古い歯ブラシで掃除する</figcaption></figure>
 </div>
 
 蛇口に付いていたテープ等あるので、古い歯ブラシ等で綺麗に掃除します。
@@ -467,15 +467,15 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1190-768x1024.jpg" alt="蛇口取付1" class="wp-image-4020" width="238" height="317" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1190-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1190-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1190-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1190-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1190-scaled.jpg 1920w" sizes="(max-width: 238px) 100vw, 238px" /><figcaption>蛇口取付1</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1190-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>蛇口取付1</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1191-768x1024.jpg" alt="蛇口取付2" class="wp-image-4021" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1191-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1191-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1191-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1191-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1191-scaled.jpg 1920w" sizes="(max-width: 768px) 100vw, 768px" /><figcaption>蛇口取付2</figcaption></figure>
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_1191-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>蛇口取付2</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1193-768x1024.jpg" alt="蛇口取付3" class="wp-image-4022" width="238" height="317" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1193-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1193-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1193-1152x1536.jpg 1152w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1193-1536x2048.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1193-scaled.jpg 1920w" sizes="(max-width: 238px) 100vw, 238px" /><figcaption>蛇口取付3</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1193-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>蛇口取付3</figcaption></figure>
   </div>
 </div>
 
@@ -485,13 +485,13 @@ archives: ["2020年6月"]
 
 ## 給水栓を開ける
 
-<img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2-1024x768.jpg" alt="給水栓を開ける" class="wp-image-4023" width="714" height="535" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1197-2-2048x1536.jpg 2048w" sizes="(max-width: 714px) 100vw, 714px" /> <figcaption>給水栓を開ける</figcaption></figure> 
+{{< custom-figure src="IMG_1197-2-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption>給水栓を開ける</figcaption></figure> 
 
 取り付けが完了したら、給水栓を開けます。
 
 ## 水漏れチェック
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2020/06/IMG_1239-1024x768.jpg" alt="向き変えた" class="wp-image-4024" srcset="https://arukayies.com/wp-content/uploads/2020/06/IMG_1239-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1239-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1239-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1239-1536x1152.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/IMG_1239-2048x1536.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>向き変えた</figcaption></figure> 
+{{< custom-figure src="IMG_1239-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption>向き変えた</figcaption></figure> 
 
 水が漏れるとしたら、給水した瞬間だと思うので接続部分をチェックしましょう。
 
@@ -501,7 +501,7 @@ archives: ["2020年6月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>

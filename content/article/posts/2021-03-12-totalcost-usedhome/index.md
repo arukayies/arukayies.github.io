@@ -39,7 +39,7 @@ archives: ["2021年3月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -109,12 +109,12 @@ archives: ["2021年3月"]
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-1024x576.jpg" alt="" class="wp-image-4606" srcset="https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-1024x576.jpg 1024w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-300x169.jpg 300w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-768x432.jpg 768w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-376x212.jpg 376w, https://arukayies.com/wp-content/uploads/2021/03/ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311.jpg 1334w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+  {{< custom-figure src="ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-1024x576.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -132,7 +132,7 @@ archives: ["2021年3月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -834,7 +834,7 @@ archives: ["2021年3月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>

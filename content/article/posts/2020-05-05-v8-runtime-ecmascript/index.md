@@ -36,7 +36,7 @@ archives: ["2020年5月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -138,7 +138,7 @@ archives: ["2020年5月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -178,7 +178,7 @@ archives: ["2020年5月"]
 
 と選択するだけです！<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="458" src="https://arukayies.com/wp-content/uploads/2020/04/v8_on-1-1024x458.png" alt="" class="wp-image-2897" srcset="https://arukayies.com/wp-content/uploads/2020/04/v8_on-1-1024x458.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/v8_on-1-300x134.png 300w, https://arukayies.com/wp-content/uploads/2020/04/v8_on-1-768x344.png 768w, https://arukayies.com/wp-content/uploads/2020/04/v8_on-1.png 1332w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>実行 > Chrome V8 を搭載した新しい Apps Script ランタイムを有効にする を選択</figcaption></figure> 
+{{< custom-figure src="v8_on-1-1024x458.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>実行 > Chrome V8 を搭載した新しい Apps Script ランタイムを有効にする を選択</figcaption></figure> 
 
 ## 【新機能①】ECMAScript構文
 
@@ -432,7 +432,7 @@ function arrow_after_sample2() {
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -931,7 +931,7 @@ function hello(greeting, name) {
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>

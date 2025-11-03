@@ -49,7 +49,7 @@ WordPressのサイトを持っている前提で話をすすめます！
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798064741_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -106,17 +106,13 @@ WordPressのサイトを持っている前提で話をすすめます！
 
 プラグイン　＞　新規追加を押下し、キーワードに【Application Passwords】と入力。
 
-下の画像が出てきたら、【Application Passwords】をインストールし、有効化する。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="375" src="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_06_51-1024x375.png" alt="" class="wp-image-2177" srcset="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_06_51-1024x375.png 1024w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_06_51-300x110.png 300w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_06_51-768x281.png 768w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_06_51-1536x563.png 1536w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_06_51.png 1588w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+下の画像が出てきたら、【Application Passwords】をインストールし、有効化する。{{< custom-figure src="スクリーンショット_2020-02-08_20_06_51-1024x375.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ### パスワードの発行
 
 サイドメニューからユーザーを選択。
 
-ユーザー　＞　あなたのプロフィールを押下し、【New Application Password Name】にユーザー名を入力。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="389" src="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-1024x389.png" alt="" class="wp-image-2179" srcset="https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-1024x389.png 1024w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-300x114.png 300w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-768x291.png 768w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10-1536x583.png 1536w, https://arukayies.com/wp-content/uploads/2020/02/スクリーンショット_2020-02-08_20_16_10.png 1592w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+ユーザー　＞　あなたのプロフィールを押下し、【New Application Password Name】にユーザー名を入力。{{< custom-figure src="スクリーンショット_2020-02-08_20_16_10-1024x389.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ユーザ名とパスワードが表示されるので、これを控えておいてください。{{< custom-figure src="スクリーンショット_2020-02-08_20_18_22.png" title="" Fit="1280x1280 webp q90" >}} 
 
@@ -143,7 +139,7 @@ var content = 'これは自動投稿です。';</pre>
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798064741_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">

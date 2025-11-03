@@ -57,9 +57,7 @@ archives: ["2024年9月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -110,7 +108,7 @@ archives: ["2024年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhoriku%2F2b2ksgyktl%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/8_2b2ksgyktl_0.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhoriku%2F2b2ksgyktl%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="8_2b2ksgyktl_0.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -154,7 +152,7 @@ archives: ["2024年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1651%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/6_a1651_snb.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1651%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="6_a1651_snb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -198,7 +196,7 @@ archives: ["2024年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fedion%2F4907986022827%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/6_4907986022827_ll.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fedion%2F4907986022827%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="6_4907986022827_ll.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -242,7 +240,7 @@ archives: ["2024年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/4_eu-5gb.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="4_eu-5gb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -280,7 +278,7 @@ archives: ["2024年9月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fimpression-shop%2Fesim-global6%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/3_esim13-11.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fimpression-shop%2Fesim-global6%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="3_esim13-11.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -316,7 +314,7 @@ archives: ["2024年9月"]
 </div>
 
 
-<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> <img loading="lazy" decoding="async" border="0" width="300" height="250" alt="" src="https://arukayies.com/wp-content/uploads/2024/10/bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" /></a><img loading="lazy" decoding="async" border="0" width="1" height="1" src="https://arukayies.com/wp-content/uploads/2024/10/img_66fe290165008.gif" alt="" /> 
+<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> {{< custom-figure src="bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" title="" Fit="1280x1280 webp q90" >}}</a>{{< custom-figure src="img_66fe290165008.gif" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
   <p>
@@ -330,7 +328,7 @@ archives: ["2024年9月"]
 
 ## 行きたいところをまとめる
 
-<img loading="lazy" decoding="async" width="1024" height="572" src="https://arukayies.com/wp-content/uploads/2024/09/image-1024x572.jpg" alt="" class="wp-image-4868" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-1024x572.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/09/image-300x168.jpg 300w, https://arukayies.com/wp-content/uploads/2024/09/image-768x429.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/image-1536x858.jpg 1536w, https://arukayies.com/wp-content/uploads/2024/09/image-2048x1143.jpg 2048w, https://arukayies.com/wp-content/uploads/2024/09/image-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/09/image-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/09/image-320x180.jpg 320w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="image-1024x572.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 Googleマップを利用して場所のリストを作成するのが便利でした。
 
@@ -462,7 +460,7 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 また直行便よりも**乗り継ぎ便が安い**ことが分かり、**スケジュールを再検討**しました。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="142" src="https://arukayies.com/wp-content/uploads/2024/09/image-6-1024x142.png" alt="" class="wp-image-4878" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-6-1024x142.png 1024w, https://arukayies.com/wp-content/uploads/2024/09/image-6-300x42.png 300w, https://arukayies.com/wp-content/uploads/2024/09/image-6-768x107.png 768w, https://arukayies.com/wp-content/uploads/2024/09/image-6.png 1036w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">最安値は乗り継ぎありで6.5万、直行便だと24万と乗り継ぎ便を利用することで半額以下に！</figcaption></figure> 
+{{< custom-figure src="image-6-1024x142.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">最安値は乗り継ぎありで6.5万、直行便だと24万と乗り継ぎ便を利用することで半額以下に！</figcaption></figure> 
 
 実際に予約した飛行機代↓
 
@@ -470,33 +468,25 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 成田空港は遠いので、羽田空港発かつ機内食が美味しいと評判なタイ国際航空を選択。
 
-しっかりと寝ることは出来ませんでしたが、機内食は全て美味しくお酒も飲めて快適でした。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="378" src="https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_31-1-1024x378.jpg" alt="" class="wp-image-4885" srcset="https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_31-1-1024x378.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_31-1-300x111.jpg 300w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_31-1-768x283.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_31-1-1536x566.jpg 1536w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_31-1.jpg 1698w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+しっかりと寝ることは出来ませんでしたが、機内食は全て美味しくお酒も飲めて快適でした。{{< custom-figure src="2024-09-30_午後4_19_31-1-1024x378.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ### ロンドン〜ブダペスト：50,220円
 
 LCCは不安だったので、フラッグ・キャリアを選択。
 
-軽食も出て快適でしたが、1時間くらいの遅延で到着しました。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="193" src="https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_39-1024x193.png" alt="" class="wp-image-4887" srcset="https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_39-1024x193.png 1024w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_39-300x57.png 300w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_39-768x145.png 768w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_39-1536x290.png 1536w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_39.png 1706w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+軽食も出て快適でしたが、1時間くらいの遅延で到着しました。{{< custom-figure src="スクリーンショット_2024-09-30_午後4_19_39-1024x193.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ### ブダペスト〜パリ：93,180円
 
 こちらも同じくフラッグ・キャリアを選択。
 
-軽食も出て快適でしたが、こちらも遅延しての到着。海外だと通常運転なのかな。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="185" src="https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_46-1024x185.png" alt="" class="wp-image-4889" srcset="https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_46-1024x185.png 1024w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_46-300x54.png 300w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_46-768x139.png 768w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_46-1536x277.png 1536w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後4_19_46.png 1718w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+軽食も出て快適でしたが、こちらも遅延しての到着。海外だと通常運転なのかな。{{< custom-figure src="スクリーンショット_2024-09-30_午後4_19_46-1024x185.png" title="" Fit="1280x1280 webp q90" >}} 
 
 ### パリ〜バンコク〜羽田：225,460円
 
 帰国も行きと同じくタイ国際航空を選択。
 
-パリ発のためか機内食はヨーロッパ料理もあって、最後まで快適でした。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="364" src="https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_53-1024x364.jpg" alt="" class="wp-image-4891" srcset="https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_53-1024x364.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_53-300x107.jpg 300w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_53-768x273.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_53-1536x546.jpg 1536w, https://arukayies.com/wp-content/uploads/2024/09/2024-09-30_午後4_19_53.jpg 1710w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+パリ発のためか機内食はヨーロッパ料理もあって、最後まで快適でした。{{< custom-figure src="2024-09-30_午後4_19_53-1024x364.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
   <p>
@@ -563,15 +553,11 @@ LCCは不安だったので、フラッグ・キャリアを選択。
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="448" src="https://arukayies.com/wp-content/uploads/2024/09/image-8-1024x448.jpg" alt="" class="wp-image-4896" srcset="https://arukayies.com/wp-content/uploads/2024/09/image-8-1024x448.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/09/image-8-300x131.jpg 300w, https://arukayies.com/wp-content/uploads/2024/09/image-8-768x336.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/image-8-1536x672.jpg 1536w, https://arukayies.com/wp-content/uploads/2024/09/image-8-2048x896.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+</div>{{< custom-figure src="image-8-1024x448.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 次の画面で「旅客情報を修正」ボタンを押し、名前とパスポート情報を登録します。
 
-この**旅客情報を登録することで初めて座席指定できる**ようになります。<figure class="wp-block-image size-large">
-
-<img loading="lazy" decoding="async" width="1024" height="410" src="https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後5_15_01-1024x410.png" alt="" class="wp-image-4897" srcset="https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後5_15_01-1024x410.png 1024w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後5_15_01-300x120.png 300w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後5_15_01-768x307.png 768w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後5_15_01-1536x615.png 1536w, https://arukayies.com/wp-content/uploads/2024/09/スクリーンショット_2024-09-30_午後5_15_01.png 1824w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+この**旅客情報を登録することで初めて座席指定できる**ようになります。{{< custom-figure src="スクリーンショット_2024-09-30_午後5_15_01-1024x410.png" title="" Fit="1280x1280 webp q90" >}} 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
   <p>
@@ -636,7 +622,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### ロンドン2泊：30,609円
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/2024-09-14_21-38-18_514-1-768x1024.jpeg" alt="" class="wp-image-4907" srcset="https://arukayies.com/wp-content/uploads/2024/10/2024-09-14_21-38-18_514-1-768x1024.jpeg 768w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-14_21-38-18_514-1-225x300.jpeg 225w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-14_21-38-18_514-1-1152x1536.jpeg 1152w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-14_21-38-18_514-1-1536x2048.jpeg 1536w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-14_21-38-18_514-1-scaled.jpeg 1920w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="2024-09-14_21-38-18_514-1-768x1024.jpeg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 空港着が19時ということもあり、空港直結の「<a rel="noopener" href="https://www.agoda.com/ja-jp/premier-inn-heathrow-airport-terminal-4/hotel/london-gb.html" target="_blank" title="">プレミア イン ヒースロー エアポート ターミナル 4 (Premier Inn Heathrow Airport Terminal 4)</a>」というホテルを予約しました。
 
@@ -685,7 +671,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### ブダペスト3泊：67,811円
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/2024-09-16_22-15-10_862-1024x768.jpeg" alt="" class="wp-image-4910" srcset="https://arukayies.com/wp-content/uploads/2024/10/2024-09-16_22-15-10_862-1024x768.jpeg 1024w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-16_22-15-10_862-300x225.jpeg 300w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-16_22-15-10_862-768x576.jpeg 768w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-16_22-15-10_862-1536x1152.jpeg 1536w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-16_22-15-10_862-2048x1536.jpeg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="2024-09-16_22-15-10_862-1024x768.jpeg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ドナウ川からの夜景が綺麗という口コミを見て「<a rel="noopener" href="https://www.agoda.com/ja-jp/boutique-hotel-victoria-budapest/hotel/budapest-hu.html" target="_blank" title="">ブティック ホテル ヴィクトリア ブタペスト (Boutique Hotel Victoria Budapest)</a>」というホテルを予約しました。
 
@@ -734,7 +720,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### パリ2泊：51,860円
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/2024-09-19_17-13-55_281-768x1024.jpeg" alt="" class="wp-image-4912" srcset="https://arukayies.com/wp-content/uploads/2024/10/2024-09-19_17-13-55_281-768x1024.jpeg 768w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-19_17-13-55_281-225x300.jpeg 225w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-19_17-13-55_281-1152x1536.jpeg 1152w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-19_17-13-55_281-1536x2048.jpeg 1536w, https://arukayies.com/wp-content/uploads/2024/10/2024-09-19_17-13-55_281-scaled.jpeg 1920w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="2024-09-19_17-13-55_281-768x1024.jpeg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 最後まで悩んだパリの宿泊地。治安が良い地区を選ぶと予算オーバーだったため、口コミを参考に「<a rel="noopener" href="https://www.agoda.com/ja-jp/hotel-le-cardinal/hotel/paris-fr.html" target="_blank" title="">ホテル ル カルディナル (Hotel Le Cardinal)</a>」というホテルを予約しました。
 
@@ -789,7 +775,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ## カード会社に海外利用の事前通知を行う
 
-<img loading="lazy" decoding="async" width="1024" height="224" src="https://arukayies.com/wp-content/uploads/2024/10/image-1024x224.png" alt="" class="wp-image-4966" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-1024x224.png 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-300x66.png 300w, https://arukayies.com/wp-content/uploads/2024/10/image-768x168.png 768w, https://arukayies.com/wp-content/uploads/2024/10/image.png 1172w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="image-1024x224.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 海外の航空券を購入するタイミングで**カードの不正利用**というメールを受信しました。
 
@@ -913,9 +899,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/1-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/1-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/1-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/1-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/1-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="1-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -957,9 +941,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

@@ -51,7 +51,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -65,7 +65,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -80,7 +80,7 @@ archives: ["2020年4月"]
 ステータスを **<span class="fz-20px">新規</span>** に変更すると、
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/実行前-1024x197.png" alt="" class="wp-image-2847" width="714" height="137" srcset="https://arukayies.com/wp-content/uploads/2020/04/実行前-1024x197.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/実行前-300x58.png 300w, https://arukayies.com/wp-content/uploads/2020/04/実行前-768x148.png 768w, https://arukayies.com/wp-content/uploads/2020/04/実行前-1536x295.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/実行前-2048x394.png 2048w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>ステータスを新規にする</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="実行前-1024x197.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ステータスを新規にする</figcaption></figure>
 </div>
 
 Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
@@ -95,9 +95,7 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -183,7 +181,7 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/Slackにアプリ情報を入力する-1024x852.png" alt="" class="wp-image-2834" width="714" height="594" srcset="https://arukayies.com/wp-content/uploads/2020/04/Slackにアプリ情報を入力する-1024x852.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/Slackにアプリ情報を入力する-300x250.png 300w, https://arukayies.com/wp-content/uploads/2020/04/Slackにアプリ情報を入力する-768x639.png 768w, https://arukayies.com/wp-content/uploads/2020/04/Slackにアプリ情報を入力する.png 1154w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>アプリ情報を入力</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="Slackにアプリ情報を入力する-1024x852.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>アプリ情報を入力</figcaption></figure>
 </div>
 
 ### 取得するトークンの権限を選択する
@@ -191,13 +189,13 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
 「OAuth & Permissions」を選択します。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="733" src="https://arukayies.com/wp-content/uploads/2020/04/OAuth-Permissions-1024x733.jpg" alt="" class="wp-image-2835" srcset="https://arukayies.com/wp-content/uploads/2020/04/OAuth-Permissions-1024x733.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/04/OAuth-Permissions-300x215.jpg 300w, https://arukayies.com/wp-content/uploads/2020/04/OAuth-Permissions-768x550.jpg 768w, https://arukayies.com/wp-content/uploads/2020/04/OAuth-Permissions-1536x1099.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/04/OAuth-Permissions.jpg 1962w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>「OAuth & Permissions」を選択</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="OAuth-Permissions-1024x733.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>「OAuth & Permissions」を選択</figcaption></figure>
 </div>
 
 Scopesエリアの「chat:write」を選択します。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/chat-writeを選択-1024x942.png" alt="" class="wp-image-2836" width="714" height="656" srcset="https://arukayies.com/wp-content/uploads/2020/04/chat-writeを選択-1024x942.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/chat-writeを選択-300x276.png 300w, https://arukayies.com/wp-content/uploads/2020/04/chat-writeを選択-768x706.png 768w, https://arukayies.com/wp-content/uploads/2020/04/chat-writeを選択.png 1466w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>Scopesエリアの「chat:write」を選択</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="chat-writeを選択-1024x942.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>Scopesエリアの「chat:write」を選択</figcaption></figure>
 </div>
 
 ### 作成したアプリをワークスペースにインストールする
@@ -205,13 +203,13 @@ Scopesエリアの「chat:write」を選択します。
 作成したアプリをワークスペースにインストールします。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/ワークスペースにアプリをインストールする-1024x946.png" alt="" class="wp-image-2837" width="714" height="659" srcset="https://arukayies.com/wp-content/uploads/2020/04/ワークスペースにアプリをインストールする-1024x946.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/ワークスペースにアプリをインストールする-300x277.png 300w, https://arukayies.com/wp-content/uploads/2020/04/ワークスペースにアプリをインストールする-768x709.png 768w, https://arukayies.com/wp-content/uploads/2020/04/ワークスペースにアプリをインストールする.png 1444w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>作成したアプリをワークスペースにインストール</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="ワークスペースにアプリをインストールする-1024x946.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>作成したアプリをワークスペースにインストール</figcaption></figure>
 </div>
 
 ワークスペースへのインストールを許可します。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/許可する-1024x855.png" alt="" class="wp-image-2838" width="714" height="596" srcset="https://arukayies.com/wp-content/uploads/2020/04/許可する-1024x855.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/許可する-300x250.png 300w, https://arukayies.com/wp-content/uploads/2020/04/許可する-768x641.png 768w, https://arukayies.com/wp-content/uploads/2020/04/許可する.png 1186w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>アクセスを許可する</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="許可する-1024x855.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>アクセスを許可する</figcaption></figure>
 </div>
 
 ### 生成されたトークンをコピーする
@@ -219,7 +217,7 @@ Scopesエリアの「chat:write」を選択します。
 これでトークンが生成されます！
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="624" src="https://arukayies.com/wp-content/uploads/2020/04/トークン生成-1024x624.png" alt="" class="wp-image-2839" srcset="https://arukayies.com/wp-content/uploads/2020/04/トークン生成-1024x624.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/トークン生成-300x183.png 300w, https://arukayies.com/wp-content/uploads/2020/04/トークン生成-768x468.png 768w, https://arukayies.com/wp-content/uploads/2020/04/トークン生成.png 1478w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+  {{< custom-figure src="トークン生成-1024x624.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## 【スプレッドシート】Slackに通知させるコードを追加する
@@ -234,9 +232,7 @@ Scopesエリアの「chat:write」を選択します。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -278,17 +274,17 @@ Scopesエリアの「chat:write」を選択します。
 
 <span class="keyboard-key">編集</span> > <span class="keyboard-key">現在のプロジェクトのトリガー</span> を選択する。<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/トリガー1-1024x904.png" alt="" class="wp-image-2843" width="714" height="630" srcset="https://arukayies.com/wp-content/uploads/2020/04/トリガー1-1024x904.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/トリガー1-300x265.png 300w, https://arukayies.com/wp-content/uploads/2020/04/トリガー1-768x678.png 768w, https://arukayies.com/wp-content/uploads/2020/04/トリガー1.png 1180w" sizes="(max-width: 714px) 100vw, 714px" /> <figcaption>編集 > 現在のプロジェクトのトリガー を選択</figcaption></figure> 
+{{< custom-figure src="トリガー1-1024x904.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>編集 > 現在のプロジェクトのトリガー を選択</figcaption></figure> 
 
 新しいトリガーを作成する。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="536" src="https://arukayies.com/wp-content/uploads/2020/04/トリガー2-1024x536.png" alt="" class="wp-image-2844" srcset="https://arukayies.com/wp-content/uploads/2020/04/トリガー2-1024x536.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/トリガー2-300x157.png 300w, https://arukayies.com/wp-content/uploads/2020/04/トリガー2-768x402.png 768w, https://arukayies.com/wp-content/uploads/2020/04/トリガー2-1536x804.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/トリガー2-2048x1073.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>新しいトリガーを作成</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="トリガー2-1024x536.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>新しいトリガーを作成</figcaption></figure>
 </div>
 
 以下のようなトリガーを保存します。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="984" src="https://arukayies.com/wp-content/uploads/2020/04/トリガーの内容-1024x984.png" alt="" class="wp-image-2845" srcset="https://arukayies.com/wp-content/uploads/2020/04/トリガーの内容-1024x984.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/トリガーの内容-300x288.png 300w, https://arukayies.com/wp-content/uploads/2020/04/トリガーの内容-768x738.png 768w, https://arukayies.com/wp-content/uploads/2020/04/トリガーの内容.png 1368w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>トリガー情報</figcaption></figure> 
+{{< custom-figure src="トリガーの内容-1024x984.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>トリガー情報</figcaption></figure> 
 
 ## 【実行結果】Slackへ通知させてみた
 
@@ -297,7 +293,7 @@ Scopesエリアの「chat:write」を選択します。
 ステータスを **<span class="fz-20px">新規</span>** に変更すると、
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/実行前-1024x197.png" alt="" class="wp-image-2847" width="714" height="137" srcset="https://arukayies.com/wp-content/uploads/2020/04/実行前-1024x197.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/実行前-300x58.png 300w, https://arukayies.com/wp-content/uploads/2020/04/実行前-768x148.png 768w, https://arukayies.com/wp-content/uploads/2020/04/実行前-1536x295.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/実行前-2048x394.png 2048w" sizes="(max-width: 714px) 100vw, 714px" /><figcaption>ステータスを新規にする</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="実行前-1024x197.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ステータスを新規にする</figcaption></figure>
 </div>
 
 Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
@@ -308,7 +304,7 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>

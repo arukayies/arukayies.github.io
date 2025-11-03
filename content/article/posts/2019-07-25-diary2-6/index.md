@@ -39,9 +39,7 @@ IKEAで購入した**アルティシマ**の様子です。
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/04/diary1-6-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/04/diary1-6-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/04/diary1-6-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/04/diary1-6-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/04/diary1-6-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary1-6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">

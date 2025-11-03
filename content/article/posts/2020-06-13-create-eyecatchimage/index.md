@@ -140,7 +140,7 @@ archives: ["2020年6月"]
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798064741_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -210,9 +210,7 @@ archives: ["2020年6月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="line-bot-with-gas-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -248,13 +246,13 @@ archives: ["2020年6月"]
   </div></a>
 </div><figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="368" src="https://arukayies.com/wp-content/uploads/2020/06/新規でGoogle-Apps-Scriptを作成-1024x368.png" alt="新規でGoogle Apps Scriptを作成" class="wp-image-3722" srcset="https://arukayies.com/wp-content/uploads/2020/06/新規でGoogle-Apps-Scriptを作成-1024x368.png 1024w, https://arukayies.com/wp-content/uploads/2020/06/新規でGoogle-Apps-Scriptを作成-300x108.png 300w, https://arukayies.com/wp-content/uploads/2020/06/新規でGoogle-Apps-Scriptを作成-768x276.png 768w, https://arukayies.com/wp-content/uploads/2020/06/新規でGoogle-Apps-Scriptを作成.png 1129w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">作成直後</figcaption></figure> 
+{{< custom-figure src="新規でGoogle-Apps-Scriptを作成-1024x368.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">作成直後</figcaption></figure> 
 
 ### doGet.js のコードを貼り付ける
 
 コード.gs に以下を貼り付けます。<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="1024" height="659" src="https://arukayies.com/wp-content/uploads/2020/06/doGet.js-のコードを貼り付ける-1024x659.png" alt="doGet.js のコードを貼り付ける" class="wp-image-3723" style="aspect-ratio:714/459" srcset="https://arukayies.com/wp-content/uploads/2020/06/doGet.js-のコードを貼り付ける-1024x659.png 1024w, https://arukayies.com/wp-content/uploads/2020/06/doGet.js-のコードを貼り付ける-300x193.png 300w, https://arukayies.com/wp-content/uploads/2020/06/doGet.js-のコードを貼り付ける-768x494.png 768w, https://arukayies.com/wp-content/uploads/2020/06/doGet.js-のコードを貼り付ける.png 1036w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">**doGet.js**を貼り付ける</figcaption></figure> 
+{{< custom-figure src="doGet.js-のコードを貼り付ける-1024x659.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**doGet.js**を貼り付ける</figcaption></figure> 
 
 ### index.html のコードを貼り付ける
 
@@ -282,9 +280,7 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="line-bot-with-gas-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -371,7 +367,7 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
 
 『ファイル』→『コピーを作成』からマイドライブにコピーします。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="620" src="https://arukayies.com/wp-content/uploads/2020/06/マイドライブにコピー-1024x620.png" alt="マイドライブにコピー" class="wp-image-3731" srcset="https://arukayies.com/wp-content/uploads/2020/06/マイドライブにコピー-1024x620.png 1024w, https://arukayies.com/wp-content/uploads/2020/06/マイドライブにコピー-300x182.png 300w, https://arukayies.com/wp-content/uploads/2020/06/マイドライブにコピー-768x465.png 768w, https://arukayies.com/wp-content/uploads/2020/06/マイドライブにコピー-1536x930.png 1536w, https://arukayies.com/wp-content/uploads/2020/06/マイドライブにコピー.png 1840w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">マイドライブにコピー</figcaption></figure> 
+{{< custom-figure src="マイドライブにコピー-1024x620.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">マイドライブにコピー</figcaption></figure> 
 
 ## スプレッドシートにスクリプトを作成する
 
@@ -383,13 +379,13 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
 
 コード.gs に以下を貼り付けます<figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="1024" height="458" src="https://arukayies.com/wp-content/uploads/2020/06/createEyecatchImage.js-のコードを貼り付ける-1024x458.png" alt="createEyecatchImage.js のコードを貼り付ける" class="wp-image-3734" style="aspect-ratio:716/320" srcset="https://arukayies.com/wp-content/uploads/2020/06/createEyecatchImage.js-のコードを貼り付ける-1024x458.png 1024w, https://arukayies.com/wp-content/uploads/2020/06/createEyecatchImage.js-のコードを貼り付ける-300x134.png 300w, https://arukayies.com/wp-content/uploads/2020/06/createEyecatchImage.js-のコードを貼り付ける-768x344.png 768w, https://arukayies.com/wp-content/uploads/2020/06/createEyecatchImage.js-のコードを貼り付ける.png 1184w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">createEyecatchImage.jsを貼り付ける</figcaption></figure> 
+{{< custom-figure src="createEyecatchImage.js-のコードを貼り付ける-1024x458.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">createEyecatchImage.jsを貼り付ける</figcaption></figure> 
 
 ### シートIDとシート名を書き換える
 
 ３行目「シートID」と４行目「シート名」をコピーしたスプレッドシートの情報に書き換えます。<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" width="962" height="1024" src="https://arukayies.com/wp-content/uploads/2020/06/シートIDとシート名を書き換える-962x1024.png" alt="シートIDとシート名を書き換える" class="wp-image-3737" style="aspect-ratio:714/760" srcset="https://arukayies.com/wp-content/uploads/2020/06/シートIDとシート名を書き換える-962x1024.png 962w, https://arukayies.com/wp-content/uploads/2020/06/シートIDとシート名を書き換える-282x300.png 282w, https://arukayies.com/wp-content/uploads/2020/06/シートIDとシート名を書き換える-768x817.png 768w, https://arukayies.com/wp-content/uploads/2020/06/シートIDとシート名を書き換える-1444x1536.png 1444w, https://arukayies.com/wp-content/uploads/2020/06/シートIDとシート名を書き換える.png 1720w" sizes="(max-width: 962px) 100vw, 962px" /> <figcaption class="wp-element-caption">シートIDとシート名の例</figcaption></figure> 
+{{< custom-figure src="シートIDとシート名を書き換える-962x1024.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">シートIDとシート名の例</figcaption></figure> 
 
 ### GASの公開URLを書き換える
 
@@ -463,9 +459,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/02/postreport-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/02/postreport-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/02/postreport-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/02/postreport-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/02/postreport-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="postreport-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -523,7 +517,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
       　
     </p><figure class="wp-block-image size-large">
     
-    <img loading="lazy" decoding="async" width="1024" height="445" src="https://arukayies.com/wp-content/uploads/2020/06/mainを割り当て-1024x445.png" alt="mainを割り当て" class="wp-image-3742" srcset="https://arukayies.com/wp-content/uploads/2020/06/mainを割り当て-1024x445.png 1024w, https://arukayies.com/wp-content/uploads/2020/06/mainを割り当て-300x130.png 300w, https://arukayies.com/wp-content/uploads/2020/06/mainを割り当て-768x334.png 768w, https://arukayies.com/wp-content/uploads/2020/06/mainを割り当て.png 1091w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">mainを割り当て</figcaption></figure>
+    {{< custom-figure src="mainを割り当て-1024x445.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">mainを割り当て</figcaption></figure>
   </div>
 </div>
 
@@ -630,7 +624,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 WordPressのメディアライブラリに反映される情報を事前に設定できます。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="アイキャッチ画像の設定例.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">アイキャッチ画像の設定例</figcaption></figure> <figure class="wp-block-image aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="441" src="https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1024x441.jpg" alt="メディアライブラリ" class="wp-image-3751" srcset="https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1024x441.jpg 1024w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-300x129.jpg 300w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-768x331.jpg 768w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-1536x662.jpg 1536w, https://arukayies.com/wp-content/uploads/2020/06/画像情報の設定-2048x882.jpg 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">メディアライブラリ</figcaption></figure> 
+{{< custom-figure src="アイキャッチ画像の設定例.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">アイキャッチ画像の設定例</figcaption></figure> <figure class="wp-block-image aligncenter size-large">{{< custom-figure src="画像情報の設定-1024x441.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">メディアライブラリ</figcaption></figure> 
 
 ### 『画像生成』ボタンを押下する
 
@@ -644,7 +638,7 @@ WordPressのメディアライブラリに反映される情報を事前に設�
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box cocoon-block-balloon">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -664,9 +658,7 @@ WordPressのメディアライブラリに反映される情報を事前に設�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/02/postreport-thumbnail-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/02/postreport-thumbnail-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/02/postreport-thumbnail-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/02/postreport-thumbnail-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/02/postreport-thumbnail-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="postreport-thumbnail-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -705,7 +697,7 @@ WordPressのメディアライブラリに反映される情報を事前に設�
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798064741_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">

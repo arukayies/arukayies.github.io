@@ -36,9 +36,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -80,9 +78,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -122,11 +118,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4877-768x1024.jpg" alt="" class="wp-image-5384" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4877-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4877-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4877.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4877-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4878-768x1024.jpg" alt="" class="wp-image-5385" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4878-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4878-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4878.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4878-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -179,7 +175,7 @@ archives: ["2024年10月"]
 
 ### 10時：英雄広場の周辺をお散歩
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4879-1024x768.jpg" alt="" class="wp-image-5386" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4879-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4879-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4879-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4879.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4879-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 英雄広場に付きました。ちょうど工事中のようで近くで見ることはできませんでしたが、立派でした。
 
@@ -187,11 +183,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4880-1024x768.jpg" alt="" class="wp-image-5387" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4880-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4880-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4880-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4880.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4880-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4881-768x1024.jpg" alt="" class="wp-image-5388" style="width:227px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4881-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4881-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4881.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4881-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -281,11 +277,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4883-768x1024.jpg" alt="" class="wp-image-5389" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4883-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4883-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4883.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4883-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4882-768x1024.jpg" alt="" class="wp-image-5390" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4882-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4882-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4882.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4882-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -335,11 +331,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4884-1024x768.jpg" alt="" class="wp-image-5391" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4884-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4884-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4884-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4884.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4884-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4885-768x1024.jpg" alt="" class="wp-image-5392" style="width:227px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4885-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4885-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4885.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4885-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -393,11 +389,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4887-768x1024.jpg" alt="" class="wp-image-5393" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4887-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4887-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4887.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4887-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4888-768x1024.jpg" alt="" class="wp-image-5394" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4888-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4888-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4888.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4888-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -410,7 +406,7 @@ archives: ["2024年10月"]
     <strong>セーチェーニ温泉の入口攻略法</strong>
   </p><figure class="wp-block-image size-large">
   
-  <img loading="lazy" decoding="async" width="1024" height="592" src="https://arukayies.com/wp-content/uploads/2024/10/image-1-2-1024x592.jpg" alt="" class="wp-image-5400" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-1-2-1024x592.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-1-2-300x174.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/image-1-2-768x444.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/image-1-2-1536x889.jpg 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-1-2-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/image-1-2.jpg 1566w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption class="wp-element-caption">https://www.szechenyibath.hu/ より</figcaption></figure> 
+  {{< custom-figure src="image-1-2-1024x592.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">https://www.szechenyibath.hu/ より</figcaption></figure> 
   
   <p>
     SPA ENTRANCE 正面向かって右側の入口・・・SPA専用の入口っぽい
@@ -427,7 +423,7 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4890-1024x768.jpg" alt="" class="wp-image-5399" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4890-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4890-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4890-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4890.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4890-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -435,7 +431,7 @@ archives: ["2024年10月"]
 
 前日にインターネットにてチケットは購入済みだったので、スマホを提示してバンドをもらいます。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="257" src="https://arukayies.com/wp-content/uploads/2024/10/image-1-3-1024x257.jpg" alt="" class="wp-image-5403" srcset="https://arukayies.com/wp-content/uploads/2024/10/image-1-3-1024x257.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/image-1-3-300x75.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/image-1-3-768x193.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/image-1-3-1536x386.jpg 1536w, https://arukayies.com/wp-content/uploads/2024/10/image-1-3.jpg 1768w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">購入したチケットはこちら</figcaption></figure> 
+{{< custom-figure src="image-1-3-1024x257.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">購入したチケットはこちら</figcaption></figure> 
 
 **チケットは2人で58ユーロ（9,286円）となかなか良い値段**です。
 
@@ -483,11 +479,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4895-768x1024.jpg" alt="" class="wp-image-5406" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4895-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4895-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4895.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4895-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4896-768x1024.jpg" alt="" class="wp-image-5407" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4896-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4896-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4896.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4896-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -556,11 +552,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-1024x768.jpg" alt="" class="wp-image-5409" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4892-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4892.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4892-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4894-1024x768.jpg" alt="" class="wp-image-5410" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4894-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4894-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4894-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4894.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4894-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -568,11 +564,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4893-768x1024.jpg" alt="" class="wp-image-5411" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4893-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4893-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4893.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4893-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4891-768x1024.jpg" alt="" class="wp-image-5412" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4891-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4891-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4891.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4891-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -586,11 +582,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4897-768x1024.jpg" alt="" class="wp-image-5416" style="width:231px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4897-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4897-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4897.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4897-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4898-1024x768.jpg" alt="" class="wp-image-5417" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4898-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4898-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4898-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4898.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4898-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -602,9 +598,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -644,11 +638,11 @@ archives: ["2024年10月"]
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4899-768x1024.jpg" alt="" class="wp-image-5419" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4899-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4899-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4899.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4899-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4900-768x1024.jpg" alt="" class="wp-image-5420" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4900-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4900-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4900.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4900-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -702,7 +696,7 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
 
 ### 17時：メメントパークへ
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4902-768x1024.jpg" alt="" class="wp-image-5423" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4902-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4902-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4902.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_4902-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ブダペスト観光最後に訪れたのはマイナーな観光地「メメントパーク（彫像公園）」。
 
@@ -747,19 +741,17 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
       </div>
     </div>
   </div></a>
-</div><figure class="wp-block-image aligncenter size-large">
-
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4903-768x1024.jpg" alt="" class="wp-image-5424" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4903-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4903-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4903.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+</div>{{< custom-figure src="IMG_4903-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 30分だけでしたが、あまり広くもないので全ての彫像は見ることできました。
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4901-768x1024.jpg" alt="" class="wp-image-5425" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4901-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4901-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4901.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4901-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4904-768x1024.jpg" alt="" class="wp-image-5427" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4904-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4904-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4904.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4904-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -769,11 +761,11 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4906-768x1024.jpg" alt="" class="wp-image-5429" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4906-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4906-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4906.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4906-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4905-768x1024.jpg" alt="" class="wp-image-5430" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4905-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4905-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4905.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4905-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -827,7 +819,7 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
 
 ### 2013年の大洪水以来、ドナウ川氾濫に遭遇！
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4907-768x1024.jpg" alt="" class="wp-image-5431" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4907-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4907-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4907.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_4907-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ちょうどブダペスト滞在中に遭遇しました。現地の方も珍しいようで多くの人が訪れていました。
 
@@ -875,13 +867,13 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
 
 ## 4日目：リスト・フェレンツ国際空港へ
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4909-1024x768.jpg" alt="" class="wp-image-5433" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4909-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4909-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4909-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4909.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4909-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ホテルで朝食を食べチェックアウトし、空港へと向かいます。ハンガリーとお別れてして、フランスへ。
 
 ### 10時：ホテル〜リスト・フェレンツ国際空港へ
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4912-768x1024.jpg" alt="" class="wp-image-5434" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4912-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4912-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4912.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_4912-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 空港へのバス100Eも**BudapestGO**で乗ることができました。
 
@@ -891,9 +883,7 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-66ff37dcd4e82-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -931,7 +921,7 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
 
 ### 11時：リスト・フェレンツ国際空港を散策
 
-<img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4913-1024x768.jpg" alt="" class="wp-image-5435" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4913-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4913-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4913-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4913.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /> </figure> 
+{{< custom-figure src="IMG_4913-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 出国手続きはなく、保安検査のみでした。EU圏内は航空券も安くて周遊しやすいなーと感じました。
 
@@ -941,11 +931,11 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4910-768x1024.jpg" alt="" class="wp-image-5436" style="width:230px;height:auto" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4910-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4910-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4910.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /></figure>
+    {{< custom-figure src="IMG_4910-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="768" src="https://arukayies.com/wp-content/uploads/2024/10/IMG_4911-1024x768.jpg" alt="" class="wp-image-5437" srcset="https://arukayies.com/wp-content/uploads/2024/10/IMG_4911-1024x768.jpg 1024w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4911-300x225.jpg 300w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4911-768x576.jpg 768w, https://arukayies.com/wp-content/uploads/2024/10/IMG_4911.jpg 1477w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+    {{< custom-figure src="IMG_4911-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
 </div>
 
@@ -961,9 +951,7 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-670888f68c142-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1005,9 +993,7 @@ Googleマップの口コミで高評価の「**Café Kör**」へとやってき
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-160x90.jpg 160w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-120x68.jpg 120w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-320x180.jpg 320w, https://arukayies.com/wp-content/uploads/2024/10/アイキャッチ画像-6721c6d77511e-376x212.jpg 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

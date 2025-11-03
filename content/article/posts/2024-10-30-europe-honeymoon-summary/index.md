@@ -58,7 +58,7 @@ archives: ["2024年10月"]
 
 ## ロンドン
 
-<img loading="lazy" decoding="async" width="768" height="1024" src="https://arukayies.com/wp-content/uploads/2024/09/IMG_4023-768x1024.jpg" alt="" class="wp-image-5144" srcset="https://arukayies.com/wp-content/uploads/2024/09/IMG_4023-768x1024.jpg 768w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4023-225x300.jpg 225w, https://arukayies.com/wp-content/uploads/2024/09/IMG_4023.jpg 1108w" sizes="(max-width: 768px) 100vw, 768px" /> </figure> 
+{{< custom-figure src="IMG_4023-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 いよいよヨーロッパ１カ国目「**ロンドン**」です。夜21時着だったので、ホテルは空港直結を利用しました。
 

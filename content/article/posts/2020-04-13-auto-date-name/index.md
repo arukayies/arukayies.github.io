@@ -37,7 +37,7 @@ archives: ["2020年4月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -49,11 +49,11 @@ archives: ["2020年4月"]
   </div>
 </div><figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="200" src="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1024x200.png" alt="" class="wp-image-2812" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1024x200.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-300x59.png 300w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-768x150.png 768w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1536x300.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-2048x400.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>課題管理票の例</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1024x200.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>課題管理票の例</figcaption></figure> 
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -71,7 +71,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -95,13 +95,13 @@ archives: ["2020年4月"]
   </div>
 </div><figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="200" src="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1-1024x200.png" alt="" class="wp-image-2819" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1-1024x200.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1-300x59.png 300w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1-768x150.png 768w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1-1536x300.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1-2048x400.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>入力前</figcaption></figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="231" src="https://arukayies.com/wp-content/uploads/2020/04/でも-1024x231.png" alt="" class="wp-image-2820" srcset="https://arukayies.com/wp-content/uploads/2020/04/でも-1024x231.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/でも-300x68.png 300w, https://arukayies.com/wp-content/uploads/2020/04/でも-768x174.png 768w, https://arukayies.com/wp-content/uploads/2020/04/でも-1536x347.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/でも-2048x463.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>入力後</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1-1024x200.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>入力前</figcaption></figure> <figure class="wp-block-image size-large">{{< custom-figure src="でも-1024x231.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>入力後</figcaption></figure> 
 
 ## 表にスクリプトを追加する
 
 ### スクリプト エディタを起動する
 
-<img loading="lazy" decoding="async" width="1024" height="334" src="https://arukayies.com/wp-content/uploads/2020/04/スクリプトエディタを起動-1024x334.png" alt="" class="wp-image-2813" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリプトエディタを起動-1024x334.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/スクリプトエディタを起動-300x98.png 300w, https://arukayies.com/wp-content/uploads/2020/04/スクリプトエディタを起動-768x250.png 768w, https://arukayies.com/wp-content/uploads/2020/04/スクリプトエディタを起動-1536x501.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/スクリプトエディタを起動-2048x667.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>スクリプト エディタを起動</figcaption></figure> 
+{{< custom-figure src="スクリプトエディタを起動-1024x334.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>スクリプト エディタを起動</figcaption></figure> 
 
 ### 赤枠の部分にコードを貼り付ける
 
@@ -150,7 +150,7 @@ archives: ["2020年4月"]
 
 <span class="keyboard-key">Session.getActiveUser().getEmail()</span>でメールアドレスを取得するためには承認を通す必要があります。<figure class="wp-block-image size-large is-resized">
 
-<img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/実行-1024x454.png" alt="" class="wp-image-2822" width="714" height="316" srcset="https://arukayies.com/wp-content/uploads/2020/04/実行-1024x454.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/実行-300x133.png 300w, https://arukayies.com/wp-content/uploads/2020/04/実行-768x340.png 768w, https://arukayies.com/wp-content/uploads/2020/04/実行.png 1332w" sizes="(max-width: 714px) 100vw, 714px" /> <figcaption>スクリプトを実行</figcaption></figure> 
+{{< custom-figure src="実行-1024x454.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>スクリプトを実行</figcaption></figure> 
 
 実行すると、承認画面が表示されるので、以下の順番で許可してあげます。
 
@@ -178,11 +178,11 @@ archives: ["2020年4月"]
 
 ためしに「テスト」と内容に入力してみます。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="200" src="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1024x200.png" alt="" class="wp-image-2812" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1024x200.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-300x59.png 300w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-768x150.png 768w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-1536x300.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-19.36.42-2048x400.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>実行前</figcaption></figure> <figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="231" src="https://arukayies.com/wp-content/uploads/2020/04/でも-1024x231.png" alt="" class="wp-image-2820" srcset="https://arukayies.com/wp-content/uploads/2020/04/でも-1024x231.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/でも-300x68.png 300w, https://arukayies.com/wp-content/uploads/2020/04/でも-768x174.png 768w, https://arukayies.com/wp-content/uploads/2020/04/でも-1536x347.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/でも-2048x463.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /><figcaption>実行後</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1024x200.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>実行前</figcaption></figure> <figure class="wp-block-image size-large">{{< custom-figure src="でも-1024x231.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>実行後</figcaption></figure> 
 
 実行のログはダッシュボードで確認することが出来ます。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="220" src="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-21.23.37-1024x220.png" alt="" class="wp-image-2824" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-21.23.37-1024x220.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-21.23.37-300x65.png 300w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-21.23.37-768x165.png 768w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-21.23.37-1536x331.png 1536w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-13-21.23.37-2048x441.png 2048w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption>実行時のログ</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2020-04-13-21.23.37-1024x220.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>実行時のログ</figcaption></figure> 
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-check">
   <a rel="noopener" href="https://script.google.com/home/executions" title="Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
@@ -230,7 +230,7 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    <figure class="speech-icon"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2019/12/icon-1.png" alt="くら" class="speech-icon-image" /></figure>
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>

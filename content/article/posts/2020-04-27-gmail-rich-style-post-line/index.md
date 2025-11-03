@@ -68,7 +68,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
 
 このようなメール内容をLINEに通知させてみます。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="534" src="https://arukayies.com/wp-content/uploads/2020/04/メール内容-1024x534.png" alt="" class="wp-image-2922" srcset="https://arukayies.com/wp-content/uploads/2020/04/メール内容-1024x534.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/メール内容-300x156.png 300w, https://arukayies.com/wp-content/uploads/2020/04/メール内容-768x400.png 768w, https://arukayies.com/wp-content/uploads/2020/04/メール内容.png 1212w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">証券会社のメール</figcaption></figure> 
+{{< custom-figure src="メール内容-1024x534.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">証券会社のメール</figcaption></figure> 
 
 こんな感じにLINEに通知されます！<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
 
@@ -92,9 +92,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/auto-date-name-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -138,9 +136,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="sheet-postcontent-slack-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -179,7 +175,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798150734_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -217,7 +213,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798064741_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -273,9 +269,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="sheet-postcontent-slack-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -413,9 +407,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/11/uri_action-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/11/uri_action-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/11/uri_action-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/11/uri_action-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/11/uri_action-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="uri_action-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -475,7 +467,7 @@ LINEに通知させる方法もちょっと調べたら方法は見つかりま�
       },
     ],</code></pre><figure class="wp-block-image aligncenter size-large is-resized">
 
-<img loading="lazy" decoding="async" width="576" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/LINE通知の仕組み-576x1024.jpg" alt="" class="wp-image-2935" style="aspect-ratio:576/1024" srcset="https://arukayies.com/wp-content/uploads/2020/04/LINE通知の仕組み-576x1024.jpg 576w, https://arukayies.com/wp-content/uploads/2020/04/LINE通知の仕組み-169x300.jpg 169w, https://arukayies.com/wp-content/uploads/2020/04/LINE通知の仕組み.jpg 750w" sizes="(max-width: 576px) 100vw, 576px" /> <figcaption class="wp-element-caption">LINE通知の内容</figcaption></figure> 
+{{< custom-figure src="LINE通知の仕組み-576x1024.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">LINE通知の内容</figcaption></figure> 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
   <div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-check block-box">
@@ -658,9 +650,7 @@ GASのhtml操作はこちらを参考にしました！
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/07/gettoken-1-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/07/gettoken-1-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/07/gettoken-1-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/07/gettoken-1-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/07/gettoken-1-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="gettoken-1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -711,9 +701,7 @@ GASのhtml操作はこちらを参考にしました！
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/11/get_userid-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/11/get_userid-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/11/get_userid-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/11/get_userid-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/11/get_userid-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="get_userid-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -764,9 +752,7 @@ GASのhtml操作はこちらを参考にしました！
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/07/line-bot-with-gas-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="line-bot-with-gas-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -817,9 +803,7 @@ GASのhtml操作はこちらを参考にしました！
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-160x90.png 160w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-120x68.png 120w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-320x180.png 320w, https://arukayies.com/wp-content/uploads/2020/04/sheet-postcontent-slack-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+    </div>{{< custom-figure src="sheet-postcontent-slack-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -857,13 +841,13 @@ GASのhtml操作はこちらを参考にしました！
 
 設定のサンプルはこんな感じです。<figure class="wp-block-image size-large">
 
-<img loading="lazy" decoding="async" width="1000" height="1024" src="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.50.29-1-1000x1024.png" alt="" class="wp-image-2942" srcset="https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.50.29-1-1000x1024.png 1000w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.50.29-1-293x300.png 293w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.50.29-1-768x786.png 768w, https://arukayies.com/wp-content/uploads/2020/04/スクリーンショット-2020-04-27-1.50.29-1.png 1356w" sizes="(max-width: 1000px) 100vw, 1000px" /> <figcaption class="wp-element-caption">トリガー設定</figcaption></figure> 
+{{< custom-figure src="スクリーンショット-2020-04-27-1.50.29-1-1000x1024.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">トリガー設定</figcaption></figure> 
 
 ## 【実行結果】LINEでメールを表示させてみた
 
 特定メールは以下のメール内容としてみます。<figure class="wp-block-image aligncenter size-large">
 
-<img loading="lazy" decoding="async" width="1024" height="534" src="https://arukayies.com/wp-content/uploads/2020/04/メール内容-1024x534.png" alt="" class="wp-image-2922" srcset="https://arukayies.com/wp-content/uploads/2020/04/メール内容-1024x534.png 1024w, https://arukayies.com/wp-content/uploads/2020/04/メール内容-300x156.png 300w, https://arukayies.com/wp-content/uploads/2020/04/メール内容-768x400.png 768w, https://arukayies.com/wp-content/uploads/2020/04/メール内容.png 1212w" sizes="(max-width: 1024px) 100vw, 1024px" /> <figcaption class="wp-element-caption">証券会社のメール</figcaption></figure> 
+{{< custom-figure src="メール内容-1024x534.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">証券会社のメール</figcaption></figure> 
 
 LINEに通知されたらこんな感じになります！<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
 
@@ -890,7 +874,7 @@ LINEに通知されたらこんな感じになります！<figure class="wp-bloc
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798150734_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">
@@ -928,7 +912,7 @@ LINEに通知されたらこんな感じになります！<figure class="wp-bloc
 <div class="cstmreba">
   <div class="kaerebalink-box">
     <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" ><img decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/20010009784798064741_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
     </div>
     
     <div class="kaerebalink-info">

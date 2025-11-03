@@ -91,9 +91,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary1-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary1-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary1-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary1-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary1-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -139,9 +137,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary2-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary2-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary2-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary2-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary2-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -187,9 +183,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary3-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary3-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary3-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary3-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary3-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -235,9 +229,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary4-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary4-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary4-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary4-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary4-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary4-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -283,9 +275,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary5-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary5-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary5-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary5-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary5-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary5-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -331,9 +321,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary6-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary6-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary6-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary6-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary6-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -379,9 +367,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary7-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary7-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary7-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary7-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary7-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary7-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -427,9 +413,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary8-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary8-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary8-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary8-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary8-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary8-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -475,9 +459,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary9-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary9-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary9-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary9-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary9-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary9-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -523,9 +505,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary10-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary10-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary10-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary10-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary10-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary10-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -571,9 +551,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary11-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary11-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary11-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary11-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary11-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary11-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -619,9 +597,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary12-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary12-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary12-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary12-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary12-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary12-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -667,9 +643,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
-      
-      <img loading="lazy" decoding="async" width="160" height="90" src="https://arukayies.com/wp-content/uploads/2019/12/diary13-160x90.png" class="blogcard-thumb-image internal-blogcard-thumb-image wp-post-image" alt="" srcset="https://arukayies.com/wp-content/uploads/2019/12/diary13-160x90.png 160w, https://arukayies.com/wp-content/uploads/2019/12/diary13-120x68.png 120w, https://arukayies.com/wp-content/uploads/2019/12/diary13-320x180.png 320w, https://arukayies.com/wp-content/uploads/2019/12/diary13-376x212.png 376w" sizes="(max-width: 160px) 100vw, 160px" /></figure>
+      </div>{{< custom-figure src="diary13-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
