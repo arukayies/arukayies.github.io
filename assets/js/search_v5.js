@@ -45,7 +45,7 @@ function initLunr() {
         request.onerror = function () {
             // Handle network errors
             var err = "Network error";
-            console.error("Error getting Hugo index file:", err);
+            console.Serror("Error getting Hugo index file:", err);
             reject(err);
         };
 
