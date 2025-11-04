@@ -63,14 +63,16 @@ params:
       github: arukayies
       other: https://arukayies.github.io/
 
+outputFormats:
+  SearchJSON:
+    mediaType: "application/json"
+    baseName: "list"
 outputs:
   home:
     - HTML
     - JSON
   page:
     - HTML
-  search: # Explicitly define output for 'search' section
-    - JSON
 
 menu:
   footer:

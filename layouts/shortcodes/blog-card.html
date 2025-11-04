@@ -31,7 +31,8 @@
         {{- end -}}
 
         {{- $thumbnail_url := "" -}}
-        {{- if $image -}}
+        {{/*
+            if $image -}}
             {{- with try (resources.GetRemote $image) -}}
                 {{- with .Err -}}
                     {{- warnf "%s" . -}}
@@ -46,6 +47,7 @@
             {{- $thumbnail := resources.Get $.Site.Params.defaultNoimage -}}
             {{- $thumbnail_url = ($thumbnail.Fill (printf "200x200 center q%d webp" $.Site.Params.imageQuality)).Permalink -}}
         {{- end -}}
+        */}}
 
         <a href="{{- $url -}}" style="padding: 12px;border: solid 1px #eee;display: flex;text-decoration: none;color: inherit;" onMouseOver="this.style.opacity='0.9'">
             <div style="flex-shrink: 0;">
