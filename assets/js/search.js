@@ -8,7 +8,7 @@ function initLunr() {
 
     return new Promise((resolve, reject) => {
     var request = new XMLHttpRequest();
-    request.open("GET", "/search/list.json", true);
+    request.open("GET", "/index.json", true);
 
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
@@ -188,13 +188,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getQuery() {
     var queryString = window.location.search;
+    if (!queryString) {
+        return {};
+    }
     queryString = queryString.slice(1); // 文頭?を除外
 
     var queries = {};
     queryString.split("&").forEach(function (item) {
         const q = item.split("=");
-        queries[q[0]] = q[1];
+        if (q.length === 2) {
+            var key = decodeURIComponent(q[0].replace(/\+/g, " "));
+            var value = decodeURIComponent(q[1].replace(/\+/g, " "));
+            if (key && value) {
+                queries[key] = value;
+            }
+        }
     });
-
     return queries;
 }
