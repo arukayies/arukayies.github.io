@@ -69,7 +69,8 @@ outputs:
     - JSON
   page:
     - HTML
-  search: # Explicitly define output for 'search' section
+  section: # Apply JSON output to all sections, including 'search'
+    - HTML
     - JSON
 
 menu:
