@@ -188,21 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function getQuery() {
     var queryString = window.location.search;
-    if (!queryString) {
-        return {};
-    }
     queryString = queryString.slice(1); // 文頭?を除外
 
     var queries = {};
     queryString.split("&").forEach(function (item) {
         const q = item.split("=");
-        if (q.length === 2) {
-            var key = decodeURIComponent(q[0].replace(/\+/g, " "));
-            var value = decodeURIComponent(q[1].replace(/\+/g, " "));
-            if (key && value) {
-                queries[key] = value;
-            }
-        }
+        queries[q[0]] = q[1];
     });
+
     return queries;
 }
