@@ -110,7 +110,7 @@
     <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.stemmer.support.js" | absURL }}"></script>
     <script type="text/javascript" src="{{ "js/vendor/lunr-languages/tinyseg.js" | absURL }}"></script>
     <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.ja.js" | absURL  }}"></script>
-    {{ if eq .RelPermalink "/search/" }}
+    {{ if strings.HasPrefix .Permalink "/search/" }}
     <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
     {{ end }}
     {{ partial "jsonld.html" . }}
