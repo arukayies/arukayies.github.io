@@ -77,7 +77,6 @@
         <meta name="twitter:image" content="{{ $og_image_url }}">
         <meta name="twitter:card" content="summary_large_image">
     {{- end -}}
-    {{- partial "head.html" . -}}
     {{- block "robots" . -}}
         <meta name="robots" content="index,follow">
     {{- end -}}
@@ -111,7 +110,9 @@
     <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.stemmer.support.js" | absURL }}"></script>
     <script type="text/javascript" src="{{ "js/vendor/lunr-languages/tinyseg.js" | absURL }}"></script>
     <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.ja.js" | absURL  }}"></script>
+    {{ if not .IsHome }}
     <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
+    {{ end }}
     {{ partial "jsonld.html" . }}
     {{ template "_internal/google_analytics.html" . }}
 {{ end }}

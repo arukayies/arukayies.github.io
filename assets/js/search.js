@@ -56,16 +56,18 @@ function initLunr() {
 function initUI() {
     $results = document.getElementById("results");
     $search = document.getElementById("search");
-    $search.onkeyup = function () {
-        while ($results.firstChild) {
-            $results.removeChild($results.firstChild);
-        }
+    if ($search) {
+        $search.onkeyup = function () {
+            while ($results.firstChild) {
+                $results.removeChild($results.firstChild);
+            }
 
-        var query = $search.value;
-        query = decodeURI(query);
-        var results = search(query);
-        renderResults(results);
-    };
+            var query = $search.value;
+            query = decodeURI(query);
+            var results = search(query);
+            renderResults(results);
+        };
+    }
 }
 
 /**
