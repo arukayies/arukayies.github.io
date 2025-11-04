@@ -69,9 +69,6 @@ outputs:
     - JSON
   page:
     - HTML
-  section: # Apply JSON output to all sections, including 'search'
-    - HTML
-    - JSON
 
 menu:
   footer:
