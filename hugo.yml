@@ -67,6 +67,8 @@ outputs:
   home:
     - HTML
     - JSON
+  search: # Add this section for search page JSON output
+    - JSON
   page:
     - HTML
 
