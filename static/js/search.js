@@ -9,7 +9,7 @@ function initLunr() {
     return new Promise((resolve, reject) => {
     var request = new XMLHttpRequest();
     // Corrected path for index.json
-    request.open("GET", "/index.json", true);
+    request.open("GET", "/search/list.json", true);
 
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {

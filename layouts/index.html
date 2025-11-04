@@ -28,9 +28,9 @@
                 {{ end }}
             {{ end }}
 
+            <div id="results"></div>
             <div class="index__titleWrapper">
                 <h1 class="index__title">新着記事</h1>
-            </div>
             <div class="index__articleCardList">
                 {{ range $paginator.Pages }}
                     {{ partial "article-card" . }}
