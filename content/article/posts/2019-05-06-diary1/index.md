@@ -19,9 +19,6 @@ snapEdIT:
   - 1
 snapTW:
   - 's:219:"a:1:{i:0;a:8:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
-categories:
-  - ミズナ(収穫済)
-
 archives: ["2019年5月"]
 ---
 こんにちは！

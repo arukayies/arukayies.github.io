@@ -21,9 +21,6 @@ snapEdIT:
   - 1
 snapTW:
   - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186580276249415680";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186580276249415680";s:5:"pDate";s:19:"2019-10-22 09:49:18";}}";'
-categories:
-  - オクラ
-
 archives: ["2019年9月"]
 ---
 こんにちは！

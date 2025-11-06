@@ -77,6 +77,7 @@
         <meta name="twitter:image" content="{{ $og_image_url }}">
         <meta name="twitter:card" content="summary_large_image">
     {{- end -}}
+    {{- partial "head.html" . -}}
     {{- block "robots" . -}}
         <meta name="robots" content="index,follow">
     {{- end -}}
@@ -100,18 +101,18 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
     {{ $style := resources.Get "scss/style.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" as="style">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="preload" href="{{ "css/vendor/@fortawesome/fontawesome-free/css/all.min.css" | absURL }}" as="style">
+    <link rel="stylesheet" href="{{ "css/vendor/@fortawesome/fontawesome-free/css/all.min.css" | absURL }}" media="print" onload="this.media='all'">
     {{ if .IsPage }}
         <link rel="preload" href="{{ "css/vendor/github-markdown-css/github-markdown.css" | absURL }}" as="style">
         <link rel="stylesheet" href="{{ "css/vendor/github-markdown-css/github-markdown.css" | absURL }}" media="print" onload="this.media='all'">
     {{ end }}
-    <script type="text/javascript" src="{{ "js/vendor/lunr/lunr.min.js" | absURL }}"></script>
-    <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.stemmer.support.js" | absURL }}"></script>
-    <script type="text/javascript" src="{{ "js/vendor/lunr-languages/tinyseg.js" | absURL }}"></script>
-    <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.ja.js" | absURL  }}"></script>
-    {{ if strings.HasPrefix .Permalink "/search/" }}
-    <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
+    {{ if eq .Section "search" }}
+        <script type="text/javascript" src="{{ "js/vendor/lunr/lunr.min.js" | absURL }}"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.stemmer.support.js" | absURL }}"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr-languages/tinyseg.js" | absURL }}"></script>
+        <script type="text/javascript" src="{{ "js/vendor/lunr-languages/lunr.ja.js" | absURL  }}"></script>
+        <script type="text/javascript" src="{{ with  resources.Get "js/search.js" | minify }}{{ .RelPermalink }}{{ end }}"></script>
     {{ end }}
     {{ partial "jsonld.html" . }}
     {{ template "_internal/google_analytics.html" . }}

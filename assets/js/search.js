@@ -7,9 +7,8 @@ function initLunr() {
     tinySegmenter = new lunr.TinySegmenter();
 
     return new Promise((resolve, reject) => {
-    var request = new XMLHttpRequest();
-    // Corrected path for index.json
-    request.open("GET", "/search/list.json", true);
+        var request = new XMLHttpRequest();
+        request.open("GET", "index.json", true);
 
         request.onload = function () {
             if (request.status >= 200 && request.status < 400) {
@@ -35,18 +34,10 @@ function initLunr() {
                     resolve();
                 });
             } else {
-                // Handle HTTP errors
-                var err = `HTTP error ${request.status}: ${request.statusText}`;
-                console.error("Error getting Hugo index file:", err);
+                var err = textStatus + ", " + error;
+                console.error("Error getting Hugo index flie:", err);
                 reject(err);
             }
-        };
-
-        request.onerror = function () {
-            // Handle network errors
-            var err = "Network error";
-            console.error("Error getting Hugo index file:", err);
-            reject(err);
         };
 
         request.send();
@@ -57,18 +48,16 @@ function initLunr() {
 function initUI() {
     $results = document.getElementById("results");
     $search = document.getElementById("search");
-    if ($search) {
-        $search.onkeyup = function () {
-            while ($results.firstChild) {
-                $results.removeChild($results.firstChild);
-            }
+    $search.onkeyup = function () {
+        while ($results.firstChild) {
+            $results.removeChild($results.firstChild);
+        }
 
-            var query = $search.value;
-            query = decodeURI(query);
-            var results = search(query);
-            renderResults(results);
-        };
-    }
+        var query = $search.value;
+        query = decodeURI(query);
+        var results = search(query);
+        renderResults(results);
+    };
 }
 
 /**
@@ -113,6 +102,7 @@ function renderResults(results) {
     }
 
     // Only show the ten first results
+    $results = document.getElementById("results");
     results.slice(0, 10).forEach(function (result) {
         var div = document.createElement("div");
         var category = "";
@@ -162,31 +152,23 @@ function renderResults(results) {
                 </div>
             </article>
         `;
-        // Add a check to ensure $results is not null before appending
-        if ($results) {
-            $results.appendChild(div);
-        } else {
-            console.error("Element with ID 'results' not found. Cannot render search results.");
-        }
+        $results.appendChild(div);
     });
 }
 
 // Let's get started
-document.addEventListener("DOMContentLoaded", function () {
-    initUI(); // Initialize UI here to ensure $results is set before renderResults
+initLunr().then(function () {
+    var query = getQuery()["query"] || "";
+    query = decodeURI(query);
+    var results = search(query);
+    renderResults(results);
+    if (query.length) {
+        document.getElementById("list-title").innerText = `「${query}」を検索`;
+    }
+});
 
-    // Now that UI is initialized and DOM is ready, proceed with Lunr and search
-    initLunr().then(function () {
-        var query = getQuery()["query"] || "";
-        query = decodeURI(query);
-        var results = search(query);
-        renderResults(results);
-        if (query.length) {
-            document.getElementById("list-title").innerText = `「${query}」を検索`;
-        }
-    }).catch(function(error) {
-        console.error("Failed to initialize Lunr or search:", error);
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    // initUI();
 });
 
 function getQuery() {

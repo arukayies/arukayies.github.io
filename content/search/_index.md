@@ -1,7 +1,7 @@
 ---
-title: Search
-type: search
+title: "検索"
+draft: false
 outputs:
-  - HTML
-  - SearchJSON
+    - html
+    - json
 ---

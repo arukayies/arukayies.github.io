@@ -8,7 +8,9 @@ disqusShortname:
 
 taxonomies:
   category: categories
-  archives: archives
+  # tag: tags
+  # pickup: pickups
+  archive: archives
 
 disablePathToLower: true
 hasCJKLanguage: true
@@ -37,10 +39,26 @@ module:
   mounts:
     - source: static
       target: static
+    - source: node_modules/@fortawesome/fontawesome-free/css/all.min.css
+      target: static/css/vendor/@fortawesome/fontawesome-free/css/all.min.css
+    - source: node_modules/@fortawesome/fontawesome-free/webfonts
+      target: static/css/vendor/@fortawesome/fontawesome-free/webfonts
+    - source: node_modules/github-markdown-css/github-markdown.css
+      target: static/css/vendor/github-markdown-css/github-markdown.css
+    # 検索に必要
+    - source: node_modules/lunr/lunr.min.js
+      target: static/js/vendor/lunr/lunr.min.js
+    - source: node_modules/lunr-languages/lunr.stemmer.support.js
+      target: static/js/vendor/lunr-languages/lunr.stemmer.support.js
+    - source: node_modules/lunr-languages/tinyseg.js
+      target: static/js/vendor/lunr-languages/tinyseg.js
+    - source: node_modules/lunr-languages/lunr.ja.js
+      target: static/js/vendor/lunr-languages/lunr.ja.js
 
 params:
   author:
     name: arukayies
+    # email: my_email@example.com
     url: https://arukayies.github.io/
   description: DIYネタについてまとめてます。
   icon: image/icon.png
@@ -59,23 +77,73 @@ params:
     link:
       twitter: arukayies
       instagram: arukayies
+      # facebook: https://www.facebook.com/facebook
       youtube: https://www.youtube.com/channel/UCoO5ZwX9e7jToe7eo-h62HQ
       github: arukayies
+      # qiita: qiita
+      # zenn: zenn
+      # email: my_email@example.com
       other: https://arukayies.github.io/
-
-outputFormats:
-  SearchJSON:
-    mediaType: "application/json"
-    baseName: "list"
-outputs:
-  home:
-    - HTML
-    - JSON
-  page:
-    - HTML
+  # publisher:
+    # type: Organization
+    # name: my_organization
+    # url: https://example.com/publisher
+    # image: image/icon.png
+    # description: organization_description
+    # sameAs:
+      # - https://example.com/sameAs
+  # twitterTimeline: twitter
 
 menu:
+  # header:
+    # - name: Saltの使い方
+      # url: /categories/Saltの使い方
+      # weight: -100
+    # - name: サンプル
+      # url: /categories/サンプル
+      # weight: -90
+    # - name: Hugo
+      # url: /tags/Hugo
+      # weight: -80
+    # - name: Go言語
+      # url: /categories/Go言語
+      # weight: -70
+  # sidebar:
+    # - name: Saltの使い方
+      # url: /categories/Saltの使い方
+      # pre: <i class="fa-2x fas fa-book"></i>
+      # weight: -100
+    # - name: Hugo
+      # url: /tags/Hugo
+      # pre: <i class="fa-2x fas fa-cog"></i>
+      # weight: -90
+    # - name: Go言語
+      # url: /categories/Go言語
+      # pre: <i class="fa-2x fas fa-laptop-code"></i>
+      # weight: -80
+    # - name: Tips
+      # url: /tags/tips
+      # pre: <i class="fa-2x fas fa-mobile-alt"></i>
+      # weight: -70
+    # - name: shortcode
+      # url: /tags/ショートコード
+      # pre: <i class="fa-2x fas fa-wrench"></i>
+      # weight: -60
+    # - name: サンプル
+      # url: /categories/サンプル
+      # pre: <i class="fa-2x fab fa-safari"></i>
+      # weight: -50
   footer:
+    # - name: このサイトについて
+      # url: /about
+      # weight: -100
+      # params:
+        # position: left
+    # - name: お知らせ
+      # url: /information
+      # weight: -90
+      # params:
+        # position: left
     - name: プライバシーポリシー
       url: /privacy-policy
       weight: -100

@@ -19,9 +19,6 @@ snapEdIT:
   - 1
 snapTW:
   - 's:419:"a:1:{i:0;a:12:{s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1173964748204855296";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1173964748204855296";s:5:"pDate";s:19:"2019-09-17 14:19:42";s:9:"msgFormat";s:53:"ブログを更新しました！ 「%TITLE%」 %URL%";s:2:"do";s:1:"0";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";'
-categories:
-  - ミズナ(収穫済)
-
 archives: ["2019年9月"]
 ---
 こんにちは！

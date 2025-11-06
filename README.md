@@ -1,5 +1,5 @@
 # homepage
-https://arukayies.github.io/homepage/ を生成するためのコードとコンテンツです。
+https://arukayies.github.io を生成するためのコードとコンテンツです。
 
 ## Powered by
 - Hugo
