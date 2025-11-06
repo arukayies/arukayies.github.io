@@ -1,10 +1,20 @@
 ---
 title: 【観葉植物】ガジュマルの観察日記(96日目)
 author: arukayies
+type: post
 date: 2019-09-19T13:33:00+00:00
+url: /house_plants/banyan/diary3-7
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1568899980
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -20,8 +30,9 @@ archives: ["2019年9月"]
 <span style="color: blue;">観察96日目</span>の様子です！
 
 <div class="blogcard-type bct-together">
-      前回までの日記はこちらです。
-  
+  <p>
+    前回までの日記はこちらです。
+  </p>
   
   <div class="blogcard-shortcode-wrap paragraph">
     <a href="https://arukayies.com/house_plants/banyan/diary2-7" title="【観葉植物】ガジュマルの観察日記(63日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
@@ -29,7 +40,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary2-7-160x90.png)](diary2-7-160x90.png)
+      </div>{{< custom-figure src="diary2-7-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -63,14 +74,16 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 観察96日目
 
 観察し始めて3か月経過しました。  
 暖かい気候が続いたからか、葉っぱがいっぱいです！
 
 3か月前↓  
-![![](img_5dfef70535b9c.jpg)](img_5dfef70535b9c.jpg) 
+{{< custom-figure src="img_5dfef70535b9c.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回↓  
-![![](img_5dfef7067d732.jpg)](img_5dfef7067d732.jpg)
+{{< custom-figure src="img_5dfef7067d732.jpg" title="" Fit="1280x1280 webp q90" >}}

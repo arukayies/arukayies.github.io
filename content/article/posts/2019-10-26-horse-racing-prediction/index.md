@@ -1,10 +1,20 @@
 ---
 title: 【GAS】JRAのレース成績データをスクレイピングして天皇賞秋2019の着順を予想してみた
 author: arukayies
+type: post
 date: 2019-10-26T12:36:19+00:00
+url: /gas/horse-racing-prediction
+share: true
 toc: true
+comment: true
+page_type:
+  - default
 snap_isAutoPosted:
   - 1
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snap_isRpstd579:
@@ -19,12 +29,13 @@ snapTW:
     %HTAGS%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1249653780716503046";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1249653780716503046";s:5:"pDate";s:19:"2020-04-13 11:00:53";}}";
 snap_isRpstd2493:
   - 1586775653
-tags:
-  - "GAS"
+categories:
+  - GAS
 tags:
   - Google Apps Script
   - スプレッドシート
 
+archives: ["2019年10月"]
 ---
 見出しにそれっぽく書いていますが、  
 私は<span class="marker"><strong>競馬の知識・データ分析の知識もありません。</strong></span>
@@ -78,7 +89,9 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ここから以下のデータを取得してきます。
 
   * レース場所
@@ -116,7 +129,7 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
 
 を取得してきました。
 
-![![](img_5dfa27abaa37b.png)](img_5dfa27abaa37b.png)  
+{{< custom-figure src="img_5dfa27abaa37b.png" title="" Fit="1280x1280 webp q90" >}}  
 <span style="color: gray;"><strong>アレ・・・カタカナ名の人がうまく取得できてない</strong></span>
 
 ## スコアの算出方法は？
@@ -146,7 +159,7 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
 <span style="color: orange;"><strong>３位</strong></span>　ダノンプレミアム
 
 **東京**競馬場、**芝**コース、**曇**でスコアを算出した結果です↓  
-![![](img_5dfa27ac1e238.png)](img_5dfa27ac1e238.png)  
+{{< custom-figure src="img_5dfa27ac1e238.png" title="" Fit="1280x1280 webp q90" >}}  
 <span style="color: gray;"><strong>カタカナ名の人だけ「Mデムーロ」→「デムーロ」のように算出</strong></span>
 
 <span style="color: red;"><strong>１位</strong></span>　アーモンドアイ  
@@ -163,15 +176,15 @@ JRAのサイトから過去のレース結果が閲覧出来ます。
 
 ## 天皇賞行ってきました！
 
-![![](img_5dfa27ac9f3d7.jpg)](img_5dfa27ac9f3d7.jpg) 
+{{< custom-figure src="img_5dfa27ac9f3d7.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-![![](img_5dfa27ad3ca88.jpg)](img_5dfa27ad3ca88.jpg)  
+{{< custom-figure src="img_5dfa27ad3ca88.jpg" title="" Fit="1280x1280 webp q90" >}}  
 事前に予想した馬番は <span style="color: red;"><strong>2-13-5</strong></span>  
 3連単と3連複で500円ずつ購入しました！
 
 ## 結果は・・・？？？
 
-![![](img_5dfa27adc8e09.jpg)](img_5dfa27adc8e09.jpg)  
+{{< custom-figure src="img_5dfa27adc8e09.jpg" title="" Fit="1280x1280 webp q90" >}}  
 結果は <span style="color: red;"><strong>2-9-5</strong></span>
 
 **2位だけ、2位だけが・・・・！！！！**惜しくも外れてしまいました。。。

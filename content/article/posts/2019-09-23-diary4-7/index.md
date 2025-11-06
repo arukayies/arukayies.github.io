@@ -1,10 +1,20 @@
 ---
 title: 【観葉植物】ガジュマルの観察日記(100日目)
 author: arukayies
+type: post
 date: 2019-09-23T13:06:56+00:00
+url: /house_plants/banyan/diary4-7
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1571750102
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -20,8 +30,9 @@ archives: ["2019年9月"]
 <span style="color: blue;">観察100日目</span>の様子です！
 
 <div class="blogcard-type bct-together">
-      前回までの日記はこちらです。
-  
+  <p>
+    前回までの日記はこちらです。
+  </p>
   
   <div class="blogcard-shortcode-wrap paragraph">
     <a href="https://arukayies.com/house_plants/banyan/diary3-7" title="【観葉植物】ガジュマルの観察日記(96日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
@@ -29,7 +40,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary3-7-160x90.png)](diary3-7-160x90.png)
+      </div>{{< custom-figure src="diary3-7-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -63,26 +74,28 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 観察100日目
 
 ガジュマルの植替を行います！  
-![![](img_5dfef68b54333.jpg)](img_5dfef68b54333.jpg) 
+{{< custom-figure src="img_5dfef68b54333.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 鉢からガジュマルを抜きます  
-![![](img_5dfef68c129cd.jpg)](img_5dfef68c129cd.jpg) 
+{{< custom-figure src="img_5dfef68c129cd.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 新しい鉢に鉢底ネットを敷きます  
-![![](img_5dfef68cc4ad4.jpg)](img_5dfef68cc4ad4.jpg) 
+{{< custom-figure src="img_5dfef68cc4ad4.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 軽石を入れます  
-![![](img_5dfef68d882f2.jpg)](img_5dfef68d882f2.jpg) 
+{{< custom-figure src="img_5dfef68d882f2.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 ガジュマルを植えます！  
-![![](img_5dfef68e5edf0.jpg)](img_5dfef68e5edf0.jpg) 
+{{< custom-figure src="img_5dfef68e5edf0.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 土の乾燥防止に化粧石を敷きます  
-![![](img_5dfef68eeeb74.jpg)](img_5dfef68eeeb74.jpg) 
+{{< custom-figure src="img_5dfef68eeeb74.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 生まれ変わったガジュマルの完成です！  
-![![](img_5dfef68faf4fc.jpg)](img_5dfef68faf4fc.jpg)
+{{< custom-figure src="img_5dfef68faf4fc.jpg" title="" Fit="1280x1280 webp q90" >}}

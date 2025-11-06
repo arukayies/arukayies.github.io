@@ -1,11 +1,21 @@
 ---
 title: GASでスプレッドシートの指定範囲から表示形式の値を一括取得する方法
 author: arukayies
+type: post
 date: 2020-06-19T16:16:41+00:00
 excerpt: GASでスプレッドシートの指定範囲の表示されている値すべてを取得する方法を紹介します！
+url: /gas/getdisplayvalues
+share: true
 toc: true
+comment: true
 snap_isAutoPosted:
   - 1592583402
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -16,8 +26,10 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-tags:
-  - "GAS"
+last_modified:
+  - 2025-03-07 22:11:08
+categories:
+  - GAS
 tags:
   - GAS
   - getDisplayValues()
@@ -28,6 +40,43 @@ archives: ["2020年6月"]
 ---
 Google Apps Script（GAS）を使ってスプレッドシートの操作をしてると、「表示値」を扱う場面がよくあるばい。特に、日付や通貨、パーセンテージなど、フォーマットが大事なデータを取り扱うときには、`getDisplayValues()`メソッドが大活躍するんじゃ。今回はそのメソッドの使い方を、初心者にもわかりやすく解説していくけん、ぜひ参考にしてみてや！
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 ## getDisplayValues()とは？
 
@@ -100,6 +149,43 @@ Logger.log(displayValues);  // 結果をログに表示
 
 Google Apps Scriptの`getDisplayValues()`メソッドは、スプレッドシートの「表示されている値」をそのまま取得できる便利なメソッドじゃ。特にレポートや通知メールでフォーマットを維持したいときには大活躍するばい！ただし、型変換に気をつけながら使う必要があるけん、その点だけ覚えておけばバッチリじゃね。
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
   <a rel="noopener" href="https://hajiritsu.com/spreadsheet-gas-getdisplayvalues/" title="&#12475;&#12523;&#12398;&#34920;&#31034;&#20516;&#12434;&#21462;&#24471;&#12377;&#12427; | getDisplayValue()&#12304;GAS&#12305; &#8211; &#12399;&#12376;&#12426;&#12388;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">

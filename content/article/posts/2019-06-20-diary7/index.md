@@ -1,8 +1,18 @@
 ---
 title: 【水耕栽培】ミズナの観察日記(45日目)
 author: arukayies
+type: post
 date: 2019-06-20T09:34:33+00:00
+url: /hydroponic_culture/mizuna/diary7
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -24,7 +34,7 @@ archives: ["2019年6月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary6-160x90.png)](diary6-160x90.png)
+      </div>{{< custom-figure src="diary6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -58,7 +68,9 @@ archives: ["2019年6月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 <div class="blogcard-type bct-together">
   <div class="blogcard-shortcode-wrap paragraph">
     自作水耕栽培装置の紹介はこちらです。<br /> <a href="https://arukayies.com/diy/hydroponic_culture_first_machine" title="ほぼ100均で作る循環式の水耕栽培装置の紹介" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
@@ -68,10 +80,10 @@ archives: ["2019年6月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -100,8 +112,10 @@ archives: ["2019年6月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 45日目
 
 次の休みの日には収穫します！  
-![![](img_5dfee38eb95bb.jpg)](img_5dfee38eb95bb.jpg)
+{{< custom-figure src="img_5dfee38eb95bb.jpg" title="" Fit="1280x1280 webp q90" >}}

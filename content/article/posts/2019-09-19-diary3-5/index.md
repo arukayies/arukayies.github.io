@@ -1,10 +1,20 @@
 ---
 title: 【水耕栽培】コマツナの観察日記(31日目)
 author: arukayies
+type: post
 date: 2019-09-19T10:29:05+00:00
+url: /hydroponic_culture/komatsuna/diary3-5
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1569666545
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -26,7 +36,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary2-5-160x90.png)](diary2-5-160x90.png)
+      </div>{{< custom-figure src="diary2-5-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -70,10 +80,10 @@ archives: ["2019年9月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -102,8 +112,10 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 観察31日目
 
 すくすくと育ってます！  
-![![](img_5dfa2ac815719.jpg)](img_5dfa2ac815719.jpg)
+{{< custom-figure src="img_5dfa2ac815719.jpg" title="" Fit="1280x1280 webp q90" >}}

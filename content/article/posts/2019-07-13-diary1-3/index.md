@@ -1,10 +1,20 @@
 ---
 title: 【水耕栽培】オクラの観察日記(1日目)
 author: arukayies
+type: post
 date: 2019-07-13T02:34:00+00:00
+url: /hydroponic_culture/okra/diary1-3
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1571716452
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -28,10 +38,10 @@ archives: ["2019年7月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -60,14 +70,16 @@ archives: ["2019年7月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 発芽前の準備
 
 オクラの種は殻が硬い為、水に浸して発芽させます  
-![![](img_5dfa414ce255e.jpg)](img_5dfa414ce255e.jpg) 
+{{< custom-figure src="img_5dfa414ce255e.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 発芽後はスポンジの発芽キットに植えていきます  
-![![](img_5dfa414d1cad9.jpg)](img_5dfa414d1cad9.jpg) 
+{{< custom-figure src="img_5dfa414d1cad9.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 こんな感じに植えてみました  
-![![](img_5dfa414d63062.jpg)](img_5dfa414d63062.jpg)
+{{< custom-figure src="img_5dfa414d63062.jpg" title="" Fit="1280x1280 webp q90" >}}

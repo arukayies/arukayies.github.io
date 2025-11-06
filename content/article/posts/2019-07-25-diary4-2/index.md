@@ -1,10 +1,20 @@
 ---
 title: 【水耕栽培】ルッコラの観察日記(34日目)
 author: arukayies
+type: post
 date: 2019-07-25T12:23:31+00:00
+url: /hydroponic_culture/arugula/diary4-2
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1569673452
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -25,10 +35,10 @@ archives: ["2019年7月"]
 ## 観察34日目
 
 一部大きく育っているものだけ収穫し、パスタに和えてみました！  
-![![](img_5dfa315f88f9e.jpg)](img_5dfa315f88f9e.jpg) 
+{{< custom-figure src="img_5dfa315f88f9e.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-![![](img_5dfa31602a88f.jpg)](img_5dfa31602a88f.jpg) 
+{{< custom-figure src="img_5dfa31602a88f.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-![![](img_5dfa3160b525d.jpg)](img_5dfa3160b525d.jpg) 
+{{< custom-figure src="img_5dfa3160b525d.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-![![](img_5dfa316105be9.jpg)](img_5dfa316105be9.jpg)
+{{< custom-figure src="img_5dfa316105be9.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -1,10 +1,20 @@
 ---
 title: 【観葉植物】アルティシマの観察日記(106日目)
 author: arukayies
+type: post
 date: 2019-07-25T12:26:05+00:00
+url: /house_plants/altissima/diary2-6
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1569068765
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -26,7 +36,7 @@ IKEAで購入した**アルティシマ**の様子です。
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary1-6-160x90.png)](diary1-6-160x90.png)
+      </div>{{< custom-figure src="diary1-6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -60,14 +70,16 @@ IKEAで購入した**アルティシマ**の様子です。
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 観察106日目
 
 観察し始めて3か月経過しました。  
 見比べてみると、葉っぱが増えていて健康そうです！
 
 3か月前↓  
-![![](img_5dfa30d8ee2f9.jpg)](img_5dfa30d8ee2f9.jpg) 
+{{< custom-figure src="img_5dfa30d8ee2f9.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 今回↓ (水耕栽培装置に挟まれこじんまりしてます。)  
-![![](img_5dfa30d94d979.jpg)](img_5dfa30d94d979.jpg)
+{{< custom-figure src="img_5dfa30d94d979.jpg" title="" Fit="1280x1280 webp q90" >}}

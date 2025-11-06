@@ -1,16 +1,31 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3泊4日のブダベスト観光 前編
 author: arukayies
+type: post
 date: 2024-10-05T04:57:09+00:00
+url: /diy/travel/europe-honeymoon-budapest-tourism-part1
+share: true
 toc: true
-tags:
-  - "旅"
+comment: true
+last_modified:
+  - 2024-10-30 14:45:28
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
+the_review_rate:
+  - 2.5
+categories:
+  - 旅
 
+archives: ["2024年10月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-
-
+</p>
+<p>
 タイトルの通りヨーロッパへ新婚旅行に行きました。
 
 前回は2泊3日のロンドン観光編をまとめました。
@@ -21,7 +36,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66fdf1103f7bf-160x90.jpg)](アイキャッチ画像-66fdf1103f7bf-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66fdf1103f7bf-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -58,8 +73,8 @@ tags:
 </div>
 
 この記事ではブダペスト観光 前編の記録になります。
-
-
+</p>
+<p>
 後編はこちら
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-next">
@@ -68,7 +83,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-67071813cc15b-160x90.jpg)](アイキャッチ画像-67071813cc15b-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-67071813cc15b-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -110,7 +125,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -148,21 +163,58 @@ tags:
 
 ## 1日目：リスト・フェレンツ国際空港〜ホテルへ
 
-![![](IMG_4814-768x1024.jpg)](IMG_4814-768x1024.jpg) 
+{{< custom-figure src="IMG_4814-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 定刻から1時間ほど遅れてリスト・フェレンツ国際空港到着です。
 
 ハンガリーでも事前に購入したeSIMも楽天モバイルも問題なく使えました。
 
 
-<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> ![![](31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)](31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)</a>![![](img_66fe59b996a7f.gif)](img_66fe59b996a7f.gif) 
+<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> {{< custom-figure src="31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" title="" Fit="1280x1280 webp q90" >}}</a>{{< custom-figure src="img_66fe59b996a7f.gif" title="" Fit="1280x1280 webp q90" >}} 
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="4_eu-5gb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">ヨーロッパ周遊 eSIM 5GB 15日 データ通信のみ可能 Orange イギリス イタリア フランス スペイン ドイツ スイス ギリシャ オーストリア オランダ SIM SIMカード プリペイドSIM 15日 データ 通信 メールで受取 一時帰国 留学 短期 出張 利用期限は購入日から30日</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 ### 17時：リスト・フェレンツ国際空港到着・入国手続き・ホテルへ移動
 
 入国審査は**パスポート渡すだけで済みました**。
 
-この後は100Eバスでホテルへと移動しますが、**切符を購入するときにトラブル発生**！![![](IMG_4815-768x1024.jpg)](IMG_4815-768x1024.jpg) 
+この後は100Eバスでホテルへと移動しますが、**切符を購入するときにトラブル発生**！{{< custom-figure src="IMG_4815-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 何度試しても**クレジットカードの決済に失敗**し、バスの切符が買えません。
 
@@ -173,8 +225,9 @@ tags:
 この旅行中に**3回クレジットカードの決済に失敗する場面**があったのですが、**有効だった解決方法は3Dセキュアの設定を切り替えるでした！**
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      事前準備編でも書きましたが、<strong>クレジットカード会社への海外利用通知は行った方が良いです！</strong>
-  
+  <p>
+    事前準備編でも書きましたが、<strong>クレジットカード会社への海外利用通知は行った方が良いです！</strong>
+  </p>
   
   <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
     <a href="https://arukayies.com/diy/travel/europe-honeymoon-preparation#toc22" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
@@ -182,7 +235,7 @@ tags:
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)
+      </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -218,15 +271,18 @@ tags:
     </div></a>
   </div>
   
-      それでも決済エラーとなった場合に有効だった解決方法は、 <strong>3Dセキュア設定を一時的に無効にする</strong> でした！
+  <p>
+    それでも決済エラーとなった場合に有効だった解決方法は、 <strong>3Dセキュア設定を一時的に無効にする</strong> でした！
+  </p>
   
+  <p>
+    BudapestGOというアプリで決済を行う時は <strong>3Dセキュア設定を無効にする</strong> ことで使えるようになり、
+  </p>
   
-      BudapestGOというアプリで決済を行う時は <strong>3Dセキュア設定を無効にする</strong> ことで使えるようになり、
-  
-  
-      この後のルーブル美術館の予約では <strong>3Dセキュア設定を有効に戻す</strong> 必要がありました！
-  
-</div>![![](IMG_4816-768x1024.jpg)](IMG_4816-768x1024.jpg) 
+  <p>
+    この後のルーブル美術館の予約では <strong>3Dセキュア設定を有効に戻す</strong> 必要がありました！
+  </p>
+</div>{{< custom-figure src="IMG_4816-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 無事バスに乗車でき、ブダペスト市内に向かいます。降りるのは終点なので楽ちんです。
 
@@ -317,9 +373,16 @@ tags:
 
 ### 18時：バス停から夜景を見ながら歩いてホテルへ
 
-    ![![](IMG_4818-2-1024x768.jpg)](IMG_4818-2-1024x768.jpg)
-      ![![](IMG_4819-1-1024x768.jpg)](IMG_4819-1-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4818-2-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4819-1-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 バスから降りるとちょうど街がライトアップされていて、ヨーロッパ2カ国目のブダペストが迎えてくれました。
 
 鎖橋からはライトアップされたブダ城が見え、たくさんの観光客が撮影していました。
@@ -367,18 +430,32 @@ tags:
 
 ### 19時：ブティック ホテル ヴィクトリア ブタペスト (Boutique Hotel Victoria Budapest)へチェックイン
 
-    ![![](IMG_4821-1024x768.jpg)](IMG_4821-1024x768.jpg)
-      ![![](IMG_4820-768x1024.jpg)](IMG_4820-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4821-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4820-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ホテルへ到着すると受付の人にパスポートを渡してチェックインできました。
 
 **英語が不慣れなことが分かるとゆっくりと話しかけてくれてとても親切な方**でした。
 
 ドナウ川からの夜景を目当てにちょっとだけ良い部屋を予約したので、さっそく**夜景チェック**🌉です。
 
-    ![![](IMG_4822-1024x768.jpg)](IMG_4822-1024x768.jpg)
-      ![![](IMG_4823-1024x768.jpg)](IMG_4823-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4822-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4823-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 窓からはライトアップされている国会議事堂と鎖橋を眺めることができ、近くに椅子とテーブルもあるので夜景を見ながら過ごすことができました！
 
 泊まったホテルはこちら
@@ -426,9 +503,16 @@ tags:
 
 ### 20時：SPAR Supermarketへ夕飯の買い物へ
 
-    ![![](IMG_4828-1024x768.jpg)](IMG_4828-1024x768.jpg)
-      ![![](IMG_4826-1024x768.jpg)](IMG_4826-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4828-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4826-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 昼前にロンドン食べた「<a href="https://arukayies.com/diy/travel/europe-honeymoon-london-tourism#toc15" target="_blank" title="">イングリッシュブレックファースト</a>」がなかなか重かったので、軽めの夕食を買いに近くのスーパーへ。
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
@@ -437,7 +521,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66fdf1103f7bf-160x90.jpg)](アイキャッチ画像-66fdf1103f7bf-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66fdf1103f7bf-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -480,11 +564,13 @@ tags:
 戸惑っていると現地の人が助けてくれました。クゥスヌム。クゥスヌム。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      どちらもタッチパネルの専用機械でバーコードシールを払い出す必要がありました！
+  <p>
+    どちらもタッチパネルの専用機械でバーコードシールを払い出す必要がありました！
+  </p>
   
-  
-      <strong>生鮮食品は量り売りスタイル</strong>です。
-  
+  <p>
+    <strong>生鮮食品は量り売りスタイル</strong>です。
+  </p>
   
   <ol class="wp-block-list">
     <li>
@@ -504,8 +590,9 @@ tags:
     </li>
   </ol>
   
-      パンは値札の番号か商品名を入力する必要があったので、<strong>どれを袋に入れたか覚えておく必要がありました</strong>！
-  
+  <p>
+    パンは値札の番号か商品名を入力する必要があったので、<strong>どれを袋に入れたか覚えておく必要がありました</strong>！
+  </p>
   
   <ol class="wp-block-list">
     <li>
@@ -568,7 +655,7 @@ tags:
 
 ## 2日目：ブダペストの主要な観光施設を巡る
 
-![![](IMG_4837-1024x768.jpg)](IMG_4837-1024x768.jpg) 
+{{< custom-figure src="IMG_4837-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ### ブダペストの交通事情〜BudapestGOの設定方法〜
 
@@ -658,44 +745,74 @@ tags:
 
 まずはアカウント情報を登録します。
 
-    ![![](IMG_4830-3-473x1024.png)](IMG_4830-3-473x1024.png)
-            Googleアカウント連携が行えたので、それで登録を進めました。
-    
-    
-          そのまま連携すると<strong>日本語の住所が反映されるので、英語表記に直す必要</strong>がありました。
-    
-    
-        
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4830-3-473x1024.png" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <p>
+      Googleアカウント連携が行えたので、それで登録を進めました。
+    </p>
+    
+    <p>
+      そのまま連携すると<strong>日本語の住所が反映されるので、英語表記に直す必要</strong>がありました。
+    </p>
+    
+    <p>
+    </p>
+  </div>
+</div>
+
 次に支払い情報を追加します。
 
-    ![![](IMG_4834-473x1024.jpg)](IMG_4834-473x1024.jpg)
-            画面を進めるとクレジットカード情報を入力する画面が出てくるので、登録を進めます。
-    
-    
-          しかし、何度試しても登録に失敗します。
-    
-    
-          エラーメッセージやメールを見ると「<strong>3ds process error</strong>」という文字がありました。
-    
-    
-          3Dセキュアのことを指してると気づき、<strong>有効だった設定を無効に切り替えることで支払い情報を追加することができました</strong>。
-    
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4834-473x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <p>
+      画面を進めるとクレジットカード情報を入力する画面が出てくるので、登録を進めます。
+    </p>
+    
+    <p>
+      しかし、何度試しても登録に失敗します。
+    </p>
+    
+    <p>
+      エラーメッセージやメールを見ると「<strong>3ds process error</strong>」という文字がありました。
+    </p>
+    
+    <p>
+      3Dセキュアのことを指してると気づき、<strong>有効だった設定を無効に切り替えることで支払い情報を追加することができました</strong>。
+    </p>
+  </div>
+</div>
+
 これで切符を購入する準備ができたので、あとは購入するだけです。
 
-    ![![](IMG_4836-473x1024.png)](IMG_4836-473x1024.png)
-            ブダペストでは1回のチケットで降りるまでが固定料金となっていました。
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4836-473x1024.png" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+  
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <p>
+      ブダペストでは1回のチケットで降りるまでが固定料金となっていました。
+    </p>
     
+    <p>
+      Single ticket 450Ft（184円）と<strong>安い！</strong>
+    </p>
     
-          Single ticket 450Ft（184円）と<strong>安い！</strong>
+    <p>
+      その他にも30分、90分乗り放題や空港連絡バス100Eのチケットもこのアプリで購入することができます。
+    </p>
     
-    
-          その他にも30分、90分乗り放題や空港連絡バス100Eのチケットもこのアプリで購入することができます。
-    
-    
-          また、１日乗り放題などの観光施設がお得に入れるチケットもこのアプリで購入できるようでした。
-    
+    <p>
+      また、１日乗り放題などの観光施設がお得に入れるチケットもこのアプリで購入できるようでした。
+    </p>
     
     <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
       <a rel="noopener" href="https://www.hungary-travel-living.org/budapest-transport-services/" title="【徹底案内】ブダペスト公共交通機関の利用方法！チケット購入から乗車まで | 旅して暮らすハンガリー" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
@@ -738,10 +855,13 @@ tags:
         </div>
       </div></a>
     </div>
-  
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      ①<strong>アカウント情報には「日本語」を含めないようにする</strong>！
-  
+  <p>
+    ①<strong>アカウント情報には「日本語」を含めないようにする</strong>！
+  </p>
   
   <ul class="wp-block-list">
     <li>
@@ -752,8 +872,9 @@ tags:
     </li>
   </ul>
   
-      ②<strong>クレジットカードの3Dセキュアは無効にする</strong>
-  
+  <p>
+    ②<strong>クレジットカードの3Dセキュアは無効にする</strong>
+  </p>
   
   <ul class="wp-block-list">
     <li>
@@ -764,7 +885,7 @@ tags:
 
 ### 8時：ホテルで新鮮な食材の朝食
 
-![![](IMG_4838-1024x768.jpg)](IMG_4838-1024x768.jpg) 
+{{< custom-figure src="IMG_4838-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 朝食付きなので朝はホテルで食べました。
 
@@ -772,9 +893,16 @@ tags:
 
 ### 11時：ブダ城から眺めるドナウ川の景色
 
-    ![![](IMG_4839-768x1024.jpg)](IMG_4839-768x1024.jpg)
-      ![![](IMG_4840-768x1024.jpg)](IMG_4840-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4839-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4840-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ホテルからブダ城までは散歩しながら向かいました。丘の上まではケーブルカーでも行けるようです。
 
 歩くだけで楽しいので、街並み見ながら向かいました。
@@ -822,23 +950,44 @@ tags:
   </div></a>
 </div>
 
-    ![![](IMG_4841-1024x768.jpg)](IMG_4841-1024x768.jpg)
-      ![![](IMG_4842-1024x768.jpg)](IMG_4842-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4841-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4842-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 天気良かったので、見晴らし最高でした！
 
-    ![![](IMG_4843-768x1024.jpg)](IMG_4843-768x1024.jpg)
-      ![![](IMG_4844-1024x768.jpg)](IMG_4844-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4843-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4844-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ちなみにブダ城のトイレは有料で400Ft（164円）でした。クレカタッチで使用しました。
 
 歩いてお腹も空いたので、次は市場に向かいました。
 
 ### 12時：トラムでブダペスト中央市場
 
-    ![![](IMG_4845-768x1024.jpg)](IMG_4845-768x1024.jpg)
-      ![![](IMG_4846-768x1024.jpg)](IMG_4846-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4845-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4846-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 気温は19度と散歩日和の中、初めてのトラム乗車です。日本の市電のような乗り物でした。
 
 ルートはこちら
@@ -886,9 +1035,16 @@ tags:
 
 ### 12時：市場でグヤーシュスープ
 
-    ![![](IMG_4847-1024x768.jpg)](IMG_4847-1024x768.jpg)
-      ![![](IMG_4848-768x1024.jpg)](IMG_4848-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4847-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4848-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 市場の1階はワイン・フォアグラ・お肉・野菜などが並び、2階の4分の1がレストランでそれ以外はお土産屋さんという作りでした。
 
 ここではハンガリー料理「グヤーシュスープ」と粗挽きソーセージにビールを注文し、市場を眺めながらランチしました。合計：7300Ft（2,978円）
@@ -939,9 +1095,16 @@ tags:
 
 ### 13時：国立博物館は外観だけでも楽しめる
 
-    ![![](IMG_4852-768x1024.jpg)](IMG_4852-768x1024.jpg)
-      ![![](IMG_4849-768x1024.jpg)](IMG_4849-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4852-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4849-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 市場から歩いてハンガリー国立博物館へとやってきました。中は見る時間なさそうなので、外観をぐるりと一周。
 
 外観だけでもいくつもの銅像があり、見応えありでした！ちなみに**博物館の中のトイレは綺麗で無料でした**！
@@ -991,9 +1154,16 @@ tags:
 
 ### 14時：聖イシュトヴァーン大聖堂
 
-    ![![](IMG_4850-768x1024.jpg)](IMG_4850-768x1024.jpg)
-      ![![](IMG_4851-1024x768.jpg)](IMG_4851-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4850-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4851-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 国立博物館からバスで10分ほど移動し、聖イシュトヴァーン大聖堂へ向かいました。
 
 入場チケットが必要で別な建物で売っていました。案内通りに進めば建物も迷うことはなかったです。
@@ -1045,9 +1215,16 @@ tags:
 
 ### 15時：ハンガリーで最も有名なケーキ「ドボシュトルタ」
 
-    ![![](IMG_4853-768x1024.jpg)](IMG_4853-768x1024.jpg)
-      ![![](IMG_4854-768x1024.jpg)](IMG_4854-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4853-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4854-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ハンガリーで有名なケーキ「**ドボシュトルタ**」を食べるためGoogleマップで調べた「Stephen Confectionery」へ向かいます。
 
 お店1階でケーキを買い、2階でいただきました。我々含めて3組だけとゆったりと過ごせました。
@@ -1099,9 +1276,16 @@ tags:
 
 ### 16時：ソビエト英雄記念碑
 
-    ![![](IMG_4859-768x1024.jpg)](IMG_4859-768x1024.jpg)
-      ![![](IMG_4860-768x1024.jpg)](IMG_4860-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4859-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4860-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 近隣のスポットを歩きました。至る所にモニュメントや銅像が立っていました。
 
 ルートはこちら
@@ -1149,9 +1333,16 @@ tags:
 
 ### 16時30分：国会議事堂
 
-    ![![](IMG_4857-1024x768.jpg)](IMG_4857-1024x768.jpg)
-      ![![](IMG_4858-768x1024.jpg)](IMG_4858-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4857-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4858-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 部屋からライトアップして見えた国会議事堂の玄関とドナウ川から見える景色です。
 
 ルートはこちら
@@ -1199,9 +1390,16 @@ tags:
 
 ### 17時：ドナウ川遊歩道の靴
 
-    ![![](IMG_4861-768x1024.jpg)](IMG_4861-768x1024.jpg)
-      ![![](IMG_4862-768x1024.jpg)](IMG_4862-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4861-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4862-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 国会議事堂の裏からドナウ川沿いに歩くとたどり着きます。
 
 **ドナウ川の氾濫警報が出ていて、氾濫するギリギリの状態**でした。<a rel="noopener" href="https://news.yahoo.co.jp/articles/03c325f14805366bd580d0beda66d73a9fefe7d9" target="_blank" title="">ニュース</a>にもなってました。
@@ -1291,8 +1489,12 @@ tags:
 
 ### 18時：国宝に指定されている豚「マンガリッツァ豚」料理
 
-    ![![](IMG_4866-768x1024.jpg)](IMG_4866-768x1024.jpg)
-  
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4866-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ブダペストに来たら食べたいと思っていた「マンガリッツァ豚」料理。事前に調べておいてお店と向かいました。
 
 「Menza」というお店で口コミ通りどの料理も美味しく、お腹いっぱいとなりました。
@@ -1339,9 +1541,16 @@ tags:
   </div></a>
 </div>
 
-    ![![](IMG_4863-768x1024.jpg)](IMG_4863-768x1024.jpg)
-      ![![](IMG_4864-768x1024.jpg)](IMG_4864-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4863-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4864-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 そのほかにも鴨レバーペースト・シュニッツェルと3品を注文し2人ともお腹いっぱい過ぎました。
 
 お酒も入れて24,416Ftでした。（9,962円）
@@ -1392,7 +1601,7 @@ tags:
 
 ### 20時：ホテルに帰宅
 
-![![](IMG_4865-1024x768.jpg)](IMG_4865-1024x768.jpg) 
+{{< custom-figure src="IMG_4865-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ホテルまではバスで帰宅しました。
 
@@ -1447,7 +1656,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-67071813cc15b-160x90.jpg)](アイキャッチ画像-67071813cc15b-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-67071813cc15b-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1489,7 +1698,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

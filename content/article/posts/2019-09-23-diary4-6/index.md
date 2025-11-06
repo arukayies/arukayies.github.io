@@ -1,10 +1,20 @@
 ---
 title: 【観葉植物】アルティシマの観察日記(166日目)
 author: arukayies
+type: post
 date: 2019-09-23T12:19:26+00:00
+url: /house_plants/altissima/diary4-6
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1571833409
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -26,7 +36,7 @@ IKEAで購入した**アルティシマ**の様子です。
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary3-6-160x90.png)](diary3-6-160x90.png)
+      </div>{{< custom-figure src="diary3-6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -60,26 +70,28 @@ IKEAで購入した**アルティシマ**の様子です。
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 観察166日目
 
 アルティシマの植替を行います！  
-![![](img_5dff3554bf9df.jpg)](img_5dff3554bf9df.jpg) 
+{{< custom-figure src="img_5dff3554bf9df.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 鉢からアルティシマを抜きます  
-![![](img_5dff35567d0ff.jpg)](img_5dff35567d0ff.jpg) 
+{{< custom-figure src="img_5dff35567d0ff.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 新しい鉢に鉢底ネットを敷きます  
-![![](img_5dff355734561.jpg)](img_5dff355734561.jpg) 
+{{< custom-figure src="img_5dff355734561.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 軽石を入れます  
-![![](img_5dff3557dd32d.jpg)](img_5dff3557dd32d.jpg) 
+{{< custom-figure src="img_5dff3557dd32d.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 アルティシマを植えます！  
-![![](img_5dff355896407.jpg)](img_5dff355896407.jpg) 
+{{< custom-figure src="img_5dff355896407.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 土の乾燥防止に化粧石を敷きます  
-![![](img_5dff3559569d2.jpg)](img_5dff3559569d2.jpg) 
+{{< custom-figure src="img_5dff3559569d2.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 生まれ変わったアルティシマの完成です！  
-![![](img_5dff3559bd7ed.jpg)](img_5dff3559bd7ed.jpg)
+{{< custom-figure src="img_5dff3559bd7ed.jpg" title="" Fit="1280x1280 webp q90" >}}

@@ -1,8 +1,18 @@
 ---
 title: 【水耕栽培】ミズナの観察日記(53日目)
 author: arukayies
+type: post
 date: 2019-06-28T09:34:52+00:00
+url: /hydroponic_culture/mizuna/diary9
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -24,7 +34,7 @@ archives: ["2019年6月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary8-160x90.png)](diary8-160x90.png)
+      </div>{{< custom-figure src="diary8-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -68,10 +78,10 @@ archives: ["2019年6月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -100,9 +110,11 @@ archives: ["2019年6月"]
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 53日目
 
 <span class="marker"><strong>水菜は再生する</strong></span>そうです。  
 小さい🌱も育ちきるまで、まだまだ育て続けたいと思います！  
-![![](img_5dfee17cce571.jpg)](img_5dfee17cce571.jpg)
+{{< custom-figure src="img_5dfee17cce571.jpg" title="" Fit="1280x1280 webp q90" >}}

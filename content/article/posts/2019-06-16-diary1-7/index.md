@@ -1,10 +1,20 @@
 ---
 title: 【観葉植物】ガジュマルの観察日記(1日目)
 author: arukayies
+type: post
 date: 2019-06-16T13:31:58+00:00
+url: /house_plants/banyan/diary1-7
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1568899918
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -23,4 +33,4 @@ archives: ["2019年6月"]
 
 葉っぱが所々で、ちょっと元気がなさそうです。  
 とりあえず日光がよく当たり、適度に水を与えてみたいと思います。  
-![![](img_5dfeef0d20bb3.jpg)](img_5dfeef0d20bb3.jpg)
+{{< custom-figure src="img_5dfeef0d20bb3.jpg" title="" Fit="1280x1280 webp q90" >}}

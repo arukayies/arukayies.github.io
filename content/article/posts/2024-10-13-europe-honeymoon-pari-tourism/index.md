@@ -1,16 +1,31 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】2泊3日のパリ観光
 author: arukayies
+type: post
 date: 2024-10-13T00:50:59+00:00
+url: /diy/travel/europe-honeymoon-pari-tourism
+share: true
 toc: true
-tags:
-  - "旅"
+comment: true
+last_modified:
+  - 2024-10-30 14:47:00
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
+the_review_rate:
+  - 2.5
+categories:
+  - 旅
 
+archives: ["2024年10月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-
-
+</p>
+<p>
 タイトルの通りヨーロッパへ新婚旅行に行きました。
 
 前回はブダペスト観光編をまとめました。
@@ -21,7 +36,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66ff37dcd4e82-160x90.jpg)](アイキャッチ画像-66ff37dcd4e82-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -61,7 +76,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-67071813cc15b-160x90.jpg)](アイキャッチ画像-67071813cc15b-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-67071813cc15b-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -103,7 +118,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -143,7 +158,7 @@ tags:
 
 ## 1日目：治安に不安のあるフランスへ到着
 
-![![](IMG_4915-1024x768.jpg)](IMG_4915-1024x768.jpg) 
+{{< custom-figure src="IMG_4915-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 この旅最終目的地のフランスへと到着しました。
 
@@ -152,14 +167,58 @@ tags:
 楽天モバイルの通信料はちょうど6日目ぐらいに使い切り、**1,000円2GBをチャージすることで帰国まで快適に使えました。無料分2GBもあったのが助かりました**。
 
 
-<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> ![![](31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)](31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)</a>![![](img_66fe59b996a7f.gif)](img_66fe59b996a7f.gif) 
+<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> {{< custom-figure src="31_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" title="" Fit="1280x1280 webp q90" >}}</a>{{< custom-figure src="img_66fe59b996a7f.gif" title="" Fit="1280x1280 webp q90" >}} 
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="4_eu-5gb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">ヨーロッパ周遊 eSIM 5GB 15日 データ通信のみ可能 Orange イギリス イタリア フランス スペイン ドイツ スイス ギリシャ オーストリア オランダ SIM SIMカード プリペイドSIM 15日 データ 通信 メールで受取 一時帰国 留学 短期 出張 利用期限は購入日から30日</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 ### 15時：シャルル・ド・ゴール国際空港へ到着
 
-    ![![](IMG_4917-768x1024.jpg)](IMG_4917-768x1024.jpg)
-      ![![](IMG_4916-768x1024.jpg)](IMG_4916-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4917-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4916-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ハンガリーからの移動のため**入国審査も特になくゲートを出るだけ**です！楽ちん。
 
 パリ市内へと向かうため、**治安が悪いと言われる地下鉄「RER B線」**へと向かいます。
@@ -208,9 +267,16 @@ tags:
 
 ### パリの交通事情〜AppleウォレットにNavigoカードを追加する〜
 
-    ![![](IMG_4918-1-473x1024.jpg)](IMG_4918-1-473x1024.jpg)
-      ![![](IMG_4919-473x1024.png)](IMG_4919-473x1024.png)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4918-1-473x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4919-473x1024.png" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 RER B線に乗る前に利用したNavigoについて紹介します。**日本のモバイルSuicaと同じ感覚で利用できるので、おすすめです！**
 
 切符はゾーンで区切られており、**パリ市内からの距離が遠いとゾーン5、近いとゾーン1**という感じです。
@@ -227,8 +293,9 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 </ul>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      iPhoneを使っているのであれば、AppleウォレットにNavigoカードを追加するだけで<strong>スマホタッチでパリの電車・バスを利用できます</strong>！
-  
+  <p>
+    iPhoneを使っているのであれば、AppleウォレットにNavigoカードを追加するだけで<strong>スマホタッチでパリの電車・バスを利用できます</strong>！
+  </p>
   
   <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-official">
     <a rel="noopener" href="https://support.apple.com/ja-jp/118581" title="AppleウォレットにNavigoカードを追加する  - Apple サポート (日本)" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
@@ -272,8 +339,9 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
     </div></a>
   </div>
   
-      Androidは以前からアプリがあるのでそちらを利用することでスマホタッチで乗れます。
-  
+  <p>
+    Androidは以前からアプリがあるのでそちらを利用することでスマホタッチで乗れます。
+  </p>
   
   <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
     <a rel="noopener" href="https://paris-mag.com/navigo-easy-appli/" title="&#12304;&#12497;&#12522;&#12305;&#12473;&#12510;&#12507;&#12450;&#12503;&#12522;&#12391;&#12490;&#12499;&#12468;&#12452;&#12540;&#12472;&#12540;&#12434;&#36092;&#20837;&#65286;&#12481;&#12515;&#12540;&#12472;&#65281;&#12450;&#12503;&#12522;&#12392;&#20351;&#12356;&#26041;&#35299;&#35500; &#8211; paris magazine" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
@@ -314,12 +382,21 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ### 16時：RER B線は怖くない。ホテルへ無事到着
 
-    ![![](IMG_4922-768x1024.jpg)](IMG_4922-768x1024.jpg)
-      ![![](IMG_4920-768x1024.jpg)](IMG_4920-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4922-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4920-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 いよいよRER B線へと乗り込みます。乗る前はいろいろと情報を見てきましたが、結論は「**警戒したほうが良いに越したことはないが、時間帯とか周りに気を配っていればトラブルに巻き込まれることは無い**」です。
 
 感想です↓
@@ -336,7 +413,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
   </li>
 </ul>
 
-線路沿いは落書きだらけで、電車内の窓ガラスも傷だらけで確かに治安が悪そうな雰囲気はありましたが、油断しなければ大丈夫という感想です。![![](IMG_4923-768x1024.jpg)](IMG_4923-768x1024.jpg) 
+線路沿いは落書きだらけで、電車内の窓ガラスも傷だらけで確かに治安が悪そうな雰囲気はありましたが、油断しなければ大丈夫という感想です。{{< custom-figure src="IMG_4923-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 乗り換え1回、およそ空港から1時間で「<a rel="noopener" href="https://www.agoda.com/ja-jp/hotel-le-cardinal/hotel/paris-fr.html" target="_blank" title="">ホテル ル カルディナル (Hotel Le Cardinal)</a>」へと到着です。
 
@@ -389,32 +466,60 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 ### 19時：口コミで高評価のビストロ「Bourgogne Sud」へ
 
-    ![![](IMG_4925-768x1024.jpg)](IMG_4925-768x1024.jpg)
-      ![![](IMG_4926-768x1024.jpg)](IMG_4926-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4925-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4926-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ホテル着いてからGoogleマップで見つけたお店に向かいました。開店と同時に入店。この後すぐに埋まっていきました。**Google翻訳でメニューをカメラで翻訳しながら選んでいきます。**
 
 注文したのは前菜、メイン、デザートというコース料理を注文しました。店員さんはみんな親切かつ陽気な方で、ジェスチャーも交えながら答えてくれて良かったです。
 
-    ![![](IMG_4927-768x1024.jpg)](IMG_4927-768x1024.jpg)
-      ![![](IMG_4928-768x1024.jpg)](IMG_4928-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4927-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4928-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 まずは前菜です。**エスカルゴは食べたい！**と狙っており、もう1品はソーセージという単語を見て選びました。
 
 エスカルゴはニンニクが効いてワインにとても合い、ソーセージはフランスパンで包んでいて、周りのソースが美味かったです。
 
-    ![![](IMG_4929-768x1024.jpg)](IMG_4929-768x1024.jpg)
-      ![![](IMG_4930-768x1024.jpg)](IMG_4930-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4929-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4930-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 メインです。口コミを見て「**ブフ・ブルギニョン**」が美味いと知り注文しました。店員さんもグッドチョイスと言ってくれたので、どうやらこのお店の人気メニューそうでした。
 
 味は牛肉ホロホロでとても赤ワインに合いました。
 
 もう1品はちょっとメニュー名忘れてしまったのですが、こっちはビールに合うお肉料理で美味かったです。
 
-    ![![](IMG_4931-1024x768.jpg)](IMG_4931-1024x768.jpg)
-      ![![](IMG_4932-768x1024.jpg)](IMG_4932-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4931-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4932-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 結構お腹いっぱいになってきましたが、最後にデザートを食べコーヒーでフィニッシュしました。
 
 **お会計は104.1ユーロ（16,851円）**でした。コース料理にワインやビールも飲んだのでパリにしては安いかもです。
@@ -463,7 +568,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 ### 21時：パリのスーパー「Supermarché Diagonal」へ
 
-![![](IMG_4933-768x1024.jpg)](IMG_4933-768x1024.jpg) 
+{{< custom-figure src="IMG_4933-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 ホテルから出てすぐのとこにあったスーパーに帰る前に寄りました。
 
@@ -516,15 +621,16 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 ## 2日目：ギリギリまで詰め込んだパリ観光。歩数は2万歩越え
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      結論から先に言ってしまうと、<strong>「ヴェルサイユ宮殿」と「ルーヴル美術館」は1日で行くもんじゃ無いです。</strong>
-  
+  <p>
+    結論から先に言ってしまうと、<strong>「ヴェルサイユ宮殿」と「ルーヴル美術館」は1日で行くもんじゃ無いです。</strong>
+  </p>
 </div>
 
 宮殿も美術館もあまり興味ないような僕であれば有名な場所に行ったなーぐらいで終わるのですが、**妻は不完全燃焼と言ってました**。好きであればそれぞれをメインに予定を組むことをおすすめします！
 
 ### 9時：フランスといえば朝はパン屋で贅沢に
 
-![![](IMG_4934-1024x768.jpg)](IMG_4934-1024x768.jpg) 
+{{< custom-figure src="IMG_4934-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 パリの日の出は朝の８時過ぎと日本と比べると遅いです。なので朝ごはんもゆっくりめの9時に出かけました。
 
@@ -576,7 +682,7 @@ RER B線に乗る前に利用したNavigoについて紹介します。**日本�
 
 ### 10時：凱旋門
 
-![![](IMG_4936-1024x768.jpg)](IMG_4936-1024x768.jpg) 
+{{< custom-figure src="IMG_4936-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 凱旋門です。パン屋さんから歩きと電車で20分とすぐ着きました。
 
@@ -629,9 +735,16 @@ Exitは空港まではあったので、油断してました。
 
 ### 10時30分：エッフェル塔
 
-    ![![](IMG_4939-768x1024.jpg)](IMG_4939-768x1024.jpg)
-      ![![](IMG_4938-768x1024.jpg)](IMG_4938-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4939-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4938-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 凱旋門からバスと徒歩で30分ぐらいでエッフェル塔の近くまで行きました。
 
 こちらも外観のみ。オリンピック後の訪問だったので五輪マークがまだありました〜。
@@ -681,9 +794,16 @@ Exitは空港まではあったので、油断してました。
 
 ### 12-15時：広大すぎるよヴェルサイユ宮殿
 
-    ![![](IMG_4982-768x1024.jpg)](IMG_4982-768x1024.jpg)
-      ![![](IMG_4981-1024x768.jpg)](IMG_4981-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4982-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4981-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 12時入場のチケットを事前に購入していたので、11時30分ぐらいには宮殿へと向かいました。
 
 公式サイトで購入して2人58ユーロ（9,286円）でした。前日の夜に予約して午前の時間指定は埋まっていたので、**早めの予約がおすすめ**です。
@@ -778,22 +898,38 @@ Exitは空港まではあったので、油断してました。
 
 入場口付近には時間が書かれた看板を持っている係の人がいるので、列に並んで入場しQRコードを提示することで中に入れます。
 
-    ![![](IMG_4978-768x1024.jpg)](IMG_4978-768x1024.jpg)
-      ![![](IMG_4979-768x1024.jpg)](IMG_4979-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4978-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4979-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 宮殿の外観・庭園です。
 
-    ![![](IMG_4984-768x1024.jpg)](IMG_4984-768x1024.jpg)
-      ![![](IMG_4985-768x1024.jpg)](IMG_4985-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4984-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4985-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 中は美術館のようになっており内装や展示物の量に圧倒されます。**宮殿中だけでも2時間ぐらいは時間が掛かり**、飲み物も持ち込んでなくて歩き疲れました。あと中にトイレありません。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      宮殿内に入る前に、<strong>トイレを済ませて飲み物を持っていくと良いです。</strong>（食べ物は持ち込み禁止のようです）
+  <p>
+    宮殿内に入る前に、<strong>トイレを済ませて飲み物を持っていくと良いです。</strong>（食べ物は持ち込み禁止のようです）
+  </p>
   
-  
-      <strong>一度宮殿を出ると、中に戻れません。</strong>
-  
+  <p>
+    <strong>一度宮殿を出ると、中に戻れません。</strong>
+  </p>
 </div>
 
 喉も渇き、お腹も空いたので宮殿内でカスクートを買ってお外で食べましたがこれが**美味しくて感動しました。**
@@ -844,13 +980,20 @@ Exitは空港まではあったので、油断してました。
 
 ### 16時：サン・シュルピス教会
 
-![![](IMG_4986-1024x768.jpg)](IMG_4986-1024x768.jpg) 
+{{< custom-figure src="IMG_4986-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 映画・小説「**ダヴィンチコード**」の舞台となった教会です。ルーブル美術館前に寄りました。
 
-    ![![](IMG_4988-768x1024.jpg)](IMG_4988-768x1024.jpg)
-      ![![](IMG_4987-1-768x1024.jpg)](IMG_4987-1-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4988-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4987-1-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 入場料は無料です！ヨーロッパ3カ国目となると、街並みに慣れてきた感じがありましたね。
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-detail">
@@ -896,7 +1039,7 @@ Exitは空港まではあったので、油断してました。
 
 ### 17時：最後の観光地ルーブル美術館へ！
 
-![![](IMG_4991-1024x768.jpg)](IMG_4991-1024x768.jpg) 
+{{< custom-figure src="IMG_4991-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 教会からバスに乗りルーブル美術館へとやってきました。
 
@@ -990,33 +1133,55 @@ Exitは空港まではあったので、油断してました。
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      3時間以上は滞在しましたが、<strong>もちろん全てを回る事はできませんでした。</strong>
+  <p>
+    3時間以上は滞在しましたが、<strong>もちろん全てを回る事はできませんでした。</strong>
+  </p>
   
+  <p>
+    <strong>水曜日</strong>と<strong>金曜日のみ21:00まで</strong>営業しています！
+  </p>
   
-      <strong>水曜日</strong>と<strong>金曜日のみ21:00まで</strong>営業しています！
-  
-  
-      <strong>チケットを提示すれば何度でも入退場できるので、休憩しつつ見るのがおすすめです！</strong>
-  
+  <p>
+    <strong>チケットを提示すれば何度でも入退場できるので、休憩しつつ見るのがおすすめです！</strong>
+  </p>
 </div>
 
 有名な展示物とライトアップしている様子です〜↓
 
-    <figure class="wp-block-image size-large">![![](IMG_4992-768x1024.jpg)](IMG_4992-768x1024.jpg)<figcaption class="wp-element-caption">モナ・リザだけ強そうな警備員いました。</figcaption></figure>
-      <figure class="wp-block-image size-large">![![](IMG_4996-768x1024.jpg)](IMG_4996-768x1024.jpg)<figcaption class="wp-element-caption">「ミロのヴィーナス」教科書で見るやつ。</figcaption></figure>
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4992-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">モナ・リザだけ強そうな警備員いました。</figcaption></figure>
+  </div>
   
-    <figure class="wp-block-image size-large">![![](IMG_4997-1024x768.jpg)](IMG_4997-1024x768.jpg)<figcaption class="wp-element-caption">「民衆を導く自由の女神」</figcaption></figure>
-      <figure class="wp-block-image size-large">![![](IMG_4994-1024x768.jpg)](IMG_4994-1024x768.jpg)<figcaption class="wp-element-caption">休憩時に食べたカスクートとビール</figcaption></figure>
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4996-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">「ミロのヴィーナス」教科書で見るやつ。</figcaption></figure>
+  </div>
+</div>
+
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4997-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">「民衆を導く自由の女神」</figcaption></figure>
+  </div>
+  
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_4994-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">休憩時に食べたカスクートとビール</figcaption></figure>
   </div>
 </div><figure class="wp-block-image size-large">
 
-![![](IMG_4998-1024x768.jpg)](IMG_4998-1024x768.jpg) <figcaption class="wp-element-caption">ルーブル美術館のライトアップ</figcaption></figure> 
+{{< custom-figure src="IMG_4998-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">ルーブル美術館のライトアップ</figcaption></figure> 
 
 ### 21時：フランスのクイズ・ミリオネアの賞金は100万€！
 
-    ![![](IMG_4999-1024x768.jpg)](IMG_4999-1024x768.jpg)
-      ![![](IMG_5001-1024x768.jpg)](IMG_5001-1024x768.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_4999-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5001-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ホテルへ帰って現地のTVをつけると日本で見たことのある番組をやってました。
 
 「**クイズ・ミリオネア**」です！流れるBGMやクイズのシステムなど全部一緒でした。
@@ -1031,7 +1196,7 @@ Exitは空港まではあったので、油断してました。
 
 ### 8時30分：スーパー1店舗目「MONOPRIX」
 
-![![](IMG_5002-1024x768.jpg)](IMG_5002-1024x768.jpg) 
+{{< custom-figure src="IMG_5002-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 まずはホテルから歩いて15分ぐらいのところにあった「MONOPRIX」というスーパーへ。
 
@@ -1083,7 +1248,7 @@ Exitは空港まではあったので、油断してました。
 
 ### 9時：スーパー2店舗目「Carrefour Market」
 
-![![](IMG_5003-1024x768.jpg)](IMG_5003-1024x768.jpg) 
+{{< custom-figure src="IMG_5003-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 続いて向かったのが「Carrefour Market」です。先ほどの「MONOPRIX」より大きい店舗でした。
 
@@ -1141,9 +1306,16 @@ Exitは空港まではあったので、油断してました。
 
 ### 11時：シャルル・ド・ゴール国際空港へ
 
-    ![![](IMG_5008-768x1024.jpg)](IMG_5008-768x1024.jpg)
-      ![![](IMG_5007-768x1024.jpg)](IMG_5007-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5008-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5007-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 ホテルをチェックアウトし、空港へと向かいます。バックパックにお土産いっぱいなので重い。
 
 着いた時と逆のルートで空港に行くだけなので迷うことなく到着することができました。
@@ -1156,7 +1328,7 @@ Exitは空港まではあったので、油断してました。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-670888f68c142-160x90.jpg)](アイキャッチ画像-670888f68c142-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1192,9 +1364,16 @@ Exitは空港まではあったので、油断してました。
   </div></a>
 </div>
 
-    ![![](IMG_5006-1024x768.jpg)](IMG_5006-1024x768.jpg)
-      ![![](IMG_5005-768x1024.jpg)](IMG_5005-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5006-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5005-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 空港へ着いたら荷物を預けます。ここまで預け入れ荷物なしでしたが、やはり預けると時間が掛かります。
 
 よく言われている通り、**出発の2時間前もしくは3時間前に到着しておくのが安心ですね**。
@@ -1203,29 +1382,50 @@ Exitは空港まではあったので、油断してました。
 
 ### 12時：シャルル・ド・ゴール国際空港〜出発エリア内〜
 
-![![](IMG_5010-1024x768.jpg)](IMG_5010-1024x768.jpg) 
+{{< custom-figure src="IMG_5010-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
 
 保安検査、出国審査を経て出発エリア内へと到着しました。出国審査はパスポートを機械で読み取らせ、顔写真を撮影するだけと簡単です。
 
-    ![![](IMG_5011-768x1024.jpg)](IMG_5011-768x1024.jpg)
-      ![![](IMG_5012-768x1024.jpg)](IMG_5012-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5011-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5012-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 この旅行でいくつもの空港を見てきましたが、一番シャルル・ド・ゴール国際空港がおしゃれでした。
 
 飛行機乗る前の待機エリアもカフェのようです。
 
-    ![![](IMG_5013-576x1024.jpg)](IMG_5013-576x1024.jpg)
-      ![![](IMG_5014-576x1024.jpg)](IMG_5014-576x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5013-576x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5014-576x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 フランス最後の料理はこの旅3回目となる「カスクート」で締めました。
 
 どこのカスクートもシンプルな材料なのに美味い。
 
 ### 14時：スワンナプーム空港へ
 
-    ![![](IMG_5015-768x1024.jpg)](IMG_5015-768x1024.jpg)
-      ![![](IMG_5016-768x1024.jpg)](IMG_5016-768x1024.jpg)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5015-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="IMG_5016-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 定刻から少し遅れて、フランスを出発しました。
 
 バイバイ〜。フランス。
@@ -1244,10 +1444,10 @@ Exitは空港まではあったので、油断してました。
       <span class="fa"></span>
     </div><figure class="blogcard-thumbnail internal-blogcard-thumbnail">
     
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
     <noscript>
-      ![![](icon-1.png)](icon-1.png)
+      {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     </noscript></figure>
     
     <div class="blogcard-content internal-blogcard-content">
@@ -1285,7 +1485,7 @@ Exitは空港まではあったので、油断してました。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](1-160x90.jpg)](1-160x90.jpg)
+    </div>{{< custom-figure src="1-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1327,7 +1527,7 @@ Exitは空港まではあったので、油断してました。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

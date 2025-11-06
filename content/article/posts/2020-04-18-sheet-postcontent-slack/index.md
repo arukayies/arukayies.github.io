@@ -1,11 +1,21 @@
 ---
 title: GASを使ってスプレッドシートの内容をSlackに通知させる方法
 author: arukayies
+type: post
 date: 2020-04-18T08:10:29+00:00
 excerpt: |
   スプレッドシートのURLをSlackに貼り付けて中身の共有を行っていませんか？
   そんな作業はGASとSlackを連携させれば解決です！方法を紹介します！！！
+url: /gas/sheet-postcontent-slack
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -18,8 +28,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1251422895009488896";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1251422895009488896";s:5:"pDate";s:19:"2020-04-18 08:10:43";}}";
-tags:
-  - "GAS"
+categories:
+  - GAS
 tags:
   - GAS
   - Google Apps Script
@@ -41,35 +51,41 @@ archives: ["2020年4月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          以前こんなツイートしたので、2個目のスプレッドシートの内容をSlackへ通知させる方法を紹介します！
-    
-  
+    <p>
+      以前こんなツイートしたので、2個目のスプレッドシートの内容をSlackへ通知させる方法を紹介します！
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          こんな感じで動作します。
-    
-  
+    <p>
+      こんな感じで動作します。
+    </p>
+  </div>
+</div>
+
 ステータスを **<span class="fz-20px">新規</span>** に変更すると、
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![![](実行前-1024x197.png)](実行前-1024x197.png)<figcaption>ステータスを新規にする</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="実行前-1024x197.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ステータスを新規にする</figcaption></figure>
 </div>
 
 Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
 
-![![](実行後.png)](実行後.png) <figcaption>こんな感じに飛ぶ</figcaption></figure> 
+{{< custom-figure src="実行後.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>こんな感じに飛ぶ</figcaption></figure> 
 
 ちなみに1個目の『入力したら勝手に日付入る＆名前入る』はこちらです。
 
@@ -79,7 +95,7 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](auto-date-name-160x90.png)](auto-date-name-160x90.png)
+    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -165,7 +181,7 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
 </div>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![![](Slackにアプリ情報を入力する-1024x852.png)](Slackにアプリ情報を入力する-1024x852.png)<figcaption>アプリ情報を入力</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="Slackにアプリ情報を入力する-1024x852.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>アプリ情報を入力</figcaption></figure>
 </div>
 
 ### 取得するトークンの権限を選択する
@@ -173,13 +189,13 @@ Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛�
 「OAuth & Permissions」を選択します。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![![](OAuth-Permissions-1024x733.jpg)](OAuth-Permissions-1024x733.jpg)<figcaption>「OAuth & Permissions」を選択</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="OAuth-Permissions-1024x733.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>「OAuth & Permissions」を選択</figcaption></figure>
 </div>
 
 Scopesエリアの「chat:write」を選択します。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![![](chat-writeを選択-1024x942.png)](chat-writeを選択-1024x942.png)<figcaption>Scopesエリアの「chat:write」を選択</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="chat-writeを選択-1024x942.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>Scopesエリアの「chat:write」を選択</figcaption></figure>
 </div>
 
 ### 作成したアプリをワークスペースにインストールする
@@ -187,13 +203,13 @@ Scopesエリアの「chat:write」を選択します。
 作成したアプリをワークスペースにインストールします。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![![](ワークスペースにアプリをインストールする-1024x946.png)](ワークスペースにアプリをインストールする-1024x946.png)<figcaption>作成したアプリをワークスペースにインストール</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="ワークスペースにアプリをインストールする-1024x946.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>作成したアプリをワークスペースにインストール</figcaption></figure>
 </div>
 
 ワークスペースへのインストールを許可します。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![![](許可する-1024x855.png)](許可する-1024x855.png)<figcaption>アクセスを許可する</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="許可する-1024x855.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>アクセスを許可する</figcaption></figure>
 </div>
 
 ### 生成されたトークンをコピーする
@@ -201,7 +217,7 @@ Scopesエリアの「chat:write」を選択します。
 これでトークンが生成されます！
 
 <div class="wp-block-image">
-  ![![](トークン生成-1024x624.png)](トークン生成-1024x624.png)
+  {{< custom-figure src="トークン生成-1024x624.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## 【スプレッドシート】Slackに通知させるコードを追加する
@@ -216,7 +232,7 @@ Scopesエリアの「chat:write」を選択します。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](auto-date-name-160x90.png)](auto-date-name-160x90.png)
+    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -258,17 +274,17 @@ Scopesエリアの「chat:write」を選択します。
 
 <span class="keyboard-key">編集</span> > <span class="keyboard-key">現在のプロジェクトのトリガー</span> を選択する。<figure class="wp-block-image size-large is-resized">
 
-![![](トリガー1-1024x904.png)](トリガー1-1024x904.png) <figcaption>編集 > 現在のプロジェクトのトリガー を選択</figcaption></figure> 
+{{< custom-figure src="トリガー1-1024x904.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>編集 > 現在のプロジェクトのトリガー を選択</figcaption></figure> 
 
 新しいトリガーを作成する。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![![](トリガー2-1024x536.png)](トリガー2-1024x536.png)<figcaption>新しいトリガーを作成</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="トリガー2-1024x536.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>新しいトリガーを作成</figcaption></figure>
 </div>
 
 以下のようなトリガーを保存します。<figure class="wp-block-image size-large">
 
-![![](トリガーの内容-1024x984.png)](トリガーの内容-1024x984.png) <figcaption>トリガー情報</figcaption></figure> 
+{{< custom-figure src="トリガーの内容-1024x984.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>トリガー情報</figcaption></figure> 
 
 ## 【実行結果】Slackへ通知させてみた
 
@@ -277,36 +293,43 @@ Scopesエリアの「chat:write」を選択します。
 ステータスを **<span class="fz-20px">新規</span>** に変更すると、
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">![![](実行前-1024x197.png)](実行前-1024x197.png)<figcaption>ステータスを新規にする</figcaption></figure>
+  <figure class="aligncenter size-large is-resized">{{< custom-figure src="実行前-1024x197.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ステータスを新規にする</figcaption></figure>
 </div>
 
 Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
 
-![![](実行後.png)](実行後.png) <figcaption>こんな感じに飛ぶ</figcaption></figure> 
+{{< custom-figure src="実行後.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>こんな感じに飛ぶ</figcaption></figure> 
 
 ## まとめ
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          今まではスプレッドシートに書かれている連絡事項をコピーして、それをSlackに貼ってメンバーへ伝達するような場面がありましたが、
+    <p>
+      今まではスプレッドシートに書かれている連絡事項をコピーして、それをSlackに貼ってメンバーへ伝達するような場面がありましたが、
+    </p>
     
+    <p>
+    </p>
     
-        
+    <p>
+      このスクリプトを応用して、スプレッドシートに書かれている連絡事項をSlackに通知させることで、
+    </p>
     
-          このスクリプトを応用して、スプレッドシートに書かれている連絡事項をSlackに通知させることで、
+    <p>
+      <strong><span class="fz-22px"><span class="marker-red">わずかな</span>作業がなくなりました</span>。</strong>（大事と思う）
+    </p>
     
+    <p>
+    </p>
     
-          <strong><span class="fz-22px"><span class="marker-red">わずかな</span>作業がなくなりました</span>。</strong>（大事と思う）
-    
-    
-        
-    
-          他にもいろいろ応用が効きそうなので、活用してみてください！
-    
-  
+    <p>
+      他にもいろいろ応用が効きそうなので、活用してみてください！
+    </p>
+  </div>
+</div>

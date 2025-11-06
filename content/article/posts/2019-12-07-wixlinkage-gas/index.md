@@ -1,8 +1,18 @@
 ---
 title: Wix CodeとGASを使ってホームページの更新を自動化する方法
 author: arukayies
+type: post
 date: 2019-12-06T17:00:00+00:00
+url: /gas/wixlinkage-gas
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -15,12 +25,13 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1244838109851684864";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1244838109851684864";s:5:"pDate";s:19:"2020-03-31 04:05:08";}}";
-tags:
-  - "GAS"
+categories:
+  - GAS
 tags:
   - Google Apps Script
   - スプレッドシート
 
+archives: ["2019年12月"]
 ---
 この記事は[Apps Script Advent Calendar 2019][1]の7日目の記事です。
 
@@ -81,19 +92,21 @@ tags:
 そんな作業をGASを使って、自動化しているので紹介します。
 
 <div class="wp-block-cocoon-blocks-icon-box bad-box common-icon-box block-box">
-      ツーリング予定をホームページに反映させるのが<span class="marker-under-red">めんどくさかった</span>。
-  
+  <p>
+    ツーリング予定をホームページに反映させるのが<span class="marker-under-red">めんどくさかった</span>。
+  </p>
 </div>
 
 <div class="wp-block-cocoon-blocks-icon-box good-box common-icon-box block-box">
-      ホームページ更新作業で<span class="marker-under">パターン化した部分をGASを使って自動化</span>します！
-  
+  <p>
+    ホームページ更新作業で<span class="marker-under">パターン化した部分をGASを使って自動化</span>します！
+  </p>
 </div>
 
 ## 動作の流れ
 
 <div class="wp-block-image">
-  ![![](img_5dfa222d3b788.png)](img_5dfa222d3b788.png)
+  {{< custom-figure src="img_5dfa222d3b788.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 <div class="wp-block-cocoon-blocks-caption-box-1 caption-box block-box has-border-color has-key-color-border-color">
@@ -116,7 +129,9 @@ tags:
         Wixでは動的ページとデータベースを連動させます。
       </li>
     </ol>
-  
+  </div>
+</div>
+
 ## IMPORTHTMLでスケジュールをスプレッドシートに書き込む
 
 私のクラブでは伝助というスケジュール調整サービスでツーリングの参加有無を管理しています。
@@ -166,17 +181,19 @@ tags:
 スプレッドシートで伝助の情報を取得するのに<span class="marker-under"><strong>IMPORTHTML関数</strong></span>を使います。
 
 <div class="wp-block-cocoon-blocks-icon-box information-box common-icon-box block-box">
-      <span class="marker-red"><strong>=IMPORTHTML(&#8220;伝助のURL&#8221;,&#8221;table&#8221;)</strong></span>
+  <p>
+    <span class="marker-red"><strong>=IMPORTHTML(&#8220;伝助のURL&#8221;,&#8221;table&#8221;)</strong></span>
+  </p>
   
-  
-      これでスプレッドシートに伝助の情報が反映されます！
-  
+  <p>
+    これでスプレッドシートに伝助の情報が反映されます！
+  </p>
 </div>
 
 スプレッドシートで取得するとこんな感じになります。
 
 <div class="wp-block-image">
-  ![![](img_5dfa222d7a2f7.png)](img_5dfa222d7a2f7.png)
+  {{< custom-figure src="img_5dfa222d7a2f7.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## GASを使ってWixのデータベースに書き込む
@@ -186,32 +203,33 @@ tags:
 ### Backend処理の作成
 
 <div class="wp-block-cocoon-blocks-icon-box information-box common-icon-box block-box">
-      Wixでホームページが作成されている前提で説明します。
-  
+  <p>
+    Wixでホームページが作成されている前提で説明します。
+  </p>
 </div>
 
 #### ホームページ編集画面からサイドバーを開く
 
 <div class="wp-block-image is-style-default">
-  ![![](img_5dfa222de4ed2.png)](img_5dfa222de4ed2.png)
+  {{< custom-figure src="img_5dfa222de4ed2.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### Backendを開く
 
 <div class="wp-block-image">
-  ![![](img_5dfa222e3e583.png)](img_5dfa222e3e583.png)
+  {{< custom-figure src="img_5dfa222e3e583.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### jsファイルを作成する
 
 <div class="wp-block-image">
-  ![![](img_5dfa222edf55f.png)](img_5dfa222edf55f.png)
+  {{< custom-figure src="img_5dfa222edf55f.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### http-function.jsを作成する
 
 <div class="wp-block-image">
-  ![![](img_5dfa222f2ec9d.png)](img_5dfa222f2ec9d.png)
+  {{< custom-figure src="img_5dfa222f2ec9d.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### http-function.jsの中身
@@ -219,7 +237,7 @@ tags:
 #### Wixにhttp-function.jsを登録する
 
 <div class="wp-block-image">
-  ![![](img_5dfa222fae577.png)](img_5dfa222fae577.png)
+  {{< custom-figure src="img_5dfa222fae577.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ### データベースの作成
@@ -227,13 +245,13 @@ tags:
 #### 新規コレクションを作成する
 
 <div class="wp-block-image">
-  ![![](img_5dfa2232bca34.png)](img_5dfa2232bca34.png)
+  {{< custom-figure src="img_5dfa2232bca34.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### 必要なフィールドを作成する
 
 <div class="wp-block-image">
-  ![![](img_5dfa223315543.png)](img_5dfa223315543.png)
+  {{< custom-figure src="img_5dfa223315543.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ### データベースとの連携
@@ -241,25 +259,25 @@ tags:
 #### 連携させたい箇所にデータベースをリンクさせる
 
 <div class="wp-block-image">
-  ![![](img_5dfa2235e8c28.png)](img_5dfa2235e8c28.png)
+  {{< custom-figure src="img_5dfa2235e8c28.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### データセットを設定する
 
 <div class="wp-block-image">
-  ![![](img_5dfa2237eb097.png)](img_5dfa2237eb097.png)
+  {{< custom-figure src="img_5dfa2237eb097.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### テキストとデータベースを接続する
 
 <div class="wp-block-image">
-  ![![](img_5dfa2238b1c74.png)](img_5dfa2238b1c74.png)
+  {{< custom-figure src="img_5dfa2238b1c74.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 #### テキストを接続する
 
 <div class="wp-block-image">
-  ![![](img_5dfa223a60200.png)](img_5dfa223a60200.png)
+  {{< custom-figure src="img_5dfa223a60200.png" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## 運用方法
@@ -287,7 +305,8 @@ LINE で発言するだけなら<span class="marker-under"><strong>とても楽<
     </li>
   </ul>
   
-    
+  <p>
+  </p>
 </div>
 
  [1]: https://qiita.com/advent-calendar/2019/gas

@@ -1,16 +1,27 @@
 ---
 title: 【水耕栽培】オクラの観察日記(91日目)
 author: arukayies
+type: post
 date: 2019-10-11T12:43:33+00:00
+url: /hydroponic_culture/okra/diary12-3
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
 snap_isAutoPosted:
   - 1571748289
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
   - 1
 snapTW:
   - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186624553176322048";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186624553176322048";s:5:"pDate";s:19:"2019-10-22 12:45:14";}}";'
+archives: ["2019年10月"]
 ---
 こんにちは！
 
@@ -25,7 +36,7 @@ snapTW:
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>![![](diary11-3-160x90.png)](diary11-3-160x90.png)
+      </div>{{< custom-figure src="diary11-3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -69,10 +80,10 @@ snapTW:
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
+        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -111,10 +122,10 @@ snapTW:
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      ![![](hydroponic_culture_second_machine.png)](hydroponic_culture_second_machine.png)
+      {{< custom-figure src="hydroponic_culture_second_machine.png" title="" Fit="1280x1280 webp q90" >}}
       
       <noscript>
-        ![![](hydroponic_culture_second_machine.png)](hydroponic_culture_second_machine.png)
+        {{< custom-figure src="hydroponic_culture_second_machine.png" title="" Fit="1280x1280 webp q90" >}}
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -143,11 +154,13 @@ snapTW:
         </div>
       </div>
     </div></a>
-  
+  </div>
+</div>
+
 ## 観察91日目
 
 メンテ最中に折ってしまいました。。。（ダメ元でテープ巻いてるけど、、、）  
-![![](img_5dfa4ca30c69b.jpg)](img_5dfa4ca30c69b.jpg) 
+{{< custom-figure src="img_5dfa4ca30c69b.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 残りのオクラも枯れていませんが、やっぱり季節過ぎたからか蕾を付けそうにありません。  
-![![](img_5dfa4ca3d2ae5.jpg)](img_5dfa4ca3d2ae5.jpg)
+{{< custom-figure src="img_5dfa4ca3d2ae5.jpg" title="" Fit="1280x1280 webp q90" >}}

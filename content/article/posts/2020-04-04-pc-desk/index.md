@@ -1,8 +1,18 @@
 ---
 title: 【3日で作る】リモートワークになったからPCデスクをDIYした
 author: arukayies
+type: post
 date: 2020-04-03T15:43:17+00:00
+url: /diy/pc-desk
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -15,8 +25,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1246101037422764036";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1246101037422764036";s:5:"pDate";s:19:"2020-04-03 15:43:33";}}";
-tags:
-  - "DIY"
+categories:
+  - DIY
 tags:
   - DIY
   - PCデスク
@@ -27,24 +37,29 @@ archives: ["2020年4月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          理由は言うまでもないでしょう。
+    <p>
+      理由は言うまでもないでしょう。
+    </p>
     
+    <p>
+      ついに弊社でもリモートワークの波が押し寄せてきました。
+    </p>
     
-          ついに弊社でもリモートワークの波が押し寄せてきました。
-    
-    
-          具体的なスケジュールが決定したのが3/26(木)だったかな。
-    
-  
+    <p>
+      具体的なスケジュールが決定したのが3/26(木)だったかな。
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-2 sbs-stn sbp-r sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](f_f_object_117_s512_f_object_117_0bg.png)](f_f_object_117_s512_f_object_117_0bg.png)
+    {{< custom-figure src="f_f_object_117_s512_f_object_117_0bg.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="speech-name">
       偉い人
@@ -52,62 +67,79 @@ archives: ["2020年4月"]
   </div>
   
   <div class="speech-balloon">
-          <strong><span class="fz-20px">4月1日からリモートワークでお願いします！！！</span></strong>
-    
-  
+    <p>
+      <strong><span class="fz-20px">4月1日からリモートワークでお願いします！！！</span></strong>
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          <strong><span class="fz-20px">ついにきたか！</span></strong>
-    
-  
+    <p>
+      <strong><span class="fz-20px">ついにきたか！</span></strong>
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          はい、ここで問題です。
+    <p>
+      はい、ここで問題です。
+    </p>
     
+    <p>
+      我が家は夫婦2人暮らし、パソコン用のスペースは1箇所しかありません。
+    </p>
     
-          我が家は夫婦2人暮らし、パソコン用のスペースは1箇所しかありません。
-    
-    
-          すでに妻は3月からリモートワークです。
-    
-  
+    <p>
+      すでに妻は3月からリモートワークです。
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          ・・・・・・・・・・
-    
-  
+    <p>
+      ・・・・・・・・・・
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          ぼくどこで仕事したら良いの？
-    
-  
+    <p>
+      ぼくどこで仕事したら良いの？
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-3 sbs-stn sbp-r sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](f_f_object_153_s512_f_object_153_0bg-150x150.png)](f_f_object_153_s512_f_object_153_0bg-150x150.png)
+    {{< custom-figure src="f_f_object_153_s512_f_object_153_0bg-150x150.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="speech-name">
       妻
@@ -115,66 +147,73 @@ archives: ["2020年4月"]
   </div>
   
   <div class="speech-balloon">
-          <span class="fz-20px">ダイニングテーブルしかないね。</span>
-    
-  
+    <p>
+      <span class="fz-20px">ダイニングテーブルしかないね。</span>
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          ！！！　
+    <p>
+      ！！！　
+    </p>
     
-    
-          ディスプレイないやん・・・
-    
-  
+    <p>
+      ディスプレイないやん・・・
+    </p>
+  </div>
+</div>
+
 <p class="has-text-align-center">
   このときすでに3/27(金)。
-
+</p>
 
 <p class="has-text-align-center">
   リモートワーク開始まで<span class="marker-red"><strong><span class="fz-20px">4日</span></strong></span>。本格的に作業できるのは<strong><span class="fz-20px">土日</span></strong>のみ。。。
-
+</p>
 
 <p class="has-text-align-center">
   こうして、<strong><span class="marker"><span class="fz-20px">快適な仕事環境</span></span></strong>を得るための作業が始まったのでした。
-
+</p>
 
 <p class="has-text-align-center">
   実際に完成した環境は<span class="fz-22px"><span class="marker-red"><strong>こちらです！！！</strong></span></span>
-
+</p>
 
 <p class="has-text-align-center">
   PCデスクの材料費は合計、<strong><span class="fz-22px"><span class="marker-under">￥13,896</span></span></strong>（＋税）詳細な明細は最後に！
-
+</p>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![![](PCデスク全体-1024x768.jpg)](PCデスク全体-1024x768.jpg)<figcaption>写真立てとかあるのでモザイクかけてます</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="PCデスク全体-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>写真立てとかあるのでモザイクかけてます</figcaption></figure>
 </div>
 
 <p class="has-text-align-center">
   スタンディングデスクの材料費は合計、<strong><span class="fz-22px"><span class="marker-under">￥</span></span><span class="fz-22px"><span class="marker-under">14,625</span></span></strong>（＋税）詳細な明細は最後に！
-
+</p>
 
 <p class="has-text-align-center">
   ※ドレッサーとスチールラックは除いた材料費です。
-
+</p>
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![![](スタンディングデスク全体-1024x768.jpg)](スタンディングデスク全体-1024x768.jpg)<figcaption>いろいろモザイクかけてます</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="スタンディングデスク全体-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>いろいろモザイクかけてます</figcaption></figure>
 </div>
 
 <p class="has-text-align-center">
   それでは、制作の過程を紹介します！　PCデスクDIYの参考にしてください！
-
+</p>
 
 <p class="has-text-align-center">
   ちなみに後日PCチェアーを改造しました。良かったこちらも参考にしてください！
-
+</p>
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
   <a href="https://arukayies.com/diy/pc-chair" title="10年経過したPCチェアーをまだまだ使えるように改造してみた！" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
@@ -182,7 +221,7 @@ archives: ["2020年4月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](pc-chair-160x90.png)](pc-chair-160x90.png)
+    </div>{{< custom-figure src="pc-chair-160x90.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -225,17 +264,54 @@ archives: ["2020年4月"]
 これが今の環境です。
 
 <div class="wp-block-image">
-  ![![](改造前のデスク環境.jpg)](改造前のデスク環境.jpg)
+  {{< custom-figure src="改造前のデスク環境.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁に固定しています！
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F508cb21f1703eaa82a0445049017890e%2F" target="_blank"><img decoding="async" src="https://arukayies.com/wp-content/uploads/2020/04/1_10010004903768627068_1.jpg" style="border: none;" /></a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F508cb21f1703eaa82a0445049017890e%2F" target="_blank">若井産業 WAKAI ツーバイフォー材専用壁面突っ張りシステム ディアウォール ダークブラウン</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2587%25E3%2582%25A3%25E3%2582%25A2%25E3%2582%25A6%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25AB%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2583%2587%25E3%2582%25A3%25E3%2582%25A2%25E3%2582%25A6%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25AB%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2583%2587%25E3%2582%25A3%25E3%2582%25A2%25E3%2582%25A6%25E3%2582%25A9%25E3%2583%25BC%25E3%2583%25AB" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 このままでも夫婦2人仲良く並んでお仕事したら、良い気もしますが・・・
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-3 sbs-stn sbp-r sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](f_f_object_153_s512_f_object_153_0bg.png)](f_f_object_153_s512_f_object_153_0bg.png)
+    {{< custom-figure src="f_f_object_153_s512_f_object_153_0bg.png" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="speech-name">
       妻
@@ -243,12 +319,16 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
   </div>
   
   <div class="speech-balloon">
-          会社のセキュリティルールで
+    <p>
+      会社のセキュリティルールで
+    </p>
     
-    
-          1部屋に1名じゃないと<span class="bold-red">ダメなんだよね</span>
-    
-  
+    <p>
+      1部屋に1名じゃないと<span class="bold-red">ダメなんだよね</span>
+    </p>
+  </div>
+</div>
+
 と言われてしまい断念。
 
 どっちにしろあの環境下で仕事となると、以下の問題があります。
@@ -369,7 +449,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 身長から理想の高さを計算してくれるサイトを発見！
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![![](デスク高.png)](デスク高.png)<figcaption>机の高さ</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="デスク高.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>机の高さ</figcaption></figure>
 </div>
 
 机の高さは<span class="marker-red"><strong>64cm</strong></span>
@@ -382,7 +462,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 
 サイズが決まったので、DIYするPCデスクのイメージを固めます。
 
-ちなみに、、、使う材料はすでに決まっています。![![](IMG_4709-1024x768.jpg)](IMG_4709-1024x768.jpg) 
+ちなみに、、、使う材料はすでに決まっています。{{< custom-figure src="IMG_4709-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 大量の2×4材と薄い板。買ったはいいが3年ぐらいベット下に熟成されておりました。笑
 
@@ -391,7 +471,7 @@ DIY好き御用達の『**ディアウォール**』でPCデスクと棚を壁�
 いろんな検索した結果、こんなイメージのPCデスクを作成することにします。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">![![](ba5adc21770f5ab5e936890e0c28c1ab062592d4.jpg)](ba5adc21770f5ab5e936890e0c28c1ab062592d4.jpg)<figcaption>Yasuさん https://roomclip.jp/myroom/605910</figcaption></figure>
+  <figure class="aligncenter size-large">{{< custom-figure src="ba5adc21770f5ab5e936890e0c28c1ab062592d4.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>Yasuさん https://roomclip.jp/myroom/605910</figcaption></figure>
 </div>
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
@@ -444,6 +524,43 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 使ってるソフトは『**もでりんV3**』です！ライセンスは『**ソーガイド**』というのこぎりに付属しています。
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F14cd96483887293eaafe284d644ceae8%2F" target="_blank">{{< custom-figure src="14_10010004963041301054_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F14cd96483887293eaafe284d644ceae8%2F" target="_blank">ソーガイド 　(角度固定式) 専用のこぎり付属</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2582%25BD%25E3%2583%25BC%25E3%2582%25AC%25E3%2582%25A4%25E3%2583%2589%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2582%25BD%25E3%2583%25BC%25E3%2582%25AC%25E3%2582%25A4%25E3%2583%2589%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2582%25BD%25E3%2583%25BC%25E3%2582%25AC%25E3%2582%25A4%25E3%2583%2589" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 <span class="blue">※この記事を作成してる時に知ったんですが、<span class="red"><span class="bold-red">クラウド版は無料</span></span> </span><span class="blue">みたいです。</span>
 
@@ -529,9 +646,9 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
   </blockquote>
 </div></figure> 
 
-さっそく、<span class="fz-20px">お部屋の中</span>で**じゃんじゃん切っていきます！**![![](IMG_0830-768x1024.jpg)](IMG_0830-768x1024.jpg) 
+さっそく、<span class="fz-20px">お部屋の中</span>で**じゃんじゃん切っていきます！**{{< custom-figure src="IMG_0830-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
-部屋の中だけど、<span class="fz-20px">木くず</span>気にせず**じゃんじゃん切っていきます！**![![](IMG_0835-768x1024.jpg)](IMG_0835-768x1024.jpg) 
+部屋の中だけど、<span class="fz-20px">木くず</span>気にせず**じゃんじゃん切っていきます！**{{< custom-figure src="IMG_0835-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 2時間ぐらいですべて切り終わりました。
 
@@ -541,7 +658,81 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 近所のホームセンターにて以下のような金具を購入しました。
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F1d265082237c258629709c8dadd68dc3%2F" target="_blank">{{< custom-figure src="6_10010004905009396375_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F1d265082237c258629709c8dadd68dc3%2F" target="_blank">アイリスオーヤマ 固定プレート GSD-240F</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FL%25E5%25AD%2597%25E9%2587%2591%25E5%2585%25B7%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DL%25E5%25AD%2597%25E9%2587%2591%25E5%2585%25B7%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DL%25E5%25AD%2597%25E9%2587%2591%25E5%2585%25B7" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F99f00555cec32bc1ad7f34431f70babf%2F" target="_blank">{{< custom-figure src="5_10010004905034060012_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F99f00555cec32bc1ad7f34431f70babf%2F" target="_blank">取付金具 カチオン No.6001(1コ入)</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FL%25E5%25AD%2597%25E9%2587%2591%25E5%2585%25B7%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DL%25E5%25AD%2597%25E9%2587%2591%25E5%2585%25B7%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DL%25E5%25AD%2597%25E9%2587%2591%25E5%2585%25B7" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 ホームセンターで<span class="fz-20px">1時間</span>ぐらい悩んでました。。。でもホームセンター楽しい。
 
@@ -555,12 +746,14 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    ![![](IMG_0839-768x1024.jpg)](IMG_0839-768x1024.jpg)
+    {{< custom-figure src="IMG_0839-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    ![![](IMG_0840-768x1024.jpg)](IMG_0840-768x1024.jpg)
-  
+    {{< custom-figure src="IMG_0840-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 この時点で時刻は**<span class="bold-red">【3/28(土) 19時】</span>**
 
 ## 【3/28(土) 22時】スタンディングデスクを組み立てる！
@@ -570,11 +763,48 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 スタンディングデスクから組み立てました！
 
 <div class="wp-block-image">
-  ![![](IMG_0842-768x1024.jpg)](IMG_0842-768x1024.jpg)
+  {{< custom-figure src="IMG_0842-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 使ってる工具は『ブラックアンドデッカー』です！
 
+<div class="cstmreba">
+  <div class="kaerebalink-box">
+    <div class="kaerebalink-image">
+      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fd093c512e6c329267e8d2c10f27bfa76%2F" target="_blank">{{< custom-figure src="2_10010004536178862301_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+    </div>
+    
+    <div class="kaerebalink-info">
+      <div class="kaerebalink-name">
+        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fd093c512e6c329267e8d2c10f27bfa76%2F" target="_blank">18Vリチウムマルチツールベーシック EVO183B1 ブラック&デッカー</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        
+        <div class="kaerebalink-powered-date">
+          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
+        </div>
+      </div>
+      
+      <div class="kaerebalink-detail">
+      </div>
+      
+      <div class="kaerebalink-link1">
+        <div class="shoplinkrakuten">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%2596%25E3%2583%25A9%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25A2%25E3%2583%25B3%25E3%2583%2589%25E3%2583%2587%25E3%2583%2583%25E3%2582%25AB%25E3%2583%25BC%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkamazon">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2583%2596%25E3%2583%25A9%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25A2%25E3%2583%25B3%25E3%2583%2589%25E3%2583%2587%25E3%2583%2583%25E3%2582%25AB%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
+        </div>
+        
+        <div class="shoplinkyahoo">
+          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2583%2596%25E3%2583%25A9%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25A2%25E3%2583%25B3%25E3%2583%2589%25E3%2583%2587%25E3%2583%2583%25E3%2582%25AB%25E3%2583%25BC" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
+        </div>
+      </div>
+    </div>
+    
+    <div class="booklink-footer">
+    </div>
+  </div>
+</div>
 
 この時点で****<span class="bold-red">【3/29(日) 1時】</span>****です。。。いよいよ時間が厳しくなってきたぞ。
 
@@ -587,7 +817,7 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 途中まで組み立てた様子です！
 
 <div class="wp-block-image">
-  ![![](IMG_0843-768x1024.jpg)](IMG_0843-768x1024.jpg)
+  {{< custom-figure src="IMG_0843-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
 </div>
 
 ## 【3/29(日) 22時】ついに完成！
@@ -598,19 +828,22 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    ![![](IMG_0857-768x1024.jpg)](IMG_0857-768x1024.jpg)
+    {{< custom-figure src="IMG_0857-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    ![![](IMG_0858-768x1024.jpg)](IMG_0858-768x1024.jpg)
+    {{< custom-figure src="IMG_0858-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    ![![](IMG_0859-1024x768.jpg)](IMG_0859-1024x768.jpg)
-  
+    {{< custom-figure src="IMG_0859-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-icon-box good-box common-icon-box block-box">
-      <span class="fz-20px">★<span class="bold-blue">工夫したポイント！</span></span>
-  
+  <p>
+    <span class="fz-20px">★<span class="bold-blue">工夫したポイント！</span></span>
+  </p>
   
   <ul class="wp-block-list">
     <li>
@@ -626,19 +859,22 @@ PCデスクのサイズとイメージが固まったので、設計図を作成
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    ![![](IMG_0854-768x1024.jpg)](IMG_0854-768x1024.jpg)
+    {{< custom-figure src="IMG_0854-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    ![![](IMG_0855-1024x768.jpg)](IMG_0855-1024x768.jpg)
+    {{< custom-figure src="IMG_0855-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    ![![](IMG_0856-1024x768.jpg)](IMG_0856-1024x768.jpg)
-  
+    {{< custom-figure src="IMG_0856-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-icon-box good-box common-icon-box block-box">
-      <span class="fz-20px"><span class="bold-blue">★工夫したポイント！</span></span>
-  
+  <p>
+    <span class="fz-20px"><span class="bold-blue">★工夫したポイント！</span></span>
+  </p>
   
   <ul class="wp-block-list">
     <li>
@@ -690,26 +926,32 @@ PCデスクの材料費は合計、**<span class="fz-22px">￥</span><span class
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          計画にかなり無理があり、妥協した感じの完成となりました。
+    <p>
+      計画にかなり無理があり、妥協した感じの完成となりました。
+    </p>
     
-    
-          しかし、最低限の要望は叶って、会社と同等の<span class="fz-20px"><span class="bold-red">生産性を発揮</span></span>できている気がします！！！
-    
-  
+    <p>
+      しかし、最低限の要望は叶って、会社と同等の<span class="fz-20px"><span class="bold-red">生産性を発揮</span></span>できている気がします！！！
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          今度ははチェアーをどうにかしたい。肩こりがつらい。。。
-    
-  
+    <p>
+      今度ははチェアーをどうにかしたい。肩こりがつらい。。。
+    </p>
+  </div>
+</div>

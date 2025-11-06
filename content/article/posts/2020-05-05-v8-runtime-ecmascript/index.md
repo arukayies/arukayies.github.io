@@ -1,9 +1,19 @@
 ---
 title: GASのV8ランタイムで使えるECMAScript構文のまとめ
 author: arukayies
+type: post
 date: 2020-05-05T09:56:16+00:00
 excerpt: GASのV8ランタイムで使えるECMAScript構文をまとめてみました！これを活用すると今まで以上に効率よくコードを書けるので、ぜひ使ってみてください！
+url: /gas/v8-runtime-ecmascript
+share: true
 toc: true
+comment: true
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -16,8 +26,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-tags:
-  - "GAS"
+categories:
+  - GAS
 tags:
   - GAS
   - Google Apps Script
@@ -26,7 +36,7 @@ archives: ["2020年5月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -75,14 +85,18 @@ archives: ["2020年5月"]
     
     <p class="has-text-align-left">
       結構前に公式よりお知らせがありました「<strong>V8ランタイムの対応</strong>」
+    </p>
     
+    <p>
+      今回はこの<strong>V8ランタイム</strong>で使える<strong>ECMAScript構文</strong>をまとめてみました！
+    </p>
     
-          今回はこの<strong>V8ランタイム</strong>で使える<strong>ECMAScript構文</strong>をまとめてみました！
-    
-    
-          これが書けるとこんなメリットがあります。
-    
-  
+    <p>
+      これが書けるとこんなメリットがあります。
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-check block-box has-background has-border-color has-watery-red-background-color has-red-border-color">
   <div class="iconlist-title">
     V8ランタイムのメリット！！
@@ -124,7 +138,7 @@ archives: ["2020年5月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
@@ -132,8 +146,10 @@ archives: ["2020年5月"]
   <div class="speech-balloon">
     <p class="has-text-align-center">
       それでは各構文を紹介していきます！
-    
-  
+    </p>
+  </div>
+</div>
+
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
@@ -162,7 +178,7 @@ archives: ["2020年5月"]
 
 と選択するだけです！<figure class="wp-block-image size-large">
 
-![![](v8_on-1-1024x458.png)](v8_on-1-1024x458.png) <figcaption>実行 > Chrome V8 を搭載した新しい Apps Script ランタイムを有効にする を選択</figcaption></figure> 
+{{< custom-figure src="v8_on-1-1024x458.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>実行 > Chrome V8 を搭載した新しい Apps Script ランタイムを有効にする を選択</figcaption></figure> 
 
 ## 【新機能①】ECMAScript構文
 
@@ -264,7 +280,9 @@ GASで**保存**する時点で以下のエラーとなります。
         コードを見る人にとって、読みやすくなります。
       </li>
     </ul>
-  
+  </div>
+</div>
+
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
@@ -308,7 +326,10 @@ function arrow_after_sample1() {
   // サンプルサンプルというログが出力
 }</code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 <span class="keyboard-key">function</span> の代わりに <span class="keyboard-key">=></span> が使われています。
 
@@ -351,7 +372,10 @@ function arrow_after_sample2() {
   // サンプル1サンプル2サンプル3というログが出力
 }</code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 このように簡単なコードで表現できます！
 
@@ -392,7 +416,10 @@ function arrow_after_sample2() {
   // サンプルサンプルというログが出力
 }</code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 さらにシンプルになりましたね！
 
@@ -405,15 +432,18 @@ function arrow_after_sample2() {
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          <span class="keyboard-key">this</span> を使うようなコードを書いたことないよ。。。
-    
-  
+    <p>
+      <span class="keyboard-key">this</span> を使うようなコードを書いたことないよ。。。
+    </p>
+  </div>
+</div>
+
 #### アロー関数を使うメリット
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
@@ -427,7 +457,9 @@ function arrow_after_sample2() {
         無名関数を短く表現することができます。
       </li>
     </ul>
-  
+  </div>
+</div>
+
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
@@ -482,8 +514,9 @@ JavaScriptのClassはこちらの記事が参考になりました！
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-          Classを使わないで実装する場合
-    
+    <p>
+      Classを使わないで実装する場合
+    </p>
     
     <pre class="wp-block-code"><code>function class_sample_before() {
   let persons = &#91;];
@@ -520,8 +553,9 @@ function getStandardWeight(height, weight) {
 </div>
 
 <div class="wp-block-cocoon-blocks-column-right column-right">
-      Classを使って実装した場合
-  
+  <p>
+    Classを使って実装した場合
+  </p>
   
   <pre class="wp-block-code"><code>function class_sample_after() {
   class Person {
@@ -552,6 +586,8 @@ function getStandardWeight(height, weight) {
   persons&#91;1] = new Person("木村", "花子", 150, 45);
   console.log(persons);
 }</code></pre>
+</div>
+</div>
 
 どっちのコードも同じ結果を返します。
 
@@ -603,7 +639,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
         見た目がかっこいい！
       </li>
     </ul>
-  
+  </div>
+</div>
+
 ### 分割代入
 
 配列やオブジェクトを複数の変数に**分割**して**代入**できます。
@@ -612,8 +650,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-          従来の方法
-    
+    <p>
+      従来の方法
+    </p>
     
     <pre class="wp-block-code"><code>function before() {
   let array = &#91;1, 2, 3];
@@ -626,8 +665,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 </div>
 
 <div class="wp-block-cocoon-blocks-column-right column-right">
-      分割代入を使った方法
-  
+  <p>
+    分割代入を使った方法
+  </p>
   
   <pre class="wp-block-code"><code>function after() {
   let array = &#91;1, 2, 3];
@@ -636,7 +676,10 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
   console.log(x, y, z);
 }</code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -645,8 +688,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-          従来の方法
-    
+    <p>
+      従来の方法
+    </p>
     
     <pre class="wp-block-code"><code>function before() {
   let data = {a: 12, b: false, c: 'blue'};
@@ -659,8 +703,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 </div>
 
 <div class="wp-block-cocoon-blocks-column-right column-right">
-      分割代入を使った方法
-  
+  <p>
+    分割代入を使った方法
+  </p>
   
   <pre class="wp-block-code"><code>function after() {
   let data = {a: 12, b: false, c: 'blue'};
@@ -670,7 +715,10 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 }
 </code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -691,15 +739,18 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
         コードが見やすくなります！
       </li>
     </ul>
-  
+  </div>
+</div>
+
 ### テンプレート文字列
 
 `<strong><span class="badge-grey">``</span></strong>`（**バッククオート**）で文字列を囲むと、`<strong><span class="badge-grey">${}</span></strong>`で変数を展開できます。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-          従来の方法
-    
+    <p>
+      従来の方法
+    </p>
     
     <pre class="wp-block-code"><code>function before() {
   let first = '田中';
@@ -711,8 +762,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 </div>
 
 <div class="wp-block-cocoon-blocks-column-right column-right">
-      テンプレート文字列を使った方法
-  
+  <p>
+    テンプレート文字列を使った方法
+  </p>
   
   <pre class="wp-block-code"><code>function after() {
   let first = '田中';
@@ -723,7 +775,10 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 }
 </code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -743,7 +798,8 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
     </ul>
   </div>
   
-    
+  <p>
+  </p>
 </div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
@@ -755,8 +811,9 @@ persons&#91;4] = new Person("中村", "かおり", 150, 45);</code></pre>
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-          従来の場合
-    
+    <p>
+      従来の場合
+    </p>
     
     <pre class="wp-block-code"><code>function before() {
   // ログに『hello world!』と出力
@@ -771,8 +828,9 @@ function hello(greeting, name) {
 </div>
 
 <div class="wp-block-cocoon-blocks-column-right column-right">
-      デフォルト引数を使う場合
-  
+  <p>
+    デフォルト引数を使う場合
+  </p>
   
   <pre class="wp-block-code"><code>function after() {
   let hello =
@@ -782,6 +840,8 @@ function hello(greeting, name) {
   // ログに『hello world!』と出力
   hello();
 }</code></pre>
+</div>
+</div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -801,7 +861,8 @@ function hello(greeting, name) {
     </ul>
   </div>
   
-    
+  <p>
+  </p>
 </div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
@@ -813,8 +874,9 @@ function hello(greeting, name) {
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-          従来の方法
-    
+    <p>
+      従来の方法
+    </p>
     
     <pre class="wp-block-code"><code>function before() {
   let multiline = "This string is sort of\n"
@@ -825,8 +887,9 @@ function hello(greeting, name) {
 </div>
 
 <div class="wp-block-cocoon-blocks-column-right column-right">
-      『<span class="badge-grey">\n</span>』を使わない方法
-  
+  <p>
+    『<span class="badge-grey">\n</span>』を使わない方法
+  </p>
   
   <pre class="wp-block-code"><code>function after() {
   let multiline = `This on the other hand,
@@ -836,7 +899,10 @@ function hello(greeting, name) {
 }
 </code></pre>
 
-
+<p>
+</p>
+</div>
+</div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -854,7 +920,8 @@ function hello(greeting, name) {
     </ul>
   </div>
   
-    
+  <p>
+  </p>
 </div>
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
@@ -864,15 +931,18 @@ function hello(greeting, name) {
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    ![![](icon-1.png)](icon-1.png)
+    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
     
 
   </div>
   
   <div class="speech-balloon">
-          今回紹介した新しい構文を活用して、どんどんGASを使っていきたいですね！
-    
-  
+    <p>
+      今回紹介した新しい構文を活用して、どんどんGASを使っていきたいですね！
+    </p>
+  </div>
+</div>
+
 <div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-check block-box has-background has-border-color has-watery-red-background-color has-red-border-color">
   <div class="iconlist-title">
     V8ランタイムのメリット！！

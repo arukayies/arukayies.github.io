@@ -1,11 +1,21 @@
 ---
 title: Google Apps ScriptのgetNumberFormat()を使いこなすばい！
 author: arukayies
+type: post
 date: 2020-08-06T12:21:47+00:00
 excerpt: GASでスプレッドシートの指定セルの数値の書式を取得する方法を紹介します！
+url: /gas/getnumberformat
+share: true
 toc: true
+comment: true
 snap_isAutoPosted:
   - 1596716509
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -16,8 +26,10 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-tags:
-  - "GAS"
+last_modified:
+  - 2025-03-06 11:30:30
+categories:
+  - GAS
 tags:
   - GAS
   - getNumberFormat()

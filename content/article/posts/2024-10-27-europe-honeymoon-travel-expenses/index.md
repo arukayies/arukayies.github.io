@@ -1,19 +1,34 @@
 ---
 title: ヨーロッパ3カ国を巡る新婚旅行にかかった費用は100万円！10日間過ごした内訳！
 author: arukayies
+type: post
 date: 2024-10-27T04:46:08+00:00
+url: /diy/travel/europe-honeymoon-travel-expenses
+share: true
 toc: true
-tags:
-  - "旅"
+comment: true
+last_modified:
+  - 2024-10-30 14:42:49
+page_type:
+  - default
+update_level:
+  - high
+the_review_type:
+  - Product
+the_review_rate:
+  - 2.5
+categories:
+  - 旅
 
+archives: ["2024年10月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-
-
+</p>
+<p>
 ヨーロッパ新婚旅行（ロンドン、ブダペスト、パリ）シリーズの最後に気になる費用の詳細をお伝えします！
-
-
+</p>
+<p>
 この旅は2024年9月14日〜22日に行きました。<strong><span class="marker">物価の高いヨーロッパ旅行で工夫した点をお伝えします！</span></strong>
 
 <strong><span class="marker">これが今回の新婚旅行にかかった費用100万円の内訳です！</span></strong>
@@ -24,7 +39,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -60,14 +75,21 @@ tags:
   </div></a>
 </div>
 
-    ![![](費用内訳.png)](費用内訳.png)
-      ![![](image-1.png)](image-1.png)
+<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="費用内訳.png" title="" Fit="1280x1280 webp q90" >}}
+  </div>
   
+  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
+    {{< custom-figure src="image-1.png" title="" Fit="1280x1280 webp q90" >}}
+  </div>
+</div>
+
 種別ごとに費用の詳細をお伝えします！
 
 ## 日本→ロンドン→ブダペスト→パリ→日本の航空券は2人で約60万
 
-![![](IMG_4036-1024x768.jpg)](IMG_4036-1024x768.jpg) ![![](image-2-1024x161.png)](image-2-1024x161.png) 
+{{< custom-figure src="IMG_4036-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-2-1024x161.png" title="" Fit="1280x1280 webp q90" >}} 
 
 100万円の半分以上を占めるのは航空券です。ANA、JAL等でヨーロッパに行くと、片道だけで50万超えるのでとても悩みました。ヨーロッパへ行こう！と決心したのも2ヶ月前とかなので、早割もなかったです。
 
@@ -79,7 +101,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -118,19 +140,22 @@ tags:
 航空券の費用を抑えたポイントはこちらです！
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      航空券比較サイトを使い（<strong>Trip.com</strong>を利用）、安い航空会社を探す。
+  <p>
+    航空券比較サイトを使い（<strong>Trip.com</strong>を利用）、安い航空会社を探す。
+  </p>
   
+  <p>
+    <strong>直行便よりも乗り継ぎ便で予約する。</strong>
+  </p>
   
-      <strong>直行便よりも乗り継ぎ便で予約する。</strong>
-  
-  
-      日程が決まっていれば、早い段階で予約する
-  
+  <p>
+    日程が決まっていれば、早い段階で予約する
+  </p>
 </div>
 
 ## ロンドン2泊、ブダペスト3泊、パリ2泊の宿泊費は約16万
 
-![![](IMG_4822-1024x768.jpg)](IMG_4822-1024x768.jpg) ![![](image-3-1024x194.png)](image-3-1024x194.png) 
+{{< custom-figure src="IMG_4822-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-3-1024x194.png" title="" Fit="1280x1280 webp q90" >}} 
 
 航空券の次に悩んだのは各地の宿泊場所です。日本と同じような基準で選んでいったのですが、1番気になるのは**治安でした**。
 
@@ -144,7 +169,7 @@ tags:
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -181,11 +206,13 @@ tags:
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      比較サイトを使い（<strong>Agoda</strong>を利用）、安いホテルを探す。
+  <p>
+    比較サイトを使い（<strong>Agoda</strong>を利用）、安いホテルを探す。
+  </p>
   
-  
-      <strong>日本人の口コミを参考にする</strong>。
-  
+  <p>
+    <strong>日本人の口コミを参考にする</strong>。
+  </p>
 </div>
 
 ## 10日間の食事 + お土産(食べ物)にかかった費用は約11万
@@ -195,28 +222,30 @@ tags:
 現地のスーパーも活用したので、費用を抑えることができました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      事前に食べたい名物を調べ、食べたいものは我慢しない。
+  <p>
+    事前に食べたい名物を調べ、食べたいものは我慢しない。
+  </p>
   
-  
-      <strong>スーパーで軽食を購入して、費用を抑えるのとお腹を休ませる</strong>。
-  
+  <p>
+    <strong>スーパーで軽食を購入して、費用を抑えるのとお腹を休ませる</strong>。
+  </p>
 </div>
 
 ### ロンドン2泊の食費は2人で約3.3万
 
-![![](IMG_4035-1024x765.jpg)](IMG_4035-1024x765.jpg) ![![](image-4-1024x167.png)](image-4-1024x167.png) 
+{{< custom-figure src="IMG_4035-1024x765.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-4-1024x167.png" title="" Fit="1280x1280 webp q90" >}} 
 
 フィッシュ&チップスとビール、イングリッシュブレックファーストだけは食べる！という夢を達成しました。
 
 ### ブダベスト3泊の食費は2人で約3.1万
 
-![![](IMG_4899-768x1024.jpg)](IMG_4899-768x1024.jpg) ![![](image-5-1024x197.png)](image-5-1024x197.png) 
+{{< custom-figure src="IMG_4899-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-5-1024x197.png" title="" Fit="1280x1280 webp q90" >}} 
 
 朝食付きのホテルへ宿泊だったのと夕食はスーパーで買った軽食で済ませていました。
 
 ### パリ2泊の食費は2人で約3.6万
 
-![![](IMG_4994-1024x768.jpg)](IMG_4994-1024x768.jpg) ![![](image-6-1024x273.png)](image-6-1024x273.png) 
+{{< custom-figure src="IMG_4994-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-6-1024x273.png" title="" Fit="1280x1280 webp q90" >}} 
 
 初日に現地のビストロを訪れ、残りは各観光地でサンドウィッチ（カスクート）をよく食べてました。
 
@@ -224,50 +253,51 @@ tags:
 
 ### バンコク観光の費用は約2.4万
 
-![![](IMG_3976-768x1024.jpg)](IMG_3976-768x1024.jpg) ![![](image-7-1024x165.png)](image-7-1024x165.png) 
+{{< custom-figure src="IMG_3976-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-7-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
 
 帰りの乗り継ぎ時に行ったマッサージが割高でした。疲れは取れたので後悔はしていません。
 
 ### ロンドン観光の費用は約0.9万
 
-![![](IMG_4018-768x1024.jpg)](IMG_4018-768x1024.jpg) ![![](image-8-1024x165.png)](image-8-1024x165.png) 
+{{< custom-figure src="IMG_4018-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-8-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
 
 博物館と建造物を見るだけだったので、**３カ国の中で一番観光費用は安かったです。**
 
 ### ブダベスト観光の費用は約2.4万
 
-![![](IMG_4842-1024x768.jpg)](IMG_4842-1024x768.jpg) ![![](image-9-1024x385.png)](image-9-1024x385.png) 
+{{< custom-figure src="IMG_4842-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-9-1024x385.png" title="" Fit="1280x1280 webp q90" >}} 
 
 3泊4日とこの旅行で一番長く滞在しましたが、**物価が日本より少し安い**こともありこのぐらいとなりました。
 
 ### パリ観光の費用は約3.9万
 
-![![](IMG_4936-1024x768.jpg)](IMG_4936-1024x768.jpg) ![![](image-10-1024x226.png)](image-10-1024x226.png) 
+{{< custom-figure src="IMG_4936-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-10-1024x226.png" title="" Fit="1280x1280 webp q90" >}} 
 
 **最後にお土産を買い込んだので、一番高くなりました**。
 
 ## 現地での移動費は約3万！
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-      各地の公共交通機関の乗り方などを調べたりするのは手間ですが、<strong>コストも抑えられて、<span class="marker-blue">乗り物楽しいのでおすすめです</span>！</strong>
-  
+  <p>
+    各地の公共交通機関の乗り方などを調べたりするのは手間ですが、<strong>コストも抑えられて、<span class="marker-blue">乗り物楽しいのでおすすめです</span>！</strong>
+  </p>
 </div>
 
 ### バンコクの移動費は2人で約3,600円
 
-![![](IMG_3967-1024x768.jpg)](IMG_3967-1024x768.jpg) ![![](image-11-1024x88.png)](image-11-1024x88.png) 
+{{< custom-figure src="IMG_3967-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-11-1024x88.png" title="" Fit="1280x1280 webp q90" >}} 
 
 行きのタイ乗り継ぎ時のみ観光するため電車に乗りました。
 
 ### ロンドンの公共交通機関はクレカタッチでらくらく！移動費は2人で約6,000円
 
-![![](IMG_4011-768x1024.jpg)](IMG_4011-768x1024.jpg) ![![](image-12-1024x195.png)](image-12-1024x195.png) 
+{{< custom-figure src="IMG_4011-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-12-1024x195.png" title="" Fit="1280x1280 webp q90" >}} 
 
 クレカタッチで地下鉄も二階建てバスも乗車できて便利でした。クレカ明細から合計金額を算出しています。
 
 ### ブダベストではBudapestGoを使ってスマホで乗れる！移動費は2人で約7,300円
 
-![![](IMG_4845-768x1024.jpg)](IMG_4845-768x1024.jpg) ![![](image-13-1024x278.png)](image-13-1024x278.png) 
+{{< custom-figure src="IMG_4845-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-13-1024x278.png" title="" Fit="1280x1280 webp q90" >}} 
 
 BudapestGoというアプリをインストールすることで、トラム・バス・地下鉄と3種類乗車しました。
 
@@ -279,7 +309,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66ff37dcd4e82-160x90.jpg)](アイキャッチ画像-66ff37dcd4e82-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -317,7 +347,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
 
 ### Navigoを使えば日本のSuicaと変わらず移動できる！パリでの移動費は2人で約1.4万円
 
-![![](IMG_5007-768x1024.jpg)](IMG_5007-768x1024.jpg) ![![](image-14-1024x228.png)](image-14-1024x228.png) 
+{{< custom-figure src="IMG_5007-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-14-1024x228.png" title="" Fit="1280x1280 webp q90" >}} 
 
 パリではNavigoをiPhoneに設定して、バス・地下鉄・高速鉄道と3種類乗車しました。
 
@@ -329,7 +359,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-670888f68c142-160x90.jpg)](アイキャッチ画像-670888f68c142-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -379,8 +409,9 @@ BudapestGoというアプリをインストールすることで、トラム・�
     </li>
   </ul>
   
-      以下は今後も使えるグッズなので、費用は省きます。
-  
+  <p>
+    以下は今後も使えるグッズなので、費用は省きます。
+  </p>
   
   <ul class="wp-block-list">
     <li>
@@ -403,7 +434,7 @@ BudapestGoというアプリをインストールすることで、トラム・�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>![![](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)
+    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
