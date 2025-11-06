@@ -1,31 +1,16 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】スワンナプーム空港内でトランジット8時間の過ごし方
 author: arukayies
-type: post
 date: 2024-10-20T01:50:02+00:00
-url: /diy/travel/europe-honeymoon-transit-suvarnabhumi-airport
-share: true
 toc: true
-comment: true
-last_modified:
-  - 2024-10-30 14:48:03
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-categories:
-  - 旅
+tags:
+  - "旅"
 
-archives: ["2024年10月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-</p>
-<p>
+
+
 タイトルの通りヨーロッパへ新婚旅行に行きました。
 
 前回はパリ観光編をまとめました。
@@ -36,7 +21,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-670888f68c142-160x90.jpg)](アイキャッチ画像-670888f68c142-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -78,7 +63,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -115,63 +100,42 @@ archives: ["2024年10月"]
 </div>
 
 この記事ではスワンナプーム空港内でのトランジット8時間の記録になります。
-</p>
-<p>
+
+
 タイマッサージとラウンジを利用して、あとは買い物をしてたら良い時間潰しになりました。
 
 ## タイ国際航空：シャルル・ド・ゴール国際空港〜スワンナプーム空港
 
-{{< custom-figure src="IMG_5033-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_5033-1024x768.jpg)](IMG_5033-1024x768.jpg) 
 
 この度2度目の長時間フライト出発です。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5030-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_5030-1024x768.jpg)](IMG_5030-1024x768.jpg)
+      ![![](IMG_5031-1024x768.jpg)](IMG_5031-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5031-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 フランスを出発して1時間ぐらいで機内食がやってきました。フランス発だからか料理もタイ発と比べてヨーロッパ感ありました。2人で別々のもの頼んだので両方の味を堪能できてよかったです。どちらも美味しい。
 
 機内では映画を見たり、数時間寝ては起きてを繰り返す感じで過ごしていました。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5034-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_5034-768x1024.jpg)](IMG_5034-768x1024.jpg)
+      ![![](IMG_5032-1024x768.jpg)](IMG_5032-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5032-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 1回目の機内食から4時間後ぐらいには軽食のサンドウィッチが来て、その後3時間ぐらいには2回目の機内食が配られました。
 
 動かず食べるだけってのもなかなかの修行だなと感じました。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5035-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_5035-768x1024.jpg)](IMG_5035-768x1024.jpg)
+      ![![](IMG_5036-768x1024.jpg)](IMG_5036-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5036-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
-機内食を食べしばらくするとタイが近づいてきました。天気は雨でした。（観光はしないつもりだったので、ちょうどよかったです）{{< custom-figure src="IMG_5037-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} 
+機内食を食べしばらくするとタイが近づいてきました。天気は雨でした。（観光はしないつもりだったので、ちょうどよかったです）![![](IMG_5037-1024x768.jpg)](IMG_5037-1024x768.jpg) 
 
 ## 0〜1.5h：乗り継ぎ保安検査場
 
-{{< custom-figure src="IMG_5038-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_5038-1024x768.jpg)](IMG_5038-1024x768.jpg) 
 
 定刻の30分遅れでタイへ到着しました。ここからスワンナプーム空港内で過ごします。
 
-到着がサテライトターミナルだったので、メインターミナルへ移動するために**自動運転のシャトルトレイン**へ向かいます。空港だけは日本よりも技術が進んでいて驚きました。{{< custom-figure src="IMG_5039-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} 
+到着がサテライトターミナルだったので、メインターミナルへ移動するために**自動運転のシャトルトレイン**へ向かいます。空港だけは日本よりも技術が進んでいて驚きました。![![](IMG_5039-1024x768.jpg)](IMG_5039-1024x768.jpg) 
 
 そういえばこんなのありました。日本の国際協力機構（JICA）を通じて、スワンナプーム空港の建設に日本の協力があったそうです。
 
@@ -221,22 +185,19 @@ archives: ["2024年10月"]
 飛行機の遅延とシャトルトレインへの移動、そして保安検査の混雑もあり、メインターミナルへ着いたのは到着から1.5時間ほど掛かりました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    国際線の乗り継ぎの場合は時間に余裕があると安心できます。
-  </p>
+      国際線の乗り継ぎの場合は時間に余裕があると安心できます。
   
-  <p>
-    特に迷うことはなかったですが、順調にいっても1.5時間掛かりました。
-  </p>
   
-  <p>
-    道中では出発が迫ってるであろうお客様の呼び出しが絶えなかったです。
-  </p>
+      特に迷うことはなかったですが、順調にいっても1.5時間掛かりました。
+  
+  
+      道中では出発が迫ってるであろうお客様の呼び出しが絶えなかったです。
+  
 </div>
 
 ## 1.5h〜3h：旅の疲れを癒しにタイマッサージ！
 
-{{< custom-figure src="IMG_5040-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_5040-768x1024.jpg)](IMG_5040-768x1024.jpg) 
 
 ヨーロッパー旅行では相当歩いたので、事前に調べていた空港内のタイマッサージ店へと向かいました。
 
@@ -300,17 +261,10 @@ archives: ["2024年10月"]
 
 ## 3h〜6h：エコノミークラスでもラウンジを利用する裏技！
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5042-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_5042-768x1024.jpg)](IMG_5042-768x1024.jpg)
+      ![![](IMG_5043-768x1024.jpg)](IMG_5043-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5043-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
-**エコノミークラスでクレカ特典もないのに、ラウンジを利用した裏技**を紹介します！{{< custom-figure src="IMG_5041-592x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
+**エコノミークラスでクレカ特典もないのに、ラウンジを利用した裏技**を紹介します！![![](IMG_5041-592x1024.jpg)](IMG_5041-592x1024.jpg) 
 
 その方法は**Trip.comの無料特典**を利用するです！このおかげで1人分のラウンジ料金を無料にすることができました。さらに**Trip.comで貯まったポイントも利用**したので、最終的には支払ったのは**2,000円**でした。
 
@@ -357,21 +311,13 @@ archives: ["2024年10月"]
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    <strong>エコノミークラスでクレカ特典もないのに、ラウンジを利用した裏技は「Trip.comの無料特典！」</strong>
-  </p>
-</div>
-
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5045-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+      <strong>エコノミークラスでクレカ特典もないのに、ラウンジを利用した裏技は「Trip.comの無料特典！」</strong>
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5044-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
 </div>
 
+    ![![](IMG_5045-768x1024.jpg)](IMG_5045-768x1024.jpg)
+      ![![](IMG_5044-768x1024.jpg)](IMG_5044-768x1024.jpg)
+  
 軽食はサンドウィッチやタイ米のチャーハンなどありました。
 
 久しぶりの米が美味しく、タイビールもあって居心地良かったです。2時間弱ぐらい仮眠をとってラウンジを後にしました。
@@ -382,35 +328,21 @@ archives: ["2024年10月"]
 
 ## タイ国際航空：スワンナプーム空港〜羽田空港
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5113-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_5113-1024x768.jpg)](IMG_5113-1024x768.jpg)
+      ![![](IMG_5108-1024x768.jpg)](IMG_5108-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5108-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 いよいよタイもさよならです。
 
 この旅でタイ国際航空は4度目の搭乗となりますが、1番新しい機体のようです。
 
 液晶のモニターのタッチパネルの反応もよく、機内もピカピカでした。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5110-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_5110-1024x768.jpg)](IMG_5110-1024x768.jpg)
+      ![![](IMG_5111-1024x768.jpg)](IMG_5111-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_5111-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 3時間ほど経って機内食がやってきました。
 
-2人で別々のものをチョイス。焼きそばとカツ丼のようなものです。タイから出発だからか内容も味もアジアっぽく美味しかったです。{{< custom-figure src="IMG_5112-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} 
+2人で別々のものをチョイス。焼きそばとカツ丼のようなものです。タイから出発だからか内容も味もアジアっぽく美味しかったです。![![](IMG_5112-768x1024.jpg)](IMG_5112-768x1024.jpg) 
 
 日本へ到着1時間前にはどら焼きが配られました。
 
@@ -422,7 +354,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -459,9 +391,8 @@ archives: ["2024年10月"]
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    <strong>飛行機のチケットは直行便よりも乗り継ぎ便が安かった</strong>！
-  </p>
+      <strong>飛行機のチケットは直行便よりも乗り継ぎ便が安かった</strong>！
+  
 </div>
 
 ## 最後に
@@ -478,7 +409,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-67209c489a745-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-67209c489a745-160x90.jpg)](アイキャッチ画像-67209c489a745-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -522,7 +453,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="1-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](1-160x90.jpg)](1-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -564,7 +495,7 @@ archives: ["2024年10月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

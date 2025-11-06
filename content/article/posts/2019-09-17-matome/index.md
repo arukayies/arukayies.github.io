@@ -1,18 +1,8 @@
 ---
 title: 【水耕栽培】ミズナの観察日記まとめ
 author: arukayies
-type: post
 date: 2019-09-17T09:36:07+00:00
-url: /hydroponic_culture/mizuna/matome
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -27,7 +17,7 @@ archives: ["2019年9月"]
 
 私が育てていたミズナの育成状況をまとめて紹介します！
 
-{{< custom-figure src="img_5dfeeb7c2ccf0.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfeeb7c2ccf0.jpg)](img_5dfeeb7c2ccf0.jpg) 
 
 ## 種植え
 
@@ -74,9 +64,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 100均のケースにスポンジを敷き詰め、保温遮熱シートで日光を遮断した自作プランターです。  
 スポンジには水をたっぷり含ませています。  
 また、乾かないようにトイレットペーパーを上から被せています。
@@ -88,7 +76,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary1-160x90.png)](diary1-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -122,9 +110,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 11日目
 
 <div class="blogcard-type bct-together">
@@ -134,7 +120,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary2-160x90.png)](diary2-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -168,9 +154,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 16日目
 
 <div class="blogcard-type bct-together">
@@ -180,7 +164,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary3-160x90.png)](diary3-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -214,9 +198,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 29日目
 
 <div class="blogcard-type bct-together">
@@ -226,7 +208,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary4-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary4-160x90.png)](diary4-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -260,9 +242,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 38日目
 
 <div class="blogcard-type bct-together">
@@ -272,7 +252,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary5-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary5-160x90.png)](diary5-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -306,9 +286,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 41日目
 
 <div class="blogcard-type bct-together">
@@ -318,7 +296,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary6-160x90.png)](diary6-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -352,9 +330,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 45日目
 
 <div class="blogcard-type bct-together">
@@ -364,7 +340,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary7-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary7-160x90.png)](diary7-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -398,9 +374,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 47日目 初収穫
 
 <div class="blogcard-type bct-together">
@@ -410,7 +384,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary8-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary8-160x90.png)](diary8-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -444,9 +418,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 53日目
 
 <div class="blogcard-type bct-together">
@@ -456,7 +428,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary9-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary9-160x90.png)](diary9-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -490,9 +462,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 55日目 2回目収穫
 
 <div class="blogcard-type bct-together">
@@ -502,7 +472,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary10-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary10-160x90.png)](diary10-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -536,9 +506,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 58日目
 
 <div class="blogcard-type bct-together">
@@ -548,7 +516,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary11-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary11-160x90.png)](diary11-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -582,9 +550,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 65日目
 
 <div class="blogcard-type bct-together">
@@ -594,7 +560,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary12-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary12-160x90.png)](diary12-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -628,9 +594,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 68日目
 
 <div class="blogcard-type bct-together">
@@ -640,7 +604,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary13-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary13-160x90.png)](diary13-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -674,9 +638,7 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## まとめ
 
 <div class="box">

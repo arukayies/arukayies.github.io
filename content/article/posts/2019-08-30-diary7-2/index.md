@@ -1,20 +1,10 @@
 ---
 title: 【水耕栽培】ルッコラの観察日記(70日目)
 author: arukayies
-type: post
 date: 2019-08-30T14:32:14+00:00
-url: /hydroponic_culture/arugula/diary7-2
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1569681179
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -36,7 +26,7 @@ archives: ["2019年8月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary6-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary6-2-160x90.png)](diary6-2-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -80,10 +70,10 @@ archives: ["2019年8月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -112,13 +102,11 @@ archives: ["2019年8月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 観察70日目
 
 根本が枯れはじめ、どうやらここらが限界のようです。  
 残りを収穫してサラダで頂きました！  
-{{< custom-figure src="img_5dfa33b932180.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa33b932180.jpg)](img_5dfa33b932180.jpg) 
 
-{{< custom-figure src="img_5dfa33ba3d3d6.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dfa33ba3d3d6.jpg)](img_5dfa33ba3d3d6.jpg)

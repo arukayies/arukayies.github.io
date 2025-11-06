@@ -1,27 +1,16 @@
 ---
 title: 『ヤフーの１ｏｎ１―――部下を成長させるコミュニケーションの技法』を読んでみて
 author: arukayies
-type: post
 date: 2019-11-07T14:07:03+00:00
-url: /lifestyle/1on1
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
   - 1
 snapTW:
   - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1200467235543769088";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1200467235543769088";s:5:"pDate";s:19:"2019-11-29 17:31:07";}}";'
-archives: ["2019年11月"]
 ---
 仕事で1on1をやっている。
 
@@ -40,7 +29,7 @@ archives: ["2019年11月"]
 
 ## 独自でやってきた『1on1』の方法①
 
-{{< custom-figure src="img_5dfa25a2104b3.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa25a2104b3.jpg)](img_5dfa25a2104b3.jpg) 
 
 Googleカレンダーで2週間毎のスケジュールを先に押さえる。だいたい3ヶ月分。  
 カレンダーの説明にはこんなことを書いている。
@@ -60,7 +49,7 @@ Googleカレンダーで2週間毎のスケジュールを先に押さえる。�
 
 ## 独自でやってきた『1on1』の方法②
 
-{{< custom-figure src="img_5dfa25a246144.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa25a246144.jpg)](img_5dfa25a246144.jpg) 
 
 カレンダーに書いてたものをスプレッドシートに書くようになった。  
 スプレッドシートには事前に目標を書いてもらう。  
@@ -76,7 +65,7 @@ Googleカレンダーで2週間毎のスケジュールを先に押さえる。�
 
 ## 読んで感じたこと
 
-{{< custom-figure src="img_5dfa25a278df8.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa25a278df8.jpg)](img_5dfa25a278df8.jpg) 
 
 状況把握のために、いろいろ質問し常に相手のことを知ろうと  
 より**知ることが重要と思っていた**が、違ったみたいだ。

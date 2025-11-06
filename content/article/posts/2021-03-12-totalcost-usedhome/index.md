@@ -1,25 +1,11 @@
 ---
 title: DIYでお家をセルフリフォームするために購入した中古戸建の費用をすべて公開！物件の内見〜住宅ローン手続き〜購入まで
 author: arukayies
-type: post
 date: 2021-03-12T10:18:45+00:00
 excerpt: |
   お家買いました。およそ 築45年 販売価格は 1,280万円
   ネット検索しても細かい情報がなかったので、すべての金額を公開しています。
-url: /diy/totalcost-usedhome
-share: true
 toc: true
-comment: true
-last_modified:
-  - 2024-10-02 08:37:13
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
 snap_isAutoPosted:
   - 1615544326
 snapEdIT:
@@ -30,8 +16,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-categories:
-  - DIY
+tags:
+  - "DIY"
 tags:
   - DIY
 
@@ -39,33 +25,27 @@ archives: ["2021年3月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      お家買いました。およそ <strong>築45年</strong>
-    </p>
+          お家買いました。およそ <strong>築45年</strong>
     
-    <p>
-      販売価格は <strong><span class="bold-red">1,280万円</span></strong>　
-    </p>
+    
+          販売価格は <strong><span class="bold-red">1,280万円</span></strong>　
+    
     
     <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
     </div>
     
-    <p>
-      購入した物件の詳細はYouTubeに上げてます。
-    </p>
+          購入した物件の詳細はYouTubeに上げてます。
     
-    <p>
-      これからDIY動画をアップしていく予定なので、気になる人は<strong> チャンネル登録</strong> 宜しくおねがいします。
-    </p>
-  </div>
-</div>
-
+    
+          これからDIY動画をアップしていく予定なので、気になる人は<strong> チャンネル登録</strong> 宜しくおねがいします。
+    
+  
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-check">
   <a rel="noopener" href="https://www.youtube.com/channel/UCoO5ZwX9e7jToe7eo-h62HQ" title="くらのDIYちゃんねる" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
   
@@ -109,49 +89,40 @@ archives: ["2021年3月"]
 </div>
 
 <div class="wp-block-image">
-  {{< custom-figure src="ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-1024x576.jpg" title="" Fit="1280x1280 webp q90" >}}
+  ![![](ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-1024x576.jpg)](ob1e99573360ea8a851fb903c7a1cee81_4620693218539088068_210311-1024x576.jpg)
 </div>
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      ここでは実際に物件が引き渡されるまでに掛かった費用を <strong>すべて公開</strong> します。
-    </p>
+          ここでは実際に物件が引き渡されるまでに掛かった費用を <strong>すべて公開</strong> します。
     
-    <p>
-      物件購入の参考になればうれしいです。
-    </p>
-  </div>
-</div>
-
+    
+          物件購入の参考になればうれしいです。
+    
+  
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      諸費用だけ先に言ってしまうと、
-    </p>
+          諸費用だけ先に言ってしまうと、
     
-    <p>
-      物件引き渡しまでに支払った諸費用は <strong><span class="bold-red"><strong><strong>115万4,752円</strong></strong></span></strong> でした。
-    </p>
     
-    <p>
-      <strong>どのタイミングでいくら必要</strong> か共有していきます。
-    </p>
-  </div>
-</div>
-
+          物件引き渡しまでに支払った諸費用は <strong><span class="bold-red"><strong><strong>115万4,752円</strong></strong></span></strong> でした。
+    
+    
+          <strong>どのタイミングでいくら必要</strong> か共有していきます。
+    
+  
 ## 物件の内見を行う
 
 賃貸の時と変わらず、気になる物件を探して不動産の人に見せてもらいます。
@@ -159,9 +130,8 @@ archives: ["2021年3月"]
 僕は3件の内見を行いました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    <strong>土地のみ(古民家あり)</strong> という区分で探すと掘り出し物件が見つかります。
-  </p>
+      <strong>土地のみ(古民家あり)</strong> という区分で探すと掘り出し物件が見つかります。
+  
 </div>
 
 ## 購入の申込を行う
@@ -171,21 +141,17 @@ archives: ["2021年3月"]
 特に必要なものはなく、購入希望価格を記載して提出しました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    希望価格なので、ここはどんな価格を記載して問題ないそうですが
-  </p>
+      希望価格なので、ここはどんな価格を記載して問題ないそうですが
   
-  <p>
-    <strong>極端に価格を下げると別な希望者を優先されたり、売主から承諾もおりません。</strong>
-  </p>
   
-  <p>
-    3件目の内見をした瞬間に可能性を感じた僕はむしろこの販売価格は安いと思い、
-  </p>
+      <strong>極端に価格を下げると別な希望者を優先されたり、売主から承諾もおりません。</strong>
   
-  <p>
-    購入希望価格には販売価格の <span class="bold-red">1,280万</span> を記載しました。
-  </p>
+  
+      3件目の内見をした瞬間に可能性を感じた僕はむしろこの販売価格は安いと思い、
+  
+  
+      購入希望価格には販売価格の <span class="bold-red">1,280万</span> を記載しました。
+  
 </div>
 
 ## 住宅ローンの仮審査を行う(不動産指定の銀行)
@@ -193,17 +159,14 @@ archives: ["2021年3月"]
 売買契約に先立って買主の支払い能力を確かめるために、住宅ローンの仮審査を行いました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    支払い能力を確かめるための仮審査なので、<strong>どの銀行でも問題</strong> ないです。
-  </p>
+      支払い能力を確かめるための仮審査なので、<strong>どの銀行でも問題</strong> ないです。
   
-  <p>
-    この時は不動産会社指定の銀行で仮審査を行いましたが、実際に借りたのは
-  </p>
   
-  <p>
-    <strong>住信SBIネット銀行</strong> です。
-  </p>
+      この時は不動産会社指定の銀行で仮審査を行いましたが、実際に借りたのは
+  
+  
+      <strong>住信SBIネット銀行</strong> です。
+  
 </div>
 
 ## 売買契約を結ぶ
@@ -217,8 +180,7 @@ archives: ["2021年3月"]
 印紙代は**1万円** でした。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-memo block-box has-border-color has-key-color-border-color">
-  <p>
-    売買契約で支払った内訳です。
+      売買契約で支払った内訳です。
   </p><figure class="wp-block-table">
   
   <table>
@@ -291,9 +253,8 @@ archives: ["2021年3月"]
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    仮審査も保険(団信)の結果も <strong>次の日</strong> には結果がきました。
-  </p>
+      仮審査も保険(団信)の結果も <strong>次の日</strong> には結果がきました。
+  
 </div>
 
 ## 住宅ローンの本審査を行う(住信SBIネット銀行)
@@ -307,23 +268,23 @@ archives: ["2021年3月"]
 
 <p class="has-text-align-center">
   <strong>■提出書類の記入</strong><br />・ローン借入申込書<br />・個人情報の取扱いに関する同意書兼表明および確約書
-</p>
+
 
 <p class="has-text-align-center">
   <strong>■必要書類の準備①(本人確認書類)</strong><br />・健康保険証(コピー)<br />・住民票(原本)
-</p>
+
 
 <p class="has-text-align-center">
   <strong>■必要書類の準備②(該当するかたのみに必要な書類)</strong><br />・諸費用明細または資金計画書
-</p>
+
 
 <p class="has-text-align-center">
   <strong>■必要書類の準備③(所得証明関係書類</strong>)<br />・直近1年分の源泉徴収票(コピー)<br />・直近1年分の住民税決定通知書(原本)
-</p>
+
 
 <p class="has-text-align-center">
   <strong>■必要書類の準備④(物件関係書類)</strong><br />・売買契約書(コピー)<br />・重要事項説明書(コピー)<br />・建築確認済証または建築確認通知書(コピー)<br />・建築確認申請書(コピー)<br />・間取りがわかる平面図または間取図(コピー)
-</p>
+
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -333,13 +294,11 @@ archives: ["2021年3月"]
 住信SBIネット銀行では住宅ローン専用の **手続きサポートアプリ** があり、その後のやり取りはすべてアプリで完結することが出来ました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    住信SBIネット銀行では住宅ローンの不明点を <strong>アプリで気軽に質問出来る。</strong>
-  </p>
+      住信SBIネット銀行では住宅ローンの不明点を <strong>アプリで気軽に質問出来る。</strong>
   
-  <p>
-    今回不足事項があったせいか、審査受付から本審査通過まで <strong><span class="bold-red">16日</span></strong> 掛かりました
-  </p>
+  
+      今回不足事項があったせいか、審査受付から本審査通過まで <strong><span class="bold-red">16日</span></strong> 掛かりました
+  
 </div>
 
 また、アプリ経由で担当者からいくつか質問と追加資料を送ってほしいと問い合わせもあったので共有します。
@@ -373,22 +332,18 @@ archives: ["2021年3月"]
 結果として、ひび割れ補修のみで、証明書を取得することが出来ました。費用は約 <span class="bold-red">10万円</span> です。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    <strong>建築証明証 or 建築図面</strong> があると調査することができます。この書類が <strong><span class="bold-red">重要</span></strong> です。
-  </p>
+      <strong>建築証明証 or 建築図面</strong> があると調査することができます。この書類が <strong><span class="bold-red">重要</span></strong> です。
   
-  <p>
-    築45年の物件でも <strong>軽量鉄骨造</strong> だと耐震証明書が取得できる。
-  </p>
   
-  <p>
-    住宅ローン減税を申請すると10年で <strong><span class="bold-red">100万</span></strong> 前後は控除される見込みです。
-  </p>
+      築45年の物件でも <strong>軽量鉄骨造</strong> だと耐震証明書が取得できる。
+  
+  
+      住宅ローン減税を申請すると10年で <strong><span class="bold-red">100万</span></strong> 前後は控除される見込みです。
+  
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-memo block-box has-border-color has-key-color-border-color">
-  <p>
-    耐震証明書取得で支払った内訳です。
+      耐震証明書取得で支払った内訳です。
   </p><figure class="wp-block-table">
   
   <table>
@@ -461,26 +416,21 @@ archives: ["2021年3月"]
 <span class="keyboard-key">(自分で8桁万も振込するのかな。ってちょっとドキドキしてました。　笑)</span>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    <strong>1,300万円</strong> の借入を行い、自分の口座に振り込まれるのは、銀行側の手数料が差し引かれた金額が振り込まれます。
-  </p>
+      <strong>1,300万円</strong> の借入を行い、自分の口座に振り込まれるのは、銀行側の手数料が差し引かれた金額が振り込まれます。
   
-  <p>
-    口座に振り込まれる金額 = <strong>1,300万円</strong> [ 融資金額 ] － <strong>28万6,000円</strong> [ 事務取扱手数料 ]
-  </p>
   
-  <p>
-    融資されると <span class="bold-red">1,271万4,000円</span> が振り込まれました。
-  </p>
+      口座に振り込まれる金額 = <strong>1,300万円</strong> [ 融資金額 ] － <strong>28万6,000円</strong> [ 事務取扱手数料 ]
   
-  <p>
-    物件の支払いは事前に売主の口座情報と支払い金額を登録しており、融資実行タイミングになると <strong><span class="bold-red">融資と同時に振込</span></strong> も行われました。
-  </p>
+  
+      融資されると <span class="bold-red">1,271万4,000円</span> が振り込まれました。
+  
+  
+      物件の支払いは事前に売主の口座情報と支払い金額を登録しており、融資実行タイミングになると <strong><span class="bold-red">融資と同時に振込</span></strong> も行われました。
+  
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-memo block-box has-border-color has-key-color-border-color">
-  <p>
-    物件の残金と固定資産税と不動産会社へ仲介手数料を支払いました。
+      物件の残金と固定資産税と不動産会社へ仲介手数料を支払いました。
   </p><figure class="wp-block-table">
   
   <table>
@@ -546,18 +496,15 @@ archives: ["2021年3月"]
 およそ **所有権移転登記代** **<span class="bold-red">20万</span>**と **抵当権設定登記代** **<span class="bold-red">8万</span>** になります。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    所有権移転と抵当権設定で <strong>2名の司法書士</strong> を調整してもらいましたが、
-  </p>
+      所有権移転と抵当権設定で <strong>2名の司法書士</strong> を調整してもらいましたが、
   
-  <p>
-    銀行側指定の司法書士1名で所有権移転と抵当権設定を行っていたら、<strong>費用を抑えられる</strong> 可能性があります。<span class="keyboard-key">ここだけはちょっと失敗したなーと思いました。</span>
-  </p>
+  
+      銀行側指定の司法書士1名で所有権移転と抵当権設定を行っていたら、<strong>費用を抑えられる</strong> 可能性があります。<span class="keyboard-key">ここだけはちょっと失敗したなーと思いました。</span>
+  
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-memo block-box has-border-color has-key-color-border-color">
-  <p>
-    所有権移転登記代の内訳です。計 <span class="bold-red">193,872円</span> です。
+      所有権移転登記代の内訳です。計 <span class="bold-red">193,872円</span> です。
   </p><figure class="wp-block-table">
   
   <table>
@@ -614,12 +561,10 @@ archives: ["2021年3月"]
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-memo block-box has-border-color has-key-color-border-color">
-  <p>
-    抵当権設定登記代の内訳です。計 <span class="bold-red">78,405</span><strong><span class="bold-red">円</span></strong> です。
-  </p>
+      抵当権設定登記代の内訳です。計 <span class="bold-red">78,405</span><strong><span class="bold-red">円</span></strong> です。
   
-  <p>
-    住宅ローンの諸費用分含めると、所有権移転とほとんど金額は変わりません。
+  
+      住宅ローンの諸費用分含めると、所有権移転とほとんど金額は変わりません。
   </p><figure class="wp-block-table">
   
   <table>
@@ -834,22 +779,18 @@ archives: ["2021年3月"]
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      ネットを検索してもなかなか詳細な費用がなかったので、
-    </p>
+          ネットを検索してもなかなか詳細な費用がなかったので、
     
-    <p>
-      今回 <strong>すべての費用を公開</strong> しました。
-    </p>
     
-    <p>
-      誰かの参考になったら嬉しいです。
-    </p>
-  </div>
-</div>
+          今回 <strong>すべての費用を公開</strong> しました。
+    
+    
+          誰かの参考になったら嬉しいです。
+    
+  

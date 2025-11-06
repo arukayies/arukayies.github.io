@@ -1,31 +1,17 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】トランジット8時間でタイ観光編
 author: arukayies
-type: post
 date: 2024-09-29T07:37:13+00:00
-url: /diy/travel/europe-honeymoon-thailand-tourism
-share: true
 toc: true
-comment: true
-last_modified:
-  - 2024-10-30 14:44:03
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-categories:
-  - 旅
+tags:
+  - "旅"
 
 archives: ["2024年9月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-</p>
-<p>
+
+
 タイトルの通りヨーロッパへ新婚旅行に行きました。
 
 前回は事前に行った準備をまとめました。
@@ -36,7 +22,7 @@ archives: ["2024年9月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)](アイキャッチ画像-66fb8c4ad58b7-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -78,7 +64,7 @@ archives: ["2024年9月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -122,7 +108,7 @@ archives: ["2024年9月"]
 
 ### タイ国際航空のチェックイン
 
-{{< custom-figure src="IMG_3955-1022x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_3955-1022x1024.jpg)](IMG_3955-1022x1024.jpg) 
 
 アプリから事前にチェックインすることができ、iOSであればウォレットにチケットを追加することができました。
 
@@ -172,9 +158,8 @@ archives: ["2024年9月"]
 バックパックスタイルのため預け入れ荷物もなく、直接保安検査場へと向かえてとてもスムーズでした。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    <strong>スマホでチケットも表示できる</strong>ので、ゲート通るのも楽ちんでした。
-  </p>
+      <strong>スマホでチケットも表示できる</strong>ので、ゲート通るのも楽ちんでした。
+  
 </div>
 
 ### 出国審査
@@ -224,16 +209,9 @@ archives: ["2024年9月"]
 
 ### 夕食
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3956-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3956-1024x768.jpg)](IMG_3956-1024x768.jpg)
+      ![![](IMG_3957-1024x768.jpg)](IMG_3957-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3957-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 出国後エリアにて食事しました。
 
 行ったのは「<a rel="noopener" href="https://tokyo-haneda.com/shop_and_dine/detail/tenant_00088.html" target="_blank" title="">六厘舎</a>」と「<a rel="noopener" href="https://tokyo-haneda.com/shop_and_dine/detail/tenant_00077.html" target="_blank" title="">天ぷら　さき亭</a>」。しばらく日本食とはお別れです。
@@ -324,90 +302,39 @@ archives: ["2024年9月"]
 
 ## タイ国際航空：羽田空港〜スワンナプーム空港
 
-{{< custom-figure src="IMG_3958-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_3958-1024x768.jpg)](IMG_3958-1024x768.jpg) 
 
 飛行機内での記録です。
 
 ### 機内
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3959-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3959-768x1024.jpg)](IMG_3959-768x1024.jpg)
+      ![![](IMG_3960-768x1024.jpg)](IMG_3960-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3960-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 座席はエコノミーであまり余裕はない感じでした。
 
 モニターでは有名な映画であれば日本語翻訳で見れるのがいくつかありましが、ほとんど英語でした。
 
 ### 機内食
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3962-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3962-768x1024.jpg)](IMG_3962-768x1024.jpg)
+      ![![](IMG_3961-1024x768.jpg)](IMG_3961-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3961-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 出発してすぐに水と軽食が来ました。時刻は0時55分。眠れないのでひとまず食べる。
 
 そして4時間後には朝食が来ました。どれも美味しくいただけました。
 
 ## タイ到着：スワンナプーム空港
 
-{{< custom-figure src="IMG_3964-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_3964-1024x768.jpg)](IMG_3964-1024x768.jpg) 
 
 遅延して6時間弱のフライトでタイへ到着。
 
 事前に購入したeSIMも楽天モバイルも問題なく使えました。
 
 
-<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> {{< custom-figure src="1_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" title="" Fit="1280x1280 webp q90" >}}</a>{{< custom-figure src="img_66fe293eaf559.gif" title="" Fit="1280x1280 webp q90" >}} 
+<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> ![![](1_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)](1_bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)</a>![![](img_66fe293eaf559.gif)](img_66fe293eaf559.gif) 
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fimpression-shop%2Fesim-global6%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="3_esim13-11.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fimpression-shop%2Fesim-global6%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">【最低40円】eSIM 東南アジア7地域 香港 マカオ インドネシア マレーシア タイ シンガポール ベトナム 1GB 3GB 5GB 10GB 50GB 超高速 1日間 3日間 5日間 7日間 10日間 15日間 20日間 30日間 メール納品 simカード 留学 出張神技</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2580%2590%25E6%259C%2580%25E4%25BD%258E40%25E5%2586%2586%25E3%2580%2591eSIM%2520%25E6%259D%25B1%25E5%258D%2597%25E3%2582%25A2%25E3%2582%25B8%25E3%2582%25A27%25E5%259C%25B0%25E5%259F%259F%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2580%2590%25E6%259C%2580%25E4%25BD%258E40%25E5%2586%2586%25E3%2580%2591eSIM%2520%25E6%259D%25B1%25E5%258D%2597%25E3%2582%25A2%25E3%2582%25B8%25E3%2582%25A27%25E5%259C%25B0%25E5%259F%259F%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2580%2590%25E6%259C%2580%25E4%25BD%258E40%25E5%2586%2586%25E3%2580%2591eSIM%2520%25E6%259D%25B1%25E5%258D%2597%25E3%2582%25A2%25E3%2582%25B8%25E3%2582%25A27%25E5%259C%25B0%25E5%259F%259F" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ### 入国審査
 
@@ -579,32 +506,23 @@ archives: ["2024年9月"]
 </div>
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    しかし、預け場所が汚かったのか<strong>バックパックの底が汚れていました</strong>。。。
-  </p>
+      しかし、預け場所が汚かったのか<strong>バックパックの底が汚れていました</strong>。。。
   
-  <p>
-    スーツケースだとタイヤがあるから目立たないかも。
-  </p>
+  
+      スーツケースだとタイヤがあるから目立たないかも。
+  
 </div>
 
 ## タイ観光：ワット・アルンとワット・ポー
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3970-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3970-768x1024.jpg)](IMG_3970-768x1024.jpg)
+      ![![](IMG_3976-768x1024.jpg)](IMG_3976-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3976-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 ワット・アルンを川挟んで眺めてから、ワット・ポーまで行きました。
 
 ### スワンナプーム空港からワット・ポーまでの行き方
 
-{{< custom-figure src="image-1-1024x439.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](image-1-1024x439.jpg)](image-1-1024x439.jpg) 
 
 空港からマッカサン駅までエアポートレイルリンクで向かい、マッカサン駅からは地下鉄 MRTブルーラインに乗り換えてサナームチャイ駅まで行きました。
 
@@ -653,16 +571,9 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 
 ### バンコクの電車
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3965-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3965-768x1024.jpg)](IMG_3965-768x1024.jpg)
+      ![![](IMG_3967-1024x768.jpg)](IMG_3967-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3967-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 切符は現金で購入し、おもちゃのコインみたいなのを改札に通します。
 
 電車の座席はスタジアムの椅子のように固く、快適ではなかったです。
@@ -676,31 +587,21 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 事前に各国のトイレ事情は調べておくべきですね。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    バンコクでは<strong>駅にトイレがないのがほとんど</strong>！　
-  </p>
+      バンコクでは<strong>駅にトイレがないのがほとんど</strong>！　
   
-  <p>
-    駅では「トイレに行きたい方は駅員に！」という案内があるぐらいです。
-  </p>
   
-  <p>
-    「トイレはどこですか？」 ＝ 「<strong>ホーンナーム　ユー　ティナイ？</strong>」で乗り越えましょう。
-  </p>
+      駅では「トイレに行きたい方は駅員に！」という案内があるぐらいです。
+  
+  
+      「トイレはどこですか？」 ＝ 「<strong>ホーンナーム　ユー　ティナイ？</strong>」で乗り越えましょう。
+  
 </div>
 
 ### ワット・アルンを眺めに
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3969-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3969-768x1024.jpg)](IMG_3969-768x1024.jpg)
+      ![![](IMG_3990-1024x768.jpg)](IMG_3990-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3990-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 時刻は7時前後。最寄駅から歩いてワット・アルンが見える川沿いまで向かいます。
 
 道中ではお供え物をお坊さんに渡す様子が見れました。
@@ -753,107 +654,42 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 
 ### 猫がいっぱい。ワット・ポーへ
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3991-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3991-768x1024.jpg)](IMG_3991-768x1024.jpg)
+      ![![](IMG_3992-576x1024.jpg)](IMG_3992-576x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3992-576x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 開店前に着いてしまったので、入口近くのベンチで休憩。野良猫が寄ってきました。
 
 早朝でも湿度が高く、ここまで歩いただけで汗だくのため水は必須です。（機内でもらった水）
 
 モバイルバッテリーを持ってきたので休憩中にスマホを充電できて便利でした。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1651%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="6_a1651_snb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1651%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">Anker 733 Power Bank (GaNPrime PowerCore 65W) (10000mAhモバイルバッテリー搭載 USB充電器) 【独自技術Anker GaNPrime&#153;採用 / USB Power Delivery対応 / PSE技術基準適合 / USB-C入力対応 / 65W出力】</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FAnker%2520%25E3%2583%25A2%25E3%2583%2590%25E3%2582%25A4%25E3%2583%25AB%25E3%2583%2590%25E3%2583%2583%25E3%2583%2586%25E3%2583%25AA%25E3%2583%25BC%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DAnker%2520%25E3%2583%25A2%25E3%2583%2590%25E3%2582%25A4%25E3%2583%25AB%25E3%2583%2590%25E3%2583%2583%25E3%2583%2586%25E3%2583%25AA%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DAnker%2520%25E3%2583%25A2%25E3%2583%2590%25E3%2582%25A4%25E3%2583%25AB%25E3%2583%2590%25E3%2583%2583%25E3%2583%2586%25E3%2583%25AA%25E3%2583%25BC" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ワット・ポーは2人で入場料 300バーツと108の壺で40バーツを支払いました。（2,808円）
 
 入口入って、左手の受付で支払います。開店と同時だったので、空いててほぼ貸切状態。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3973-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3973-768x1024.jpg)](IMG_3973-768x1024.jpg)
+      ![![](IMG_3974-768x1024.jpg)](IMG_3974-768x1024.jpg)
+      ![![](IMG_3975-768x1024.jpg)](IMG_3975-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3974-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-  
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3975-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 敷地内には猫がいっぱい。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3972-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3972-768x1024.jpg)](IMG_3972-768x1024.jpg)
+      ![![](IMG_3976-768x1024.jpg)](IMG_3976-768x1024.jpg)
+      ![![](IMG_3977-768x1024.jpg)](IMG_3977-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3976-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-  
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3977-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 108の壺にお金を入れると煩悩を捨てられるらしい。
 
 2時間ほど観光し、空港に戻りました。
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    ワット・ポーには<strong>冷房の効いた綺麗なトイレ</strong>があります。ここでトイレを済ませることをおすすめします。
-  </p>
+      ワット・ポーには<strong>冷房の効いた綺麗なトイレ</strong>があります。ここでトイレを済ませることをおすすめします。
+  
 </div>
 
 ## タイ出発：スワンナプーム空港
 
-{{< custom-figure src="IMG_3983-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_3983-768x1024.jpg)](IMG_3983-768x1024.jpg) 
 
 空港に着いたら荷物を預けたSmileLuggに向かい、荷物を受け取ります。
 
@@ -908,20 +744,10 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 
 ### 昼食
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3980-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3980-768x1024.jpg)](IMG_3980-768x1024.jpg)
+      ![![](IMG_3981-768x1024.jpg)](IMG_3981-768x1024.jpg)
+      ![![](IMG_3982-768x1024.jpg)](IMG_3982-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3981-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-  
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3982-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 タイに来て初めての食事です。出発エリアのレストラン「<a rel="noopener" href="https://maps.app.goo.gl/DNRwU5yZG9P9jXJA7" target="_blank" title="">Aroi</a>」でヌードルとビールをいただきました。
 
 独特の香りがするスープでタイを感じれました。全部で825バーツと空港価格のようです。（3,611円）
@@ -974,16 +800,9 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 
 ### 機内
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3984-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3984-768x1024.jpg)](IMG_3984-768x1024.jpg)
+      ![![](IMG_3985-768x1024.jpg)](IMG_3985-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3985-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 モニターは機種が古いものとなっていました。映画のラインナップは一緒でした。
 
 シートの広さは日本から乗ってきた機体と変わらず。
@@ -994,28 +813,14 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 
 洋食だったので飲み物は白ワインを選択。その後ビールも飲みました。サラダの謎肉以外は美味しかったです。
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3986-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3986-1024x768.jpg)](IMG_3986-1024x768.jpg)
+      ![![](IMG_3989-768x1024.jpg)](IMG_3989-768x1024.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3989-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 ### 機内食：夜
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3987-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](IMG_3987-1024x768.jpg)](IMG_3987-1024x768.jpg)
+      ![![](IMG_3988-1024x768.jpg)](IMG_3988-1024x768.jpg)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="IMG_3988-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 最初の機内食から5時間後ぐらいに2回目の機内食が配られました。
 
 ふたりで別々のメニューを選択。どちらも美味しく。カレーは辛旨でした。
@@ -1034,7 +839,7 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66fdf1103f7bf-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-66fdf1103f7bf-160x90.jpg)](アイキャッチ画像-66fdf1103f7bf-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -1076,7 +881,7 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

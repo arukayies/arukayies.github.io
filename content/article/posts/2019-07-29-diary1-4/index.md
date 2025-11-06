@@ -1,20 +1,10 @@
 ---
 title: 【水耕栽培】ゴーヤの観察日記(1日目)
 author: arukayies
-type: post
 date: 2019-07-29T14:11:35+00:00
-url: /hydroponic_culture/bitter_melon/diary1-4
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1569076679
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -38,10 +28,10 @@ archives: ["2019年7月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -70,9 +60,7 @@ archives: ["2019年7月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 根出し
 
 <div class="blogcard-type bct-reference">
@@ -116,11 +104,9 @@ archives: ["2019年7月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ゴーヤの種の尖った部分を爪切りでカットします。  
-{{< custom-figure src="img_5dfa2f573e2fd.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa2f573e2fd.jpg)](img_5dfa2f573e2fd.jpg) 
 
 あとは水を張ったお皿に置くだけです。  
-{{< custom-figure src="img_5dfa2f577ef93.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dfa2f577ef93.jpg)](img_5dfa2f577ef93.jpg)

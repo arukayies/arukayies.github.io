@@ -1,20 +1,10 @@
 ---
 title: 【水耕栽培】オクラの観察日記(下葉取り・摘葉作業)
 author: arukayies
-type: post
 date: 2019-09-05T06:29:58+00:00
-url: /hydroponic_culture/okra/diary8-3
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1571726036
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -36,7 +26,7 @@ archives: ["2019年9月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary7-3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary7-3-160x90.png)](diary7-3-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -80,10 +70,10 @@ archives: ["2019年9月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -112,13 +102,11 @@ archives: ["2019年9月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 下葉取り・摘葉作業
 
 上の葉だけを残して、ばっさりと🌿を切り取りました。。。！  
 果たして吉と出るのか・・・。  
-{{< custom-figure src="img_5dfa422382742.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa422382742.jpg)](img_5dfa422382742.jpg) 
 
-{{< custom-figure src="img_5dfa422497f4b.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dfa422497f4b.jpg)](img_5dfa422497f4b.jpg)

@@ -1,18 +1,8 @@
 ---
 title: 10年経過したPCチェアーをまだまだ使えるように改造してみた！
 author: arukayies
-type: post
 date: 2020-04-05T10:36:59+00:00
-url: /diy/pc-chair
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -25,8 +15,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1246748785377546240";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1246748785377546240";s:5:"pDate";s:19:"2020-04-05 10:37:28";}}";
-categories:
-  - DIY
+tags:
+  - "DIY"
 tags:
   - DIY
   - PCチェアー
@@ -37,25 +27,22 @@ archives: ["2020年4月"]
 ---
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      前回リモートワークをすることになって、PCデスクをDIYしました！
-    </p>
-  </div>
-</div>
-
+          前回リモートワークをすることになって、PCデスクをDIYしました！
+    
+  
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
   <a href="https://arukayies.com/diy/pc-desk" title="【3日で作る】リモートワークになったからPCデスクをDIYした" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
   
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="pc-desk-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](pc-desk-160x90.png)](pc-desk-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -95,18 +82,15 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      <span class="fz-20px"><span class="blue">おしり痛い！</span></span>　<span class="fz-24px"><span class="fz-28px"><span class="bold-red">首・肩が凝る！</span></span></span>
-    </p>
-  </div>
-</div>
-
+          <span class="fz-20px"><span class="blue">おしり痛い！</span></span>　<span class="fz-24px"><span class="fz-28px"><span class="bold-red">首・肩が凝る！</span></span></span>
+    
+  
 と長時間座るにはあまりにも向いていませんでした。
 
 なので、今回は<span class="fz-20px"><span class="fz-22px"><strong>10年経過</strong></span></span>したPCチェアーを改造したので、その過程を紹介します！
@@ -126,18 +110,16 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0861-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>見た目はまだきれい！</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0861-768x1024.jpg)](IMG_0861-768x1024.jpg)<figcaption>見た目はまだきれい！</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0862-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>ランバー<em>サポート</em>&nbsp;のゴムがヨレヨレ・・・</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0862-768x1024.jpg)](IMG_0862-768x1024.jpg)<figcaption>ランバー<em>サポート</em>&nbsp;のゴムがヨレヨレ・・・</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0863-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>高さ調整はちゃんと動く！</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0863-768x1024.jpg)](IMG_0863-768x1024.jpg)<figcaption>高さ調整はちゃんと動く！</figcaption></figure>
+  
 ## PCチェアーを分解する
 
 さっそく分解していきます。
@@ -148,18 +130,16 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_0864-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>まだまだ使える！</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">![![](IMG_0864-768x1024.jpg)](IMG_0864-768x1024.jpg)<figcaption>まだまだ使える！</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0865-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>おしりが痛い原因。。。</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0865-768x1024.jpg)](IMG_0865-768x1024.jpg)<figcaption>おしりが痛い原因。。。</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0868-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>シートを分解します</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0868-768x1024.jpg)](IMG_0868-768x1024.jpg)<figcaption>シートを分解します</figcaption></figure>
+  
 ### シートを分解する
 
 おしりが痛い原因となっているシート部分をさらに分解していきます！
@@ -170,18 +150,16 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0869-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>中のスポンジはボロボロです</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0869-768x1024.jpg)](IMG_0869-768x1024.jpg)<figcaption>中のスポンジはボロボロです</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0870-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>スポンジを削ります</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0870-768x1024.jpg)](IMG_0870-768x1024.jpg)<figcaption>スポンジを削ります</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0873-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>だいぶきれいに削れました</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0873-768x1024.jpg)](IMG_0873-768x1024.jpg)<figcaption>だいぶきれいに削れました</figcaption></figure>
+  
 ## 新しいスポンジを取り付ける
 
 近所のコーナンで購入してきた<span class="fz-22px"><span class="bold-blue">低反発クッション</span></span>を変わりに取り付けます。
@@ -190,156 +168,72 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 | ---- | ------------------------------------ | -------- |
 | コーナン | コーナン オリジナル ＰＶＣ低反発クッション　約４０×４０ｃｍ　ブラック | ￥980（＋税） |
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ffb091d8918374f60363eed60f75cda11%2F" target="_blank">{{< custom-figure src="10_10010004522831568116_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ffb091d8918374f60363eed60f75cda11%2F" target="_blank">コーナンオリジナル PVC低反発クッション ブラック</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E4%25BD%258E%25E5%258F%258D%25E7%2599%25BA%25E3%2582%25AF%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E4%25BD%258E%25E5%258F%258D%25E7%2599%25BA%25E3%2582%25AF%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E4%25BD%258E%25E5%258F%258D%25E7%2599%25BA%25E3%2582%25AF%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 買ってきたクッションを中にいれて、剥がしたカバーで再度取り付ける感じです。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0874-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>これを</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0874-1024x768.jpg)](IMG_0874-1024x768.jpg)<figcaption>これを</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0876-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>む。ちょっと入らない・・？</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0876-1024x768.jpg)](IMG_0876-1024x768.jpg)<figcaption>む。ちょっと入らない・・？</figcaption></figure>
+  
 カバーのままだとちょっとキツい・・・
 
 中身だけだとちょっと<span class="fz-22px">色が透けて</span>てかっこ悪いですね。笑
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0877-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>中身だけならいけるか・・・？</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0877-768x1024.jpg)](IMG_0877-768x1024.jpg)<figcaption>中身だけならいけるか・・・？</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0879-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>色が透けててやだな　笑</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0879-768x1024.jpg)](IMG_0879-768x1024.jpg)<figcaption>色が透けててやだな　笑</figcaption></figure>
+  
 カバーをつけた状態で押し込みながら、固定することにします！
 
 固定はタッカーで行います。タッカーは<span class="fz-22px">ダイソー</span>のやつです！
 
 ダイソーじゃなくてもそんなに高価な工具ではないので、手軽に手に入ります。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ffc764d65259638702b56579528b1254f%2F" target="_blank">{{< custom-figure src="9_10010004977292170307_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ffc764d65259638702b56579528b1254f%2F" target="_blank">SK11 パワフルハンドタッカー PT-1(1コ入)</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2582%25BF%25E3%2583%2583%25E3%2582%25AB%25E3%2583%25BC%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2582%25BF%25E3%2583%2583%25E3%2582%25AB%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2582%25BF%25E3%2583%2583%25E3%2582%25AB%25E3%2583%25BC" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0880-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>ダイソータッカーで取付ます！</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0880-768x1024.jpg)](IMG_0880-768x1024.jpg)<figcaption>ダイソータッカーで取付ます！</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_0881-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>こんな感じで</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">![![](IMG_0881-1024x768.jpg)](IMG_0881-1024x768.jpg)<figcaption>こんな感じで</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0882-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>ぐるっと一周固定完了！</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0882-768x1024.jpg)](IMG_0882-768x1024.jpg)<figcaption>ぐるっと一周固定完了！</figcaption></figure>
+  
 ぎゅうぎゅうに押し込んだ結果、強く張りすぎたのか、<span class="fz-22px">カバーが裂けそう</span>です・・・！
 
 チャチャッと縫って補強します。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0883-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>　裂けそう。。。</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0883-768x1024.jpg)](IMG_0883-768x1024.jpg)<figcaption>　裂けそう。。。</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0885-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>小学生のころから使ってる裁縫道具</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0885-768x1024.jpg)](IMG_0885-768x1024.jpg)<figcaption>小学生のころから使ってる裁縫道具</figcaption></figure>
+  
 ## 元の状態に組み立てる
 
 分解した逆の手順で組み立てます。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0861-1-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>ビフォー</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0861-1-768x1024.jpg)](IMG_0861-1-768x1024.jpg)<figcaption>ビフォー</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0888-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>アフター</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0888-768x1024.jpg)](IMG_0888-768x1024.jpg)<figcaption>アフター</figcaption></figure>
+  
 見比べてみると<span class="bold-red"><span class="fz-22px">座る部分の厚みが全然違いますね！</span></span>
 
 また、腰痛対策にダイソーの<span class="fz-22px">バックレスト</span>を取り付けました！
@@ -445,7 +339,7 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 解決するためには<span class="fz-22px"><span class="bold-red">ヘッドレスト</span></span>が必要です。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">{{< custom-figure src="ヘッドレストとは.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ヘッドレストは赤丸の部分です</figcaption></figure>
+  <figure class="aligncenter size-large">![![](ヘッドレストとは.png)](ヘッドレストとは.png)<figcaption>ヘッドレストは赤丸の部分です</figcaption></figure>
 </div>
 
 ## ヘッドレスト的なものを作ってみる
@@ -460,67 +354,27 @@ PCデスクは満足いくものとなりましたが、今度はPCチェアー�
 
 車用のネッククッションならなんでも良いと思います。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fef8eefe1fc9e48b287aea6431e4e82f2%2F" target="_blank">{{< custom-figure src="6_10010004953250141312_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fef8eefe1fc9e48b287aea6431e4e82f2%2F" target="_blank">AM-7381 錦産業 ネッククッション リネン調生地 レッド Calm カーム</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2583%258D%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25AF%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2583%258D%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25AF%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2583%258D%25E3%2583%2583%25E3%2582%25AF%25E3%2582%25AF%25E3%2583%2583%25E3%2582%25B7%25E3%2583%25A7%25E3%2583%25B3" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0889-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>位置はこんな感じかな</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0889-768x1024.jpg)](IMG_0889-768x1024.jpg)<figcaption>位置はこんな感じかな</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0890-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>ちらり</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0890-768x1024.jpg)](IMG_0890-768x1024.jpg)<figcaption>ちらり</figcaption></figure>
+  
 ### ヘッドレストを取り付けるためにPCチェアーを拡張する
 
 PCチェアーのパイプを利用してヘッドレスト取付部分を作成していきます。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    {{< custom-figure src="IMG_0891-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+    ![![](IMG_0891-768x1024.jpg)](IMG_0891-768x1024.jpg)
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <p>
-      購入した商品は上から
-    </p>
+          購入した商品は上から
+    
     
     <table>
       <tr>
@@ -614,79 +468,64 @@ PCチェアーのパイプを利用してヘッドレスト取付部分を作成
       </tr>
     </table>
     
-    <p>
-      コーナンであーでも、こーでもない、って１時間ぐらい考えた部品です。
-    </p>
+          コーナンであーでも、こーでもない、って１時間ぐらい考えた部品です。
     
-    <p>
-      補助金具ステイが1個￥690はちょっと悩みました。。。
-    </p>
-  </div>
-</div>
-
+    
+          補助金具ステイが1個￥690はちょっと悩みました。。。
+    
+  
 ではさっそく買ってきた金具を組み立てます。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0895-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>こんな感じに組み立てる</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0895-768x1024.jpg)](IMG_0895-768x1024.jpg)<figcaption>こんな感じに組み立てる</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0896-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>滑り止めにゴムを挟む</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0896-768x1024.jpg)](IMG_0896-768x1024.jpg)<figcaption>滑り止めにゴムを挟む</figcaption></figure>
+  
 組み立てた金具をPCチェアーに取り付けます。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0897-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>椅子に少し穴を開け</figcaption></figure> 
+    <figure class="wp-block-image size-large">![![](IMG_0897-768x1024.jpg)](IMG_0897-768x1024.jpg)<figcaption>椅子に少し穴を開け</figcaption></figure> 
     
-    <p>
-    </p>
+        
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0898-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>組み立てた金具をこのように固定</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0898-768x1024.jpg)](IMG_0898-768x1024.jpg)<figcaption>組み立てた金具をこのように固定</figcaption></figure>
+  
 ## 完成！
 
 ネッククッションを取り付けたものがこちらです。
 
 <div class="wp-block-image">
-  <figure class="aligncenter size-large">{{< custom-figure src="IMG_0900-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>完成！！！</figcaption></figure>
+  <figure class="aligncenter size-large">![![](IMG_0900-768x1024.jpg)](IMG_0900-768x1024.jpg)<figcaption>完成！！！</figcaption></figure>
 </div>
 
 ## 座り心地は？
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      コーナンの低反発クッションが<span class="fz-22px"><span class="bold-blue">いい仕事してる！</span></span>
-    </p>
+          コーナンの低反発クッションが<span class="fz-22px"><span class="bold-blue">いい仕事してる！</span></span>
     
-    <p>
-      ダイソーのバックレストが<span class="fz-22px"><span class="bold-blue">楽！</span></span>（会社用に買うと決めた）
-    </p>
     
-    <p>
-      ・・・
-    </p>
+          ダイソーのバックレストが<span class="fz-22px"><span class="bold-blue">楽！</span></span>（会社用に買うと決めた）
     
-    <p>
-      首用の<span class="bold-red"><span class="fz-22px">ネッククッションが肩にあたる</span>・・・</span>
-    </p>
-  </div>
-</div>
-
+    
+          ・・・
+    
+    
+          首用の<span class="bold-red"><span class="fz-22px">ネッククッションが肩にあたる</span>・・・</span>
+    
+  
 ## ネッククッションを変えてみる
 
 ダイソーのネッククッションが首に当たらないので、新たなクッションを探してきました。
@@ -701,24 +540,20 @@ PCチェアーのパイプを利用してヘッドレスト取付部分を作成
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0906-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>ネコさんは後ろを守ってます</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](IMG_0906-768x1024.jpg)](IMG_0906-768x1024.jpg)<figcaption>ネコさんは後ろを守ってます</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_0908-507x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>首にジャストフィット！</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](IMG_0908-507x1024.jpg)](IMG_0908-507x1024.jpg)<figcaption>首にジャストフィット！</figcaption></figure>
+  
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      これでまた来週から快適なリモートワーク生活を送れそうです。
-    </p>
-  </div>
-</div>
+          これでまた来週から快適なリモートワーク生活を送れそうです。
+    
+  

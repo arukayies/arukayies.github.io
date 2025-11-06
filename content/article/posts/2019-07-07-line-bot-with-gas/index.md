@@ -1,19 +1,9 @@
 ---
 title: GASで作る簡単なLINE BOTの作り方
 author: arukayies
-type: post
 date: 2019-07-07T05:51:39+00:00
 excerpt: GASで作るLINE BOTの簡単な作り方を紹介します！
-url: /gas/line_bot/line-bot-with-gas
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snap_isRpstd579:
@@ -22,8 +12,6 @@ snap_isAutoPosted:
   - 1
 snap_isRpstd2493:
   - 1586688326
-last_modified:
-  - 2024-11-19 09:51:30
 snapEdIT:
   - 1
 snapTW:
@@ -32,8 +20,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1249287505007923201";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1249287505007923201";s:5:"pDate";s:19:"2020-04-12 10:45:26";}}";
-categories:
-  - LINE BOT
+tags:
+  - "LINE BOT"
 tags:
   - GAS
   - Google Apps Script
@@ -44,92 +32,18 @@ archives: ["2019年7月"]
 こんにちは「くら」です！
 
 今回は<strong>Google Apps Script（通称GAS）</strong>で作成するLINE BOTの
-</p>
-<p>
+
+
 <span class="fz-24px"><span class="bold-red">簡単な作り方</span></span>を紹介します。
-</p>
-<p>
+
+
 <strong>無料のGoogleアカウント</strong>さえあれば作成可能なので、ぜひチャレンジしてみてください！
 
 『 <strong>サンプル</strong> 』と発言すると、『 <strong>サンプルサンプルサンプル</strong> 』と返してくれるLINE BOTを作る手順を紹介します！<figure class="wp-block-image aligncenter">
 
-{{< custom-figure src="img_5dfa326c0486c.gif" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
+![![](img_5dfa326c0486c.gif)](img_5dfa326c0486c.gif) <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎｇ　ＡＰＩを使ったチャットボットの/翔泳社/立花翔</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DLINE%2520bot%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DLINE%2520bot" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ## 必要なもの
 
@@ -148,7 +62,7 @@ archives: ["2019年7月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="gettoken-1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](gettoken-1-160x90.png)](gettoken-1-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -240,58 +154,49 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】新規を押下する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>新規</strong> を押下する</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](【Google】新規を押下する.png)](【Google】新規を押下する.png)<figcaption class="wp-element-caption"><strong>新規</strong> を押下する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】その他を押下する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>その他</strong> を押下する</figcaption></figure> 
+    <figure class="wp-block-image size-large">![![](【Google】その他を押下する.png)](【Google】その他を押下する.png)<figcaption class="wp-element-caption"><strong>その他</strong> を押下する</figcaption></figure> 
     
-    <p>
-    </p>
+        
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】Google-Apps-Scriptを押下する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>Google Apps Script</strong> を押下する</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](【Google】Google-Apps-Scriptを押下する.png)](【Google】Google-Apps-Scriptを押下する.png)<figcaption class="wp-element-caption"><strong>Google Apps Script</strong> を押下する</figcaption></figure>
+  
 <span class="number">3　</span>プロジェクト名を設定します。好きな名前を入力し、『 **名前を変更** 』を押下してください。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット_2021-02-27_12_57_21.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>無題のプロジェクト</strong> を選択する</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](スクリーンショット_2021-02-27_12_57_21.png)](スクリーンショット_2021-02-27_12_57_21.png)<figcaption class="wp-element-caption"><strong>無題のプロジェクト</strong> を選択する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット_2021-02-27_13_00_59.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">プロジェクト名を入力し、<strong>名前を変更</strong> を押下する</figcaption></figure> 
+    <figure class="wp-block-image size-large">![![](スクリーンショット_2021-02-27_13_00_59.png)](スクリーンショット_2021-02-27_13_00_59.png)<figcaption class="wp-element-caption">プロジェクト名を入力し、<strong>名前を変更</strong> を押下する</figcaption></figure> 
     
-    <p>
-    </p>
-  </div>
-</div>
-
+        
+  
 <span class="number">4　</span>『 **コード.gs** 』に以下のコードを貼り付け、名前を『 **main** 』に変更します、
 
 1行目のトークンは事前に取得したLINEのチャンネルアクセストークンを入力してください。
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.03.16-1024x424.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>main</strong> のコードを貼り付ける</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](スクリーンショット-2021-02-27-13.03.16-1024x424.png)](スクリーンショット-2021-02-27-13.03.16-1024x424.png)<figcaption class="wp-element-caption"><strong>main</strong> のコードを貼り付ける</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.04.08.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>main</strong> に名前を変える</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](スクリーンショット-2021-02-27-13.04.08.png)](スクリーンショット-2021-02-27-13.04.08.png)<figcaption class="wp-element-caption"><strong>main</strong> に名前を変える</figcaption></figure>
+  
 ### main処理の説明
 
 **main** の処理ではLINEから **Webhock** を受け取り、送られてきたイベントを処理します。
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    <strong>Webhockとは？</strong>
-  </p>
+      <strong>Webhockとは？</strong>
+  
   
   <ul class="wp-block-list">
     <li>
@@ -304,9 +209,8 @@ archives: ["2019年7月"]
 </div>
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    <strong>main処理の概要</strong>
-  </p>
+      <strong>main処理の概要</strong>
+  
   
   <ol class="wp-block-list">
     <li>
@@ -327,22 +231,19 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.06.41.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](スクリーンショット-2021-02-27-13.06.41.png)](スクリーンショット-2021-02-27-13.06.41.png)<figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.08.38.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>messageController</strong> を貼り付ける</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](スクリーンショット-2021-02-27-13.08.38.png)](スクリーンショット-2021-02-27-13.08.38.png)<figcaption class="wp-element-caption"><strong>messageController</strong> を貼り付ける</figcaption></figure>
+  
 ### messageController処理の説明
 
 特定文字列が含まれていた場合に、返信メッセージを組み立てる処理を行います。
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    <strong>messageController処理の概要</strong>
-  </p>
+      <strong>messageController処理の概要</strong>
+  
   
   <ol class="wp-block-list">
     <li>
@@ -361,22 +262,19 @@ archives: ["2019年7月"]
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.06.41.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](スクリーンショット-2021-02-27-13.06.41.png)](スクリーンショット-2021-02-27-13.06.41.png)<figcaption class="wp-element-caption"><strong>スクリプト</strong> を追加する</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット-2021-02-27-13.11.35-1024x471.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption"><strong>replyLine</strong> を貼り付ける</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](スクリーンショット-2021-02-27-13.11.35-1024x471.png)](スクリーンショット-2021-02-27-13.11.35-1024x471.png)<figcaption class="wp-element-caption"><strong>replyLine</strong> を貼り付ける</figcaption></figure>
+  
 ### replyLine処理の説明
 
 LINEで返信する処理を行います。
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    <strong>replyLine処理の概要</strong>
-  </p>
+      <strong>replyLine処理の概要</strong>
+  
   
   <ol class="wp-block-list">
     <li>
@@ -392,15 +290,15 @@ LINEで返信する処理を行います。
 
 1　『 **デプロイ** 』>『 **新しいデプロイ** 』を押下します。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="スクリーンショット_2021-02-27_13_13_58-1024x282.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">『 **デプロイ** 』>『 **新しいデプロイ** 』を押下する</figcaption></figure> 
+![![](スクリーンショット_2021-02-27_13_13_58-1024x282.png)](スクリーンショット_2021-02-27_13_13_58-1024x282.png) <figcaption class="wp-element-caption">『 **デプロイ** 』>『 **新しいデプロイ** 』を押下する</figcaption></figure> 
 
 <span class="number">2　『 <strong>デプロイ</strong> 』>『 <strong>新しいデプロイ </strong>』を押下します。</span><figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="スクリーンショット_2021-02-27_13_16_16-2.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">『 **デプロイ** 』>『 **新しいデプロイ** 』を押下する</figcaption></figure> 
+![![](スクリーンショット_2021-02-27_13_16_16-2.png)](スクリーンショット_2021-02-27_13_16_16-2.png) <figcaption class="wp-element-caption">『 **デプロイ** 』>『 **新しいデプロイ** 』を押下する</figcaption></figure> 
 
 <span class="number">3　アクセス出来るユーザーを『 <strong>全員 </strong>』に変更し、</span>『 **デプロイ** 』を押下します。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="スクリーンショット_2021-02-27_13_21_06-2.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">アクセス出来るユーザーを『 **全員** 』に変更し、**デプロイ** を押下する</figcaption></figure> 
+![![](スクリーンショット_2021-02-27_13_21_06-2.png)](スクリーンショット_2021-02-27_13_21_06-2.png) <figcaption class="wp-element-caption">アクセス出来るユーザーを『 **全員** 』に変更し、**デプロイ** を押下する</figcaption></figure> 
 
 <span class="number">4　</span>承認画面が表示されるので、下の赤枠の順に押下します。
 
@@ -417,38 +315,33 @@ LINEで返信する処理を行います。
       </div>
     </div><figure class="wp-block-image size-large">
     
-    {{< custom-figure src="スクリーンショット_2021-02-27_13_24_02.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認1</figcaption></figure>
+    ![![](スクリーンショット_2021-02-27_13_24_02.png)](スクリーンショット_2021-02-27_13_24_02.png)<figcaption class="wp-element-caption">承認1</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】承認2.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認2</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](【Google】承認2.png)](【Google】承認2.png)<figcaption class="wp-element-caption">承認2</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="【Google】承認3.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認3</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](【Google】承認3.png)](【Google】承認3.png)<figcaption class="wp-element-caption">承認3</figcaption></figure>
+  
 <div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="【Google】承認4.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認4</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">![![](【Google】承認4.png)](【Google】承認4.png)<figcaption class="wp-element-caption">承認4</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="【Google】承認5.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認5</figcaption></figure>
+    <figure class="wp-block-image size-large is-resized">![![](【Google】承認5.png)](【Google】承認5.png)<figcaption class="wp-element-caption">承認5</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="スクリーンショット_2021-02-27_13_25_17.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">承認6</figcaption></figure>
-  </div>
-</div>
-
+    <figure class="wp-block-image size-large">![![](スクリーンショット_2021-02-27_13_25_17.png)](スクリーンショット_2021-02-27_13_25_17.png)<figcaption class="wp-element-caption">承認6</figcaption></figure>
+  
 <span class="number">最後に表示される</span> **ウェブアプリのURL** が次の **Webhook URL** です！
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    コードを変更した場合は再度デプロイをすることで変更が反映されます！
-  </p>
+      コードを変更した場合は再度デプロイをすることで変更が反映されます！
+  
 </div>
 
 ## LINE DevelopersにWebhook URLを設定する
@@ -463,7 +356,7 @@ LINEチャンネル基本設定の遷移先は過去の記事を参考にして�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="gettoken-1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](gettoken-1-160x90.png)](gettoken-1-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -499,34 +392,33 @@ LINEチャンネル基本設定の遷移先は過去の記事を参考にして�
   </div></a>
 </div><figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="【LINE】Webhook設定-1024x196.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE】Webhook設定</figcaption></figure> 
+![![](【LINE】Webhook設定-1024x196.png)](【LINE】Webhook設定-1024x196.png) <figcaption class="wp-element-caption">【LINE】Webhook設定</figcaption></figure> 
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
 <span class="number">2　</span>GASの**ウェブアプリケーションのURL**を入力し、『**更新**』を押下します。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="【LINE】WebhookURLの入力-1024x199.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE】WebhookURLの入力</figcaption></figure> 
+![![](【LINE】WebhookURLの入力-1024x199.png)](【LINE】WebhookURLの入力-1024x199.png) <figcaption class="wp-element-caption">【LINE】WebhookURLの入力</figcaption></figure> 
 
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 
 <span class="number">3　</span>『**検証**』を押下し、『**成功**』と表示されたらOKです。Webhookの利用を『**ON**』にします。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="【LINE】WebhookURLの検証-1024x313.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE】WebhookURLの検証</figcaption></figure> 
+![![](【LINE】WebhookURLの検証-1024x313.png)](【LINE】WebhookURLの検証-1024x313.png) <figcaption class="wp-element-caption">【LINE】WebhookURLの検証</figcaption></figure> 
 
 ## LINEBOTが動作している様子
 
 設定したBOTを友だち登録します。チャンネル基本設定のQRコードから友達登録してください。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="【LINE】友達登録.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">【LINE】友達登録</figcaption></figure> 
+![![](【LINE】友達登録.png)](【LINE】友達登録.png) <figcaption class="wp-element-caption">【LINE】友達登録</figcaption></figure> 
 
 
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box good-box">
-  <p>
-    <strong>サンプル機能</strong>
-  </p>
+      <strong>サンプル機能</strong>
+  
   
   <ul class="wp-block-list">
     <li>
@@ -535,87 +427,13 @@ LINEチャンネル基本設定の遷移先は過去の記事を参考にして�
   </ul>
 </div><figure class="wp-block-image aligncenter">
 
-{{< custom-figure src="img_5dfa326c0486c.gif" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
+![![](img_5dfa326c0486c.gif)](img_5dfa326c0486c.gif) <figcaption class="wp-element-caption">LINEBOTが動作している様子</figcaption></figure> 
 
 ## まとめ
 
 なるべく<strong>シンプルな</strong>作りになるようにコードを書いてみました。
-</p>
-<p>
+
+
 コードにはコメントを多く入れているので、理解の助けになれば嬉しいです。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎｇ　ＡＰＩを使ったチャットボットの/翔泳社/立花翔</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DLINE%2520bot%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DLINE%2520bot" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>

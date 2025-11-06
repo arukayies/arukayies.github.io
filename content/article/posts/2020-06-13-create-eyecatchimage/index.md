@@ -1,19 +1,9 @@
 ---
 title: GASでアイキャッチ画像を自動生成させるツールを作ってみた
 author: arukayies
-type: post
 date: 2020-06-12T17:03:37+00:00
 excerpt: 誰でも作れるように詳細な解説付きです！背景画像と文字入り画像を合成して、Wordpressにアップロードまで自動化しています。
-url: /gas/wordpress-rest-api/create-eyecatchimage
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -26,10 +16,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2024-11-19 13:19:19
-categories:
-  - WordpressAPI
+tags:
+  - "WordpressAPI"
 tags:
   - GAS
   - Google Apps Script
@@ -40,8 +28,8 @@ tags:
 archives: ["2020年6月"]
 ---
 ブロガーの皆さんはアイキャッチ画像をどのように作成しているでしょうか。
-</p>
-<p>
+
+
 私は<strong><span class="bold-red">無料</span></strong>でおしゃれに画像をデザインできる<strong>Canva</strong>で作成しています。
 
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-check">
@@ -86,20 +74,20 @@ archives: ["2020年6月"]
 </div>
 
 <strong>Canva</strong>は操作がとても簡単で素材もたくさんあり、不満はないのですが
-</p>
-<p>
+
+
 それでも<span class="fz-22px"><strong>毎回画像を作成するのは手間です。</strong></span>
-</p>
-<p>
+
+
 そこで今回はGASで作る
-</p>
-<p>
+
+
 <strong><span class="fz-32px"><span class="bold-green">アイキャッチ画像自動生成ツール</span> </span></strong>
-</p>
-<p>
+
+
 の作り方を紹介します！
-</p>
-<p>
+
+
 ブログで使用するので、<strong><span class="bold-green">WordPress自動アップロード機能</span></strong> もあります！
 
 <div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-check-circle block-box has-border-color has-icon-color has-red-border-color has-red-icon-color">
@@ -137,43 +125,6 @@ archives: ["2020年6月"]
 
 コードだけ見れればいい！って方は<a href="https://github.com/arukayies/create-eyecatchImage">こちら</a>をどうぞ！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ## 作業の流れ
 
@@ -210,7 +161,7 @@ archives: ["2020年6月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="line-bot-with-gas-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](line-bot-with-gas-160x90.png)](line-bot-with-gas-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -246,23 +197,23 @@ archives: ["2020年6月"]
   </div></a>
 </div><figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="新規でGoogle-Apps-Scriptを作成-1024x368.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">作成直後</figcaption></figure> 
+![![](新規でGoogle-Apps-Scriptを作成-1024x368.png)](新規でGoogle-Apps-Scriptを作成-1024x368.png) <figcaption class="wp-element-caption">作成直後</figcaption></figure> 
 
 ### doGet.js のコードを貼り付ける
 
 コード.gs に以下を貼り付けます。<figure class="wp-block-image aligncenter size-large is-resized">
 
-{{< custom-figure src="doGet.js-のコードを貼り付ける-1024x659.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**doGet.js**を貼り付ける</figcaption></figure> 
+![![](doGet.js-のコードを貼り付ける-1024x659.png)](doGet.js-のコードを貼り付ける-1024x659.png) <figcaption class="wp-element-caption">**doGet.js**を貼り付ける</figcaption></figure> 
 
 ### index.html のコードを貼り付ける
 
 『ファイル』→『New』→『HTMLファイル』を選択します。ファイル名は『index』にします。<figure class="wp-block-image aligncenter size-large is-resized">
 
-{{< custom-figure src="HTMLファイルを選択.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">HTMLファイルを作成</figcaption></figure> 
+![![](HTMLファイルを選択.png)](HTMLファイルを選択.png) <figcaption class="wp-element-caption">HTMLファイルを作成</figcaption></figure> 
 
 index.htmlに以下を貼り付けます<figure class="wp-block-image aligncenter size-large is-resized">
 
-{{< custom-figure src="index.html-のコードを貼り付ける.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">index.htmlを貼り付ける</figcaption></figure> 
+![![](index.html-のコードを貼り付ける.png)](index.html-のコードを貼り付ける.png) <figcaption class="wp-element-caption">index.htmlを貼り付ける</figcaption></figure> 
 
 #### **width と height**を変更する
 
@@ -280,7 +231,7 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="line-bot-with-gas-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](line-bot-with-gas-160x90.png)](line-bot-with-gas-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -318,7 +269,7 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
 
 取得したURLは次の手順で使います！<figure class="wp-block-image aligncenter size-large is-resized">
 
-{{< custom-figure src="スクリプトを公開.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">スクリプトを公開</figcaption></figure> 
+![![](スクリプトを公開.png)](スクリプトを公開.png) <figcaption class="wp-element-caption">スクリプトを公開</figcaption></figure> 
 
 ## アイキャッチ画像の設定を入力するスプレッドシートを作成
 
@@ -367,25 +318,25 @@ index.htmlに以下を貼り付けます<figure class="wp-block-image aligncente
 
 『ファイル』→『コピーを作成』からマイドライブにコピーします。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="マイドライブにコピー-1024x620.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">マイドライブにコピー</figcaption></figure> 
+![![](マイドライブにコピー-1024x620.png)](マイドライブにコピー-1024x620.png) <figcaption class="wp-element-caption">マイドライブにコピー</figcaption></figure> 
 
 ## スプレッドシートにスクリプトを作成する
 
 コピーしたスプレッドシートを開き、スクリプトエディタを開きます。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="スクリプトエディタを開く.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">スクリプトエディタを開く</figcaption></figure> 
+![![](スクリプトエディタを開く.png)](スクリプトエディタを開く.png) <figcaption class="wp-element-caption">スクリプトエディタを開く</figcaption></figure> 
 
 ### createEyecatchImage.js のコードを貼り付ける
 
 コード.gs に以下を貼り付けます<figure class="wp-block-image aligncenter size-large is-resized">
 
-{{< custom-figure src="createEyecatchImage.js-のコードを貼り付ける-1024x458.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">createEyecatchImage.jsを貼り付ける</figcaption></figure> 
+![![](createEyecatchImage.js-のコードを貼り付ける-1024x458.png)](createEyecatchImage.js-のコードを貼り付ける-1024x458.png) <figcaption class="wp-element-caption">createEyecatchImage.jsを貼り付ける</figcaption></figure> 
 
 ### シートIDとシート名を書き換える
 
 ３行目「シートID」と４行目「シート名」をコピーしたスプレッドシートの情報に書き換えます。<figure class="wp-block-image size-large is-resized">
 
-{{< custom-figure src="シートIDとシート名を書き換える-962x1024.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">シートIDとシート名の例</figcaption></figure> 
+![![](シートIDとシート名を書き換える-962x1024.png)](シートIDとシート名を書き換える-962x1024.png) <figcaption class="wp-element-caption">シートIDとシート名の例</figcaption></figure> 
 
 ### GASの公開URLを書き換える
 
@@ -459,7 +410,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="postreport-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](postreport-160x90.png)](postreport-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -509,18 +460,15 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image aligncenter size-large">{{< custom-figure src="ボタンにスクリプトを割り当て.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">ボタンにスクリプトを割り当て</figcaption></figure>
+    <figure class="wp-block-image aligncenter size-large">![![](ボタンにスクリプトを割り当て.png)](ボタンにスクリプトを割り当て.png)<figcaption class="wp-element-caption">ボタンにスクリプトを割り当て</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <p>
-      　
+          　
     </p><figure class="wp-block-image size-large">
     
-    {{< custom-figure src="mainを割り当て-1024x445.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">mainを割り当て</figcaption></figure>
-  </div>
-</div>
-
+    ![![](mainを割り当て-1024x445.png)](mainを割り当て-1024x445.png)<figcaption class="wp-element-caption">mainを割り当て</figcaption></figure>
+  
 ### アイキャッチ画像の設定を入力
 
 #### 背景画像のURLを設定
@@ -529,22 +477,18 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <p>
-      背景画像のURLはこちらです。
+          背景画像のURLはこちらです。
     </p><figure class="wp-block-image size-large">
     
-    {{< custom-figure src="gas-background.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">背景画像</figcaption></figure>
+    ![![](gas-background.png)](gas-background.png)<figcaption class="wp-element-caption">背景画像</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <p>
-      生成された画像はこちらです。
+          生成された画像はこちらです。
     </p><figure class="wp-block-image size-large">
     
-    {{< custom-figure src="create-eyecatchimage-sample.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">合成された画像</figcaption></figure>
-  </div>
-</div>
-
+    ![![](create-eyecatchimage-sample.png)](create-eyecatchimage-sample.png)<figcaption class="wp-element-caption">合成された画像</figcaption></figure>
+  
 #### メインタイトル・サブタイトルの設定
 
 シートのB3・B4セルには**メインタイトル・サブタイトルの文字列**を設定します。
@@ -601,17 +545,14 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 <div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
   <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="5_1200x250.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">メインタイトルの画像</figcaption></figure>
+    <figure class="wp-block-image size-large">![![](5_1200x250.png)](5_1200x250.png)<figcaption class="wp-element-caption">メインタイトルの画像</figcaption></figure>
   </div>
   
   <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large">{{< custom-figure src="5_500x130.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">サブタイトルの画像</figcaption></figure> 
+    <figure class="wp-block-image size-large">![![](5_500x130.png)](5_500x130.png)<figcaption class="wp-element-caption">サブタイトルの画像</figcaption></figure> 
     
-    <p>
-    </p>
-  </div>
-</div>
-
+        
+  
 #### 画像の合成位置の設定
 
 シートのB6〜B9はメインタイトル・サブタイトルの画像の合成位置の設定になります。
@@ -624,7 +565,7 @@ WordPressAPIのユーザー名、パスワードは以前の記事を参考に�
 
 WordPressのメディアライブラリに反映される情報を事前に設定できます。<figure class="wp-block-image aligncenter size-large">
 
-{{< custom-figure src="アイキャッチ画像の設定例.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">アイキャッチ画像の設定例</figcaption></figure> <figure class="wp-block-image aligncenter size-large">{{< custom-figure src="画像情報の設定-1024x441.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">メディアライブラリ</figcaption></figure> 
+![![](アイキャッチ画像の設定例.png)](アイキャッチ画像の設定例.png) <figcaption class="wp-element-caption">アイキャッチ画像の設定例</figcaption></figure> <figure class="wp-block-image aligncenter size-large">![![](画像情報の設定-1024x441.jpg)](画像情報の設定-1024x441.jpg)<figcaption class="wp-element-caption">メディアライブラリ</figcaption></figure> 
 
 ### 『画像生成』ボタンを押下する
 
@@ -632,33 +573,30 @@ WordPressのメディアライブラリに反映される情報を事前に設�
 
 <span class="fz-36px"><strong><span class="fz-20px">これが生成される画像です！！！！！</span></strong></span><figure class="wp-block-image aligncenter size-large is-resized">
 
-{{< custom-figure src="create-eyecatchimage-sample.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">合成された画像</figcaption></figure> 
+![![](create-eyecatchimage-sample.png)](create-eyecatchimage-sample.png) <figcaption class="wp-element-caption">合成された画像</figcaption></figure> 
 
 ## まとめ
 
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box cocoon-block-balloon">
   <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+    ![![](icon-1.png)](icon-1.png)
     
 
   </div>
   
   <div class="speech-balloon">
-    <p>
-      構想から完成まで4ヶ月ぐらいかかってしまいました。。。
+          構想から完成まで4ヶ月ぐらいかかってしまいました。。。
     </p><figure class="wp-block-image size-large is-resized">
     
-    {{< custom-figure src="フラグ.png" title="" Fit="1280x1280 webp q90" >}}<figcaption class="wp-element-caption">2月の記事・・・。</figcaption></figure>
-  </div>
-</div>
-
+    ![![](フラグ.png)](フラグ.png)<figcaption class="wp-element-caption">2月の記事・・・。</figcaption></figure>
+  
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
   <a href="https://arukayies.com/gas/wordpress-rest-api/postreport-thumbnail#toc8" title="GASを使ってアイキャッチ画像付でWordPressに自動投稿する方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
   
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="postreport-thumbnail-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](postreport-thumbnail-160x90.png)](postreport-thumbnail-160x90.png)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -694,43 +632,6 @@ WordPressのメディアライブラリに反映される情報を事前に設�
   </div></a>
 </div>
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
  [1]: https://arukayies.com/gas/wordpress-rest-api/create-eyecatchImage#toc6
  [2]: https://phantomjscloud.com/index.html

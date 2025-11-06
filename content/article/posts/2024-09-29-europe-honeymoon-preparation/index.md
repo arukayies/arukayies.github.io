@@ -1,22 +1,8 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編
 author: arukayies
-type: post
 date: 2024-09-29T06:13:49+00:00
-url: /diy/travel/europe-honeymoon-preparation
-share: true
 toc: true
-comment: true
-last_modified:
-  - 2024-10-30 14:48:32
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
 snapEdIT:
   - 1
 snapTW:
@@ -25,8 +11,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-categories:
-  - 旅
+tags:
+  - "旅"
 tags:
   - 旅
 
@@ -34,19 +20,19 @@ archives: ["2024年9月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-</p>
-<p>
+
+
 タイトルの通りヨーロッパへ新婚旅行に行きました。
 
 しかし、夫婦で行ったのは台湾のみと<strong>ほとんど海外旅行の経験はありません</strong>。
-</p>
-<p>
+
+
 英語も話せず、しかも個人手配。。。
-</p>
-<p>
+
+
 そんな慣れないふたりの新婚旅行を記録してみました📝
-</p>
-<p>
+
+
 誰かの役に立てば嬉しいです。
 
 この記事では事前に行った準備をまとめています！
@@ -57,7 +43,7 @@ archives: ["2024年9月"]
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -105,43 +91,6 @@ archives: ["2024年9月"]
 
 洗剤も一緒に持ち込んで、ホテルで洗濯してから昼間の観光中に乾かす流れで行動していました。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhoriku%2F2b2ksgyktl%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="8_2b2ksgyktl_0.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fhoriku%2F2b2ksgyktl%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">洗濯用品セット 洗濯袋 折りたたみハンガー ロープ付きクリップ(グリーン, 10L)</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FPIENSE%2520%25E6%25B4%2597%25E6%25BF%25AF%25E7%2594%25A8%25E5%2593%2581%25E3%2582%25BB%25E3%2583%2583%25E3%2583%2588%2520%25E6%25B4%2597%25E6%25BF%25AF%25E8%25A2%258B%2520%25E6%258A%2598%25E3%2582%258A%25E3%2581%259F%25E3%2581%259F%25E3%2581%25BF%25E3%2583%258F%25E3%2583%25B3%25E3%2582%25AC%25E3%2583%25BC%2520%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2597%25E4%25BB%2598%25E3%2581%258D%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2583%25E3%2583%2597%2528%2520%25E3%2582%25B0%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DPIENSE%2520%25E6%25B4%2597%25E6%25BF%25AF%25E7%2594%25A8%25E5%2593%2581%25E3%2582%25BB%25E3%2583%2583%25E3%2583%2588%2520%25E6%25B4%2597%25E6%25BF%25AF%25E8%25A2%258B%2520%25E6%258A%2598%25E3%2582%258A%25E3%2581%259F%25E3%2581%259F%25E3%2581%25BF%25E3%2583%258F%25E3%2583%25B3%25E3%2582%25AC%25E3%2583%25BC%2520%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2597%25E4%25BB%2598%25E3%2581%258D%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2583%25E3%2583%2597%2528%2520%25E3%2582%25B0%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DPIENSE%2520%25E6%25B4%2597%25E6%25BF%25AF%25E7%2594%25A8%25E5%2593%2581%25E3%2582%25BB%25E3%2583%2583%25E3%2583%2588%2520%25E6%25B4%2597%25E6%25BF%25AF%25E8%25A2%258B%2520%25E6%258A%2598%25E3%2582%258A%25E3%2581%259F%25E3%2581%259F%25E3%2581%25BF%25E3%2583%258F%25E3%2583%25B3%25E3%2582%25AC%25E3%2583%25BC%2520%25E3%2583%25AD%25E3%2583%25BC%25E3%2583%2597%25E4%25BB%2598%25E3%2581%258D%25E3%2582%25AF%25E3%2583%25AA%25E3%2583%2583%25E3%2583%2597%2528%2520%25E3%2582%25B0%25E3%2583%25AA%25E3%2583%25BC%25E3%2583%25B3" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ### ②モバイルバッテリー
 
@@ -149,43 +98,6 @@ archives: ["2024年9月"]
 
 この旅行前にAnkerのモバイルバッテリーを買いました。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1651%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="6_a1651_snb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fanker%2Fa1651%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">Anker 733 Power Bank (GaNPrime PowerCore 65W) (10000mAhモバイルバッテリー搭載 USB充電器) 【独自技術Anker GaNPrime&#153;採用 / USB Power Delivery対応 / PSE技術基準適合 / USB-C入力対応 / 65W出力】</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2FAnker%2520%25E3%2583%25A2%25E3%2583%2590%25E3%2582%25A4%25E3%2583%25AB%25E3%2583%2590%25E3%2583%2583%25E3%2583%2586%25E3%2583%25AA%25E3%2583%25BC%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DAnker%2520%25E3%2583%25A2%25E3%2583%2590%25E3%2582%25A4%25E3%2583%25AB%25E3%2583%2590%25E3%2583%2583%25E3%2583%2586%25E3%2583%25AA%25E3%2583%25BC%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DAnker%2520%25E3%2583%25A2%25E3%2583%2590%25E3%2582%25A4%25E3%2583%25AB%25E3%2583%2590%25E3%2583%2583%25E3%2583%2586%25E3%2583%25AA%25E3%2583%25BC" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ### ③海外用変換プラグ
 
@@ -193,43 +105,6 @@ archives: ["2024年9月"]
 
 空港や飛行機にはUSBコンセントが備えられていたので、**ホテルで給電するのに必須**でした。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fedion%2F4907986022827%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="6_4907986022827_ll.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fedion%2F4907986022827%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">カシムラ 海外用変換プラグ サスケ/クリアー WP82M [WP82M]</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E6%25B5%25B7%25E5%25A4%2596%25E7%2594%25A8%25E5%25A4%2589%25E6%258F%259B%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E6%25B5%25B7%25E5%25A4%2596%25E7%2594%25A8%25E5%25A4%2589%25E6%258F%259B%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E6%25B5%25B7%25E5%25A4%2596%25E7%2594%25A8%25E5%25A4%2589%25E6%258F%259B%25E3%2583%2597%25E3%2583%25A9%25E3%2582%25B0" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 ## eSIMを購入する
 
@@ -237,98 +112,22 @@ archives: ["2024年9月"]
 
 妻用に購入したヨーロッパとタイのeSIMはこちら
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="4_eu-5gb.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fwifi-rental%2Feu-esim-oran-5gb%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">ヨーロッパ周遊 eSIM 5GB 15日 データ通信のみ可能 Orange イギリス イタリア フランス スペイン ドイツ スイス ギリシャ オーストリア オランダ SIM SIMカード プリペイドSIM 15日 データ 通信 メールで受取 一時帰国 留学 短期 出張 利用期限は購入日から30日</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%2520%25E3%2583%25A8%25E3%2583%25BC%25E3%2583%25AD%25E3%2583%2583%25E3%2583%2591%25E5%2591%25A8%25E9%2581%258A%2520eSIM%25205GB%252015%25E6%2597%25A5" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fimpression-shop%2Fesim-global6%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">{{< custom-figure src="3_esim13-11.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fitem.rakuten.co.jp%2Fimpression-shop%2Fesim-global6%2F%3Frafcid%3Dwsc_i_is_1087413314923222742" target="_blank">【最低40円】eSIM 東南アジア7地域 香港 マカオ インドネシア マレーシア タイ シンガポール ベトナム 1GB 3GB 5GB 10GB 50GB 超高速 1日間 3日間 5日間 7日間 10日間 15日間 20日間 30日間 メール納品 simカード 留学 出張神技</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fsearch.rakuten.co.jp%2Fsearch%2Fmall%2F%25E3%2580%2590%25E6%259C%2580%25E4%25BD%258E40%25E5%2586%2586%25E3%2580%2591eSIM%2520%25E6%259D%25B1%25E5%258D%2597%25E3%2582%25A2%25E3%2582%25B8%25E3%2582%25A27%25E5%259C%25B0%25E5%259F%259F%2F-%2Ff.1-p.1-s.1-sf.0-st.A-v.2%3Fx%3D0" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2580%2590%25E6%259C%2580%25E4%25BD%258E40%25E5%2586%2586%25E3%2580%2591eSIM%2520%25E6%259D%25B1%25E5%258D%2597%25E3%2582%25A2%25E3%2582%25B8%25E3%2582%25A27%25E5%259C%25B0%25E5%259F%259F%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2580%2590%25E6%259C%2580%25E4%25BD%258E40%25E5%2586%2586%25E3%2580%2591eSIM%2520%25E6%259D%25B1%25E5%258D%2597%25E3%2582%25A2%25E3%2582%25B8%25E3%2582%25A27%25E5%259C%25B0%25E5%259F%259F" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/10/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
 
 
-<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> {{< custom-figure src="bgtaid241003175082wid001eno01mids00000015198001027000mc1.png" title="" Fit="1280x1280 webp q90" >}}</a>{{< custom-figure src="img_66fe290165008.gif" title="" Fit="1280x1280 webp q90" >}} 
+
+<a rel="nofollow" href="https://px.a8.net/svt/ejp?a8mat=3ZHJ8N+1CTKDU+399O+644DT"> ![![](bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)](bgtaid241003175082wid001eno01mids00000015198001027000mc1.png)</a>![![](img_66fe290165008.gif)](img_66fe290165008.gif) 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    楽天モバイルだと<strong>１か月2GBまで海外利用は無料</strong>でした。
-  </p>
+      楽天モバイルだと<strong>１か月2GBまで海外利用は無料</strong>でした。
   
-  <p>
-    旅の途中で使い切りましたが、<strong>2GB 1,000円でチャージ</strong>してすぐに快適に利用できました。
-  </p>
+  
+      旅の途中で使い切りましたが、<strong>2GB 1,000円でチャージ</strong>してすぐに快適に利用できました。
+  
 </div>
 
 ## 行きたいところをまとめる
 
-{{< custom-figure src="image-1024x572.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](image-1024x572.jpg)](image-1024x572.jpg) 
 
 Googleマップを利用して場所のリストを作成するのが便利でした。
 
@@ -382,16 +181,9 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 ### 各都市で必要な滞在日数を見積もる
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="image-1.png" title="" Fit="1280x1280 webp q90" >}}
-  </div>
+    ![![](image-1.png)](image-1.png)
+      ![![](image-2.png)](image-2.png)
   
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="image-2.png" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
-
 精度は気にせず、各都市の観光サイトを見てざっくり見積もりました。
 
 ### 各都市間の交通手段と移動時間を調べる
@@ -404,7 +196,7 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 ### スケジュールを決める
 
-{{< custom-figure src="image-5.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](image-5.png)](image-5.png) 
 
 **この時点**で決まったスケジュールはこちら。
 
@@ -460,7 +252,7 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 また直行便よりも**乗り継ぎ便が安い**ことが分かり、**スケジュールを再検討**しました。<figure class="wp-block-image size-large">
 
-{{< custom-figure src="image-6-1024x142.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">最安値は乗り継ぎありで6.5万、直行便だと24万と乗り継ぎ便を利用することで半額以下に！</figcaption></figure> 
+![![](image-6-1024x142.png)](image-6-1024x142.png) <figcaption class="wp-element-caption">最安値は乗り継ぎありで6.5万、直行便だと24万と乗り継ぎ便を利用することで半額以下に！</figcaption></figure> 
 
 実際に予約した飛行機代↓
 
@@ -468,43 +260,41 @@ Googleマップを利用して場所のリストを作成するのが便利で�
 
 成田空港は遠いので、羽田空港発かつ機内食が美味しいと評判なタイ国際航空を選択。
 
-しっかりと寝ることは出来ませんでしたが、機内食は全て美味しくお酒も飲めて快適でした。{{< custom-figure src="2024-09-30_午後4_19_31-1-1024x378.jpg" title="" Fit="1280x1280 webp q90" >}} 
+しっかりと寝ることは出来ませんでしたが、機内食は全て美味しくお酒も飲めて快適でした。![![](2024-09-30_午後4_19_31-1-1024x378.jpg)](2024-09-30_午後4_19_31-1-1024x378.jpg) 
 
 ### ロンドン〜ブダペスト：50,220円
 
 LCCは不安だったので、フラッグ・キャリアを選択。
 
-軽食も出て快適でしたが、1時間くらいの遅延で到着しました。{{< custom-figure src="スクリーンショット_2024-09-30_午後4_19_39-1024x193.png" title="" Fit="1280x1280 webp q90" >}} 
+軽食も出て快適でしたが、1時間くらいの遅延で到着しました。![![](スクリーンショット_2024-09-30_午後4_19_39-1024x193.png)](スクリーンショット_2024-09-30_午後4_19_39-1024x193.png) 
 
 ### ブダペスト〜パリ：93,180円
 
 こちらも同じくフラッグ・キャリアを選択。
 
-軽食も出て快適でしたが、こちらも遅延しての到着。海外だと通常運転なのかな。{{< custom-figure src="スクリーンショット_2024-09-30_午後4_19_46-1024x185.png" title="" Fit="1280x1280 webp q90" >}} 
+軽食も出て快適でしたが、こちらも遅延しての到着。海外だと通常運転なのかな。![![](スクリーンショット_2024-09-30_午後4_19_46-1024x185.png)](スクリーンショット_2024-09-30_午後4_19_46-1024x185.png) 
 
 ### パリ〜バンコク〜羽田：225,460円
 
 帰国も行きと同じくタイ国際航空を選択。
 
-パリ発のためか機内食はヨーロッパ料理もあって、最後まで快適でした。{{< custom-figure src="2024-09-30_午後4_19_53-1024x364.jpg" title="" Fit="1280x1280 webp q90" >}} 
+パリ発のためか機内食はヨーロッパ料理もあって、最後まで快適でした。![![](2024-09-30_午後4_19_53-1024x364.jpg)](2024-09-30_午後4_19_53-1024x364.jpg) 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    飛行機のチケットは直行便よりも<strong>乗り継ぎ便が安かった！</strong>
-  </p>
+      飛行機のチケットは直行便よりも<strong>乗り継ぎ便が安かった！</strong>
+  
 </div>
 
 しかしデメリットも・・・
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    格安航空券のためか、<strong>フライトマイルの事後登録で「対象外」</strong>となりました😭
-  </p>
+      格安航空券のためか、<strong>フライトマイルの事後登録で「対象外」</strong>となりました😭
+  
 </div>
 
 ### タイ国際航空の座席指定は無料！
 
-{{< custom-figure src="image-7.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](image-7.png)](image-7.png) 
 
 予約時にオプションで座席指定できそうだったので課金しましたが、おそらく**払わなくても座席指定できることが分かりました。**（なぜか行きの便だけオプションがあって、帰りの便はオプションが表示されず😇）
 
@@ -553,16 +343,15 @@ LCCは不安だったので、フラッグ・キャリアを選択。
       </div>
     </div>
   </div></a>
-</div>{{< custom-figure src="image-8-1024x448.jpg" title="" Fit="1280x1280 webp q90" >}} 
+</div>![![](image-8-1024x448.jpg)](image-8-1024x448.jpg) 
 
 次の画面で「旅客情報を修正」ボタンを押し、名前とパスポート情報を登録します。
 
-この**旅客情報を登録することで初めて座席指定できる**ようになります。{{< custom-figure src="スクリーンショット_2024-09-30_午後5_15_01-1024x410.png" title="" Fit="1280x1280 webp q90" >}} 
+この**旅客情報を登録することで初めて座席指定できる**ようになります。![![](スクリーンショット_2024-09-30_午後5_15_01-1024x410.png)](スクリーンショット_2024-09-30_午後5_15_01-1024x410.png) 
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    タイ国際航空の公式ページで<strong>パスポート情報を登録することで無料で座席指定できる。</strong>
-  </p>
+      タイ国際航空の公式ページで<strong>パスポート情報を登録することで無料で座席指定できる。</strong>
+  
 </div>
 
 ### ブリティッシュ・エアウェイズとエールフランスの座席指定は有料！
@@ -570,9 +359,8 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 公式ホームページやアプリ経由と試してみましが、どちらの航空会社も座席指定は有料のため諦めました。
 
 <div class="wp-block-cocoon-blocks-icon-box common-icon-box block-box information-box">
-  <p>
-    結果的には夫婦隣同士で座ることは出来たのでラッキーでした👍
-  </p>
+      結果的には夫婦隣同士で座ることは出来たのでラッキーでした👍
+  
 </div>
 
 ## ホテルを予約する
@@ -622,7 +410,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### ロンドン2泊：30,609円
 
-{{< custom-figure src="2024-09-14_21-38-18_514-1-768x1024.jpeg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](2024-09-14_21-38-18_514-1-768x1024.jpeg)](2024-09-14_21-38-18_514-1-768x1024.jpeg) 
 
 空港着が19時ということもあり、空港直結の「<a rel="noopener" href="https://www.agoda.com/ja-jp/premier-inn-heathrow-airport-terminal-4/hotel/london-gb.html" target="_blank" title="">プレミア イン ヒースロー エアポート ターミナル 4 (Premier Inn Heathrow Airport Terminal 4)</a>」というホテルを予約しました。
 
@@ -671,7 +459,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### ブダペスト3泊：67,811円
 
-{{< custom-figure src="2024-09-16_22-15-10_862-1024x768.jpeg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](2024-09-16_22-15-10_862-1024x768.jpeg)](2024-09-16_22-15-10_862-1024x768.jpeg) 
 
 ドナウ川からの夜景が綺麗という口コミを見て「<a rel="noopener" href="https://www.agoda.com/ja-jp/boutique-hotel-victoria-budapest/hotel/budapest-hu.html" target="_blank" title="">ブティック ホテル ヴィクトリア ブタペスト (Boutique Hotel Victoria Budapest)</a>」というホテルを予約しました。
 
@@ -720,7 +508,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 
 ### パリ2泊：51,860円
 
-{{< custom-figure src="2024-09-19_17-13-55_281-768x1024.jpeg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](2024-09-19_17-13-55_281-768x1024.jpeg)](2024-09-19_17-13-55_281-768x1024.jpeg) 
 
 最後まで悩んだパリの宿泊地。治安が良い地区を選ぶと予算オーバーだったため、口コミを参考に「<a rel="noopener" href="https://www.agoda.com/ja-jp/hotel-le-cardinal/hotel/paris-fr.html" target="_blank" title="">ホテル ル カルディナル (Hotel Le Cardinal)</a>」というホテルを予約しました。
 
@@ -768,14 +556,13 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    立地と<strong>日本人の口コミ</strong>を参考にホテルを選びました。
-  </p>
+      立地と<strong>日本人の口コミ</strong>を参考にホテルを選びました。
+  
 </div>
 
 ## カード会社に海外利用の事前通知を行う
 
-{{< custom-figure src="image-1024x224.png" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](image-1024x224.png)](image-1024x224.png) 
 
 海外の航空券を購入するタイミングで**カードの不正利用**というメールを受信しました。
 
@@ -828,17 +615,14 @@ LCCは不安だったので、フラッグ・キャリアを選択。
 </div>
 
 <div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    普段海外での利用を行っていないと、カードの不正利用検知に引っかかる場合があります。
-  </p>
+      普段海外での利用を行っていないと、カードの不正利用検知に引っかかる場合があります。
   
-  <p>
-    私は<strong>海外の航空券を購入するタイミングで不正利用と判断されてしまいました</strong>。
-  </p>
   
-  <p>
-    <strong>事前に利用通知を行うことで回避</strong>できます。
-  </p>
+      私は<strong>海外の航空券を購入するタイミングで不正利用と判断されてしまいました</strong>。
+  
+  
+      <strong>事前に利用通知を行うことで回避</strong>できます。
+  
 </div>
 
 ## 海外旅行保険を申し込む
@@ -899,7 +683,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="1-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](1-160x90.jpg)](1-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">
@@ -941,7 +725,7 @@ LCCは不安だったので、フラッグ・キャリアを選択。
   <div class="blogcard internal-blogcard ib-left cf">
     <div class="blogcard-label internal-blogcard-label">
       <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
+    </div>![![](アイキャッチ画像-6721c6d77511e-160x90.jpg)](アイキャッチ画像-6721c6d77511e-160x90.jpg)
     
     <div class="blogcard-content internal-blogcard-content">
       <div class="blogcard-title internal-blogcard-title">

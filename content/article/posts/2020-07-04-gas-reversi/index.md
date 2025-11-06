@@ -1,19 +1,9 @@
 ---
 title: 【コピペで作れる】GASで動くスプレッドシートオセロの作り方
 author: arukayies
-type: post
 date: 2020-07-04T14:58:23+00:00
 excerpt: Zoomで友達とオセロができる。GASを使ったスプレッドシートオセロの作り方を紹介します！バグがあるので、負けそうになっても逆転できるかもしれない！？
-url: /gas/gas-reversi
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snap_isAutoPosted:
@@ -26,10 +16,8 @@ snapTW:
     %URL% 
     
     %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-05-02 16:37:10
-categories:
-  - GAS
+tags:
+  - "GAS"
 tags:
   - GAS
   - Google Apps Script
@@ -56,16 +44,14 @@ Zoomでスプレッドシートオセロという記事を見て作ってみま�
 <a href="https://twitter.com/arukayies/status/1279023971631919106?ref_src=twsrc%5Etfw">July 3, 2020</a>
 </blockquote>
 </div></figure>
-</div>
-</div>
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 <p class="has-text-align-center">
 <span class="fz-32px">さっそく作り方を紹介します！</span>
-</p>
+
 <p class="has-text-align-center">
 シートとコードだけほしい人はこちらからどうぞ！
-</p>
+
 <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-dl">
 <a rel="noopener" href="https://docs.google.com/spreadsheets/d/1LJkfLs2C8yl325tf39PdPFykvceWJAdoOGzuYQDv12w/edit#gid=0" title="オセロ(外部公開用)" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
 <div class="blogcard external-blogcard eb-left cf">
@@ -81,8 +67,6 @@ Zoomでスプレッドシートオセロという記事を見て作ってみま�
 オセロ(外部公開用)
 </div>
 <div class="blogcard-snippet external-blogcard-snippet">
-</div>
-</div>
 <div class="blogcard-footer external-blogcard-footer cf">
 <div class="blogcard-site external-blogcard-site">
 <div class="blogcard-favicon external-blogcard-favicon">
@@ -93,8 +77,6 @@ Zoomでスプレッドシートオセロという記事を見て作ってみま�
 </div>
 <div class="blogcard-domain external-blogcard-domain">
 docs.google.com
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -114,8 +96,6 @@ GitHub - arukayies/gas-reversi: GASで作ったオセロです。
 </div>
 <div class="blogcard-snippet external-blogcard-snippet">
 GASで作ったオセロです。. Contribute to arukayies/gas-reversi development by creating an account on GitHub.
-</div>
-</div>
 <div class="blogcard-footer external-blogcard-footer cf">
 <div class="blogcard-site external-blogcard-site">
 <div class="blogcard-favicon external-blogcard-favicon">
@@ -126,8 +106,6 @@ GASで作ったオセロです。. Contribute to arukayies/gas-reversi developme
 </div>
 <div class="blogcard-domain external-blogcard-domain">
 github.com
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -147,8 +125,6 @@ github.com
 オセロ(外部公開用)
 </div>
 <div class="blogcard-snippet external-blogcard-snippet">
-</div>
-</div>
 <div class="blogcard-footer external-blogcard-footer cf">
 <div class="blogcard-site external-blogcard-site">
 <div class="blogcard-favicon external-blogcard-favicon">
@@ -160,60 +136,58 @@ github.com
 <div class="blogcard-domain external-blogcard-domain">
 docs.google.com
 </div>
-</div>
-</div>
 </div></a>
 </div>
 Googleアカウントにログインしてる状態で上記シートにアクセスします。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-21.56.41.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">ファイル → コピーを作成 と順に押します。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-21.56.41.png)](スクリーンショット-2020-07-04-21.56.41.png) <figcaption class="wp-element-caption">ファイル → コピーを作成 と順に押します。</figcaption></figure>
 ファイル → コピーを作成 と順に押します。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-21.57.51.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">好きなところにコピーを保存してください。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-21.57.51.png)](スクリーンショット-2020-07-04-21.57.51.png) <figcaption class="wp-element-caption">好きなところにコピーを保存してください。</figcaption></figure>
 好きなところにコピーを保存してください。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-21.59.57.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">ファイル名とかシート名変えても問題ありません。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-21.59.57.png)](スクリーンショット-2020-07-04-21.59.57.png) <figcaption class="wp-element-caption">ファイル名とかシート名変えても問題ありません。</figcaption></figure>
 ファイル名とかシート名変えても問題ありません。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ## スクリプトの実行権限を許可する
-{{< custom-figure src="スクリーンショット-2020-07-04-22.03.36.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**初回のみ**スクリプトの実行を許可する必要があります。**続行** を押します。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.03.36.png)](スクリーンショット-2020-07-04-22.03.36.png) <figcaption class="wp-element-caption">**初回のみ**スクリプトの実行を許可する必要があります。**続行** を押します。</figcaption></figure>
 **初回のみ**スクリプトの実行を許可する必要があります。
 **対戦開始ボタン**を押したあとに、**続行** を押します。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット_2020-07-04_22_04_53.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**アカウント**を選択します。</figcaption></figure>
+![![](スクリーンショット_2020-07-04_22_04_53.png)](スクリーンショット_2020-07-04_22_04_53.png) <figcaption class="wp-element-caption">**アカウント**を選択します。</figcaption></figure>
 **アカウント**を選択します。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-22.06.03.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**詳細**リンクを押します。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.06.03.png)](スクリーンショット-2020-07-04-22.06.03.png) <figcaption class="wp-element-caption">**詳細**リンクを押します。</figcaption></figure>
 **詳細**リンクを押します。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-22.07.06.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**オセロ（安全ではないページ）に移動**リンクを押します。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.07.06.png)](スクリーンショット-2020-07-04-22.07.06.png) <figcaption class="wp-element-caption">**オセロ（安全ではないページ）に移動**リンクを押します。</figcaption></figure>
 **オセロ（安全ではないページ）に移動**リンクを押します。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット_2020-07-04_22_08_23.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">**許可**を押します。</figcaption></figure>
+![![](スクリーンショット_2020-07-04_22_08_23.png)](スクリーンショット_2020-07-04_22_08_23.png) <figcaption class="wp-element-caption">**許可**を押します。</figcaption></figure>
 **許可**を押します。<figure class="wp-block-image aligncenter size-large is-resized">
-{{< custom-figure src="スクリーンショット-2020-07-04-22.17.47.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">このメッセージボックスが表示されたら完了です。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.17.47.png)](スクリーンショット-2020-07-04-22.17.47.png) <figcaption class="wp-element-caption">このメッセージボックスが表示されたら完了です。</figcaption></figure>
 もう一度**対戦開始ボタン**を押し、このメッセージボックスが表示されたら完了です。
 これで遊ぶ準備はできました！
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ## オセロで遊ぶ
-{{< custom-figure src="スクリーンショット-2020-07-04-22.12.24.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">先攻は黒固定です。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.12.24.png)](スクリーンショット-2020-07-04-22.12.24.png) <figcaption class="wp-element-caption">先攻は黒固定です。</figcaption></figure>
 先攻は黒固定です。
 ### 石の置き方
-{{< custom-figure src="スクリーンショット-2020-07-04-22.13.31.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">コピーして貼り付ける</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.13.31.png)](スクリーンショット-2020-07-04-22.13.31.png) <figcaption class="wp-element-caption">コピーして貼り付ける</figcaption></figure>
 石の置き方はコピペです。コピーして置きたいところに貼り付けます。<figure class="wp-block-image size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-22.19.00.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">メッセージ内にどちらかの順番か示されます。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.19.00.png)](スクリーンショット-2020-07-04-22.19.00.png) <figcaption class="wp-element-caption">メッセージ内にどちらかの順番か示されます。</figcaption></figure>
 石は自動でひっくり返され、メッセージ内にどちらかの順番か示されます。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ### パスする
-{{< custom-figure src="スクリーンショット-2020-07-04-22.51.00.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">置けない場合はパスすることで相手の番にターンが移ります。</figcaption></figure>
+![![](スクリーンショット-2020-07-04-22.51.00.png)](スクリーンショット-2020-07-04-22.51.00.png) <figcaption class="wp-element-caption">置けない場合はパスすることで相手の番にターンが移ります。</figcaption></figure>
 置けない場合はパスすることで相手の番にターンが移ります。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ### 勝敗
-{{< custom-figure src="スクリーンショット-2020-07-04-22.28.14.png" title="" Fit="1280x1280 webp q90" >}} </figure>
+![![](スクリーンショット-2020-07-04-22.28.14.png)](スクリーンショット-2020-07-04-22.28.14.png)
 すべての石の合計が**64**になると、石の多いほうが**<span class="bold-blue">勝ち</span>**となります。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
 ### エラーになるパターン
-{{< custom-figure src="スクリーンショット-2020-07-04-22.21.46.png" title="" Fit="1280x1280 webp q90" >}} </figure>
+![![](スクリーンショット-2020-07-04-22.21.46.png)](スクリーンショット-2020-07-04-22.21.46.png)
 順番が違ったり、置けない場所に置いたりすると<span class="bold-red">エラー</span>になります。
 また、置かれた石は<span class="bold-red">削除</span>されます。
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
@@ -260,7 +234,7 @@ GASのイベントオブジェクトから、セルの行・列の位置を取�
 #### 置かれた場所から8方向をチェック
 置かれた場所から 8方向の状態をチェックします。
 置かれた場所が壁、自分の石、空白の場合は、次の処理には移りません。<figure class="wp-block-image aligncenter size-large">
-{{< custom-figure src="スクリーンショット-2020-07-04-23.33.41.png" title="" Fit="1280x1280 webp q90" >}} <figcaption class="wp-element-caption">オセロを作りながらマクロVBAを学ぼう№3
+![![](スクリーンショット-2020-07-04-23.33.41.png)](スクリーンショット-2020-07-04-23.33.41.png) <figcaption class="wp-element-caption">オセロを作りながらマクロVBAを学ぼう№3
 参考：エクセルの神髄 ｜ Copyright© 2010&nbsp;[鵜原パソコンソフト研究所][1]</figcaption></figure>
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
 </div>
@@ -298,8 +272,6 @@ GASのイベントオブジェクトから、セルの行・列の位置を取�
 </div>
 <div class="blogcard-snippet external-blogcard-snippet">
 ExcelマクロVBAでオセロ（リバーシ）を作っていきながら、マクロVBAを学んで行きましょう。目的は、マクロVBAの学習であり、思考を整理しVBAでプログラミングする学習です。従って、強いソフトを作ることが目的ではありませんので、最近流行...
-</div>
-</div>
 <div class="blogcard-footer external-blogcard-footer cf">
 <div class="blogcard-site external-blogcard-site">
 <div class="blogcard-favicon external-blogcard-favicon">
@@ -310,8 +282,6 @@ ExcelマクロVBAでオセロ（リバーシ）を作っていきながら、マ
 </div>
 <div class="blogcard-domain external-blogcard-domain">
 excel-ubara.com
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -331,8 +301,6 @@ excel-ubara.com
 </div>
 <div class="blogcard-snippet external-blogcard-snippet">
 プログラミングの基礎ばかりを学習し、実践経験が全くない者です。そこでこの度、実際にオセロのプログラムコードをJavaScriptで書いてみました。しかし、このように一つの形にしたプログラミ
-</div>
-</div>
 <div class="blogcard-footer external-blogcard-footer cf">
 <div class="blogcard-site external-blogcard-site">
 <div class="blogcard-favicon external-blogcard-favicon">
@@ -343,8 +311,6 @@ excel-ubara.com
 </div>
 <div class="blogcard-domain external-blogcard-domain">
 teratail.com
-</div>
-</div>
 </div>
 </div></a>
 </div>
@@ -364,8 +330,6 @@ JavaScriptでn個ずつ配列を分割する - yucatio@システムエンジニ�
 </div>
 <div class="blogcard-snippet external-blogcard-snippet">
 JavaScriptで配列を指定された個数ずつに分割します。 例えば、 という配列を3個ずつ分割するのであれば、 , , , ] という配列になります。 実装方針 配列から一部を通り出すのには、 Array.prototype.slice(...
-</div>
-</div>
 <div class="blogcard-footer external-blogcard-footer cf">
 <div class="blogcard-site external-blogcard-site">
 <div class="blogcard-favicon external-blogcard-favicon">
@@ -377,8 +341,6 @@ JavaScriptで配列を指定された個数ずつに分割します。 例えば
 <div class="blogcard-domain external-blogcard-domain">
 yucatio.hatenablog.com
 </div>
-</div>
-</div>
 </div></a>
 </div>
 <div style="height:20px" aria-hidden="true" class="wp-block-spacer">
@@ -386,10 +348,9 @@ yucatio.hatenablog.com
 ## まとめ
 <div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box cocoon-block-balloon">
 <div class="speech-person">
-{{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+![![](icon-1.png)](icon-1.png)
 </div>
 <div class="speech-balloon">
-<p>
 遊んでみてください。
 
  [1]: https://excel-ubara.com/

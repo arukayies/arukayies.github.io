@@ -1,20 +1,10 @@
 ---
 title: 【水耕栽培】ゴーヤの観察日記(20日目)
 author: arukayies
-type: post
 date: 2019-08-17T14:11:14+00:00
-url: /hydroponic_culture/bitter_melon/diary3-4
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1569076836
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -36,7 +26,7 @@ archives: ["2019年8月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary2-4-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary2-4-160x90.png)](diary2-4-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -80,10 +70,10 @@ archives: ["2019年8月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="germination_kit.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](germination_kit.png)](germination_kit.png)
       
       <noscript>
-        {{< custom-figure src="germination_kit.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](germination_kit.png)](germination_kit.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -122,10 +112,10 @@ archives: ["2019年8月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -154,20 +144,18 @@ archives: ["2019年8月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 自作発芽キットに植え替え
 
 ある程度根が出てきたので、100均の製氷皿に土を詰めた  
 <span class="marker"><strong>自作発芽キット</strong></span>に植え替えます！
 
-{{< custom-figure src="img_5dff3d5675980.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dff3d5675980.jpg)](img_5dff3d5675980.jpg) 
 
 こんな感じになりました。
 
-{{< custom-figure src="img_5dff3d5821e61.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dff3d5821e61.jpg)](img_5dff3d5821e61.jpg) 
 
 まだ幼いので、日光を遮るためにアルミシートで屋根代わりです。
 
-{{< custom-figure src="img_5dff3d58d2af4.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dff3d58d2af4.jpg)](img_5dff3d58d2af4.jpg)

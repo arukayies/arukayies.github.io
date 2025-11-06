@@ -1,20 +1,10 @@
 ---
 title: 【水耕栽培】コマツナの観察日記(1日目)
 author: arukayies
-type: post
 date: 2019-08-20T10:19:04+00:00
-url: /hydroponic_culture/komatsuna/diary1-5
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1569665995
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -38,10 +28,10 @@ archives: ["2019年8月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -70,10 +60,8 @@ archives: ["2019年8月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 発芽
 
 左のちょびっと出ている🌱がコマツナです！  
-{{< custom-figure src="img_5dff3c141a4d2.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dff3c141a4d2.jpg)](img_5dff3c141a4d2.jpg)

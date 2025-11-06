@@ -1,38 +1,23 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3カ国を巡った様子のまとめ
 author: arukayies
-type: post
 date: 2024-10-30T05:41:03+00:00
-url: /diy/travel/europe-honeymoon-summary
-fshare: true
-toc: true
-comment: true
-last_modified:
-  - 2024-10-30 14:41:05
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-categories:
-  - 旅
+ftoc: true
+tags:
+  - "旅"
 
-archives: ["2024年10月"]
 ---
 こんにちは！
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-</p>
-<p>
+
+
 タイトルの通りヨーロッパへ新婚旅行に行きました。
-</p>
-<p>
+
+
 ここまでヨーロッパ新婚旅行（ロンドン、ブ
 ダペスト、パリ）シリーズをお伝えしてきました。
-</p>
-<p>
+
+
 今回はそのまとめ記事になります！
 
 旅行の事前準備やかかった費用の内訳が気になる方はこちらをご覧ください。
@@ -44,7 +29,7 @@ archives: ["2024年10月"]
 
 ## 行きのタイ乗り継ぎ
 
-{{< custom-figure src="IMG_3976.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](IMG_3976.jpg)](IMG_3976.jpg) 
 
 ロンドンまでの飛行機は「タイ国際航空」で向かったため、**タイで8時間の乗り継ぎ**がありました。
 
@@ -58,7 +43,7 @@ archives: ["2024年10月"]
 
 ## ロンドン
 
-{{< custom-figure src="IMG_4023-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+![![](IMG_4023-768x1024.jpg)](IMG_4023-768x1024.jpg) 
 
 いよいよヨーロッパ１カ国目「**ロンドン**」です。夜21時着だったので、ホテルは空港直結を利用しました。
 
@@ -70,7 +55,7 @@ archives: ["2024年10月"]
 
 ## ブダベスト
 
-{{< custom-figure src="IMG_4892.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](IMG_4892.jpg)](IMG_4892.jpg) 
 
 この旅メインの「**ブダベスト**」です。
 
@@ -87,7 +72,7 @@ archives: ["2024年10月"]
 
 ## パリ
 
-{{< custom-figure src="IMG_4939.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](IMG_4939.jpg)](IMG_4939.jpg) 
 
 ヨーロッパー３カ国目最後は「パリ」です。
 
@@ -103,7 +88,7 @@ archives: ["2024年10月"]
 
 ## 帰りのタイ乗り継ぎ
 
-{{< custom-figure src="IMG_5037.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](IMG_5037.jpg)](IMG_5037.jpg) 
 
 帰りの乗り継ぎも同じくタイで8時間待機する必要がありました。
 

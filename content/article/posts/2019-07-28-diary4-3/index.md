@@ -1,20 +1,10 @@
 ---
 title: 【水耕栽培】オクラの観察日記(16日目)
 author: arukayies
-type: post
 date: 2019-07-28T05:21:30+00:00
-url: /hydroponic_culture/okra/diary4-3
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1571721879
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -36,7 +26,7 @@ archives: ["2019年7月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary3-3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary3-3-160x90.png)](diary3-3-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -80,10 +70,10 @@ archives: ["2019年7月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -112,12 +102,10 @@ archives: ["2019年7月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 観察16日目
 
 水耕栽培装置に植え替えしました！  
-{{< custom-figure src="img_5dfa3010d065c.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dfa3010d065c.jpg)](img_5dfa3010d065c.jpg) 
 
-{{< custom-figure src="img_5dfa30116d28d.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dfa30116d28d.jpg)](img_5dfa30116d28d.jpg)

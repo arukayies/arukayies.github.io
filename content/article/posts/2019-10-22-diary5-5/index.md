@@ -1,27 +1,16 @@
 ---
 title: 【水耕栽培】コマツナの観察日記(64日目)
 author: arukayies
-type: post
 date: 2019-10-22T12:59:09+00:00
-url: /hydroponic_culture/komatsuna/diary5-5
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1571749149
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
   - 1
 snapTW:
   - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186628293908320257";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186628293908320257";s:5:"pDate";s:19:"2019-10-22 13:00:06";}}";'
-archives: ["2019年10月"]
 ---
 こんにちは！
 
@@ -36,7 +25,7 @@ archives: ["2019年10月"]
     <div class="blogcard internal-blogcard ib-left cf">
       <div class="blogcard-label internal-blogcard-label">
         <span class="fa"></span>
-      </div>{{< custom-figure src="diary4-5-160x90.png" title="" Fit="1280x1280 webp q90" >}}
+      </div>![![](diary4-5-160x90.png)](diary4-5-160x90.png)
       
       <div class="blogcard-content internal-blogcard-content">
         <div class="blogcard-title internal-blogcard-title">
@@ -80,10 +69,10 @@ archives: ["2019年10月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_first_machine.png)](hydroponic_culture_first_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -122,10 +111,10 @@ archives: ["2019年10月"]
         <span class="fa"></span>
       </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
       
-      {{< custom-figure src="hydroponic_culture_second_machine.png" title="" Fit="1280x1280 webp q90" >}}
+      ![![](hydroponic_culture_second_machine.png)](hydroponic_culture_second_machine.png)
       
       <noscript>
-        {{< custom-figure src="hydroponic_culture_second_machine.png" title="" Fit="1280x1280 webp q90" >}}
+        ![![](hydroponic_culture_second_machine.png)](hydroponic_culture_second_machine.png)
       </noscript></figure>
       
       <div class="blogcard-content external-blogcard-content">
@@ -154,14 +143,12 @@ archives: ["2019年10月"]
         </div>
       </div>
     </div></a>
-  </div>
-</div>
-
+  
 ## 観察64日目
 
 これはもう収穫しても良さそうです！！！  
-{{< custom-figure src="img_5dff3b9c87ebd.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dff3b9c87ebd.jpg)](img_5dff3b9c87ebd.jpg) 
 
-{{< custom-figure src="img_5dff3b9e8361f.jpg" title="" Fit="1280x1280 webp q90" >}} 
+![![](img_5dff3b9e8361f.jpg)](img_5dff3b9e8361f.jpg) 
 
-{{< custom-figure src="img_5dff3b9f88a8c.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dff3b9f88a8c.jpg)](img_5dff3b9f88a8c.jpg)

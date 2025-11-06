@@ -1,20 +1,10 @@
 ---
 title: 【観葉植物】アルティシマの観察日記(1日目)
 author: arukayies
-type: post
 date: 2019-04-11T12:25:31+00:00
-url: /house_plants/altissima/diary1-6
-share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
 snap_isAutoPosted:
   - 1569068731
-the_review_type:
-  - Product
 the_review_rate:
   - 5
 snapEdIT:
@@ -33,4 +23,4 @@ archives: ["2019年4月"]
 
 背丈が伸びてきたので、支柱で支えています。あと名札つけました。  
 アルティシマなんで、『あーちゃん』っていうニックネームです　笑。  
-{{< custom-figure src="img_5dfa2c0b15f40.jpg" title="" Fit="1280x1280 webp q90" >}}
+![![](img_5dfa2c0b15f40.jpg)](img_5dfa2c0b15f40.jpg)
