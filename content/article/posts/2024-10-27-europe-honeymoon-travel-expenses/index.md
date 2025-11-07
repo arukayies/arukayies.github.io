@@ -1,5 +1,6 @@
 ---
 title: ヨーロッパ3カ国を巡る新婚旅行にかかった費用は100万円！10日間過ごした内訳！
+date: 2024-10-27T04:46:08+00:00
 url: /diy/travel/europe-honeymoon-travel-expenses
 share: true
 toc: true
@@ -14,8 +15,6 @@ archives: ["2024年10月"]
 ヨーロッパ新婚旅行（ロンドン、ブダペスト、パリ）シリーズの最後に気になる費用の詳細をお伝えします！
 
 この旅は2024年9月14日〜22日に行きました。物価の高いヨーロッパ旅行で工夫した点をお伝えします！
-
-{{< self-blog-card "article/posts/2024-10-30-europe-honeymoon-summary" >}}
 
 これが今回の新婚旅行にかかった費用100万円の内訳です！
 
