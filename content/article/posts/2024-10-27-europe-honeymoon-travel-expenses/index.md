@@ -1,89 +1,27 @@
 ---
 title: ヨーロッパ3カ国を巡る新婚旅行にかかった費用は100万円！10日間過ごした内訳！
-author: arukayies
-type: post
-date: 2024-10-27T04:46:08+00:00
 url: /diy/travel/europe-honeymoon-travel-expenses
 share: true
 toc: true
-comment: true
-last_modified:
-  - 2024-10-30 14:42:49
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
 categories:
   - 旅
-
 archives: ["2024年10月"]
 ---
 こんにちは！
+
 この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-</p>
-<p>
+
 ヨーロッパ新婚旅行（ロンドン、ブダペスト、パリ）シリーズの最後に気になる費用の詳細をお伝えします！
-</p>
-<p>
-この旅は2024年9月14日〜22日に行きました。<strong><span class="marker">物価の高いヨーロッパ旅行で工夫した点をお伝えします！</span></strong>
 
-<strong><span class="marker">これが今回の新婚旅行にかかった費用100万円の内訳です！</span></strong>
+この旅は2024年9月14日〜22日に行きました。物価の高いヨーロッパ旅行で工夫した点をお伝えします！
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/diy/travel/europe-honeymoon-summary" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3カ国を巡った様子のまとめ" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-6721c6d77511e-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3カ国を巡った様子のまとめ
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは！この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。タイトルの通りヨーロッパへ新婚旅行に行きました。ここまでヨーロッパ新婚旅行（ロンドン、ブダペスト、パリ）シリーズをお伝えしてきました。今回はそ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.10.30
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< self-blog-card "article/posts/2024-10-30-europe-honeymoon-summary" >}}
 
-<div class="wp-block-columns is-layout-flex wp-container-core-columns-is-layout-28f84493 wp-block-columns-is-layout-flex">
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="費用内訳.png" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-  
-  <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow">
-    {{< custom-figure src="image-1.png" title="" Fit="1280x1280 webp q90" >}}
-  </div>
-</div>
+これが今回の新婚旅行にかかった費用100万円の内訳です！
+
+{{< custom-figure src="費用内訳.png" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-1.png" title="" Fit="1280x1280 webp q90" >}}
 
 種別ごとに費用の詳細をお伝えします！
 

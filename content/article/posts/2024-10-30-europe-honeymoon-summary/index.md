@@ -1,48 +1,30 @@
 ---
 title: 【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3カ国を巡った様子のまとめ
-author: arukayies
-type: post
+description: "100万円の予算で個人手配したヨーロッパ新婚旅行。ロンドン・ブダペスト・パリの3カ国を巡った旅行記、費用やホテル・食事情報をまとめました。"
+tags: ["ヨーロッパ旅行", "新婚旅行", "個人手配", "ロンドン", "ブダペスト", "パリ"]
 date: 2024-10-30T05:41:03+00:00
 url: /diy/travel/europe-honeymoon-summary
 fshare: true
 toc: true
-comment: true
-last_modified:
-  - 2024-10-30 14:41:05
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
 categories:
   - 旅
-
 archives: ["2024年10月"]
 ---
-こんにちは！
-この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
-</p>
-<p>
-タイトルの通りヨーロッパへ新婚旅行に行きました。
-</p>
-<p>
-ここまでヨーロッパ新婚旅行（ロンドン、ブ
-ダペスト、パリ）シリーズをお伝えしてきました。
-</p>
-<p>
+100万円の予算で個人手配したヨーロッパ新婚旅行のまとめです。ロンドン・ブダペスト・パリの3カ国を巡った旅行プラン、航空券やホテル費用、現地での観光・食事の体験を詳しく紹介します。
+
+ここまでヨーロッパ新婚旅行（ロンドン、ブダペスト、パリ）シリーズをお伝えしてきました。
+
 今回はそのまとめ記事になります！
 
 旅行の事前準備やかかった費用の内訳が気になる方はこちらをご覧ください。
 
 {{< self-blog-card "article/posts/2024-09-29-europe-honeymoon-preparation" >}}
+
 {{< self-blog-card "article/posts/2024-10-27-europe-honeymoon-travel-expenses" >}}
 
 それではまとめ編です！
 
-## 行きのタイ乗り継ぎ
+## タイ乗り継ぎで8時間観光！初の海外トランジット体験
 
 {{< custom-figure src="IMG_3976.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
@@ -54,11 +36,13 @@ archives: ["2024年10月"]
 
 タイの三大寺院に数えられるワット・アルンは川を挟んで遠目に眺めて、ワット・ポーだけは参拝しました。
 
+乗り継ぎ時間で観光したタイ・バンコクのスポット紹介はこちら。
+
 {{< self-blog-card "article/posts/2024-09-29-europe-honeymoon-thailand-tourism" >}}
 
-## ロンドン
+## ロンドン観光とおすすめホテル
 
-{{< custom-figure src="IMG_4023-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+{{< custom-figure src="IMG_4023-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
 
 いよいよヨーロッパ１カ国目「**ロンドン**」です。夜21時着だったので、ホテルは空港直結を利用しました。
 
@@ -66,15 +50,17 @@ archives: ["2024年10月"]
 
 ナショナルギャラリー・大英博物館と有名どころを周り、ロンドンのパブでビールも飲めました。
 
+ロンドンで訪れた美術館やパブなど、観光スポットの詳細はこちらの記事で紹介しています。
+
 {{< self-blog-card "article/posts/2024-09-29-europe-honeymoon-london-tourism" >}}
 
-## ブダベスト
+## ブダペスト宿泊・観光・グルメ体験まとめ
 
 {{< custom-figure src="IMG_4892.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
 この旅メインの「**ブダベスト**」です。
 
-ホテルは少し奮発してドナウ川から**<span class="marker">ライトアップされた国会議事堂が見えるホテルを予約</span>**しました。
+ホテルは少し奮発してドナウ川から**ライトアップされた国会議事堂が見えるホテルを予約**しました。
 
 ホテルからの眺望は最高で、部屋で飲むワインが思い出に残っています。
 
@@ -82,10 +68,15 @@ archives: ["2024年10月"]
 
 **フォアグラが濃厚で赤ワインにとても合って美味かった**のが思い出です。
 
-{{< self-blog-card "article/posts/2024-10-05-europe-honeymoon-budapest-tourism-part1" >}}
-{{< self-blog-card "article/posts/2024-10-05-europe-honeymoon-budapest-tourism-part2" >}}
+ブダペストの観光スポットや街歩きの様子を詳しく記録しています。
 
-## パリ
+{{< self-blog-card "article/posts/2024-10-05-europe-honeymoon-budapest-tourism-part1" >}}
+
+夜景や温泉、フォアグラなどのグルメ体験はこちらの後編でまとめています。
+
+{{< self-blog-card "article/posts/2024-10-06-europe-honeymoon-budapest-tourism-part2" >}}
+
+## パリ旅行の感想と治安・食事事情
 
 {{< custom-figure src="IMG_4939.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
@@ -99,9 +90,11 @@ archives: ["2024年10月"]
 
 特にパリではサンドウィッチ（カスクート）が美味しく、旅行中は何度も食べてました。
 
+パリで訪れた観光名所や治安の印象、美味しかったカスクートの話はこちら。
+
 {{< self-blog-card "article/posts/2024-10-13-europe-honeymoon-pari-tourism" >}}
 
-## 帰りのタイ乗り継ぎ
+## 帰りのタイ乗り継ぎでリラックス
 
 {{< custom-figure src="IMG_5037.jpg" title="" Fit="1280x1280 webp q90" >}} 
 
@@ -110,5 +103,7 @@ archives: ["2024年10月"]
 これまでの旅行で歩きすぎたので、タイマッサージ受けたのとラウンジでリフレッシュできたのが良かったですね。
 
 最後までトラブルもなく日本へ帰ることができました。
+
+帰りの乗り継ぎ地・スワンナプーム空港で利用したマッサージやラウンジの紹介記事はこちらです。
 
 {{< self-blog-card "article/posts/2024-10-20-europe-honeymoon-transit-suvarnabhumi-airport" >}}
