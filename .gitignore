@@ -1,0 +1,8 @@
+public/
+resources/
+.DS_Store
+.hugo_build.lock
+*.bak
+*.bk
+*.md-e
+node_modules/
