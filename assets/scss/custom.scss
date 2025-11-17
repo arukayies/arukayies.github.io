@@ -1,0 +1,129 @@
+/* カード本体：2カラム（左=サムネ、右=内容） */
+.affsearch-card{
+  display:grid;
+  grid-template-columns: 140px 1fr;      /* 左幅を大きめに確保 */
+  gap:14px;
+  align-items:start;
+  border:1px solid #e5e7eb;
+  border-radius:12px;
+  background:#fff;
+  padding:12px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+
+/* 左：サムネを可能な限り大きく見せる */
+.affsearch-thumbWrap{
+  aspect-ratio: 1 / 1;                   /* 正方形枠で安定 */
+  width:100%;
+  max-width: 140px;
+  border-radius:10px;
+  overflow:hidden;
+}
+.affsearch-thumb{
+  width:100%;
+  height:100%;
+  object-fit:cover;                       /* 画面いっぱいにトリミングして大きく */
+  display:block;
+}
+
+/* 右側：上下2段（上=タイトル、下=ボタン） */
+.affsearch-right{
+  display:grid;
+  grid-template-rows: auto auto;          /* 1:タイトル 2:ボタン列 */
+  align-content:start;
+  gap:10px;
+}
+
+/* タイトル */
+.affsearch-title{
+  font-size:16px;
+  line-height:1.6;
+  font-weight:700;
+  color:#1f2937;
+  word-break:break-word;
+}
+
+/* ボタン列：3つ横並び、折り返し可 */
+.affsearch-links{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+/* 共通ボタン（白字固定） */
+.affsearch-links .affsearch-btn,
+.affsearch-links .affsearch-btn:visited,
+.affsearch-links .affsearch-btn:hover,
+.affsearch-links .affsearch-btn:active,
+.affsearch-links .affsearch-btn:focus{
+  color:#fff !important;
+  text-decoration:none !important;
+}
+
+.affsearch-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:34px;
+  padding:0 14px;
+  border-radius:8px;
+  font-weight:700;
+  font-size:13px;
+  line-height:1;
+  box-shadow:0 1px 0 rgba(0,0,0,.05);
+  transition:filter .15s ease, transform .02s ease;
+}
+.affsearch-btn:hover{ filter:brightness(.95); }
+.affsearch-btn:active{ transform:translateY(1px); }
+
+/* ブランド色 */
+.affsearch-btn.rakuten{ background:#bf0000 !important; }
+.affsearch-btn.amz{ background:#ff9900 !important; }
+.affsearch-btn.yahoo{ background:#6a1bb1 !important; }
+
+/* 狭幅対応：縦積み → サムネ大きめ維持 */
+@media (max-width:560px){
+  .affsearch-card{
+    grid-template-columns: 110px 1fr;
+    gap:12px;
+    padding:10px;
+  }
+  .affsearch-thumbWrap{ max-width:110px; border-radius:8px; }
+  .affsearch-title{ font-size:15px; }
+  .affsearch-btn{ height:32px; padding:0 12px; font-size:12.5px; }
+}
+
+@media (max-width:420px){
+  .affsearch-card{
+    grid-template-columns: 1fr;           /* 1カラムにフォールバック */
+  }
+  .affsearch-thumbWrap{
+    max-width:none;
+    width:100%;
+    aspect-ratio: 16 / 9;                 /* モバイルでは横長にして視認性UP */
+  }
+  .affsearch-right{ gap:8px; }
+}
+
+/* scope: 記事本文だけ */
+.single__article__content.markdown-body {
+  line-height: 1.9;
+  background: #fff;
+  color: #000;
+}
+
+/* 段落・リストの基本余白 */
+.single__article__content.markdown-body p,
+.single__article__content.markdown-body ul,
+.single__article__content.markdown-body ol,
+.single__article__content.markdown-body blockquote { margin: 1em 0; }
+
+/* 表とコードだけライト固定（見やすさ） */
+.single__article__content.markdown-body table { background: #fff; }
+.single__article__content.markdown-body thead th { background: #f6f8fa; }
+.single__article__content.markdown-body pre,
+.single__article__content.markdown-body code {
+  background: #f6f8fa;
+  color: #000;
+}

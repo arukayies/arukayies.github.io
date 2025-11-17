@@ -25,6 +25,7 @@
         }
         &__shareLinks {
             margin-bottom: 20px;
+            white-space: nowrap;           /* 折り返し防止 */
         }
         &__tag {
             &__items {

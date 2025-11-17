@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/okdyy75/hugo-theme-salt#readme",
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.2",
-    "@google-analytics/data": "^4.7.0",
-    "dayjs": "^1.11.11",
-    "github-markdown-css": "^5.5.1",
-    "hugo-bin": "^0.144.6",
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@google-analytics/data": "^5.2.1",
+    "dayjs": "^1.11.19",
+    "github-markdown-css": "^5.8.1",
+    "hugo-bin": "^0.149.2",
     "lunr": "^2.3.9",
     "lunr-languages": "^1.14.0"
   },

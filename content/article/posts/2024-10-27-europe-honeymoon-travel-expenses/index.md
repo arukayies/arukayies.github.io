@@ -1,18 +1,20 @@
 ---
-title: ヨーロッパ3カ国を巡る新婚旅行にかかった費用は100万円！10日間過ごした内訳！
+title: "ヨーロッパ3カ国を巡る新婚旅行にかかった費用は100万円！10日間過ごした内訳！"
+description: "ヨーロッパ新婚旅行（ロンドン・ブダペスト・パリ）を個人手配で実現。10日間の旅でかかった費用100万円の内訳を詳しく紹介。航空券・宿泊・食費・交通費・観光費の実例をまとめました。"
+tags: ["ヨーロッパ旅行", "新婚旅行", "費用内訳", "個人手配", "旅行記", "節約術"]
 date: 2024-10-27T04:46:08+00:00
+lastmod: 2025-11-07T00:00:00+00:00
 url: /diy/travel/europe-honeymoon-travel-expenses
 share: true
 toc: true
-categories:
-  - 旅
+categories: "旅"
 archives: ["2024年10月"]
 ---
-こんにちは！
+ヨーロッパ新婚旅行の費用はいくらかかる？
 
-この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。
+この記事では、ロンドン・ブダペスト・パリの3カ国を個人手配で巡った10日間の旅行費用を公開しています。
 
-ヨーロッパ新婚旅行（ロンドン、ブダペスト、パリ）シリーズの最後に気になる費用の詳細をお伝えします！
+航空券・ホテル・食費・観光の総額100万円の内訳と、節約のコツも紹介します。
 
 この旅は2024年9月14日〜22日に行きました。物価の高いヨーロッパ旅行で工夫した点をお伝えします！
 
@@ -24,390 +26,184 @@ archives: ["2024年10月"]
 
 種別ごとに費用の詳細をお伝えします！
 
-## 日本→ロンドン→ブダペスト→パリ→日本の航空券は2人で約60万
+## ヨーロッパ新婚旅行の航空券は2人で約60万円！費用を抑えるコツ
 
-{{< custom-figure src="IMG_4036-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-2-1024x161.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4036-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-2-1024x161.png" title="" Fit="1280x1280 webp q90" >}} 
 
 100万円の半分以上を占めるのは航空券です。ANA、JAL等でヨーロッパに行くと、片道だけで50万超えるのでとても悩みました。ヨーロッパへ行こう！と決心したのも2ヶ月前とかなので、早割もなかったです。
 
 なるべく快適な座席で機内食も美味しそうなところと検討した結果、日本から出国・帰国便は「**タイ国際航空**」・ヨーロッパ間の移動は「**フラッグ・キャリア**」を予約しました。ヨーロッパ間の飛行機はLCCでも良かったのかもしれません。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/diy/travel/europe-honeymoon-preparation#toc11" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは！この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。タイトルの通りヨーロッパへ新婚旅行に行きました。くらしかし、夫婦で行ったのは台湾のみとほとんど海外旅行の経験はありません。英語も話せず、しかも...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.10.30
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+航空券の予約方法や比較サイトの使い方は、こちらの記事で詳しく紹介しています。
+
+{{< self-blog-card "article/posts/2024-09-29-europe-honeymoon-preparation" >}}
 
 航空券の費用を抑えたポイントはこちらです！
 
-<div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    航空券比較サイトを使い（<strong>Trip.com</strong>を利用）、安い航空会社を探す。
-  </p>
-  
-  <p>
-    <strong>直行便よりも乗り継ぎ便で予約する。</strong>
-  </p>
-  
-  <p>
-    日程が決まっていれば、早い段階で予約する
-  </p>
-</div>
+航空券比較サイトを使い（**Trip.com**を利用）、安い航空会社を探す。
 
-## ロンドン2泊、ブダペスト3泊、パリ2泊の宿泊費は約16万
+**直行便よりも乗り継ぎ便で予約する。**
 
-{{< custom-figure src="IMG_4822-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-3-1024x194.png" title="" Fit="1280x1280 webp q90" >}} 
+日程が決まっていれば、早い段階で予約する
+
+## ヨーロッパ3都市（ロンドン・ブダペスト・パリ）の宿泊費は約16万円
+
+{{< custom-figure src="IMG_4822-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-3-1024x194.png" title="" Fit="1280x1280 webp q90" >}} 
 
 航空券の次に悩んだのは各地の宿泊場所です。日本と同じような基準で選んでいったのですが、1番気になるのは**治安でした**。
 
-特にパリは最後まで悩み、価格と治安を天秤にかけていました。決め手となったのは**<span class="marker">ホテルの日本人が投稿した口コミでした</span>**。
+特にパリは最後まで悩み、価格と治安を天秤にかけていました。決め手となったのは**ホテルの日本人が投稿した口コミでした**。
 
 宿泊したホテルの詳細はこちらをご覧ください。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/diy/travel/europe-honeymoon-preparation#toc18" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは！この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。タイトルの通りヨーロッパへ新婚旅行に行きました。くらしかし、夫婦で行ったのは台湾のみとほとんど海外旅行の経験はありません。英語も話せず、しかも...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.10.30
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+宿泊先選びのコツや利用したホテルの詳細はこちらの記事でまとめています。
 
-<div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    比較サイトを使い（<strong>Agoda</strong>を利用）、安いホテルを探す。
-  </p>
-  
-  <p>
-    <strong>日本人の口コミを参考にする</strong>。
-  </p>
-</div>
+{{< self-blog-card "article/posts/2024-09-29-europe-honeymoon-preparation" >}}
 
-## 10日間の食事 + お土産(食べ物)にかかった費用は約11万
+比較サイトを使い（**Agoda**を利用）、安いホテルを探す。
+
+**日本人の口コミを参考にする**。
+
+## 食費とお土産（食べ物）で約11万円！ヨーロッパ滞在中の食生活まとめ
 
 各地の食事については制限することはなく、食べたいものを食べ、お酒も飲みました。
 
 現地のスーパーも活用したので、費用を抑えることができました。
 
-<div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    事前に食べたい名物を調べ、食べたいものは我慢しない。
-  </p>
-  
-  <p>
-    <strong>スーパーで軽食を購入して、費用を抑えるのとお腹を休ませる</strong>。
-  </p>
-</div>
+事前に食べたい名物を調べ、食べたいものは我慢しない。
+
+**スーパーで軽食を購入して、費用を抑えるのとお腹を休ませる**。
 
 ### ロンドン2泊の食費は2人で約3.3万
 
-{{< custom-figure src="IMG_4035-1024x765.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-4-1024x167.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4035-1024x765.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-4-1024x167.png" title="" Fit="1280x1280 webp q90" >}} 
 
 フィッシュ&チップスとビール、イングリッシュブレックファーストだけは食べる！という夢を達成しました。
 
 ### ブダベスト3泊の食費は2人で約3.1万
 
-{{< custom-figure src="IMG_4899-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-5-1024x197.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4899-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-5-1024x197.png" title="" Fit="1280x1280 webp q90" >}} 
 
 朝食付きのホテルへ宿泊だったのと夕食はスーパーで買った軽食で済ませていました。
 
 ### パリ2泊の食費は2人で約3.6万
 
-{{< custom-figure src="IMG_4994-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-6-1024x273.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4994-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-6-1024x273.png" title="" Fit="1280x1280 webp q90" >}} 
 
 初日に現地のビストロを訪れ、残りは各観光地でサンドウィッチ（カスクート）をよく食べてました。
 
-## 観光+お土産(物販)にかかった費用は約10万
+## 観光費用と物販お土産の合計は約10万円
 
 ### バンコク観光の費用は約2.4万
 
-{{< custom-figure src="IMG_3976-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-7-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_3976-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-7-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
 
 帰りの乗り継ぎ時に行ったマッサージが割高でした。疲れは取れたので後悔はしていません。
 
 ### ロンドン観光の費用は約0.9万
 
-{{< custom-figure src="IMG_4018-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-8-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4018-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-8-1024x165.png" title="" Fit="1280x1280 webp q90" >}} 
 
 博物館と建造物を見るだけだったので、**３カ国の中で一番観光費用は安かったです。**
 
 ### ブダベスト観光の費用は約2.4万
 
-{{< custom-figure src="IMG_4842-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-9-1024x385.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4842-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-9-1024x385.png" title="" Fit="1280x1280 webp q90" >}} 
 
 3泊4日とこの旅行で一番長く滞在しましたが、**物価が日本より少し安い**こともありこのぐらいとなりました。
 
 ### パリ観光の費用は約3.9万
 
-{{< custom-figure src="IMG_4936-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-10-1024x226.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4936-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-10-1024x226.png" title="" Fit="1280x1280 webp q90" >}} 
 
 **最後にお土産を買い込んだので、一番高くなりました**。
 
-## 現地での移動費は約3万！
+## 現地交通費は約3万円！公共交通機関を使った節約術
 
-<div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-point block-box has-border-color has-red-border-color">
-  <p>
-    各地の公共交通機関の乗り方などを調べたりするのは手間ですが、<strong>コストも抑えられて、<span class="marker-blue">乗り物楽しいのでおすすめです</span>！</strong>
-  </p>
-</div>
+各地の公共交通機関の乗り方などを調べたりするのは手間ですが、**コストも抑えられて、乗り物楽しいのでおすすめです！**
 
 ### バンコクの移動費は2人で約3,600円
 
-{{< custom-figure src="IMG_3967-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-11-1024x88.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_3967-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-11-1024x88.png" title="" Fit="1280x1280 webp q90" >}} 
 
 行きのタイ乗り継ぎ時のみ観光するため電車に乗りました。
 
 ### ロンドンの公共交通機関はクレカタッチでらくらく！移動費は2人で約6,000円
 
-{{< custom-figure src="IMG_4011-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-12-1024x195.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4011-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-12-1024x195.png" title="" Fit="1280x1280 webp q90" >}} 
 
 クレカタッチで地下鉄も二階建てバスも乗車できて便利でした。クレカ明細から合計金額を算出しています。
 
 ### ブダベストではBudapestGoを使ってスマホで乗れる！移動費は2人で約7,300円
 
-{{< custom-figure src="IMG_4845-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-13-1024x278.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_4845-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-13-1024x278.png" title="" Fit="1280x1280 webp q90" >}} 
 
 BudapestGoというアプリをインストールすることで、トラム・バス・地下鉄と3種類乗車しました。
 
 これだけ乗っても2人でこの価格なので、ブダベストの公共交通機関は安いですね。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/diy/travel/europe-honeymoon-budapest-tourism-part1#toc7" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3泊4日のブダベスト観光 前編" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66ff37dcd4e82-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【予算は100万円！個人手配で行くヨーロッパ新婚旅行】3泊4日のブダベスト観光 前編
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは！この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。タイトルの通りヨーロッパへ新婚旅行に行きました。くら前回は2泊3日のロンドン観光編をまとめました。くらこの記事ではブダペスト観光 前編の記録に...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.10.30
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+ブダペストの観光スポットや街歩きの様子はこちらの記事でも紹介しています。
+
+{{< self-blog-card "article/posts/2024-10-05-europe-honeymoon-budapest-tourism-part1" >}}
 
 ### Navigoを使えば日本のSuicaと変わらず移動できる！パリでの移動費は2人で約1.4万円
 
-{{< custom-figure src="IMG_5007-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> {{< custom-figure src="image-14-1024x228.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="IMG_5007-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+{{< custom-figure src="image-14-1024x228.png" title="" Fit="1280x1280 webp q90" >}} 
 
 パリではNavigoをiPhoneに設定して、バス・地下鉄・高速鉄道と3種類乗車しました。
 
 切符を買う必要なく、スムーズに乗り降りできて便利でした。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/diy/travel/europe-honeymoon-pari-tourism#toc3" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】2泊3日のパリ観光" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-670888f68c142-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【予算は100万円！個人手配で行くヨーロッパ新婚旅行】2泊3日のパリ観光
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは！この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。タイトルの通りヨーロッパへ新婚旅行に行きました。くら前回はブダペスト観光編をまとめました。くらこの記事ではパリ観光の記録になります。1日目：治...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.10.30
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+パリ観光や食事の詳細レポートはこちらの記事にまとめています。
 
-## 事前にかかった費用など
+{{< self-blog-card "article/posts/2024-10-13-europe-honeymoon-pari-tourism" >}}
+
+## 旅行準備にかかった事前費用まとめ（通信・保険・グッズ）
 
 航空券や宿泊費以外に旅行前に購入したものはこちらです。
 
-<div class="wp-block-cocoon-blocks-tab-box-1 blank-box bb-tab bb-memo block-box has-border-color has-teal-border-color">
-  <ul class="wp-block-list">
-    <li>
-      通信費・・・2人で約3,500円
-    </li>
-    <li>
-      海外旅行保険・・・8,800円
-    </li>
-  </ul>
-  
-  <p>
-    以下は今後も使えるグッズなので、費用は省きます。
-  </p>
-  
-  <ul class="wp-block-list">
-    <li>
-      洗濯グッズ・・・メルカリで購入。現地での手洗いするために購入しました。
-    </li>
-    <li>
-      モバイルバッテリー・・・楽天で購入。必須です！
-    </li>
-    <li>
-      バックパック・・・楽天で購入。バックパックスタイルで旅行しました。
-    </li>
-  </ul>
-</div>
+* 通信費・・・2人で約3,500円
+* 海外旅行保険・・・8,800円
+
+以下は今後も使えるグッズなので、費用は省きます。
+
+* 洗濯グッズ・・・メルカリで購入。現地での手洗いするために購入しました。
+* モバイルバッテリー・・・楽天で購入。必須です！
+* バックパック・・・楽天で購入。バックパックスタイルで旅行しました。
 
 詳細はこちらにまとめてあります。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/diy/travel/europe-honeymoon-preparation" title="【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="アイキャッチ画像-66fb8c4ad58b7-160x90.jpg" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【予算は100万円！個人手配で行くヨーロッパ新婚旅行】事前準備編
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは！この記事を見ていただいている方、ご興味を持っていただいた方、ありがとうございます。タイトルの通りヨーロッパへ新婚旅行に行きました。くらしかし、夫婦で行ったのは台湾のみとほとんど海外旅行の経験はありません。英語も話せず、しかも...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.10.30
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+旅行前に準備した持ち物や費用の詳細はこちらで紹介しています。
 
-## まとめ
+{{< self-blog-card "article/posts/2024-09-29-europe-honeymoon-preparation" >}}
+
+## ヨーロッパ新婚旅行費用まとめと感想
 
 ヨーロッパ3カ国を巡る新婚旅行にかかった費用の内訳でした。
 
