@@ -1,7 +1,0 @@
-[submodule "themes/salt"]
-	path = themes/salt
-	url = https://github.com/okdyy75/hugo-theme-salt.git
-
-[submodule "themes/ananke"]
-	path = themes/ananke
-	url = https://github.com/theNewDynamic/gohugo-theme-ananke.git
