@@ -28,7 +28,7 @@ archives: ["2024年10月"]
 
 ハンガリーでも事前に購入したeSIMも楽天モバイルも問題なく使えました。
 
-{{< affsearch keyword="ヨーロッパ周遊 eSIM 5GB 15日">}}
+{{< affsearch keyword="ヨーロッパ周遊 eSIM 5GB 15日" img="/esim.jpg">}}
 
 ### ブダペスト空港から市内への行き方まとめ（100Eバス・決済トラブル対策）
 

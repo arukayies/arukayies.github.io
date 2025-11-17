@@ -36,7 +36,7 @@ archives: ["2024年9月"]
 
 洗剤も一緒に持ち込んで、ホテルで洗濯してから昼間の観光中に乾かす流れで行動していました。
 
-{{< affsearch keyword="洗濯用品セット 洗濯袋 折りたたみハンガー ロープ付きクリップ">}}
+{{< affsearch keyword="洗濯用品セット 洗濯袋 折りたたみハンガー ロープ付きクリップ" img="/wash.jpg">}}
 
 ### 長時間撮影に必須！モバイルバッテリー選び
 
@@ -44,7 +44,7 @@ archives: ["2024年9月"]
 
 この旅行前にAnkerのモバイルバッテリーを買いました。
 
-{{< affsearch keyword="Anker 733 Power Bank (GaNPrime PowerCore 65W)">}}
+{{< affsearch keyword="Anker 733 Power Bank (GaNPrime PowerCore 65W)" img="/anker.jpg">}}
 
 ### ヨーロッパ旅行で必須の変換プラグ
 
@@ -52,7 +52,7 @@ archives: ["2024年9月"]
 
 空港や飛行機にはUSBコンセントが備えられていたので、 **ホテルで給電するのに必須** でした。
 
-{{< affsearch keyword="海外用変換プラグ">}}
+{{< affsearch keyword="海外用変換プラグ" img="/plg.jpg">}}
 
 ## eSIMの選び方と楽天モバイル・海外利用の実績
 
@@ -60,9 +60,9 @@ archives: ["2024年9月"]
 
 妻用に購入したヨーロッパとタイのeSIMはこちら
 
-{{< affsearch keyword="ヨーロッパ周遊 eSIM 5GB 15日">}}
+{{< affsearch keyword="ヨーロッパ周遊 eSIM 5GB 15日" img="/esim.jpg">}}
 
-{{< affsearch keyword="eSIM 東南アジア7地域">}}
+{{< affsearch keyword="eSIM 東南アジア7地域" img="/esim2.jpg">}}
 
 楽天モバイルだと **１か月2GBまで海外利用は無料** でした。
 

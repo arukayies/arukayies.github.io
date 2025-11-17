@@ -119,11 +119,7 @@
 .single__article__content.markdown-body ol,
 .single__article__content.markdown-body blockquote { margin: 1em 0; }
 
-/* 表とコードだけライト固定（見やすさ） */
+/* 表だけライト固定（見やすさ） */
 .single__article__content.markdown-body table { background: #fff; }
 .single__article__content.markdown-body thead th { background: #f6f8fa; }
-.single__article__content.markdown-body pre,
-.single__article__content.markdown-body code {
-  background: #f6f8fa;
-  color: #000;
-}
+.single__article__content.markdown-body td  { background: #fff; }

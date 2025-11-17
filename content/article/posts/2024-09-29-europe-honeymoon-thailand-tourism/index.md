@@ -204,7 +204,7 @@ Googleマップ上だと何故か空港をぐるぐる歩いてる距離が足�
 
 モバイルバッテリーを持ってきたので休憩中にスマホを充電できて便利でした。
 
-{{< affsearch keyword="Anker 733 Power Bank (GaNPrime PowerCore 65W)">}}
+{{< affsearch keyword="Anker 733 Power Bank (GaNPrime PowerCore 65W)" img="/anker.jpg">}}
 
 ワット・ポーは2人で入場料 300バーツと108の壺で40バーツを支払いました。（2,808円）
 
