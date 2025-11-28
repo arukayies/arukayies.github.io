@@ -19,9 +19,15 @@
                 <div class="blog-card-title">
                     {{- .Title -}}
                 </div>
+                {{ with .Params.description }}
                 <p class="blog-card-description">
-                    {{- .Summary | plainify | safeHTML -}}
+                    {{ . }}
                 </p>
+                {{ else }}
+                <p class="blog-card-description">
+                    {{ .Summary }}
+                </p>
+                {{ end }}
             </div>
         </a>
     {{- end -}}
