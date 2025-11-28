@@ -1,434 +1,224 @@
 ---
-title: GASでスプレッドシートの指定セルからテキスト方向を取得する方法
-author: arukayies
-type: post
-date: 2020-09-13T13:15:52+00:00
-excerpt: GASでスプレッドシートの指定セルのテキストの方向を取得する方法を紹介します！
-url: /gas/gettextdirection
+title: "【GASスプレッドシート】getTextDirection()でテキスト方向を効率的に取得・SEO最適化"
+description: "Google Apps Script (GAS)の`getTextDirection()`メソッドを徹底解説。スプレッドシートの指定セルのテキスト方向を効率的に取得する方法、`getTextDirections()`との違い、多言語対応やレイアウト調整のための動的な制御、パフォーマンス最適化のヒントを具体的なコードで紹介します。GAS初心者から上級者まで、堅牢なスプレッドシート自動化に役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getTextDirection", "getTextDirections", "テキスト方向", "多言語対応", "レイアウト", "自動化", "効率化", "プログラム", "開発", "ベストプラクティス"]
+date: "2020-09-13T13:15:52.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/gettextdirection"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1600002954
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:07:11
-categories:
-  - GAS
-tags:
-  - GAS
-  - getTextDirection()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-Google Apps Script（GAS）を使ってスプレッドシートを操作しとると、セルのテキスト方向を制御したいことってあるばい？特に多言語対応やレイアウトの調整をするときには、getTextDirection()メソッドが役に立つけど、意外と知られとらん機能じゃ。
 
-今回は、このgetTextDirection()メソッドの基本から応用までを、分かりやすく解説するばい！
+Google Apps Script (GAS) を用いてスプレッドシートを操作する際、特に**多言語対応や複雑なレイアウトを扱う場合**には、セルのテキスト方向を正確に取得・設定することが重要になります。`getTextDirection()`メソッドは、このテキスト方向をプログラムで制御するための基本的ながら強力な機能です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+本記事では、GASの`Range.getTextDirection()`メソッドを徹底解説します。単一セルのテキスト方向取得の基本から、複数セルの方向を一括で扱う`getTextDirections()`との違い、さらにはGoogleの`LanguageApp`を使った**言語判定によるテキスト方向の動的制御**、そしてパフォーマンス最適化のヒントまで、具体的なコード例を交えて分かりやすく紹介します。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+GAS初心者から、より堅牢で効率的なスプレッドシート自動化スクリプトを構築したい上級者まで、すべての方に役立つ情報が満載です。
 
-## getTextDirection()って何するメソッド？
+{{< affsearch keyword="GAS スプレッドシート テキスト方向 多言語対応 自動化" img="/gas.jpg">}}
 
-このメソッドは、スプレッドシートのセル内テキストの向きを取得するためのものじゃ。
+## `getTextDirection()`とは？GASでセルのテキスト方向を取得する基本
 
-GASではテキストの方向を以下の2種類で管理しとるとさ。
+`Range.getTextDirection()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）の「左上のセル」に設定されているテキスト方向**を取得するための機能です。
 
-<ul class="wp-block-list">
-  <li>
-    <strong>LEFT_TO_RIGHT</strong>（左から右）
-  </li>
-  <li>
-    <strong>RIGHT_TO_LEFT</strong>（右から左）
-  </li>
-</ul>
+スプレッドシートのテキスト方向は、以下の2種類で管理されています。
 
-例えばアラビア語やヘブライ語のテキストを扱うときは、RIGHT\_TO\_LEFTに設定せんと見た目が崩れるばい。
+*   **`SpreadsheetApp.TextDirection.LEFT_TO_RIGHT` (L-R)**: テキストが左から右へ流れる方向（日本語、英語など）
+*   **`SpreadsheetApp.TextDirection.RIGHT_TO_LEFT` (R-L)**: テキストが右から左へ流れる方向（アラビア語、ヘブライ語など）
 
-<pre class="wp-block-code"><code>const direction = SpreadsheetApp.TextDirection.RIGHT_TO_LEFT;
-</code></pre>
+このメソッドを使用することで、セル内のテキストがどちらの方向に表示されるように設定されているかをプログラムで識別できます。
 
-getTextDirection()を使うと、指定したセルのテキスト方向を取得できる。
+### 基本的な使用例：A1セルのテキスト方向を取得する
 
-<pre class="wp-block-code"><code>function checkTextDirection() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const range = sheet.getRange("A1");
-  const direction = range.getTextDirection();
-  console.log(direction ? direction.toString() : "自動判定");
+以下のスクリプトは、アクティブなシートの`A1`セルを指定し、そのテキスト方向を取得してログに出力する最も基本的な例です。
+
+```javascript
+/**
+ * アクティブなシートのA1セルのテキスト方向を取得し、ログに出力する関数。
+ * 自動判定の場合は「null」が返ります。
+ */
+function basicGetTextDirection() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("A1");           // A1セルをRangeオブジェクトとして取得
+  const textDirection = range.getTextDirection(); // A1セルのテキスト方向を取得
+
+  // 取得したテキスト方向をログに出力
+  // textDirectionがnullの場合は「自動判定」と表示
+  Logger.log(`A1セルのテキスト方向: ${textDirection ? textDirection.toString() : "自動判定 (LEFT_TO_RIGHT)"}`);
 }
-</code></pre>
+```
+**重要なポイント**: `getTextDirection()`は、セルにテキスト方向が**明示的に設定されている場合**にのみ`LEFT_TO_RIGHT`または`RIGHT_TO_LEFT`を返します。もしテキスト方向が手動で設定されておらず、スプレッドシートが**自動判定**している場合は、このメソッドは`null`を返します。この`null`は、通常`LEFT_TO_RIGHT`として扱われます。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+### テキスト方向の自動判定メカニズム
 
-## getTextDirection()の使い方と挙動
+スプレッドシートは、テキスト方向が明示的に設定されていないセルについて、その内容に基づいて方向を自動で判定しようとします。
 
-### メソッドの仕様
+*   セルに**アラビア文字やヘブライ文字**が含まれる場合: `RIGHT_TO_LEFT`として自動判定されます。
+*   それ以外の文字（日本語、英語など）が含まれる場合: `LEFT_TO_RIGHT`として自動判定されます。
 
-<pre class="wp-block-code"><code>Range.getTextDirection() → TextDirection|null
-</code></pre>
+ただし、複数の言語が混在する複雑なテキストの場合、自動判定が意図しない結果になることもあるため、必要に応じて`Range.setTextDirection()`で明示的に方向を設定することが推奨されます。
 
-getTextDirection()は、指定した範囲の**左上のセル**のテキスト方向を取得するばい。
+```javascript
+// 例: B2セルにテキスト方向を明示的に設定
+// sheet.getRange("B2").setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT);
+```
 
-#### **ポイント**
+## `getTextDirection()`と`getTextDirections()`の違い：一括処理の重要性
 
-<ul class="wp-block-list">
-  <li>
-    <strong>明示的に方向が設定されていれば、LEFT_TO_RIGHT か RIGHT_TO_LEFT を返す</strong>
-  </li>
-  <li>
-    <strong>方向が自動判定の場合は、null が返る</strong>
-  </li>
-</ul>
+GASには、セルのテキスト方向に関連する情報を取得するための類似メソッドとして`getTextDirections()`も存在します。それぞれの違いを理解し、目的と状況に応じて適切に使い分けることが、効率的で堅牢なスクリプト開発に繋がります。
 
-<pre class="wp-block-code"><code>function logDirection() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const range = sheet.getRange("B2");
-  console.log(range.getTextDirection());
+| メソッド名 | 戻り値の型 | 対象範囲 | 自動判定時の挙動 | API呼び出し効率 |
+| :--- | :--- | :--- | :--- | :--- |
+| `getTextDirection()` | `TextDirection` or `null` | 指定範囲の**左上のセル**のみ | `null`を返す | 単一セル向け |
+| `getTextDirections()` | `TextDirection[][]` | 指定範囲内の**全セル** | `null`を含む二次元配列を返す | 複数セルの一括処理に最適 |
+
+**パフォーマンスの観点**:
+複数のセルのテキスト方向を取得したい場合、`getTextDirection()`をループ内で繰り返し呼び出すのは**非効率的**です。GASのベストプラクティスとして、API呼び出し回数を削減するために、**`getTextDirections()`を使用して一括で二次元配列として取得するバッチ処理**を強く推奨します。
+
+```javascript
+/**
+ * 複数範囲のセルのテキスト方向を一括取得し、ログに出力する関数。
+ * getRange("A1:B2") の場合、[[A1の方向, B1の方向], [A2の方向, B2の方向]] の形式で返されます。
+ */
+function logAllTextDirections() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:B2"); // 対象範囲をA1:B2に設定
+  const directions = range.getTextDirections(); // 範囲内の全セルのテキスト方向を一括取得
+
+  Logger.log(`A1:B2範囲のテキスト方向:\n${JSON.stringify(directions, null, 2)}`);
+  /* 例: directions の出力形式
+   * [
+   *   [SpreadsheetApp.TextDirection.LEFT_TO_RIGHT, null],
+   *   [null, SpreadsheetApp.TextDirection.RIGHT_TO_LEFT]
+   * ]
+   */
 }
-</code></pre>
-
-### 自動判定の仕組み
-
-方向が手動設定されておらん場合、GASはテキスト内容から方向を判定するばい。
-
-<ul class="wp-block-list">
-  <li>
-    <strong>アラビア文字・ヘブライ文字が含まれる → RIGHT_TO_LEFT</strong>
-  </li>
-  <li>
-    <strong>それ以外 → LEFT_TO_RIGHT</strong>
-  </li>
-</ul>
-
-ただし、混在しとる場合は判定がうまくいかんこともあるけん、明示的に設定するのがオススメばい。
-
-<pre class="wp-block-code"><code>range.setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT);
-</code></pre>
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## getTextDirection() vs getTextDirections()の違い
-
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド
-    </th>
-    
-    <th>
-      戻り値
-    </th>
-    
-    <th>
-      範囲
-    </th>
-    
-    <th>
-      自動判定時
-    </th>
-  </tr>
-  
-  <tr>
-    <td>
-      getTextDirection()
-    </td>
-    
-    <td>
-      TextDirection or null
-    </td>
-    
-    <td>
-      左上端のセルのみ
-    </td>
-    
-    <td>
-      null
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      getTextDirections()
-    </td>
-    
-    <td>
-      TextDirection[][]
-    </td>
-    
-    <td>
-      範囲内の全セル
-    </td>
-    
-    <td>
-      null含む2D配列
-    </td>
-  </tr>
-</table></figure> 
-
-一括取得したいなら、getTextDirections()を使うと効率が良いばい。
-
-<pre class="wp-block-code"><code>function logAllDirections() {
-  const range = SpreadsheetApp.getActiveSheet().getRange("A1:B2");
-  const directions = range.getTextDirections();
-  console.log(directions);
-}
-</code></pre>
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+```
 
 ## テキスト方向を動的に制御する応用テクニック
 
-### 言語判定を使って自動設定
+### 1. Google `LanguageApp` APIによる言語判定と自動設定
 
-GoogleのLanguageApp APIと組み合わせると、言語に応じてテキスト方向を自動でセットできるばい。
+Google Apps Scriptの`LanguageApp`サービスを利用すると、セルのテキスト内容から言語を自動で検出し、その言語に基づいてテキスト方向を自動的に設定することができます。これは、多言語コンテンツを扱うスプレッドシートで非常に強力な自動化機能です。
 
-<pre class="wp-block-code"><code>function autoSetDirection() {
+```javascript
+/**
+ * スプレッドシートのデータ範囲のテキストを言語判定し、
+ * 言語に応じてテキスト方向を自動設定する関数。
+ * アラビア語やヘブライ語の場合にRIGHT_TO_LEFTを設定します。
+ */
+function autoSetTextDirectionByLanguage() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getDataRange();
-  const values = range.getValues();
+  const range = sheet.getDataRange(); // シート内のデータが存在する全範囲を取得
+  const values = range.getValues();   // データ範囲の値を二次元配列として取得
+
+  // 新しいテキスト方向を格納する二次元配列を作成
+  const newDirections = values.map(row => 
+    row.map(cellValue => {
+      // 文字列でない、または空の場合はnull（自動判定）とする
+      if (typeof cellValue !== 'string' || cellValue === '') {
+        return null; 
+      }
+      
+      // テキストの言語を検出
+      const detectedLang = LanguageApp.detect(cellValue);
+
+      // アラビア語 (ar) またはヘブライ語 (he) の場合はRIGHT_TO_LEFT、それ以外はLEFT_TO_RIGHT
+      if (detectedLang.includes('ar') || detectedLang.includes('he')) {
+        return SpreadsheetApp.TextDirection.RIGHT_TO_LEFT;
+      } else {
+        return SpreadsheetApp.TextDirection.LEFT_TO_RIGHT;
+      }
+    })
+  );
   
-  const directions = values.map(row =&gt; row.map(value =&gt; {
-    const lang = LanguageApp.detect(value);
-    return lang.includes('ar') ? SpreadsheetApp.TextDirection.RIGHT_TO_LEFT : SpreadsheetApp.TextDirection.LEFT_TO_RIGHT;
-  }));
-  
-  range.setTextDirections(directions);
+  // 生成した新しいテキスト方向を一括でシートに設定
+  range.setTextDirections(newDirections);
+  Logger.log("言語に基づいてテキスト方向を自動設定しました。");
 }
-</code></pre>
+```
+このスクリプトは、データ処理の自動化と同時に、スプレッドシートの視覚的な整合性を維持するのに役立ちます。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+## `getTextDirection()`のパフォーマンス最適化とトラブルシューティング
 
-## getTextDirection()のパフォーマンス最適化
+### 1. 大量データ処理におけるパフォーマンス最適化（バッチ処理の徹底）
 
-テキスト方向を大量のセルに設定するときは、1セルずつ処理せんように注意せんといかん。
+前述の通り、`getTextDirections()`や`setTextDirections()`のようなバッチ処理メソッドを積極的に利用することで、API呼び出し回数を劇的に減らし、スクリプトの実行速度を向上させることができます。
 
-### 非推奨：ループで個別設定（遅い）
+**非推奨（低速）**: ループ内で単一セルメソッドを繰り返し呼び出す
 
-<pre class="wp-block-code"><code>const range = sheet.getRange("A1:Z1000");
-for (let i = 1; i &lt;= 1000; i++) {
-  range.getCell(i, 1).setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT);
+```javascript
+// const sheet = SpreadsheetApp.getActiveSheet();
+// for (let i = 1; i <= 1000; i++) {
+//   sheet.getRange(i, 1).setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT);
+// }
+// -> API呼び出しが1000回発生し、非常に遅くなります。
+```
+
+**推奨（高速）**: 二次元配列でデータを準備し、一括で設定
+
+```javascript
+/**
+ * 大量のセルに対してテキスト方向を一括で設定する効率的な関数。
+ * 例: A1からA1000までのセルをRIGHT_TO_LEFTに設定。
+ */
+function setTextDirectionBatchExample() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const targetRange = sheet.getRange("A1:A1000"); // 対象範囲
+
+  // 1000行分のRIGHT_TO_LEFT方向を指定する二次元配列を作成
+  const directionsArray = new Array(1000).fill([SpreadsheetApp.TextDirection.RIGHT_TO_LEFT]);
+  
+  // テキスト方向を一括で設定
+  targetRange.setTextDirections(directionsArray);
+  Logger.log("A列の1000セルにテキスト方向を一括設定しました。");
 }
-</code></pre>
+```
 
-### 推奨：バッチ処理で一括設定（速い）
+### 2. 設定が即座に反映されない場合の解決策：`SpreadsheetApp.flush()`
 
-<pre class="wp-block-code"><code>const directions = new Array(1000).fill(&#91;SpreadsheetApp.TextDirection.RIGHT_TO_LEFT]);
-range.setTextDirections(directions);
-</code></pre>
+GASでの変更がすぐにスプレッドシートに反映されない場合、`SpreadsheetApp.flush()`メソッドを呼び出すことで、保留中のすべての変更を強制的に適用させることができます。特に、変更を加えてすぐにその結果を参照したい場合に有効です。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+```javascript
+/**
+ * テキスト方向の設定が即座に反映されるようにflush()を呼び出す例。
+ */
+function setTextDirectionAndFlush() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const cell = sheet.getRange("A1");
+  cell.setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT);
+  SpreadsheetApp.flush(); // ここで変更を強制的に反映
+  Logger.log(`A1セルのテキスト方向をRIGHT_TO_LEFTに設定し、即時反映しました。`);
+}
+```
 
-## よくあるトラブルと解決策
+### 3. 条件付き書式との競合を避ける
 
-### ① 方向が設定されても反映されない？
+スプレッドシートの**条件付き書式ルール**もテキスト方向を設定できるため、GASスクリプトでの設定と競合する可能性があります。もし設定が意図通りに適用されない場合は、関連する条件付き書式ルールを確認・調整する必要があります。
 
-👉 `SpreadsheetApp.flush();` を呼び出して即時適用させるばい！
+```javascript
+// 条件付き書式ルールでテキスト方向が設定されている例
+// const rule = SpreadsheetApp.newConditionalFormatRule()
+//   .whenFormulaSatisfied('=ISODD(ROW())') // 奇数行の場合
+//   .setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT)
+//   .build();
+// sheet.setConditionalFormatRules([rule]);
+```
 
-<pre class="wp-block-code"><code>range.setTextDirection(SpreadsheetApp.TextDirection.LEFT_TO_RIGHT);
-SpreadsheetApp.flush();
-</code></pre>
+## まとめ：`getTextDirection()`でGASスプレッドシートのレイアウトを自動制御
 
-### ② 条件付き書式と競合する？
+Google Apps Scriptの`getTextDirection()`および`getTextDirections()`メソッドは、スプレッドシートのテキスト方向をプログラムで効率的に管理するための不可欠なツールです。
 
-👉 条件付き書式ルールを確認し、`setConditionalFormatRules()` を調整するばい！
+*   **正確なテキスト方向の取得**: `getTextDirection()`で単一セルの方向を、`getTextDirections()`で複数セルの方向を一括で取得できます。自動判定の場合は`null`を返す点に注意が必要です。
+*   **多言語対応とレイアウトの自動化**: `LanguageApp`との連携により、言語検出に基づいてテキスト方向を動的に設定し、多言語コンテンツの視覚的な整合性を保つことができます。
+*   **効率的なスクリプト開発**: バッチ処理（`setTextDirections()`）を徹底し、`SpreadsheetApp.flush()`を適切に利用することで、スクリプトのパフォーマンスと堅牢性を最大化できます。
 
-<pre class="wp-block-code"><code>const rule = SpreadsheetApp.newConditionalFormatRule()
-  .whenFormulaSatisfied('=ISTEXT(A1)')
-  .setTextDirection(SpreadsheetApp.TextDirection.RIGHT_TO_LEFT)
-  .build();
-sheet.setConditionalFormatRules(&#91;rule]);
-</code></pre>
+本記事で紹介した知識と実践例を活用し、あなたのGASスクリプトをより高度で柔軟なスプレッドシート自動化ツールへと進化させてください。テキスト方向の細かな制御は、ユーザーエクスペリエンスの向上とデータ表示の正確性に大きく貢献します。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## まとめ
-
-<ul class="wp-block-list">
-  <li>
-    <strong>getTextDirection() はスプレッドシートのセルのテキスト方向を取得するメソッド</strong>
-  </li>
-  <li>
-    <strong>方向が自動判定の場合、null が返るので注意</strong>
-  </li>
-  <li>
-    <strong>大量のセルを処理するときはバッチ処理を使うと高速化できる</strong>
-  </li>
-  <li>
-    <strong>言語検出APIと組み合わせると、より柔軟な制御が可能</strong>
-  </li>
-</ul>
-
-GASを使ってスプレッドシートの自動化を進めるなら、テキスト方向の制御もしっかり押さえとくと便利ばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://caymezon.com/gas-text-direction/" title="【GAS】スプレッドシートのテキスト方向機能まとめ【サンプルソース付】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://caymezon.com/wp-content/uploads/2019/07/direction.jpeg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://caymezon.com/wp-content/uploads/2019/07/direction.jpeg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートのテキスト方向機能まとめ【サンプルソース付】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS開発者向けにスプレッドシートのテキスト方向機能をすべてまとめました。おそらく水平設定(setHorizontalAlignment)と動きは同じです。正直何が違うのかわかってません。中央表示も可能な水平設定を使うならば、あまり使う機会
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-text-direction/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-text-direction/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          caymezon.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://gsuiteguide.jp/sheets/gettextdirection/" >}}
+
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}}

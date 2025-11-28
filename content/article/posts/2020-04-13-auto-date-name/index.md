@@ -1,255 +1,135 @@
 ---
-title: GASを使って表の記入者＆日付を自動入力させる方法
-author: arukayies
-type: post
-date: 2020-04-13T13:24:40+00:00
-excerpt: IT系の仕事でよく目にする課題管理票・確認事項一覧の日付と記入者をGASを使って自動入力させる方法を紹介します！
-url: /gas/auto-date-name
+title: "【GAS】スプレッドシートの特定セル編集時に日付と担当者を自動入力する方法【業務効率化】"
+description: "Google Apps Script（GAS）を使用して、スプレッドシートの特定の列が編集された際に、自動で日付と編集者の名前を入力する方法を解説します。onEditトリガーを活用し、課題管理票などの更新作業を効率化しましょう。"
+tags: ["GAS","Google Apps Script","スプレッドシート", "自動化", "業務効率化"]
+date: "2020-04-13T13:24:40.000Z"
+url: "/gas/auto-date-name"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1586784281
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1249690212856295424";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1249690212856295424";s:5:"pDate";s:19:"2020-04-13 13:25:39";}}";
-categories:
-  - GAS
-tags:
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年4月"]
+lastmod: "2025-11-26T10:51:00+09:00"
 ---
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      案件を管理する際にこのような表を見かけたことはないでしょうか？
-    </p>
-  </div>
-</div><figure class="wp-block-image size-large">
+## はじめに
 
-{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1024x200.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>課題管理票の例</figcaption></figure> 
+課題管理票やWBSなど、スプレッドシートで複数人が情報を更新する際、「いつ」「誰が」更新したのかを手入力するのは面倒ではありませんか？入力漏れが発生することもあります。
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1024x200.png" title="課題管理票の例" Fit="1280x1280 webp q90" >}}
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      課題管理票・確認事項一覧など呼び方は様々ですが、
-    </p>
-    
-    <p>
-      IT系の仕事をしていると見たことあると思います！
-    </p>
-  </div>
-</div>
+この記事では、**Google Apps Script (GAS) を使って、特定セルの編集をトリガーに日付と担当者名を自動で入力する方法**を紹介します。このスクリプトを導入すれば、更新作業の手間が省け、入力ミスも防げます。
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+**▼ この記事で実現できること**
+特定の列（例：ステータス列）が編集されたら、対応する行の日付列と担当者列に自動で情報が入力されます。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      この表の入力を<span class="bold-red"><span class="fz-22px">GASを使って少しでも楽にする<strong>！</strong></span></span>
-    </p>
-    
-    <p>
-      <span class="red"><span class="fz-20px"><span class="bold-blue">記入者＆日付を自動入力させる方法</span></span></span>を紹介します！
-    </p>
-    
-    <p>
-      汎用性あるので、いろんな表で使ってみてください！
-    </p>
-    
-    <p>
-      こんな感じで自動入力されます！↓
-    </p>
-  </div>
-</div><figure class="wp-block-image size-large">
+{{< custom-figure src="image.png" title="「内容」列を入力すると日付と担当者が自動入力される" Fit="1280x1280 webp q90" >}}
 
-{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1-1024x200.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>入力前</figcaption></figure> <figure class="wp-block-image size-large">{{< custom-figure src="でも-1024x231.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>入力後</figcaption></figure> 
+様々なシートに応用できるので、ぜひ参考にしてください。
 
-## 表にスクリプトを追加する
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### スクリプト エディタを起動する
+## GASで日付と担当者を自動入力する手順
 
-{{< custom-figure src="スクリプトエディタを起動-1024x334.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>スクリプト エディタを起動</figcaption></figure> 
+設定は簡単で、スプレッドシートのスクリプトエディタにコードを貼り付けて保存するだけです。
 
-### 赤枠の部分にコードを貼り付ける
+### 1. スクリプトエディタを開く
+対象のスプレッドシートを開き、メニューから「拡張機能」>「Apps Script」を選択してスクリプトエディタを起動します。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="コードを追加する.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>コードを追加</figcaption></figure>
-</div>
+{{< custom-figure src="kidou.png" title="スクリプトエディタの起動" Fit="1280x1280 webp q90" >}}
 
-貼り付けるコードはこちら↓
+### 2. コードを貼り付ける
+エディタに表示されているデフォルトのコードを削除し、以下のコードを貼り付けます。
 
-## 追加するコードについて
+```javascript
+/*
+関数概要
+ スプレッドシートの特定列が編集されたら、対象行に日付と記載者を自動入力させる
 
-行・列の位置を表の内容によって合わせる必要があります。
+引数
+ e イベントオブジェクト(起動時の情報が含まれています)
+ 
+戻り値
+ なし
+*/
+function onEdit(e) {
+	// ↓許可した後はコメントアウトする 
+	Session.getActiveUser().getEmail();
+	// ヘッダーの行番号
+	const hedaerRow = 2;
+	// トリガーとなる列番号
+	const triggerCol = 5;
+	// 日付の列番号
+	const dateCol = 2;
+	// 記入者の列番号
+	const nameCol = 3;
 
-<div class="wp-block-cocoon-blocks-caption-box-1 caption-box block-box has-border-color has-key-color-border-color">
-  <div class="caption-box-label block-box-label box-label fab-info-circle">
-    <span class="caption-box-label-text block-box-label-text box-label-text">コード変更箇所</span>
-  </div>
-  
-  <div class="caption-box-content block-box-content box-content">
-    <ul class="wp-block-list">
-      <li>
-        ヘッダーの行番号・・・・15行目
-      </li>
-      <li>
-        トリガーとなる列番号・・17行目
-      </li>
-      <li>
-        日付を書き込む列番号・・19行目
-      </li>
-      <li>
-        記入者を書き込む列番号・21行目
-      </li>
-    </ul>
-  </div>
-</div>
+	// 編集されたシート
+	const sheet = e.source.getActiveSheet();
+	// 編集されたセル
+	const currentCell = e.source.getActiveCell();
+	// 編集されたセルの行番号
+	const currentRow = currentCell.getRow();
+	// 編集されたセルの列番号
+	const currentCol = currentCell.getColumn();
 
-## スクリプトを保存する
+	// ログ
+	Logger.log("行番号:" + currentRow);
+	Logger.log("列番号:" + currentCol);
 
-コードを貼り付けたら、<span class="keyboard-key">ファイル</span> > <span class="keyboard-key">保存</span> でコードを保存します。
+	if (hedaerRow < currentRow && triggerCol == currentCol) {
+		const date = Utilities.formatDate(new Date(), "Asia/Tokyo", "yyyy/MM/dd")
+		// メールアドレスは法人向けGoogle Appsの同一ドメインでないと取得できない
+		// https://productforums.google.com/forum/#!topic/docs/5D23Os_NIAc
+		//const name = "テスト名前"; //デバッグ用
+		const name = e.user.getEmail().replace("@gmail.com", "");
+		// ログ
+		Logger.log("日付と記載者を自動入力します");
+		Logger.log("日付:" + date);
+		Logger.log("名前:" + name);
+		// 日付をシートに書き込む
+		sheet.getRange(currentRow, dateCol).setValue(date);
+		// 名前をシートに書き込む
+		sheet.getRange(currentRow, nameCol).setValue(name);
+	}
+}
+```
 
-好きな名前で保存してください。<figure class="wp-block-image size-large is-resized">
+### 3. コードの設定をシートに合わせる
+貼り付けたコード内の以下の定数を、お使いのスプレッドシートの構成に合わせて変更してください。
 
-{{< custom-figure src="プロジェクト名を保存する.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>プロジェクト名の保存</figcaption></figure> 
+- `hedaerRow`: ヘッダーの行番号（例：2行目なら`2`）
+- `triggerCol`: スクリプトを動作させるトリガーとなる列番号（例：E列なら`5`）
+- `dateCol`: 日付を自動入力したい列番号（例：B列なら`2`）
+- `nameCol`: 担当者名を自動入力したい列番号（例：C列なら`3`）
 
-## スクリプトを実行する
+### 4. スクリプトを保存・実行（初回のみ承認が必要）
+コードを貼り付け、設定を変更したら、フロッピーディスクのアイコンをクリックしてプロジェクトを保存します。
 
-<span class="keyboard-key">Session.getActiveUser().getEmail()</span>でメールアドレスを取得するためには承認を通す必要があります。<figure class="wp-block-image size-large is-resized">
+次に、初回のみスクリプトの実行許可を与える必要があります。
+再生ボタン（▶）を押して`onEdit`関数を実行してください。承認を求めるポップアップが表示されるので、以下の手順で許可します。
 
-{{< custom-figure src="実行-1024x454.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>スクリプトを実行</figcaption></figure> 
+1.  「承認が必要です」画面で「許可を確認」をクリック
+2.  自分のGoogleアカウントを選択
+3.  「このアプリは確認されていません」と表示されたら、「詳細」をクリック
+4.  「（プロジェクト名）（安全ではないページ）に移動」をクリック
+5.  次の画面で「許可」をクリック
 
-実行すると、承認画面が表示されるので、以下の順番で許可してあげます。
+これで準備は完了です。一度承認すれば、次回以降は不要です。
 
-<ol class="wp-block-list">
-  <li>
-    「承認が必要です」の画面で<span class="keyboard-key">許可を確認</span>ボタンを押す。
-  </li>
-  <li>
-    「Googleにログイン」画面で自分のアカウントを選択する。
-  </li>
-  <li>
-    「このアプリは確認されていません」画面で<span class="keyboard-key">詳細</span>リンクを押す。
-  </li>
-  <li>
-    <span class="keyboard-key">〇〇〇（安全ではないページ）に移動</span>リンクを押す。
-  </li>
-  <li>
-    「Googleにログイン」画面で<span class="keyboard-key">許可</span>ボタンを押す。
-  </li>
-</ol>
+## 動作確認
+設定が完了したら、実際にスプレッドシートのトリガー列（この例ではE列）に何か入力してみましょう。
+入力と同時に、指定した日付列と担当者列に情報が自動で入力されれば成功です。
 
-<span class="red">失敗します</span>が、最初だけでこの作業をすればOKです！
+{{< custom-figure src="image.png" title="自動入力の実行結果" Fit="1280x1280 webp q90" >}}
 
-## 表の記入者＆日付を自動入力させてみた結果
+実行ログはGASのダッシュボードから確認できます。
 
-ためしに「テスト」と内容に入力してみます。<figure class="wp-block-image size-large">
-
-{{< custom-figure src="スクリーンショット-2020-04-13-19.36.42-1024x200.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>実行前</figcaption></figure> <figure class="wp-block-image size-large">{{< custom-figure src="でも-1024x231.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>実行後</figcaption></figure> 
-
-実行のログはダッシュボードで確認することが出来ます。<figure class="wp-block-image size-large">
-
-{{< custom-figure src="スクリーンショット-2020-04-13-21.23.37-1024x220.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>実行時のログ</figcaption></figure> 
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-check">
-  <a rel="noopener" href="https://script.google.com/home/executions" title="Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/vfe17804c88ef6022fad1ddf837c323ee30f747a71d900f69699aa6fc2a2a7546/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/vfe17804c88ef6022fad1ddf837c323ee30f747a71d900f69699aa6fc2a2a7546/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Develop high-quality, cloud-based solutions with ease.
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://script.google.com/home/executions" >}}
 
 ## まとめ
+`onEdit(e)`トリガーは、スプレッドシートが編集されたときに自動で起動するシンプルなトリガーです。
+今回のように、特定の列が編集されたことをきっかけに決まった処理を行いたい場合に非常に便利です。
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+GASを活用して定型作業を自動化し、業務効率を上げていきましょう！
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      日付と記入者が自動入力される方法でした！
-    </p>
-    
-    <p>
-      スプレッドシートが編集された時に動作するトリガーは
-    </p>
-    
-    <p>
-      <span class="bold-green"><span class="fz-22px">onEdit(e)</span></span>と関数に書くとシンプルなトリガーとして自動的に動作します。
-    </p>
-    
-    <p>
-      今回のように毎回決まった入力規則がある場合は、GASを活用してどんどん効率化していきたいですね！
-    </p>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}

@@ -1,343 +1,207 @@
 ---
-title: GASでスプレッドシートのセル内テキスト回転設定を効率的に取得する方法
-author: arukayies
-type: post
-date: 2020-09-22T02:24:14+00:00
-excerpt: GASでスプレッドシートの指定範囲すべてのテキストの回転設定を取得する方法を紹介します！
-url: /gas/gettextrotations
+title: "【GASスプレッドシート】getTextRotations()で複数セルのテキスト回転を一括取得・SEO最適化"
+description: "Google Apps Script (GAS)の`getTextRotations()`メソッドを徹底解説。スプレッドシートの複数セルのテキスト回転設定を効率的に一括取得する方法を、具体的なコード例で紹介します。`TextRotation`オブジェクトの詳細、テキスト長に応じた動的調整、複数シート間での設定同期、パフォーマンス最適化のヒントまで、GASによるスプレッドシート自動化と視覚的改善に役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getTextRotations", "getTextRotation", "TextRotation", "テキスト回転", "セル書式", "自動化", "一括取得", "効率化", "パフォーマンス", "プログラム", "開発", "UI/UX"]
+date: "2020-09-22T02:24:14.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/gettextrotations"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1600741456
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:28:28
-categories:
-  - GAS
-tags:
-  - GAS
-  - getTextRotations()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-Google Apps Script（GAS）の`getTextRotations()`メソッド、みんな使ったことある？これ、スプレッドシートのセル内のテキストの回転設定を取得するための便利な機能ばい。今回はこのメソッドがどんなものか、どう活用できるか、さらに応用事例を交えながら解説していくけん、ぜひ参考にしてみてくれよ。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を用いたスプレッドシートの自動化において、特に**大規模なデータや複雑なレポートを扱う場合**には、複数セルのテキスト回転設定を効率的に管理することが、データの視認性やレイアウトの整合性を保つ上で非常に重要になります。`getTextRotations()`メソッドは、このニーズに応える強力な一括取得機能を提供します。
 
-## getTextRotations()メソッドとは？
+本記事では、GASの`Range.getTextRotations()`メソッドを徹底解説します。複数セルのテキスト回転角度や縦書き設定を一括で取得する基本から、`TextRotation`オブジェクトの詳細、さらには**テキスト長に応じた動的な回転調整**、複数シート間での設定同期、**大規模データ処理におけるパフォーマンス最適化（バッチ処理）**といった実践的な応用例まで、具体的なコードを交えて分かりやすく紹介します。
 
-まず、`getTextRotations()`メソッドって、スプレッドシートのセルのテキストの回転設定を取得するためのものなんよ。このメソッドを使うと、指定したセル範囲内のすべてのテキスト回転角度や縦書き設定を効率よく確認できるばい。
+GAS初心者から、スプレッドシートの視覚的表現と自動化の効率をさらに高めたい上級者まで、すべての方に役立つ情報が満載です。
 
-例えば、スプレッドシートのセル内に縦書きや斜めに回転した文字があるとき、その回転角度や状態を取得することができるんよ。これがわかれば、後でそのデータを使って処理を変更したり、レイアウトを調整したりできるんじゃけ。
+{{< affsearch keyword="GAS スプレッドシート テキスト回転 一括取得 自動化" img="/gas.jpg">}}
 
-## 基本の使い方
+## `getTextRotations()`メソッドとは？GASで複数セルのテキスト回転を一括取得する基本
 
-<pre class="wp-block-code"><code>const rotations = range.getTextRotations();
-</code></pre>
+`Range.getTextRotations()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）内のすべてのセルに設定されているテキスト回転情報**を、一度の呼び出しでまとめて**二次元配列**として取得するための機能です。
 
-このコードで、指定した範囲`range`内のテキスト回転設定を取得できるんよ。戻り値は、回転角度や縦書きの状態を含む二次元配列じゃ。
+このメソッドを使用することで、広範囲のセルに設定されているテキストの回転角度や縦書きの状態を一括でプログラム的に確認できます。これにより、個々のセルに対して`getTextRotation()`を繰り返し呼び出す非効率性を解消し、スクリプトの実行速度を劇的に向上させることができます。
 
-### 例：特定範囲の回転情報をコンソールに出力
+### `TextRotation`オブジェクトの構造
 
-<pre class="wp-block-code"><code>function fetchTextRotations() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('シート1');
-  const range = sheet.getRange('B2:C3');
+`getTextRotations()`が返す二次元配列の各要素は、`TextRotation`オブジェクトです。このオブジェクトには、以下の主要なプロパティが含まれています。
+
+*   **`getDegrees()`**: テキストの回転角度を-90度から90度の範囲の整数値で返します。
+*   **`isVertical()`**: テキストが縦書きに設定されているかどうかを真偽値（`true`/`false`）で返します。
+
+### 基本的な使用例：B2からC3範囲のテキスト回転設定を一括取得する
+
+以下のスクリプトは、アクティブなシートの`B2:C3`範囲のテキスト回転設定を一括で取得し、各セルの回転角度と縦書き状態をログに出力する最も基本的な例です。
+
+```javascript
+/**
+ * アクティブなシートのB2:C3範囲の全セルのテキスト回転設定を一括取得し、ログに出力する関数。
+ */
+function getAndLogAllTextRotations() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("B2:C3");      // 対象範囲をB2:C3に設定
+  
+  // 指定範囲の各セルのTextRotationオブジェクトを二次元配列として一括取得
   const rotations = range.getTextRotations();
 
-  rotations.forEach((row, rowIndex) =&gt; {
-    row.forEach((cellRotation, colIndex) =&gt; {
-      console.log(`セル&#91;${rowIndex+2},${colIndex+2}] 角度: ${cellRotation.getDegrees()}°, 縦書き: ${cellRotation.isVertical()}`);
+  // 取得した二次元配列の各要素（TextRotationオブジェクト）をループ処理
+  rotations.forEach((rowRotations, rowIndex) => {
+    rowRotations.forEach((cellRotation, colIndex) => {
+      // getCell(row, column) は1から始まるインデックス
+      const cellAddress = range.getCell(rowIndex + 1, colIndex + 1).getA1Notation();
+      Logger.log(`セル ${cellAddress}: 回転角度 ${cellRotation.getDegrees()}°, 縦書き ${cellRotation.isVertical() ? "有効" : "無効"}`);
     });
   });
 }
-</code></pre>
+```
+このコードを実行すると、`B2:C3`範囲内のすべてのセルに設定されているテキストの回転角度と縦書き状態がログに表示されます。
 
-このコードでは、B2:C3の範囲を対象に回転角度と縦書きかどうかを確認して、コンソールに表示しとるけ。これを参考にすれば、自分のスプレッドシートでも簡単に回転設定をチェックできるけ。
+**注意点**: `TextRotation.isVertical()`が`true`の場合、`TextRotation.getDegrees()`は**常に0度**を返します。これは、縦書き設定が優先され、個別の回転角度設定は無視されるためです。
 
-## 応用事例：実践的な活用方法
+## `getTextRotations()`の実践的な応用テクニック
 
-### 1. テキスト長に応じた動的回転調整
+`getTextRotations()`とその関連メソッドは、スプレッドシートの視覚的表現を自動化し、データ分析やレポート作成を支援する多岐にわたる場面で真価を発揮します。
 
-たとえば、セル内の文字数が多いときに自動でテキストの回転角度を調整することができるんよ。
+### 1. テキスト長に応じた動的な回転調整
 
-<pre class="wp-block-code"><code>function adjustTextRotationDynamically() {
+セル内のテキストが長すぎて表示しきれない場合に、自動でテキストの回転角度を調整するような処理を実装できます。これにより、手動での調整の手間を省き、シート全体のデザインを統一できます。
+
+```javascript
+/**
+ * データ範囲内のセルのテキスト長に応じて、テキストの回転角度を動的に調整する関数。
+ * テキスト長が15文字を超えるセルは45度回転させ、それ以外は0度に戻します。
+ */
+function adjustTextRotationBasedOnLength() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getDataRange();
-  const rotations = dataRange.getTextRotations();
+  const dataRange = sheet.getDataRange();       // シート内のデータが存在する全範囲を取得
+  const rotations = dataRange.getTextRotations(); // 全範囲のテキスト回転情報を一括取得
+  const values = dataRange.getValues();         // 全範囲のセル値（テキスト長取得用）を一括取得
 
-  rotations.forEach((row, i) =&gt; {
-    row.forEach((rotation, j) =&gt; {
-      const cell = dataRange.getCell(i+1, j+1);
-      const textLength = cell.getValue().toString().length;
-      
-      const newRotation = textLength &gt; 15 ? 45 : 0;
-      if (rotation.getDegrees() !== newRotation) {
-        cell.setTextRotation(newRotation);
+  const newRotations = []; // 新しい回転設定を格納する二次元配列
+
+  rotations.forEach((rowRotations, rowIndex) => {
+    const newRowRotations = [];
+    rowRotations.forEach((cellRotation, colIndex) => {
+      const cellValue = values[rowIndex][colIndex]; // セル値を取得
+      const textLength = String(cellValue).length; // テキスト長を計算
+
+      let targetDegrees = 0; // デフォルトは0度
+
+      // テキストが縦書きではない場合のみ角度調整を検討
+      if (!cellRotation.isVertical()) {
+        if (textLength > 15) { // 例: テキストが15文字を超える場合
+          targetDegrees = 45; // 45度回転
+        }
+      }
+
+      // 現在の回転角度が目標と異なる場合のみ更新
+      if (cellRotation.getDegrees() !== targetDegrees) {
+        newRowRotations.push(SpreadsheetApp.newTextRotation().setDegrees(targetDegrees).build());
+      } else {
+        newRowRotations.push(cellRotation); // 変更不要な場合は既存のオブジェクトを再利用
       }
     });
+    newRotations.push(newRowRotations);
   });
-}
-</code></pre>
-
-これで、文字数が15文字を超えたセルに対して自動で回転角度を変更することができるんじゃけ、デザイン的にも美しくなるばい。
-
-### 2. 複数シート間での回転設定同期
-
-複数のシートにわたって同じ回転設定を使いたい場合にも役立つんよ。
-
-<pre class="wp-block-code"><code>function synchronizeRotationsAcrossSheets() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sourceSheet = ss.getSheetByName('テンプレート');
-  const targetSheet = ss.getSheetByName('レポート');
   
-  const sourceRotations = sourceSheet.getRange('A1:D10').getTextRotations();
-  targetSheet.getRange('A1:D10').setTextRotations(sourceRotations);
+  // 新しい回転設定を一括でシートに適用
+  dataRange.setTextRotations(newRotations);
+  Logger.log("テキスト長に基づいて回転角度を動的に調整しました。");
 }
-</code></pre>
+```
 
-これで、テンプレートシートの回転設定をレポートシートに一括で適用できるんよ。
+### 2. 複数シート間での回転設定の同期
 
-## パフォーマンスを最適化するために
+複数のシート間で同じテキスト回転設定を適用したい場合、`getTextRotations()`と`setTextRotations()`を組み合わせることで効率的に同期できます。これは、一貫したレポートデザインを維持する際に非常に有用です。
 
-大量のデータを扱うときは、効率的に処理を行うための工夫が必要じゃけ。たとえば、10,000セル以上の範囲を扱う場合、メモリ管理を工夫して効率よくデータを処理することが重要じゃよ。
+```javascript
+/**
+ * テンプレートシートのテキスト回転設定を、別のレポートシートに同期する関数。
+ */
+function synchronizeRotationsAcrossSheets() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sourceSheet = ss.getSheetByName('テンプレートシート'); // コピー元シート
+  const targetSheet = ss.getSheetByName('レポートシート');   // コピー先シート
+  
+  if (!sourceSheet || !targetSheet) {
+    Logger.log("エラー: ソースまたはターゲットシートが見つかりません。");
+    return;
+  }
 
-<pre class="wp-block-code"><code>function processLargeRangeEfficiently() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const maxRows = sheet.getMaxRows();
-  const batchSize = 500;
+  const sourceRange = sourceSheet.getRange('A1:D10'); // コピー元の範囲を指定
+  const targetRange = targetSheet.getRange('A1:D10'); // コピー先の範囲を指定
 
-  for (let i = 0; i &lt; maxRows; i += batchSize) {
-    const range = sheet.getRange(i + 1, 1, batchSize, sheet.getMaxColumns());
-    const rotations = range.getTextRotations();
-    
-    rotations.forEach((row, rowIdx) =&gt; {
-      row.forEach((rotation, colIdx) =&gt; {
-        if (rotation.isVertical()) {
-          range.getCell(rowIdx + 1, colIdx + 1).setHorizontalAlignment('center');
+  // コピー元の範囲からテキスト回転設定を一括取得
+  const sourceRotations = sourceRange.getTextRotations();
+  
+  // コピー先の範囲に取得した設定を一括で適用
+  targetRange.setTextRotations(sourceRotations);
+  Logger.log(`「${sourceSheet.getName()}」シートの回転設定を、「${targetSheet.getName()}」シートの範囲 ${targetRange.getA1Notation()} に同期しました。`);
+}
+```
+
+### 3. 大規模データ処理におけるパフォーマンス最適化（バッチ処理の徹底）
+
+GASスクリプトの実行において、API呼び出し回数はパフォーマンスに直結します。`getTextRotations()`や`setTextRotations()`のようなバッチ処理メソッドを最大限に活用し、大量のデータを扱う際には、必要に応じてさらに小さなバッチに分割して処理することで、メモリ使用量を抑えつつ高速な処理を実現できます。
+
+```javascript
+/**
+ * 大規模なデータ範囲のテキスト回転設定を、バッチ処理で効率的に取得・設定する関数。
+ */
+function processLargeRangeTextRotationsEfficiently() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('大規模データ');
+  if (!sheet) {
+    Logger.log("エラー: '大規模データ' シートが見つかりません。");
+    return;
+  }
+  const fullRange = sheet.getDataRange();
+  const numRows = fullRange.getNumRows();
+  const numCols = fullRange.getNumColumns();
+  const batchSize = 1000; // 処理する行のバッチサイズ
+
+  for (let i = 0; i < numRows; i += batchSize) {
+    const currentBatchNumRows = Math.min(batchSize, numRows - i);
+    const batchRange = fullRange.offset(i, 0, currentBatchNumRows, numCols); // 現在のバッチ範囲を取得
+
+    // バッチ範囲のテキスト回転設定を取得
+    const rotations = batchRange.getTextRotations();
+    const newRotations = []; // 新しい回転設定を格納する配列
+
+    rotations.forEach(rowRotations => {
+      const newRow = rowRotations.map(cellRotation => {
+        // 例: 縦書きのセルは中央揃えにする
+        if (cellRotation.isVertical()) {
+          // setTextRotation()はTextRotationオブジェクトを期待するため、新しいオブジェクトを構築
+          return SpreadsheetApp.newTextRotation().setDegrees(0).setVertical(true).build(); 
         }
+        return cellRotation; // 変更がなければ元のオブジェクトを使用
       });
+      newRotations.push(newRow);
     });
     
-    Utilities.sleep(200); // API制限回避
+    batchRange.setTextRotations(newRotations); // バッチ範囲に新しい回転設定を適用
+    // Utilities.sleep(100); // 必要に応じてAPI呼び出し間隔を調整
   }
+  Logger.log("大規模データ範囲のテキスト回転設定を効率的に処理しました。");
 }
-</code></pre>
+```
+この例では、データを小さなバッチに分割して処理し、各バッチで取得・設定を行うことで、GASの実行制限（特にメモリ使用量や実行時間）を回避しやすくなります。
 
-こうすることで、APIコールの制限を避けながら大規模な範囲を効率的に処理できるんよ。
+## まとめ：`getTextRotations()`でGASスプレッドシートの視覚的表現を最大化
 
-## 最後に
+Google Apps Scriptの`getTextRotations()`メソッドは、スプレッドシートの複数セルのテキスト回転設定をプログラムで効率的に管理するための、非常に強力なツールです。
 
-`getTextRotations()`メソッドを使えば、スプレッドシートのデータを見た目から管理するのがぐっと楽になるんよ。回転角度や縦書きの設定をプログラムで簡単に取得できるので、レイアウトの調整やデータ処理がスムーズになるばい。ちょっとした工夫で、見た目を大きく改善できるので、ぜひ活用してみてな！
+*   **高速な一括取得**: 複数セルのテキスト回転情報（角度、縦書き状態）を一度のAPI呼び出しで二次元配列として取得できるため、スクリプトの実行速度と効率が大幅に向上します。
+*   **動的なレイアウト調整**: テキスト長やその他の条件に基づいてテキスト回転を自動調整したり、テンプレートの書式を複数のシートに同期したりすることで、手動作業を削減し、シートの視認性とデザインの一貫性を保てます。
+*   **堅牢な大規模データ処理**: バッチ処理を徹底することで、GASの実行制限を回避し、大量のデータを含むスプレッドシートでも安定してテキスト回転設定を管理できます。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+本記事で紹介した`getTextRotations()`の知識と実践例を活用し、あなたのGASスクリプトをより高度で柔軟なスプレッドシート自動化ツールへと進化させてください。テキスト回転の細かな制御は、スプレッドシートの表現力を高め、ユーザーエクスペリエンスの向上とビジネスプロセスの最適化に大きく貢献します。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" title="Spreadsheet Service  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Spreadsheet Service  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rrotation/" title="[GAS]テキストの回転角度や方向を取得・設定する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-5.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-5.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]テキストの回転角度や方向を取得・設定する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲のセルのテキストの回転角度や方向を取得・設定する方法を説
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rrotation/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rrotation/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://caymezon.com/gas-rotation/" title="【GAS】スプレッドシートのテキスト回転機能まとめ【サンプルソース付】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://caymezon.com/wp-content/uploads/2019/07/rotation.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://caymezon.com/wp-content/uploads/2019/07/rotation.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートのテキスト回転機能まとめ【サンプルソース付】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS開発者向けにスプレッドシートのテキスト回転機能をすべてまとめました。テキストをはみ出さず、セルにどうしてもスッポリ収めたい時、テキストを回転させてオシャレに表示することも可能になります。角度を指定できたり、縦書きにしてみたり、自由に設
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-rotation/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-rotation/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          caymezon.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://gsuiteguide.jp/sheets/gettextrotations/" >}}
+
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}}

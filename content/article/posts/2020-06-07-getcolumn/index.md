@@ -1,469 +1,126 @@
 ---
-title: GASでスプレッドシートの範囲内の列番号を効率的に取得する方法
-author: arukayies
-type: post
-date: 2020-06-07T04:45:44+00:00
-excerpt: GASでスプレッドシートの範囲内の開始列番号を取得する方法を紹介します！
-url: /gas/getcolumn
+title: "【GAS】getColumn()で範囲の開始列番号を取得する方法｜列単位のループ処理に応用"
+description: "GASの`getColumn()`メソッドの基本を初心者向けに解説。指定した範囲の「開始列」の番号（A列=1）を返すこのメソッドの挙動と、`getWidth()`や`getLastColumn()`と組み合わせた列単位のループ処理など、実践的なスクリプトを紹介します。スプレッドシートの列操作を自動化する第一歩です。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "getColumn", "forループ", "列操作", "初心者"]
+date: "2020-06-07T04:45:44.000Z"
+url: "/gas/getcolumn"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1591611634
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:14:25
-categories:
-  - GAS
-tags:
-  - GAS
-  - getColumn()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
+lastmod: "2025-11-25T13:53:00+09:00"
 ---
-Google Apps Script（GAS）の`getColumn()`メソッドって、スプレッドシートで列の位置を特定するためには欠かせない機能ばい。この記事では、初心者にもわかりやすく、`getColumn()`メソッドの基本的な使い方から応用例まで紹介するけん、最後まで読んでいってけ！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS)でスプレッドシートの特定の**列**に対して処理を行いたい時、`getColumn()`は欠かせない基本メソッドです。このメソッドを使えば、指定した範囲がどの列から始まっているかを数値で簡単に取得できます。
 
-## getColumn()メソッドの基本的な使い方
+この記事では、`getColumn()`の基本的な使い方から、列単位で処理を繰り返す実践的なループ処理まで、分かりやすく解説します。
 
-まず、`getColumn()`メソッドがどういうものかを簡単に説明するけ。これは、スプレッドシートの範囲を指定したとき、その範囲の「左端」の列番号を返してくれるんだよ。例えば、A列が1、B列が2といったように、列は番号がついてるけど、`getColumn()`メソッドを使うと、その範囲の最初の列番号がわかるんだ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### 使い方の例
+## getColumn()の基本的な使い方
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const range = sheet.getRange("C5");
-const columnNumber = range.getColumn(); // 3が返される
-</code></pre>
+`getColumn()`は`Range`オブジェクトに適用するメソッドで、その範囲の**一番左の列番号**を返します。
+スプレッドシートの列はA列を`1`、B列を`2`、C列を`3`...という数値で管理されており、`getColumn()`はこの数値を返します。
 
-上記のコードでは、セル`C5`を指定して、その列番号（3）が返ってくるんだよ。シンプルやけど、範囲を指定する場所や方法によって挙動が変わることに注意せんといけんね。
+### 単一セルの場合
 
-## 単一セルと範囲指定での違い
-
-### 単一セルの挙動
-
-もし単一のセル（例えば`C5`）を指定すると、そのまま直感的にその列番号（3）が返ってくるけ。簡単やろ？
-
-### 範囲指定の場合
-
-ところが、複数のセル範囲を指定すると、左端の列番号が返されるんやけど、これが少しややこしいけん。例えば、`B2:D5`と指定すると、左端の列はB列（つまり2番目）が返されるんよ。
-
-<pre class="wp-block-code"><code>const range = sheet.getRange("B2:D5");
-console.log(range.getColumn()); // 2（B列）が返される
-</code></pre>
-
-このように、複数列の範囲指定時は左端の列番号が返されることを覚えておいてな。
-
-## メソッドの注意点
-
-### 非連続範囲選択時
-
-もし、非連続の範囲（例えば、`A1:B2`と`D1:E2`のような範囲）を選択した場合、最初の範囲の左端列が返されるんやけん、その辺も気をつけんといけんね。
-
-### 非表示列
-
-非表示にされている列でも、その列番号は変わらず物理的な位置で返されるから、表示状態に関係なく列番号を取得できるんだ。
-
-## 実際の活用例
-
-### データ処理の例
-
-`getColumn()`メソッドを使うことで、スプレッドシートの列に対して処理を行うことができるんだ。例えば、各列にスタイルを適用したり、列の幅を変更したりすることができるけ。
-
-<pre class="wp-block-code"><code>function styleColumns() {
+```javascript
+function getSingleColumnNumber() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const style = {
-    background: '#f0f0f0',
-    width: 120
-  };
+  
+  // C5セルを取得
+  const range = sheet.getRange("C5");
+  
+  // C列は3番目なので「3」が返る
+  const columnNumber = range.getColumn();
+  console.log(columnNumber); // 3
+}
+```
 
-  for (let col = 1; col &lt;= sheet.getLastColumn(); col++) {
-    const range = sheet.getRange(1, col, sheet.getLastRow());
-    range.setBackground(style.background);
-    sheet.setColumnWidth(col, style.width);
+### 複数セルの範囲の場合
+
+複数セルの範囲を指定した場合でも、返すのは**範囲の開始列（一番左の列）**の番号だけです。
+
+```javascript
+function getRangeColumnNumber() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+
+  // 範囲 B2:D5 を取得
+  const range = sheet.getRange("B2:D5");
+  
+  // 範囲の開始はB列（2番目）なので「2」が返る
+  const startColumn = range.getColumn();
+  console.log(startColumn); // 2
+}
+```
+`D`列の番号である`4`は取得できない点に注意してください。範囲の列数を取得したい場合は、`getWidth()`メソッドを使います。
+
+## 実践例：範囲内のすべての列をループ処理する
+
+`getColumn()`は、範囲の開始列を特定し、そこから`getWidth()`（範囲の列数）分だけループ処理を行う際によく使われます。
+
+以下の例では、選択した範囲（例: `B2:D5`）の各列のヘッダー（1行目）に背景色を設定します。
+
+```javascript
+function formatHeadersOfSelectedRange() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = SpreadsheetApp.getActiveRange(); // 現在選択している範囲
+
+  if (!range) {
+    console.log("範囲が選択されていません。");
+    return;
+  }
+
+  const startCol = range.getColumn();    // 範囲の開始列
+  const numCols = range.getWidth();      // 範囲の列数
+
+  // 開始列から終了列までループ
+  for (let i = 0; i < numCols; i++) {
+    const currentCol = startCol + i;
+    // 各列の1行目のセルに背景色を設定
+    sheet.getRange(1, currentCol).setBackground("#d9ead3"); // 薄い緑色
   }
 }
-</code></pre>
+```
+このスクリプトを実行すると、選択範囲のヘッダー部分だけを動的にフォーマットできます。
 
-上記のコードでは、各列の背景色を変更し、列幅を設定する処理を行っているけど、`getColumn()`メソッドを使うことで列番号を取得し、そこに対して処理を適用しているんだ。
+## 実践例2：シート全体の列を操作する
 
-## エラー処理のポイント
+`getLastColumn()`と組み合わせることで、シート全体の列を対象とした処理も簡単に書けます。
 
-### よくあるエラー
-
-<ol class="wp-block-list">
-  <li>
-    <strong>範囲未定義エラー</strong><br />範囲指定が間違っていると、エラーが発生することがあるけ。事前に範囲が有効かどうかを確認するのが大事。
-  </li>
-</ol>
-
-<pre class="wp-block-code"><code>// 範囲が間違っている場合
-const range = sheet.getRange("invalid_range");
-console.log(range.getColumn()); // エラーが発生する
-</code></pre>
-
-<ol start="2" class="wp-block-list">
-  <li>
-    <strong>非アクティブシート操作</strong> 他のシートにアクセスしようとすると、思った通りに動かないこともあるけん、アクティブなシートを確実に操作するようにしよう。
-  </li>
-</ol>
-
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.openById("...").getSheetByName("非表示シート");
-console.log(sheet.getRange("A1").getColumn()); // 予期せぬ結果が返される
-</code></pre>
-
-## パフォーマンスの最適化
-
-### バッチ処理を活用する
-
-大量のデータを処理する場合は、バッチ処理を使うことでパフォーマンスを向上させることができるんだ。
-
-<pre class="wp-block-code"><code>function optimizeColumnOperations() {
+```javascript
+function setColumnWidthsForAll() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getDataRange();
-  const values = dataRange.getValues();
-  
-  const processedData = values.map((row, rowIndex) =&gt; {
-    const columnNumber = dataRange.getColumn() + rowIndex;
-    return row.map(cell =&gt; `Col${columnNumber}_${cell}`);
-  });
+  const lastColumn = sheet.getLastColumn(); // シートでデータが存在する最終列
 
-  dataRange.setValues(processedData);
+  // 1列目 (A列) から最終列までループ
+  for (let i = 1; i <= lastColumn; i++) {
+    // i番目の列幅を100ピクセルに設定
+    sheet.setColumnWidth(i, 100);
+  }
 }
-</code></pre>
+```
 
-## 結論
+## まとめ
 
-`getColumn()`メソッドは、スプレッドシートで列を操作する際に欠かせない便利なツールやけど、使い方や挙動をしっかり理解しておくことが重要ばい。基本的な使い方から、エラー処理、パフォーマンスの最適化まで、しっかりと活用することで、より効率的にGoogle Apps Scriptを使いこなすことができるけん、ぜひ試してみてけ！
+`getColumn()`は、GASで列単位の操作を行う際の起点となる重要なメソッドです。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+-   指定した`Range`の**開始列番号**（A=1）を返す。
+-   複数セルの範囲の場合も、**一番左の列**の番号のみを返す。
+-   `getWidth()`や`getLastColumn()`と組み合わせた`for`ループで、列単位の反復処理を簡単に実装できる。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://rinyan-7.com/gas/range_getcolumn/" title="&#12304;`getColumn`&#12513;&#12477;&#12483;&#12489;&#12398;&#27963;&#29992;&#27861;&#12305;&#12473;&#12503;&#12524;&#12483;&#12489;&#12471;&#12540;&#12488;&#12391;&#21015;&#30058;&#21495;&#12434;&#21462;&#24471;&#12377;&#12427;&#20351;&#12356;&#26041;&#12539;&#20855;&#20307;&#20363;&#12539;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+このメソッドをマスターし、スプレッドシートの列操作を自由に自動化しましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://rinyan-7.com/gas/range_getcolumn/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_getcolumn%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_getcolumn%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;`getColumn`&#12513;&#12477;&#12483;&#12489;&#12398;&#27963;&#29992;&#27861;&#12305;&#12473;&#12503;&#12524;&#12483;&#12489;&#12471;&#12540;&#12488;&#12391;&#21015;&#30058;&#21495;&#12434;&#21462;&#24471;&#12377;&#12427;&#20351;&#12356;&#26041;&#12539;&#20855;&#20307;&#20363;&#12539;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_getcolumn/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_getcolumn/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://mebee.info/2023/07/24/post-65507/" >}} 
   
-  <br /> <a rel="noopener" href="https://mebee.info/2023/07/24/post-65507/" title="GAS スプレッドシートの指定している範囲の列番号を取得する" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://coporilife.com/460/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://mebee.info/wp-content/uploads/2022/04/gas-890x500.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://mebee.info/wp-content/uploads/2022/04/gas-890x500.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GAS スプレッドシートの指定している範囲の列番号を取得する
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS(Google Apps Script)で、スプレッドシートの指定している範囲の列番号を取得する手順を記述してます。「getColumn」で可能です。複数の範囲がある場合は一番初めに見つかった列番号が返ります。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://mebee.info/2023/07/24/post-65507/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://mebee.info/2023/07/24/post-65507/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          mebee.info
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://www.tanukiblog.jp/gas-activecell/" >}} 
   
-  <br /> <a rel="noopener" href="https://coporilife.com/460/" title="【GAS】1行取得、getRangeで列全体取得、可変対応コピペ用【Google Apps Script】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://auto-worker.com/blog/?p=1344" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://coporilife.com/wp-content/uploads/2022/05/6d074f061cc4abffb0e9c17c60f5cf84.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://coporilife.com/wp-content/uploads/2022/05/6d074f061cc4abffb0e9c17c60f5cf84.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】1行取得、getRangeで列全体取得、可変対応コピペ用【Google Apps Script】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GASで1行取得したり、getRangeで列全体を取得する方法のコピペで使えるサンプルコードをまとめています。この記事で解説しているメソッドgetRange()getMaxRows()getMaxColumns()getLastRow()g
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://coporilife.com/460/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://coporilife.com/460/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          coporilife.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://www.tanukiblog.jp/gas-activecell/" title="【GAS】アクティブなセルを取得する" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.tanukiblog.jp/wp-content/uploads/2024/05/activecell.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.tanukiblog.jp/wp-content/uploads/2024/05/activecell.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】アクティブなセルを取得する
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GASを使って現在アクティブになっている（選択している）セルを参照する方法について解説します。 アクティブなセルを取得する アクティブなセルの取得はgetActiveCellを使います。またgetActiveCellは複数セルを選択していて
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://www.tanukiblog.jp/gas-activecell/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://www.tanukiblog.jp/gas-activecell/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          www.tanukiblog.jp
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://auto-worker.com/blog/?p=1344" title="GASでスプレッドシートの選択しているセル・範囲の位置(行番号・列番号)を取得する方法 | AutoWorker〜Google Apps Script(GAS)とSikuliで始める業務改善入門" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://auto-worker.com/blog/wp-content/uploads/2020/08/20200802_auto_004.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://auto-worker.com/blog/wp-content/uploads/2020/08/20200802_auto_004.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASでスプレッドシートの選択しているセル・範囲の位置(行番号・列番号)を取得する方法 | AutoWorker〜Google Apps Script(GAS)とSikuliで始める業務改善入門
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script(GAS)でスプレッドシートの選択しているセルの位置を取得する方法を紹介します。 選択したセルや選択範囲の位置について行番号と列番号を取得するメ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://auto-worker.com/blog/?p=1344" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://auto-worker.com/blog/?p=1344" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          auto-worker.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://gsuiteguide.jp/sheets/getnumcolumns/" title="セル範囲にある列の列数を取得する：getNumColumns()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セル範囲にある列の列数を取得する：getNumColumns()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getNumColumns() セル範囲にある列の列数を取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.getActiveSpreadsheet(); // そのスプ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getnumcolumns/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getnumcolumns/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://gsuiteguide.jp/sheets/getnumcolumns/" >}}

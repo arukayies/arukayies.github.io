@@ -1,414 +1,86 @@
 ---
-title: 【水耕栽培】ルッコラの観察日記まとめ
-author: arukayies
-type: post
-date: 2019-09-28T14:46:00+00:00
-url: /hydroponic_culture/arugula/matome2
+title: "【水耕栽培】ルッコラ観察日記：発芽から収穫まで徹底まとめ！初心者向け栽培ガイド"
+date: "2019-09-28T14:46:00.000Z"
+url: "/hydroponic_culture/arugula/matome2"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1569681960
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1177957977501786112";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1177957977501786112";s:5:"pDate";s:19:"2019-09-28 14:47:22";}}";'
 archives: ["2019年9月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "水耕栽培でルッコラを育ててみたい方必見！発芽から収穫までの全過程を詳細に記録した観察日記まとめです。初心者でも成功するためのポイントや、私が実際に経験した栽培のコツ、そしてDIY水耕栽培装置の活用法まで解説します。"
+tags: ["水耕栽培", "ルッコラ", "観察日記", "まとめ", "発芽", "収穫", "家庭菜園", "DIY", "ブログカード"]
 ---
+
 こんにちは！
 
-<span class="marker"><strong>水耕栽培</strong></span>で**ルッコラ**を育成し始めました、「くら(<a rel="noopener" href="http://www.twitter.com/arukayies" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color: #55ACEE;font-size:1.2em;"></i>@arukayies</a>)」です！
+水耕栽培で**ルッコラ**の育成に挑戦中です！
 
-私が育てていたルッコラの育成状況をまとめて紹介します！
+本日は、私が丹精込めて育てたルッコラの水耕栽培記録を、発芽から収穫までまとめてご紹介します。これから水耕栽培を始める方や、ルッコラの栽培に興味がある方の参考になれば幸いです。
 
-{{< custom-figure src="img_5dfa3d9461b20.jpg" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="img_5dfa3d9461b20.jpg" title="水耕栽培で育ったルッコラ" Fit="1280x1280 webp q90" >}}
 
-## 発芽
+---
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    100均のケースにスポンジを敷き詰め、保温遮熱シートで日光を遮断した自作プランターです。<br /> ミズナの時と同じ方法で発芽させましたー！<br /> <a href="https://arukayies.com/hydroponic_culture/mizuna/diary1" title="【水耕栽培】ミズナの観察日記(1日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ミズナの観察日記(1日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培で水菜を育成し始めました、「くら(twitter@arukayies)」です！観察1日目の様子です！自作水耕栽培装置の紹介はこちらです。種植え種植えの方法はこちらのブログを参考にしました。100均のケースにスポンジを敷き...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    <a href="https://arukayies.com/hydroponic_culture/arugula/diary1-2" title="【水耕栽培】ルッコラの観察日記(1日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary1-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(1日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察1日目の様子です！自作水耕栽培装置の紹介はこちらです。発芽100均のケースにスポンジを敷き詰め、保温遮熱シートで日光を遮断した自作プラ...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+## ルッコラ観察日記：発芽から収穫までの道のり
 
-## 18日目
+### 1. 発芽：ルッコラ栽培の始まり
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    天気が悪く日照不足かな？と心配でしたが、順調に育ってます！<br /> <a href="https://arukayies.com/hydroponic_culture/arugula/diary2-2" title="【水耕栽培】ルッコラの観察日記(18日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary2-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(18日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察18日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察18日目天気が悪く日照不足かな？と心配でしたが...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+水耕栽培の第一歩は、種からの発芽です。100円ショップのケースにスポンジを敷き詰め、保温遮熱シートで日光を遮断した自作プランターを使用しました。ミズナの時と同じ方法で、無事に発芽させることができました。
 
-## 29日目
+*   **ミズナの発芽方法について**
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    およそ１か月経過しました。ちょっと成長が遅い気がします。<br /> <a href="https://arukayies.com/hydroponic_culture/arugula/diary3-2" title="【水耕栽培】ルッコラの観察日記(29日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary3-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(29日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察29日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察29日目およそ１か月経過しました。ちょっと成長...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+{{< self-blog-card "article/posts/2019-05-06-diary1" >}}
 
-## 34日目
+*   **ルッコラの発芽記録**
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    一部大きく育っているものだけ収穫し、パスタに和えてみました！<br /> <a href="https://arukayies.com/hydroponic_culture/arugula/diary4-2" title="【水耕栽培】ルッコラの観察日記(34日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary4-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(34日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察34日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察34日目一部大きく育っているものだけ収穫し、パ...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+{{< self-blog-card "article/posts/2019-06-22-diary1-2" >}}
 
-## 43日目
+### 2. 18日目：初期成長の確認
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    ここまで育つとルッコラ特有のゴマのような香りが強いです！<br /> <a href="https://arukayies.com/hydroponic_culture/arugula/diary5-2" title="【水耕栽培】ルッコラの観察日記(43日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary5-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(43日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察43日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察43日目ここまで育つとルッコラ特有のゴマのよう...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+発芽後18日目。天候が優れず日照不足が心配されましたが、ルッコラは順調に育っていました。この時期の成長は、後の豊かな収穫に繋がります。
 
-## 58日目
+{{< self-blog-card "article/posts/2019-07-09-diary2-2" >}}
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    ほとんど収穫してサラダで食べました！<br /> <a href="https://arukayies.com/hydroponic_culture/arugula/diary6-2" title="【水耕栽培】ルッコラの観察日記(58日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary6-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(58日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察58日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察58日目ほとんど収穫してサラダで食べました！
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+### 3. 29日目：成長のペースを分析
 
-## 70日目
+栽培開始からおよそ1ヶ月。ルッコラの成長はやや遅めに感じられました。しかし、植物の成長は環境によって様々。この段階での観察と調整が重要です。
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    根本が枯れはじめ、どうやらここらが限界のようです。<br /> 残りを収穫してサラダで頂きました！<br /> <a href="https://arukayies.com/hydroponic_culture/arugula/diary7-2" title="【水耕栽培】ルッコラの観察日記(70日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary7-2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】ルッコラの観察日記(70日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でルッコラを育成し始めました、「くら(twitter@arukayies)」です！観察70日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察70日目根本が枯れはじめ、どうやらここらが限界...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+{{< self-blog-card "article/posts/2019-07-20-diary3-2" >}}
 
-## まとめ
+### 4. 34日目：初めての収穫と食味体験
 
-<div class="box">
-  <span class="box-title">水耕栽培でルッコラを育ててみた感想</span></p> 
-  
-  <ul>
-    <li>
-      水耕栽培装置2回目の作物として見事に収穫まで行うことができた！
-    </li>
-    <li>
-      茎が育ち過ぎて倒れてしまう、場所によって成長に差がある等まだ改善できそうな点が見つかった。
-    </li>
-    <li>
-      まだまだ、改善できる点があるなと思った。
-    </li>
-  </ul>
-</div>
+大きく育った一部のルッコラを初めて収穫！新鮮なルッコラはパスタに和えて美味しくいただきました。自分で育てた野菜の味は格別です。
+
+{{< self-blog-card "article/posts/2019-07-25-diary4-2" >}}
+
+### 5. 43日目：ルッコラ特有の香りが開花
+
+栽培43日目には、ルッコラ特有のゴマのような香りが一層強くなりました。この香りが食欲をそそります。
+
+{{< self-blog-card "article/posts/2019-08-03-diary5-2" >}}
+
+### 6. 58日目：大量収穫と食卓での活躍
+
+ほとんどのルッコラを収穫し、サラダで堪能しました。家庭で新鮮な野菜が手軽に食べられるのは水耕栽培の大きな魅力です。
+
+{{< self-blog-card "article/posts/2019-08-18-diary6-2" >}}
+
+### 7. 70日目：栽培の終焉と学び
+
+栽培70日目、ルッコラの根本が枯れ始め、成長の限界が見えてきました。残りのルッコラも収穫し、今回の栽培は終了。次の栽培への貴重な学びとなりました。
+
+{{< self-blog-card "article/posts/2019-08-30-diary7-2" >}}
+
+---
+
+## 【まとめ】水耕栽培でルッコラを育ててみた感想と今後の改善点
+
+今回の水耕栽培でのルッコラ育成は、多くの気づきと学びをもたらしてくれました。
+
+> **水耕栽培でルッコラを育ててみた感想**
+>
+> *   水耕栽培装置2回目の作物として見事に収穫まで行うことができた！
+> *   茎が育ち過ぎて倒れてしまう、場所によって成長に差がある等まだ改善できそうな点が見つかった。
+> *   まだまだ、改善できる点があるなと思った。
+
+特に、茎が倒れてしまう問題や、場所による成長のばらつきは、今後の装置改善や栽培方法の見直しにおいて重要な課題です。
+しかし、2回目の作物で無事に収穫まで辿り着けたことは大きな成功です。これからも、より良い水耕栽培を目指して、様々な工夫と挑戦を続けていきたいと思います。

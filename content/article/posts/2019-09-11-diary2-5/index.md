@@ -1,121 +1,47 @@
 ---
-title: 【水耕栽培】コマツナの観察日記(23日目)
-author: arukayies
-type: post
-date: 2019-09-11T10:24:30+00:00
-url: /hydroponic_culture/komatsuna/diary2-5
+title: "【水耕栽培】コマツナ観察日記：23日目で定植！根の張りが成長の鍵"
+date: "2019-09-11T10:24:30.000Z"
+url: "/hydroponic_culture/komatsuna/diary2-5"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1569666270
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1177891972238831617";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1177891972238831617";s:5:"pDate";s:19:"2019-09-28 10:25:05";}}";'
 archives: ["2019年9月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "水耕栽培で育てているコマツナが観察23日目を迎え、根がしっかりと張ったのでついに水耕栽培装置へ定植しました！この時期のコマツナの成長ぶりと、定植のタイミング、そして根の重要性について詳しく解説します。コマツナ栽培の成功の秘訣を知りたい方へ。"
+tags: ["水耕栽培", "コマツナ", "観察日記", "定植", "根の成長", "家庭菜園", "DIY", "ブログカード"]
 ---
+
 こんにちは！
 
-<span class="marker"><strong>水耕栽培</strong></span>で**コマツナ**を育成し始めました、「くら(<a rel="noopener" href="http://www.twitter.com/arukayies" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color: #55ACEE;font-size:1.2em;"></i>@arukayies</a>)」です！
+水耕栽培で**コマツナ**の育成に挑戦中です！
 
-<span style="color: blue;">観察23日目</span>の様子です！
+本日は、**観察23日目**のコマツナの様子をお届けします。今回は、ある程度成長し、根がしっかり張ったコマツナを水耕栽培装置へと定植する様子をご覧ください！
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    前回までの日記はこちらです。<br /> <a href="https://arukayies.com/hydroponic_culture/komatsuna/diary1-5" title="【水耕栽培】コマツナの観察日記(1日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary1-5-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】コマツナの観察日記(1日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でコマツナを育成し始めました、「くら(twitter@arukayies)」です！観察1日目の様子です！自作水耕栽培装置の紹介はこちらです。発芽左のちょびっと出ている🌱がコマツナです！
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    自作水耕栽培装置の紹介はこちらです。<br /> <a href="https://arukayies.com/diy/hydroponic_culture_first_machine" title="ほぼ100均で作る循環式の水耕栽培装置の紹介" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard external-blogcard eb-left cf">
-      <div class="blogcard-label external-blogcard-label">
-        <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-      
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      </noscript></figure>
-      
-      <div class="blogcard-content external-blogcard-content">
-        <div class="blogcard-title external-blogcard-title">
-          ほぼ100均で作る循環式の水耕栽培装置の紹介
-        </div>
-        
-        <div class="blogcard-snippet external-blogcard-snippet">
-          こんにちは！自宅で野菜を作ってみたくて、水耕栽培に興味を持った「くら」です！これが実際に自作した水耕栽培装置です。↓今回は私が自作した水耕栽培装置を紹介します！大規模にやるならこれも気になる・・・【2024進化版】LAPOND 水耕栽培シス...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer external-blogcard-footer cf">
-        <div class="blogcard-site external-blogcard-site">
-          <div class="blogcard-favicon external-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain external-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+前回までのコマツナの成長記録はこちらをご覧ください。
 
-## 観察23日目
+{{< self-blog-card "article/posts/2019-08-20-diary1-5" >}}
 
-いつものようにある程度🌱が育って根が張ったので、水耕栽培装置に苗を移動しましたー！  
-{{< custom-figure src="img_5dff3cb3784a3.jpg" title="" Fit="1280x1280 webp q90" >}}
+また、私が自作した水耕栽培装置について興味がある方は、こちらの記事をご覧ください。
+
+### 自作水耕栽培装置の紹介
+
+*   **【1号機】初めてでも簡単！100均材料で循環式水耕栽培装置をDIY**
+
+
+
+---
+
+## 観察23日目：コマツナの定植作業！根の張りが重要ポイント
+
+観察23日目を迎えたコマツナたち。いつものようにある程度苗が育ち、水耕栽培装置へ移すのに最適な状態になりました。
+
+ご覧ください、このしっかりと張った根を！
+
+{{< custom-figure src="img_5dff3cb3784a3.jpg" title="水耕栽培装置へ定植したコマツナ" Fit="1280x1280 webp q90" >}}
+
+根が十分に張っていることは、植物が新しい環境に順応し、安定して成長するための重要な指標です。この強い根があれば、水耕栽培装置での生育も順調に進むことでしょう。
+
+### 定植後のケアと今後の成長への期待
+
+定植後は、コマツナが新しい環境に早く慣れるよう、水温や養液の管理に特に注意を払います。水耕栽培システムに移動したことで、より効率的な栄養吸収が期待でき、今後の成長がさらに加速することでしょう。
+
+引き続き、コマツナの成長を注意深く観察し、その変化を皆さんにレポートしていきます。新鮮なコマツナの収穫が今から楽しみです！

@@ -1,168 +1,172 @@
 ---
-title: 【IoT】Raspberry Piで日没・日の出時刻に植物育成LEDライトを自動ON・OFFしてみた
-author: arukayies
-type: post
-date: 2019-09-30T11:09:59+00:00
-url: /raspberrypi/hydroponic-culture-led-automatic-control
+title: "Raspberry Piで植物育成LEDライトを自動制御！日没・日の出時刻に合わせてON/OFFする方法"
+description: "Raspberry PiとPythonを使い、植物育成LEDライトを日没・日の出時刻と連動させて自動でON/OFFするシステムを構築する方法を解説します。緯度・経度から時刻を算出し、cronで実行を自動化するコード付き。"
+tags: ["IoT","Raspberry Pi","水耕栽培", "Python", "自動化"]
+date: "2019-09-30T11:09:59.000Z"
+url: "/raspberrypi/hydroponic-culture-led-automatic-control"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-snap_isAutoPosted:
-  - 1
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1212963074879062016";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1212963074879062016";s:5:"pDate";s:19:"2020-01-03 05:05:07";}}";'
-snap_isRpstd579:
-  - 1578027907
-last_modified:
-  - 2024-11-19 13:36:51
-categories:
-  - Raspberry Pi
-tags:
-  - IOT
-  - Raspberry Pi
-  - 水耕栽培
-
+categories: ["Raspberry Pi"]
 archives: ["2019年9月"]
+lastmod: "2025-11-27T21:49:00+09:00"
 ---
-こんにちは！
 
-水耕栽培装置を自作し、いろんな野菜を育成している「くら」です！
+自宅で水耕栽培の効率をさらに高めるため、Raspberry Piを使って植物育成LEDライトのON/OFFを自動化するシステムを構築しました。
 
-自作した水耕栽培装置はこちらです。
+この記事では、**日没と日の出の時刻に合わせてLEDライトを自動で点灯・消灯させる方法**を、最新のコードと共に分かりやすく解説します。
 
-{{< self-blog-card "article/posts/2019-09-30-hydroponic-culture-second-machine.md" >}}
+実際にライトが自動でON/OFFする様子がこちらです。
+{{< custom-figure src="img_5dfa27ec5a0c9.gif" title="LEDライト自動制御の様子">}} 
 
-さらなる栽培の効率化を求めて、植物育成LEDライトを導入しました！
+{{< affsearch keyword="Raspberry Pi" img="/pi.jpg">}}
 
-{{< self-blog-card "article/posts/2019-09-30-hydroponic-culture-led.md" >}}
+## システムの概要
 
-この植物育成LEDライトをRaspberry Piを使って、<span class="marker"><strong>日没・日の出時刻に自動ON・OFF</strong></span>させてみたので、そのコードを紹介します！
+このシステムの仕組みはとてもシンプルです。
 
-実際にライトがON・OFFしている様子です↓{{< custom-figure src="img_5dfa27ec5a0c9.gif" title="" Fit="1280x1280 webp q90" >}} 
+1.  **Pythonスクリプトの作成**: 緯度と経度からその日の日の出・日没時刻を計算するスクリプトを用意します。
+2.  **シェルスクリプトの作成**: LEDライトをON/OFFするための具体的なコマンドを記述したスクリプトを作成します。
+3.  **cronによる自動実行**: cronを使い、毎日決まった時刻にPythonスクリプトを実行し、計算された時刻にシェルスクリプトが動作するようにスケジュールします。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F3c5b8db21532c86a6bb15a0276d31467%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="40010000765756931199_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
+## 必要なライブラリのインストール
+
+まず、Pythonで天文計算を行うためのライブラリ `skyfield` をインストールします。
+
+```bash
+pip install skyfield
+```
+
+また、USBポートの電源を制御するために `hub-ctrl` が必要です。
+
+```bash
+# hub-ctrlのインストール例
+sudo apt-get install hub-ctrl
+```
+
+## 自動化のためのコード
+
+以下に、LEDライトを自動制御するためのPythonスクリプトとシェルスクリプトを紹介します。
+
+### Pythonスクリプト (`schedule_light.py`)
+
+このスクリプトは、日の出・日没時刻を計算し、`at` コマンドで指定した時刻にシェルスクリプトを実行予約します。
+
+```python
+from skyfield.api import load, Topos
+import datetime
+import subprocess
+import pytz
+
+# --- 設定項目 ---
+# タイムゾーンを指定
+TIMEZONE = 'Asia/Tokyo'
+# 緯度と経度を指定 (例: 東京)
+LATITUDE = '35.6895N'
+LONGITUDE = '139.6917E'
+# 実行するシェルスクリプトのフルパス
+SCRIPT_PATH_ON = '/home/pi/hydroponic_culture_light_on.sh'
+SCRIPT_PATH_OFF = '/home/pi/hydroponic_culture_light_off.sh'
+# --- 設定ここまで ---
+
+def get_sunrise_sunset():
+    """
+    指定した地点の次の日の出・日没時刻を取得する
+    """
+    ts = load.timescale()
+    eph = load('de421.bsp')  # 天体暦データ
+    observer = Topos(latitude_degrees=float(LATITUDE[:-1]), longitude_degrees=float(LONGITUDE[:-1]))
     
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F3c5b8db21532c86a6bb15a0276d31467%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >Raspberry Pi 4 Model B 8GB UK 182-2098</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F3c5b8db21532c86a6bb15a0276d31467%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DRaspberry%2520Pi%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DRaspberry%2520Pi" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
+    # JSTタイムゾーンオブジェクト
+    jst = pytz.timezone(TIMEZONE)
+    now = datetime.datetime.now(jst)
+
+    # 次の日の出・日没時刻を検索
+    t0 = ts.from_datetime(now)
+    t1 = ts.from_datetime(now + datetime.timedelta(days=1))
+    times, events = eph['sun'].find_settings(observer, t0, t1)
     
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+    sunrise_time = None
+    sunset_time = None
 
-## 参考
+    for t, event in zip(times, events):
+        if event == 0 and sunrise_time is None: # 0: 日の出
+            sunrise_time = t.astimezone(jst)
+        elif event == 1 and sunset_time is None: # 1: 日没
+            sunset_time = t.astimezone(jst)
 
-こちらの記事のコードを参考にしました！
+    return sunrise_time, sunset_time
 
-{{< blog-card "https://qiita.com/mitazet/items/00754f62ba089ea29353" >}}
-{{< blog-card "https://bcn.xsrv.jp/post-1929/" >}}
-{{< blog-card "http://kinokotimes.com/2017/03/07/usb-control-method-by-raspberry-pi/" >}}
-{{< blog-card "https://qiita.com/tadasuke/items/fcf563bbce33aa93c4c7" >}}
-
-## コードの内容
-
-**日没の30分前の時刻**を取得し、その時刻に『hydroponic\_culture\_light_on.sh』を実行するようにATコマンドでスケジューリングする処理です。
-
-<div class="blank-box">
-  ライトをONする処理です。<br />echo &quot;【suユーザーのパスワードを指定】&quot; | sudo -S /usr/local/bin/hub-ctrl -h 0 -P 2 -p 1
-</div>
-
-**日の出の30分後の時刻**を取得し、その時刻に『hydroponic\_culture\_light_off.sh』を実行するようにATコマンドでスケジューリングする処理です。
-
-<div class="blank-box">
-  <strong>ライトをOFF</strong>する処理です。<br />echo &quot;【suユーザーのパスワードを指定】&quot; | sudo -S /usr/local/bin/hub-ctrl -h 0 -P 2 -p 0
-</div>
-
-## 処理のながれ
-
-<span class="number">1　</span>午後12時に『hydroponic\_culture\_light_on.py』の処理をcronで走らせます。
-
-<div class="blank-box">
-  00 12 * * * python3 【保存先のディレクトリを指定】hydroponic_culture_light_on.py 1> /dev/null
-</div>
-
-『hydroponic\_culture\_light_on.py』では**日没の30分前の時刻**を取得し、その時刻に『hydroponic\_culture\_light_on.sh』を実行するようにATコマンドでスケジューリングします。
-
-<span class="number">2　</span>午前4時に『hydroponic\_culture\_light_off.py』の処理をcronで走らせます。
-
-<div class="blank-box">
-  00 04 * * * python3 【保存先のディレクトリを指定】hydroponic_culture_light_off.py 1> /dev/null
-</div>
-
-『hydroponic\_culture\_light_off.py』では**日の出の30分後の時刻**を取得し、その時刻に『hydroponic\_culture\_light_off.sh』を実行するようにATコマンドでスケジューリングします。
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F3c5b8db21532c86a6bb15a0276d31467%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="40010000765756931199_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F3c5b8db21532c86a6bb15a0276d31467%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >Raspberry Pi 4 Model B 8GB UK 182-2098</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
+def schedule_at_job(exec_time, script_path):
+    """
+    指定した時刻にatコマンドでジョブをスケジュールする
+    """
+    if exec_time is None:
+        print(f"時刻が取得できなかったため、{script_path} のスケジュールは行いません。")
+        return
         
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F3c5b8db21532c86a6bb15a0276d31467%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DRaspberry%2520Pi%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DRaspberry%2520Pi" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+    time_str = exec_time.strftime('%H:%M')
+    cmd = f'echo "bash {script_path}" | at {time_str}'
+    print(f"コマンドを実行: {cmd}")
+    subprocess.run(cmd, shell=True, check=True)
+    print(f"{time_str} に {script_path} を実行するようにスケジュールしました。")
+
+def main():
+    """
+    メイン処理
+    """
+    sunrise, sunset = get_sunrise_sunset()
+
+    if sunrise:
+        # 日の出の30分後にライトをOFF
+        light_off_time = sunrise + datetime.timedelta(minutes=30)
+        schedule_at_job(light_off_time, SCRIPT_PATH_OFF)
+
+    if sunset:
+        # 日没の30分前にライトをON
+        light_on_time = sunset - datetime.timedelta(minutes=30)
+        schedule_at_job(light_on_time, SCRIPT_PATH_ON)
+
+if __name__ == '__main__':
+    main()
+```
+
+### ON用シェルスクリプト (`hydroponic_culture_light_on.sh`)
+
+```bash
+#!/bin/bash
+# USBポートの電源をONにする (環境に合わせて数値を変更)
+# echo "【sudoのパスワード】" | sudo -S hub-ctrl -h 0 -P 2 -p 1
+# パスワードなしでsudoを実行できる場合
+sudo hub-ctrl -h 0 -P 2 -p 1
+```
+
+### OFF用シェルスクリプト (`hydroponic_culture_light_off.sh`)
+
+```bash
+#!/bin/bash
+# USBポートの電源をOFFにする (環境に合わせて数値を変更)
+# echo "【sudoのパスワード】" | sudo -S hub-ctrl -h 0 -P 2 -p 0
+# パスワードなしでsudoを実行できる場合
+sudo hub-ctrl -h 0 -P 2 -p 0
+```
+
+## cronで実行を自動化する
+
+最後に、作成したPythonスクリプトを毎日決まった時刻（例: 深夜2時）に実行するようにcronに登録します。
+
+`crontab -e` コマンドで編集画面を開き、以下の行を追加します。
+
+```crontab
+# 毎日 02:00 にPythonスクリプトを実行して、その日のON/OFF時刻をスケジュールする
+0 2 * * * /usr/bin/python3 /home/pi/schedule_light.py >> /home/pi/schedule_light.log 2>&1
+```
+*`/usr/bin/python3` やスクリプトのパスはご自身の環境に合わせて変更してください。*
+*ログを出力しておくと、問題が発生したときに原因を調査しやすくなります。*
+
+これで、毎日自動で日没・日の出時刻が計算され、適切なタイミングでLEDライトがON/OFFされるようになります。
+
+## まとめ
+
+Raspberry PiとPythonを使えば、天体の動きに合わせたスマートな植物育成環境を簡単に構築できます。この記事が、あなたのIoTプロジェクトの参考になれば嬉しいです！
+
+{{< affsearch keyword="Raspberry Pi" img="/pi.jpg">}}

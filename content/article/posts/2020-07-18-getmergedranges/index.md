@@ -1,221 +1,140 @@
 ---
-title: GASでスプレッドシートの指定範囲から結合セルを効率的に取得する方法
-author: arukayies
-type: post
-date: 2020-07-17T16:03:20+00:00
-excerpt: GASでスプレッドシートの指定範囲の結合セルを取得する方法を紹介します！
-url: /gas/getmergedranges
+title: "【GAS】スプレッドシートの結合セルを自在に操作！getMergedRanges()徹底解説"
+description: "Google Apps Script (GAS) の`getMergedRanges()`メソッドで、スプレッドシートの結合セルを効率的に取得・管理する方法を徹底解説。結合セルの基本から、動的なレポート生成、テンプレート構造の検証、解除まで、GASによるスプレッドシート操作の柔軟性を高める実践的テクニックを紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "getMergedRanges", "結合セル", "セル結合", "自動化", "レポート生成", "テンプレート検証"]
+date: "2020-07-17T16:03:20.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getmergedranges"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1595001802
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:08:42
-categories:
-  - GAS
-tags:
-  - GAS
-  - getMergedRanges()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年7月"]
 ---
-Google Apps Script（GAS）の`getMergedRanges()`メソッドは、スプレッドシートの結合セルを効率よく管理するために欠かせない機能だっちゃ。このメソッドを使えば、スプレッドシート内の結合セルを簡単に把握でき、データ処理を大幅にスムーズにすることができるんだよ。今回は、このメソッドの基本から応用まで、実際の使用例を交えながら、詳しく説明していくけんね。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使ってスプレッドシートを自動化する際、結合されたセル（結合セル）の存在は、通常のセル操作とは異なる考慮を必要とします。`getMergedRanges()` メソッドは、この結合セルを効率的に特定・管理し、複雑なシート構造をプログラムで自在に扱うための強力な機能です。
+
+本記事では、GASの`getMergedRanges()`の基本的な使い方から、結合セルの構造を理解する方法、動的なレポート生成、テンプレートの検証、さらには結合の解除（`unmerge()`）といった実践的な応用例まで、具体的なコードを交えて徹底解説します。結合セルにまつわる課題を克服し、GASによるスプレッドシート自動化の可能性を広げましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
 ## 結合セルとは？
 
-スプレッドシートで「結合セル」っていうのは、複数のセルを一つにまとめたもの。これって、データの見栄えを良くするためや、複雑な表を整理するためには大事な機能なんだよね。Google Apps Scriptでは、結合セルの範囲を管理するために、`merge()`、`mergeAcross()`、`mergeVertically()`といったメソッドがあるんだが、これを使った後、`getMergedRanges()`を使って、その結合セルを取り出すことができるわけさ。
+スプレッドシートにおける「結合セル」とは、複数のセルを一つに統合したものです。見出しの視覚的な整理、複雑な表レイアウトの作成、データのグループ化などに利用されます。Google Apps Scriptでは、`merge()`、`mergeAcross()`、`mergeVertically()`といったメソッドでセルを結合・作成でき、`getMergedRanges()`メソッドでこれらの結合セル情報を取得します。
 
-## getMergedRanges()メソッドってどんなもの？
+## getMergedRanges()メソッドの概要
 
-`getMergedRanges()`は、特定の範囲内で結合されているセルの範囲を配列として返してくれるメソッドだっちゃ。公式の定義によると、結合セルの範囲を表す`Range`オブジェクトの配列を返すんだよ。例えば、A1からF10までの範囲を指定すると、その範囲内に結合されているセルの位置や値をリストアップできるんだよね。
+`getMergedRanges()`は、指定した`Range`オブジェクト内に存在するすべての結合セルを、一つ以上の`Range`オブジェクトの配列として返すメソッドです。このメソッドを使うことで、特定の範囲（例: A1:F10）に含まれる結合セルの位置、値、書式などをプログラムから簡単にリストアップし、操作できます。
 
 ### 基本的な使い方
 
-<pre class="wp-block-code"><code>function getSampleMergedRanges() {
+```js
+function getSampleMergedRanges() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getSheetByName('サンプルシート');
   const targetRange = sheet.getRange('A1:F10');
   const mergedAreas = targetRange.getMergedRanges();
   
-  mergedAreas.forEach((range, index) =&gt; {
+  mergedAreas.forEach((range, index) => {
     console.log(`結合領域 ${index + 1}: ${range.getA1Notation()}`);
     console.log(`保持値: ${range.getDisplayValue()}`);
   });
 }
-</code></pre>
+```
 
-このコードでは、A1:F10範囲内の結合領域を検出し、それぞれの位置と表示されている値をコンソールに出力しているんだ。これだけで、結合セルの状態を簡単にチェックできるんだよ。
+このコードは、`A1:F10`の範囲内にある結合領域を検出し、それぞれの位置（A1形式）と表示されている値をコンソールに出力します。これにより、結合セルの状態をプログラムから簡単に確認できます。
 
 ### 実践的な活用例
 
-#### 動的レポート生成
+#### 動的なレポート生成
 
-例えば、月次の販売レポートで、ヘッダー部分が結合されている場合、その結合セルを自動で抽出して、データ処理を行うことができるんだ。
+月次レポートなどでヘッダー部分が結合されている場合、その結合セルを自動で抽出し、データ処理に活用できます。
 
-<pre class="wp-block-code"><code>function extractReportHeaders() {
+```js
+function extractReportHeaders() {
   const reportSheet = SpreadsheetApp.getActive().getSheetByName('月次レポート');
   const headerRange = reportSheet.getRange('A1:Z5');
   const mergedHeaders = headerRange.getMergedRanges();
   
-  const headerData = mergedHeaders.map(range =&gt; ({
+  const headerData = mergedHeaders.map(range => ({
     title: range.getDisplayValue(),
     position: range.getA1Notation(),
     columnSpan: range.getNumColumns()
   }));
   
-  // ヘッダー構造に基づくデータ処理を実装
+  // ヘッダー構造に基づいてデータ処理を実行
   processReportData(headerData);
 }
-</code></pre>
+```
+このように、結合セルのタイトルや位置、列幅を取得し、その情報を基に後続の処理を動的に構築することが可能です。
 
-結合セルのタイトルや位置、列の幅を取得して、さらにそのデータを元に処理を進めることができるんだよ。
+#### 結合セルの構造を検証
 
-#### 結合セルの状態確認
+テンプレートとして使用するスプレッドシートの結合構造が、意図した通りに設定されているかを確認することもできます。
 
-<pre class="wp-block-code"><code>function validateMergedStructure() {
+```js
+function validateMergedStructure() {
   const templateSheet = SpreadsheetApp.openById('テンプレートID').getSheetByName('フォーマット');
-  const requiredMerges = &#91;
+  const requiredMerges = [
     { address: 'B2:D2', expectedValue: '部門別集計' },
     { address: 'F3:H5', expectedValue: '四半期比較' }
   ];
 
-  requiredMerges.forEach(({ address, expectedValue }) =&gt; {
+  requiredMerges.forEach(({ address, expectedValue }) => {
     const range = templateSheet.getRange(address);
-    const merged = range.getMergedRanges();
+    const mergedRanges = range.getMergedRanges();
     
-    if (merged.length === 0 || merged&#91;0].getDisplayValue() !== expectedValue) {
-      throw new Error(`テンプレート構造が不正です: ${address}`);
+    // getMergedRanges()は範囲内の結合セルを返すため、対象のRangeが結合されているか確認
+    const isMerged = mergedRanges.some(mergedRange => mergedRange.getA1Notation() === address);
+
+    if (!isMerged) {
+      throw new Error(`テンプレート構造が不正です: ${address} は結合されていません。`);
+    }
+    
+    if (range.getDisplayValue() !== expectedValue) {
+      throw new Error(`テンプレート構造が不正です: ${address} の値が異なります。`);
     }
   });
 }
-</code></pre>
-
-テンプレートの結合構造が正しいかどうか、事前にチェックしておくこともできるんだよ。
+```
+このスクリプトにより、テンプレートの結合構造と内容の整合性を事前に検証し、エラーを防ぐことができます。
 
 ## 注意点とベストプラクティス
 
-`getMergedRanges()`を使う際に気を付けたいポイントがいくつかあるんだよ。
+`getMergedRanges()`を使用する際には、いくつかの注意点があります。
 
 ### 取得順序
 
-このメソッドで取得される結合セルの順序は、必ずしもスプレッドシート上の順番通りではないんだよ。もし順番が大事な場合は、ソートをかけるといいさ。
+このメソッドが返す結合セルの配列の順序は、スプレッドシート上の視覚的な順序と必ずしも一致しません。特定の順序で処理する必要がある場合は、取得後にソート処理を追加することをお勧めします。
 
-<pre class="wp-block-code"><code>const mergedRanges = range.getMergedRanges()
-  .sort((a, b) =&gt; a.getRow() - b.getRow() || a.getColumn() - b.getColumn());
-</code></pre>
+```js
+const mergedRanges = range.getMergedRanges()
+  .sort((a, b) => a.getRow() - b.getRow() || a.getColumn() - b.getColumn());
+```
 
 ### 処理の最適化
 
-大量のデータを処理する際は、`getDataRange()`と組み合わせることで効率的に処理ができるんだ。例えば、すべての結合セルを一括で取得する方法だね。
+大量のセルが含まれるシートで処理を行う場合、`getDataRange()`と組み合わせてシート全体の結合セルを一括で取得することで、処理の効率を高めることができます。
 
-<pre class="wp-block-code"><code>function processAllMergedCells() {
+```js
+function processAllMergedCells() {
   const sheet = SpreadsheetApp.getActiveSheet();
   const allMerged = sheet.getDataRange().getMergedRanges();
-  // 処理を最適化するためにバッチ処理などを実装
+  // 大量の結合セルを効率的に処理するためのロジックを実装
 }
-</code></pre>
+```
 
 ## まとめ
 
-`getMergedRanges()`は、Google Apps Scriptを使ったスプレッドシートの操作で、結合セルを効率的に扱うために非常に便利なメソッドだっちゃ。これをうまく活用すれば、レポート作成やデータ分析がグッと楽になるさ。最初は少し難しいかもしれんけど、実際に試してみると、その便利さがよくわかるけんね！
+`getMergedRanges()`は、Google Apps Scriptで結合セルを扱う上で非常に強力なメソッドです。このメソッドを使いこなすことで、レポート作成の自動化やデータ分析の精度向上など、スプレッドシート操作の可能性が大きく広がります。ぜひ、実際の業務で活用してみてください。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
 {{< blog-card "https://caymezon.com/gas-merge/" >}}
+
 {{< blog-card "https://auto-worker.com/blog/?p=1986" >}}
+
 {{< blog-card "https://techuplife.tech/gas-ss-rmerge/" >}}
+
 {{< blog-card "https://teratail.com/questions/l1s3uj20zw048c" >}}
+
 {{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}}

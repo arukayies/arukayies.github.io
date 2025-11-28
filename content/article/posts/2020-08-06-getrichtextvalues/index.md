@@ -1,315 +1,232 @@
 ---
-title: GASでスプレッドシートの指定範囲からリッチテキスト情報を一括取得する方法
-author: arukayies
-type: post
-date: 2020-08-06T14:31:40+00:00
-excerpt: GASでスプレッドシートの指定範囲すべてのリッチテキストを取得する方法を紹介します！
-url: /gas/getrichtextvalues
+title: "【GASスプレッドシート】getRichTextValues()でリッチテキストを一括取得・編集・SEO最適化"
+description: "Google Apps Script (GAS) の`getRichTextValues()`メソッドを徹底解説。スプレッドシートの指定範囲から太字、色、リンクなどのリッチテキスト情報を効率的に一括取得・編集する方法を、具体的なコード例で紹介します。`RichTextValue`オブジェクトの構造、`setRichTextValue()`での設定、スタイルを保持したテキスト置換、パフォーマンス最適化まで、GASによる高度なスプレッドシート自動化に役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getRichTextValues", "RichTextValue", "リッチテキスト", "書式設定", "ハイパーリンク", "getTextStyle", "getRuns", "setRichTextValue", "一括取得", "自動化", "データ編集", "効率化", "プログラム", "開発"]
+date: "2020-08-06T14:31:40.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getrichtextvalues"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1596724301
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:34:44
-categories:
-  - GAS
-tags:
-  - GAS
-  - getRichTextValues()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年8月"]
 ---
-Googleスプレッドシートを使いこなしたいなら、&#8221;リッチテキスト&#8221; も避けては通れんばい。普通の文字列じゃなくて、部分的に太字にしたり、色を変えたり、リンクを仕込んだり……そんな高度な装飾を自在に操れると、シートの見栄えも格段にアップするっちゃね！
 
-今回は、Google Apps Script（GAS）の `getRichTextValues()` メソッドを中心に、リッチテキストの扱い方を分かりやすく解説するけん、しっかりついてきてね。
+Googleスプレッドシートのセルに、**太字、色付け、ハイパーリンクなどのリッチな書式情報**を含めることは、データの視認性と伝達力を大幅に向上させます。しかし、通常の`getValues()`メソッドでは、これらの書式情報は取得できません。Google Apps Script (GAS) でリッチテキスト情報をプログラム的に管理するには、`getRichTextValues()`メソッドが不可欠です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+本記事では、スプレッドシートの指定範囲からリッチテキスト情報を効率的に一括取得・編集するための`getRichTextValues()`メソッドを徹底解説します。`RichTextValue`オブジェクトの構造、`setRichTextValue()`によるスタイルの設定、さらには**スタイルを保持したままテキストを置換する高度なテクニック**や、GASにおけるパフォーマンス最適化のヒントまで、具体的なコード例を交えて詳しく紹介します。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+GASを活用して、スプレッドシートの高度な自動化とデータ表現力の向上を実現したいすべての方に役立つ情報を提供します。
 
-## リッチテキストとは？
+{{< affsearch keyword="GAS スプレッドシート リッチテキスト 一括取得 編集" img="/gas.jpg">}}
 
-スプレッドシートのセルに書き込む文字列は、普通のテキスト（プレーンテキスト）とリッチテキストの2種類があるとばい。リッチテキストは、文字ごとに違うフォントや色、太字・斜体などのスタイル情報を持っとるとさ。
+## リッチテキストとは？GASにおける書式付きテキストの操作
 
-例えば、`getValues()` で取得できるのは単なる文字列ばってん、`getRichTextValues()` を使うと、書式情報も含めて取得できるけん、より柔軟な処理ができるとばい。
+Googleスプレッドシートのセルには、単なる文字列である「プレーンテキスト」だけでなく、以下のような様々なスタイル情報を持つことができる「リッチテキスト」が入力されます。
 
-<pre class="wp-block-code"><code>const range = sheet.getRange("A1:C3");
-const richTextData = range.getRichTextValues();
-</code></pre>
+*   **太字**、*斜体*、<u>下線</u>などの文字スタイル
+*   <font color="#FF0000">文字の色</font>、背景色、フォントの種類やサイズ
+*   [埋め込みハイパーリンク](https://www.google.com/)
 
-これで、`richTextData[row][col]` にリッチテキスト情報がまるごと格納されるっちゃん。
+GASの`Range.getValues()`メソッドでは、これらの書式情報は失われ、純粋な文字列のみが二次元配列として返されます。しかし、`Range.getRichTextValues()`メソッドを使用することで、**書式情報を含んだ`RichTextValue`オブジェクトの二次元配列**としてセルデータを取得できます。これにより、スクリプトによる詳細な書式解析、動的なスタイル変更、ハイパーリンク操作など、より高度なテキスト操作が可能になります。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+### getRichTextValues() の基本的な使い方：範囲内のリッチテキストを一括取得
 
-## リッチテキストの構造とスタイル管理
+`getRichTextValues()`メソッドは、指定した`Range`オブジェクトの全セルから`RichTextValue`オブジェクトを一括で取得し、二次元配列として返します。これは、多数のセルを一つずつ処理するよりもはるかに効率的で、GASの実行速度を最適化するための重要なベストプラクティスです。
 
-リッチテキストは `RichTextValue` オブジェクトとして扱われ、部分ごとに異なるスタイルを適用できるとよ。
+```javascript
+/**
+ * アクティブなシートの指定範囲（A1:C3）からリッチテキスト情報を一括取得し、
+ * 各セルのプレーンテキストをログに出力する関数。
+ */
+function fetchAllRichTextData() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("A1:C3");      // 対象範囲をA1:C3に設定
+  
+  // 指定範囲の各セルのRichTextValueオブジェクトを二次元配列として一括取得
+  const richTextValues = range.getRichTextValues();
 
-### getRuns() でスタイル情報を分解
-
-リッチテキストのスタイルを細かく取得したいときは、`getRuns()` を使うとばい。
-
-<pre class="wp-block-code"><code>const runs = richTextValue.getRuns();
-runs.forEach(run =&gt; {
-  const style = run.getTextStyle();
-  console.log(`Text: ${run.getText()}, Bold: ${style.isBold()}`);
-});
-</code></pre>
-
-こうすると、セル内の文字列のどこが太字か、色がついとるかが分かるけん、より細かい処理が可能になるばい。
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## リッチテキストの編集と適用
-
-### リッチテキストを作成する
-
-GAS では `newRichTextValue()` を使って、新しくリッチテキストを作ることもできるっちゃね。
-
-<pre class="wp-block-code"><code>const builder = SpreadsheetApp.newRichTextValue()
-  .setText("Hello World")
-  .setTextStyle(0, 5, SpreadsheetApp.newTextStyle().setBold(true).build());
-cell.setRichTextValue(builder.build());
-</code></pre>
-
-この方法を使えば、「特定の単語だけ強調表示したい！」みたいなことも簡単にできるけん、便利やね。
-
-### 文字列のスタイルを保持しつつ置換する
-
-リッチテキストの内容を変更したいばってん、スタイルは維持したい！ そんなときは、以下の方法を試してみるとよ。
-
-<pre class="wp-block-code"><code>function replaceTextKeepStyle(sheet, search, replace) {
-  const range = sheet.getRange("A1:C3");
-  const richTexts = range.getRichTextValues();
-
-  richTexts.forEach((row, rowIndex) =&gt; {
-    row.forEach((richText, colIndex) =&gt; {
-      if (!richText) return;
-      const newText = richText.getText().replace(new RegExp(search, "g"), replace);
-      const builder = SpreadsheetApp.newRichTextValue().setText(newText);
-      richText.getRuns().forEach(run =&gt; {
-        builder.setTextStyle(run.getStartIndex(), run.getEndIndex(), run.getTextStyle());
-      });
-      richTexts&#91;rowIndex]&#91;colIndex] = builder.build();
+  // 取得した二次元配列をループ処理
+  richTextValues.forEach((row, rowIndex) => {
+    row.forEach((richTextValue, colIndex) => {
+      const cellAddress = sheet.getRange(rowIndex + 1, colIndex + 1).getA1Notation();
+      if (richTextValue) {
+        // RichTextValueオブジェクトからプレーンテキストを取得
+        Logger.log(`セル ${cellAddress} のプレーンテキスト: "${richTextValue.getText()}"`);
+      } else {
+        Logger.log(`セル ${cellAddress} にはリッチテキスト情報がありません（空白または数値/日付）。`);
+      }
     });
   });
-  range.setRichTextValues(richTexts);
 }
-</code></pre>
+```
+このスクリプトは、指定された範囲内の各セルのリッチテキスト情報を一括で取得し、そのプレーンテキストをログに出力します。
 
-これを使えば、「旧社名を新社名に変えたい！」みたいなシーンでも、太字や色をキープしたまま置換できるっちゃ。
+## `RichTextValue`オブジェクトの詳細解析とスタイル操作
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+`getRichTextValues()`で取得した個々の`RichTextValue`オブジェクトは、テキスト内容とそれに適用されたスタイルを詳細に解析・操作するためのメソッドを提供します。
 
-## リンク付きテキストを扱う
+### 1. `getRuns()` でスタイル区間（ラン）を取得し、部分スタイルを解析
 
-セル内の一部の文字にリンクを埋め込むことも可能ばい。
+一つのセル内のテキストでも、部分的に異なるスタイルが適用されている場合があります（例: 「**重要**な情報です」）。このような複雑なリッチテキストを解析するには、`getRuns()`メソッドが非常に有効です。`getRuns()`は、スタイルの異なる区間（「ラン」と呼びます）ごとに`RichTextValue`オブジェクトの配列を返します。これにより、各ランに適用されているスタイル情報を個別に取得できます。
 
-<pre class="wp-block-code"><code>const builder = SpreadsheetApp.newRichTextValue()
-  .setText("Google公式サイト")
-  .setTextStyle(0, 6, SpreadsheetApp.newTextStyle().setLinkUrl("https://www.google.com").build());
-cell.setRichTextValue(builder.build());
-</code></pre>
+```javascript
+/**
+ * A1セルのリッチテキストをgetRuns()で解析し、各ランのテキストとスタイルをログに出力する関数。
+ * 例: A1セルに「これは**重要な情報**です」と入力されている場合。
+ */
+function analyzeRichTextRuns() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const richTextValue = sheet.getRange("A1").getRichTextValue(); // A1セルのRichTextValueを取得
 
-部分的にリンクを埋め込めるけん、「特定のキーワードにだけリンクをつける」とかも簡単にできるとよ。
+  if (richTextValue) {
+    const runs = richTextValue.getRuns(); // スタイルが異なる区間ごとにRichTextValueオブジェクトを取得
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+    Logger.log(`A1セルのリッチテキストは ${runs.length} つのランに分割されました。`);
 
-## まとめ
+    runs.forEach((run, index) => {
+      const runText = run.getText();         // 各ランのテキスト部分
+      const runStyle = run.getTextStyle();     // 各ランに適用されたTextStyleオブジェクト
+      const runLinkUrl = run.getLinkUrl();   // 各ランに設定されたハイパーリンクURL
 
-`getRichTextValues()` を使えば、スプレッドシートのセル内のリッチテキスト情報を取得して、スタイルを適用したり編集したりできるばい。
+      Logger.log(`--- ラン ${index + 1} ---`);
+      Logger.log(`  テキスト: "${runText}"`);
+      Logger.log(`  太字: ${runStyle.isBold() ? 'はい' : 'いいえ'}`);
+      Logger.log(`  フォント色: ${runStyle.getForegroundColor() || 'なし'}`);
+      if (runLinkUrl) {
+        Logger.log(`  リンク先URL: ${runLinkUrl}`);
+      }
+      // 他にもgetTextStyle()で取得できる様々なスタイル情報（フォントサイズ、斜体など）を解析可能
+    });
+  } else {
+    Logger.log(`A1セルにはリッチテキスト情報が見つかりませんでした。`);
+  }
+}
+```
+この解析により、各部分に適用されている太字、色、ハイパーリンクなどの詳細なスタイル情報を正確に把握できます。
 
-**今回のポイントはコレ！**
+## GASでリッチテキストを作成・編集する
 
-<ul class="wp-block-list">
-  <li>
-    <code>getRichTextValues()</code> でリッチテキストを取得できる。
-  </li>
-  <li>
-    <code>getRuns()</code> で部分ごとのスタイル情報を取り出せる。
-  </li>
-  <li>
-    <code>newRichTextValue()</code> でリッチテキストを作成・編集できる。
-  </li>
-  <li>
-    スタイルを保持しながらテキストを置換することも可能。
-  </li>
-  <li>
-    ハイパーリンク付きテキストの処理もできる。
-  </li>
-</ul>
+GASでは、プログラムで新しいリッチテキストを生成したり、既存のリッチテキストを編集してセルに適用したりすることも可能です。
 
-スプレッドシートをもっと使いこなしたいなら、このリッチテキスト機能は知っておくべきばい！ ぜひ試してみてね！
+### 1. `newRichTextValue()` と `RichTextValueBuilder` でリッチテキストを構築
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+`SpreadsheetApp.newRichTextValue()` を使用して`RichTextValueBuilder`オブジェクトを作成し、テキストと様々なスタイルを段階的に設定することで、新しいリッチテキストをプログラムで構築できます。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+```javascript
+/**
+ * 新しいリッチテキストをプログラムで作成し、A1セルに設定する関数。
+ * 「Hello」を太字、「World!」を赤字で表示します。
+ */
+function createAndApplyRichText() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const cell = sheet.getRange("A1");
+
+  // RichTextValueBuilderを作成し、テキストとスタイルを設定
+  const richTextBuilder = SpreadsheetApp.newRichTextValue()
+    .setText("Hello, World!")
+    // テキストの一部（0文字目から5文字目「Hello」）を太字に設定
+    .setTextStyle(0, 5, SpreadsheetApp.newTextStyle().setBold(true).build())
+    // テキストの一部（7文字目から13文字目「World!」）を赤字に設定
+    .setTextStyle(7, 13, SpreadsheetApp.newTextStyle().setForegroundColor("red").build());
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
+  // 構築したRichTextValueオブジェクトをセルに適用
+  cell.setRichTextValue(richTextBuilder.build());
+  Logger.log("A1セルに新しいリッチテキストを設定しました。");
+}
+```
+この方法により、「特定のキーワードだけを強調する」「自動生成したレポートに重要項目を色付けする」といった動的な書式設定が容易になります。
+
+### 2. テキストの一部にハイパーリンクを設定する
+
+`RichTextValueBuilder`の`setLinkUrl()`メソッドを使えば、テキストの特定の部分にハイパーリンクを埋め込むことができます。
+
+```javascript
+/**
+ * セル内のテキストの一部にハイパーリンクを設定する関数。
+ * B1セルに「詳しくはGoogle公式サイトへ」と表示し、「Google公式サイト」にリンクを設定します。
+ */
+function addHyperlinkToText() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const cell = sheet.getRange("B1");
+
+  const richTextBuilder = SpreadsheetApp.newRichTextValue()
+    .setText("詳しくはGoogle公式サイトへ")
+    // テキストの一部（4文字目から12文字目「Google公式サイト」）にリンクを設定
+    .setLinkUrl(4, 12, "https://www.google.com"); 
+
+  cell.setRichTextValue(richTextBuilder.build());
+  Logger.log("B1セルにハイパーリンク付きリッチテキストを設定しました。");
+}
+```
+
+### 3. スタイルを維持したままテキスト内容を置換する（高度なテクニック）
+
+既存のセルの書式（太字、色、リンクなど）を壊さずに、セル内のテキスト内容だけを置換したいという高度なケースがあります。これは`getRuns()`と`RichTextValueBuilder`を組み合わせることで実現できますが、置換によってテキスト長が変わる場合、スタイルの適用範囲（インデックス）の再計算が必要となるため、複雑なロジックが必要です。
+
+以下は、あくまで概念的な例であり、本格的な実装には注意が必要です。
+
+```javascript
+/**
+ * 指定されたテキストを検索し、スタイルを保持したまま新しいテキストに置換する関数。
+ * ★注意: テキスト長が変わるとスタイルのインデックスがずれるため、本番利用には詳細なロジックが必要です。
+ */
+function replaceTextPreservingStyle(sheet, targetRange, searchText, replaceText) {
+  const richTextValues = targetRange.getRichTextValues(); // 範囲のリッチテキストを一括取得
+  const newRichTextValues = [];
+
+  richTextValues.forEach((row, rowIndex) => {
+    const newRow = [];
+    row.forEach((richTextValue, colIndex) => {
+      if (!richTextValue) { // リッチテキスト情報がない場合はそのまま
+        newRow.push(richTextValue);
+        return;
+      }
+
+      const originalText = richTextValue.getText();
+      const newText = originalText.replace(new RegExp(searchText, "g"), replaceText);
+
+      if (originalText !== newText) {
+        const builder = SpreadsheetApp.newRichTextValue().setText(newText);
+        let currentIndex = 0; // 新しいテキストでの現在のインデックス位置
+
+        richTextValue.getRuns().forEach(run => {
+          const runOriginalText = run.getText();
+          const runOriginalLength = runOriginalText.length;
+          const runNewText = runOriginalText.replace(new RegExp(searchText, "g"), replaceText);
+          const runNewLength = runNewText.length;
+
+          // TODO: ここで新しいテキストにおけるrunの開始/終了インデックスを正確に計算するロジックが必要
+          // 現状の単純な計算では、searchTextの出現位置とreplaceTextの長さによってずれる
+          const newStartIndex = currentIndex;
+          const newEndIndex = currentIndex + runNewLength;
           
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://example.com/rich-text-guide" title="Example Domain" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fexample.com%2Frich-text-guide?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fexample.com%2Frich-text-guide?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Example Domain
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://example.com/rich-text-guide" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://example.com/rich-text-guide" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          example.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+          builder.setTextStyle(newStartIndex, newEndIndex, run.getTextStyle());
+          builder.setLinkUrl(newStartIndex, newEndIndex, run.getLinkUrl());
+          currentIndex += runNewLength; // 次のランの開始位置を更新
+        });
+        newRow.push(builder.build());
+      } else {
+        newRow.push(richTextValue); // 変更がない場合は元のRichTextValueをそのまま使用
+      }
+    });
+    newRichTextValues.push(newRow);
+  });
+  targetRange.setRichTextValues(newRichTextValues); // 新しいリッチテキストを一括設定
+  Logger.log(`範囲 ${targetRange.getA1Notation()} 内のテキスト置換が完了しました。`);
+}
+```
+上記のコードは、基本的な置換の概念を示していますが、`searchText`と`replaceText`の長さが異なる場合に正確なスタイル範囲を維持するには、より複雑なインデックス計算ロジックが必要です。実用的な利用には、この部分のロジックを慎重に設計する必要があります。
+
+## まとめ：`getRichTextValues()` でGASスプレッドシートの表現力を最大化
+
+Google Apps Scriptの`getRichTextValues()`メソッドは、スプレッドシートのセル内に設定された多様なリッチテキスト情報をプログラムで効率的に管理するための、非常に強力な基盤を提供します。
+
+*   **リッチテキストの一括取得と解析**: `getRichTextValues()`でセル範囲のリッチテキストを高速に取得し、`getRuns()`で複雑なスタイルや複数のハイパーリンクを持つテキストを詳細に解析できます。
+*   **動的なリッチテキストの作成と編集**: `newRichTextValue()`と`RichTextValueBuilder`を用いることで、プログラムから太字、色、ハイパーリンクなどを自由に設定したリッチテキストを生成し、セルに適用できます。
+*   **高度なデータ管理の実現**: スタイルを保持したテキスト置換（インデックス調整に注意）など、より高度な操作も可能になり、自動レポートの視覚的な強化や、コンテンツの自動校正ツールなど、GASの活用範囲を大きく広げます。
+
+本記事で紹介した`getRichTextValues()`とその関連メソッドの知識と実践例を活用し、あなたのGASスクリプトをよりスマートで表現力豊かなものへと進化させてください。スプレッドシートのデータを単なる数値や文字列としてだけでなく、視覚的な情報も含めて制御することで、業務の効率化と品質向上に大きく貢献できます。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}}
+
+{{< blog-card "https://qiita.com/taniwaki/items/2f8f74a00508f7f2b90b" >}}

@@ -1,450 +1,134 @@
 ---
-title: GASでスプレッドシートのBigQueryデータソースを効率的に取得する方法
-author: arukayies
-type: post
-date: 2020-06-09T14:29:59+00:00
-excerpt: GASでスプレッドシートのBigQueryで使うデータを取得する方法を紹介します！
-url: /gas/getdatasourcetables
+title: "【GAS】getDataSourceTables()でBigQueryデータソース表を取得・更新する方法"
+description: "GASの`getDataSourceTables()`を使い、スプレッドシートに接続されたBigQueryなどの「データソース表」を操作する方法を解説。`refreshData()`によるデータ更新の自動化、`waitForCompletion()`での同期処理、そして複数のデータソースを一括で扱う実践的なテクニックをコード付きで紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "BigQuery", "getDataSourceTables", "データ連携", "自動化"]
+date: "2020-06-09T14:29:59.000Z"
+url: "/gas/getdatasourcetables"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1591713000
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:13:39
-categories:
-  - GAS
-tags:
-  - GAS
-  - getDataSourceTables()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
+lastmod: "2025-11-25T00:00:00+00:00"
 ---
-こんにちは！今回はGoogle Apps Script（GAS）の`getDataSourceTables()`メソッドを使いこなすための実践ガイドをお届けするけ。これを覚えておけば、スプレッドシート内のデータソースを自在に操作できるようになるけん、ぜひチェックしてみてな！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Googleスプレッドシートの「接続されたシート」機能は、BigQueryなどの外部データを直接扱える強力な機能ですが、そのデータ更新を自動化したいと考えたことはありませんか？ `getDataSourceTables()`は、このデータソースとの連携をGoogle Apps Script (GAS)から制御するための専門的なメソッドです。
 
-## 基本的な仕組み
+この記事では、`getDataSourceTables()`を使ってデータソース表を取得し、そのデータをプログラムで更新・管理する方法を解説します。
 
-### データソーステーブルとは？
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-まず最初に、`getDataSourceTables()`が返す「データソーステーブル」って何かを理解しないといけんばい。これは、BigQueryなどの外部データとスプレッドシートをつなげる役割をしてるんじゃけど、普通のスプレッドシートとはちょっと違う構造になっとるんよね。主に以下の要素で構成されとるよ。
+## getDataSourceTables()とは？
 
-<ul class="wp-block-list">
-  <li>
-    <strong>データソース仕様（Spec）</strong>：接続するプロジェクトやクエリの情報
-  </li>
-  <li>
-    <strong>実行状態（Status）</strong>：更新の進行具合やエラー情報
-  </li>
-  <li>
-    <strong>メタデータ</strong>：最終更新日時や行数などの情報
-  </li>
-</ul>
+`getDataSourceTables()`は、特定のシートに存在する**データソース表**（`DataSourceTable`オブジェクト）を配列として取得するメソッドです。
 
-<pre class="wp-block-code"><code>// 基本的なテーブル取得方法
-const dataSourceTables = SpreadsheetApp.getActiveSheet().getDataSourceTables();
-dataSourceTables.forEach(table =&gt; {
-  console.log(table.getStatus().getExecutionState()); // 実行状態の確認
-});
-</code></pre>
+データソース表は、見た目は通常のセル範囲ですが、内部にはBigQueryへの接続情報やクエリ、更新状態などを持つ特殊なオブジェクトです。このメソッドを使うことで、GASからこれらのデータソース表にアクセスし、操作することが可能になります。
 
-## 主要メソッドとその使い方
-
-### データ更新の方法
-
-データの更新を制御するには、以下のメソッドを使うけど、覚えておくと便利だよ！<figure class="wp-block-table">
-
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド名
-    </th>
-    
-    <th>
-      役割
-    </th>
-    
-    <th>
-      タイムアウト設定
-    </th>
-    
-    <th>
-      強制更新フラグ
-    </th>
-  </tr>
+```javascript
+function findDataSourceTables() {
+  const sheet = SpreadsheetApp.getActiveSheet();
   
-  <tr>
-    <td>
-      <code>refreshData()</code>
-    </td>
-    
-    <td>
-      通常のデータ更新
-    </td>
-    
-    <td>
-      不要
-    </td>
-    
-    <td>
-      ×
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>forceRefreshData()</code>
-    </td>
-    
-    <td>
-      エラーがあっても強制的に更新
-    </td>
-    
-    <td>
-      不要
-    </td>
-    
-    <td>
-      ◯
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>waitForCompletion()</code>
-    </td>
-    
-    <td>
-      更新完了を待機する
-    </td>
-    
-    <td>
-      必須（60-300秒）
-    </td>
-    
-    <td>
-      &#8211;
-    </td>
-  </tr>
-</table></figure> 
+  // シート内の全てのデータソース表を取得
+  const dataSourceTables = sheet.getDataSourceTables();
 
-<pre class="wp-block-code"><code>// 更新処理の例
-try {
-  dataSourceTable.refreshData();
-} catch (e) {
-  dataSourceTable.forceRefreshData(); // エラーから復帰
-}
-dataSourceTable.waitForCompletion(300); // 5分待つ
-</code></pre>
-
-### 実行状態の監視とエラーハンドリング
-
-実行状態は`getStatus()`で確認できるけど、状態によってどんな処理をするかを分けることができるんじゃけど、これを覚えておくと便利だよ！
-
-<pre class="wp-block-code"><code>// 実行状態に応じた処理
-const status = dataSourceTable.getStatus();
-switch(status.getExecutionState()) {
-  case SpreadsheetApp.DataExecutionState.FAILED:
-    handleError(status.getErrorCode());
-    break;
-  case SpreadsheetApp.DataExecutionState.SUCCEEDED:
-    processData(table.getRange());
-    break;
-}
-</code></pre>
-
-## よくある活用方法
-
-### 複数のテーブルを一括更新
-
-複数のデータソーステーブルをまとめて更新する時に役立つ処理だよ！これを使えば、スプレッドシート内の全てのデータを効率よく更新できるけ。
-
-<pre class="wp-block-code"><code>function refreshAllDataSourceTables() {
-  const sheets = SpreadsheetApp.getActive().getSheets();
-  sheets.forEach(sheet =&gt; {
-    const tables = sheet.getDataSourceTables();
-    if (tables.length === 0) return;
-    
-    SpreadsheetApp.enableAllDataSourcesExecution();
-    tables.forEach(table =&gt; {
-      table.forceRefreshData();
-      table.waitForCompletion(300);
-    });
-  });
-}
-</code></pre>
-
-### ダイナミックなクエリ更新
-
-たとえば、UIからクエリを動的に変更して、データソースの設定を変更する場合にも使えるんじゃけど、こんな感じで組み合わせて使うと便利ばい。
-
-<pre class="wp-block-code"><code>function updateQueryParameters() {
-  const paramSheet = SpreadsheetApp.getActive().getSheetByName('Params');
-  const projectId = paramSheet.getRange('B1').getValue();
-  const queryTemplate = paramSheet.getRange('B2').getValue();
-
-  const dataSource = dataSourceTable.getDataSource();
-  const newSpec = dataSource.getSpec()
-    .asBigQuery()
-    .setProjectId(projectId)
-    .setRawQuery(queryTemplate)
-    .build();
-  
-  dataSource.updateSpec(newSpec); // 仕様を更新
-}
-</code></pre>
-
-## 効率的なデータ処理
-
-### バッチ処理の導入
-
-大量のデータを扱う時は、バッチ処理を使うと効率的に進められるけ。例えば、複数のテーブルをグループに分けて処理する方法を使うと便利ばい。
-
-<pre class="wp-block-code"><code>function batchUpdateTables(tables) {
-  const BATCH_SIZE = 5; // BigQuery並列処理の上限
-  const batches = chunkArray(tables, BATCH_SIZE);
-
-  batches.forEach(batch =&gt; {
-    const promises = batch.map(table =&gt; {
-      return new Promise(resolve =&gt; {
-        table.refreshData();
-        table.waitForCompletion(300);
-        resolve();
-      });
-    });
-    Promise.all(promises).then(processNextBatch);
-  });
-}
-</code></pre>
-
-### キャッシュ戦略
-
-キャッシュを使うことで、頻繁にデータを取得する場合でもパフォーマンスを向上させることができるんじゃけど、これも覚えておくと便利だよ。
-
-<pre class="wp-block-code"><code>const CACHE_EXPIRY = 60 * 30; // 30分キャッシュ
-const cache = CacheService.getScriptCache();
-
-function getCachedData(table) {
-  const key = `table_${table.getDataSource().getProjectId()}`;
-  let data = cache.get(key);
-  
-  if (!data) {
-    data = table.getRange().getValues();
-    cache.put(key, JSON.stringify(data), CACHE_EXPIRY);
+  if (dataSourceTables.length > 0) {
+    console.log(`このシートには ${dataSourceTables.length} 個のデータソース表があります。`);
+  } else {
+    console.log("このシートにデータソース表はありません。");
   }
-  return JSON.parse(data);
 }
-</code></pre>
+```
 
-## セキュリティと権限管理
+## データの更新を自動化する
 
-データを操作するには、適切なスコープや権限が必要なんじゃけど、そのあたりも押さえておくべきポイントばい。<figure class="wp-block-table">
+データソース表の最も一般的な操作は、データの更新です。これには`refreshData()`と`waitForCompletion()`の2つのメソッドが鍵となります。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      操作内容
-    </th>
+### `refreshData()` と `forceRefreshData()`
+
+- **`refreshData()`**: データソースの更新を開始します。更新処理はバックグラウンドで非同期に行われます。
+- **`forceRefreshData()`**: エラーが発生している状態でも強制的に更新を開始します。
+
+### `waitForCompletion(timeoutInSeconds)`
+
+`refreshData()`は処理の完了を待たないため、更新が終わるまで待機したい場合は`waitForCompletion()`を使います。
+
+- **`timeoutInSeconds`**: タイムアウトまでの秒数を指定します（最大300秒）。指定した時間内に更新が完了しない場合、スクリプトはエラーをスローします。
+
+### 実践例：データソースを定期的に更新する
+
+以下のスクリプトは、特定のスプレッドシートに含まれる全てのデータソース表を強制的に更新します。この関数をトリガーで定期実行すれば、データの鮮度を自動で保つことができます。
+
+```javascript
+function refreshAllDataSources() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const allSheets = ss.getSheets();
+
+  // スプレッドシート全体のデータソース実行を有効にする
+  SpreadsheetApp.enableAllDataSourcesExecution();
+
+  allSheets.forEach(sheet => {
+    const tables = sheet.getDataSourceTables();
     
-    <th>
-      必須OAuthスコープ
-    </th>
-  </tr>
+    tables.forEach(table => {
+      console.log(`[${sheet.getName()}]シートのデータソースを更新中...`);
+      try {
+        // 更新を開始し、完了を最大5分間待つ
+        table.refreshData();
+        table.waitForCompletion(300); 
+        
+        const status = table.getStatus();
+        if (status.getExecutionState() === SpreadsheetApp.DataExecutionState.SUCCEEDED) {
+          console.log("更新が正常に完了しました。");
+        } else {
+          console.error(`更新に失敗しました: ${status.getErrorCode()}`);
+        }
+      } catch (e) {
+        console.error(`更新中にエラーが発生しました: ${e.message}`);
+      }
+    });
+  });
+}
+```
+
+## データソースの仕様を動的に変更する
+
+`updateSpec()`メソッドを使えば、GASからBigQueryのクエリを動的に変更することも可能です。
+
+例えば、特定の日付範囲のデータだけを取得するように、クエリ内の日付文字列を書き換えることができます。
+
+```javascript
+function updateQueryByDate() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const table = sheet.getDataSourceTables()[0]; // 最初のデータソース表を対象とする
   
-  <tr>
-    <td>
-      データソースの参照
-    </td>
-    
-    <td>
-      <code>https://www.googleapis.com/auth/spreadsheets.currentonly</code>
-    </td>
-  </tr>
+  // 今日の日付を 'YYYY-MM-DD' 形式で取得
+  const today = Utilities.formatDate(new Date(), "JST", "yyyy-MM-dd");
   
-  <tr>
-    <td>
-      データ更新・仕様変更
-    </td>
-    
-    <td>
-      <code>https://www.googleapis.com/auth/spreadsheets</code>
-    </td>
-  </tr>
-</table></figure> 
+  const spec = table.getDataSource().getSpec();
+  const originalQuery = spec.asBigQuery().getRawQuery();
+
+  // クエリ内のプレースホルダを今日の日付で置換
+  const newQuery = originalQuery.replace("{{TARGET_DATE}}", today);
+
+  // 新しいクエリで仕様を更新
+  const newSpec = spec.asBigQuery().setRawQuery(newQuery).build();
+  table.getDataSource().updateSpec(newSpec);
+  
+  console.log("クエリを更新しました。");
+}
+```
 
 ## まとめ
 
-`getDataSourceTables()`メソッドを活用すれば、Google SheetsとBigQueryを使ったデータ連携がぐっと楽になるけん、ぜひこのガイドを参考にしてみてな！データ更新の制御やエラーハンドリング、バッチ処理といったテクニックを駆使して、さらに効率よくデータ操作を行えるようになるはずじゃ！
+`getDataSourceTables()`と関連メソッドを使いこなすことで、スプレッドシートとBigQueryのデータ連携を高度に自動化できます。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+-   **`getDataSourceTables()`** でシート内のデータソース表にアクセス。
+-   **`refreshData()`** と **`waitForCompletion()`** でデータ更新を自動化・同期。
+-   **`updateSpec()`** でクエリを動的に変更し、より柔軟なデータ取得を実現。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/data-source-table" title="Class DataSourceTable  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+これらのテクニックを活用して、データ分析やレポーティング業務の効率を飛躍的に向上させましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/data-source-table" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class DataSourceTable  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/data-source-table" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/data-source-table" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://stackoverflow.com/questions/62921520/connected-sheets-cannot-be-targeted-with-macros-or-scripts" title="Attention Required! | Cloudflare" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fstackoverflow.com%2Fquestions%2F62921520%2Fconnected-sheets-cannot-be-targeted-with-macros-or-scripts?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fstackoverflow.com%2Fquestions%2F62921520%2Fconnected-sheets-cannot-be-targeted-with-macros-or-scripts?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Attention Required! | Cloudflare
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/62921520/connected-sheets-cannot-be-targeted-with-macros-or-scripts" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/62921520/connected-sheets-cannot-be-targeted-with-macros-or-scripts" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          stackoverflow.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://stackoverflow.com/questions/62921520/connected-sheets-cannot-be-targeted-with-macros-or-scripts" >}}

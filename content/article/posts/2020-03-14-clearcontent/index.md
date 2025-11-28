@@ -1,652 +1,135 @@
 ---
-title: GASでスプレッドシートのセル内容を書式を残して効率的に消去する方法
-author: arukayies
-type: post
-date: 2020-03-14T08:22:35+00:00
-excerpt: GASでスプレッドシートの指定範囲の値のみを 削除する方法を紹介します！
-url: /gas/clearcontent
+title: "GASのclearContent()で書式を保持したままセルの内容を消去する方法"
+description: "Google Apps Script (GAS) の `clearContent()` メソッドを使い、スプレッドシートのセルの値や数式のみを削除する方法を解説します。書式やデータ検証は維持したまま、データだけを効率的にクリアする基本的な使い方から、動的範囲の指定、パフォーマンス向上のヒントまで紹介します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "clearContent()", "データ削除", "業務効率化"]
+date: "2020-03-14T08:22:35.000Z"
+url: "/gas/clearcontent"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-last_modified:
-  - 2025-03-07 23:16:47
-categories:
-  - GAS
-tags:
-  - clearContent()
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
-archives: ["2020年3月"]
+categories: ["GAS"]
+lastmod: "2025-11-26T22:17:49+09:00"
 ---
-Google Apps Script（GAS）を使ってスプレッドシートを操作する時に便利なメソッドの一つが、`clearContent()`ばい！これは、指定した範囲のセルから値や数式を消去する機能なんじゃけど、書式設定やデータ検証はそのまま残るという特徴があるけ、使い方をしっかり理解しておくと便利よ～。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) でスプレッドシートを操作する際、**書式はそのままに、セルの値や数式だけをクリアしたい**という場面は頻繁に発生します。例えば、定型レポートのテンプレートを再利用する場合や、入力フォームを初期化する場合などです。
 
-## clearContent()メソッドの基本
+このような場合に最適なのが `clearContent()` メソッドです。この記事では、`clearContent()` の基本的な使い方から、他の類似メソッドとの違い、実践的な活用法までを詳しく解説します。
 
-### メソッドの定義と動き
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-`clearContent()`は、指定した範囲（`Range`オブジェクト）内のセルの中身（値や数式）を消すメソッドばい。ただし、書式（色やフォント）、コメント、データ検証はそのまま残るという特徴があるけ、使い方をしっかり理解しておくと便利よ～。
+## `clearContent()`メソッドの基本
 
-### 基本的なコード
+### メソッドの機能
 
-<pre class="wp-block-code"><code>const range = SpreadsheetApp.getActiveSpreadsheet()
-  .getSheetByName('Sheet1')
-  .getRange('A1:B10');
-range.clearContent();
-</code></pre>
+`clearContent()` は、指定した範囲（`Range`オブジェクト）に含まれるセルの**内容（値や数式）のみを削除**します。
 
-これで、アクティブなスプレッドシートの「Sheet1」のA1からB10の範囲の内容が消えるけど、書式設定はそのままじゃよ。
+このメソッドの最大の特徴は、セルの書式（背景色、フォントスタイル）、コメント、データ検証規則（ドロップダウンリストなど）には一切影響を与えない点です。
 
-### パラメータと返り値
+### 基本的なコード例
 
-`clearContent()`メソッドには特にパラメータはないばい。呼び出すと、その範囲が消去され、`Range`オブジェクト自体が返されるけ、メソッドチェーンで他の操作と組み合わせることもできるんじゃ。
-
-## 他のメソッドとの比較
-
-`clearContent()`と似たようなメソッドに`clear()`や`clearFormat()`があるけ、これらとは少し挙動が違うけど、それぞれの特徴を理解して使い分けることが重要じゃけ。
-
-### メソッド比較
-
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド
-    </th>
-    
-    <th>
-      コンテンツ
-    </th>
-    
-    <th>
-      書式
-    </th>
-    
-    <th>
-      コメント
-    </th>
-    
-    <th>
-      データ検証
-    </th>
-  </tr>
+```javascript
+function clearRangeContent() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sheet1');
+  const range = sheet.getRange('A1:B10');
   
-  <tr>
-    <td>
-      <code>clear()</code>
-    </td>
-    
-    <td>
-      〇
-    </td>
-    
-    <td>
-      〇
-    </td>
-    
-    <td>
-      〇
-    </td>
-    
-    <td>
-      〇
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>clearContent()</code>
-    </td>
-    
-    <td>
-      〇
-    </td>
-    
-    <td>
-    </td>
-    
-    <td>
-    </td>
-    
-    <td>
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>clearFormat()</code>
-    </td>
-    
-    <td>
-    </td>
-    
-    <td>
-      〇
-    </td>
-    
-    <td>
-    </td>
-    
-    <td>
-    </td>
-  </tr>
-</table></figure> 
+  // Sheet1のA1:B10範囲のセルの内容を削除
+  range.clearContent();
+}
+```
 
-`clearContent()`はデータだけを消すので、テンプレートの構造をそのまま残してデータだけ更新したい場合にぴったりじゃけ。
+このコードを実行すると、指定範囲のデータは消えますが、設定されていた背景色や罫線などはそのまま残ります。
+
+## 他のクリア系メソッドとの比較
+
+GASには `clearContent()` の他にもデータを削除するメソッドがあります。目的によって正しく使い分けることが重要です。
+
+| メソッド         | 値・数式 | 書式 | コメント | 入力規則 |
+| ---------------- |:----------:|:------:|:----------:|:----------:|
+| `clear()`        |     ✔️     |   ✔️    |     ✔️      |     ✔️      |
+| `clearContent()` |     ✔️     |   ❌   |     ❌     |     ❌     |
+| `clearFormat()`  |     ❌    |   ✔️    |     ❌     |     ❌     |
+
+`clearContent()` は、テンプレートの骨格（書式やルール）を維持しつつ、データだけを入れ替えたい場合に最も適しています。
 
 ## 実践的な活用例
 
-### 基本的な使い方
+### 1. 動的なデータ範囲のクリア
 
-<pre class="wp-block-code"><code>function clearSpecificRange() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  sheet.getRange('C5:F20').clearContent();
-}
-</code></pre>
+`getLastRow()` を使えば、データの量に関わらず、常にデータが存在する範囲のみを対象にできます。これは、日々データが増減するようなシートのメンテナンスに非常に有効です。
 
-C5からF20までの範囲を消去する例じゃけ、定期的なレポートのテンプレート更新にも使えるけ。
-
-### 動的な範囲指定
-
-<pre class="wp-block-code"><code>function clearDynamicRange() {
+```javascript
+function clearDynamicRange() {
   const sheet = SpreadsheetApp.getActiveSheet();
   const lastRow = sheet.getLastRow();
-  sheet.getRange(2, 1, lastRow-1, 4).clearContent();
+  
+  // 1行目のヘッダーを除き、A列からD列の最終行までをクリア
+  if (lastRow > 1) {
+    sheet.getRange(2, 1, lastRow - 1, 4).clearContent();
+  }
 }
-</code></pre>
+```
 
-`getLastRow()`を使えば、データのある範囲だけを動的に消去できるけ、可変データがあるシステムで便利じゃよ。
+### 2. 特定の条件に一致するセルのみをクリア
 
-### 条件付きでデータを消去
+`getValues()` でデータを配列として取得し、条件に一致するセルの内容だけを削除することも可能です。データのクレンジング作業などに活用できます。
 
-<pre class="wp-block-code"><code>function conditionalClear() {
+```javascript
+function conditionalClearContent() {
   const sheet = SpreadsheetApp.getActiveSheet();
   const range = sheet.getDataRange();
   const values = range.getValues();
   
-  values.forEach((row, rowIndex) => {
-    row.forEach((cell, colIndex) => {
-      if (cell === 'DELETE_FLAG') {
-        sheet.getRange(rowIndex+1, colIndex+1).clearContent();
+  // 2次元配列をループ処理
+  for (let i = 0; i < values.length; i++) {
+    for (let j = 0; j < values[i].length; j++) {
+      // セルの値が「DELETE」の場合にそのセルの内容をクリア
+      if (values[i][j] === 'DELETE') {
+        sheet.getRange(i + 1, j + 1).clearContent();
       }
-    });
-  });
-}
-</code></pre>
-
-特定のマーカー（ここでは&#8217;DELETE_FLAG&#8217;）があるセルを見つけて消去する方法じゃけ、データのクレンジングにも使えるんじゃ。
-
-## パフォーマンス向上のコツ
-
-### バッチ処理
-
-<pre class="wp-block-code"><code>function batchClear() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const ranges = &#91;
-    'A1:A10', 'C5:C15', 'E20:E30'
-  ];
-  
-  ranges.forEach(range => {
-    sheet.getRange(range).clearContent();
-  });
-}
-</code></pre>
-
-複数範囲を一度に処理することで、スクリプトの実行時間を短縮できるけ、バッチ処理を使うと処理が効率よくなるんじゃよ。
-
-### キャッシュを活用
-
-<pre class="wp-block-code"><code>function cachedClear() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getDataRange();
-  const values = dataRange.getValues();
-  
-  const clearTargets = values
-    .map((row, i) => row.map((cell, j) => cell === 'OLD' ? &#91;i+1, j+1] : null))
-    .flat()
-    .filter(coords => coords !== null);
-  
-  clearTargets.forEach((&#91;row, col]) => {
-    sheet.getRange(row, col).clearContent();
-  });
-}
-</code></pre>
-
-データをキャッシュしてから不要データを消去することで、スプレッドシートへのアクセス回数を減らしてパフォーマンスを上げる方法じゃけ。
-
-## セキュリティとアクセス制限
-
-### アクセス制御
-
-<pre class="wp-block-code"><code>function securedClear() {
-  const userEmail = Session.getActiveUser().getEmail();
-  const allowedUsers = &#91;'admin@example.com', 'editor@example.com'];
-  
-  if (!allowedUsers.includes(userEmail)) {
-    throw new Error('Permission denied');
+    }
   }
-  
-  SpreadsheetApp.getActiveSheet().getRange('A1:Z100').clearContent();
 }
-</code></pre>
+```
+**注意:** この方法はセルごとに `clearContent()` を呼び出すため、対象セルが多いとパフォーマンスが低下する可能性があります。
 
-特定のユーザーにだけ権限を与えることで、重要なデータを保護できるんじゃけ。
+## パフォーマンス向上のためのヒント
 
-## 結論
+複数の、あるいは広範囲のセルをクリアする場合、APIの呼び出し回数を減らすことがパフォーマンス向上の鍵となります。
 
-`clearContent()`メソッドは、Google Apps Scriptを使ったスプレッドシート操作でとても便利なツールばい！データ消去を選択的に行えるから、テンプレートの更新やデータ管理を効率よく行えるけ、ぜひ活用してみてほしいんじゃ。これを駆使すれば、システムのパフォーマンスも向上させることができるけど、使い方をしっかり理解しておくことが大事じゃよ～。
+### `clearContent()` の一括適用
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+`clearContent()` 自体は範囲に対して一括で適用されるため、ループ内でセルごとに呼び出すよりも、できるだけ大きな範囲や複数の範囲に対してまとめて呼び出す方が効率的です。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://rinyan-7.com/gas/sheet_clearcontents/" title="&#12304;clearContents&#12513;&#12477;&#12483;&#12489;&#12398;&#39749;&#21147;&#12305;&#12473;&#12503;&#12524;&#12483;&#12489;&#12471;&#12540;&#12488;&#12398;&#12487;&#12540;&#12479;&#12434;&#19968;&#30636;&#12391;&#25972;&#29702;&#12377;&#12427;&#20351;&#12356;&#26041;&#12539;&#20855;&#20307;&#20363;&#12539;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+```javascript
+function batchClearContents() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  // クリアしたい範囲を配列で定義
+  const rangesA1Notations = ['A1:A10', 'C5:C15', 'E20:E30'];
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Fsheet_clearcontents%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Fsheet_clearcontents%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;clearContents&#12513;&#12477;&#12483;&#12489;&#12398;&#39749;&#21147;&#12305;&#12473;&#12503;&#12524;&#12483;&#12489;&#12471;&#12540;&#12488;&#12398;&#12487;&#12540;&#12479;&#12434;&#19968;&#30636;&#12391;&#25972;&#29702;&#12377;&#12427;&#20351;&#12356;&#26041;&#12539;&#20855;&#20307;&#20363;&#12539;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/sheet_clearcontents/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/sheet_clearcontents/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+  // getRangeListを使用して複数の範囲に一括で適用
+  sheet.getRangeList(rangesA1Notations).clearContent();
+}
+```
+
+## まとめ
+
+`clearContent()` メソッドは、スプレッドシートの書式や構造を維持しながらデータのみを効率的に削除するための強力なツールです。
+
+テンプレートの再利用、フォームの初期化、データの定期的な更新など、さまざまな業務自動化のシナリオで活用できます。他の `clear` 系メソッドとの違いを理解し、状況に応じて最適なメソッドを選択することで、より洗練されたGASスクリプトを作成しましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://rinyan-7.com/gas/sheet_clearcontents/" >}} 
   
-  <br /> <a rel="noopener" href="https://pitapaka.com/gas7/" title="Google Apps Script&#12391;&#12475;&#12523;&#12434;&#12463;&#12522;&#12450;&#12377;&#12427;&#26041;&#27861; &#8211; PitaPaka" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://pitapaka.com/gas7/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpitapaka.com%2Fgas7%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fpitapaka.com%2Fgas7%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Apps Script&#12391;&#12475;&#12523;&#12434;&#12463;&#12522;&#12450;&#12377;&#12427;&#26041;&#27861; &#8211; PitaPaka
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://pitapaka.com/gas7/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://pitapaka.com/gas7/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          pitapaka.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://note.com/m_kakudo/n/n3efab3ba3201" >}} 
   
-  <br /> <a rel="noopener" href="https://note.com/m_kakudo/n/n3efab3ba3201" title="【徒然GAS16】セルをクリアしてみた〜clear、clearContent、clearFormat、clearDataValidations、clearNote〜｜○△□堂" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://rinyan-7.com/gas/range_clearcontent/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://assets.st-note.com/production/uploads/images/62258666/rectangle_large_type_2_f38502dd533a95b1c87587b177aeb6bd.png?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://assets.st-note.com/production/uploads/images/62258666/rectangle_large_type_2_f38502dd533a95b1c87587b177aeb6bd.png?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【徒然GAS16】セルをクリアしてみた〜clear、clearContent、clearFormat、clearDataValidations、clearNote〜｜○△□堂
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        参考にしたサイト記事 【初心者向けGAS】スプレッドシートのセル範囲をクリアするいくつかの方法Google Apps ScriptでBotを作りながらその基本を学んでいくシリーズです。今回はスプレッドシートのセル範囲tonari-it.co...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://note.com/m_kakudo/n/n3efab3ba3201" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://note.com/m_kakudo/n/n3efab3ba3201" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          note.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" >}} 
   
-  <br /> <a rel="noopener" href="https://rinyan-7.com/gas/range_clearcontent/" title="&#12304;clearContent&#12513;&#12477;&#12483;&#12489;&#12398;&#27963;&#29992;&#27861;&#12305;&#12473;&#12503;&#12524;&#12483;&#12489;&#12471;&#12540;&#12488;&#12391;&#12487;&#12540;&#12479;&#12434;&#12469;&#12463;&#12483;&#12392;&#28040;&#12377;&#65281;&#20351;&#12356;&#26041;&#12420;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#32057;&#20171;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://note.com/seiyas/n/na295d09adb3c" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_clearcontent%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_clearcontent%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;clearContent&#12513;&#12477;&#12483;&#12489;&#12398;&#27963;&#29992;&#27861;&#12305;&#12473;&#12503;&#12524;&#12483;&#12489;&#12471;&#12540;&#12488;&#12391;&#12487;&#12540;&#12479;&#12434;&#12469;&#12463;&#12483;&#12392;&#28040;&#12377;&#65281;&#20351;&#12356;&#26041;&#12420;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#32057;&#20171;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_clearcontent/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_clearcontent/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://www.smilevision.co.jp/blog/tsukutte05/" >}} 
   
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" title="Class Sheet  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Sheet  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://note.com/seiyas/n/na295d09adb3c" title="Googleスプレッドシートでデータ消去（GAS活用）｜安井清一郎" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://assets.st-note.com/production/uploads/images/82815717/rectangle_large_type_2_e00fee375d679328cff1e09a2b009ab4.png?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://assets.st-note.com/production/uploads/images/82815717/rectangle_large_type_2_e00fee375d679328cff1e09a2b009ab4.png?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Googleスプレッドシートでデータ消去（GAS活用）｜安井清一郎
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        スプレッドシートに様々なデータの貼付や消去をしていると 太字・斜体・取り消し線 テキストや塗りつぶしの色 水平／垂直方向の位置 テキストを折り返す などの情報残り、シートが汚れて使い回しにくくなりますよね？ 今回はデータ消去のTipsを紹介...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://note.com/seiyas/n/na295d09adb3c" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://note.com/seiyas/n/na295d09adb3c" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          note.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://www.smilevision.co.jp/blog/tsukutte05/" title="【作ってみた】GASでGoogleスプレッドシートのセルのクリアボタン" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.smilevision.co.jp/wp-content/uploads/2017/03/1dd9fcce6284b31bdbdb6379a575eccb.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.smilevision.co.jp/wp-content/uploads/2017/03/1dd9fcce6284b31bdbdb6379a575eccb.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【作ってみた】GASでGoogleスプレッドシートのセルのクリアボタン
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        開発部のおいぬです（▽・x・▽） 今回は初めてGoogle Apps Script というものを使ってみました…
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://www.smilevision.co.jp/blog/tsukutte05/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://www.smilevision.co.jp/blog/tsukutte05/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          www.smilevision.co.jp
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://qiita.com/80syokumotsu/items/553b378a44add05c3495" title="[GAS] でセルの値をまとめてクリアする方法 - Qiita" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1pbWFnZS1zdG9yZSUyRjAlMkYyNjQwODc2JTJGMjYzMTY0YjU0MWI2OWJlMDIzZmVjOGQyNTY4YzBmNTI1OTIyNGY0YiUyRmxhcmdlLnBuZyUzRjE2NTc5NTQxNDk_aXhsaWI9cmItNC4wLjAmYXI9MSUzQTEmZml0PWNyb3AmbWFzaz1lbGxpcHNlJmJnPUZGRkZGRiZmbT1wbmczMiZzPTFiM2ExY2RlMDA2OGRkMTgxZTMwMDgyZTA3NmZhNmNh%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D9a87242af5120c5b4a60b1c43c0033b0?ixlib=rb-4.0.0&#038;w=1200&#038;fm=jpg&#038;mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDA4MHN5b2t1bW90c3UmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1jYzkwNzIxMjZjYjg3ZGY4ZWFhOWE2ZWI0YTE4MmI1Ng&#038;blend-x=242&#038;blend-y=480&#038;blend-w=838&#038;blend-h=46&#038;blend-fit=crop&#038;blend-crop=left%2Cbottom&#038;blend-mode=normal&#038;s=653d850b19f817880937dd27198bb5fb" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS] でセルの値をまとめてクリアする方法 - Qiita
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getRangeセルの範囲を指定してclearContent()を使用する Sheetオブジェクト.getRange(行番号, 列番号, 行数, 列数) getRange(1,4,lastRow -1 ,14).clearContent()...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://qiita.com/80syokumotsu/items/553b378a44add05c3495" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://qiita.com/80syokumotsu/items/553b378a44add05c3495" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          qiita.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
-<task_progress>
-- [x] Analyze requirements
-- [ ] Examine search implementation
-- [x] Check for search index file
-- [x] Trigger Hugo build
-- [x] Read problematic content file
-- [x] Correct YAML front matter
-- [ ] Re-run Hugo build
-- [ ] Verify search index generation
-- [ ] Fix search functionality
-- [ ] Incorporate latest changes
-- [ ] Merge changes
-- [ ] Commit changes
-</task_progress>
-</write_to_file>
+{{< blog-card "https://qiita.com/80syokumotsu/items/553b378a44add05c3495" >}}

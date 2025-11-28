@@ -1,227 +1,117 @@
 ---
-title: Google Apps Scriptでフォントサイズを取得する方法：getFontSize()完全ガイド
-author: arukayies
-type: post
-date: 2020-06-29T15:04:02+00:00
-excerpt: GASでスプレッドシートの指定セルの文字サイズを取得する方法を紹介します！
-url: /gas/getfontsize
+title: "【GAS】getFontSizeとgetFontSizesの違いとは？セルのフォントサイズを正しく取得する方法"
+description: "GASでセルのフォントサイズを取得しようとして、getFontSize()を使ったら想定外の値が返ってきた経験はありませんか？このメソッドは範囲の左上のセルしか見ていません。複数セルのフォントサイズを正しく、かつ高速に取得するにはgetFontSizes()が必要です。その違いと実践的な使い方を解説します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getFontSize", "getFontSizes", "フォントサイズ", "パフォーマンス", "一括取得"]
+date: "2020-06-29T15:04:02.000Z"
+lastmod: "2025-11-28T00:00:00.000Z"
+url: "/gas/getfontsize"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1593443044
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-06 16:47:53
-categories:
-  - GAS
-tags:
-  - GAS
-  - getFontSize()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
 ---
-Googleスプレッドシートを使ってると、セルのフォントサイズを取得したい場面って結構あるばい。特にスクリプトを組んでると「このセルのフォントサイズは何ptか？」って知りたいことがあるっちゃね。そこで登場するのが `getFontSize()` メソッドじゃ。
 
-今回は `getFontSize()` の基本から、複数セルのフォントサイズ取得、応用的な使い方まで、わかりやすく解説するけ！
+Google Apps Script (GAS)で、スプレッドシートのセルのフォントサイズを条件にして処理を自動化したい、と考えたことはありませんか？ 例えば、「フォントサイズが12pt以上のセルだけ色を変える」といった処理です。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+その際に使うのが`getFontSize()`や`getFontSizes()`ですが、この2つのメソッドの違いを正しく理解していないと、思わぬバグの原因になります。
 
-## getFontSize() とは？
+この記事では、`getFontSize()`のよくある罠と、複数セルのフォントサイズを正しく高速に取得するための`getFontSizes()`の使い方を徹底解説します。
 
-`getFontSize()` はGoogle Apps Script（GAS）でスプレッドシートのセルのフォントサイズを取得するメソッドたい。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### 基本構文
+## `getFontSize()`のよくある罠：複数範囲に使うと...
 
-<pre class="wp-block-code"><code>const fontSize = sheet.getRange("A1").getFontSize();
-</code></pre>
+`getFontSize()`は、指定したセルのフォントサイズを数値（単位：ポイント）で取得するメソッドです。しかし、**複数セルの範囲（例: "A1:C3"）に対して使用すると、範囲全体のフォントサイズではなく、左上隅のセル（この場合はA1）の値だけが返されます。**
 
-このメソッドを使うと、指定したセルのフォントサイズを整数値（ポイント単位）で取得できるっちゃ。
-
-### 動作のポイント
-
-<ul class="wp-block-list">
-  <li>
-    <strong>整数値で返る</strong>（小数点以下の値は切り捨てられる）
-  </li>
-  <li>
-    <strong>複数セルを選択すると、左上のセルの値が返る</strong>（範囲指定するなら <code>getFontSizes()</code> を使うべし）
-  </li>
-  <li>
-    <strong>空白セルや未設定セルはデフォルト値（10pt）を返す</strong>
-  </li>
-</ul>
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## 単一セルのフォントサイズを取得する
-
-まずは基本的な使い方を見てみるばい。
-
-<pre class="wp-block-code"><code>function getSingleCellFontSize() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const targetCell = sheet.getRange("B2");
-  const fontSize = targetCell.getFontSize();
-  Logger.log(`B2セルのフォントサイズ: ${fontSize}pt`);
-}
-</code></pre>
-
-B2セルのフォントサイズを取得してログに出力するだけのシンプルなスクリプトたい。
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## 複数セルのフォントサイズを取得する
-
-複数セルのフォントサイズを取得したいときは `getFontSizes()` を使うばい。
-
-<pre class="wp-block-code"><code>function getRangeFontSizes() {
+```javascript
+function fontSizeTrap() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getRange("B2:C3");
-  const fontSizes = range.getFontSizes();
+  // A1は10pt, B1は14pt, C1は18ptだとする
+  const range = sheet.getRange("A1:C1"); 
   
-  fontSizes.forEach((row, rowIndex) =&gt; {
-    row.forEach((size, colIndex) =&gt; {
-      const cellAddress = String.fromCharCode(66 + colIndex) + (2 + rowIndex);
-      Logger.log(`セル${cellAddress}: ${size}pt`);
-    });
+  // 範囲を指定しているにもかかわらず、A1の値である「10」しか返ってこない
+  const fontSize = range.getFontSize(); 
+  
+  console.log(fontSize); // 結果は「10」
+}
+```
+これを知らずに使うと、「範囲内のフォントサイズが正しく取得できない」という問題に直面します。`getFontSize()`は、あくまで**単一セル専用**のメソッドだと覚えておきましょう。
+
+## 複数セルのフォントサイズは`getFontSizes()`で一括取得する
+
+複数のセルのフォントサイズを正しく、かつ効率的に取得するための解決策が**`getFontSizes()`**（複数形）です。
+
+このメソッドは、指定した範囲の全セルのフォントサイズを**二次元配列 (`Number[][]`)** として、たった1回のAPI呼び出しで取得します。
+
+```javascript
+function correctWayToGetFontSizes() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  // A1は10pt, B1は14pt, C1は18pt
+  const range = sheet.getRange("A1:C1");
+  
+  // API呼び出しは1回だけ！
+  const fontSizes = range.getFontSizes(); 
+  
+  console.log(fontSizes); // 結果は [[10, 14, 18]]
+  
+  // 配列をループすれば、各セルの値にアクセスできる
+  fontSizes[0].forEach(size => {
+    console.log(`フォントサイズ: ${size}pt`);
   });
 }
-</code></pre>
+```
+ループの中で`getFontSize()`を何度も呼び出すのに比べて、API呼び出しが1回で済むため、パフォーマンスが劇的に向上します。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+## 実践的コード例：特定のフォントサイズより大きいセルを強調表示する
 
-## getFontSize() の応用編
+`getFontSizes()`の実用例として、シート内で指定したサイズより大きいフォントが使われているセルを検出し、背景色を変えてハイライトするスクリプトを紹介します。
 
-### エラー処理を組み込む
+```javascript
+/**
+ * データ範囲内で、フォントサイズが12ptより大きいセルを黄色でハイライトする
+ */
+function highlightLargeFonts() {
+  const HIGHLIGHT_THRESHOLD = 12; // 強調表示するフォントサイズのしきい値
+  
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getDataRange();
+  
+  // フォントサイズと背景色をそれぞれ一括取得
+  const fontSizes = range.getFontSizes();
+  const backgrounds = range.getBackgrounds();
+  
+  let isChanged = false;
 
-<pre class="wp-block-code"><code>function safeGetFontSize() {
-  try {
-    const range = SpreadsheetApp.getActiveRange();
-    if (!range) throw new Error('有効な範囲が選択されていません');
-    return range.getFontSize();
-  } catch (error) {
-    console.error(`エラーが発生しました: ${error.message}`);
-    return -1; // エラー識別用の戻り値
+  fontSizes.forEach((row, r) => {
+    row.forEach((size, c) => {
+      // しきい値より大きく、まだ色が設定されていないセルを対象
+      if (size > HIGHLIGHT_THRESHOLD && backgrounds[r][c] !== '#ffff00') {
+        backgrounds[r][c] = '#ffff00'; // 背景を黄色に変更
+        isChanged = true;
+      }
+    });
+  });
+
+  // 変更があった場合のみ、一括で書き込む
+  if (isChanged) {
+    range.setBackgrounds(backgrounds);
   }
 }
-</code></pre>
-
-スクリプト実行時に範囲が選択されていない場合のエラーを回避するための処理たい。
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+```
+このコードは、読み込み（`getFontSizes`, `getBackgrounds`）と書き込み（`setBackgrounds`）をすべて一括処理で行う、非常に効率的な実装になっています。
 
 ## まとめ
 
-<ul class="wp-block-list">
-  <li>
-    <code>getFontSize()</code> はセルのフォントサイズを整数値で取得するメソッド
-  </li>
-  <li>
-    <strong>複数セルを取得したいなら <code>getFontSizes()</code> を使うべし</strong>
-  </li>
-  <li>
-    <strong>エラーハンドリングを組み込んで安全にスクリプトを動かすのが吉</strong>
-  </li>
-</ul>
+GASでセルのフォントサイズを扱う際の鉄則は、以下の通りです。
 
-Google Apps Scriptを使いこなすには、こういった細かい部分の理解も大事ばい。`getFontSize()` を活用して、スプレッドシートのデータ整理をもっと便利にしてみるけ！
+-   **単一セル**のサイズを取得したい場合のみ、`getFontSize()` を使う。
+-   **複数セル**を扱う場合は、必ず `getFontSizes()` を使って一括取得する。
+-   `getFontSize()`を複数セル範囲に使うと、**左上のセルの値しか返らない**ことを常に意識する。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://mebee.info" title="IT技術情報共有サイト│mebee" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://mebee.info/wp-content/uploads/2020/02/mebee.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://mebee.info/wp-content/uploads/2020/02/mebee.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        IT技術情報共有サイト│mebee
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        IT技術情報共有サイト
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://mebee.info" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://mebee.info" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          mebee.info
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a href="https://techuplife.tech/gas-ss-rtextwrap/"><a href="https://qiita.com)/">https://qiita.com</a></a>
-</div>
+この2つのメソッドの違いを正しく理解し、常に「一括処理」を意識することが、バグが少なく高速なスクリプトを開発するための鍵となります。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getfontsize" >}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getfontsizes" >}}

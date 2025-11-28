@@ -1,369 +1,120 @@
 ---
-title: GASでスプレッドシートのセルを削除し範囲を自動調整する方法
-author: arukayies
-type: post
-date: 2020-05-28T14:23:24+00:00
-excerpt: GASでスプレッドシートのセルを削除する方法を紹介します！
-url: /gas/deletecells
+title: "GASのdeleteCellsメソッドでセルを削除し、行や列をシフトする方法"
+description: "Google Apps Script（GAS）のdeleteCells(shiftDimension)メソッドを使い、スプレッドシートの指定したセル範囲を削除し、後続のセルを上または左にシフトする方法を解説。具体的な使い方からエラー対策、他の削除メソッドとの違いまで紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "スプレッドシート", "deleteCells", "Range"]
+date: "2020-05-28T14:23:24.000Z"
+url: "/gas/deletecells"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1590675805
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 22:55:44
-categories:
-  - GAS
-tags:
-  - deleteCells(shiftDimension)
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年5月"]
+lastmod: "2025-11-25T14:55:00+09:00"
 ---
-Googleスプレッドシートを使いこなすなら、セルの削除は避けて通れない操作ばい！ 特に「deleteCells(shiftDimension)」メソッドを使うと、行や列を自由にシフトしながらスマートにデータ整理ができるっちゃ。 今回は、このメソッドの基本から実践的な使い方まで、わかりやすく解説するばい。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使ってスプレッドシートのデータを整理する際、単にセルの内容をクリアするだけでなく、セル自体を削除して後続のデータを詰めたい場面がよくあります。`deleteCells(shiftDimension)` メソッドは、まさにそのための機能を提供し、データ整理を柔軟かつ効率的に自動化します。
 
-## deleteCellsメソッドとは？
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-このメソッドは、特定のセル範囲を削除した後、 ・行方向（ROWS） ・列方向（COLUMNS） にデータをシフトさせることができる便利な機能ばい。
+## deleteCells(shiftDimension)メソッドとは？
 
-### 基本構文
+`deleteCells()` は `Range` オブジェクトに属するメソッドで、指定したセル範囲を削除します。最大の特徴は、引数 `shiftDimension` を指定することで、削除後に後続のセルを**上方向**または**左方向**にシフト（詰める）できる点です。
 
-<pre class="wp-block-code"><code>range.deleteCells(shiftDimension);
-</code></pre>
+### 基本的な構文
 
-`range`：対象となるセル範囲 `shiftDimension`：削除後のシフト方向（行または列）
+```javascript
+range.deleteCells(shiftDimension);
+```
 
-例えば、B4:C5の範囲を削除するときに`SpreadsheetApp.Dimension.COLUMNS`を指定すると、 右側のセルが左に詰められるばい。 逆に`SpreadsheetApp.Dimension.ROWS`なら下の行が上に詰められるっちゃ。
+*   `range`: 削除したいセル範囲を指定する `Range` オブジェクト。
+*   `shiftDimension`: 以下のいずれかの `Dimension` Enumを指定します。
+    *   `SpreadsheetApp.Dimension.ROWS`: 下の行のセルが上にシフトされます。
+    *   `SpreadsheetApp.Dimension.COLUMNS`: 右の列のセルが左にシフトされます。
+
+例えば、`B2:C3` の範囲を削除する場合、`ROWS` を指定すれば4行目以降が上に詰められ、`COLUMNS` を指定すればD列以降が左に詰められます。
 
 ## シフト方向の選び方
 
-どっちの方向にシフトすればいいか迷うこともあるけど、
+どちらの方向にシフトするかは、シートのデータ構造によって決まります。
 
-✅ **列方向（COLUMNS）** が向いてるケース
+### `SpreadsheetApp.Dimension.ROWS` （上へシフト）が適しているケース
+*   **行単位のレコード**: 顧客リストやアンケート結果など、1行で1つのデータが完結している場合。不要な行を削除し、リストを詰めるのに適しています。
 
-<ul class="wp-block-list">
-  <li>
-    縦方向のデータが重要（時系列データなど）
-  </li>
-  <li>
-    数式の参照関係が列単位で決まってる
-  </li>
-</ul>
+### `SpreadsheetApp.Dimension.COLUMNS` （左へシフト）が適しているケース
+*   **列単位のデータ**: 時系列データやプロジェクトのタスクリストなど、列ごとに意味があるデータ構造の場合。不要な期間や項目を削除するのに適しています。
 
-✅ **行方向（ROWS）** が向いてるケース
+## deleteCellsの実践的な活用例
 
-<ul class="wp-block-list">
-  <li>
-    横のデータがまとまりになっている（顧客情報など）
-  </li>
-  <li>
-    行単位での削除が求められる
-  </li>
-</ul>
+### 1. 特定の範囲を削除して上へシフトする
 
-特に大量のデータを扱うときは、シフト方向を慎重に決めることが大事ばい！
+最も基本的な使い方です。`B2:D4` の範囲を削除し、5行目以降のデータを上に詰めます。
 
-## 実践！deleteCellsの活用方法
-
-### ① 選択範囲を削除してデータを詰める
-
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-sheet.getRange("B2:D4").deleteCells(SpreadsheetApp.Dimension.ROWS);
-</code></pre>
-
-→ B2:D4を削除して、下のデータが上に詰められるっちゃ。
-
-### ② 複数範囲を一括削除
-
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const ranges = &#91;"A1:B2", "D5:E6", "G8:H9"];
-sheet.getRangeList(ranges).getRanges().forEach(range =&gt; {
-  range.deleteCells(SpreadsheetApp.Dimension.COLUMNS);
-});
-</code></pre>
-
-→ 離れたセル範囲も一括で削除できるばい！
-
-### ③ 境界エラーを防ぐ
-
-<pre class="wp-block-code"><code>const lastCol = sheet.getLastColumn();
-const edgeRange = sheet.getRange(1, lastCol);
-try {
-  edgeRange.deleteCells(SpreadsheetApp.Dimension.COLUMNS);
-} catch (e) {
-  console.error('最終列削除エラー:', e.message);
+```javascript
+function deleteAndShiftUp() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  sheet.getRange("B2:D4").deleteCells(SpreadsheetApp.Dimension.ROWS);
 }
-</code></pre>
+```
 
-→ 端のセルを削除するとエラーが出ることがあるけん、対策が必要さ。
+### 2. 複数の離れた範囲を一度に削除する
 
-## deleteCellsと他の削除メソッドの違い
+`getRangeList()` を使うと、複数の離れた範囲を対象に一括で処理できます。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド
-    </th>
-    
-    <th>
-      操作対象
-    </th>
-    
-    <th>
-      シフト制御
-    </th>
-    
-    <th>
-      速度
-    </th>
-  </tr>
+```javascript
+function deleteMultipleRanges() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const rangesToDelete = ["A1:B2", "D5:E6", "G8:H9"];
   
-  <tr>
-    <td>
-      deleteCells
-    </td>
-    
-    <td>
-      指定範囲のみ
-    </td>
-    
-    <td>
-      可能
-    </td>
-    
-    <td>
-      中
-    </td>
-  </tr>
+  sheet.getRangeList(rangesToDelete).getRanges().forEach(range => {
+    // この例では、各範囲を削除して左にシフト
+    range.deleteCells(SpreadsheetApp.Dimension.COLUMNS);
+  });
+}
+```
+
+### 3. シートの端のセルを削除する際のエラーを防ぐ
+
+シートの最終列を削除して左にシフトしようとするなど、シフト先にセルが存在しない操作はエラーになります。`try...catch` を使ってエラーをハンドリングするのが安全です。
+
+```javascript
+function safelyDeleteEdgeCell() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const lastColRange = sheet.getRange(1, sheet.getLastColumn());
   
-  <tr>
-    <td>
-      deleteColumn(s)
-    </td>
-    
-    <td>
-      列全体
-    </td>
-    
-    <td>
-      不可
-    </td>
-    
-    <td>
-      高
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      deleteRow(s)
-    </td>
-    
-    <td>
-      行全体
-    </td>
-    
-    <td>
-      不可
-    </td>
-    
-    <td>
-      高
-    </td>
-  </tr>
-</table></figure> 
+  try {
+    // 最終列を削除して左にシフトしようとするとエラーが発生する可能性がある
+    lastColRange.deleteCells(SpreadsheetApp.Dimension.COLUMNS);
+  } catch (e) {
+    console.error(`最終列の削除中にエラーが発生しました: ${e.message}`);
+    // エラーが発生した場合、セルの内容だけをクリアするなどの代替処理
+    lastColRange.clearContent();
+  }
+}
+```
 
-→ 列や行まるごと削除するなら`deleteColumns`や`deleteRows`のほうが速いばい！
+## 他の削除メソッドとの違い
 
-## deleteCellsを使うときの注意点
+GASには他にも行や列を削除するメソッドがありますが、それぞれに特徴があります。
 
-<ol class="wp-block-list">
-  <li>
-    <strong>データの整合性を保つために、シフト方向を考慮すること！</strong>
-  </li>
-  <li>
-    <strong>スプレッドシートの端の削除時にはエラーハンドリングを忘れずに！</strong>
-  </li>
-  <li>
-    <strong>大量データを扱う場合は、ループを逆順にすることで削除ミスを防ぐ！</strong>
-  </li>
-</ol>
+| メソッド | 対象 | シフト制御 | パフォーマンス |
+| :--- | :--- | :--- | :--- |
+| `deleteCells()` | 指定したセル範囲 | **可能** (上下/左右) | 中 |
+| `deleteRow()` / `deleteRows()` | 行全体 | **不可** (常に上にシフト) | 高速 |
+| `deleteColumn()` / `deleteColumns()` | 列全体 | **不可** (常に左にシフト) | 高速 |
+
+**結論**: 行全体や列全体を削除する場合は `deleteRow(s)` や `deleteColumn(s)` の方がシンプルで高速です。一方、**範囲内の一部のセルのみを削除し、シフト方向を制御したい場合**は `deleteCells()` が最適な選択肢となります。
 
 ## まとめ
 
-Google Apps Scriptの`deleteCells(shiftDimension)`メソッドは、 スプレッドシートをスマートに整理するのに欠かせない機能ばい。 適切なシフト方向を選びつつ、エラー対策やパフォーマンスの最適化を意識すれば、 効率的なデータ管理ができるっちゃ！
+`deleteCells(shiftDimension)` メソッドは、スプレッドシートのデータをプログラムで柔軟に整形・削除するための強力なツールです。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+*   `Dimension.ROWS` と `Dimension.COLUMNS` を使い分けることで、シフト方向を自由に制御できます。
+*   大量のデータを削除する場合は、ループの順番（逆順ループなど）やエラーハンドリングを考慮することが重要です。
+*   行・列全体を削除する他のメソッドと適切に使い分けることで、より効率的なスクリプトを作成できます。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rinsertdelete/" title="[GAS]このセル範囲を基準としてセルを挿入・削除する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-2.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-2.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]このセル範囲を基準としてセルを挿入・削除する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲を基準としてセルを挿入・削除する方法を説明します。 Ra
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rinsertdelete/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rinsertdelete/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+このメソッドをマスターして、GASによるデータ整理・自動化のレベルを一段階アップさせましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range#deletecellsdimension" >}} 
+
+{{< blog-card "https://techuplife.tech/gas-ss-rinsertdelete/" >}}

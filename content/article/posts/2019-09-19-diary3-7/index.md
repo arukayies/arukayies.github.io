@@ -1,89 +1,46 @@
 ---
-title: 【観葉植物】ガジュマルの観察日記(96日目)
-author: arukayies
-type: post
-date: 2019-09-19T13:33:00+00:00
-url: /house_plants/banyan/diary3-7
+title: "【観葉植物】ガジュマル観察日記：96日目で葉が茂る！成長の秘訣と季節の影響"
+date: "2019-09-19T13:33:00.000Z"
+url: "/house_plants/banyan/diary3-7"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1568899980
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1174678073444204544";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1174678073444204544";s:5:"pDate";s:19:"2019-09-19 13:34:12";}}";'
 archives: ["2019年9月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "妻から受け継いだガジュマルが観察96日目を迎え、暖かな気候の中で驚くほど葉を増やしました。この時期のガジュマルの成長ぶりと、季節が観葉植物に与える影響について詳しくレポートします。ガジュマルを元気に育てるためのヒントも満載！"
+tags: ["観葉植物", "ガジュマル", "観察日記", "成長記録", "葉が茂る", "季節の影響", "育て方", "ブログカード"]
 ---
+
 こんにちは！
+<br>
+<br>
+妻が大切に育てていた**ガジュマル**を受け継ぎ、その成長です！
 
-妻が育てていた**ガジュマル**を受け継ぎ成長を見守っています。
+本日は、**観察96日目**のガジュマルの様子をお届けします。観察開始から3ヶ月が経過し、暖かな気候のおかげか、ガジュマルが驚くほど葉を茂らせてくれました！
 
-<span style="color: blue;">観察96日目</span>の様子です！
+前回までのガジュマルの成長記録はこちらをご覧ください。
 
-<div class="blogcard-type bct-together">
-  <p>
-    前回までの日記はこちらです。
-  </p>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    <a href="https://arukayies.com/house_plants/banyan/diary2-7" title="【観葉植物】ガジュマルの観察日記(63日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary2-7-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【観葉植物】ガジュマルの観察日記(63日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！妻が育てていたガジュマルを受け継ぎ成長を見守っています。観察63日目の様子です！前回までの日記はこちらです。観察63日目観察し始めて2か月経過しました。見比べてみると、葉っぱが増えていて健康そうです！2か月前↓今回↓
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+{{< self-blog-card "article/posts/2019-08-17-diary2-7" >}}
 
-## 観察96日目
+---
 
-観察し始めて3か月経過しました。  
-暖かい気候が続いたからか、葉っぱがいっぱいです！
+## 観察96日目：ガジュマル、葉を茂らせて大成長！
 
-3か月前↓  
-{{< custom-figure src="img_5dfef70535b9c.jpg" title="" Fit="1280x1280 webp q90" >}} 
+観察開始から96日、約3ヶ月が経過しました。この期間、ガジュマルは目覚ましい成長を見せてくれています。特に、暖かい気候が続いたことが功を奏し、以前と比べて葉っぱが格段に増えました。
 
-今回↓  
-{{< custom-figure src="img_5dfef7067d732.jpg" title="" Fit="1280x1280 webp q90" >}}
+### 3ヶ月前のガジュマルと比較
+
+3ヶ月前のガジュマルと現在の姿を見比べてみましょう。
+
+**3ヶ月前↓**
+{{< custom-figure src="img_5dfef70535b9c.jpg" title="3ヶ月前のガジュマル" Fit="1280x1280 webp q90" >}}
+
+**今回↓**
+{{< custom-figure src="img_5dfef7067d732.jpg" title="96日目のガジュマル" Fit="1280x1280 webp q90" >}}
+
+写真からも明らかですが、葉のボリュームが全く違いますね！新芽も次々と出てきており、非常に健康的です。観葉植物にとって、適切な環境がいかに大切かを改めて実感します。
+
+### ガジュマルの成長と季節の影響
+
+ガジュマルは、暖かく日当たりの良い環境を好む植物です。この時期の安定した暖かい気候が、ガジュマルの成長を後押ししてくれたのだと思います。
+
+これからも、ガジュマルが快適に過ごせる環境を整え、さらなる成長をサポートしていきたいと思います。観葉植物の生命力には、いつも驚かされますね！

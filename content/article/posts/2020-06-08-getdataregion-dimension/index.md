@@ -1,466 +1,131 @@
 ---
-title: GASでスプレッドシートの指定セルからデータ範囲を列・行別に取得する方法
-author: arukayies
-type: post
-date: 2020-06-08T14:08:06+00:00
-excerpt: GASでスプレッドシートの指定箇所から値が存在する範囲を列 or 行で取得する方法を紹介します！
-url: /gas/getdataregion-dimension
+title: "【GAS】getDataRegion(dimension)で行・列単位のデータ範囲を正確に取得する方法"
+description: "GASの`getDataRegion()`に引数`dimension`を指定し、特定のセルを基点に「行方向」または「列方向」の連続したデータ範囲を正確に取得する方法を解説。複雑なレイアウトのシートから特定のデータ列・行だけを動的に抜き出す、実践的なスクリプトを紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "getDataRegion", "Dimension", "行操作", "列操作"]
+date: "2020-06-08T14:08:06.000Z"
+url: "/gas/getdataregion-dimension"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1591625287
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 22:20:13
-categories:
-  - GAS
-tags:
-  - GAS
-  - getDataRegion(dimension)
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
+lastmod: "2025-11-25T13:48:00+09:00"
 ---
-Google Apps Script（GAS）を使っていると、スプレッドシートの操作がスムーズにできるようになるけど、その中でも「getDataRegion(dimension)」メソッドって、ちょっとした秘密兵器みたいなものだと思わんか？このメソッドをうまく使うことで、データ範囲を動的に取得して、より効率的に処理できるようになるけど、今回はその使い方をじっくり解説していくばい。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS)で`getDataRegion()`を使うと連続したデータ範囲を取得できますが、引数`dimension`を指定することで、その能力をさらに高めることができます。この引数を使えば、**行方向**または**列方向**に限定してデータ範囲を取得することが可能です。
 
-## getDataRegion(dimension)メソッドって何よ？
+この記事では、`getDataRegion(dimension)`を使いこなし、複雑なシートから特定のデータ列や行だけをスマートに抜き出す方法を解説します。
 
-このメソッドは、指定したセルから連続したデータ範囲を自動で取得できる機能なんだよね。例えば、セルB4を起点にそのまま横のデータがどこまで続いているか、あるいは縦のデータがどこまで続いているかを調べることができるんだ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### パラメータと戻り値
+## getDataRegion(dimension) の基本
 
-<ul class="wp-block-list">
-  <li>
-    <strong>dimension</strong>: ここで指定するのが「行」か「列」かで、<code>SpreadsheetApp.Dimension.ROWS</code>で行方向、<code>SpreadsheetApp.Dimension.COLUMNS</code>で列方向を選べるけ。
-  </li>
-  <li>
-    <strong>戻り値</strong>: 連続したデータ範囲が<code>Range</code>オブジェクトとして返されるから、その後の操作がめちゃくちゃ楽になるんだよね。
-  </li>
-</ul>
+`getDataRegion()`メソッドに`SpreadsheetApp.Dimension`という特別な引数を渡すことで、データ範囲の取得方向を制御できます。
 
-## 使い方の基本
+- **`SpreadsheetApp.Dimension.ROWS`**: 指定したセルを基点に、**上下（行方向）**に連続するデータ範囲を取得します。
+- **`SpreadsheetApp.Dimension.COLUMNS`**: 指定したセルを基点に、**左右（列方向）**に連続するデータ範囲を取得します。
 
-まずは、基本的なコードを見てみるけど、こんな感じで使えるんだよ。
+引数を指定しない場合は、上下左右すべての方向が対象になります。
 
-### 列方向のデータ範囲取得
+### 列方向の範囲を取得する (`COLUMNS`)
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const startRange = sheet.getRange("B4");
-const dataRegionColumns = startRange.getDataRegion(SpreadsheetApp.Dimension.COLUMNS);
-console.log(dataRegionColumns.getA1Notation());  // 例: B4:D4
-</code></pre>
+指定したセルが含まれる**行**の中で、データが連続している範囲を取得します。
 
-これで、B4を起点にその横に続くデータを取得できるんだ。
-
-### 行方向のデータ範囲取得
-
-<pre class="wp-block-code"><code>const dataRegionRows = startRange.getDataRegion(SpreadsheetApp.Dimension.ROWS);
-console.log(dataRegionRows.getA1Notation());  // 例: B4:B10
-</code></pre>
-
-行方向の場合は、B4から下に連続するデータを取得できるばい。
-
-## 応用例：実際の使い方
-
-このメソッドは、いろんなシーンで活躍するんだよね。例えば、営業データを動的に抽出したり、条件付き書式を使ったりする場面で大活躍するさ。
-
-### 営業報告書の分析
-
-<pre class="wp-block-code"><code>function analyzeSales() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName("SalesData");
-  const dateCell = sheet.getRange("B5");
-  const salesRange = dateCell.getDataRegion(SpreadsheetApp.Dimension.COLUMNS);
-  const salesValues = salesRange.getValues();
-  // 売上分析処理を実装
+```javascript
+function getColumnDataRegion() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const startCell = sheet.getRange("B4");
+  
+  // B4セルを基点に「列方向（左右）」のデータ範囲を取得
+  const columnDataRange = startCell.getDataRegion(SpreadsheetApp.Dimension.COLUMNS);
+  
+  // B4の左右にC4, D4までデータがあれば "B4:D4" が返る
+  console.log(columnDataRange.getA1Notation());
 }
-</code></pre>
+```
 
-B5を起点に、売上データがどこまで続いているかを動的に取得できるけ。
+### 行方向の範囲を取得する (`ROWS`)
 
-### 条件付き書式の設定
+指定したセルが含まれる**列**の中で、データが連続している範囲を取得します。
 
-<pre class="wp-block-code"><code>function applyConditionalFormatting() {
-  const range = sheet.getRange("C3").getDataRegion(SpreadsheetApp.Dimension.ROWS);
-  const rule = SpreadsheetApp.newConditionalFormatRule()
-    .whenNumberGreaterThan(1000)
-    .setBackground("#FF0000")
-    .build();
-  range.setConditionalFormatRules(&#91;rule]);
+```javascript
+function getRowDataRegion() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const startCell = sheet.getRange("B4");
+
+  // B4セルを基点に「行方向（上下）」のデータ範囲を取得
+  const rowDataRange = startCell.getDataRegion(SpreadsheetApp.Dimension.ROWS);
+
+  // B4の上下にB2からB10までデータがあれば "B2:B10" が返る
+  console.log(rowDataRange.getA1Notation());
 }
-</code></pre>
+```
 
-このコードでは、C3セルを起点に下に続くデータに対して、特定の条件を満たした場合に背景色を変更することができるんだ。
+## 実践例：特定の項目列全体に書式を設定する
 
-## getDataRange()との違い
+`getDataRegion(SpreadsheetApp.Dimension.ROWS)`は、「特定のヘッダーを持つ列のデータ部分全体」を取得するのに非常に便利です。
 
-`getDataRange()`メソッドはシート全体のデータ範囲を取得するけど、`getDataRegion()`は特定のセルを基準にその周辺のデータ範囲を取得するんだ。例えば、A1セルで`getDataRegion()`を使えば、`getDataRange()`と同じ結果が得られるけど、他のセルでは範囲が変わるんだよね。
+以下の例では、「価格」というヘッダー（例: C2セル）を見つけ、その列のデータ全体に通貨形式の書式を適用します。
 
-## パフォーマンスと注意点
+```javascript
+function formatPriceColumn() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  // ここでは簡単化のためC2セルをヘッダーと仮定
+  const priceHeaderCell = sheet.getRange("C2"); 
 
-大きなデータセットを扱うとき、何度も`getDataRegion()`を呼び出すとパフォーマンスに影響が出るかもしれん。だから、範囲を一度取得して、その後に配列操作を使うほうが効率的だよ。
+  // C2セルを基点に、行方向（上下）のデータ範囲を取得
+  const priceColumnRange = priceHeaderCell.getDataRegion(SpreadsheetApp.Dimension.ROWS);
 
-<pre class="wp-block-code"><code>const masterRange = sheet.getRange("A1").getDataRegion(SpreadsheetApp.Dimension.COLUMNS);
-const dataArray = masterRange.getValues();
-// 配列操作でデータ処理
-</code></pre>
+  // ヘッダーを除いたデータ本体の範囲を取得
+  const priceDataRange = priceColumnRange.offset(1, 0, priceColumnRange.getNumRows() - 1);
 
-## 高度な活用法
+  // 通貨形式（円）の書式を設定
+  priceDataRange.setNumberFormat("'¥'#,##0");
 
-このメソッド、実はもっと高度な使い方ができるんだよね。たとえば、データ検証を動的に適用したり、ピボットテーブルを作成したりすることも可能なんだ。
-
-### データ検証の設定
-
-<pre class="wp-block-code"><code>function setDynamicValidation() {
-  const productRange = sheet.getRange("B2").getDataRegion(SpreadsheetApp.Dimension.ROWS);
-  const rule = SpreadsheetApp.newDataValidation()
-    .requireValueInList(&#91;"電子部品", "機械部品", "化学材料"], true)
-    .build();
-  productRange.setDataValidation(rule);
+  console.log(`${priceDataRange.getA1Notation()} に通貨書式を設定しました。`);
 }
-</code></pre>
+```
+このスクリプトなら、「価格」列のデータが何行あっても、常に正しい範囲に書式を適用できます。
 
-### ピボットテーブルの作成
+## 応用例：ガントチャートのタスク期間をハイライトする
 
-<pre class="wp-block-code"><code>function createPivotTable() {
-  const sourceRange = sheet.getRange("F5").getDataRegion(SpreadsheetApp.Dimension.COLUMNS);
-  const pivotTable = sheet.getRange("H1").createPivotTable(sourceRange);
-  // ピボットテーブル設定を追加
+複数のプロジェクトが縦に並んでいるようなシートで、特定のプロジェクトの期間（横方向の範囲）だけを取得してハイライトする例です。
+
+```javascript
+function highlightTaskDuration() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  // プロジェクトBの開始セルを基点とする
+  const taskStartCell = sheet.getRange("B5"); 
+
+  // B5セルを基点に、列方向（左右）のデータ範囲を取得
+  const taskDurationRange = taskStartCell.getDataRegion(SpreadsheetApp.Dimension.COLUMNS);
+
+  // 取得した範囲の背景色を変更
+  taskDurationRange.setBackground("#d9ead3"); // 薄い緑色
+  
+  console.log(`タスク期間 ${taskDurationRange.getA1Notation()} をハイライトしました。`);
 }
-</code></pre>
+```
 
-## 結論
+## まとめ
 
-この`getDataRegion(dimension)`メソッドは、Google Apps Scriptの中でもかなり使える機能の一つなんだよ。動的にデータ範囲を取得できるから、データが増えてもコードの修正なしで自動的に適応してくれるんだよね。これを使いこなすことで、Googleスプレッドシートをもっと便利に活用できること間違いなしばい！
+`getDataRegion(dimension)`を使いこなすことで、GASによるデータ範囲の取得は格段に柔軟かつ正確になります。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+-   `Dimension.ROWS`で**列単位のデータ**を縦方向に取得。
+-   `Dimension.COLUMNS`で**行単位のデータ**を横方向に取得。
+-   複雑なレイアウトのシートでも、必要な部分だけを動的に抜き出せる。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://www.lido.app/google-sheets/getdatarange" title="Not Found | Lido" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+データ量やレイアウトの変更に強い、メンテナンス性の高いスクリプトを作成するために、ぜひこのテクニックを活用してください。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://www.lido.app/google-sheets/getdatarange" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.lido.app%2Fgoogle-sheets%2Fgetdatarange?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.lido.app%2Fgoogle-sheets%2Fgetdatarange?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Not Found | Lido
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Oops! We can’t find the page you are looking for. Try starting from the homepage or visit our blog to help point you in ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://www.lido.app/google-sheets/getdatarange" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://www.lido.app/google-sheets/getdatarange" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          www.lido.app
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://spreadsheet.dev/reading-from-writing-to-range-in-google-sheets-using-apps-script" >}} 
   
-  <br /> <a rel="noopener" href="https://spreadsheet.dev/reading-from-writing-to-range-in-google-sheets-using-apps-script" title="Reading from and writing to a Range in Google Sheets using Apps Script" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://rinyan-7.com/gas/sheet_getdatarange/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fspreadsheet.dev%2Freading-from-writing-to-range-in-google-sheets-using-apps-script?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fspreadsheet.dev%2Freading-from-writing-to-range-in-google-sheets-using-apps-script?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Reading from and writing to a Range in Google Sheets using Apps Script
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        This tutorial will walk you through several ways to read data from and write data to your Google Sheets spreadsheet usin...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://spreadsheet.dev/reading-from-writing-to-range-in-google-sheets-using-apps-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://spreadsheet.dev/reading-from-writing-to-range-in-google-sheets-using-apps-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          spreadsheet.dev
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://www.youtube.com/watch?v=w9AXRfrhTCQ" >}} 
   
-  <br /> <a rel="noopener" href="https://rinyan-7.com/gas/sheet_getdatarange/" title="&#12304;getDataRange&#12434;&#20351;&#12356;&#12371;&#12394;&#12381;&#12358;&#12305;&#12471;&#12540;&#12488;&#12487;&#12540;&#12479;&#12398;&#21462;&#24471;&#26041;&#27861;&#12392;&#23455;&#29992;&#30340;&#12394;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Fsheet_getdatarange%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Fsheet_getdatarange%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;getDataRange&#12434;&#20351;&#12356;&#12371;&#12394;&#12381;&#12358;&#12305;&#12471;&#12540;&#12488;&#12487;&#12540;&#12479;&#12398;&#21462;&#24471;&#26041;&#27861;&#12392;&#23455;&#29992;&#30340;&#12394;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/sheet_getdatarange/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/sheet_getdatarange/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://www.youtube.com/watch?v=w9AXRfrhTCQ" title=" - YouTube" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dw9AXRfrhTCQ?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dw9AXRfrhTCQ?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        - YouTube
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        YouTube でお気に入りの動画や音楽を楽しみ、オリジナルのコンテンツをアップロードして友だちや家族、世界中の人たちと共有しましょう。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://www.youtube.com/watch?v=w9AXRfrhTCQ" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://www.youtube.com/watch?v=w9AXRfrhTCQ" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          www.youtube.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rcellrange/" title="[GAS]このセル範囲を起点として様々なセル範囲を取得する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/05/techuplife.tech_-10.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/05/techuplife.tech_-10.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]このセル範囲を起点として様々なセル範囲を取得する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲を起点として、様々なセル範囲を取得する方法を説明します。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rcellrange/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rcellrange/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://techuplife.tech/gas-ss-rcellrange/" >}}

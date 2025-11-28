@@ -1,337 +1,160 @@
 ---
-title: GASを使ってアイキャッチ画像付でWordPressに自動投稿する方法
-author: arukayies
-type: post
-date: 2020-02-08T14:52:57+00:00
-url: /gas/wordpress-rest-api/postreport-thumbnail
+title: "【GAS】WordPress REST APIを使ってアイキャッチ画像付き記事を自動投稿する方法"
+description: "Google Apps Script (GAS) と WordPress REST API を利用して、アイキャッチ画像付きの記事を自動で投稿する方法を解説します。コピペで使えるサンプルコード付きで、ブログ投稿の自動化を実現します。"
+tags: ["GAS", "Google Apps Script", "WordPress", "REST API", "自動投稿"]
+date: "2020-02-08T14:52:57.000Z"
+url: "/gas/wordpress-rest-api/postreport-thumbnail"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1245394028033503232";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1245394028033503232";s:5:"pDate";s:19:"2020-04-01 16:54:09";}}";
-last_modified:
-  - 2024-11-19 13:21:42
-categories:
-  - WordpressAPI
-tags:
-  - GAS
-  - Google Apps Script
-  - WordpressAPI
-
+categories: ["WordpressAPI"]
 archives: ["2020年2月"]
+lastmod: "2025-11-27T10:33:25+09:00"
 ---
-以前の記事でこんなことを紹介しました。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-together">
-  <a href="https://arukayies.com/gas/wordpress-rest-api/postreport" title="GASを使ってWordPressに自動投稿する方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="postreport-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASを使ってWordPressに自動投稿する方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        WordPress を使って広告収入を得たい！でもサラリーマンで毎日記事を書いてる時間はない！だったら、自動化だ！と思い立って、年末からいろいろ試していました「くら」です。まずはメインである。記事の自動投稿をGASを使って自動化します。プロ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+この記事では、Google Apps Script (GAS) を使って、WordPressに**アイキャッチ画像付き**の記事を自動で投稿する方法を解説します。
 
-この記事ではタイトルと内容を自動投稿させるのみでしたが、
+[以前の記事](https://arukayies.com/gas/wordpress-rest-api/postreport)で、テキストのみの自動投稿方法を紹介しましたが、今回はそれをさらにパワーアップさせます。
 
-今回は**アイキャッチ画像付き**で自動投稿させます！
+プログラムが初めての方でも、この記事の手順に沿ってコピペするだけで実装できるように、分かりやすく説明していきます。
 
-前回同様にプログラム未経験者でもコピペで実現できるように手順を紹介します。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+## 実現までの3ステップ
 
-## 自動投稿できるまでの流れ
+自動投稿は、以下の3つの簡単なステップで実現できます。
 
-<ol class="wp-block-list">
-  <li>
-    WordPressにプラグイン「Application Password」をインストール＆設定！
-  </li>
-  <li>
-    GASのコードをコピーし、実行！
-  </li>
-  <li>
-    これだけで自動投稿できます！
-  </li>
-</ol>
+1.  **WordPressの準備**: プラグイン「Application Passwords」をインストールして設定します。
+2.  **GASの準備**: Google Apps Scriptにコードをコピー＆ペーストします。
+3.  **実行**: スクリプトを実行すれば、自動投稿が完了します。
 
-## WordPressにプラグイン「Application Password」をインストール
+## 1. WordPressの準備（Application Passwordsの設定）
 
-前回の手順を参考にしてください！
+まず、GASからWordPressに安全に接続するために、「Application Passwords」というプラグインを利用します。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-detail">
-  <a href="https://arukayies.com/gas/wordpress-rest-api/postreport#toc2" title="GASを使ってWordPressに自動投稿する方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="postreport-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASを使ってWordPressに自動投稿する方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        WordPress を使って広告収入を得たい！でもサラリーマンで毎日記事を書いてる時間はない！だったら、自動化だ！と思い立って、年末からいろいろ試していました「くら」です。まずはメインである。記事の自動投稿をGASを使って自動化します。プロ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+詳しいインストール方法や設定手順については、以前の記事で解説していますので、こちらを参考にしてください。
 
-## GASを使ってWordPressに自動投稿するコード(アイキャッチ画像付)
+{{< self-blog-card "article/posts/2020-02-08-postreport" >}}
 
-以下の部分を書き換えることで、自分のサイトにアイキャッチ画像付で自動投稿できます！
+## 2. GASで自動投稿するコード
 
-<pre class="wp-block-preformatted">var siteUrl = 'WordpressサイトのURL';
-var user = 'ユーザ名';
-var pass = 'パスワード';
-var title = '自動投稿テスト';
-var content = 'これは自動投稿です。';
-var imageID = postImage(siteUrl, user, pass, 'アイキャッチ画像にしたい画像URL');</pre>
+次に、Google Apps Scriptのスクリプトエディタを開き、以下のコードを貼り付けます。
 
-## 処理の説明
+コード内の`siteUrl`, `user`, `pass`, `title`, `content`と、アイキャッチ画像のURLは、ご自身の環境に合わせて書き換えてください。
 
-記事のタイトル・内容を投稿する処理は前回と変わりません。
+```javascript
+/*
+ * 関数概要: WordPressにアイキャッチ画像付きの記事を投稿する
+ * @return {Object} 実行結果のJSONオブジェクト
+ */
+function postReport_thumbnail() {
 
-アイキャッチ画像を設定するためには2つの処理が必要になります。
+	var siteUrl = 'あなたのWordpressサイトのURL';
+	var user = 'あなたのユーザ名';
+	var pass = 'Application Passwordsで生成したパスワード';
+	var title = '自動投稿テスト(アイキャッチ画像付)';
+	var content = 'これはGASによる自動投稿です。(アイキャッチ画像付)';
+	var imageUrl = 'アイキャッチ画像にしたい画像のURL';
 
-### 画像をアップロードする
+	// 1. 画像をアップロードしてIDを取得
+	var imageID = postImage(siteUrl, user, pass, imageUrl);
+	if (!imageID || !imageID["id"]) {
+		Logger.log('画像のアップロードに失敗しました。');
+		return;
+	}
+	var featuredMediaId = Number(imageID["id"]);
 
-画像をアップロードし、その結果をJSONで取得する処理です。
-
-このJSONにWordPress上での画像IDが含まれています。
-
-<pre class="wp-block-code"><code>function postImage(siteUrl, user, pass, imageUrl) {
-
-	var apiUrl = siteUrl + 'wp-json/wp/v2/media';
-
+	// 2. 記事を投稿
+	var apiUrl = siteUrl + '/wp-json/wp/v2/posts';
 	var headers = {
-		'Content-Type': 'image/png',
-		'Content-Disposition': 'attachment;filename=画像のファイル名.png',
-		'accept': 'application/json',
 		'Authorization': 'Basic ' + Utilities.base64Encode(user + ":" + pass)
+	};
+
+	var payload = {
+		'title': title,
+		'content': content,
+		'featured_media': featuredMediaId, // アイキャッチ画像のIDを指定
+		'status': 'publish',
+		'comment_status': 'closed'
 	};
 
 	var options = {
 		'method': 'POST',
-		'muteHttpExceptions': true,
+		'contentType': 'application/json',
 		'headers': headers,
-		'payload': UrlFetchApp.fetch(imageUrl)
+		'payload': JSON.stringify(payload),
+		'muteHttpExceptions': true
+	};
+
+	var response = UrlFetchApp.fetch(apiUrl, options);
+	var responseJson = JSON.parse(response.getContentText());
+
+	Logger.log(responseJson);
+	return responseJson;
+}
+
+/*
+ * 関数概要: WordPressに画像をアップロードし、結果を返す
+ * @param {string} siteUrl - サイトのURL
+ * @param {string} user - ユーザー名
+ * @param {string} pass - パスワード
+ * @param {string} imageUrl - 画像のURL
+ * @return {Object} アップロード結果のJSONオブジェクト
+ */
+function postImage(siteUrl, user, pass, imageUrl) {
+	var apiUrl = siteUrl + '/wp-json/wp/v2/media';
+	var imageBlob = UrlFetchApp.fetch(imageUrl).getBlob();
+	var fileName = 'eyecatch.png'; // 任意のファイル名
+
+	var headers = {
+		'Authorization': 'Basic ' + Utilities.base64Encode(user + ":" + pass),
+		'Content-Disposition': 'attachment; filename="' + fileName + '"'
+	};
+
+	var options = {
+		'method': 'POST',
+		'contentType': imageBlob.getContentType(),
+		'headers': headers,
+		'payload': imageBlob,
+		'muteHttpExceptions': true
 	};
 
 	var response = UrlFetchApp.fetch(apiUrl, options);
 	var responseJson = JSON.parse(response.getContentText());
 
 	return responseJson;
-}</code></pre>
+}
+```
 
-### JSONから画像IDを取得する
+## 3. コードの解説
 
-アップロードした結果はJSONとして、imageIDに格納されます。
+アイキャッチ画像を設定するためには、大きく分けて2つの処理が必要です。
 
-WordPressでの画像IDは、imageID[&#8220;id&#8221;]これで取得できます。
+### 1. WordPressへ画像をアップロード
 
-WordPressAPIではIntger型で画像IDを指定するため、Number(imageID[&#8220;id&#8221;])で文字列を変換しています。
+まず、`postImage`関数を使って、指定したURLの画像をWordPressのメディアライブラリにアップロードします。
 
-<pre class="wp-block-code"><code>//画像をアップロードする
-var imageID = postImage(siteUrl, user, pass, 'アイキャッチ画像にしたい画像URL');
-//アップロードした結果の画像IDを取得
-imageID = Number(imageID&#91;"id"])</code></pre>
+アップロードが成功すると、WordPressはその画像に一意の「メディアID」を割り当てます。このIDが、記事とアイキャッチ画像を紐付けるために必要になります。
 
-## 実際に自動投稿してみた結果
+### 2. 取得したIDを使って記事を投稿
 
-このような感じに記事を自動投稿できます！{{< custom-figure src="スクリーンショット-2020-02-08-22.56.18.png" title="" Fit="1280x1280 webp q90" >}} 
+次に、`postReport_thumbnail`関数内で、先ほど取得したメディアIDを`featured_media`というパラメータに設定して記事情報を投稿します。
+
+これにより、WordPressは「この記事のアイキャッチ画像はこのIDの画像だ」と認識し、正しく設定してくれます。
+
+## 実行結果
+
+スクリプトを実行すると、このようにアイキャッチ画像が設定された記事が自動で投稿されます。
+
+{{< custom-figure src="スクリーンショット-2020-02-08-22.56.18.png" title="自動投稿された記事の例" Fit="1280x1280 webp q90" >}} 
 
 ## まとめ
 
-アイキャッチ画像付で自動投稿できることで、一気に記事のクオリティが上がったと思います。
+今回は、GASを使ってWordPressにアイキャッチ画像付きの記事を自動投稿する方法を紹介しました。
 
-次はなんと・・・
+記事の投稿を自動化することで、コンテンツ作成により集中でき、ブログ運営の効率が格段にアップします。
 
-アイキャッチ画像の自動生成を紹介します！
+さらに、次のステップとしてアイキャッチ画像そのものを自動生成する方法も紹介しています。ぜひ挑戦してみてください。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/wordpress-rest-api/create-eyecatchimage" title="GASでアイキャッチ画像を自動生成させるツールを作ってみた" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="create-eyecatchimage2-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASでアイキャッチ画像を自動生成させるツールを作ってみた
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        誰でも作れるように詳細な解説付きです！背景画像と文字入り画像を合成して、Wordpressにアップロードまで自動化しています。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< self-blog-card "article/posts/2020-06-13-create-eyecatchimage" >}}
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}

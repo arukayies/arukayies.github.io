@@ -1,432 +1,143 @@
 ---
-title: GASでスプレッドシートに開発者メタデータを柔軟に追加する方法
-author: arukayies
-type: post
-date: 2020-03-08T03:42:53+00:00
-excerpt: GASでスプレッドシートの行または列全体に開発者メタデータを追加する方法を紹介します！
-url: /gas/adddevelopermetadata
+title: "GASでスプレッドシートに開発者メタデータを柔軟に追加する方法"
+description: "Google Apps Script（GAS）のaddDeveloperMetadata()メソッドを使い、スプレッドシート、シート、セル範囲にカスタム情報を付与する方法を解説。データ管理の自動化と効率化を実現する実践的なテクニックを紹介します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "addDeveloperMetadata", "メタデータ"]
+date: "2020-03-08T03:42:53.000Z"
+url: "/gas/adddevelopermetadata"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1245938279981043714";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1245938279981043714";s:5:"pDate";s:19:"2020-04-03 04:56:49";}}";
-last_modified:
-  - 2025-03-07 22:36:58
-categories:
-  - GAS
-tags:
-  - addDeveloperMetadata(key)
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年3月"]
+lastmod: "2025-11-27T09:40:46.000Z"
 ---
-Google Apps Script（GAS）を使ってスプレッドシートの管理をちょっと高度にしたいって思ったこと、あるよね？特に、スプレッドシートに「意味」を持たせるためのメタデータを追加したい時に便利なのが、`addDeveloperMetadata(key)`メソッドばい。このメソッドを使えば、データをただ単に管理するだけでなく、よりスマートに、そして効率的にデータを取り扱えるようになるんだ。今日は、その使い方をガッツリ解説していくけん、最後まで読んでみてち！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script（GAS）を利用してスプレッドシートの管理を高度化する際、`addDeveloperMetadata()`メソッドは非常に強力なツールとなります。このメソッドを使うと、スプレッドシートの要素に目に見えない「メタデータ（追加情報）」を付与でき、データ管理をよりスマートかつ効率的に進化させることが可能です。
 
-## 1. 開発者メタデータってなに？
+この記事では、`addDeveloperMetadata()`の基本的な使い方から、具体的な活用例、セキュリティに関する注意点までを分かりやすく解説します。
 
-まず、開発者メタデータってなんぞや？って思うよね。簡単に言うと、スプレッドシート内の特定のデータに「意味」を持たせるための追加情報のこと。例えば、シートやセルの内容に関して、データがどこから来たのか、更新頻度はどうか、という情報をメタデータとして付与することができるんだ。これにより、スプレッドシートを自動化したり、より高効率にデータを活用できるようになるばい。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### 1-1. どんなところにメタデータを付けるのか？
+## 1. 開発者メタデータとは何か？
 
-メタデータは、次の3つのオブジェクトに付けることができるんだけ。
+開発者メタデータとは、スプレッドシート、シート、セル範囲といった要素に対して、スクリプトからのみアクセス可能なカスタム情報を付与する機能です。
 
-<ul class="wp-block-list">
-  <li>
-    <strong>Spreadsheet（スプレッドシート全体）</strong><br />例えば、プロジェクトのバージョン管理や作成者情報など。
-  </li>
-  <li>
-    <strong>Sheet（シート単位）</strong><br />個別のシートに関連する情報、例えば「データソース」や「更新頻度」など。
-  </li>
-  <li>
-    <strong>Range（範囲指定）</strong><br />特定のセル範囲にメタデータを付けることで、その範囲の使い方に意味を持たせるんだ。
-  </li>
-</ul>
+例えば、特定のセル範囲に「`source:api`」というメタデータを付けておけば、後から「APIから取得したデータ範囲」としてプログラムで識別できます。これにより、単なるデータの集合体であったスプレッドシートが、意味を持つ情報として扱えるようになり、高度な自動化やデータ管理が実現します。
 
-これで、どこにメタデータを付けるかがわかったかな？
+### 1-1. メタデータを付与できる対象
 
-## 2. addDeveloperMetadata(key)メソッドの使い方
+メタデータは、以下の3つのオブジェクトにアタッチできます。
 
-さて、実際に`addDeveloperMetadata(key)`メソッドを使ってみよう！メソッドの基本構文はこんな感じだよ。
+-   **Spreadsheet（スプレッドシート全体）**: ファイル全体のバージョン情報や作成者情報など、グローバルな情報管理に。
+-   **Sheet（シート単位）**: 各シートのデータソースや最終更新日など、シート固有の情報管理に。
+-   **Range（セル範囲）**: 特定のデータブロック（例：`id:user_list`）や、特定の役割を持つセル（例：`role:sum_total`）の識別などに。
 
-<pre class="wp-block-code"><code>const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-spreadsheet.addDeveloperMetadata('workbook_version');  // スプレッドシートにメタデータを追加
-</code></pre>
+## 2. `addDeveloperMetadata(key, value)`メソッドの基本的な使い方
 
-シンプルだろ？実際にシートや範囲にメタデータを追加したい場合も、次のように簡単に指定できるんだ。
+`addDeveloperMetadata()`メソッドの基本的な構文は非常にシンプルです。
 
-<pre class="wp-block-code"><code>const sheet = spreadsheet.getSheetByName('SalesData');
-sheet.addDeveloperMetadata('data_source');  // シートにメタデータを追加
+```js
+// 現在のスプレッドシートオブジェクトを取得
+const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
 
+// スプレッドシート全体にメタデータを追加
+// キー'workbook_version'、値'1.0'
+spreadsheet.addDeveloperMetadata('workbook_version', '1.0');
+```
+
+同様に、シートや特定のセル範囲に対しても簡単にメタデータを追加できます。
+
+```js
+// シートオブジェクトを取得
+const sheet = spreadsheet.getSheetByName('SalesData');
+// シートにメタデータを追加
+sheet.addDeveloperMetadata('data_source', 'internal_db');
+
+// セル範囲オブジェクトを取得
 const dataRange = sheet.getRange('A2:D100');
-dataRange.addDeveloperMetadata('dynamic_range');  // 範囲にメタデータを追加
-</code></pre>
+// セル範囲にメタデータを追加
+dataRange.addDeveloperMetadata('range_type', 'dynamic_data');
+```
 
-これで、スプレッドシート内のデータにしっかりと意味を付けられるけん、後で自動化処理や分析の際に大活躍するばい！
+このように、キーと値のペアで情報を埋め込むことで、後からスクリプトでこれらの情報を検索・利用できます。
 
 ## 3. メソッドのパラメータ詳細
 
-`addDeveloperMetadata`メソッドには1つ必須のパラメータ、**key**（キー）があるんだけ。これがメタデータを一意に識別するための文字列になるよ[7]。例えば、「workbook\_version」や「data\_source」など、わかりやすい名前にするのがポイントだね。
+`addDeveloperMetadata`メソッドは、主に2つの引数を取ります。
 
-<ul class="wp-block-list">
-  <li>
-    <strong>key</strong>: メタデータを識別するためのユニークな文字列
-  </li>
-  <li>
-    <strong>注意点</strong>: アルファベット、数字、アンダースコアを使って、スペースは使わないようにしよう！
-  </li>
-</ul>
+-   **key (必須)**: メタデータを一意に識別するための文字列。後からメタデータを検索する際のキーとなります。
+-   **value (任意)**: メタデータとして保存する値（文字列）。
+-   **visibility (任意)**: メタデータの可視性。`DeveloperMetadataVisibility.DOCUMENT`（ファイルの閲覧者全員）または`DeveloperMetadataVisibility.PROJECT`（スクリプトの編集者のみ）を指定します。デフォルトは`PROJECT`です。
 
-<pre class="wp-block-code"><code>spreadsheet.addDeveloperMetadata('project_version_2');
-</code></pre>
-
-これで、新しいバージョンのメタデータがスプレッドシートに追加されるんだよ！
+**キー（key）の命名規則**:
+一意で分かりやすい名前を付けることが重要です。英数字とアンダースコア（`_`）の使用が推奨されます。
 
 ## 4. 権限管理とセキュリティ
 
-このメソッドを使うときは、権限やセキュリティにも注意が必要ばい。`addDeveloperMetadata`を実行するためには、特定のOAuthスコープが必要になるんだけ：
+このメソッドを使用するには、マニフェストファイル（`appsscript.json`）で適切なOAuthスコープを宣言する必要があります。
 
-<ul class="wp-block-list">
-  <li>
-    <strong><code>https://www.googleapis.com/auth/spreadsheets.currentonly</code></strong>: 現在開いているスプレッドシートだけにアクセス
-  </li>
-  <li>
-    <strong><code>https://www.googleapis.com/auth/spreadsheets</code></strong>: 全スプレッドシートへのフルアクセス
-  </li>
-</ul>
+-   `https://www.googleapis.com/auth/spreadsheets.currentonly`: 現在開いているスプレッドシートへのアクセスのみを許可。
+-   `https://www.googleapis.com/auth/spreadsheets`: すべてのスプレッドシートへのフルアクセスを許可。
 
-スプレッドシートのメタデータには、**可視性設定**があって、メタデータが誰に見えるかをコントロールできるよ。デフォルトでは「PROJECT」っていう設定になっていて、スクリプトの作成者と編集者だけが見れるんだ。もし全員に見せたいなら、「DOCUMENT」設定にすることもできるけど、機密情報を入れないように気をつけてち！
+また、メタデータには可視性（`Visibility`）の設定があり、誰がそのメタデータにアクセスできるかを制御できます。機密情報を含む場合は、デフォルトの`PROJECT`設定のままにしておくのが安全です。
 
 ## 5. 実践的な使用例
 
-### 5-1. メタデータを付ける基本的な方法
+### 5-1. 静的なメタデータを設定する
 
-<pre class="wp-block-code"><code>function addBasicMetadata() {
+```js
+function addStaticMetadata() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   
-  // スプレッドシートにメタデータを追加
-  ss.addDeveloperMetadata('department', 'sales');
+  // スプレッドシートに部署情報を追加
+  ss.addDeveloperMetadata('department', 'Sales');
   
-  // シートにメタデータを追加
   const sheet = ss.getSheetByName('Q4_Report');
+  // シートにレポートの状態を追加
   sheet.addDeveloperMetadata('report_status', 'draft');
   
-  // 範囲にメタデータを追加
   const summaryRange = sheet.getRange('G2:G10');
-  summaryRange.addDeveloperMetadata('auto_calculated');
+  // 集計範囲に自動計算の目印を付ける
+  summaryRange.addDeveloperMetadata('calculation_type', 'auto_sum');
 }
-</code></pre>
+```
 
-### 5-2. 動的にメタデータを付与する方法
+### 5-2. 動的にメタデータを付与する
 
-<pre class="wp-block-code"><code>function applyDynamicMetadata() {
-  const sheets = SpreadsheetApp.getActive().getSheets();
+複数のシートや範囲に、ループ処理を使って一括でメタデータを付与することも可能です。
+
+```js
+function applyDynamicMetadataToSheets() {
+  const sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
   
-  sheets.forEach((sheet, index) =&gt; {
-    const metadataKey = `sheet_${index + 1}_type`;
-    sheet.addDeveloperMetadata(metadataKey);
+  sheets.forEach((sheet, index) => {
+    // 各シートに一意のIDをメタデータとして付与
+    const metadataKey = `sheet_internal_id`;
+    const metadataValue = `sheet_${index + 1}`;
+    sheet.addDeveloperMetadata(metadataKey, metadataValue);
     
-    const lastColumn = sheet.getLastColumn();
-    if(lastColumn &gt; 0) {
-      const headerRange = sheet.getRange(1, 1, 1, lastColumn);
-      headerRange.addDeveloperMetadata('header_row');
+    // 各シートのヘッダー行にもメタデータを付与
+    const headerRange = sheet.getRange(1, 1, 1, sheet.getLastColumn());
+    if (headerRange.getWidth() > 0) {
+      headerRange.addDeveloperMetadata('role', 'header_row');
     }
   });
 }
-</code></pre>
+```
 
-これで、動的にメタデータを付けて、スプレッドシートをよりスマートに管理できるようになるばい！
+## まとめ
 
-## 6. 最後に
+`addDeveloperMetadata()`メソッドは、スプレッドシート内のデータに「意味」と「構造」を与え、高度な自動化を実現するための強力な機能です。
 
-`addDeveloperMetadata(key)`メソッドは、Googleスプレッドシートを使っている人にとって、データ管理をより効率的にするための強力なツールなんだ。これを活用すれば、スプレッドシートを単なるデータの保存場所から、もっと意味のある情報を持つツールに変えることができるけん、ぜひ試してみてち！
+この機能を活用することで、スプレッドシートを単なるデータの格納場所から、よりインテリジェントなアプリケーション基盤へと昇華させることができます。ぜひ、ご自身のプロジェクトでこの強力な機能を試してみてください。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" title="Class Sheet  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Sheet  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/sheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/developer-metadata" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://developers.google.com/sheets/api/guides/metadata" >}} 
   
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/developer-metadata" title="Class DeveloperMetadata  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v0a8f38b07c3863b7ced1d678d2584c8bd483c306fc4b8f547093e71dea088feb/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v0a8f38b07c3863b7ced1d678d2584c8bd483c306fc4b8f547093e71dea088feb/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class DeveloperMetadata  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/developer-metadata" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/developer-metadata" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/sheets/api/guides/metadata" title="Read & write developer metadata  |  Google Sheets  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v0a8f38b07c3863b7ced1d678d2584c8bd483c306fc4b8f547093e71dea088feb/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v0a8f38b07c3863b7ced1d678d2584c8bd483c306fc4b8f547093e71dea088feb/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Read & write developer metadata  |  Google Sheets  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/workspace/sheets/api/guides/metadata" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/workspace/sheets/api/guides/metadata" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://hajiritsu.com/spreadsheet-gas-adddevelopermetadata/" title="Google Spreadsheet&#12398;GAS&#12391;addDeveloperMetadata&#38306;&#25968;&#12434;&#20351;&#12387;&#12390;&#12415;&#12424;&#12358; &#8211; &#12399;&#12376;&#12426;&#12388;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhajiritsu.com%2Fspreadsheet-gas-adddevelopermetadata%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhajiritsu.com%2Fspreadsheet-gas-adddevelopermetadata%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Spreadsheet&#12398;GAS&#12391;addDeveloperMetadata&#38306;&#25968;&#12434;&#20351;&#12387;&#12390;&#12415;&#12424;&#12358; &#8211; &#12399;&#12376;&#12426;&#12388;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://hajiritsu.com/spreadsheet-gas-adddevelopermetadata/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://hajiritsu.com/spreadsheet-gas-adddevelopermetadata/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          hajiritsu.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://hajiritsu.com/spreadsheet-gas-adddevelopermetadata/" >}}

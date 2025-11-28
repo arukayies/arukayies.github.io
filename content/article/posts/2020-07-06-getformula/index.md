@@ -1,512 +1,147 @@
 ---
-title: GASでスプレッドシートの指定セルから数式を取得して活用する方法
-author: arukayies
-type: post
-date: 2020-07-05T16:07:45+00:00
-excerpt: GASでスプレッドシートの指定セルの数式を取得する方法を紹介します！
-url: /gas/getformula
+title: "【GAS】getFormulaとgetFormulasの違いとは？セルの数式を正しく取得する方法"
+description: "GASでセルの数式そのものを文字列として取得したいですか？getValue()は計算結果を返しますが、getFormula()は「=SUM(A1:B1)」のような数式を取得します。単一セルと複数セルでの正しい使い方や、パフォーマンスを意識した一括取得の方法を解説します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getFormula", "getFormulas", "数式", "getValue", "パフォーマンス", "一括取得"]
+date: "2020-07-05T16:07:45.000Z"
+lastmod: "2025-11-28T00:00:00.000Z"
+url: "/gas/getformula"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1593965267
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:53:33
-categories:
-  - GAS
-tags:
-  - GAS
-  - getFormula()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年7月"]
 ---
-Google Apps Script（GAS）を使ってスプレッドシートを自動化したい？そげんときに役立つのが`getFormula()`メソッドばい！これは、セルに設定されとる数式を文字列として取得できる便利な機能たい。
 
-「このセルにどんな数式が入っとるんやろ？」そんなときにサクッと使えるけん、しっかりマスターしてスプレッドシートをもっと便利にしよう！
+Google Apps Script (GAS)でスプレッドシートのセルを操作する際、「計算結果の値」ではなく「入力されている数式そのもの」を取得したい場面は頻繁にあります。例えば、シート内の数式を監査したり、一括でバックアップしたりする場合です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+そのために使うのが`getFormula()`や`getFormulas()`ですが、`getValue()`との違いや、複数セルを扱う際の注意点を理解しておくことが重要です。
 
-## 1. getFormula()って何？
+この記事では、これらのメソッドの正しい使い分けと、GASのパフォーマンスを意識した実践的なテクニックを解説します。
 
-まずは基本から！このメソッドを使えば、指定したセルの数式を取得できるとよ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const cell = sheet.getRange("B2");
-const formula = cell.getFormula();
-Logger.log(formula); // "=SUM(A1:A10)" などが出力されるばい！
-</code></pre>
+## `getValue()` vs `getFormula()`: 根本的な違い
 
-もしB2に数式がなかったら、空文字`""`が返ってくるけん注意しよう。
+まず最初に、最も重要な違いを理解しましょう。
 
-## 2. 他のメソッドとどう違うと？
+-   **`getValue()`**: セルに表示されている**計算結果の値**を取得します。セル`A1`に`=1+2`と入力されていれば、`3`という数値が返ります。
+-   **`getFormula()`**: セルに入力されている**数式の文字列**そのものを取得します。セル`A1`に`=1+2`と入力されていれば、`"=1+2"`という文字列が返ります。
+    - **重要**: もしセルに数式が入っていない場合、`getFormula()`は**空文字 (`""`)** を返します。
 
-GASには数式を取得するメソッドが他にもあるばい！<figure class="wp-block-table">
+目的に応じて、この2つを明確に使い分ける必要があります。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド名
-    </th>
-    
-    <th>
-      取得範囲
-    </th>
-    
-    <th>
-      表記法
-    </th>
-    
-    <th>
-      戻り値型
-    </th>
-  </tr>
+## `getFormula()`の罠：複数範囲には使えない
+
+`getFormula()`は**単一セル専用**のメソッドです。複数セルの範囲（例: `"A1:B2"`）に対して使用すると、**左上隅のセルの数式しか返さない**ので注意してください。
+
+```javascript
+// A1に"=SUM(C1:C2)"、B1に"=SUM(D1:D2)"が入っているとする
+const range = SpreadsheetApp.getActiveSheet().getRange("A1:B1");
+// A1の数式しか返ってこない
+const formula = range.getFormula(); 
+console.log(formula); // "=SUM(C1:C2)"
+```
+
+## `getFormulas()`による高速な一括取得
+
+複数のセルの数式を正しく、かつ効率的に取得するための解決策が**`getFormulas()`**（複数形）です。
+
+このメソッドは、指定した範囲の全セルの数式を**二次元配列 (`String[][]`)** として、たった1回のAPI呼び出しで取得します。数式が入っていないセルに対応する配列要素は、空文字 (`""`) になります。
+
+```javascript
+function fetchAllFormulas() {
+  const range = SpreadsheetApp.getActiveSheet().getRange("A1:B2");
+  const formulas = range.getFormulas();
   
-  <tr>
-    <td>
-      getFormula()
-    </td>
-    
-    <td>
-      単一セル
-    </td>
-    
-    <td>
-      A1
-    </td>
-    
-    <td>
-      String
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      getFormulas()
-    </td>
-    
-    <td>
-      範囲
-    </td>
-    
-    <td>
-      A1
-    </td>
-    
-    <td>
-      String[][]
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      getFormulaR1C1()
-    </td>
-    
-    <td>
-      単一セル
-    </td>
-    
-    <td>
-      R1C1
-    </td>
-    
-    <td>
-      String
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      getFormulasR1C1()
-    </td>
-    
-    <td>
-      範囲
-    </td>
-    
-    <td>
-      R1C1
-    </td>
-    
-    <td>
-      String[][]
-    </td>
-  </tr>
-</table></figure> 
+  // 例: [["=SUM(C1:C2)", "=SUM(D1:D2)"], ["", "=A1*1.1"]]
+  console.log(formulas); 
+}
+```
+ループで`getFormula()`を何度も呼び出すのに比べて、パフォーマンスが劇的に向上します。
 
-範囲指定したいときは`getFormulas()`や`getFormulasR1C1()`を使うと効率的たい！
+## A1表記 vs R1C1表記
 
-## 3. getFormula()の活用テクニック
+GASには、数式を行と列の相対位置で示す「R1C1表記」で取得するメソッドもあります。
 
-### 3.1 数式のバックアップを取ろう！
+| メソッド名 | 対象範囲 | 表記法 | 戻り値の型 | 主な用途 |
+| --- | --- | --- | --- | --- |
+| `getFormula()` | **単一セル** | A1表記 | `String` | 特定1セルの数式を確認したい時 |
+| `getFormulas()` | 複数セル | A1表記 | `String[][]` | 範囲内の数式を**見たままの形**で一括取得したい時 |
+| `getFormulaR1C1()` | **単一セル** | R1C1表記 | `String` | 1セルの数式を**相対参照**で取得したい時 |
+| `getFormulasR1C1()`| 複数セル | R1C1表記 | `String[][]`| 範囲内の数式を**相対参照**で一括取得し、**再利用**したい時 |
 
-スプレッドシートの数式を別のシートにバックアップして、誤って上書きしても復元できるようにしよう！
+**R1C1表記**（例: `=SUM(R[0]C[-2]:R[0]C[-1])`）は、数式を別の場所にコピー＆ペーストするような処理をプログラムで実装する際に非常に強力です。
 
-<pre class="wp-block-code"><code>function backupFormulas() {
+## 実践的コード例
+
+### 1. シート全体の数式を別シートにバックアップ
+
+`getFormulas()`と`setFormulas()`を組み合わせることで、数式のバックアップと復元が簡単に行えます。読み書き両方の一括処理がポイントです。
+
+```javascript
+function backupAllFormulas() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName('Data');
-  const sourceRange = sheet.getRange("A1:D10");
+  const sourceSheet = ss.getActiveSheet();
+  const sourceRange = sourceSheet.getDataRange();
+  
+  // 範囲の数式を一括取得
   const formulas = sourceRange.getFormulas();
 
-  const backupSheet = ss.getSheetByName('Backup') || ss.insertSheet('Backup');
-  backupSheet.getRange("A1:D10").setFormulas(formulas);
+  let backupSheet = ss.getSheetByName(sourceSheet.getName() + '_数式バックアップ');
+  if (!backupSheet) {
+    backupSheet = ss.insertSheet(sourceSheet.getName() + '_数式バックアップ');
+  }
+  backupSheet.clear();
+  
+  // 取得した数式をバックアップシートに一括設定
+  backupSheet.getRange(1, 1, formulas.length, formulas[0].length).setFormulas(formulas);
+  
+  SpreadsheetApp.getUi().alert('数式のバックアップが完了しました。');
 }
-</code></pre>
+```
 
-### 3.2 どのセルがどこを参照しているか分析！
+### 2. 特定の関数（例: `VLOOKUP`）が使われているセルを特定
 
-シート内の数式を解析して、どのセルがどのセルを参照しているかを可視化するスクリプトばい。
+シート内で`VLOOKUP`関数が使われているセルをリストアップし、シートの監査に役立てます。
 
-<pre class="wp-block-code"><code>function analyzeFormulaDependencies() {
+```javascript
+function findCellsWithSpecificFunction() {
+  const FUNCTION_NAME = "VLOOKUP";
+  
   const sheet = SpreadsheetApp.getActiveSheet();
   const range = sheet.getDataRange();
   const formulas = range.getFormulas();
+  
+  const foundCells = [];
 
-  const dependencyMap = {};
-
-  formulas.forEach((row, rowIndex) =&gt; {
-    row.forEach((formula, colIndex) =&gt; {
-      if (formula) {
-        const matches = formula.match(/&#91;A-Z]+\d+/g) || &#91;];
-        dependencyMap&#91;`${colIndex + 1}-${rowIndex + 1}`] = matches;
+  formulas.forEach((row, r) => {
+    row.forEach((formula, c) => {
+      // toUpperCase()で大文字小文字を区別しないようにする
+      if (formula.toUpperCase().includes(FUNCTION_NAME)) {
+        foundCells.push(range.getCell(r + 1, c + 1).getA1Notation());
       }
     });
   });
   
-  console.log(JSON.stringify(dependencyMap, null, 2));
+  if (foundCells.length > 0) {
+    console.log(`${FUNCTION_NAME}関数が使われているセル: ${foundCells.join(', ')}`);
+  } else {
+    console.log(`${FUNCTION_NAME}関数が使われているセルは見つかりませんでした。`);
+  }
 }
-</code></pre>
+```
 
-## 4. 大量のデータを効率的に処理する！
+## まとめ
 
-スプレッドシートのデータが大量にある場合、一括で取得して処理する方が速いばい！
+スプレッドシートの数式をGASで扱う際の要点は以下の通りです。
 
-<pre class="wp-block-code"><code>function optimizedBatchProcessing() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName('LargeData');
-  const dataRange = sheet.getDataRange();
-  
-  const formulas = dataRange.getFormulas();
-  const values = dataRange.getValues();
-  
-  const processedData = formulas.map((row, i) =&gt; {
-    return row.map((formula, j) =&gt; {
-      return formula ? formula : values&#91;i]&#91;j];
-    });
-  });
-  
-  sheet.getRange(1, 1, processedData.length, processedData&#91;0].length)
-       .setFormulas(processedData);
-}
-</code></pre>
+-   **計算結果**が欲しいなら `getValue()`、**数式の文字列**が欲しいなら `getFormula()` を使う。
+-   **単一セル**の数式には `getFormula()` を使う。
+-   **複数セル**の数式には、パフォーマンスのために必ず `getFormulas()` を使って一括取得する。
 
-## 5. まとめ
+これらのメソッドを適切に使い分けることで、シートの分析、監査、バックアップといった高度な自動化を効率的に実装できます。
 
-`getFormula()`メソッドを活用すれば、スプレッドシートの数式を自在に操れるばい！
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<ul class="wp-block-list">
-  <li>
-    <strong>数式の取得</strong> → <code>getFormula()</code>で単一セル、<code>getFormulas()</code>で範囲を取得
-  </li>
-  <li>
-    <strong>数式のバックアップ</strong> → 別のシートに保存しておけば安心！
-  </li>
-  <li>
-    <strong>数式の依存関係分析</strong> → どのセルがどこを参照しているかチェック
-  </li>
-  <li>
-    <strong>大量データの最適化</strong> → 一括処理でサクサク動かす！
-  </li>
-</ul>
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getformula" >}}
 
-これを使いこなせば、スプレッドシートの自動化が一気にレベルアップするばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://zenn.dev/tokushun109/articles/b92550e069abf4" title="GASのgetFormula()で式を文字列として取得する" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://res.cloudinary.com/zenn/image/upload/s--VMbxT1Az--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GAS%25E3%2581%25AEgetFormula%2528%2529%25E3%2581%25A7%25E5%25BC%258F%25E3%2582%2592%25E6%2596%2587%25E5%25AD%2597%25E5%2588%2597%25E3%2581%25A8%25E3%2581%2597%25E3%2581%25A6%25E5%258F%2596%25E5%25BE%2597%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:tokushun109%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzg3NmE5NDU4ZWEuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://res.cloudinary.com/zenn/image/upload/s--VMbxT1Az--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:GAS%25E3%2581%25AEgetFormula%2528%2529%25E3%2581%25A7%25E5%25BC%258F%25E3%2582%2592%25E6%2596%2587%25E5%25AD%2597%25E5%2588%2597%25E3%2581%25A8%25E3%2581%2597%25E3%2581%25A6%25E5%258F%2596%25E5%25BE%2597%25E3%2581%2599%25E3%2582%258B%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_37:tokushun109%2Cx_203%2Cy_121/g_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzg3NmE5NDU4ZWEuanBlZw==%2Cr_max%2Cw_90%2Cx_87%2Cy_95/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASのgetFormula()で式を文字列として取得する
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://zenn.dev/tokushun109/articles/b92550e069abf4" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://zenn.dev/tokushun109/articles/b92550e069abf4" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          zenn.dev
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://qiita.com/SONER-O/items/e80eb586d5ca8576aa65" title="【GAS】指定範囲のセルから数式と値を両方取得する(getValues()&getFormulas()) - Qiita" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRmxoNi5nb29nbGV1c2VyY29udGVudC5jb20lMkYtSHNoUzNfZ3VDOUElMkZBQUFBQUFBQUFBSSUyRkFBQUFBQUFBQUFBJTJGQUNIaTNyZmpBMGNYcXRKeGI2ajdmTHctdkk5bm5qVHl3QSUyRnM1MCUyRnBob3RvLmpwZz9peGxpYj1yYi00LjAuMCZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9NGI4NmM4YmY5MTRkODg1ZmE0MGJiYThlN2QyZTliZWE%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D566495f7145059ae0e4d018a499c4eb5?ixlib=rb-4.0.0&#038;w=1200&#038;fm=jpg&#038;mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9JUUzJTgwJTkwR0FTJUUzJTgwJTkxJUU2JThDJTg3JUU1JUFFJTlBJUU3JUFGJTg0JUU1JTlCJUIyJUUzJTgxJUFFJUUzJTgyJUJCJUUzJTgzJUFCJUUzJTgxJThCJUUzJTgyJTg5JUU2JTk1JUIwJUU1JUJDJThGJUUzJTgxJUE4JUU1JTgwJUE0JUUzJTgyJTkyJUU0JUI4JUExJUU2JTk2JUI5JUU1JThGJTk2JUU1JUJFJTk3JUUzJTgxJTk5JUUzJTgyJThCJTI4Z2V0VmFsdWVzJTI4JTI5JTI2Z2V0Rm9ybXVsYXMlMjglMjklMjkmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz1mZWY3ZjI0ZmQyZTdkNmM4ZTYyNWE0ZWNiZjllYTllOA&#038;mark-x=120&#038;mark-y=112&#038;blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBTT05FUi1PJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9MTBkYWU0NTFhOGMwMGU2ZTcyODczNTE5NjYzOGNlNzE&#038;blend-x=242&#038;blend-y=480&#038;blend-w=838&#038;blend-h=46&#038;blend-fit=crop&#038;blend-crop=left%2Cbottom&#038;blend-mode=normal&#038;s=550f65658ef564168b8ce96b5e04e95f" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】指定範囲のセルから数式と値を両方取得する(getValues()&getFormulas()) - Qiita
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        概要 getValues()では値しか取得できません。 getFormulas()では数式しか取得できません。 数式と値が両方取れる関数が見つからなかったので作ってみました。 需要があるのかは謎です。 もっといい方法があるよ！という場合はコ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://qiita.com/SONER-O/items/e80eb586d5ca8576aa65" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://qiita.com/SONER-O/items/e80eb586d5ca8576aa65" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          qiita.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://caymezon.com/gas-formula/" title="【GAS】スプレッドシートの数式機能まとめ【サンプルソース付】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://caymezon.com/wp-content/uploads/2019/07/formula.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://caymezon.com/wp-content/uploads/2019/07/formula.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートの数式機能まとめ【サンプルソース付】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS開発者向けにスプレッドシートの数式機能をすべてまとめました。たくさんある便利な関数を数式で簡単に設定できるようになると、やれることが無限大に拡がります。特にスプレッドシートはExcelにはない超強力な関数があるので、積極的に使うべきで
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-formula/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-formula/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          caymezon.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://hajiritsu.com/spreadsheet-gas-getformula/" title="&#12475;&#12523;&#12398;&#25968;&#24335;&#12434;&#21462;&#24471;&#12377;&#12427; | getFormula()&#12304;GAS&#12305; &#8211; &#12399;&#12376;&#12426;&#12388;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhajiritsu.com%2Fspreadsheet-gas-getformula%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhajiritsu.com%2Fspreadsheet-gas-getformula%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12475;&#12523;&#12398;&#25968;&#24335;&#12434;&#21462;&#24471;&#12377;&#12427; | getFormula()&#12304;GAS&#12305; &#8211; &#12399;&#12376;&#12426;&#12388;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://hajiritsu.com/spreadsheet-gas-getformula/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://hajiritsu.com/spreadsheet-gas-getformula/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          hajiritsu.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rformula/" title="[GAS]セルの数式を取得・設定する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-8.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-8.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]セルの数式を取得・設定する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲のセルの数式を取得・設定する方法を説明します。 Rang
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rformula/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rformula/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
-
-この情報を活かして、GASをどんどん使いこなしていこう！
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getformulas" >}}

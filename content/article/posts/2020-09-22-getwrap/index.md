@@ -1,575 +1,238 @@
 ---
-title: GASでスプレッドシートのセルの折り返し設定状態を取得・判定する方法
-author: arukayies
-type: post
-date: 2020-09-22T09:22:22+00:00
-excerpt: GASでスプレッドシートの指定セルがテキストの折り返しか取得する方法を紹介します！
-url: /gas/getwrap
+title: "GAS `getWrap()` / `getWraps()`徹底解説！スプレッドシートのテキスト折り返しを自動調整"
+description: "Google Apps Script (GAS) の`getWrap()`と`getWraps()`メソッドで、スプレッドシートのテキスト折り返し設定を効率的に制御する方法を解説。単一/複数セルの状態取得、テキスト長に応じた動的な自動調整、`setWrap()`/`setWraps()`での設定、大規模データ処理のパフォーマンス最適化まで、実用的なコード例と共に詳解。GASでスプレッドシートの視認性とデータ管理を向上させたい開発者必見。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getWrap", "getWraps", "setWrap", "setWraps", "テキスト折り返し", "セル書式", "自動化", "効率化", "パフォーマンス", "プログラム", "開発"]
+date: "2020-09-22T09:22:22.000Z"
+lastmod: "2025-11-18T00:00:00.000Z"
+url: "/gas/getwrap"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1600766545
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:17:18
-categories:
-  - GAS
-tags:
-  - GAS
-  - getWrap()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-Google Apps Script（GAS）を使うと、スプレッドシートのテキスト折り返し設定をプログラムで簡単に管理できるんよ。今回はその中でも、`getWrap()`メソッドに焦点を当てて、具体的な使い方を紹介するけね。これを覚えると、大量のデータを扱うシートでも効率よく作業できるようになるばい！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使ってスプレッドシートを自動化する際、セルの**「テキスト折り返し設定」をプログラムで自在に制御する**ことは、データの視認性を高め、プロフェッショナルなシートレイアウトを維持するために不可欠です。本記事では、GASの主要メソッドである`getWrap()`と`getWraps()`に焦点を当て、その基本的な使い方からSEOを意識した応用テクニックまで、徹底的に解説します。
 
-## まずはテキスト折り返しって何？
+この記事では、以下の疑問を解決します。
+*   単一セル、または複数セルのテキスト折り返し状態を効率的に取得する方法は？
+*   テキストの長さに応じて、自動的に折り返し設定を調整するには？
+*   大規模なスプレッドシートデータで、パフォーマンスを損なわずに折り返し設定を処理するには？
+*   `setWrap()`や`setWraps()`を使った設定方法と、よくあるエラーの回避策は？
 
-スプレッドシートにおける「テキスト折り返し」とは、セル内に収まりきらないテキストが自動的に複数行に分かれる機能のことじゃ。これを設定することで、セル内のテキストが見やすくなったり、セルを越えてテキストが表示されるのを防いだりできるんよ。スプレッドシートでよく使われるテキスト表示のモードは次の3つやけ。
+GAS初心者の方から、スプレッドシート自動化の効率と視覚的表現をさらに高めたい上級者の方まで、すべての方に役立つ情報が満載です。この記事を読むことで、あなたのスプレッドシート管理スキルが格段に向上し、より洗練された自動化スクリプトを開発できるようになるでしょう。
 
-<ol class="wp-block-list">
-  <li>
-    <strong>折り返し（WRAP）</strong>：テキストがセル内で折り返して表示される。
-  </li>
-  <li>
-    <strong>オーバーフロー（OVERFLOW）</strong>：隣接するセルにテキストが表示される。
-  </li>
-  <li>
-    <strong>切り詰め（CLIP）</strong>：セル内でテキストが切り捨てられて表示される。
-  </li>
-</ol>
+{{< affsearch keyword="GAS スプレッドシート テキスト折り返し getWrap getWraps 自動調整 自動化" img="/gas.jpg">}}
 
-GASを使うと、この設定をプログラムで確認したり変更したりできるんよ。
+## `getWrap()`メソッドとは？GASでセルのテキスト折り返し設定を取得する基本
 
-## getWrap()メソッドってどう使うん？
+`Range.getWrap()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）の「左上のセル」に設定されているテキストの折り返し状態**を`Boolean`型で取得するための機能です。
 
-`getWrap()`メソッドは、指定したセルのテキスト折り返しの状態を取得するためのメソッドじゃ。これを使うと、セルが折り返し設定されているかどうかを確認できるんよ。
+スプレッドシートのテキスト表示モードには、主に以下の3種類があります。
 
-### こんな風に使うと便利
+*   **`WRAP` (折り返し)**: セルに収まりきらないテキストが、自動的に複数行に折り返して表示されます。
+*   **`OVERFLOW` (オーバーフロー)**: テキストが隣接する空のセルにまで表示されます。
+*   **`CLIP` (切り詰め)**: テキストがセル内で収まらない場合、セルからはみ出た部分は表示されず切り捨てられます。
 
-例えば、あるシートの特定のセルが折り返し設定されているかどうかをチェックしたいときに使えるんよ。簡単なコード例を紹介するけ。
+`getWrap()`メソッドは、この3つのモードのうち、セルが明示的に「折り返し（`WRAP`）」設定になっているかどうかを判定します。
 
-<pre class="wp-block-code"><code>function checkSingleCellWrap() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName('Report');
-  const cell = sheet.getRange('B2');
+### 基本的な使用例：B2セルのテキスト折り返し状態を取得する
+
+以下のスクリプトは、アクティブなシートの`B2`セルを指定し、そのテキスト折り返し状態を取得してログに出力する最も基本的な例です。
+
+```javascript
+/**
+ * アクティブなシートのB2セルのテキスト折り返し状態を取得し、ログに出力する関数。
+ * 返り値は true（折り返しあり）または false（折り返しなし）です。
+ */
+function getSingleCellWrapStatus() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const cell = sheet.getRange("B2");           // B2セルをRangeオブジェクトとして取得
+  const isWrapped = cell.getWrap();             // B2セルのテキスト折り返し状態を取得
   
-  const isWrapped = cell.getWrap();
-  console.log(`B2セルの折り返し状態: ${isWrapped}`);
+  // 取得した状態をログに出力
+  Logger.log(`B2セルのテキスト折り返し状態: ${isWrapped ? "有効" : "無効"}`);
 }
-</code></pre>
+```
+このコードを実行すると、`B2`セルに設定されているテキストの折り返し状態がログに表示されます。
 
-このコードでは、B2セルの折り返し状態を確認して、ログに出力してるんよ。`getWrap()`メソッドが返すのは、`true`（折り返しあり）か`false`（折り返しなし）やけ。
+**注意点**: `getWrap()`が`false`を返す場合、そのセルは「オーバーフロー」または「切り詰め」のどちらかに設定されている可能性があります。このメソッドだけでは、どちらのモードであるかまでは区別できません。
 
-### 範囲全体でチェックする方法
+## `getWrap()`と`getWraps()`の違い：一括処理の重要性
 
-複数のセルの折り返し状態を一度にチェックしたいときは、`getWraps()`を使うと便利じゃ。これを使うと、範囲内のすべてのセルの折り返し状態を二次元配列で取得できるんよ。
+GASには、セルのテキスト折り返しに関連する情報を取得するための類似メソッドとして`getWraps()`も存在します。それぞれの違いを理解し、目的と状況に応じて適切に使い分けることが、効率的で堅牢なスクリプト開発に繋がります。
 
-<pre class="wp-block-code"><code>function analyzeRangeWrapStatus() {
+| メソッド名 | 対象範囲 | 戻り値の型 | API呼び出し効率 |
+| :--- | :--- | :--- | :--- |
+| `getWrap()` | 指定範囲の**左上の単一セル**のみ | `Boolean` (`true`/`false`) | 単一セル向け |
+| `getWraps()` | 指定範囲内の**全セル** | `Boolean[][]` (二次元真偽値配列) | 複数セルの一括処理に最適 |
+
+**パフォーマンスの観点**:
+複数のセルのテキスト折り返し状態を取得したい場合、`getWrap()`をループ内で繰り返し呼び出すのは**非効率的**です。GASのベストプラクティスとして、API呼び出し回数を削減するために、**`getWraps()`を使用して一括で二次元配列として取得するバッチ処理**を強く推奨します。
+
+```javascript
+/**
+ * 複数範囲のセルのテキスト折り返し状態を一括取得し、ログに出力する関数。
+ * getRange("A1:C10") の場合、[[true, false, true], [false, ...]] の形式で返されます。
+ */
+function getRangeWrapStatus() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getRange('A1:C10');
-  const wrapStates = dataRange.getWraps();
+  const range = sheet.getRange("A1:C10"); // 対象範囲をA1:C10に設定
+  const wrapStates = range.getWraps();   // 範囲内の全セルの折り返し状態を一括取得
   
-  wrapStates.forEach((row, rowIndex) =&gt; {
-    row.forEach((state, colIndex) =&gt; {
-      if(!state) {
-        console.log(`セル ${String.fromCharCode(65 + colIndex)}${rowIndex + 1} で折り返し未設定を検出`);
+  Logger.log(`A1:C10範囲のテキスト折り返し状態:\n${JSON.stringify(wrapStates, null, 2)}`);
+
+  // 各セルのアドレスと共に折り返し状態を出力する例
+  wrapStates.forEach((rowStates, rowIndex) => {
+    rowStates.forEach((isWrapped, colIndex) => {
+      // getCell(row, column) は1から始まるインデックス
+      const cellAddress = range.getCell(rowIndex + 1, colIndex + 1).getA1Notation();
+      if (!isWrapped) { // 折り返しが「無効」のセルを検出
+        Logger.log(`セル ${cellAddress} で折り返し未設定を検出しました。`);
       }
     });
   });
 }
-</code></pre>
+```
 
-こうやって、シート内の特定範囲のセルで折り返しが設定されていないセルを見つけ出すことができるんよ。
+## `getWrap()`の実践的な応用テクニック
 
-## 応用的な使い方
+`getWrap()`とその関連メソッドは、スプレッドシートのレイアウトを自動化し、データ表示の視認性を向上させる多岐にわたる場面で真価を発揮します。
 
-### テキスト長に応じた折り返しの設定
+### 1. テキスト長に応じた動的な折り返し設定：`setWrap()` / `setWraps()`
 
-たとえば、テキストが長すぎるときに自動で折り返しを設定したい場合、次のように書けるんよ。
+セルのテキストが長すぎて列幅に収まりきらない場合に、自動でテキスト折り返しを有効にする機能は、手動での調整の手間を省き、シート全体のデザインを統一する上で非常に役立ちます。
 
-<pre class="wp-block-code"><code>function applyDynamicWrapping() {
+```javascript
+/**
+ * データ範囲内のセルのテキスト長に応じて、テキスト折り返し設定を動的に調整する関数。
+ * テキスト長が50文字を超えるセルは「折り返し（true）」に設定します。
+ */
+function applyDynamicWrappingBasedOnLength() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getDataRange();
-  const values = range.getValues();
+  const dataRange = sheet.getDataRange();       // シート内のデータが存在する全範囲を取得
+  const values = dataRange.getValues();         // 全範囲のセル値を取得（テキスト長取得用）
+  const newWrapStates = [];                     // 新しい折り返し設定を格納する二次元配列
+
+  values.forEach(rowValues => {
+    const rowWrapStates = [];
+    rowValues.forEach(cellValue => {
+      // セル値のテキスト長に基づいて折り返し設定を決定
+      if (String(cellValue).length > 50) { // 例: 50文字を超える場合
+        rowWrapStates.push(true);        // 折り返しを有効に
+      } else {
+        rowWrapStates.push(false);       // 折り返しを無効に (オーバーフロー/切り詰め)
+      }
+    });
+    newWrapStates.push(rowWrapStates);
+  });
   
-  const wraps = values.map(row =&gt; 
-    row.map(value =&gt; 
-      value.toString().length &gt; 50 ? true : false
-    )
-  );
-  
-  range.setWraps(wraps);
+  // 生成した新しい折り返し設定を一括でシートに適用
+  dataRange.setWraps(newWrapStates);
+  Logger.log("テキスト長に応じてテキスト折り返し設定を自動調整しました。");
 }
-</code></pre>
+```
 
-ここでは、文字数が50を超えるセルに対して自動で折り返しを設定してるんよ。
+### 2. 大規模データ処理におけるパフォーマンス最適化（バッチ処理の徹底）
 
-### パフォーマンスを最適化する方法
+GASスクリプトの実行において、API呼び出し回数はパフォーマンスに直結します。`getWraps()`や`setWraps()`のようなバッチ処理メソッドを最大限に活用し、大量のデータを扱う際には、データを小さな「チャンク（塊）」に分割して順次処理する手法が有効です。これにより、メモリ使用量を抑えつつ高速な処理を実現できます。
 
-大量のデータを扱う場合、個別にセルを設定するより、範囲全体に一括で設定する方が断然早いんよ。たとえば、次のように処理をバッチで行うことができるんじゃ。
-
-<pre class="wp-block-code"><code>function optimizeWrapProcessing() {
+```javascript
+/**
+ * 大規模なデータ範囲のテキスト折り返し設定を、バッチ処理で効率的に取得・設定する関数。
+ * 例: 1000行ごとにまとめてテキスト折り返しを有効にします。
+ */
+function processLargeRangeWrapEfficiently() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const lastRow = sheet.getLastRow();
-  const batchSize = 1000;
+  const lastRow = sheet.getLastRow();      // データが入力されている最終行番号を取得
+  const lastColumn = sheet.getLastColumn(); // データが入力されている最終列番号を取得
+  const batchSize = 1000;                  // 一度に処理する行のバッチサイズ
   
-  for(let i=1; i &lt;= lastRow; i+=batchSize) {
-    const range = sheet.getRange(i, 1, batchSize, sheet.getLastColumn());
-    range.setWrap(true);  // 一度に範囲を設定
-  }
-}
-</code></pre>
+  Logger.log(`シートの最終行: ${lastRow}, 最終列: ${lastColumn}, チャンクサイズ: ${batchSize}`);
 
-これで、1000行ごとにまとめて折り返しを設定できるから、処理が速くなるんよ。
-
-## よくあるエラーとその解決法
-
-### エラー事例
-
-<ul class="wp-block-list">
-  <li>
-    <strong>範囲指定誤り</strong>：存在しないセルを指定すると、<code>TypeError</code>が発生することがあるけん、範囲を正しく確認してから使うようにしよう。
-  </li>
-  <li>
-    <strong>権限不足</strong>：スクリプト実行時に適切な権限が設定されてないと、<code>アクセス権エラー</code>が出ることがあるから注意してね。
-  </li>
-</ul>
-
-### デバッグ方法
-
-エラーが出たときには、ログを使って調査するのが有効じゃ。たとえば、次のようにしてエラーメッセージを出力することができるんよ。
-
-<pre class="wp-block-code"><code>function debugWrapMethods() {
-  try {
-    const range = SpreadsheetApp.getActiveRange();
-    console.log('Selected Range:', range.getA1Notation());
-    console.log('Wrap States:', JSON.stringify(range.getWraps()));
+  for (let i = 1; i <= lastRow; i += batchSize) {
+    const currentBatchNumRows = Math.min(batchSize, lastRow - i + 1); // 現在のチャンクの行数を計算
+    // 現在のチャンクの範囲を取得 (例: A1:Z1000, A1001:Z2000 ...)
+    const batchRange = sheet.getRange(i, 1, currentBatchNumRows, lastColumn); 
     
-    range.setWrap(true);
-    console.log('After setting wrap:', range.getWrap());
+    // チャンク範囲のすべてのセルに対してテキスト折り返しを有効に設定
+    // setWrap() はRangeオブジェクト全体に同じ設定を適用するため、二次元配列は不要
+    batchRange.setWrap(true);  
+    
+    Logger.log(`  チャンク処理済み: ${i}行目から${i + currentBatchNumRows - 1}行目`);
+    // Utilities.sleep(50); // 必要に応じてAPI呼び出し間隔を調整し、API制限回避に役立てる
+  }
+  Logger.log("大規模データのテキスト折り返し設定が効率的に処理されました。");
+}
+```
+チャンク処理は、メモリの圧迫を避けつつ、GASの実行制限を回避するために非常に効果的な手法です。
+
+## `getWrap()`使用時の重要な注意点とエラーハンドリング
+
+`getWrap()`は非常に便利ですが、その特性を正しく理解し、堅牢なスクリプトを構築するために以下の注意点を把握しておくことが重要です。
+
+### 1. 範囲指定エラーとデバッグ方法
+
+存在しないセルや無効なA1記法（例: `"Z10000000"`）で`getRange()`を呼び出した場合、後続の`getWrap()`や`getWraps()`がエラーを発生させる可能性があります。また、GASスクリプトの実行中に予期せぬ問題が発生した場合、適切なデバッグ手法を知っておくことが重要です。
+
+**対策**:
+*   **安全な範囲の取得**: `Range.getDataRange()`を使って、データが存在する安全な範囲に絞って操作する。
+*   **`try...catch`によるエラーハンドリング**: スクリプトが停止しないように例外処理を導入する。
+*   **ログ出力の活用**: `Logger.log()`や`console.log()`を適切に配置し、変数の値や処理の流れを追跡する。
+
+```javascript
+/**
+ * getWrap()関連メソッド使用時のエラーを捕捉し、ログに出力するデバッグ関数。
+ */
+function debugWrapMethods() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const targetRangeAddress = "A1:C5"; // 存在する範囲を想定
+
+  try {
+    const range = sheet.getRange(targetRangeAddress);
+    Logger.log(`対象範囲: ${range.getA1Notation()}`);
+    
+    const initialWrapState = range.getWrap(); // getWrap() で単一セルの状態を取得
+    Logger.log(`初期折り返し状態 (A1): ${initialWrapState ? "有効" : "無効"}`);
+
+    const initialWrapStates = range.getWraps(); // getWraps() で範囲の状態を一括取得
+    Logger.log(`初期折り返し状態 (範囲全体):\n${JSON.stringify(initialWrapStates, null, 2)}`);
+    
+    range.setWrap(true); // 範囲全体に折り返しを有効に設定
+    SpreadsheetApp.flush(); // 変更を即時反映
+
+    const afterSetWrapState = range.getWrap();
+    Logger.log(`setWrap(true)後の状態 (A1): ${afterSetWrapState ? "有効" : "無効"}`);
     
   } catch (error) {
-    console.error(`Error: ${error.message}`, error.stack);
+    Logger.error(`エラーが発生しました: ${error.message}`);
+    // 必要に応じて、ユーザーにエラーを通知するUIを表示
+    // SpreadsheetApp.getUi().alert('エラー', `スクリプト実行中に問題が発生しました: ${error.message}`, SpreadsheetApp.getUi().ButtonSet.OK);
   }
 }
-</code></pre>
+```
 
-これで、問題がどこで発生しているのか、細かく追跡できるんよ。
+## まとめ：`getWrap()`でGASスプレッドシートのレイアウト自動化を極める
 
-## まとめ
+## まとめ：GAS `getWrap()` / `getWraps()` でスプレッドシートのテキスト折り返しを完全マスター
 
-`getWrap()`メソッドを使うと、スプレッドシートでテキスト折り返しを簡単に管理できるけん、業務で役立つこと間違いなしだよ。範囲指定やデータの動的処理もできるし、大規模データのパフォーマンス最適化にも活用できるんよ。今回紹介したテクニックを使って、スプレッドシート操作をもっと効率的にしてみてね！
+本記事では、Google Apps Script (GAS) の`getWrap()`および`getWraps()`メソッドを深く掘り下げ、スプレッドシートのテキスト折り返し設定をプログラムで効率的かつ正確に管理する方法を解説しました。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+重要なポイントを再確認しましょう。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://techuplife.tech/gas-ss-rtextwrap/" title="[GAS]セルのテキストの折り返し設定を取得・設定する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+*   **テキスト折り返し状態の正確な取得と設定**:
+    *   `getWrap()`: 単一セルのテキスト折り返し状態を`Boolean`で取得します。
+    *   `getWraps()`: 複数セルのテキスト折り返し状態を二次元配列で一括取得します。
+    *   `setWrap()` / `setWraps()`: これらのメソッドと連携することで、取得した情報に基づいて柔軟なテキスト折り返し設定が可能です。
+*   **柔軟な自動調整機能**: テキストの長さや内容に応じて動的に折り返し設定を調整することで、手動でのレイアウト調整の手間を省き、シート全体のデザインと視認性を向上させます。
+*   **大規模データ処理のパフォーマンス最適化**: `getWraps()`や`setWraps()`のようなバッチ処理メソッドを最大限に活用し、チャンク処理などの手法を取り入れることで、API呼び出し回数を削減し、GASスクリプトの実行パフォーマンスを飛躍的に向上させることができます。
+*   **堅牢なスクリプト開発**: 適切なエラーハンドリングとデバッグ手法を導入することで、予期せぬ問題にも対応できる安定したスクリプト運用を実現します。
+
+これらの知識と実践的なコード例を活用することで、あなたのGASスクリプトはより高度で洗練されたスプレッドシート自動化ツールへと進化するでしょう。テキスト折り返し設定の細やかな制御は、スプレッドシートのユーザーエクスペリエンスを向上させ、データ表示の正確性を確保するための強力な手段です。ぜひ、今日からあなたのプロジェクトにこれらのテクニックを取り入れてみてください。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/b3f88bbabf6a5371d5cba7108fdade92.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/b3f88bbabf6a5371d5cba7108fdade92.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]セルのテキストの折り返し設定を取得・設定する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲のセルのテキストの折り返し設定を取得・設定する方法を説明
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rtextwrap/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rtextwrap/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://gsuiteguide.jp/sheets/getwrap/" >}} 
   
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://gsuiteguide.jp/sheets/getwrap/" title="セルの折り返しを取得する：getWrap()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セルの折り返しを取得する：getWrap()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        セルの折り返しを取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.getActiveSpreadsheet(); // そのスプレッドシートにある最初のシートを取得 v...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getwrap/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getwrap/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://note.com/workstream/n/n882b8a7d601d" title="GAS(Google Apps Script)の公式ドキュメントとリリースノート｜KCompany" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://assets.st-note.com/production/uploads/images/44473832/rectangle_large_type_2_c93503000ffbc44a8dcc023b7866601d.jpg?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://assets.st-note.com/production/uploads/images/44473832/rectangle_large_type_2_c93503000ffbc44a8dcc023b7866601d.jpg?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GAS(Google Apps Script)の公式ドキュメントとリリースノート｜KCompany
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        こんにちは！KCompany代表のケータです！ 本日はGAS(Google Apps Script)の公式ドキュメントとリリースノートの紹介をします。紹介というか、実質個人的な備忘録・ブックマーク的なエントリーです。 公式ドキュメント 公式...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://note.com/workstream/n/n882b8a7d601d" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://note.com/workstream/n/n882b8a7d601d" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          note.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://rinyan-7.com/gas/body_gettext/" title="&#12304;`getText`&#12513;&#12477;&#12483;&#12489;&#12398;&#39749;&#21147;&#12305;&#20351;&#12356;&#26041;&#12539;&#20855;&#20307;&#20363;&#12539;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12391;&#12489;&#12461;&#12517;&#12513;&#12531;&#12488;&#12398;&#12486;&#12461;&#12473;&#12488;&#12434;&#31777;&#21336;&#12395;&#21462;&#24471;&#12375;&#12424;&#12358;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Fbody_gettext%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Fbody_gettext%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;`getText`&#12513;&#12477;&#12483;&#12489;&#12398;&#39749;&#21147;&#12305;&#20351;&#12356;&#26041;&#12539;&#20855;&#20307;&#20363;&#12539;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12391;&#12489;&#12461;&#12517;&#12513;&#12531;&#12488;&#12398;&#12486;&#12461;&#12473;&#12488;&#12434;&#31777;&#21336;&#12395;&#21462;&#24471;&#12375;&#12424;&#12358;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/body_gettext/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/body_gettext/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://matsukiyoshi.com/gas-getrange/" title="【スプレッドシート】GASで取得できるセル範囲の情報まとめ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://matsukiyoshi.com/wp-content/uploads/2022/07/student-g5f4750313_1920.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://matsukiyoshi.com/wp-content/uploads/2022/07/student-g5f4750313_1920.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【スプレッドシート】GASで取得できるセル範囲の情報まとめ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        この記事では「Rangeクラス」の機能のうち，セル範囲の情報の取得に関する機能をご紹介します．
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://matsukiyoshi.com/gas-getrange/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://matsukiyoshi.com/gas-getrange/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          matsukiyoshi.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://caymezon.com/gas-wrap-overflow-clip/" title="【GAS】スプレッドシートのテキスト折り返し機能まとめ【サンプルソース付】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://caymezon.com/wp-content/uploads/2019/07/abarrow.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://caymezon.com/wp-content/uploads/2019/07/abarrow.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートのテキスト折り返し機能まとめ【サンプルソース付】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS開発者向けにスプレッドシートのテキスト折り返し機能をすべてまとめました。長いテキスト文字列をセルに設定する場合、折り返すか(WRAP)、はみ出すか(OVERFLOW)、切り詰めるか(CLIP)、迷いませんか？GASを使えばテキストの内
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-wrap-overflow-clip/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-wrap-overflow-clip/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          caymezon.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://www.youtube.com/watch?v=jYtdF-ClN4g" title="YouTube" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjYtdF-ClN4g?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjYtdF-ClN4g?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        YouTube
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        作成した動画を友だち、家族、世界中の人たちと共有
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://www.youtube.com/watch?v=jYtdF-ClN4g" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://www.youtube.com/watch?v=jYtdF-ClN4g" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          www.youtube.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://qiita.com/koichiro-h/items/aa6c1e37fd51f671aa89" >}}

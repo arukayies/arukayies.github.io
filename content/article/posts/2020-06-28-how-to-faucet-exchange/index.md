@@ -1,522 +1,113 @@
 ---
-title: 【蛇口交換のやり方】ドラム式洗濯機を購入するつもりで蛇口を自分で交換してみた
-author: arukayies
-type: post
-date: 2020-06-28T14:37:48+00:00
-excerpt: ドラム式洗濯機がほしいけど、水栓の高さが足らなくて諦めていた人でも大丈夫！壁ピタ水栓があれば憧れのドラム式洗濯機を設置することが可能です！取り付け方法を紹介します！水栓は5,000円ほどで購入できます！
-url: /diy/how-to-faucet-exchange
+title: "【DIY】洗濯機の蛇口交換完全ガイド｜ドラム式で高さが足りない問題を解決！"
+description: "ドラム式洗濯機の設置で蛇口の高さが足りずお困りですか？本記事では、壁ピタ水栓を使い自分で蛇口を交換する方法を、必要な道具から手順、注意点まで写真付きで詳しく解説します。"
+tags: ["DIY","蛇口交換","洗濯機","ドラム式洗濯機","壁ピタ水栓","水道"]
+date: "2020-06-28T14:37:48.000Z"
+url: "/diy/how-to-faucet-exchange"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1593355070
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-categories:
-  - DIY
-tags:
-  - DIY
-  - ドラム式洗濯機
-  - 水道
-  - 蛇口
-
+categories: ["DIY"]
 archives: ["2020年6月"]
+lastmod: "2025-11-21T00:00:00+00:00"
 ---
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+
+「新しいドラム式洗濯機が欲しい！」
+
+そう思って色々調べていると、思わぬ問題に直面することがあります。それは**蛇口の高さ**です。
+
+私も、日立のドラム式洗濯機『 **BD-SG100E** 』の購入を検討していたところ、洗濯機置き場の蛇口の高さが足りない可能性に気づきました。
+
+{{< affsearch keyword="ドラム式洗濯機 BD-SG100E" img="/hitachi.jpg">}}
+
+## なぜ蛇口の交換が必要なのか？
+
+{{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
+
+日立の[公式サイト](https://kadenfan.hitachi.co.jp/wash/contents/wash_qa/04.html)によると、水栓の高さが1,050mm未満の場合、本体と蛇口が干渉してしまうため、「壁ピタ水栓」のような高さのある蛇口に交換する必要があるとのこと。
+
+{{< custom-figure src="洗濯機の高さ-767x1024.jpg" title="" Fit="1280x1280 webp q90" >}}
     
+我が家も計測してみると、見事に高さが足りませんでした。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      <span class="fz-36px"><span class="bold-red">給付金入ったらドラム式洗濯機がほしい！！！</span></span>
-    </p>
-  </div>
-</div>
+しかし、ご安心ください。工具さえあれば、業者に頼まなくても自分で蛇口交換は可能です。この記事では、私が実際に行った蛇口交換の手順を詳しくご紹介します。
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+---
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      はい。そんな理由で最近ドラム式洗濯機のことばかり調べています。
-    </p>
-    
-    <p>
-      狙っている型番は『 <strong>BD-SG100E</strong> 』 です！
-    </p>
-    
-    <div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-check">
-      <a rel="noopener" href="https://kadenfan.hitachi.co.jp/wash/lineup/bdsg100e/" title="&#27927;&#28655;&#20094;&#29157;&#27231; BD-SG100E &#65306; &#27927;&#28655;&#27231;&#12539;&#34915;&#39006;&#20094;&#29157;&#27231; &#65306; &#26085;&#31435;&#12398;&#23478;&#38651;&#21697;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-      
-      <div class="blogcard external-blogcard eb-left cf">
-        <div class="blogcard-label external-blogcard-label">
-          <span class="fa"></span>
-        </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-        
-        <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fkadenfan.hitachi.co.jp%2Fwash%2Flineup%2Fbdsg100e%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-        
-        <noscript>
-          <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fkadenfan.hitachi.co.jp%2Fwash%2Flineup%2Fbdsg100e%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-        </noscript></figure>
-        
-        <div class="blogcard-content external-blogcard-content">
-          <div class="blogcard-title external-blogcard-title">
-            &#27927;&#28655;&#20094;&#29157;&#27231; BD-SG100E &#65306; &#27927;&#28655;&#27231;&#12539;&#34915;&#39006;&#20094;&#29157;&#27231; &#65306; &#26085;&#31435;&#12398;&#23478;&#38651;&#21697;
-          </div>
-          
-          <div class="blogcard-snippet external-blogcard-snippet">
-            日立の洗濯機に関する情報をご紹介するページです。洗濯乾燥機や全自動洗濯機・衣類乾燥機等の情報がご覧いただけます。
-          </div>
-        </div>
-        
-        <div class="blogcard-footer external-blogcard-footer cf">
-          <div class="blogcard-site external-blogcard-site">
-            <div class="blogcard-favicon external-blogcard-favicon">
-              <img data-src="https://www.google.com/s2/favicons?domain=https://kadenfan.hitachi.co.jp/wash/lineup/bdsg100e/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-              
-              <noscript>
-                <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://kadenfan.hitachi.co.jp/wash/lineup/bdsg100e/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-              </noscript>
-            </div>
-            
-            <div class="blogcard-domain external-blogcard-domain">
-              kadenfan.hitachi.co.jp
-            </div>
-          </div>
-        </div>
-      </div></a>
-    </div>
-  </div>
-</div>
+## 蛇口交換DIYに必要な道具
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+まずは、作業に必要なものを揃えましょう。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      そこで私は気づいてしまったのです。
-    </p>
-    
-    <p>
-      搬入経路と洗濯機置場を計測してみると・・・。
-    </p>
-    
-    <div style="height:50px" aria-hidden="true" class="wp-block-spacer">
-    </div>
-    
-    <p>
-      もしかして蛇口の高さたりなくない？？？
-    </p>
-  </div>
-</div>
+*   **壁ピタ水栓**: 洗濯機と壁の間にスペースを確保し、高さを出すための専用蛇口です。シールテープが付属している製品を選ぶと便利です。
+    {{< affsearch keyword="洗濯機用水栓(ストッパーツキ) " img="/kakudai.jpg">}}
+*   **水栓取り外しレンチ**: 蛇口の形状によっては、取り外しに必須となる工具です。
+    {{< affsearch keyword="カクダイ 水栓取外しレンチ" img="/renchi.jpg">}}
+*   **スパナ（モンキーレンチ）**: 多くの蛇口はこの工具で取り外し・取り付けが可能です。
+    {{< affsearch keyword="ワイドモンキレンチ" img="/renchi2.jpg">}}
+*   **タオル**: 古い蛇口を外した際に配管内に残った水が出てくるため、数枚用意しておくと安心です。
+*   **古い歯ブラシ**: 取り付け口の掃除に使います。
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+---
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      日立の<a href="https://kadenfan.hitachi.co.jp/wash/contents/wash_qa/04.html">公式HP</a>の説明によると
-    </p>
-    
-    <p>
-      <span class="bold-red">1,050mm未満</span>の場合は <span class="bold-blue">壁ピタ水栓</span> が必要な場合があるようです。
-    </p>
-    
-    <div class="cstmreba">
-      <div class="kaerebalink-box">
-        <div class="kaerebalink-image">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F57d43767a083d250c246b804b8807d08%2F" target="_blank">{{< custom-figure src="2_10010004984824449602_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="kaerebalink-info">
-          <div class="kaerebalink-name">
-            <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F57d43767a083d250c246b804b8807d08%2F" target="_blank">Panasonic パナソニック 壁ピタ水栓 CB-L6</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-            
-            <div class="kaerebalink-powered-date">
-              posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-            </div>
-          </div>
-          
-          <div class="kaerebalink-detail">
-          </div>
-          
-          <div class="kaerebalink-link1">
-            <div class="shoplinkrakuten">
-              <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F57d43767a083d250c246b804b8807d08%2F" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-            </div>
-            
-            <div class="shoplinkamazon">
-              <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E5%25A3%2581%25E3%2583%2594%25E3%2582%25BF%25E6%25B0%25B4%25E6%25A0%2593%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-            </div>
-            
-            <div class="shoplinkyahoo">
-              <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fshopping.yahoo.co.jp%2Fproducts%2Fz4h2fb1ii2" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-            </div>
-          </div>
-        </div>
-        
-        <div class="booklink-footer">
-        </div>
-      </div>
-    </div>
-    
-    <div style="height:50px" aria-hidden="true" class="wp-block-spacer">
-    </div>
-    
-    <p>
-      我が家の高さを確認してみましょう。
-    </p><figure class="wp-block-image size-large">
-    
-    {{< custom-figure src="洗濯機の高さ-767x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>水栓までの高さ</figcaption></figure> 
-    
-    <p>
-      <span class="fz-36px">1,010mm</span>
-    </p>
-    
-    <p>
-      はい。足りません。
-    </p>
-    
-    <div style="height:100px" aria-hidden="true" class="wp-block-spacer">
-    </div>
-    
-    <p>
-      <span class="fz-20px">それでは蛇口の交換方法を紹介します。</span>
-    </p>
-  </div>
-</div>
+## 蛇口交換の5ステップ
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+道具が揃ったら、いよいよ作業開始です。手順は大きく分けて5つです。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      <span class="bold-red">水栓代 5,000円ぐらい</span> と<span class="bold-red">スパナ等の工具</span>があれば自分で対応できます！
-    </p>
-  </div>
-</div>
+### ステップ1：水道の元栓を締める
 
-## 用意するもの
+{{< custom-figure src="IMG_1196-1024x768.jpg" title="水道メーターボックス" Fit="1280x1280 webp q90" >}}
 
-<div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-caret-right block-box has-border-color has-key-color-border-color">
-  <div class="iconlist-title">
-    必要なもの
-  </div>
-  
-  <ul class="wp-block-list">
-    <li>
-      壁ピタ水栓
-    </li>
-    <li>
-      水栓取り外しレンチ
-    </li>
-    <li>
-      スパナ
-    </li>
-    <li>
-      タオル
-    </li>
-  </ul>
-</div>
+作業を始める前に、必ず家の水道の元栓（止水栓）を締めてください。通常は、屋外のメーターボックス内にあります。
 
-1、**壁ピタ水栓**。これがドラム式洗濯機を設置するために水栓の高さを上げてくれる蛇口です。交換手順も添付されており、シールテープも付属しています。僕が購入したのは少しだけ高さがある **カクダイ 洗濯機用水栓** になります。
+{{< custom-figure src="IMG_1197-1024x768.jpg" title="ハンドルを右に回して水を止める" Fit="1280x1280 webp q90" >}}
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F149375d67daef3ff9ee0e230fbfcf5b1%2F" target="_blank">{{< custom-figure src="2_10010004972353049363_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F149375d67daef3ff9ee0e230fbfcf5b1%2F" target="_blank">洗濯機用水栓(ストッパーツキ) 732-001-13</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F149375d67daef3ff9ee0e230fbfcf5b1%2F" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2582%25AB%25E3%2582%25AF%25E3%2583%2580%25E3%2582%25A4%2520%25E6%25B4%2597%25E6%25BF%25AF%25E6%25A9%259F%25E7%2594%25A8%25E6%25B0%25B4%25E6%25A0%2593%2520%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fshopping.yahoo.co.jp%2Fproducts%2Fz4gmrlckoj" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+ハンドルを時計回りに回すと水が止まります。締めたら、室内の蛇口をひねって水が出ないことを確認しましょう。
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer">
-</div>
+### ステップ2：古い蛇口を取り外す
 
-2、**水栓取り外しレンチ**は蛇口を取り外すときに使う工具です。僕は購入したのに結局使わなかったけど、蛇口の形状によってはこの工具が活躍できます！
+{{< custom-figure src="IMG_1185-1024x768.jpg" title="取り外し前の蛇口" Fit="1280x1280 webp q90" >}}
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">{{< custom-figure src="2_10010004972353604005_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">カクダイ 水栓取外しレンチ 6040</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E6%25B0%25B4%25E6%25A0%2593%25E5%258F%2596%25E3%2582%258A%25E5%25A4%2596%25E3%2581%2597%25E3%2583%25AC%25E3%2583%25B3%25E3%2583%2581%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fshopping.yahoo.co.jp%2Fproducts%2Fz4gmrltid5" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+スパナや水栓レンチを使って、古い蛇口を反時計回りに回して取り外します。このとき、配管に残った水が出てくるので、タオルで受け止めましょう。
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer">
-</div>
+{{< custom-figure src="IMG_1186-768x1024.jpg" title="取り外し完了" Fit="1280x1280 webp q90" >}}
 
-3、**スパナ**は蛇口を取り外すのに使います。結局これだけあれば作業はできました！
+### ステップ3：取り付け口を掃除する
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fc63a3cc964e25694574e8a54aeaa641c%2F" target="_blank">{{< custom-figure src="1_10010004977292212526_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fc63a3cc964e25694574e8a54aeaa641c%2F" target="_blank">E-Value ワイドモンキレンチ EWM-30B(1コ入)</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fc63a3cc964e25694574e8a54aeaa641c%2F" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E3%2582%25B9%25E3%2583%2591%25E3%2583%258A%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3D%25E3%2582%25B9%25E3%2583%2591%25E3%2583%258A" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< custom-figure src="IMG_1187-768x1024.jpg" title="歯ブラシで古いシールテープを除去" Fit="1280x1280 webp q90" >}}
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer">
-</div>
+蛇口を外した後の配管のねじ部分には、古いシールテープや汚れが残っています。古い歯ブラシなどを使って、きれいに掃除してください。
 
-4、**タオル**は蛇口を取るときに内部に残ってる水が出るので、受け止める用です。
+### ステップ4：新しい蛇口を取り付ける
 
-## 給水栓を締める
+{{< custom-figure src="IMG_1190-768x1024.jpg" title="シールテープを巻く" Fit="1280x1280 webp q90" >}}
 
-<div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
-  <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_1196-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>こんな箱に入ってます</figcaption></figure>
-  </div>
-  
-  <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1197-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>右に回すと水が止まります</figcaption></figure>
-  </div>
-</div>
+新しい蛇口のねじ部分に、付属のシールテープを7〜8周ほど、時計回りに巻きつけます。
 
-水道メーターを探して、給水を止めます。
+{{< custom-figure src="IMG_1191-768x1024.jpg" title="手で回して取り付ける" Fit="1280x1280 webp q90" >}}
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer">
-</div>
+テープを巻いたら、取り付け口に時計回りにねじ込みます。最初は手で回し、固くなったらスパナで締め付けます。
 
-## 古い蛇口を取る
+{{< custom-figure src="IMG_1193-768x1024.jpg" title="取り付け完了" Fit="1280x1280 webp q90" >}}
 
-<div class="wp-block-cocoon-blocks-column-2 column-wrap column-2 column-2-2-1-1 layout-box">
-  <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1185-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>取り外し前</figcaption></figure>
-  </div>
-  
-  <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1186-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>取り外し後</figcaption></figure>
-  </div>
-</div>
+**ポイント**: 水漏れを防ぐため、最終的な位置を考えながら、しっかりと締め込むことが重要です。
 
-古い蛇口を取ります。ハンドルタイプの蛇口だと以下の工具で簡単に取り外せます。
+### ステップ5：元栓を開けて水漏れチェック
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">{{< custom-figure src="2_10010004972353604005_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">カクダイ 水栓取外しレンチ 6040</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&p_id=54&pc_id=54&pl_id=616&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Ff4a5a0702d7f73999694e91e4d6bf93b%2F" target="_blank">楽天市場で探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612575&p_id=54&pc_id=54&pl_id=616" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&p_id=170&pc_id=185&pl_id=4062&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3D%25E6%25B0%25B4%25E6%25A0%2593%25E5%258F%2596%25E3%2582%258A%25E5%25A4%2596%25E3%2581%2597%25E3%2583%25AC%25E3%2583%25B3%25E3%2583%2581%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank">Amazonで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1612578&p_id=170&pc_id=185&pl_id=4062" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502&s_v=b5Rz2P0601xu&url=https%3A%2F%2Fshopping.yahoo.co.jp%2Fproducts%2Fz4gmrltid5" target="_blank">Yahooショッピングで探す</a><img loading="lazy" decoding="async" src="//i.moshimo.com/af/i/impression?a_id=1615240&p_id=1225&pc_id=1925&pl_id=18502" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< custom-figure src="IMG_1197-2-1024x768.jpg" title="元栓を開ける" Fit="1280x1280 webp q90" >}}
 
-## 取り付け口を掃除する
+取り付けが完了したら、ゆっくりと元栓を開けます。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="IMG_1187-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>古い歯ブラシで掃除する</figcaption></figure>
-</div>
+{{< custom-figure src="IMG_1239-1024x768.jpg" title="水漏れがないか確認" Fit="1280x1280 webp q90" >}}
 
-蛇口に付いていたテープ等あるので、古い歯ブラシ等で綺麗に掃除します。
+蛇口の接続部分から水が漏れていないか、タオルやティッシュを当てて入念にチェックしましょう。もし漏れている場合は、一度元栓を締め、増し締めするか、シールテープを巻き直してください。
 
-<div style="height:20px" aria-hidden="true" class="wp-block-spacer">
-</div>
+（私は翌日にわずかな水漏れに気づき、締め直しました…）
 
-## 新しい蛇口を取り付ける
+---
 
-<div class="wp-block-cocoon-blocks-column-3 column-wrap column-3 layout-box">
-  <div class="wp-block-cocoon-blocks-column-left column-left">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1190-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>蛇口取付1</figcaption></figure>
-  </div>
-  
-  <div class="wp-block-cocoon-blocks-column-center column-center">
-    <figure class="wp-block-image size-large">{{< custom-figure src="IMG_1191-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>蛇口取付2</figcaption></figure>
-  </div>
-  
-  <div class="wp-block-cocoon-blocks-column-right column-right">
-    <figure class="wp-block-image size-large is-resized">{{< custom-figure src="IMG_1193-768x1024.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>蛇口取付3</figcaption></figure>
-  </div>
-</div>
+## まとめ：DIYは自己責任で！不安な場合はプロに依頼を
 
-取説どおりの手順で新しい蛇口を取り付けます。
+今回、無事に蛇口を交換でき、ドラム式洗濯機を設置する準備が整いました。作業自体は、説明書を読めば難しくありません。
 
-（後で気づくのですが、ちょっぴり水漏れしてたのでしっかり締めましょう）
+しかし、水漏れは下の階への迷惑など、大きなトラブルにつながる可能性もあります。少しでも不安な場合は、無理せず専門の業者に依頼することをおすすめします。
 
-## 給水栓を開ける
-
-{{< custom-figure src="IMG_1197-2-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption>給水栓を開ける</figcaption></figure> 
-
-取り付けが完了したら、給水栓を開けます。
-
-## 水漏れチェック
-
-{{< custom-figure src="IMG_1239-1024x768.jpg" title="" Fit="1280x1280 webp q90" >}} <figcaption>向き変えた</figcaption></figure> 
-
-水が漏れるとしたら、給水した瞬間だと思うので接続部分をチェックしましょう。
-
-（僕は次の日に漏れてる事に気づきました・・・。）
-
-## まとめ
-
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
-
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      購入した水栓には取り付け方法も丁寧に書かれていたので難なく取り付けることが出来ました！
-    </p>
-    
-    <p>
-      しかし、ちょっと水漏れしてたのでやっぱり業者に頼むのが安心だと思います。
-    </p>
-    
-    <p>
-      いい経験なりました！　笑
-    </p>
-  </div>
-</div>
+この記事が、ドラム式洗濯機の購入を検討している方の助けになれば幸いです。

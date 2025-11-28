@@ -1,312 +1,166 @@
 ---
-title: Wix CodeとGASを使ってホームページの更新を自動化する方法
-author: arukayies
-type: post
-date: 2019-12-06T17:00:00+00:00
-url: /gas/wixlinkage-gas
+title: "GASとWixを連携してホームページ更新を自動化！スプレッドシートの情報を自動反映する方法"
+description: "GAS (Google Apps Script) とWixを連携させ、スプレッドシートのデータをWixサイトに自動で反映させる方法を解説します。手動での更新作業をなくし、効率的なサイト運用を実現しましょう。"
+tags: ["Google Apps Script","スプレッドシート", "Wix", "自動化", "API連携"]
+date: "2019-12-06T17:00:00.000Z"
+url: "/gas/wixlinkage-gas"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1244838109851684864";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1244838109851684864";s:5:"pDate";s:19:"2020-03-31 04:05:08";}}";
-categories:
-  - GAS
-tags:
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2019年12月"]
+lastmod: "2025-11-27T11:12:01+09:00"
 ---
-この記事は[Apps Script Advent Calendar 2019][1]の7日目の記事です。
 
-今年からRaspberryPiでサーバーを構築し、ブログを書き始めた「くら(<a rel="noopener" href="http://www.twitter.com/arukayies" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color: #55ACEE;font-size:1.2em;"></i>@arukayies</a>)」です。
+Webサイト、特にイベント情報などを掲載しているホームページの更新作業、手間がかかっていませんか？
+本記事では、**Google Apps Script (GAS) と Wix を連携させ、スプレッドシートの情報をWixサイトへ自動で反映させる方法**を紹介します。
 
-仕事で資料を作るってことはありますが、アドベントカレンダー等は今年が初投稿です。
+この仕組みを導入することで、面倒な手動更新から解放され、サイトの情報を常に最新の状態に保つことができます。
 
-よろしくおねがいします！
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-## 概要
+## システムの全体像
 
-私はツーリングクラブに所属しており、そこのホームページを管理しています。
+今回構築するシステムの処理の流れは以下の通りです。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-detail">
-  <a rel="noopener" href="https://touringclubmilkyway.wixsite.com/touringclubmilkyway" title="ツーリングクラブ | Touringclubmilkyway" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
+{{< custom-figure src="img_5dfa222d3b788.png" title="処理フロー" Fit="1280x1280 webp q90" >}}
+
+1.  **スプレッドシート**: ホームページに掲載したい情報を管理します。（例：イベントスケジュール）
+2.  **Google Apps Script (GAS)**: スプレッドシートの情報を読み取り、WixのAPIへ送信します。
+3.  **Wix (HTTP Functions)**: GASから送られてきたデータを受け取るためのAPIを用意します。
+4.  **Wix (データベース)**: APIが受け取ったデータを格納します。
+5.  **Wix (動的ページ)**: データベースの内容を元に、ホームページの表示を自動で更新します。
+
+## ステップ1: スプレッドシートで表示データを管理する
+
+まず、ホームページに表示させたい情報を管理するスプレッドシートを用意します。
+例えば、外部のスケジュール調整サービス（[伝助][2]など）を利用している場合、`IMPORTHTML`関数を使うことで、その内容を自動でスプレッドシートに取り込めます。
+
+```excel
+=IMPORTHTML("スケジュール調整サービスのURL", "table")
+```
+
+これにより、手入力することなく、常に最新の情報をスプレッドシートに反映できます。
+
+{{< custom-figure src="img_5dfa222d7a2f7.png" title="スプレッドシートへのインポート例" Fit="1280x1280 webp q90" >}}
+
+## ステップ2: Wix側でデータを受け取る準備をする
+
+次に、GASからデータを受け取るためにWix側を設定します。
+
+### 1. データベース（コレクション）の作成
+
+Wixサイトのエディタから「データベース」メニューを開き、新しいコレクションを作成します。ここに、ホームページに表示したい項目（例：イベント名、日時、説明など）に対応するフィールドを追加してください。
+
+{{< custom-figure src="img_5dfa223315543.png" title="Wixコレクションのフィールド設定" Fit="1280x1280 webp q90" >}}
+
+### 2. HTTP FunctionsでAPIを作成する
+
+外部からのデータを受け付けるためのAPIエンドポイントを作成します。
+
+1.  Wixエディタの左側にある「{ } (Velo開発者モード)」を有効にします。
+2.  エクスプローラーが表示されたら、「Backend」セクションにある `http-functions.js` を作成または開きます。
+3.  以下のコードを記述して、外部からのPOSTリクエストを処理できるようにします。
+
+```javascript:http-function.js
+import {
+	created,
+	serverError
+} from 'wix-http-functions';
+import wixData from 'wix-data';
+
+// API名は自由に変更可能です (例: post_introduction)
+export function post_introduction(request) {
+	let options = {
+		"headers": {
+			"Content-Type": "application/json"
+		}
+	};
+
+	// リクエストボディをJSONとして解析
+	return request.body.json()
+		.then((body) => {
+			// データベースに挿入するレコードを作成
+			let recordInsert = {
+				// "introduction"はWixデータベースのフィールド名に合わせてください
+				"introduction": body.introduction
+			};
+			// "Introduction"はWixデータベースのコレクションIDに合わせてください
+			return wixData.insert("Introduction", recordInsert);
+		})
+		.then((results) => {
+			options.body = {
+				"inserted": results
+			};
+			return created(options); // 成功レスポンス
+		})
+		.catch((error) => {
+			options.body = {
+				"error": error
+			};
+			return serverError(options); // エラーレスポンス
+		});
+}
+```
+このファイルを保存・公開すると、WixサイトにAPIエンドポイントが作成されます。
+
+### 3. 動的ページとデータベースを接続する
+
+最後に、作成したデータベースとホームページの表示要素（テキスト、リピーターなど）を接続します。
+データセットを追加し、各テキスト要素がデータベースのどのフィールドを参照するかを設定することで、データベースの内容が自動的にページに表示されるようになります。
+
+{{< custom-figure src="img_5dfa2238b1c74.png" title="テキストとデータベースの接続" Fit="1280x1280 webp q90" >}}
+
+## ステップ3: GASでWixにデータを送信する
+
+スプレッドシートの情報をWixに送信するためのGASスクリプトを作成します。
+
+```javascript
+function updateWixDatabase() {
+  try {
+    // 操作対象のスプレッドシートとシートを指定
+    const spreadsheet = SpreadsheetApp.openById("スプレッドシートID");
+    const sheet = spreadsheet.getSheetByName("シート名");
     
-    <img data-src="https://static.wixstatic.com/media/9e694e_38c2a6624908446d9d36a42b5408cad7%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/9e694e_38c2a6624908446d9d36a42b5408cad7%7Emv2.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://static.wixstatic.com/media/9e694e_38c2a6624908446d9d36a42b5408cad7%7Emv2.jpg/v1/fit/w_2500,h_1330,al_c/9e694e_38c2a6624908446d9d36a42b5408cad7%7Emv2.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        ツーリングクラブ | Touringclubmilkyway
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        ツーリングクラブ | Touringclubmilkywayに訪問ありがとうございます。 関東を拠点に活動するツーリングクラブのMilky wayです バイクをきっかけに知り合った個性豊かな仲間と旨い飯、きれいな景色、そして行ったことがない...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://touringclubmilkyway.wixsite.com/touringclubmilkyway" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://touringclubmilkyway.wixsite.com/touringclubmilkyway" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          touringclubmilkyway.wixsite.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+    // 例としてA1セルの値を取得
+    const introductionData = sheet.getRange("A1").getValue();
 
-ホームページTOPには今後のツーリング予定が書かれており、頻繁に更新が必要でした。
+    // Wixに送信するデータ（ペイロード）を作成
+    const payload = {
+      "introduction": introductionData
+    };
 
-そんな作業をGASを使って、自動化しているので紹介します。
+    // WixのHTTP Functionで生成されたAPIのURL
+    const wixApiUrl = "https://あなたのサイト名.wixsite.com/ホームページ名/_functions/introduction";
 
-<div class="wp-block-cocoon-blocks-icon-box bad-box common-icon-box block-box">
-  <p>
-    ツーリング予定をホームページに反映させるのが<span class="marker-under-red">めんどくさかった</span>。
-  </p>
-</div>
+    const options = {
+      'method': 'post',
+      'contentType': 'application/json',
+      'payload': JSON.stringify(payload)
+    };
 
-<div class="wp-block-cocoon-blocks-icon-box good-box common-icon-box block-box">
-  <p>
-    ホームページ更新作業で<span class="marker-under">パターン化した部分をGASを使って自動化</span>します！
-  </p>
-</div>
+    // Wix APIにデータを送信
+    const response = UrlFetchApp.fetch(wixApiUrl, options);
+    Logger.log(response.getContentText());
 
-## 動作の流れ
+  } catch (e) {
+    Logger.log("エラーが発生しました: " + e.message);
+  }
+}
+```
+この`updateWixDatabase`関数を実行すると、スプレッドシートの情報がWixのデータベースに送信・保存されます。
 
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa222d3b788.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
+## 運用方法とメリット
 
-<div class="wp-block-cocoon-blocks-caption-box-1 caption-box block-box has-border-color has-key-color-border-color">
-  <div class="caption-box-label block-box-label box-label fab-pencil">
-    <span class="caption-box-label-text block-box-label-text box-label-text">処理の概要</span>
-  </div>
-  
-  <div class="caption-box-content block-box-content box-content">
-    <ol class="wp-block-list">
-      <li>
-        スプレッドシートには伝助の情報が書き込まれています。
-      </li>
-      <li>
-        GASを使ってスプレッドシートの情報を取得します。
-      </li>
-      <li>
-        Wixのデータベースにスプレッドシートの情報を反映させます。
-      </li>
-      <li>
-        Wixでは動的ページとデータベースを連動させます。
-      </li>
-    </ol>
-  </div>
-</div>
+この仕組みをさらに発展させると、例えば**LINE Bot**と連携させることができます。
+特定のキーワード（例：「ホームページ更新」）をLINEグループに送信すると、GASのWebhookが起動し、Wixサイトの更新処理が実行される、といった完全自動化も可能です。
 
-## IMPORTHTMLでスケジュールをスプレッドシートに書き込む
+### この仕組みを導入するメリット
 
-私のクラブでは伝助というスケジュール調整サービスでツーリングの参加有無を管理しています。
+-   **更新作業の自動化**: 手動でのコピー＆ペースト作業がなくなり、大幅な時間短縮になります。
+-   **属人化の解消**: 誰でも（この例ではLINEでコマンドを送るだけで）更新できるようになり、特定の担当者に依存しなくなります。
+-   **情報の鮮度維持**: 常に最新の情報がサイトに掲載されるため、訪問者への情報提供の質が向上し、サイトへの信頼性も高まります。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-detail">
-  <a rel="noopener" href="https://www.densuke.biz/" title="スケジュール調整サービス「伝助」" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://densuke.biz/images/og.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://densuke.biz/images/og.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        スケジュール調整サービス「伝助」
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        「伝助」は打ち合わせや飲み会を開くとき、みんなの予定を入力して、どの日程が一番都合がよいかを確認するスケジュール調整サービスです。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://densuke.biz/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://densuke.biz/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          densuke.biz
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+ぜひ、この仕組みを活用して、あなたのホームページ運用を効率化してみてください。
 
-スプレッドシートで伝助の情報を取得するのに<span class="marker-under"><strong>IMPORTHTML関数</strong></span>を使います。
-
-<div class="wp-block-cocoon-blocks-icon-box information-box common-icon-box block-box">
-  <p>
-    <span class="marker-red"><strong>=IMPORTHTML(&#8220;伝助のURL&#8221;,&#8221;table&#8221;)</strong></span>
-  </p>
-  
-  <p>
-    これでスプレッドシートに伝助の情報が反映されます！
-  </p>
-</div>
-
-スプレッドシートで取得するとこんな感じになります。
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa222d7a2f7.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-## GASを使ってWixのデータベースに書き込む
-
-## Wixの設定
-
-### Backend処理の作成
-
-<div class="wp-block-cocoon-blocks-icon-box information-box common-icon-box block-box">
-  <p>
-    Wixでホームページが作成されている前提で説明します。
-  </p>
-</div>
-
-#### ホームページ編集画面からサイドバーを開く
-
-<div class="wp-block-image is-style-default">
-  {{< custom-figure src="img_5dfa222de4ed2.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### Backendを開く
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa222e3e583.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### jsファイルを作成する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa222edf55f.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### http-function.jsを作成する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa222f2ec9d.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### http-function.jsの中身
-
-#### Wixにhttp-function.jsを登録する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa222fae577.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-### データベースの作成
-
-#### 新規コレクションを作成する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa2232bca34.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### 必要なフィールドを作成する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa223315543.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-### データベースとの連携
-
-#### 連携させたい箇所にデータベースをリンクさせる
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa2235e8c28.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### データセットを設定する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa2237eb097.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### テキストとデータベースを接続する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa2238b1c74.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-#### テキストを接続する
-
-<div class="wp-block-image">
-  {{< custom-figure src="img_5dfa223a60200.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
-
-## 運用方法
-
-LINE BOTで特定キーワードの発言があったら、今回の処理を動かすようにしています。
-
-僕以外のメンバーでも<span class="marker-under"><strong>同じように更新</strong></span>することができ、常に**<span class="marker-under">ホームページの情報が最新</span>**に保たれるようになりました。
-
-LINE で発言するだけなら<span class="marker-under"><strong>とても楽</strong></span>です。
-
-ちなみにトリガーワードは「**連動更新**」です。<span class="badge-grey">他にも同様の考え方で更新処理を自動化しています。</span>
-
-## これを作って良かったこと！
-
-<div class="wp-block-cocoon-blocks-icon-box good-box common-icon-box block-box">
-  <ul class="wp-block-list">
-    <li>
-      ホームページの更新が<span class="marker-under">自動化</span>できた！
-    </li>
-    <li>
-      情報が最新に保たれていることで、<span class="marker-under">クラブ加入の問い合わせが増えた</span>！
-    </li>
-    <li>
-      <span class="marker-under">属人化</span>していた作業が減った！
-    </li>
-  </ul>
-  
-  <p>
-  </p>
-</div>
-
- [1]: https://qiita.com/advent-calendar/2019/gas
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+{{< affsearch keyword="LINE BOT チャットボット 作り方" img="/line.jpg">}}

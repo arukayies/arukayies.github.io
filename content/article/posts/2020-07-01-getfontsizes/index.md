@@ -1,352 +1,140 @@
 ---
-title: GASでスプレッドシートのセル範囲からフォントサイズを一括取得する方法
-author: arukayies
-type: post
-date: 2020-06-30T15:14:42+00:00
-excerpt: GASでスプレッドシートの指定範囲すべての文字サイズを取得する方法を紹介します！
-url: /gas/getfontsizes
+title: "【GAS高速化】getFontSizes()でフォントサイズを一括取得！API呼び出しを激減させる方法"
+description: "GASのループ処理でセルのフォントサイズを一つずつ取得し、スクリプトが遅くなっていませんか？getFontSizes()なら、たった1回のAPI呼び出しで範囲全体のフォントサイズを二次元配列として一括取得できます。パフォーマンスを劇的に改善する実践テクニックを紹介。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getFontSizes", "高速化", "パフォーマンス", "一括取得", "二次元配列", "API"]
+date: "2020-06-30T15:14:42.000Z"
+lastmod: "2025-11-28T00:00:00.000Z"
+url: "/gas/getfontsizes"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1593530083
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:57:14
-categories:
-  - GAS
-tags:
-  - GAS
-  - getFontSizes()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年7月"]
 ---
-Google Apps Script（GAS）でスプレッドシートを操作する時、フォントサイズを取得したい場面ってあるばい？ `getFontSizes()`メソッドを使えば、セルのフォントサイズを一括で取得できるんじゃ！
 
-今回は、この`getFontSizes()`メソッドの基本から応用テクニックまで、ばっちり解説するけん、ぜひ最後まで読んでみてな！
+Google Apps Script (GAS)で大量のセルの書式を扱う際、スクリプトの実行速度が遅いと感じたことはありませんか？その原因は、十中八九**ループ処理の中でのAPIの連続呼び出し**です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+セルのフォントサイズを取得する際、`getFontSize()`をループで回すのは最も避けるべき実装パターンです。
 
-## getFontSizes()メソッドとは？
+この記事では、パフォーマンスを劇的に改善するための必須メソッド**`getFontSizes()`**に焦点を当て、その効果的な使い方と、取得した二次元配列データを活用する実践的なテクニックを解説します。
 
-このメソッドは、指定したセル範囲内のフォントサイズを**二次元配列**で取得できる便利なやつ。 例えば、スプレッドシートの特定の範囲のフォントサイズを知りたい時に使うばい。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### 基本構文
+## なぜ`getFontSizes()`がパフォーマンスの鍵なのか？
 
-<pre class="wp-block-code"><code>const fontSizes = range.getFontSizes();
-</code></pre>
+`getFontSize()`（単数形）をループ内で呼び出すと、セルの数だけAPI呼び出し（ネットワーク通信）が発生し、処理に膨大な時間がかかります。
 
-特定のセル範囲に適用すると、その範囲のフォントサイズ情報が**行列の形**で返ってくるっちゃ！
+`getFontSizes()`は、このAPI呼び出しを**たった1回**に集約します。指定した範囲の全セルのフォントサイズを一度に取得し、高速に処理できる**二次元配列 (`Number[][]`)** として返すことで、スクリプトの実行時間を劇的に短縮するのです。
 
-例えば、こんな感じでデータが返ってくるばい。
+## `getFontSizes()`の使い方と二次元配列の扱い方
 
-<pre class="wp-block-code"><code>&#91;
-  &#91;12, 14],
-  &#91;16, 18],
-  &#91;20, 22]
-]
-</code></pre>
+`getFontSizes()`の基本的な使い方はシンプルです。
 
-この二次元配列の各要素が、それぞれのセルのフォントサイズを表してるんじゃ。
-
-## getFontSizes()を使う基本手順
-
-### 1. スプレッドシートとシートの取得
-
-<pre class="wp-block-code"><code>const ss = SpreadsheetApp.getActiveSpreadsheet();
-const sheet = ss.getSheetByName('シート名');
-</code></pre>
-
-### 2. 範囲オブジェクトを指定
-
-<pre class="wp-block-code"><code>const range = sheet.getRange('B2:D4');
-</code></pre>
-
-### 3. フォントサイズを取得
-
-<pre class="wp-block-code"><code>const fontSizes = range.getFontSizes();
-</code></pre>
-
-### 4. データをループ処理
-
-<pre class="wp-block-code"><code>fontSizes.forEach((row, rowIndex) =&gt; {
-  row.forEach((size, colIndex) =&gt; {
-    console.log(`行${rowIndex+1} 列${colIndex+1}のフォントサイズ: ${size}pt`);
-  });
-});
-</code></pre>
-
-## getFontSizes()の応用テクニック
-
-### 大きなフォントサイズを持つセルを検出
-
-<pre class="wp-block-code"><code>function detectLargeFonts() {
+```javascript
+function fetchAllFontSizes() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getDataRange();
-  const fontSizes = dataRange.getFontSizes();
-  const LARGE_SIZE = 16;
-  let largeCells = &#91;];
+  const range = sheet.getRange("A1:C3");
   
-  fontSizes.forEach((row, i) =&gt; {
-    row.forEach((size, j) =&gt; {
-      if(size &gt;= LARGE_SIZE) {
-        const cellNotation = `${String.fromCharCode(65+j)}${i+1}`;
-        largeCells.push(cellNotation);
-      }
-    });
-  });
+  // API呼び出しはここでの1回だけ
+  const fontSizes = range.getFontSizes();
   
-  console.log(`16pt以上のセル: ${largeCells.join(', ')}`);
-}
-</code></pre>
-
-### フォントサイズのバックアップ
-
-<pre class="wp-block-code"><code>function backupFontSizes() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sourceSheet = ss.getSheetByName('メイン');
-  const backupSheet = ss.getSheetByName('バックアップ') || ss.insertSheet('バックアップ');
+  // 戻り値は二次元配列
+  // 例: [[10, 12, 10], [10, 14, 10], [18, 10, 10]]
   
-  const sourceRange = sourceSheet.getDataRange();
-  const fontSizes = sourceRange.getFontSizes();
-  
-  backupSheet.clearContents();
-  sourceRange.copyTo(backupSheet.getRange(1, 1));
-  
-  fontSizes.forEach((row, i) =&gt; {
-    row.forEach((size, j) =&gt; {
-      backupSheet.getRange(i+1, j+1).setNote(`元のフォントサイズ: ${size}pt`);
+  // 二次元配列を効率的に処理
+  fontSizes.forEach((row, rowIndex) => {
+    row.forEach((size, colIndex) => {
+      const cellAddress = range.getCell(rowIndex + 1, colIndex + 1).getA1Notation();
+      console.log(`セル ${cellAddress} のフォントサイズ: ${size}pt`);
     });
   });
 }
-</code></pre>
+```
+取得した二次元配列は、`forEach`や`map`といった配列メソッドを駆使することで、様々な形に加工できます。
 
-## まとめ
+## 実践！`getFontSizes()`活用シナリオ
 
-`getFontSizes()`メソッドを使うと、スプレッドシートのフォントサイズを**一括で取得**できるっちゃ。
+### シナリオ1：シート内のフォントサイズ分布を分析する
 
-<ul class="wp-block-list">
-  <li>
-    <code>getFontSizes()</code>は二次元配列でデータを取得
-  </li>
-  <li>
-    範囲指定 → <code>getFontSizes()</code>適用 → ループ処理 で活用できる
-  </li>
-  <li>
-    <strong>条件付き検出</strong>や<strong>バックアップ</strong>など応用も可能
-  </li>
-</ul>
+シート内で使用されているフォントサイズを種類別に集計し、簡易的なレポートを作成します。
 
-フォントサイズをチェックしたり、デザインの統一を図ったりする時に、ばっちり使えるけん、ぜひ試してみてな！
+```javascript
+function analyzeFontSizeDistribution() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  // flat()で二次元配列を一次元配列に変換
+  const sizes = sheet.getDataRange().getFontSizes().flat(); 
+  const sizeStats = {};
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+  // フォントサイズごとの使用回数を集計
+  sizes.forEach(size => {
+    sizeStats[size] = (sizeStats[size] || 0) + 1;
+  });
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://gsuiteguide.jp/sheets/getfontsizes/" title="セル範囲のフォントサイズ(文字の大きさ)をセルごとに取得する：getFontSizes()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+  // 新しいシートを作成してレポートを出力
+  const reportSheet = SpreadsheetApp.getActive().insertSheet('FontSizeReport');
+  reportSheet.appendRow(['フォントサイズ (pt)', '使用セル数']);
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セル範囲のフォントサイズ(文字の大きさ)をセルごとに取得する：getFontSizes()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getFontSizes() セル範囲のフォントサイズ(文字の大きさ)をセルごとに取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.getActiveSpreadshe...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getfontsizes/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getfontsizes/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a> 
+  // サイズ順にソートして出力
+  const sortedData = Object.entries(sizeStats).sort((a, b) => Number(a[0]) - Number(b[0]));
   
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://qiita.com/matsuhandy/items/7d5215efc2bdad7f4055" title="Google Apps Script(GAS)でスプレッドシートを扱うクラス(J3-02) - Qiita" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnNlY3VyZS5ncmF2YXRhci5jb20lMkZhdmF0YXIlMkY0ZjZjOGQ4M2ExODFjMDYyYzNjMmNjODY2MjBkNDNiND9peGxpYj1yYi00LjAuMCZhcj0xJTNBMSZmaXQ9Y3JvcCZtYXNrPWVsbGlwc2UmYmc9RkZGRkZGJmZtPXBuZzMyJnM9YTQxNDM5MGM1ODhkMTY1ODE3ZjExMWYxMWJlZWI5MDg%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3Dd748da7436e7e31d99f2e52ca3ef0713?ixlib=rb-4.0.0&#038;w=1200&#038;fm=jpg&#038;mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9R29vZ2xlJTIwQXBwcyUyMFNjcmlwdCUyOEdBUyUyOSVFMyU4MSVBNyVFMyU4MiVCOSVFMyU4MyU5NyVFMyU4MyVBQyVFMyU4MyU4MyVFMyU4MyU4OSVFMyU4MiVCNyVFMyU4MyVCQyVFMyU4MyU4OCVFMyU4MiU5MiVFNiU4OSVCMSVFMyU4MSU4NiVFMyU4MiVBRiVFMyU4MyVBOSVFMyU4MiVCOSUyOEozLTAyJTI5JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9MTY2ODVhODkwODMyYTQxMzBkNGJjZDNiZDBkOTZmY2E&#038;mark-x=120&#038;mark-y=112&#038;blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBtYXRzdWhhbmR5JnR4dC1jb2xvcj0lMjMxRTIxMjEmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9MzYmdHh0LXBhZD0wJnM9ZmY0YzBhOWIwMGExYThlYThmMzkzZDc2OTJlNjUwMzc&#038;blend-x=242&#038;blend-y=480&#038;blend-w=838&#038;blend-h=46&#038;blend-fit=crop&#038;blend-crop=left%2Cbottom&#038;blend-mode=normal&#038;s=200d3325d51a29dd9c6ea31da2e06abd" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Apps Script(GAS)でスプレッドシートを扱うクラス(J3-02) - Qiita
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        0. 前回の復習課題 ＜課題3＞ GoogleDrive上に今日の日付のフォルダを作り，logというファイル名のドキュメントを作成，ファイルIDを取得せよ。次のGASプログラムを動作させ，結果が図のようになることを確認せよ。mainを読んで...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://qiita.com/matsuhandy/items/7d5215efc2bdad7f4055" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://qiita.com/matsuhandy/items/7d5215efc2bdad7f4055" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          qiita.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+  if (sortedData.length > 0) {
+    reportSheet.getRange(2, 1, sortedData.length, 2).setValues(sortedData);
+  }
+}
+```
 
-それじゃ、GASライフを楽しんでな～！
+### シナリオ2：書式情報を一括でバックアップ・復元する
+
+シートの書式を大胆に変更する前に、現在のフォントサイズ情報を別のシートにバックアップし、後から復元できるようにします。
+
+**ポイントは、読み込み(`getFontSizes`)だけでなく、書き込み(`setFontSizes`)も一括で行うことです。**
+
+```javascript
+const BACKUP_SHEET_NAME = '書式バックアップ';
+
+// 現在のフォントサイズを別シートにバックアップ
+function backupFontFormats() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getDataRange();
+  const fontSizes = range.getFontSizes();
+  
+  let backupSheet = SpreadsheetApp.getActive().getSheetByName(BACKUP_SHEET_NAME);
+  if (backupSheet) {
+    backupSheet.clear();
+  } else {
+    backupSheet = SpreadsheetApp.getActive().insertSheet(BACKUP_SHEET_NAME);
+  }
+  
+  // バックアップシートにフォントサイズ情報を一括書き込み
+  backupSheet.getRange(1, 1, fontSizes.length, fontSizes[0].length).setValues(fontSizes);
+}
+
+// バックアップからフォントサイズを復元
+function restoreFontFormats() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const backupSheet = SpreadsheetApp.getActive().getSheetByName(BACKUP_SHEET_NAME);
+  if (!backupSheet) {
+    SpreadsheetApp.getUi().alert('バックアップシートが見つかりません。');
+    return;
+  }
+  
+  const backupRange = backupSheet.getDataRange();
+  const fontSizes = backupRange.getValues(); // バックアップシートから値を取得
+  
+  // 元のシートにフォントサイズを一括適用
+  sheet.getRange(1, 1, fontSizes.length, fontSizes[0].length).setFontSizes(fontSizes);
+}
+```
+
+## まとめ：GAS高速化の鍵は常に「一括処理」
+
+`getFontSizes()`は、スプレッドシートのフォントサイズ情報を扱うスクリプトのパフォーマンスを向上させるための**必須メソッド**です。
+
+-   **ループでAPIを叩かない**: `getFontSize()`のループは避け、常に一括取得を心がける。
+-   **データは配列で操作**: 取得した二次元配列を効率的に処理する。
+-   **書き込みも一括で**: `setFontSizes()`のようなメソッドを使い、読み書き両方でパフォーマンスを最適化する。
+
+この「一括処理」の原則をマスターすることが、高速で安定したGASを開発するための最も重要なスキルと言えるでしょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getfontsizes" >}}

@@ -1,36 +1,23 @@
 ---
-title: 【観葉植物】アルティシマの観察日記(1日目)
-author: arukayies
-type: post
-date: 2019-04-11T12:25:31+00:00
-url: /house_plants/altissima/diary1-6
+title: "【観葉植物】アルティシマの観察日記(1日目)"
+date: "2019-04-11T12:25:31.000Z"
+url: "/house_plants/altissima/diary1-6"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1569068731
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1175385679578066944";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1175385679578066944";s:5:"pDate";s:19:"2019-09-21 12:25:58";}}";'
 archives: ["2019年4月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "観葉植物アルティシマの成長を綴る観察日記の1日目。IKEAで購入したアルティシマの様子や、支柱での支え方、愛称についてご紹介します。"
+tags: ["観葉植物", "アルティシマ", "育て方", "観察日記"]
 ---
+
 こんにちは！
 
 妻と同棲し始めたときにIKEAで購入した**アルティシマ**の観察報告です。
 
-<span style="color: blue;">観察1日目</span>の様子です！
+**観察1日目**の様子です！
 
 ## 観察1日目
 
-背丈が伸びてきたので、支柱で支えています。あと名札つけました。  
-アルティシマなんで、『あーちゃん』っていうニックネームです　笑。  
+背丈が伸びてきたので、支柱で支えています。そして名札もつけました。  
+アルティシマなので、『あーちゃん』というニックネームをつけました（笑）。
 {{< custom-figure src="img_5dfa2c0b15f40.jpg" title="" Fit="1280x1280 webp q90" >}}

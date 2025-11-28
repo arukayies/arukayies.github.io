@@ -1,257 +1,131 @@
 ---
-title: GASでスプレッドシートの指定範囲からフィルター設定を取得・操作する方法
-author: arukayies
-type: post
-date: 2020-06-20T05:36:12+00:00
-excerpt: GASでスプレッドシートの指定範囲のフィルタークラスを取得する方法を紹介します！
-url: /gas/getfilter
+title: "GASでフィルターを自動操作！getFilter()でデータ絞り込みを効率化する方法"
+description: "毎日の面倒なフィルター操作をGASで自動化しませんか？getFilter()メソッドを使い、スプレッドシートのフィルター設定の確認、更新、動的な条件設定を行う方法を解説。日次レポート作成などを効率化する実践的コードが満載です。"
+tags: ["GAS", "getFilter", "Google Apps Script", "スプレッドシート", "Filter", "自動化", "業務効率化", "データ絞り込み", "FilterCriteria"]
+date: "2020-06-20T05:36:12.000Z"
+lastmod: "2025-11-28T00:00:00.000Z"
+url: "/gas/getfilter"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1592631373
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 22:10:16
-categories:
-  - GAS
-tags:
-  - GAS
-  - getFilter()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
 ---
-Google Apps Script（GAS）の`getFilter()`メソッド、使いこなせてるかい？ スプレッドシートのフィルタ機能を自動化できる便利なメソッドばってん、意外と知らん人も多かばい。 今回は、その基本から応用テクニックまでしっかり解説するばい！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+スプレッドシートで大量のデータを扱う際、「特定の条件で絞り込んで表示する」フィルター機能は欠かせません。しかし、毎日同じ条件でフィルターをかけ直したり、データが追加されるたびに範囲を再設定したりするのは、地味に面倒な作業です。
 
-## getFilter()とは？
+Google Apps Script (GAS) の **`getFilter()`** メソッドを使えば、こうしたフィルター操作を完全に自動化できます。
 
-まず、`getFilter()`メソッドは何をするものか？ 簡単に言うと「指定した範囲のフィルタオブジェクトを取得する」ためのメソッドばい。
+この記事では、`getFilter()` の基本から、既存フィルターの更新や、スクリプト実行時に特定の条件で自動的にデータを絞り込む応用テクニックまで、分かりやすく解説します。
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const range = sheet.getRange("A1:D100");
-const filter = range.getFilter();
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-if (filter) {
-  console.log("フィルタが適用されてるばい！");
-} else {
-  console.log("フィルタはまだ無かばい！");
-}
-</code></pre>
+## `getFilter()` の基本 - シートにフィルターが存在するか確認する
 
-これを使えば、スプレッドシートのフィルタ状態を確認できるとさ。
+`getFilter()` は、シートに適用されている `Filter` オブジェクトを取得するためのメソッドです。フィルターが存在すればそのオブジェクトを、存在しなければ `null` を返します。
 
-## フィルタの基本ルール
+これを利用して、まずはシートにフィルターが設定されているかをチェックするのが基本の第一歩です。
 
-フィルタ機能にはいくつかルールがあるばい。
-
-<ul class="wp-block-list">
-  <li>
-    <strong>シートごとに1つのフィルタしか設定できん</strong>
-  </li>
-  <li>
-    <strong>フィルタ範囲は連続したセル範囲であること</strong>
-  </li>
-  <li>
-    <strong>フィルタを使えば、特定の条件に合うデータだけを表示できる</strong>
-  </li>
-</ul>
-
-この基本を押さえておくと、スクリプトを組むときに迷わんじゃろ。
-
-## getFilter()の実践的な活用
-
-### 1. 既存のフィルタをチェックする
-
-<pre class="wp-block-code"><code>function checkExistingFilter() {
+```javascript
+function checkFilterExists() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getRange("A1:D100");
-  const existingFilter = range.getFilter();
+  // シートに設定されているフィルターを取得
+  const filter = sheet.getFilter();
 
-  if (existingFilter) {
-    console.log(`既存フィルタ範囲: ${existingFilter.getRange().getA1Notation()}`);
+  if (filter) {
+    const rangeA1 = filter.getRange().getA1Notation();
+    console.log(`このシートにはフィルターが適用されています。範囲: ${rangeA1}`);
   } else {
-    console.log('フィルタは存在しません');
+    console.log("このシートにフィルターは適用されていません。");
   }
 }
-</code></pre>
+```
+**ポイント**: `sheet.getFilter()` を使うと、シート全体のフィルターを簡単に取得できます。特定の範囲にフィルターがあるか調べたい場合は `range.getFilter()` を使います。
 
-### 2. フィルタを削除して再設定する
+## 実践！フィルターをGASで操作する主要パターン
 
-<pre class="wp-block-code"><code>function refreshFilter() {
+### 1. フィルターを「リフレッシュ」する (削除 & 再作成)
+
+元データの行数や列数が変わった際に、フィルターの適用範囲を最新の状態に更新したいケースは頻繁にあります。そんな時は、一度フィルターを削除してから、現在のデータ範囲全体に再作成するのが最も確実です。
+
+```javascript
+function refreshFilterRange() {
   const sheet = SpreadsheetApp.getActiveSheet();
+  // 最新のデータ範囲を取得 (例: A1からデータがある最後のセルまで)
   const dataRange = sheet.getDataRange();
   
-  // 既存フィルタを削除
-  const oldFilter = dataRange.getFilter();
-  if (oldFilter) oldFilter.remove();
+  // 既存のフィルターが存在すれば、まず削除する
+  const currentFilter = sheet.getFilter();
+  if (currentFilter) {
+    currentFilter.remove();
+  }
 
-  // 新規フィルタ作成
-  const newFilter = dataRange.createFilter();
+  // 最新のデータ範囲に対して新しいフィルターを作成
+  dataRange.createFilter();
+  console.log(`フィルターを範囲 ${dataRange.getA1Notation()} で更新しました。`);
 }
-</code></pre>
+```
+このスクリプトをトリガーで定期実行すれば、データが変動しても常に最適な範囲にフィルターが適用された状態を保てます。
 
-### 3. フィルタ条件を動的に適用する
+### 2. フィルターの「絞り込み条件」を動的に設定する
 
-<pre class="wp-block-code"><code>function applyDynamicFilters() {
+`getFilter()` の真骨頂は、特定の条件でデータを自動的に絞り込む処理です。例えば、「ステータスが“完了”のものだけ表示する」「今日の日付のデータだけ表示する」といった操作をスクリプトで実現できます。
+
+**▼ 1列目(A列)が「重要」という文字を含む行だけを表示する例**
+
+```javascript
+function applyDynamicFilter() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const filter = sheet.getFilter() || sheet.getRange("A1:D").createFilter();
+  
+  // シートのフィルターを取得。なければデータ範囲全体に新規作成する
+  const filter = sheet.getFilter() || sheet.getDataRange().createFilter();
 
+  // 絞り込み条件（FilterCriteria）を作成
   const criteria = SpreadsheetApp.newFilterCriteria()
-    .whenTextContains("重要")
+    .whenTextContains("重要") // テキストに「重要」が含まれる
     .build();
 
+  // 1列目（A列）にフィルター条件をセット
+  // この命令で、実際のシート上の表示が絞り込まれる
   filter.setColumnFilterCriteria(1, criteria);
+  
+  console.log("1列目を「重要」で絞り込みました。");
 }
-</code></pre>
+```
+`newFilterCriteria()` ビルダーを使えば、`whenNumberGreaterThan(100)`（数値が100より大きい）や `whenDateEqualTo(new Date())`（今日の日付）など、様々な条件を柔軟に組み立てることが可能です。
+
+### 3. すべての絞り込み条件をクリアする
+
+設定されているフィルターの絞り込み条件をすべてリセットし、全データを表示状態に戻したい場合は、`removeColumnFilterCriteria()` を使います。
+
+```javascript
+function clearAllFilterCriteria() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const filter = sheet.getFilter();
+
+  if (filter) {
+    const range = filter.getRange();
+    // フィルター範囲のすべての列に対してループ
+    for (let i = 1; i <= range.getNumColumns(); i++) {
+      // 各列の絞り込み条件を削除
+      filter.removeColumnFilterCriteria(i);
+    }
+    console.log("すべてのフィルター条件をクリアしました。");
+  }
+}
+```
 
 ## まとめ
 
-Google Apps Scriptの`getFilter()`を活用すれば、スプレッドシートのデータ管理がぐっと楽になるばい！
+`getFilter()` と関連メソッドを使えば、手作業で行っていた面倒なフィルター操作をGASで自動化し、業務効率を大幅に向上させることができます。
 
-<ul class="wp-block-list">
-  <li>
-    <strong>既存のフィルタを確認できる</strong>
-  </li>
-  <li>
-    <strong>不要なフィルタを削除して、新しく作成できる</strong>
-  </li>
-  <li>
-    <strong>条件付きフィルタを適用して、データを自動整理できる</strong>
-  </li>
-</ul>
+-   **`sheet.getFilter()`** でフィルターの有無や範囲を簡単に確認できる。
+-   **`remove()` と `createFilter()`** の組み合わせで、フィルター範囲を常に最新に保てる。
+-   **`setColumnFilterCriteria()`** を使えば、特定の条件でのデータ絞り込みを自動化できる。
 
-こん方法ばマスターすれば、スプレッドシートの業務効率も爆上がり間違いなしじゃ！
+これらのテクニックを駆使して、日々のデータチェックやレポート作成業務をよりスマートなものにしていきましょう。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/filter?hl=ja" >}}
+
+{{< blog-card "https://i-dea.jp/work/gas-spreadsheet-filter-sort/" >}}

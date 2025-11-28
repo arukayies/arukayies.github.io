@@ -1,309 +1,145 @@
 ---
-title: GASでスプレッドシートの指定範囲から表示形式の値を一括取得する方法
-author: arukayies
-type: post
-date: 2020-06-19T16:16:41+00:00
-excerpt: GASでスプレッドシートの指定範囲の表示されている値すべてを取得する方法を紹介します！
-url: /gas/getdisplayvalues
+title: "GAS getDisplayValues()で表示値を一括取得！高速処理の鉄則を解説"
+description: "GASで大量のセルの表示値を扱うならgetDisplayValues()が必須！getValues()との違い、forループ処理との圧倒的なパフォーマンス差、取得した二次元配列を実践的に加工する方法まで、業務で使えるコードと共に徹底解説します。"
+tags: ["GAS", "getDisplayValues", "Google Apps Script", "スプレッドシート", "一括取得", "パフォーマンス", "高速化", "二次元配列"]
+date: "2020-06-19T16:16:41.000Z"
+url: "/gas/getdisplayvalues"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1592583402
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 22:11:08
-categories:
-  - GAS
-tags:
-  - GAS
-  - getDisplayValues()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
+lastmod: "2025-11-28T00:00:00+00:00"
 ---
-Google Apps Script（GAS）を使ってスプレッドシートの操作をしてると、「表示値」を扱う場面がよくあるばい。特に、日付や通貨、パーセンテージなど、フォーマットが大事なデータを取り扱うときには、`getDisplayValues()`メソッドが大活躍するんじゃ。今回はそのメソッドの使い方を、初心者にもわかりやすく解説していくけん、ぜひ参考にしてみてや！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) でスプレッドシートのデータを扱う際、日付や通貨などのフォーマットを維持したまま、**しかも高速に**値を取得したい場面は非常に多いです。そんな時に絶大な効果を発揮するのが `getDisplayValues()` メソッドです。
 
-## getDisplayValues()とは？
+この記事では、`getDisplayValues()` を使って**複数セルの表示値を一括で取得する**方法に焦点を当て、その基本からパフォーマンスの重要性、実践的なデータ加工テクニックまでを詳しく解説します。
 
-まず、`getDisplayValues()`ってどんなメソッドかって話をしとくばい。Googleスプレッドシートでは、セルに入力されたデータは「表示値」としてユーザーに見えるけど、その裏側では実際には異なるデータ型が使われていることが多いんだよ。例えば、「2023/04/02」って日付が表示されているけど、実際にはそのセルには「UNIX時間」って数値が格納されとるわけよ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-そこで、このメソッドを使うことで、表示されている「フォーマットされた値」をそのまま文字列として取得できるんよ。これが何で便利かっていうと、例えばレポートにそのまま表示形式を保ったデータを渡したいときに、とっても助かるんじゃ。
+## `getDisplayValues()` とは？ - 見たままの値をまとめて取得
 
-## getValues()とどう違う？
+`getDisplayValues()` は、指定した範囲のセルに**表示されている値（表示値）**を、そのままのフォーマットで**二次元配列**として一括で取得するメソッドです。
 
-`getValues()`との違いを理解することも大事ばい。`getValues()`はセルの「基盤データ」を返すんだけど、`getDisplayValues()`はそのデータを「表示形式のまま文字列で返す」んじゃ。例えば、数値が「1,000円」って表示されている場合、`getValues()`で取得すると「1000」って数値が返されるけど、`getDisplayValues()`だと「1,000円」って文字列で返されるわけさ。
+`getValue()` がセルの内部的な値（例: `1000`）を取得するのに対し、`getDisplayValues()` は表示されている文字列（例: `"¥1,000"`）を取得します。レポート作成や外部連携など、見た目が重要なデータを効率的に扱いたい場合に最適です。
 
-こんなふうに、表示形式が重要な時に`getDisplayValues()`は役立つんよ！
+| メソッド | 取得範囲 | 取得できる値 | データ型 |
+|:--- |:--- |:--- |:--- |
+| `getValues()` | 複数セル | 内部的な元の値 | 二次元配列 (数値, Date等) |
+| **`getDisplayValues()`** | **複数セル** | **画面に見えている表示値** | **二次元配列 (文字列)** |
 
-## getDisplayValues()の使い方
+## なぜ `getDisplayValues()` を使うべきか？パフォーマンスの重要性
 
-### 基本の使い方
+複数セルの値を取得する際、`for` ループの中で `getDisplayValue()` (単数形) を何度も呼び出すのは**最悪のアンチパターン**です。
 
-まずは基本的なコードから見ていこうか。
-
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('シート名');
-const range = sheet.getRange('A1:B10');  // A1からB10までの範囲を指定
-const displayValues = range.getDisplayValues();
-Logger.log(displayValues);  // 結果をログに表示
-</code></pre>
-
-こんな感じで、範囲を指定してそのセルの表示値を一気に取得できるんじゃ。
-
-### 実際の使い方
-
-次に、業務でよく使うようなシナリオを考えてみるけん。例えば、販売レポートを作るとき、商品の価格や日付が「¥1,000」や「2023/04/02」ってフォーマットされているとするじゃん？そのまま見栄えよくデータを取り出して、メールで送るスクリプトを作る場合、`getDisplayValues()`が便利ばい。
-
-<pre class="wp-block-code"><code>function sendSalesReport() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('SalesData');
-  const dataRange = sheet.getRange('A2:E100');
-  const displayData = dataRange.getDisplayValues();
-  
-  let report = '最新販売レポート\n\n';
-  displayData.forEach(row =&gt; {
-    report += `${row&#91;0]} | 数量: ${row&#91;1]} | 単価: ${row&#91;2]} | 合計: ${row&#91;3]}\n`;
-  });
-  
-  MailApp.sendEmail('report@example.com', '日次販売レポート', report);
+```javascript
+// 【非推奨】遅いコードの例
+function slowMethod() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:B100");
+  const values = [];
+  for (let i = 1; i <= 100; i++) {
+    const rowValues = [];
+    for (let j = 1; j <= 2; j++) {
+      // ループのたびにAPI呼び出しが発生し、非常に遅い
+      rowValues.push(range.getCell(i, j).getDisplayValue());
+    }
+    values.push(rowValues);
+  }
+  return values;
 }
-</code></pre>
 
-このコードで、フォーマットされたデータ（例えば、「¥1,000」など）がそのままレポートに使われるわけよ。これなら、フォーマットを気にせずにデータを処理できるけん、すごく便利じゃろ？
+// 【推奨】高速なコードの例
+function fastMethod() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:B100");
+  // API呼び出しは1回だけ！
+  const values = range.getDisplayValues();
+  return values;
+}
+```
 
-## メリットとデメリット
+スプレッドシートへのアクセス（API呼び出し）は、回数が増えるほどスクリプトの実行時間が長くなります。`getDisplayValues()` を使えば、この呼び出しが**たった1回**で済むため、処理が劇的に高速になります。
 
-### メリット
+## `getDisplayValues()` の使い方とデータ加工
 
-<ul class="wp-block-list">
-  <li>
-    <strong>フォーマットがそのまま取得できる</strong>：日付や通貨など、フォーマットをそのまま使えるので、レポートや通知メールが見やすくなるんじゃ。
-  </li>
-  <li>
-    <strong>柔軟なデータ処理</strong>：表示値を文字列として扱うことで、データ処理が柔軟になるけん、後から数値に変換することもできるばい。
-  </li>
-</ul>
+### 基本的な使い方
 
-### デメリット
+`getRange()` で取得した範囲に対してメソッドを呼び出すだけで、表示値が格納された二次元配列が返ってきます。
 
-<ul class="wp-block-list">
-  <li>
-    <strong>型変換の必要がある</strong>：<code>getDisplayValues()</code>で取得するデータはすべて文字列だから、数値や日付が必要なときは型変換をする必要があるけん、ちょっと手間がかかることもある。
-  </li>
-</ul>
+```javascript
+function fetchDisplayValues() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('売上データ');
+  // A1からC10までの範囲を指定
+  const range = sheet.getRange('A1:C10');
+  // 指定範囲の表示値を一括取得
+  const displayValues = range.getDisplayValues();
+  
+  // 取得した二次元配列をログに出力
+  console.log(displayValues);
+}
+```
+
+### 実践テクニック：取得した配列を加工する
+
+`getDisplayValues()` で取得したデータは、そのままでは使いにくいことがあります。`filter` や `map` といった配列メソッドを組み合わせることで、必要なデータだけに整形できます。
+
+**▼ 在庫がある商品データだけを抽出し、オブジェクトの配列に変換する**
+
+```javascript
+function processSalesData() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getDataRange(); // シート全体のデータを取得
+  const values = range.getDisplayValues();
+  
+  const header = values.shift(); // 1行目（ヘッダー）を取り出す
+  
+  const salesObjects = values
+    .filter(row => row[2] !== '0') // 在庫数(3列目)が'0'でない行だけをフィルタリング
+    .map(row => {
+      // 配列を扱いやすいオブジェクトに変換
+      return {
+        productName: row[0], // 商品名
+        price: row[1],       // 価格 (例: "¥1,500")
+        stock: row[2],       // 在庫数
+        lastUpdated: row[3]  // 最終更新日 (例: "2025/12/25")
+      };
+    });
+    
+  console.log(salesObjects);
+  /*
+    実行結果の例:
+    [
+      { productName: 'リンゴ', price: '¥150', stock: '10', lastUpdated: '2025/12/25' },
+      ...
+    ]
+  */
+}
+```
+このように加工することで、JSONとして外部APIに送信したり、別のシートに書き出したりするのが非常に楽になります。
+
+## 注意点：すべてが「文字列」になる
+
+`getDisplayValues()` を使う上で最も重要な注意点は、取得した値が**すべて文字列型**になることです。
+
+- **計算ができない**: `"¥1,500"` のような文字列はそのままでは計算に使えません。計算が必要な場合は、`getValues()` を使うか、文字列から不要な文字を削除して数値に変換する処理が必要です。
+- **空のセルは空文字 `''`**: `getValues()` では空のセルは `null` ではありませんが、`getDisplayValues()` では空文字列 `''` として取得されます。
 
 ## まとめ
 
-Google Apps Scriptの`getDisplayValues()`メソッドは、スプレッドシートの「表示されている値」をそのまま取得できる便利なメソッドじゃ。特にレポートや通知メールでフォーマットを維持したいときには大活躍するばい！ただし、型変換に気をつけながら使う必要があるけん、その点だけ覚えておけばバッチリじゃね。
+`getDisplayValues()` は、スプレッドシートの表示値を効率的に扱うための必須メソッドです。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+- **パフォーマンスが命**: 複数セルの値を取得する際は、必ず一括取得を心がける。
+- **見た目を維持**: レポート作成や通知など、フォーマット済みのデータが欲しい場合に最適。
+- **データ加工とセットで**: `map` や `filter` と組み合わせることで、データの価値がさらに高まる。
+- **文字列型を意識**: 取得した値で計算する場合は、型変換が必要。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://hajiritsu.com/spreadsheet-gas-getdisplayvalues/" title="&#12475;&#12523;&#12398;&#34920;&#31034;&#20516;&#12434;&#21462;&#24471;&#12377;&#12427; | getDisplayValue()&#12304;GAS&#12305; &#8211; &#12399;&#12376;&#12426;&#12388;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhajiritsu.com%2Fspreadsheet-gas-getdisplayvalues%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fhajiritsu.com%2Fspreadsheet-gas-getdisplayvalues%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12475;&#12523;&#12398;&#34920;&#31034;&#20516;&#12434;&#21462;&#24471;&#12377;&#12427; | getDisplayValue()&#12304;GAS&#12305; &#8211; &#12399;&#12376;&#12426;&#12388;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://hajiritsu.com/spreadsheet-gas-getdisplayvalues/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://hajiritsu.com/spreadsheet-gas-getdisplayvalues/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          hajiritsu.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://blog.take-it-easy.site/gas/gas-getdisplayvalues/" title="Google Apps Scriptでスプレッドシートの複数セルの値を表示形式の文字列で取得する方法" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://blog.take-it-easy.site/images/eyecatch-3482.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://blog.take-it-easy.site/images/eyecatch-3482.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Apps Scriptでスプレッドシートの複数セルの値を表示形式の文字列で取得する方法
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Scriptでスプレッドシートの表示形式のままの値を文字列で取得する方法を解説。getValuesとの違いやgetDisplayValuesの使い方も詳しく紹介。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://blog.take-it-easy.site/gas/gas-getdisplayvalues/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://blog.take-it-easy.site/gas/gas-getdisplayvalues/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          blog.take-it-easy.site
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://stackoverflow.com/questions/34691425/difference-between-getvalue-and-getdisplayvalue-on-google-app-script" title="Difference between getValue() and getDisplayValue() on google app script" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Difference between getValue() and getDisplayValue() on google app script
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        What is the difference of range.getDisplayValue() and range.getValue() on Google Apps Script?var ss = SpreadsheetApp.get...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/34691425/difference-between-getvalue-and-getdisplayvalue-on-google-app-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/34691425/difference-between-getvalue-and-getdisplayvalue-on-google-app-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          stackoverflow.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+これらのポイントを押さえて、GASでのデータ処理をより高速でスマートなものにしましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getdisplayvalues" >}}
+
+{{< blog-card "https://hajiritsu.com/spreadsheet-gas-getdisplayvalues/" >}} 
+
+{{< blog-card "https://note.com/praha_inc/n/n2b5a5c68b693" >}}

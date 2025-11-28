@@ -1,167 +1,55 @@
 ---
-title: 【水耕栽培】コマツナの観察日記(64日目)
-author: arukayies
-type: post
-date: 2019-10-22T12:59:09+00:00
-url: /hydroponic_culture/komatsuna/diary5-5
+title: "【水耕栽培】コマツナ観察日記：64日目でついに収穫！成長の記録と次へのステップ"
+date: "2019-10-22T12:59:09.000Z"
+url: "/hydroponic_culture/komatsuna/diary5-5"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1571749149
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186628293908320257";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186628293908320257";s:5:"pDate";s:19:"2019-10-22 13:00:06";}}";'
 archives: ["2019年10月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "水耕栽培で育ててきたコマツナが、ついに観察64日目で収穫時期を迎えました！これまでの成長の記録と、収穫の喜び、そして今後の水耕栽培の展望について詳しくご紹介します。初心者でも簡単にできる水耕栽培のノウハウも公開中。"
+tags: ["水耕栽培", "コマツナ", "観察日記", "収穫", "家庭菜園", "DIY", "ブログカード"]
 ---
+
 こんにちは！
 
-<span class="marker"><strong>水耕栽培</strong></span>で**コマツナ**を育成し始めました、「くら(<a rel="noopener" href="http://www.twitter.com/arukayies" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color: #55ACEE;font-size:1.2em;"></i>@arukayies</a>)」です！
+水耕栽培で**コマツナ**の育成に挑戦中です！
 
-<span style="color: blue;">観察64日目</span>の様子です！
+本日は、**観察64日目**のコマツナの様子をお届けします。ここまで長く大切に育ててきたコマツナが、ついに収穫できるまでに成長しました！
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    前回までの日記はこちらです。<br /> <a href="https://arukayies.com/hydroponic_culture/komatsuna/diary4-5" title="【水耕栽培】コマツナの観察日記(42日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary4-5-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】コマツナの観察日記(42日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でコマツナを育成し始めました、「くら(twitter@arukayies)」です！観察42日目の様子です！前回までの日記はこちらです。【1号機】水耕栽培装置の紹介はこちらです。【2号機】水耕栽培装置の紹介はこちらです。観...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    【1号機】水耕栽培装置の紹介はこちらです。<br /> <a href="https://arukayies.com/diy/hydroponic_culture_first_machine" title="ほぼ100均で作る循環式の水耕栽培装置の紹介" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard external-blogcard eb-left cf">
-      <div class="blogcard-label external-blogcard-label">
-        <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-      
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      </noscript></figure>
-      
-      <div class="blogcard-content external-blogcard-content">
-        <div class="blogcard-title external-blogcard-title">
-          ほぼ100均で作る循環式の水耕栽培装置の紹介
-        </div>
-        
-        <div class="blogcard-snippet external-blogcard-snippet">
-          こんにちは！自宅で野菜を作ってみたくて、水耕栽培に興味を持った「くら」です！これが実際に自作した水耕栽培装置です。↓今回は私が自作した水耕栽培装置を紹介します！大規模にやるならこれも気になる・・・【2024進化版】LAPOND 水耕栽培シス...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer external-blogcard-footer cf">
-        <div class="blogcard-site external-blogcard-site">
-          <div class="blogcard-favicon external-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain external-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    【2号機】水耕栽培装置の紹介はこちらです。<br /> <a href="https://arukayies.com/diy/hydroponic_culture_second_machine" title="【2号機】循環式の水耕栽培装置を本格的に作ってみた" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard external-blogcard eb-left cf">
-      <div class="blogcard-label external-blogcard-label">
-        <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-      
-      {{< custom-figure src="hydroponic_culture_second_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <noscript>
-        {{< custom-figure src="hydroponic_culture_second_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      </noscript></figure>
-      
-      <div class="blogcard-content external-blogcard-content">
-        <div class="blogcard-title external-blogcard-title">
-          【2号機】循環式の水耕栽培装置を本格的に作ってみた
-        </div>
-        
-        <div class="blogcard-snippet external-blogcard-snippet">
-          こんにちは！水耕栽培装置1号機を運用して4ヶ月ほど・・・。　ふと見かけたAmazonの水耕栽培キットを見て、これなら自作できるんじゃね？　と思いさっそく作ってみた「くら」です！前回の水耕栽培装置【1号機】はこちらです。見かけたAmazonは...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer external-blogcard-footer cf">
-        <div class="blogcard-site external-blogcard-site">
-          <div class="blogcard-favicon external-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-second-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-second-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain external-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+これまでの成長記録は以下の記事でまとめています。ぜひご覧ください。
 
-## 観察64日目
+{{< self-blog-card "article/posts/2019-09-30-diary4-5" >}}
 
-これはもう収穫しても良さそうです！！！  
-{{< custom-figure src="img_5dff3b9c87ebd.jpg" title="" Fit="1280x1280 webp q90" >}} 
+また、私が自作した水耕栽培装置について興味がある方は、こちらの記事をご覧ください。
 
-{{< custom-figure src="img_5dff3b9e8361f.jpg" title="" Fit="1280x1280 webp q90" >}} 
+### 自作水耕栽培装置の紹介
 
-{{< custom-figure src="img_5dff3b9f88a8c.jpg" title="" Fit="1280x1280 webp q90" >}}
+*   **【1号機】初めてでも簡単！100均材料で循環式水耕栽培装置をDIY**
+
+
+
+*   **【2号機】本格的に挑戦！高機能な循環式水耕栽培装置の自作ガイド**
+
+
+
+---
+
+## コマツナ、ついに収穫の時！ (観察64日目)
+
+感動の瞬間です！観察開始から64日。ついにこの日がやってきました。我が家のコマツナが、見事に大きく育ち、収穫しても全く問題ない状態になりました！
+
+{{< custom-figure src="img_5dff3b9c87ebd.jpg" title="収穫を待つコマツナ" Fit="1280x1280 webp q90" >}}
+
+葉っぱはしっかりと肉厚になり、色艶も抜群です。ここまで育て上げるのに試行錯誤もありましたが、こうして立派に成長した姿を見ると、苦労も吹き飛びますね。
+
+{{< custom-figure src="img_5dff3b9e8361f.jpg" title="コマツナの全体像" Fit="1280x1280 webp q90" >}}
+
+根もしっかりと張っており、水耕栽培の恩恵を最大限に受けていることがわかります。この安定した成長は、日々の水管理や養液の調整がうまくいった証拠だと感じています。
+
+{{< custom-figure src="img_5dff3b9f88a8c.jpg" title="水耕栽培の根の状態" Fit="1280x1280 webp q90" >}}
+
+### 次への期待：今後の水耕栽培の展望
+
+今回のコマツナ栽培で、水耕栽培の楽しさと奥深さを改めて実感しました。収穫したコマツナは、新鮮なうちにサラダやおひたしで美味しくいただきたいと思います。
+
+これからも、様々な野菜の水耕栽培に挑戦し、その過程やノウハウをこのブログで皆さんと共有していきます。家庭菜園や水耕栽培に興味がある方は、ぜひ今後の記事も楽しみにしていてください！

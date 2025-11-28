@@ -1,388 +1,130 @@
 ---
-title: 【LINE BOT】GASで『画像カルーセルメッセージ』の送り方
-author: arukayies
-type: post
-date: 2019-11-17T01:23:57+00:00
-url: /gas/line_bot/pushmessage-image-carousel-template
+title: "【GAS】LINE Messaging APIで画像カルーセルメッセージを送信する方法"
+description: "本記事では、Google Apps Script (GAS) を使用してLINE BOTで画像カルーセルテンプレートメッセージを送信する方法を解説します。横にスクロールできる画像リストで、ユーザーに視覚的な選択肢を提示できます。"
+tags: ["GAS", "Google Apps Script", "LINE BOT", "Messaging API"]
+date: "2019-11-17T01:23:57.000Z"
+url: "/gas/line_bot/pushmessage-image-carousel-template"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-snap_isAutoPosted:
-  - 1
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1244475685374029825";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1244475685374029825";s:5:"pDate";s:19:"2020-03-30 04:04:59";}}";
-last_modified:
-  - 2024-11-19 10:21:13
-categories:
-  - LINE BOT
-tags:
-  - GAS
-  - Google Apps Script
-  - LINE BOT
-
+categories: ["LINE BOT"]
 archives: ["2019年11月"]
+lastmod: "2025-11-27T12:25:00+09:00"
 ---
-<span class="marker"><strong>LINE BOT</strong></span>を作成する機会が増えきた「くら」です！
 
-[LINE公式ドキュメント][1]を参考に<span class="marker"><strong>GAS</strong></span>を使って各APIを試してみました。
+この記事では、Google Apps Script (GAS) を利用して、LINE BOTで「**画像カルーセルテンプレートメッセージ**」を送信する方法を解説します。
 
-今回は「<span class="marker"><strong>画像カルーセルテンプレートメッセージ</strong></span>」の送り方を紹介します。
+画像カルーセルは、複数の画像を横にスクロールできる形式で表示し、それぞれにアクションを割り当てることができるメッセージタイプです。商品紹介や選択肢の提示など、視覚的でインタラクティブな表現が可能になります。
 
-画像カルーセルテンプレートメッセージについてのドキュメントは[こちら][2]を参照してください。
+公式ドキュメントは[こちら](https://developers.line.biz/ja/reference/messaging-api/#image-carousel-template)を参照してください。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎｇ　ＡＰＩを使ったチャットボットの/翔泳社/立花翔</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DLINE%2520bot%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DLINE%2520bot" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+{{< affsearch keyword="LINE BOT チャットボット 作り方" img="/line.jpg">}}
 
 ## 事前準備
 
-LINE Developersでトークンを取得してください。
+実装を始める前に、以下の準備が必要です。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/line_bot/gettoken" title="LINE Messaging APIアクセストークンの取得方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="gettoken-1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        LINE Messaging APIアクセストークンの取得方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        LINEBOTに必要なトークンの取得方法を画像付きで解説します。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+1.  **チャンネルアクセストークンの取得**: LINE Developersコンソールから、利用するBOTのチャンネルアクセストークンを取得してください。
 
-LINEの送信先IDの調べ方はこの手順で確認できます。
+{{< self-blog-card "article/posts/2019-07-02-gettoken" >}}
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/line_bot/get-userid" title="【LINE BOT】GASでLINEの『ユーザID』の取得方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="get_userid-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【LINE BOT】GASでLINEの『ユーザID』の取得方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        くらこんにちは「くら」です！LINE公式ドキュメント を参考に GAS を使って各APIを試しています。くら今回はLINEの「ユーザID」の取得方法を紹介します。ログを見るときによく使っています。ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+2.  **ユーザーIDの取得**: メッセージの送信先となるご自身のLINEユーザーIDを取得してください。
 
-GASのスクリプトプロパティの追加手順は過去の記事で紹介しています。  
-手順7〜からが該当手順です。
+{{< self-blog-card "article/posts/2019-11-03-get-userid" >}}
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/line_bot/line-bot-with-gas#GAS" title="GASで作る簡単なLINE BOTの作り方" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="line-bot-with-gas-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASで作る簡単なLINE BOTの作り方
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        GASで作るLINE BOTの簡単な作り方を紹介します！
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+## 実装コード
 
-## 『画像カルーセルテンプレートメッセージ』を送るサンプルコード
+それでは、GASで画像カルーセルメッセージを送信するコードを見ていきましょう。
 
-## 『画像カルーセルテンプレートメッセージ』を送った結果
+### 1. 定数の設定
 
-{{< custom-figure src="img_5dfa22ac0c7be.jpg" title="" Fit="1280x1280 webp q90" >}} </figure> 
+まず、スクリプトで利用する定数を定義します。取得したチャンネルアクセストークンとユーザーIDを設定してください。
 
-例では3つのアクションをカラムオブジェクトに含めています。  
-1つのカラムに対して、1つのアクションのみが割り当てる事ができるようです。{{< custom-figure src="img_5dfa22ac4980a.jpg" title="" Fit="1280x1280 webp q90" >}} 
+```javascript
+const TOKEN = 'LINEのトークンを指定(取得方法：https://arukayies.com/gas/line_bot/gettoken)';
+const DEBUGID = 'LINEのユーザIDを指定(取得方法：https://arukayies.com/gas/line_bot/get-userid)';
+```
 
-その他のアクションについては別記事で紹介しています。
+### 2. 画像カルーセルメッセージを送信するコード
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/line_bot/action-objects" title="【LINE BOT】GASでBOTが実行できる『アクションタイプ』のまとめ" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="action_objects-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        【LINE BOT】GASでBOTが実行できる『アクションタイプ』のまとめ
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        LINE BOTを作成する機会が増えきた「くら」です！LINE公式ドキュメントを参考にGASを使って各APIを試してみました。今回はユーザーが受け取ったメッセージに対して、Botが実行できるアクションオブジェクトのまとめになります。ＬＩＮＥ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+以下の関数は、指定したユーザーに画像カルーセルメッセージを送信します。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎｇ　ＡＰＩを使ったチャットボットの/翔泳社/立花翔</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DLINE%2520bot%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DLINE%2520bot" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+```javascript
+// LINE BOTで画像カルーセルメッセージを送信するサンプル
+function pushImageCarousel() {
+  const url = 'https://api.line.me/v2/bot/message/push';
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + TOKEN,
+  };
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+  const payload = {
+    'to': DEBUGID,
+    'messages': [
+      {
+        'type': 'template',
+        'altText': '画像カルーセルメッセージ',
+        'template': {
+          'type': 'image_carousel',
+          'columns': [
+            {
+              'imageUrl': 'https://placehold.jp/1024x1024.jpg?text=Image1',
+              'action': {
+                'type': 'message',
+                'label': 'メッセージ1',
+                'text': '画像1が選択されました'
+              }
+            },
+            {
+              'imageUrl': 'https://placehold.jp/1024x1024.jpg?text=Image2',
+              'action': {
+                'type': 'uri',
+                'label': '詳細を見る',
+                'uri': 'https://arukayies.com'
+              }
+            },
+            {
+              'imageUrl': 'https://placehold.jp/1024x1024.jpg?text=Image3',
+              'action': {
+                'type': 'postback',
+                'label': 'ポストバック',
+                'data': 'action=select&item=3'
+              }
+            }
+          ]
+        }
+      }
+    ],
+    'notificationDisabled': false
+  };
 
- [1]: https://developers.line.biz/ja/docs/messaging-api/
- [2]: https://developers.line.biz/ja/docs/messaging-api/message-types/#image-carousel-template
+  const options = {
+    'method': 'POST',
+    'headers': headers,
+    'payload': JSON.stringify(payload)
+  };
+
+  UrlFetchApp.fetch(url, options);
+}
+```
+このコードでは、`template`オブジェクトの`type`に`image_carousel`を指定し、`columns`配列に表示したい画像の数だけオブジェクトを追加します。各カラムには`imageUrl`（画像のURL）と、タップされたときのアクションを`action`オブジェクトで定義します。1つのカラムには1つのアクションのみ設定可能です。
+
+## 動作確認
+
+GASのスクリプトエディタで`pushImageCarousel`関数を実行すると、LINEに画像カルーセルメッセージが送信されます。
+
+{{< custom-figure src="img_5dfa22ac0c7be.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+画像にはそれぞれ異なるアクション（メッセージ送信、URIを開く、ポストバック）が設定されています。
+{{< custom-figure src="img_5dfa22ac4980a.jpg" title="" Fit="1280x1280 webp q90" >}}
+
+アクションオブジェクトの種類については、以下の記事で詳しく解説しています。
+
+{{< self-blog-card "article/posts/2019-11-09-action-objects" >}}
+
+## まとめ
+
+今回は、GASを使ってLINE BOTで画像カルーセルメッセージを送信する方法を解説しました。この機能を使えば、よりリッチでインタラクティブなユーザー体験を提供できますので、ぜひ活用してみてください。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+{{< affsearch keyword="LINE BOT チャットボット 作り方" img="/line.jpg">}}

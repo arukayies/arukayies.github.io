@@ -1,523 +1,242 @@
 ---
-title: GASでスプレッドシートの指定セルからフォントや装飾など書式情報を取得する方法
-author: arukayies
-type: post
-date: 2020-09-22T02:51:06+00:00
-excerpt: GASでスプレッドシートの指定セルのテキストの書式を取得する方法を紹介します！
-url: /gas/gettextstyle
+title: "【GASスプレッドシート】getTextStyle()でセルの書式情報を効率的に取得・SEO最適化"
+description: "Google Apps Script (GAS)の`getTextStyle()`メソッドを徹底解説。スプレッドシートの指定セルのフォント、色、太字、斜体などの書式情報を効率的に取得する方法を、具体的なコード例で紹介します。`getTextStyles()`での複数セル一括取得、リッチテキストの部分スタイル解析、条件付き書式の解析、Googleスライドとの連携、パフォーマンス最適化まで、GASによるスプレッドシート自動化と視覚的改善に役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getTextStyle", "getTextStyles", "Text Style", "フォント", "色", "太字", "斜体", "書式", "リッチテキスト", "条件付き書式", "自動化", "効率化", "パフォーマンス", "連携", "プログラム", "開発", "UI/UX"]
+date: "2020-09-22T02:51:06.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/gettextstyle"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snap_isAutoPosted:
-  - 1600743068
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:27:28
-categories:
-  - GAS
-tags:
-  - GAS
-  - getTextStyle()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-Google Apps Script（GAS）って、スプレッドシートをプログラムで操るための便利なツールじゃけ、今回はその中でも特に便利な`getTextStyle()`メソッドを深掘りしていくよ。このメソッドを使えば、スプレッドシートのセルに設定されたテキストのスタイル（フォント、色、太さなど）を取得して、さまざまな使い方ができるんよね。初心者でもわかるように解説するけん、ぜひ見ていってな！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
+Google Apps Script (GAS) を用いてスプレッドシートを操作する際、**セルのフォント、色、太字、斜体などの「テキストスタイル（書式情報）」**をプログラムで正確に取得することは、データの視覚的表現を制御したり、条件に基づいた自動書式設定を行ったりする上で不可欠です。`getTextStyle()`メソッドは、このテキストスタイルを単一セルから取得するための基本的ながら強力な機能です。
+
+本記事では、GASの`Range.getTextStyle()`メソッドを徹底解説します。単一セルのフォントや装飾の取得方法、**リッチテキストの部分的なスタイル解析**、条件付き書式によって適用されたスタイルの検出、さらには**複数セルのスタイルを一括で効率的に取得できる`getTextStyles()`**、他のGoogleサービスとの連携、パフォーマンス最適化のヒントまで、具体的なコード例を交えて分かりやすく紹介します。
+
+GAS初心者から、スプレッドシートの視覚的表現と自動化の効率をさらに高めたい上級者まで、すべての方に役立つ情報が満載です。
+
+{{< affsearch keyword="GAS スプレッドシート テキストスタイル 書式 フォント 自動化" img="/gas.jpg">}}
+
+## `getTextStyle()`メソッドとは？GASでセルの書式情報を取得する基本
+
+`Range.getTextStyle()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）の「左上のセル」に設定されているテキストの書式情報**を`TextStyle`オブジェクトとして取得するための機能です。
+
+`TextStyle`オブジェクトには、セルのテキストに適用されている以下の主要なスタイル情報が含まれています。
+
+*   **`getFontFamily()`**: フォント名（例: `"Arial"`, `"ＭＳ ゴシック"`）
+*   **`getFontSize()`**: フォントサイズ（ポイント、例: `10`, `12`）
+*   **`isBold()`**: 太字かどうか（`true`/`false`）
+*   **`isItalic()`**: 斜体かどうか（`true`/`false`）
+*   **`isUnderline()`**: 下線があるかどうか（`true`/`false`）
+*   **`getForegroundColor()`**: 文字色（HEXコード、例: `"#FF0000"`）
+
+このメソッドを使用することで、プログラム内でセルのテキストがどのようなスタイルで表示されるように設定されているかを詳細に識別できます。
+
+### 基本的な使用例：A1セルのテキストスタイルを取得する
+
+以下のスクリプトは、アクティブなシートの`A1`セルを指定し、そのフォントサイズ、太字状態、文字色を取得してログに出力する最も基本的な例です。
+
+```javascript
+/**
+ * アクティブなシートのA1セルのテキストスタイルを取得し、ログに出力する関数。
+ */
+function getSingleCellTextStyle() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const cell = sheet.getRange("A1");           // A1セルをRangeオブジェクトとして取得
+  const textStyle = cell.getTextStyle();      // A1セルのTextStyleオブジェクトを取得
+  
+  // TextStyleオブジェクトから各スタイル情報を取得しログに出力
+  Logger.log(`A1セルのフォントファミリー: ${textStyle.getFontFamily()}`);
+  Logger.log(`A1セルのフォントサイズ: ${textStyle.getFontSize()}pt`);
+  Logger.log(`A1セルの太字状態: ${textStyle.isBold() ? "有効" : "無効"}`);
+  Logger.log(`A1セルの文字色: ${textStyle.getForegroundColor()}`);
+}
+```
+このコードを実行すると、`A1`セルに設定されているテキストのスタイル情報がログに表示されます。
+
+## `TextStyle`オブジェクトの応用：リッチテキストの部分スタイル解析
+
+スプレッドシートのセルには、一つのセル内で複数のスタイルが混在する「リッチテキスト」が入力されることがあります（例: 「**重要**な情報です」のように一部だけ太字）。`getTextStyle()`は単一のスタイル情報を返しますが、`getRichTextValue()`メソッドと組み合わせることで、リッチテキストの特定部分のスタイルを詳細に解析できます。
+
+### `getRichTextValue()`と`getRuns()`による部分スタイル取得
+
+1.  まず、`Range.getRichTextValue()`でセルの`RichTextValue`オブジェクトを取得します。
+2.  次に、`RichTextValue.getRuns()`でスタイルが異なる区間（「ラン」と呼びます）ごとに`RichTextValue`オブジェクトの配列を取得します。
+3.  各ランの`getTextStyle()`を呼び出すことで、その部分に適用されているスタイルを個別に取得できます。
+
+```javascript
+/**
+ * リッチテキストが設定されたセル（A1）の部分的なスタイルを解析する関数。
+ * 例: A1セルに「Hello **GAS** World!」と入力されている場合。
+ */
+function getRichTextPartialStyle() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const richTextValue = sheet.getRange("A1").getRichTextValue(); // A1セルのRichTextValueを取得
+
+  if (richTextValue) {
+    const runs = richTextValue.getRuns(); // スタイルが異なる区間ごとにRichTextValueオブジェクトの配列を取得
+
+    Logger.log(`A1セルのリッチテキストは ${runs.length} つのランに分割されました。`);
+
+    runs.forEach((run, index) => {
+      const runText = run.getText();         // 各ランのテキスト部分
+      const runStyle = run.getTextStyle();     // 各ランに適用されたTextStyleオブジェクト
+
+      Logger.log(`--- ラン ${index + 1} ---`);
+      Logger.log(`  テキスト: "${runText}"`);
+      Logger.log(`  太字: ${runStyle.isBold() ? 'はい' : 'いいえ'}`);
+      Logger.log(`  フォント色: ${runStyle.getForegroundColor() || 'なし'}`);
+    });
+  } else {
+    Logger.log(`A1セルにはリッチテキスト情報が見つかりませんでした。`);
+  }
+}
+```
+この方法により、リッチテキストの複雑な書式構造をプログラムで詳細に制御し、特定の単語のスタイル変更や解析が可能になります。
+
+## 条件付き書式によって適用されたスタイルを解析する
+
+スプレッドシートには、特定の条件（例: 値が100以上、テキストに特定のキーワードが含まれるなど）を満たしたときに自動的にセルの書式を変更する「条件付き書式」機能があります。GASでは、`getTextStyle()`を直接条件付き書式に適用することはできませんが、**`Sheet.getConditionalFormatRules()`と`ConditionalFormatRule.getTextStyles()`を組み合わせることで、条件付き書式によって適用されるスタイルルールを解析**できます。
+
+```javascript
+/**
+ * シートに設定された条件付き書式ルールを解析し、
+ * 太字が適用されるルールを検出する関数。
+ */
+function analyzeConditionalFormattingStyles() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const rules = sheet.getConditionalFormatRules(); // シートの全条件付き書式ルールを取得
+
+  if (rules.length === 0) {
+    Logger.log("このシートには条件付き書式ルールが設定されていません。");
+    return;
+  }
+
+  Logger.log("条件付き書式ルールを解析中...");
+  rules.forEach((rule, index) => {
+    Logger.log(`--- ルール ${index + 1} ---`);
+    const textStyle = rule.getTextStyle(); // このルールで適用されるTextStyleを取得
     
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-## getTextStyle()メソッドってなに？
-
-`getTextStyle()`メソッドは、Googleスプレッドシートのセル内に設定されたテキストの書式情報を取得するためのメソッドばい。これを使うことで、セルの文字のフォントや色、サイズなどの情報をプログラムから取得して、カスタマイズしたり、他のシートに転送したりできるんよ。
-
-例えば、以下のコードを使えば、セルのフォントサイズを取得することができるけ。
-
-<pre class="wp-block-code"><code>const textStyle = range.getTextStyle();
-console.log(textStyle.getFontSize()); // フォントサイズ取得
-</code></pre>
-
-これが一番シンプルな使い方やけど、これだけでもスプレッドシートの操作がずっと楽になるんよね。
-
-## リッチテキストの操作方法
-
-次に、ちょっと高度な使い方についても触れていくけん、リッチテキストって知っとるかい？これは、セル内でフォントが異なったり、太字や斜体が混じってるようなテキストのことよ。こうしたテキストを扱うには、`getRichTextValue()`メソッドと組み合わせて使うんじゃ。
-
-例えば、「**HelloWorld**」みたいなテキストがあったとき、その中の「Hello」と「World」を別々に書式を取り出すことができるんよ。以下のコードで、テキストの書式を個別に取得できるけ。
-
-<pre class="wp-block-code"><code>const richText = range.getRichTextValue();
-const runs = richText.getRuns();
-
-runs.forEach(run =&gt; {
-  const style = run.getTextStyle();
-  console.log(`Text: ${run.getText()}, Bold: ${style.isBold()}`);
-});
-</code></pre>
-
-これを使えば、リッチテキストの書式を細かく処理できるようになるんよね。
-
-## 条件付き書式の解析方法
-
-スプレッドシートでは、条件付き書式っていう機能もあるんよ。たとえば、特定の条件を満たしたときにセルの文字色を赤にしたり、太字にしたりする機能じゃけど、この条件付き書式と`getTextStyle()`を組み合わせることで、どんな条件で書式が変更されたのかを確認できるんよ。
-
-例えば、以下のようにコードを書くことで、条件付き書式が適用されたセルを探せるけ。
-
-<pre class="wp-block-code"><code>const rules = sheet.getConditionalFormatRules();
-rules.forEach(rule =&gt; {
-  const styles = rule.getTextStyles();
-  styles.forEach(style =&gt; {
-    if(style.isBold()) {
-      console.log('条件付きの太字が検出されました');
+    if (textStyle) { // TextStyleが設定されている場合
+      if (textStyle.isBold()) {
+        Logger.log(`  このルールは太字を設定しています。対象範囲: ${rule.getRanges().map(r => r.getA1Notation()).join(', ')}`);
+      }
+      if (textStyle.getForegroundColor()) {
+        Logger.log(`  このルールは文字色「${textStyle.getForegroundColor()}」を設定しています。`);
+      }
+      // 他のTextStyleプロパティも同様にチェック可能
+    } else {
+      Logger.log(`  このルールにはテキストスタイルが設定されていません。`);
     }
   });
-});
-</code></pre>
+  Logger.log("条件付き書式の解析が完了しました。");
+}
+```
 
-これで、条件に基づいた書式を検出できるようになるんよ。
+## パフォーマンスを向上させる`getTextStyles()`メソッド：複数セルの書式を一括取得
 
-## パフォーマンスを上げるテクニック
+複数のセルのテキストスタイル情報を一つずつ`getTextStyle()`で取得するのは、API呼び出し回数が多くなり、スクリプトの実行速度が遅くなる原因となります。このような場合には、**複数セルの書式をまとめて二次元配列として取得できる`getTextStyles()`メソッド**の使用が非常に効果的です。
 
-`getTextStyle()`を使っていると、複数セルの書式情報を取得したいときに、パフォーマンスが気になることがあるけど、そんなときには一度に複数セルの書式を取得できる`getTextStyles()`メソッドを使うといいんよ。これを使うことで、大量のデータを効率的に処理できるけ。
+`getTextStyles()`は、指定した範囲の行と列の構造を反映した`TextStyle`オブジェクトの二次元配列を返します。
 
-例えば、次のようにコードを書けば、複数セルの書式を一度に取得できるんじゃ。
+```javascript
+/**
+ * 複数範囲のセルのテキストスタイルを一括取得し、斜体（イタリック体）が設定されているセルを検出する関数。
+ */
+function getRangeTextStylesAndDetectItalic() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:C5"); // 対象範囲をA1:C5に設定
+  const stylesMatrix = range.getTextStyles(); // 範囲内の全セルのTextStyleオブジェクトを一括取得
 
-<pre class="wp-block-code"><code>const stylesMatrix = range.getTextStyles();
-stylesMatrix.forEach((row, rowIndex) =&gt; {
-  row.forEach((style, colIndex) =&gt; {
-    if(style.isItalic()) {
-      console.log(`イタリック体が見つかった場所: ${rowIndex}, ${colIndex}`);
-    }
+  Logger.log(`範囲 ${range.getA1Notation()} のテキストスタイルを解析中...`);
+
+  stylesMatrix.forEach((rowStyles, rowIndex) => {
+    rowStyles.forEach((cellStyle, colIndex) => {
+      // getCell(row, column) は1から始まるインデックス
+      const cellAddress = range.getCell(rowIndex + 1, colIndex + 1).getA1Notation();
+      if (cellStyle && cellStyle.isItalic()) { // TextStyleが存在し、斜体であるかチェック
+        Logger.log(`斜体（イタリック体）が設定されたセルが見つかりました: ${cellAddress}`);
+      }
+    });
   });
-});
-</code></pre>
+  Logger.log("テキストスタイルの解析が完了しました。");
+}
+```
+この方法で、複数セルの書式をまとめて取得できるため、APIの呼び出し回数を減らし、大規模なデータ処理のパフォーマンスを向上させることができます。
 
-この方法で、複数セルの書式をまとめて取得できるから、APIの呼び出し回数を減らしてパフォーマンスを向上させることができるんよ。
+## Googleスライドなど他のGoogleサービスと連携する
 
-## 他のサービスとの連携
+GASの強力な機能の一つは、異なるGoogleサービス間での連携です。スプレッドシートのテキストスタイル情報を取得し、それをGoogleスライドやGoogleドキュメントのテキストに適用するといったことが可能です。
 
-Google Apps Scriptでは、スプレッドシートの書式情報を他のGoogleサービスと連携させることもできるけ。例えば、スプレッドシートの書式をGoogleスライドに転送したいとき、以下のようにコードを書けば、スライドのテキストにスプレッドシートの書式を適用できるんよ。
+例えば、スプレッドシートの特定セルの書式をGoogleスライドのテキストボックス内のテキストに転送したい場合、以下のようにコードを記述できます。
 
-<pre class="wp-block-code"><code>const slideText = slideShape.getText();
-const spreadsheetStyle = sheet.getTextStyle();
+```javascript
+/**
+ * スプレッドシートのA1セルのテキストスタイルを、Googleスライドの指定図形テキストに適用する関数。
+ * Google Slides APIの有効化が必要な場合があります。
+ */
+function applySheetStyleToSlideText() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = spreadsheet.getActiveSheet();
+  const sourceCell = sheet.getRange("A1"); // コピー元のスタイルがあるセル
+  const sourceTextStyle = sourceCell.getTextStyle(); // セルのTextStyleを取得
 
-slideText.getTextStyle()
-  .setFontFamily(spreadsheetStyle.getFontFamily())
-  .setFontSize(spreadsheetStyle.getFontSize())
-  .setBold(spreadsheetStyle.isBold());
-</code></pre>
+  // 例: Googleスライドのプレゼンテーションと図形IDを指定
+  const presentationId = 'YOUR_PRESENTATION_ID'; // ★ここを実際のスライドIDに置き換えてください
+  const slideId = 'YOUR_SLIDE_ID';             // ★ここを実際のスライドIDに置き換えてください
+  const shapeObjectId = 'YOUR_SHAPE_OBJECT_ID'; // ★ここを実際の図形オブジェクトIDに置き換えてください
 
-この方法で、スライドにもスプレッドシートの書式を反映させることができるけど、リッチテキストの部分書式転送には限界があるから注意が必要やけ。
+  // Slidesサービスを使ってプレゼンテーションと図形を取得
+  const presentation = SlidesApp.openById(presentationId);
+  const slide = presentation.getSlideById(slideId);
+  const shape = slide.getShapeById(shapeObjectId);
 
-## まとめ
+  if (!shape || !shape.getText()) {
+    Logger.log("エラー: 指定されたスライド図形またはそのテキストが見つかりません。");
+    return;
+  }
 
-今回は、Google Apps Scriptの`getTextStyle()`メソッドを活用して、スプレッドシートの書式を自在に操作する方法を解説したけど、これを使いこなすことで、より効率的にシートを管理できるようになるんよ。特にリッチテキストの処理や、条件付き書式の解析、大規模データの取り扱いにおいて、その真価を発揮するけね。
+  const slideTextRange = shape.getText(); // スライド図形のTextRangeを取得
+  const slideTextStyle = slideTextRange.getTextStyle(); // スライドテキストのTextStyleを取得
 
-今後はさらに、機械学習を活用して自動書式最適化なんてこともできるようになるかもしれんよ。Google Apps Scriptをうまく使って、より便利なツールを作ってみてな！
+  // スプレッドシートのスタイルをスライドテキストに適用
+  if (sourceTextStyle.getFontFamily()) {
+    slideTextStyle.setFontFamily(sourceTextStyle.getFontFamily());
+  }
+  if (sourceTextStyle.getFontSize()) {
+    slideTextStyle.setFontSize(sourceTextStyle.getFontSize());
+  }
+  slideTextStyle.setBold(sourceTextStyle.isBold());
+  slideTextStyle.setItalic(sourceTextStyle.isItalic());
+  slideTextStyle.setUnderline(sourceTextStyle.isUnderline());
+  if (sourceTextStyle.getForegroundColor()) {
+    slideTextStyle.setForegroundColor(sourceTextStyle.getForegroundColor());
+  }
+  
+  Logger.log(`スプレッドシートのA1セルのスタイルを、スライドの図形テキストに適用しました。`);
+  // ★注意: リッチテキストの部分的な書式転送には、より複雑なロジックが必要です。
+}
+```
+この連携により、スプレッドシートで管理している書式ルールを、動的にプレゼンテーション資料に反映させるといった高度な自動化が可能になります。ただし、リッチテキストのように部分的に異なる書式を持つテキストを完全に再現するには、より複雑なロジックと`RichTextValue`オブジェクトの解析が必要です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+## まとめ：`getTextStyle()`でGASスプレッドシートの視覚的表現と自動化を強化
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/slides/text-style" title="Class TextStyle  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+Google Apps Scriptの`getTextStyle()`および`getTextStyles()`メソッドは、スプレッドシートのテキストスタイル情報をプログラムで効率的に管理するための、非常に強力なツールです。
+
+*   **正確な書式情報の取得**: `getTextStyle()`で単一セルのフォント、色、太字、斜体などのスタイル情報を、`getTextStyles()`で複数セルの情報を二次元配列として一括で取得できます。
+*   **リッチテキストの詳細解析**: `getRichTextValue().getRuns()`と組み合わせることで、セル内のリッチテキストの部分的なスタイルも正確に解析できます。
+*   **条件付き書式の分析**: `getConditionalFormatRules()`と連携し、シートに適用されている条件付き書式がどのようなテキストスタイルを適用しているかを検出できます。
+*   **効率的なスクリプト開発**: バッチ処理（`getTextStyles()`）を徹底し、API呼び出し回数を減らすことで、スクリプトのパフォーマンスを最大化できます。
+*   **他のGoogleサービスとの連携**: 取得したスタイル情報をGoogleスライドなど他のサービスに適用することで、より高度で統合された自動化ソリューションを構築できます。
+
+本記事で紹介した知識と実践例を活用し、あなたのGASスクリプトをより高度で柔軟なスプレッドシート自動化ツールへと進化させてください。テキストスタイルの細かな制御は、ユーザーエクスペリエンスの向上、データの明確な可視化、そしてビジネスプロセスの最適化に大きく貢献します。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class TextStyle  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/slides/text-style" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/slides/text-style" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://gsuiteguide.jp/sheets/gettextstyle/" >}} 
   
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://caymezon.com/gas-richtext/" title="【GAS】スプレッドシートのリッチテキスト機能まとめ【サンプルソース付】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://caymezon.com/wp-content/uploads/2019/07/richtext.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://caymezon.com/wp-content/uploads/2019/07/richtext.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートのリッチテキスト機能まとめ【サンプルソース付】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS開発者向けにスプレッドシートのリッチテキスト機能をすべてまとめました。セル値そのものではなく、セル内の一部分だけに色を付けられる意外と便利なリッチテキスト。確実に手動でやるよりGASを使った方が早くなりますね。使いこなせば、きっとかゆ
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-richtext/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-richtext/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          caymezon.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://www.pre-practice.net/2019/02/blog-post_2.html" title="セルの文字色を取得する" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://drive.google.com/thumbnail?sz=w1000&#038;id=1rAEWdtGjUSXnKfMhrI35mZ0E_5fU85v6" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?sz=w1000&#038;id=1rAEWdtGjUSXnKfMhrI35mZ0E_5fU85v6" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セルの文字色を取得する
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        日々Google Apps Scriptを書く中で、気づいたことや作ったものなどを更新しています。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://www.pre-practice.net/2019/02/blog-post_2.html" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://www.pre-practice.net/2019/02/blog-post_2.html" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          www.pre-practice.net
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" title="Spreadsheet Service  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Spreadsheet Service  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://caymezon.com/gas-text-style/" title="【GAS】スプレッドシートのテキストスタイル機能まとめ【サンプルソース付】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://caymezon.com/wp-content/uploads/2019/07/textstyle1.jpeg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://caymezon.com/wp-content/uploads/2019/07/textstyle1.jpeg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートのテキストスタイル機能まとめ【サンプルソース付】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS開発者向けにスプレッドシートのテキストスタイル機能をすべてまとめました。フォント設定の機能の色、字体、太字、斜体、下線、サイズなどの全般機能です。設定だけでなく、現在の確認処理なども含みます。全部まとめたら随分と長くなってしまいました
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-text-style/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://caymezon.com/gas-text-style/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          caymezon.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://stackoverflow.com/questions/70760546/how-to-get-textstyles-attributes-fontcolor-fontfamily-etc-of-a-googlesheet" title="How to get TextStyles/Attributes (fontColor, fontFamily, etc.) of a Googlesheet cell in AppScript, then set it in a Table" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        How to get TextStyles/Attributes (fontColor, fontFamily, etc.) of a Googlesheet cell in AppScript, then set it in a Table
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        I have a Script in Googlesheets that is suposed to use the sheet as a modifiable template (colors and font should be mod...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/70760546/how-to-get-textstyles-attributes-fontcolor-fontfamily-etc-of-a-googlesheet" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/70760546/how-to-get-textstyles-attributes-fontcolor-fontfamily-etc-of-a-googlesheet" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          stackoverflow.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rfontsetting/" title="[GAS]フォントやフォントの色・線・斜体などを取得・設定する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-3.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-3.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]フォントやフォントの色・線・斜体などを取得・設定する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲のフォントや、色・線・斜体などのフォント関連の設定を取得
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rfontsetting/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rfontsetting/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://developers.google.com/apps-script/reference/slides/text-style" >}}

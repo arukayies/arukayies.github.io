@@ -1,101 +1,42 @@
 ---
-title: GASでスプレッドシートのセル範囲をアクティブに設定する方法
-author: arukayies
-type: post
-date: 2020-03-08T01:22:47+00:00
-excerpt: GASでスプレッドシートの指定範囲をアクティブにする方法を紹介します！
-url: /gas/activate
+title: "GASでスプレッドシートのセル範囲をアクティブに設定する方法"
+description: "Google Apps Script (GAS) の activate() メソッドを使ってスプレッドシートのシートをアクティブにする方法を解説します。基本的な使い方から、条件付きでの切り替え、トリガー利用時の注意点まで、具体的なコードを交えて分かりやすく説明。作業効率化に役立つテクニックを紹介します。"
+tags: ["activate()","GAS","Google Apps Script","スプレッドシート"]
+date: "2020-03-08T01:22:47.000Z"
+url: "/gas/activate"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1245574127341068290";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1245574127341068290";s:5:"pDate";s:19:"2020-04-02 04:49:48";}}";
-last_modified:
-  - 2025-03-07 22:34:52
-categories:
-  - GAS
-tags:
-  - activate()
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年3月"]
+lastmod: "2025-11-27T09:47:00+09:00"
 ---
-Google Apps Script（GAS）でよく使われる`activate()`メソッド、みんな使ったことあるかい？今回は、このメソッドがどんなふうにスプレッドシートの操作を便利にしてくれるかを、具体的なコード例とともに解説していくけんね。どんな初心者でも、スムーズに使えるようになる方法を伝授するけ！参考にした情報源も載せとくけ、ぜひチェックしてみてや。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script（GAS）でスプレッドシートを操作する際、特定のシートを画面に表示させたい場面は多いでしょう。この記事では、指定したシートをアクティブにする`activate()`メソッドについて、基本的な使い方から応用例、注意点までを具体的なコードを交えて分かりやすく解説します。
 
-## activate()メソッドって何？
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-まずは、`activate()`メソッドの基本的な動きについて理解しておこう。簡単に言うと、`activate()`はシートをアクティブ化するためのメソッドで、どんなシートをアクティブにするかを指定することができるんだ。これを使うことで、シートの切り替えが簡単になるけ、スプレッドシートの操作がとても便利になるよ。
+## activate()メソッドの基本的な使い方
 
-例えば、特定のシートをアクティブにするコードはこんな感じだっちゃ。
+`activate()`メソッドは、スプレッドシート内の特定のシートをアクティブ化（最前面に表示）するためのメソッドです。これにより、スクリプト実行時にユーザーが手動でシートを切り替える手間を省き、操作をスムーズにすることができます。
 
-<pre class="wp-block-code"><code>const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+基本的な構文は非常にシンプルです。
+
+```js
+const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
 const targetSheet = spreadsheet.getSheetByName('月次報告');
-targetSheet.activate();  // 月次報告シートをアクティブ化
-</code></pre>
+targetSheet.activate();  // '月次報告'という名前のシートをアクティブにします
+```
 
-これで、`月次報告`シートが表示されるようになるばい。シートが切り替わるだけで、内容が変わることはないけど、操作の流れがスムーズになるんじゃ。
+このコードを実行すると、「月次報告」シートが画面に表示されます。シートの内容が変更されるわけではありませんが、一連の操作の中で特定のシートをユーザーに提示したい場合に非常に便利です。
 
-## 活用例: シートの切り替え
+## activate()メソッドの具体的な活用事例
 
-次に、`activate()`をどう活用するかを見てみよう。例えば、営業データを管理するシートに切り替えたい場合はどうするか？
+### 特定のシートへ切り替える
 
-<pre class="wp-block-code"><code>function activateSalesSheet() {
+`activate()`メソッドの最も一般的な使い方は、名前を指定して特定のシートへ切り替えることです。例えば、日々の業務で「営業データ」シートを頻繁に確認する場合、以下のような関数を作成しておくと便利です。
+
+```js
+function activateSalesSheet() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const salesSheet = ss.getSheetByName('営業データ');
   
@@ -103,75 +44,86 @@ targetSheet.activate();  // 月次報告シートをアクティブ化
     salesSheet.activate();
     Logger.log(`アクティブシート: ${salesSheet.getName()}`);
   } else {
-    Logger.log('指定シートが存在しません');
+    Logger.log('指定したシートが見つかりませんでした。');
   }
 }
-</code></pre>
+```
+このスクリプトは、「営業データ」という名前のシートが存在すればアクティブにし、存在しない場合はログにメッセージを出力します。`if`文でシートの存在確認をすることで、エラーを防ぐことができます。
 
-こうすれば、`営業データ`シートがアクティブになり、その後の処理に使うことができるんだわ。しっかりエラーハンドリングもできるから、もしシートがないときも問題ないようになっとるんじゃ。
+### 条件に応じてシートをアクティブ化する
 
-## 高度な使い方: 条件付きでシートをアクティブ化
+より高度な使い方として、特定の条件を満たした場合にのみシートをアクティブにする、といった処理も可能です。
+例えば、「生データ」シートのデータが100行を超えた場合にのみ「日次レポート」シートをアクティブにする、という処理を考えてみましょう。
 
-さらに、条件によってシートを切り替える高度な使い方もできるんじゃ。たとえば、`日次レポート`シートが、`生データ`シートに100行以上データがあったらアクティブにする、なんてこともできるさ。
-
-<pre class="wp-block-code"><code>function conditionalActivation() {
+```js
+function conditionalActivation() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const reportSheet = ss.getSheetByName('日次レポート');
   const dataSheet = ss.getSheetByName('生データ');
   
   const lastRow = dataSheet.getLastRow();
-  if (lastRow &gt; 100) {
+  if (lastRow > 100) {
     reportSheet.activate();
-    generateSummaryReport();
+    // generateSummaryReport(); // レポート生成などの後続処理を呼び出す
   }
 }
-</code></pre>
+```
+このように、データの状況に応じて表示するシートを動的に切り替えることで、ユーザーの作業を効率的に導くことができます。
 
-これで、一定の条件を満たす場合だけシートを切り替えることができるんじゃ。たとえば、データ量が増えてレポートを作成する必要があるときに便利やね。
+## activate()メソッド使用時の注意点
 
-## トリガーやマルチユーザーでの注意点
+`activate()`メソッドは便利ですが、いくつかの注意点があります。
 
-ただし、注意点もあるけんね。`activate()`を使うとき、`onEdit()`や`onChange()`といったイベントトリガーで使うと、画面の切り替えが即座に反映されないことがあるんじゃ。これは、スクリプトが実行されるタイミングとブラウザの描画がズレるから、こればっかりは注意が必要だっちゃ。
+### トリガーとの併用
 
-<pre class="wp-block-code"><code>function onEdit(e) {
-  // 編集イベントでシート切り替えを試みるが動作しない場合がある
+`onEdit()`や`onChange()`といった、セルの編集をきっかけに実行される「シンプル トリガー」や「インストール可能トリガー」内で`activate()`を使用しても、期待通りに画面が切り替わらない場合があります。これは、スクリプトの実行コンテキストがバックグラウンドであるため、UIの変更が即座に反映されないことが原因です。
+
+```js
+function onEdit(e) {
+  // 編集イベントでシートを切り替えようとしても、動作しないことがあります
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   ss.getSheetByName('ログ').activate();
 }
-</code></pre>
+```
 
-あと、共有スプレッドシートでは、ユーザーごとにアクティブなシートが異なることもあるけ。自分がアクティブ化しても、他のユーザーには影響しないからその点も覚えといてな。
+### 複数ユーザー環境での動作
 
-## より効率的にシートを扱う方法
+共有のスプレッドシートで`activate()`を実行した場合、アクティブになるのはスクリプトを実行したユーザーの画面だけです。他の共同編集者の画面には影響を与えません。各ユーザーのアクティブシートは独立して管理されていることを覚えておきましょう。
 
-シートがたくさんある場合、どんどんシートをアクティブ化していると、操作が遅くなることがあるけど、これを防ぐ方法もあるよ。たとえば、操作をバッチでまとめて行う方法や、よく使うシートをキャッシュしておく方法を使えば、処理速度がグッと早くなるんじゃ。
+## パフォーマンスを向上させるヒント
 
-<pre class="wp-block-code"><code>function batchSheetOperations() {
+多数のシートを操作する際に、`activate()`を多用するとパフォーマンスが低下することがあります。操作対象のシートを毎回アクティブにする必要はありません。
+
+シートの表示・非表示をまとめて行い、最後に目的のシートを一度だけアクティブにするなど、UIの更新回数を減らす工夫が効果的です。
+
+```js
+function batchSheetOperations() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheets = ss.getSheets();
   
-  // 非アクティブシートに対する操作
-  sheets.forEach(sheet =&gt; {
+  // 'ダッシュボード'以外のシートをすべて非表示にする
+  sheets.forEach(sheet => {
     if (sheet.getName() !== 'ダッシュボード') {
       sheet.hideSheet();
     }
   });
   
-  // 最終的にアクティブ化
+  // 最後に目的のシートをアクティブ化
   ss.getSheetByName('ダッシュボード').activate();
 }
-</code></pre>
+```
+このように、バックグラウンドで処理を完結させ、UI操作を最小限に抑えることがパフォーマンス向上の鍵です。
 
-こんなふうに、シートをまとめて操作することで、スムーズに進めることができるんだわ。
+## セキュリティに関する考慮事項
 
-## セキュリティ面の注意
+`activate()`メソッド自体にセキュリティリスクはありませんが、ユーザーの権限に応じて表示するシートを制御したい場合があります。`Session.getActiveUser().getEmail()`で現在のユーザー情報を取得し、管理者かどうかを判定することで、アクセスできるシートを制限できます。
 
-最後に、セキュリティに関しても気をつけときたいポイントがあるけ。たとえば、ユーザーごとにアクセスできるシートを制限するような方法もあるけんね。これで、権限がないユーザーが特定のシートをアクティブにするのを防げるんじゃ。
-
-<pre class="wp-block-code"><code>function secureActivation() {
+```js
+function secureActivation() {
   const userEmail = Session.getActiveUser().getEmail();
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   
+  // ユーザーが管理者かどうかを判定
   if (isAdmin(userEmail)) {
     ss.getSheetByName('管理画面').activate();
   } else {
@@ -180,254 +132,32 @@ targetSheet.activate();  // 月次報告シートをアクティブ化
 }
 
 function isAdmin(email) {
-  const admins = &#91;'admin@example.com', 'supervisor@example.com'];
+  // 管理者リストは別途管理するのが望ましい
+  const admins = ['admin@example.com', 'supervisor@example.com'];
   return admins.includes(email);
 }
-</code></pre>
-
-これで、管理者だけがアクセスできるシートを設定することができるけ。
+```
+これにより、ユーザーの役割に応じた適切な画面を提供できます。
 
 ## まとめ
 
-`activate()`メソッドは、GASを使ってスプレッドシートを操作する際に欠かせない機能じゃ。シートをアクティブにするだけで、作業の流れがスムーズになるし、条件に応じたシート切り替えや、パフォーマンスの最適化も簡単にできるんだわ。
+`activate()`メソッドは、GASでスプレッドシートのUIを制御する上で基本的ながら非常に強力な機能です。
 
-うまく使いこなすことで、スプレッドシートをより効率的に活用できるようになるけ、ぜひ試してみてや！
+- **基本的な使い方**: `getSheetByName('シート名').activate()`
+- **応用**: 条件に応じた動的なシート切り替え
+- **注意点**: トリガーでの動作や複数ユーザー環境での挙動
+- **パフォーマンス**: UI操作はまとめて行い、処理速度を意識する
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+これらのポイントを理解し、`activate()`メソッドを使いこなすことで、スプレッドシートの操作性を大きく向上させることができます。ぜひ、ご自身のプロジェクトで活用してみてください。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://spreadsheet.dev/activate-sheet-in-google-sheets-using-google-apps-script" title="Activate a sheet in Google Sheets using Google Apps Script" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://spreadsheet.dev/activate-sheet-in-google-sheets-using-google-apps-script" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fspreadsheet.dev%2Factivate-sheet-in-google-sheets-using-google-apps-script?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fspreadsheet.dev%2Factivate-sheet-in-google-sheets-using-google-apps-script?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Activate a sheet in Google Sheets using Google Apps Script
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Learn how to programmatically activate a sheet using Apps Script.
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://spreadsheet.dev/activate-sheet-in-google-sheets-using-google-apps-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://spreadsheet.dev/activate-sheet-in-google-sheets-using-google-apps-script" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          spreadsheet.dev
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://note.com/mir4545/n/na5f1defd5464" >}} 
   
-  <br /> <a rel="noopener" href="https://note.com/mir4545/n/na5f1defd5464" title="Googleスプレッドシート GASを使って、あしたへジャンプ！ (GASで日付を扱うポイント他)｜mir" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://jp.tdsynnex.com/blog/google/gas-trigger/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://assets.st-note.com/production/uploads/images/99067718/rectangle_large_type_2_a04a3e529e47a0ce6f8d441ce80bbf87.png?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://assets.st-note.com/production/uploads/images/99067718/rectangle_large_type_2_a04a3e529e47a0ce6f8d441ce80bbf87.png?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Googleスプレッドシート GASを使って、あしたへジャンプ！ (GASで日付を扱うポイント他)｜mir
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        前回の XMATCH 超応用例 から派生した小ネタです。 ちなみに「あしたへジャンプ」は 1990年代前半に NHKの教育テレビで放送されていた 小学校高学年向けの道徳ドラマです。 あしたへジャンプ - Wikipediaja.wikipe...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://note.com/mir4545/n/na5f1defd5464" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://note.com/mir4545/n/na5f1defd5464" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          note.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://teratail.com/questions/192168" >}} 
   
-  <br /> <a rel="noopener" href="https://jp.tdsynnex.com/blog/google/gas-trigger/" title="Google Apps Scriptのトリガーについて – TD SYNNEX BLOG" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://jp.tdsynnex.com/blog/wp-content/uploads/2021/09/gas-trigger-jpg.webp" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://jp.tdsynnex.com/blog/wp-content/uploads/2021/09/gas-trigger-jpg.webp" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Apps Scriptのトリガーについて – TD SYNNEX BLOG
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script（GAS）は、Googleのさまざまなサービス（Gmail、Google Sheets、Google
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://jp.tdsynnex.com/blog/google/gas-trigger/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://jp.tdsynnex.com/blog/google/gas-trigger/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          jp.tdsynnex.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://teratail.com/questions/192168" title="GASのgetActiveCell()が動作しない" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://teratail.com/img/ogpImages/imgFacebookShare.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://teratail.com/img/ogpImages/imgFacebookShare.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASのgetActiveCell()が動作しない
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GoogleAppsScriptの『getActivecell()』について質問です。昨日まで正常に動作していましたが、今日は正常に動作せず、大変困っています。GASに何か不具合等が発生し
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://teratail.com" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://teratail.com" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          teratail.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://net-trouble.portal.jp.net/archives/41770" title="GAS&#12456;&#12521;&#12540;&#12434;&#35299;&#28040;&#12377;&#12427;&#12383;&#12417;&#12398;&#20855;&#20307;&#30340;&#12394;&#25163;&#38918;&#12399;&#20309;&#12391;&#12377;&#12363;&#65311; - &#12493;&#12483;&#12488;&#12488;&#12521;&#12502;&#12523;&#12509;&#12540;&#12479;&#12523;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnet-trouble.portal.jp.net%2Farchives%2F41770?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fnet-trouble.portal.jp.net%2Farchives%2F41770?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GAS&#12456;&#12521;&#12540;&#12434;&#35299;&#28040;&#12377;&#12427;&#12383;&#12417;&#12398;&#20855;&#20307;&#30340;&#12394;&#25163;&#38918;&#12399;&#20309;&#12391;&#12377;&#12363;&#65311; - &#12493;&#12483;&#12488;&#12488;&#12521;&#12502;&#12523;&#12509;&#12540;&#12479;&#12523;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://net-trouble.portal.jp.net/archives/41770" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://net-trouble.portal.jp.net/archives/41770" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          net-trouble.portal.jp.net
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://net-trouble.portal.jp.net/archives/41770" >}}

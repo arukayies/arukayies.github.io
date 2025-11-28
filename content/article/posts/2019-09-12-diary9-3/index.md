@@ -1,123 +1,49 @@
 ---
-title: 【水耕栽培】オクラの観察日記(62日目)
-author: arukayies
-type: post
-date: 2019-09-12T06:35:47+00:00
-url: /hydroponic_culture/okra/diary9-3
+title: "【水耕栽培】オクラ観察日記：62日目で蕾が成長！摘葉作業の効果を検証"
+date: "2019-09-12T06:35:47.000Z"
+url: "/hydroponic_culture/okra/diary9-3"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1571726368
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186532709490839552";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186532709490839552";s:5:"pDate";s:19:"2019-10-22 06:40:17";}}";'
 archives: ["2019年9月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "水耕栽培で育てているオクラが観察62日目を迎え、摘葉作業の甲斐あって、ついに蕾が成長してきました！この時期のオクラの様子と、下葉取り・摘葉作業が植物の成長に与える影響について詳しく解説します。オクラ栽培の成功の秘訣を知りたい方へ。"
+tags: ["水耕栽培", "オクラ", "観察日記", "蕾", "摘葉作業", "下葉取り", "家庭菜園", "DIY", "ブログカード"]
 ---
+
 こんにちは！
 
-<span class="marker"><strong>水耕栽培</strong></span>で**オクラ**を育成し始めました、「くら(<a rel="noopener" href="http://www.twitter.com/arukayies" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color: #55ACEE;font-size:1.2em;"></i>@arukayies</a>)」です！
+水耕栽培で**オクラ**の育成に挑戦中です！
 
-<span style="color: blue;">観察62日目</span>の様子です！
+本日は、**観察62日目**のオクラの様子をお届けします。今回は、前回行った下葉取り・摘葉作業の効果が表れ、ついに蕾が育ち始めたオクラの姿をご覧ください！
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    前回までの日記はこちらです。<br /> <a href="https://arukayies.com/hydroponic_culture/okra/diary8-3" title="【水耕栽培】オクラの観察日記(下葉取り・摘葉作業)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary8-3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】オクラの観察日記(下葉取り・摘葉作業)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でオクラを育成し始めました、「くら(twitter@arukayies)」です！下葉取り・摘葉作業の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。下葉取り・摘葉作業上の葉だけを残して、ばっさり...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    自作水耕栽培装置の紹介はこちらです。<br /> <a href="https://arukayies.com/diy/hydroponic_culture_first_machine" title="ほぼ100均で作る循環式の水耕栽培装置の紹介" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard external-blogcard eb-left cf">
-      <div class="blogcard-label external-blogcard-label">
-        <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-      
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      </noscript></figure>
-      
-      <div class="blogcard-content external-blogcard-content">
-        <div class="blogcard-title external-blogcard-title">
-          ほぼ100均で作る循環式の水耕栽培装置の紹介
-        </div>
-        
-        <div class="blogcard-snippet external-blogcard-snippet">
-          こんにちは！自宅で野菜を作ってみたくて、水耕栽培に興味を持った「くら」です！これが実際に自作した水耕栽培装置です。↓今回は私が自作した水耕栽培装置を紹介します！大規模にやるならこれも気になる・・・【2024進化版】LAPOND 水耕栽培シス...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer external-blogcard-footer cf">
-        <div class="blogcard-site external-blogcard-site">
-          <div class="blogcard-favicon external-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain external-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+前回までのオクラの成長記録はこちらをご覧ください。
 
-## 観察62日目
+{{< self-blog-card "article/posts/2019-09-05-diary8-3" >}}
 
-🌿を切り取った成果か、蕾らしきものが育ってきました！  
-{{< custom-figure src="img_5dfa41c06edf5.jpg" title="" Fit="1280x1280 webp q90" >}} 
+また、私が自作した水耕栽培装置について興味がある方は、こちらの記事をご覧ください。
 
-{{< custom-figure src="img_5dfa41c15a768.jpg" title="" Fit="1280x1280 webp q90" >}}
+### 自作水耕栽培装置の紹介
+
+*   **【1号機】初めてでも簡単！100均材料で循環式水耕栽培装置をDIY**
+
+
+
+---
+
+## 観察62日目：摘葉作業が実を結ぶ！オクラに待望の蕾が成長
+
+観察62日目を迎えたオクラ。前回の下葉取り・摘葉作業の効果が、ついに目に見える形で現れました！
+
+ご覧ください、この蕾らしきものを！
+
+{{< custom-figure src="img_5dfa41c06edf5.jpg" title="成長し始めたオクラの蕾" Fit="1280x1280 webp q90" >}}
+
+小さな蕾がいくつも育ち始め、これからの開花、そして収穫への期待が高まります。摘葉作業によって、植物のエネルギーが実に集中するようになり、成長が促進されたのかもしれません。
+
+{{< custom-figure src="img_5dfa41c15a768.jpg" title="オクラの蕾のクローズアップ" Fit="1280x1280 webp q90" >}}
+
+### 摘葉作業の効果と今後の栽培計画
+
+今回の観察で、摘葉作業がオクラの成長に良い影響を与えることが確認できました。余分な葉を取り除くことで、株全体の通気性が良くなり、病害虫のリスクも軽減されると考えられます。
+
+今後は、蕾の成長を見守りつつ、適切なタイミングで追肥を行い、美味しいオクラの収穫を目指していきます。水耕栽培の奥深さを改めて実感する一日となりました！

@@ -1,311 +1,200 @@
 ---
-title: Google Apps Script における getRowIndex() メソッドの徹底解説ばい！
-author: arukayies
-type: post
-date: 2020-09-13T12:19:50+00:00
-excerpt: GASでスプレッドシートの指定セルの行の位置を取得する方法を紹介します！
-url: /gas/getrowindex
+title: "【GASスプレッドシート】getRowIndex()で効率的な行番号取得・SEO最適化"
+description: "Google Apps Script (GAS)の`getRowIndex()`メソッドを徹底解説。スプレッドシートの行番号を効率的に取得する方法、`getRow()`や`getLastRow()`との違い、二次元配列処理での活用、エラー回避策を具体的なコードで紹介します。GAS初心者から上級者まで、スプレッドシート自動化の基本から応用までを網羅し、SEOに強いコンテンツを提供します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getRowIndex", "getRow", "行番号", "セル操作", "データ範囲", "自動化", "効率化", "プログラム", "開発", "エラーハンドリング"]
+date: "2020-09-13T12:19:50.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getrowindex"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1599999591
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-06 09:03:15
-categories:
-  - GAS
-tags:
-  - GAS
-  - getRowIndex()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-どもども！GAS（Google Apps Script）を使っとると、スプレッドシートの行番号を取得する場面が結構あるっちゃね。今回は、その中でも **`getRowIndex()` メソッド** にフォーカスして、基本的な使い方から応用テクまで、がっつり解説していくばい！
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+Google Apps Script (GAS) を使ってスプレッドシートを自動化する際、**特定のセルの行番号を正確に取得する**ことは、スクリプトの柔軟性と堅牢性を高める上で非常に重要です。`getRowIndex()`メソッドは、このニーズに応える基本的ながら強力な機能です。
 
-## 1. getRowIndex() って何さ？
+本記事では、GASの`Range.getRowIndex()`メソッドを徹底解説します。単一セルや複数範囲からの行番号取得の基本、類似メソッドである`getRow()`や`getLastRow()`との違い、二次元配列処理におけるインデックス調整の重要性、さらには**エラー回避策や実践的な活用例**まで、具体的なコードを交えて分かりやすく紹介します。
 
-このメソッドは、スプレッドシートの `Range` クラスに属しとって、**指定した範囲の最初の行番号を取得する** ためのメソッドたい。
+GAS初心者の方から、スプレッドシート自動化の効率をさらに高めたい上級者まで、すべての方に役立つ情報が満載です。
 
-<pre class="wp-block-code"><code>const rowNumber = range.getRowIndex();
-</code></pre>
+{{< affsearch keyword="GAS スプレッドシート 行番号取得 自動化 効率化" img="/gas.jpg">}}
 
-引数は不要で、指定したセル範囲の **先頭行の番号** を整数値で返すんじゃ。
+## `getRowIndex()`メソッドとは？GASでセルの行番号を取得する基本
 
-### 例えばこんな感じ！
+`Range.getRowIndex()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）の「最初の行番号」を整数で返す**機能です。スプレッドシートの行番号は、ユーザーインターフェースと同様に1から始まります。このメソッドを使用することで、スクリプト内でセルの位置を行単位で正確に識別し、様々な処理に活用できます。
 
-<pre class="wp-block-code"><code>function basicExample() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getRange("C3");
-  const rowNumber = range.getRowIndex();
-  Logger.log(rowNumber); // 3 が出力されるばい！
+### 基本的な使用例：C3セルの行番号を取得する
+
+以下のスクリプトは、アクティブなシートの`C3`セルを指定し、その行番号を取得してログに出力する最も基本的な例です。
+
+```javascript
+/**
+ * アクティブなシートのC3セルの行番号を取得し、ログに出力する関数。
+ * 結果は「3」となります。
+ */
+function basicGetRowIndex() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("C3");           // C3セルをRangeオブジェクトとして取得
+  const rowNumber = range.getRowIndex();        // C3セルの行番号を取得
+
+  Logger.log(`C3セルの行番号: ${rowNumber}`); // 結果: 3 が出力される
 }
-</code></pre>
+```
+このコードを実行すると、`C3`セルが3行目に存在するため、コンソールには`3`が出力されます。
 
-C3セルを指定したら、その行番号「3」が返ってくるっちゃね！
+## `getRowIndex()`と他の行取得メソッドとの比較
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+GASには、セルの行に関連する情報を取得するための類似メソッドがいくつか存在します。それぞれの違いを理解し、目的と状況に応じて適切に使い分けることが、効率的で堅牢なスクリプト開発に繋がります。
 
-## 2. getRowIndex() と他の行取得メソッドの違い
+| メソッド名 | 戻り値の型 | 説明 | 使用例（`sheet.getRange("B2:D5")`の場合） |
+| :--- | :--- | :--- | :--- |
+| `getRowIndex()` | 整数 | 指定範囲の**先頭行**の番号（1ベース）を取得します。 | `2` （範囲の開始行） |
+| `getRow()` | 整数 | `getRowIndex()` と同じく、範囲の**先頭行**の番号（1ベース）を取得します。 | `2` （範囲の開始行） |
+| `getLastRow()` | 整数 | シート全体の**データが入力されている最終行**の番号（1ベース）を取得します。 | `5` (もしシートの最終データ行が5の場合) |
+| `getNumRows()` | 整数 | 指定した範囲内に含まれる**行数**を取得します。 | `4` （B2:D5は4行分） |
 
-「行番号を取得する」ってだけなら、他にも色々なメソッドがあるけん、違いをまとめとくばい！<figure class="wp-block-table">
+**`getRowIndex()`と`getRow()`について**:
+これら二つのメソッドは、機能的には全く同じ結果（指定範囲の開始行番号）を返します。GASのドキュメントでは、`getRowIndex()`と`getRow()`のどちらを使用しても構わないとされています。コードの意図をより明確にするために、文脈に合わせて選択すると良いでしょう。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド名
-    </th>
-    
-    <th>
-      戻り値
-    </th>
-    
-    <th>
-      説明
-    </th>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getRowIndex()</code>
-    </td>
-    
-    <td>
-      整数
-    </td>
-    
-    <td>
-      指定範囲の<strong>先頭行</strong>の番号を取得
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getRow()</code>
-    </td>
-    
-    <td>
-      整数
-    </td>
-    
-    <td>
-      <code>getRowIndex()</code> とほぼ同じ動作
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getLastRow()</code>
-    </td>
-    
-    <td>
-      整数
-    </td>
-    
-    <td>
-      データが入っとる最終行を取得
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getNumRows()</code>
-    </td>
-    
-    <td>
-      整数
-    </td>
-    
-    <td>
-      指定範囲内の行数を取得
-    </td>
-  </tr>
-</table></figure> 
+## `getRowIndex()`の実践的な活用テクニック
 
-たとえば、B2:D5 を対象にすると、
+`getRowIndex()`は、単独で使うだけでなく、他のメソッドやループ処理と組み合わせることで、スプレッドシートの自動化において非常に多岐にわたる場面でその真価を発揮します。
 
-<pre class="wp-block-code"><code>function rangeBehavior() {
+### 1. 動的なデータ範囲の開始行を特定する
+
+スプレッドシートのデータは日々変動することが多いため、スクリプトで処理する範囲を固定してしまうと、データの増減に対応できなくなります。`getRowIndex()`と`getLastRow()`（シートにデータが入力されている最終行を取得）を組み合わせることで、**常に最新のデータ範囲の開始行を動的に特定**し、柔軟な処理を実現できます。
+
+```javascript
+/**
+ * シートのデータ範囲の開始行を動的に取得する関数。
+ * ヘッダー行を除いてデータ本体の開始行を特定する際などに利用できます。
+ */
+function getDynamicDataRangeStartRow() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getRange("B2:D5");
-  console.log(range.getRowIndex()); // 2 を出力
-  console.log(range.getNumRows());  // 4 を出力
+  const lastRow = sheet.getLastRow(); // データが入力されている最終行番号を取得
+
+  // 例: ヘッダーが1行目にあるとして、データ本体は2行目から開始すると仮定
+  // データ範囲 (2行目から最終行まで) をRangeオブジェクトで表現
+  const dataRange = sheet.getRange(2, 1, lastRow - 1, sheet.getLastColumn()); 
+  const startRowOfData = dataRange.getRowIndex(); // データ範囲の開始行番号を取得
+
+  Logger.log(`データ範囲の開始行: ${startRowOfData}`); // 例: 2 が出力される
+  // ここで取得したstartRowOfDataを用いて、以降のデータ処理を行う
 }
-</code></pre>
+```
 
-複数行指定しとる場合でも、`getRowIndex()` は「開始行」を返すけん、注意ばい！
+### 2. 二次元配列処理における「スプレッドシート上の行番号」の特定
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+`Range.getValues()`などで取得した二次元配列は、JavaScriptの標準的な0ベースのインデックスで扱われます。しかし、スプレッドシート上の行番号は1ベースです。
 
-## 3. 実践！ getRowIndex() を活用するテクニック
+`getRowIndex()`で取得した開始行番号をオフセットとして利用することで、**二次元配列のインデックスとスプレッドシートの実際の行番号を正確に紐づけて管理**できます。これにより、データの参照や更新時に位置のずれを防げます。
 
-### (1) 動的に範囲を指定して行番号を取得
-
-<pre class="wp-block-code"><code>function dynamicRangeExample() {
+```javascript
+/**
+ * シートのデータ範囲を一括で二次元配列として取得し、
+ * 各データの「スプレッドシート上の実際の行番号」と共にログに出力する関数。
+ */
+function process2DArrayWithActualRowNumbers() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const lastRow = sheet.getLastRow();
-  const dataRange = sheet.getRange(2, 1, lastRow-1, 3);
-  const startRow = dataRange.getRowIndex();
-  Logger.log(`データ範囲開始行: ${startRow}`); 
-}
-</code></pre>
+  const dataRange = sheet.getDataRange(); // シート内のデータが存在する全範囲を取得
+  const values = dataRange.getValues();   // データ範囲の値を二次元配列として取得
+  const rangeStartRow = dataRange.getRowIndex(); // データ範囲の開始行番号を取得
+  
+  Logger.log(`データ範囲の開始行 (1ベース): ${rangeStartRow}`);
 
-データがある範囲の最初の行を取得するときに便利やけん、覚えておくといいばい！
-
-### (2) 条件付きで行を特定する
-
-<pre class="wp-block-code"><code>function conditionalRowDetection() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getDataRange();
-  const values = dataRange.getValues();
-
-  values.forEach((row, index) =&gt; {
-    if (row&#91;0] === "重要") {
-      const targetRange = sheet.getRange(index + 1, 1);
-      console.log(`重要マーク行: ${targetRange.getRowIndex()}`);
-    }
+  values.forEach((rowData, indexInArray) => {
+    // 二次元配列のインデックス (0ベース) をスプレッドシートの実際の行番号 (1ベース) に変換
+    const actualRowNumber = rangeStartRow + indexInArray;
+    Logger.log(`実際の行番号: ${actualRowNumber}, 取得データ: ${rowData.join(", ")}`);
+    // ここに各行データに対する処理を追加
   });
 }
-</code></pre>
+```
+この方法は、大量のデータを効率的に処理しつつ、スプレッドシート上の正確な位置情報を参照する必要がある場合に非常に有効です。
 
-A列に「重要」って書いてある行の番号を取得するスクリプトばい！
+### 3. 条件に一致するセルの行番号を特定する
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+特定の条件を満たすセル（例: 特定のキーワードが含まれる、値が閾値を超えるなど）の行番号を取得する処理は、データフィルタリングやレポート作成などの実務で頻繁に利用されます。
 
-## 4. getRowIndex() を使うときの注意点
+```javascript
+/**
+ * A列の値が「完了」である行を検索し、そのスプレッドシート上の行番号をログに出力する関数。
+ */
+function findRowsByCondition() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const dataRange = sheet.getDataRange(); // シートの全データ範囲を取得
+  const values = dataRange.getValues();   // 全データを二次元配列として取得
+  const rangeStartRow = dataRange.getRowIndex(); // データ範囲の開始行番号
 
-### (1) 存在しない範囲へのアクセスはエラーになる
+  Logger.log("「完了」ステータスの行を検索中...");
 
-<pre class="wp-block-code"><code>const invalidRange = sheet.getRange("XFD1048576");
-console.log(invalidRange.getRowIndex()); // エラー！
-</code></pre>
-
-**最大行数・最大列数を超えた範囲を指定するとエラーになるばい！**
-
-### (2) 非アクティブなシートを参照するとエラー！
-
-<pre class="wp-block-code"><code>const inactiveSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("存在しないシート");
-const range = inactiveSheet.getRange("A1"); // エラー発生！
-</code></pre>
-
-`getSheetByName()` で null が返る可能性があるけん、チェックすること！
-
-<pre class="wp-block-code"><code>if (inactiveSheet) {
-  const range = inactiveSheet.getRange("A1");
-  console.log(range.getRowIndex());
-} else {
-  console.log("シートが存在しません！");
+  values.forEach((rowData, indexInArray) => {
+    // A列 (配列インデックス0) の値が「完了」であるかチェック
+    if (rowData[0] === "完了") {
+      const actualRowNumber = rangeStartRow + indexInArray;
+      Logger.log(`「完了」と記載のある行が検出されました: ${actualRowNumber} 行目`);
+      // 例えば、この行に対して別の処理（色付け、別のシートへ移動など）を行う
+    }
+  });
+  Logger.log("検索が完了しました。");
 }
-</code></pre>
+```
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+## `getRowIndex()`を使用する際の重要な注意点とエラー回避策
 
-## 5. まとめ
+`getRowIndex()`は非常に便利ですが、その特性を正しく理解し、堅牢なスクリプトを構築するために以下の注意点を把握しておくことが重要です。
 
-**`getRowIndex()` は「指定した範囲の先頭行」を取得する便利なメソッド** ばい！
+### 1. 存在しない範囲やシートへのアクセスによるエラー
 
-### 💡 ポイントまとめ！
+*   **無効な範囲指定**: スプレッドシートの最大行数や最大列数を超える範囲（例: `"A10000000"`）を指定しようとすると、`Bad value`エラーが発生します。
+*   **存在しないシートの参照**: `SpreadsheetApp.getActiveSpreadsheet().getSheetByName("存在しないシート名")`のように、存在しないシート名を指定した場合、`getSheetByName()`は`null`を返します。この`null`に対して`getRange()`などのメソッドを呼び出すと、`TypeError: Cannot read property 'getRange' of null`といったエラーが発生します。
 
-✅ `getRowIndex()` は範囲の**開始行**を取得する ✅ `getRow()` とほぼ同じやけど、コードの意図を明確にできる ✅ `getLastRow()` や `getNumRows()` と組み合わせるとさらに便利！ ✅ **バッチ処理を意識したコーディングで高速化を図ろう！**
+**対策**:
+シートの存在確認や、範囲指定の妥当性チェックを事前に行うことで、これらのエラーを回避できます。
 
-これで `getRowIndex()` をフル活用できるようになったばい！ GAS でのスプレッドシート操作がもっと楽しくなるけん、ぜひ試してみてね！
+```javascript
+/**
+ * シートや範囲の存在を安全に確認し、getRowIndex()を実行する例。
+ */
+function safeGetRowIndexExample() {
+  const sheetName = "目的のシート名"; // 対象のシート名
+  const targetSheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(sheetName);
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://rinyan-7.com/gas/range_getrow/" title="&#12304;getRow&#12513;&#12477;&#12483;&#12489;&#12434;&#20351;&#12356;&#12371;&#12394;&#12381;&#12358;&#65281;&#12305;&#21177;&#29575;&#30340;&#12394;&#34892;&#30058;&#21495;&#21462;&#24471;&#27861;&#12392;&#23455;&#29992;&#30340;&#12394;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_getrow%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_getrow%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;getRow&#12513;&#12477;&#12483;&#12489;&#12434;&#20351;&#12356;&#12371;&#12394;&#12381;&#12358;&#65281;&#12305;&#21177;&#29575;&#30340;&#12394;&#34892;&#30058;&#21495;&#21462;&#24471;&#27861;&#12392;&#23455;&#29992;&#30340;&#12394;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_getrow/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_getrow/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a href="https://techuplife.tech/gas-ss-rtextwrap/"><a href="https://caymezon.com/gas-row-col-pnt-num-get/%EF%BC%89">https://caymezon.com/gas-row-col-pnt-num-get/</a></a>
-</div>
+  if (targetSheet) {
+    const rangeA1 = targetSheet.getRange("A1"); // 存在するシートのA1セル
+    // スプレッドシートの最大行数を超えない範囲を指定
+    if (rangeA1.getMaxRows() >= 1 && rangeA1.getMaxColumns() >= 1) { 
+      const rowNumber = rangeA1.getRowIndex();
+      Logger.log(`シート「${sheetName}」のA1セルの行番号: ${rowNumber}`);
+    } else {
+      Logger.log(`シート「${sheetName}」には有効なA1セル範囲がありません。`);
+    }
+  } else {
+    Logger.log(`エラー: シート「${sheetName}」が存在しません。処理をスキップします。`);
+  }
+}
+```
+
+### 2. 1ベースと0ベースのインデックスの混同
+
+前述の通り、`getRowIndex()`やスプレッドシートのAPIは1ベースの行番号を使用しますが、JavaScriptの配列は0ベースのインデックスを使用します。この違いを意識せずにコードを書くと、参照するセルやデータが1行ずれてしまうなどのバグに繋がります。
+
+**対策**:
+配列のインデックスからスプレッドシートの行番号を計算する際は、`indexInArray + rangeStartRow`のように、常に`+1`または開始行番号を考慮して変換を行う習慣をつけましょう。
+
+## まとめ：`getRowIndex()`でGASスプレッドシートの自動化を次のレベルへ
+
+Google Apps Scriptの`getRowIndex()`メソッドは、スプレッドシートの行番号を正確に取得し、スクリプトの制御性を高めるための基本的ながら非常に強力なツールです。
+
+*   **正確な行番号の取得**: 指定したセルまたは範囲の開始行番号を1ベースで取得します。
+*   **動的なデータ処理の基盤**: `getLastRow()`と組み合わせることで、データの増減に自動で対応する柔軟なスクリプトを構築できます。
+*   **効率的な配列処理との連携**: 二次元配列の0ベースインデックスとスプレッドシートの1ベース行番号との変換を容易にし、大規模データ処理の効率化をサポートします。
+*   **堅牢なスクリプト開発**: シートや範囲の存在チェック、インデックスの調整など、適切なエラー回避策を講じることで、より安定したGASスクリプトを開発できます。
+
+`getRowIndex()`メソッドをマスターすることで、あなたのGASスクリプトはより堅牢で、より効率的、そしてより柔軟なスプレッドシート自動化ツールへと進化します。本記事で紹介した知識と実践例を活用し、日々の業務効率化に役立ててください。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}}
+
+{{< blog-card "https://gsuiteguide.jp/sheets/getrowindex/" >}}
+
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}}

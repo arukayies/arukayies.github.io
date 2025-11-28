@@ -1,97 +1,67 @@
 ---
-title: 【観葉植物】アルティシマの観察日記(166日目)
-author: arukayies
-type: post
-date: 2019-09-23T12:19:26+00:00
-url: /house_plants/altissima/diary4-6
+title: "【観葉植物】アルティシマ観察日記：166日目で鉢替え！IKEA産アルティシマの成長記録"
+date: "2019-09-23T12:19:26.000Z"
+url: "/house_plants/altissima/diary4-6"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1571833409
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186981621582323713";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186981621582323713";s:5:"pDate";s:19:"2019-10-23 12:24:06";}}";'
 archives: ["2019年9月"]
+lastmod: "2025-11-18T00:00:00+00:00"
+description: "IKEAで購入したアルティシマが観察166日目を迎え、天井に届くほどの大きさに成長！さらなる成長のために鉢替えを決行しました。巨大化したアルティシマの鉢替え手順と、観葉植物を大きく育てるためのコツを写真付きでご紹介します。"
+tags: ["観葉植物", "アルティシマ", "観察日記", "鉢替え", "植え替え", "IKEA", "成長記録", "DIY", "ブログカード"]
 ---
+
 こんにちは！
 
-IKEAで購入した**アルティシマ**の様子です。
+IKEAで購入し、大切に育てている**アルティシマ**の成長記録です！
 
-<span style="color: blue;">観察166日目</span>の様子です！
+本日は、**観察166日目**のアルティシマの様子をお届けします。天井に届きそうなほど大きく成長したアルティシマのために、今回は鉢替えを行います！
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    前回までの日記はこちらです。<br /> <a href="https://arukayies.com/house_plants/altissima/diary3-6" title="【観葉植物】アルティシマの観察日記(162日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary3-6-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【観葉植物】アルティシマの観察日記(162日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！IKEAで購入したアルティシマの様子です。観察162日目の様子です！前回までの日記はこちらです。観察162日目観察し始めて5か月経過しました。もう天井につきそうです。大きな鉢へ植え替えを検討中です。5か月前↓今回↓ (水耕栽培装...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+前回までのアルティシマの成長記録はこちらをご覧ください。
 
-## 観察166日目
+{{< self-blog-card "article/posts/2019-09-19-diary3-6" >}}
 
-アルティシマの植替を行います！  
-{{< custom-figure src="img_5dff3554bf9df.jpg" title="" Fit="1280x1280 webp q90" >}} 
+---
 
-鉢からアルティシマを抜きます  
-{{< custom-figure src="img_5dff35567d0ff.jpg" title="" Fit="1280x1280 webp q90" >}} 
+## 観察166日目：巨大化したアルティシマの鉢替え！
 
-新しい鉢に鉢底ネットを敷きます  
-{{< custom-figure src="img_5dff355734561.jpg" title="" Fit="1280x1280 webp q90" >}} 
+観察166日目を迎えたアルティシマは、想像以上に大きく育ち、今の鉢では手狭になってしまいました。これ以上窮屈な思いをさせないよう、そしてさらなる成長を促すために、鉢替えを決行します。
 
-軽石を入れます  
-{{< custom-figure src="img_5dff3557dd32d.jpg" title="" Fit="1280x1280 webp q90" >}} 
+### 1. アルティシマを鉢から抜く
 
-アルティシマを植えます！  
-{{< custom-figure src="img_5dff355896407.jpg" title="" Fit="1280x1280 webp q90" >}} 
+まずは、大きく育ったアルティシマを慎重に鉢から抜きます。根を傷つけないように、ゆっくりと作業を進めるのがポイントです。
 
-土の乾燥防止に化粧石を敷きます  
-{{< custom-figure src="img_5dff3559569d2.jpg" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="img_5dff3554bf9df.jpg" title="鉢から抜いたアルティシマ" Fit="1280x1280 webp q90" >}}
 
-生まれ変わったアルティシマの完成です！  
-{{< custom-figure src="img_5dff3559bd7ed.jpg" title="" Fit="1280x1280 webp q90" >}}
+### 2. 新しい鉢に鉢底ネットを敷く
+
+水はけと土の流出を防ぐため、新しい大きな鉢に鉢底ネットを敷きます。
+
+{{< custom-figure src="img_5dff355734561.jpg" title="新しい鉢に鉢底ネットを敷く" Fit="1280x1280 webp q90" >}}
+
+### 3. 軽石を入れる
+
+次に、鉢底ネットの上に軽石を敷き詰めます。これにより、通気性が向上し、根腐れ防止にも繋がります。
+
+{{< custom-figure src="img_5dff3557dd32d.jpg" title="鉢に軽石を入れる" Fit="1280x1280 webp q90" >}}
+
+### 4. アルティシマを新しい鉢に植える
+
+いよいよアルティシマを新しい鉢に植え付けます。根の周りに新しい土をしっかりと入れ、安定させます。
+
+{{< custom-figure src="img_5dff355896407.jpg" title="アルティシマを新しい鉢に植える" Fit="1280x1280 webp q90" >}}
+
+### 5. 土の乾燥防止に化粧石を敷く
+
+土の乾燥を防ぎ、美しい見た目を保つために化粧石を敷き詰めます。
+
+{{< custom-figure src="img_5dff3559569d2.jpg" title="土の乾燥防止に化粧石を敷く" Fit="1280x1280 webp q90" >}}
+
+### 生まれ変わったアルティシマの完成！
+
+これで鉢替え作業は完了です！一回り大きくなった鉢に植え替えられ、アルティシマも心なしか喜んでいるように見えます。
+
+{{< custom-figure src="img_5dff3559bd7ed.jpg" title="鉢替えが完了したアルティシマ" Fit="1280x1280 webp q90" >}}
+
+### 鉢替え後のケアと今後の成長への期待
+
+鉢替え後は、新しい環境に慣れるまで十分な水やりと優しいケアを心がけます。この鉢替えを機に、アルティシマがさらに大きく、美しく成長してくれることを楽しみにしています！

@@ -1,295 +1,131 @@
 ---
-title: GASでスプレッドシートの指定範囲からすべてのメモを効率的に取得する方法
-author: arukayies
-type: post
-date: 2020-07-17T16:26:32+00:00
-excerpt: GASでスプレッドシートの指定範囲すべてのメモを取得する方法を紹介します！
-url: /gas/getnotes
+title: "【GAS】スプレッドシートの複数セルメモを一括取得！getNotes()徹底解説"
+description: "Google Apps Script (GAS) の`getNotes()`メソッドで、スプレッドシートの複数セルメモを一括取得する方法を徹底解説。単一セル取得の`getNote()`との違いから、大量のメモデータ処理、特定のキーワードによる自動処理、パフォーマンス最適化まで、効率的なメモ管理を実現する実践的テクニックを紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "getNotes", "getNote", "メモ", "ノート", "一括取得", "自動化", "パフォーマンス"]
+date: "2020-07-17T16:26:32.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getnotes"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1595003192
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:42:34
-categories:
-  - GAS
-tags:
-  - GAS
-  - getNotes()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年7月"]
 ---
-みなさん、Google Apps Script（GAS）って知っとる？スプレッドシートやGoogleの他のアプリケーションを自動化できる強力なツールじゃけん、仕事をもっと効率的にするためにぜひ使いこなしたいところばい。その中でも、`getNotes()`メソッドは、スプレッドシートのセルに追加されたメモを取得するための大事な機能なんよね。今回はその基本から応用まで、わかりやすく解説するけ。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使ったスプレッドシートの自動化において、複数セルにわたる「メモ」情報を効率的に管理することは、情報の一元化や業務フローの改善に大きく貢献します。`getNotes()` メソッドは、この複数セルのメモを一括で取得し、プログラムで自在に操作するための強力な機能です。
 
-## getNotes()メソッドとは？
+本記事では、GASにおける`getNotes()`メソッドの基本的な使い方から、単一セル対象の`getNote()`との違い、取得したメモを条件分岐やデータ処理に活用する方法、さらには大量データ処理時のパフォーマンス最適化まで、具体的なコード例を交えて徹底解説します。`getNotes()`をマスターし、スプレッドシートのメモ機能を最大限に引き出し、よりスマートな情報管理と自動化を実現しましょう。
 
-`getNotes()`メソッドは、スプレッドシートのセルに追加されたメモをプログラムで取得するためのメソッドで、`Range`クラスに属しとるんじゃ。これを使えば、セルに入れたメモをプログラムで簡単に取り出せるけん、例えば重要な情報を管理したり、メモを元にアクションを取ったりするのに便利なんよ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### メソッドの使い方
+## getNotes() メソッドとは？
 
-<pre class="wp-block-code"><code>range.getNotes();
-</code></pre>
+`getNotes()` は、GASの `Range` クラスに属するメソッドで、指定したセル範囲に設定されているすべてのメモをプログラムで取得します。単一セルのメモを取得する`getNote()`とは異なり、広範囲のメモ情報を一度にまとめて取得できる点が特徴です。
 
-このメソッドを使うことで、指定した範囲内のメモを二次元配列（`String[][]`）で返してくれるんよ。各セルのメモ内容がそのまま取得できるけん、すごく便利さ。
+このメソッドを使うことで、セルに記録された補足情報やタスク指示などをスクリプトで読み取り、条件分岐やデータ処理に活用できます。
 
-例えば、こんな感じでメモを取得してログに出力することができるんよ。
+### 基本的な使い方
 
-<pre class="wp-block-code"><code>function getNotesExample() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName("シート1");
+`getNotes()` を実行すると、指定した範囲内のメモが**二次元配列（`String[][]`）** の形式で返されます。メモがないセルに対応する配列要素は空文字列（`""`）になります。
+
+```javascript
+function fetchAllNotes() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("サンプルシート");
   const range = sheet.getRange("B2:C3");
+  
+  // B2:C3の範囲のメモを取得
   const notes = range.getNotes();
+  
   console.log(notes);
 }
-</code></pre>
+```
 
-このコードを実行すれば、`notes`という変数に、各セルのメモが格納されるけん、ログに出力される内容はこうなるよ。
+このコードを実行すると、`notes` 変数には以下のような二次元配列が格納されます。
 
-<pre class="wp-block-code"><code>&#91;&#91; "B2のメモ", "C2のメモ" ], &#91; "B3のメモ", "C3のメモ" ]]
-</code></pre>
+```javascript
+// B2, C2, B3, C3にそれぞれメモが設定されている場合
+[
+  [ "B2のメモ内容", "C2のメモ内容" ],
+  [ "B3のメモ内容", "" ] // C3にメモがない場合
+]
+```
 
-## メモの処理をもっと効果的にするには？
+## 取得したメモを効果的に活用する方法
 
-せっかくメモを取得できても、それをどう処理するかが大事なんよ。たとえば、複数行や列に渡るメモを扱う場合、二次元配列の扱い方を理解しとくことがポイントじゃ。
+取得したメモは、二次元配列をループ処理することで、一つひとつの内容を確認し、様々なアクションに繋げることができます。
 
-### メモの内容を反復処理する
+### 特定のキーワードを含むメモを処理する
 
-こんな風に、メモの内容を一つずつチェックして、特定の条件に合うメモを処理することができるんよ。
+例えば、メモ内に「至急」というキーワードが含まれているセルを自動でハイライトするスクリプトは以下のようになります。
 
-<pre class="wp-block-code"><code>function iterateNotes() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName("シート1");
-  const range = sheet.getRange("B2:D4");
+```javascript
+function highlightUrgentNotes() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getDataRange(); // データ範囲全体を対象
   const notes = range.getNotes();
   
-  for (let rowIndex = 0; rowIndex &lt; notes.length; rowIndex++) {
-    const row = notes&#91;rowIndex];
-    row.forEach((note, colIndex) =&gt; {
-      if (note.includes("緊急")) {
-        const cell = sheet.getRange(rowIndex + 1, colIndex + 1);
-        cell.setBackground("#FF0000"); // "緊急"を含むセルの背景を赤にする
+  // 取得したメモの二次元配列をループ
+  for (let i = 0; i < notes.length; i++) {
+    for (let j = 0; j < notes[i].length; j++) {
+      const note = notes[i][j];
+      
+      // メモに "至急" が含まれているかチェック
+      if (note && note.includes("至急")) {
+        // 対応するセルの背景を赤色に変更
+        const cell = range.getCell(i + 1, j + 1);
+        cell.setBackground("#FFCCCC");
       }
-    });
+    }
   }
 }
-</code></pre>
+```
+このように、メモの内容をトリガーとしてセルの書式を変更したり、通知を送信したりといった自動化が可能です。
 
-このスクリプトは「緊急」というメモがあるセルを赤く塗るんじゃけど、こうしたアクションを自動化できると、かなり効率的に作業が進むんよね。
+## よくある問題と解決策
 
-## よくある問題とその解決法
+### メモが正しく取得できない場合
 
-### メモが取得できない場合は？
+`getNotes()` が期待通りに動作しない場合、以下の点を確認してください。
 
-もしメモが取れない場合、以下の点をチェックしてみてくれ。
+-   **範囲指定の確認**: `getRange()` で指定した範囲が正しいか、A1表記や行・列番号に誤りがないかを確認します。
+-   **スクリプトの権限**: スクリプトがスプレッドシートへのアクセス権限を許可されているか、プロジェクトの設定を確認します。
+-   **コメントとの混同**: スプレッドシートには「メモ」と「コメント」の2種類があります。`getNotes()` は「メモ」のみを取得します。「コメント」を操作したい場合は別のメソッドが必要です。
 
-<ol class="wp-block-list">
-  <li>
-    <strong>範囲の指定ミス</strong>：<code>getRange()</code>の範囲が正しいか確認すること。
-  </li>
-  <li>
-    <strong>アクセス権限</strong>：スクリプトがスプレッドシートにアクセスできる権限を持っているか再確認。
-  </li>
-  <li>
-    <strong>データ型の確認</strong>：<code>getNotes()</code>が返すデータが正しい形式かをログ出力で確認してみてな。
-  </li>
-</ol>
+### 大量データ処理時のパフォーマンス
 
-### パフォーマンスの問題
+数百、数千のセルを含む広大な範囲に対して `getNotes()` を実行すると、処理に時間がかかり、場合によってはタイムアウトする可能性があります。
 
-大量のデータを扱うとき、`getNotes()`を頻繁に使うと処理時間が長くなることがあるけん、注意が必要じゃ。例えば、500セル以上を扱う場合、エラーが発生することもあるけど、バッチ処理でまとめて処理すれば効率的に動かせるよ。
+このような場合は、処理を小さなバッチに分割することで、パフォーマンスを改善できます。
 
-<pre class="wp-block-code"><code>function batchNoteProcessing() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName("大規模データ");
-  const maxRows = 100;
+```javascript
+function batchProcessLargeDataNotes() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const lastRow = sheet.getLastRow();
+  const lastCol = sheet.getLastColumn();
+  const batchSize = 100; // 100行ずつのバッチで処理
   
-  for (let startRow = 1; startRow &lt;= sheet.getMaxRows(); startRow += maxRows) {
-    const dataRange = sheet.getRange(startRow, 1, maxRows, sheet.getMaxColumns());
-    const notes = dataRange.getNotes();
+  for (let startRow = 1; startRow <= lastRow; startRow += batchSize) {
+    const numRows = Math.min(batchSize, lastRow - startRow + 1);
+    const range = sheet.getRange(startRow, 1, numRows, lastCol);
+    const notes = range.getNotes();
     
-    // データ処理（ここにロジックを追加）
-    dataRange.setNotes(notes);
+    // ここで取得したnotesに対する処理を記述
+    console.log(`${startRow}行目からのバッチを処理しました。`);
   }
 }
-</code></pre>
-
-こうして、データを分けて処理すれば、パフォーマンスが向上するけん試してみてな。
+```
 
 ## まとめ
 
-`getNotes()`メソッドを使うことで、スプレッドシートのセルに追加されたメモを効率的に扱えるようになるけん、業務の自動化や情報管理に活用できるんよ。基本的な使い方を押さえたら、次はメモに基づいた通知システムや、品質管理のためのフラグとして使ったり、ドキュメンテーションを自動生成することもできるけん、ぜひ挑戦してみてな。
+`getNotes()`メソッドは、Google Apps Scriptでスプレッドシートの複数セルメモを効率的に一括取得し、データ処理を自動化するための強力なツールです。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+*   **効率的な一括取得**: 広範囲のメモを二次元配列として一度に取得し、API呼び出し回数を削減。
+*   **柔軟なデータ処理**: メモの内容に基づいた条件分岐、書式変更、通知などの自動処理に活用。
+*   **パフォーマンス最適化**: 大量データ処理時にはバッチ処理を組み合わせることで、スクリプトの実行速度を向上。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+このメソッドをマスターすることで、スプレッドシートのメモ情報を最大限に活用し、タスク管理、品質チェック、ドキュメント生成など、様々な業務の自動化と効率化を実現できるでしょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rnote/" title="[GAS]セルのメモの内容を取得・設定する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-10.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-10.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]セルのメモの内容を取得・設定する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲のセルのメモの内容を取得・設定する方法を説明します。 R
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rnote/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rnote/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://techuplife.tech/gas-ss-rnote/" >}}

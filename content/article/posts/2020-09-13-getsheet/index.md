@@ -1,421 +1,254 @@
 ---
-title: GASでスプレッドシートの特定シートを取得・操作する方法徹底解説
-author: arukayies
-type: post
-date: 2020-09-13T12:32:04+00:00
-excerpt: GASでスプレッドシートのシートオブジェクトを取得する方法を紹介します！
-url: /gas/getsheet
+title: "【GASスプレッドシート】getSheet()で特定シート取得・操作・SEO最適化"
+description: "Google Apps Script (GAS) の`getSheet()`関連メソッドを徹底解説。スプレッドシートの特定シートを効率的に取得・操作する方法を、アクティブシート、ID、名前、インデックスでの指定方法と共に具体的なコード例で紹介します。シートの存在チェック、新規作成、一括処理、名前変更時の対応策など、GASによるスプレッドシート自動化に役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getSheet", "getActiveSheet", "getSheetByName", "openById", "シート操作", "自動化", "効率化", "プログラム", "開発", "ベストプラクティス"]
+date: "2020-09-13T12:32:04.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getsheet"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1600000325
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:32:57
-categories:
-  - GAS
-tags:
-  - GAS
-  - getSheet()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-Google Apps Script（GAS）でスプレッドシートを操作するとき、シートを取得するメソッドは必須じゃ！これが分かれば、データ処理もスムーズになるばい。
 
-今回は、スプレッドシートとシートの関係を整理しながら、主要な取得方法を分かりやすく解説していくばい！
+Google Apps Script (GAS) を用いてスプレッドシートを操作する際、まず最初に行うべきは**対象となる「シート」を正確に特定し、取得する**ことです。シートの取得方法を理解することは、その後のデータ処理、集計、自動化の成否を左右する基盤となります。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+本記事では、GASにおけるスプレッドシート（ファイル）とシート（タブ）の階層関係を整理しつつ、**`getSheet()`関連メソッド**（`getActiveSheet()`, `getSheetByName()`, `getSheets()`など）の基本的な使い方から、ID指定やURL指定でのスプレッドシートファイル取得、さらには**シートの存在チェックと新規作成、部分一致検索、名前変更時の対応策**といった実践的な応用テクニックまでを、具体的なコード例を交えて徹底解説します。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+GAS初心者から、より堅牢で効率的なスプレッドシート自動化スクリプトを構築したい上級者まで、すべての方に役立つ情報が満載です。
 
-## スプレッドシートとシートの関係
+{{< affsearch keyword="GAS スプレッドシート シート取得 自動化 効率化" img="/gas.jpg">}}
 
-まず、GASのスプレッドシートは階層構造になっちょる。
+## スプレッドシートとシートの階層関係：GAS操作の基本構造
 
-<ul class="wp-block-list">
-  <li>
-    <code>SpreadsheetApp</code>：スプレッドシート全体を管理する最上位オブジェクト。
-  </li>
-  <li>
-    <code>Spreadsheet</code>オブジェクト：スプレッドシートファイルのこと。
-  </li>
-  <li>
-    <code>Sheet</code>オブジェクト：ワークシートのこと。
-  </li>
-</ul>
+GASでスプレッドシートを操作する上で、以下の階層構造を理解することは非常に重要です。
 
-例えば、Excelで言うと「ブック」がスプレッドシートで、「シート」がGASの`Sheet`オブジェクトに相当するっちゃね。
+1.  **`SpreadsheetApp`**: Googleスプレッドシートサービス全体を管理する最上位のクラスです。ここからすべての操作が始まります。
+2.  **`Spreadsheet`オブジェクト**: 個々のGoogleスプレッドシートファイルそのものを指します。Excelでいう「ブック」に相当します。
+3.  **`Sheet`オブジェクト**: `Spreadsheet`オブジェクト内に含まれる各ワークシート（タブ）を指します。Excelでいう「シート」に相当します。
 
-## スプレッドシートの取得方法
+GASでセルを操作するためには、この階層を順にたどって目的の`Sheet`オブジェクトまで到達する必要があります。
 
-### 1. アクティブなスプレッドシートの取得
+## 操作対象の`Spreadsheet`オブジェクト（ファイル）を取得する方法
 
-スクリプトが紐づいているスプレッドシートを取得する方法じゃ。
+GASでシートを操作する前に、まずどのスプレッドシートファイル自体を対象とするのかを明確にし、`Spreadsheet`オブジェクトを取得する必要があります。
 
-<pre class="wp-block-code"><code>const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
-</code></pre>
+### 1. アクティブなスプレッドシートを取得する：`getActiveSpreadsheet()`
 
-トリガー実行時やカスタムメニューからの起動時に使いやすいけ！
+現在スクリプトがバインドされている（紐付けられている）スプレッドシートファイル、またはスクリプトが実行されたときに開かれているスプレッドシートを取得する最も一般的な方法です。
 
-### 2. ID指定でスプレッドシートを開く
+```javascript
+/**
+ * 現在アクティブなSpreadsheetオブジェクト（ファイル）を取得する関数。
+ * スクリプトがスプレッドシートにバインドされている場合に最もよく使われます。
+ */
+function getActiveSpreadsheetExample() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  Logger.log(`アクティブなスプレッドシート名: ${spreadsheet.getName()}`);
+}
+```
+この方法は、カスタムメニューやトリガーからスクリプトを実行する際に非常に便利です。
 
-スプレッドシートのURLからIDを抜き出して、特定のスプレッドシートを開く方法。
+### 2. IDを指定して特定のスプレッドシートを開く：`openById(id)`
 
-<pre class="wp-block-code"><code>const spreadsheetId = 'スプレッドシートのURLの「/d/」と「/edit」の間にある文字列';
-const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
-</code></pre>
+スクリプトが紐付けられていない**外部のスプレッドシートファイル**を操作したい場合、そのスプレッドシートの**ID**を使って開きます。スプレッドシートのIDは、URLの`/d/`と`/edit`の間にある長い英数字の文字列です。
 
-スプレッドシートのURLの「/d/」と「/edit」の間にある文字列がIDじゃ。
+```javascript
+/**
+ * スプレッドシートIDを指定して特定のSpreadsheetオブジェクトを開く関数。
+ * 外部スプレッドシートへのアクセスに利用されます。
+ */
+function openSpreadsheetByIdExample() {
+  const spreadsheetId = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'; // 対象スプレッドシートのIDをここに記述
+  try {
+    const spreadsheet = SpreadsheetApp.openById(spreadsheetId);
+    Logger.log(`IDで開いたスプレッドシート名: ${spreadsheet.getName()}`);
+  } catch (e) {
+    Logger.log(`エラー: スプレッドシートID「${spreadsheetId}」が見つからないか、アクセス権がありません。`);
+  }
+}
+```
+IDはスプレッドシート固有のものであり、URLが変更されても変わらないため、安定した参照方法として推奨されます。
 
-### 3. URLを使って開く
+### 3. URLを使って特定のスプレッドシートを開く：`openByUrl(url)`
 
-<pre class="wp-block-code"><code>const url = 'スプレッドシートのURL';
-const spreadsheet = SpreadsheetApp.openByUrl(url);
-</code></pre>
+スプレッドシートのURLを直接指定してファイルを開くことも可能です。
 
-URLの変更に弱いから、IDを使う方法のほうがオススメばい！
+```javascript
+/**
+ * スプレッドシートのURLを指定して特定のSpreadsheetオブジェクトを開く関数。
+ * IDでの指定が推奨されますが、URLでのアクセスも可能です。
+ */
+function openSpreadsheetByUrlExample() {
+  const spreadsheetUrl = 'https://docs.google.com/spreadsheets/d/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/edit#gid=0'; // 対象スプレッドシートのURL
+  try {
+    const spreadsheet = SpreadsheetApp.openByUrl(spreadsheetUrl);
+    Logger.log(`URLで開いたスプレッドシート名: ${spreadsheet.getName()}`);
+  } catch (e) {
+    Logger.log(`エラー: スプレッドシートURL「${spreadsheetUrl}」が見つからないか、アクセス権がありません。`);
+  }
+}
+```
+ただし、URLは共有設定やリダイレクトなどで変更される可能性があるため、**`openById()`の方がより確実で安定した方法**として推奨されます。
 
-## シートの取得方法
+## `Sheet`オブジェクト（シート）を取得する方法
 
-### 1. アクティブなシートを取得
+`Spreadsheet`オブジェクトを取得したら、その中の目的の`Sheet`オブジェクトを取得します。複数の方法があるので、状況に応じて使い分けましょう。
 
-現在開いているシートを取得する方法。
+### 1. アクティブなシートを取得する：`getActiveSheet()`
 
-<pre class="wp-block-code"><code>const activeSheet = spreadsheet.getActiveSheet();
-</code></pre>
+ユーザーが現在スプレッドシートで選択している（表示している）シートを取得します。
 
-### 2. 名前で指定する
+```javascript
+/**
+ * 現在アクティブなSheetオブジェクトを取得し、シート名をログに出力する関数。
+ */
+function getActiveSheetExample() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const activeSheet = spreadsheet.getActiveSheet();
+  Logger.log(`現在アクティブなシート名: ${activeSheet.getName()}`);
+}
+```
+これは、ユーザーが操作しているシートに対してスクリプトを実行したい場合に便利です。
 
-<pre class="wp-block-code"><code>const sheetName = '月次レポート';
-const sheet = spreadsheet.getSheetByName(sheetName);
-</code></pre>
+### 2. シート名で指定して取得する：`getSheetByName(name)`
 
-シート名が完全一致じゃないと取得できんけ、スペースや大文字小文字に気をつけんといかんばい！
+最も一般的に使用される方法で、シート名を文字列で指定して目的のシートを取得します。
 
-### 3. インデックスで取得
+```javascript
+/**
+ * シート名を指定してSheetオブジェクトを取得する関数。
+ * 指定したシート名が見つからない場合はnullを返します。
+ */
+function getSheetByNameExample() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const targetSheetName = '月次レポート'; // 取得したいシート名
+  const sheet = spreadsheet.getSheetByName(targetSheetName);
 
-<pre class="wp-block-code"><code>const sheetIndex = 0; // 左端のシート
-const firstSheet = spreadsheet.getSheets()&#91;sheetIndex];
-</code></pre>
+  if (sheet) {
+    Logger.log(`シート「${targetSheetName}」を取得しました。`);
+  } else {
+    Logger.log(`エラー: シート「${targetSheetName}」が見つかりませんでした。`);
+  }
+}
+```
+**注意点**: シート名が完全に一致しないと`null`が返されます。大文字・小文字、全角・半角スペース、余分なスペースなどに注意が必要です。
 
-シートの並び順が変わると影響を受けるけ、固定する場合は名前指定のほうが安全じゃ。
+### 3. インデックス（位置）で指定して取得する：`getSheets()[index]`
 
-### 4. すべてのシートを取得
+`getSheets()`メソッドでスプレッドシート内のすべてのシートを配列として取得し、その配列のインデックス番号（0から始まる）を指定してシートを取得します。
 
-<pre class="wp-block-code"><code>const allSheets = spreadsheet.getSheets();
-</code></pre>
+```javascript
+/**
+ * インデックス（位置）を指定してSheetオブジェクトを取得する関数。
+ * 例: 一番左端のシート (インデックス0) を取得します。
+ */
+function getSheetByIndexExample() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const allSheets = spreadsheet.getSheets(); // すべてのシートを配列として取得
 
-シートを一括で処理するときに便利じゃね！
+  const sheetIndex = 0; // 取得したいシートのインデックス (0から始まる)
+  if (allSheets.length > sheetIndex) {
+    const firstSheet = allSheets[sheetIndex];
+    Logger.log(`インデックス ${sheetIndex} のシート名: ${firstSheet.getName()}`);
+  } else {
+    Logger.log(`エラー: インデックス ${sheetIndex} のシートは存在しません。`);
+  }
+}
+```
+**注意点**: ユーザーがシートの並び順を変更すると、取得するシートも変わってしまうため、**シートの順序が固定されている場合にのみ推奨**されます。
 
-## 応用テクニック
+### 4. すべてのシートを一括取得する：`getSheets()`
 
-### シートが存在しなければ作成
+スプレッドシート内のすべてのシートに対して、一括で同じ処理を行いたい場合に便利です。
 
-<pre class="wp-block-code"><code>function getOrCreateSheet(sheetName) {
+```javascript
+/**
+ * スプレッドシート内のすべてのSheetオブジェクトを一括取得し、シート名をログに出力する関数。
+ */
+function getAllSheetsExample() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const allSheets = spreadsheet.getSheets(); // すべてのシートを配列として取得
+
+  Logger.log("スプレッドシート内の全シート:");
+  allSheets.forEach(sheet => {
+    Logger.log(`- ${sheet.getName()}`);
+    // ここで各シートに対する処理を追加
+  });
+}
+```
+
+## 応用テクニック：シートの柔軟な管理とエラー回避
+
+### 1. シートが存在しない場合は新規作成する
+
+`getSheetByName()`で目的のシートが見つからなかった場合、自動的に新しいシートを作成する処理は、スクリプトの汎用性を高める上で非常に役立ちます。
+
+```javascript
+/**
+ * 指定したシート名でシートを取得します。
+ * もしシートが存在しない場合は、その名前で新しいシートを作成して返します。
+ */
+function getOrCreateSheet(spreadsheet, sheetName) {
   let sheet = spreadsheet.getSheetByName(sheetName);
   if (!sheet) {
-    sheet = spreadsheet.insertSheet(sheetName);
-    console.log(`新しいシート「${sheetName}」を作成したばい！`);
+    sheet = spreadsheet.insertSheet(sheetName); // 新しいシートを作成
+    Logger.log(`新しいシート「${sheetName}」を作成しました。`);
   }
   return sheet;
 }
-</code></pre>
 
-### 部分一致でシートを検索
+// 使用例
+// const mySheet = getOrCreateSheet(SpreadsheetApp.getActiveSpreadsheet(), '日次データ');
+// mySheet.getRange('A1').setValue('データ');
+```
 
-<pre class="wp-block-code"><code>function findSheetsByPartialName(partialName) {
-  return spreadsheet.getSheets().filter(sheet =&gt; sheet.getName().includes(partialName));
+### 2. シート名を部分一致で検索する
+
+正確なシート名が不明な場合や、特定のキーワードを含む複数のシートを処理したい場合、部分一致でシートを検索できます。
+
+```javascript
+/**
+ * 特定のキーワードをシート名に含むすべてのSheetオブジェクトを検索し、配列で返す関数。
+ */
+function findSheetsByPartialName(spreadsheet, partialName) {
+  const matchingSheets = spreadsheet.getSheets().filter(sheet => 
+    sheet.getName().includes(partialName) // シート名に部分文字列が含まれるかチェック
+  );
+  if (matchingSheets.length > 0) {
+    Logger.log(`キーワード「${partialName}」を含むシートが見つかりました:`);
+    matchingSheets.forEach(sheet => Logger.log(`- ${sheet.getName()}`));
+  } else {
+    Logger.log(`キーワード「${partialName}」を含むシートは見つかりませんでした。`);
+  }
+  return matchingSheets;
 }
-</code></pre>
 
-特定のワードを含むシートを探すのに便利じゃ！
+// 使用例
+// const reportSheets = findSheetsByPartialName(SpreadsheetApp.getActiveSpreadsheet(), 'レポート');
+```
 
-## 落とし穴と対策
+### 3. シート名の変更に堅牢に対応する（ベストプラクティス）
 
-### シート名変更への対応
+`getSheetByName()`は便利ですが、シート名が変更されるとスクリプトが動作しなくなるという弱点があります。これを回避するには、より安定した識別方法を検討する必要があります。
 
-<ul class="wp-block-list">
-  <li>
-    <code>getSheetByName()</code> は名前が変わると使えなくなる。
-  </li>
-  <li>
-    <code>gid</code>（シートID）を使うと確実。
-  </li>
-  <li>
-    メタデータ用のシートを作り、IDを管理する方法もあり。
-  </li>
-</ul>
+*   **シートID (`gid`) の利用**: 各シートには固有の`gid`というIDがありますが、GASから直接`gid`でシートを取得するシンプルなメソッドは提供されていません。しかし、URLの一部として`gid`を取得し、`SpreadsheetApp.openByUrl()`やカスタム関数を使って対応することは可能です。
+*   **スクリプトプロパティや設定シートでの管理**: スクリプトプロパティ（`PropertiesService`）や別の設定用シートに、シート名と対応する内部的な識別子（またはシートID）を保存し、スクリプトは常にこの設定を参照するようにすることで、シート名が変更されても設定を更新するだけで対応できます。
 
-### インデックスの不安定性
+## まとめ：`getSheet()`関連メソッドでGASスプレッドシート自動化を最大化
 
-<ul class="wp-block-list">
-  <li>
-    <code>getSheets()</code> の順番は変わる可能性があるけ、固定的な処理には向かん。
-  </li>
-  <li>
-    重要なシートは <code>getSheetByName()</code> で管理すべし。
-  </li>
-</ul>
+Google Apps Scriptにおける`getSheet()`関連メソッドの理解と適切な使い分けは、スプレッドシート自動化スクリプトを効率的かつ堅牢に構築するための基礎です。
 
-## まとめ
+*   **スプレッドシートの取得**: `getActiveSpreadsheet()`, `openById()`, `openByUrl()` を状況に応じて使い分けます。
+*   **シートの取得**: `getActiveSheet()`, `getSheetByName()`, `getSheets()[index]` を利用し、シート名による指定が最も汎用性が高いです。
+*   **堅牢なスクリプト**: シートの存在チェック、必要に応じた新規作成、シート名変更への対応策を講じることで、エラーに強く、メンテナンス性の高いスクリプトを実現します。
 
-GASでスプレッドシートを操作するなら、適切なシート取得メソッドを使い分けるのがポイントじゃ。
+これらの基本と応用テクニックをマスターすることで、あなたのGASスクリプトは格段にスムーズで、柔軟性の高いスプレッドシート自動化ツールへと進化します。本記事で紹介した知識と実践例を活用し、日々の業務効率化に役立ててください。
 
-<ul class="wp-block-list">
-  <li>
-    どのスプレッドシートを操作するか：<code>getActiveSpreadsheet()</code>, <code>openById()</code>, <code>openByUrl()</code>
-  </li>
-  <li>
-    どのシートを操作するか：<code>getActiveSheet()</code>, <code>getSheetByName()</code>, <code>getSheets()[index]</code>
-  </li>
-  <li>
-    シートがなければ作成：<code>insertSheet()</code>
-  </li>
-</ul>
-
-これをマスターすれば、スプレッドシートの自動化が一気に楽になるばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://qiita.com/mitama/items/e5fbf8306384c26cf42f" title="GASによるSpreadsheetの基本操作まとめ - Qiita" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFtYXpvbmF3cy5jb20lMkYwJTJGMjAxMzQ4JTJGcHJvZmlsZS1pbWFnZXMlMkYxNTA0OTI0MTMwP2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz04ZjkxY2I1ZjExODM0NzdmODY5OGY1MmQ4ZmQ0Y2Y2Mg%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D4b30249121c1bfe4d267ce4092b9e1c5?ixlib=rb-4.0.0&#038;w=1200&#038;fm=jpg&#038;mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9R0FTJUUzJTgxJUFCJUUzJTgyJTg4JUUzJTgyJThCU3ByZWFkc2hlZXQlRTMlODElQUUlRTUlOUYlQkElRTYlOUMlQUMlRTYlOTMlOEQlRTQlQkQlOUMlRTMlODElQkUlRTMlODElQTglRTMlODIlODEmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz0zZTRhZjFiNDExYzE0Mjc5YjkwOWQ4NzE4MDRiNTg3Zg&#038;mark-x=120&#038;mark-y=112&#038;blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBtaXRhbWEmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz01NjNmNTYwYTE3YmQ1NjE3NzM0ZTViNDUyYWQyMDljMw&#038;blend-x=242&#038;blend-y=480&#038;blend-w=838&#038;blend-h=46&#038;blend-fit=crop&#038;blend-crop=left%2Cbottom&#038;blend-mode=normal&#038;s=fbd2dca8327b1b128a4a39d2ff847ae8" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASによるSpreadsheetの基本操作まとめ - Qiita
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script（GAS）でスプレッドシートの値を読み書きする場合，最も基本的な操作として次のようなステップを経ます。 Spreadsheetファイルを開く（SpreadSheetオブジェクトの取得） Sheetを開く（...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://qiita.com/mitama/items/e5fbf8306384c26cf42f" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://qiita.com/mitama/items/e5fbf8306384c26cf42f" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          qiita.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://gsuiteguide.jp/sheets/getsheetbyname/" >}} 
   
-  <br /> <a rel="noopener" href="https://agohack.com/gas-how-to-get-sheet" title="[GAS] シートを取得する方法" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://agohack.com/wp/wp-content/uploads/2019/08/gas-logo.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://agohack.com/wp/wp-content/uploads/2019/08/gas-logo.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS] シートを取得する方法
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script で シートを取得する方法のまとめ。 シートの位置（インデックス）で、シート名で、アクティブシート、シート全部を取得する方法をメモ。 シート位...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://agohack.com/gas-how-to-get-sheet/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://agohack.com/gas-how-to-get-sheet/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          agohack.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://zenn.dev/linkedge/articles/c363feb0cc7856" title="【GAS】スプシを操作するメソッドあれこれ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" src="https://res.cloudinary.com/zenn/image/upload/s--ppPzhTGs--/c_fit%2Cg_north_west%2Cl_text:notosansjp-medium.otf_55:%25E3%2580%2590GAS%25E3%2580%2591%25E3%2582%25B9%25E3%2583%2597%25E3%2582%25B7%25E3%2582%2592%25E6%2593%258D%25E4%25BD%259C%25E3%2581%2599%25E3%2582%258B%25E3%2583%25A1%25E3%2582%25BD%25E3%2583%2583%25E3%2583%2589%25E3%2581%2582%25E3%2582%258C%25E3%2581%2593%25E3%2582%258C%2Cw_1010%2Cx_90%2Cy_100/g_south_west%2Cl_text:notosansjp-medium.otf_34:RyoyaOkuma%2Cx_220%2Cy_108/bo_3px_solid_rgb:d6e3ed%2Cg_south_west%2Ch_90%2Cl_fetch:aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL3plbm4tdXNlci11cGxvYWQvYXZhdGFyLzNmZmE4YTI1NWMuanBlZw==%2Cr_20%2Cw_90%2Cx_92%2Cy_102/co_rgb:6e7b85%2Cg_south_west%2Cl_text:notosansjp-medium.otf_30:%25E6%25A0%25AA%25E5%25BC%258F%25E4%25BC%259A%25E7%25A4%25BEL%2526E%2520Group%2Cx_220%2Cy_160/bo_4px_solid_white%2Cg_south_west%2Ch_50%2Cl_fetch:aHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSzhIN0k1TWtwTzN0SFJZOWQzRzVSdTVyVlpRVmI1MG5IWG1HWTdwdk5ublk4PXM5Ni1j%2Cr_max%2Cw_50%2Cx_139%2Cy_84/v1627283836/default/og-base-w1200-v2.png?_a=BACAGSGT" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプシを操作するメソッドあれこれ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://zenn.dev/linkedge/articles/c363feb0cc7856" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://zenn.dev/linkedge/articles/c363feb0cc7856" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          zenn.dev
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://auto-worker.com/blog/?p=4914" title="GASでスプレッドシートのシート名を取得する方法(getSheetName) | AutoWorker〜Google Apps Script(GAS)とSikuliで始める業務改善入門" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://auto-worker.com/blog/wp-content/uploads/2021/12/20211228_auto_002.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://auto-worker.com/blog/wp-content/uploads/2021/12/20211228_auto_002.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASでスプレッドシートのシート名を取得する方法(getSheetName) | AutoWorker〜Google Apps Script(GAS)とSikuliで始める業務改善入門
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script(GAS)ではスプレッドシートの各種操作が可能です。 その中で、スプレッドシートから取得したシートのシート名を取得する方法を解説します。 GA...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://auto-worker.com/blog/?p=4914" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://auto-worker.com/blog/?p=4914" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          auto-worker.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://zenn.dev/masa_sugiyama/articles/233c4f74d47157" >}} 
+
+{{< blog-card "https://auto-worker.com/blog/?p=4914" >}}

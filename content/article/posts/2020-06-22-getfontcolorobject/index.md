@@ -1,99 +1,46 @@
 ---
-title: GASでスプレッドシートの指定セルから文字色の詳細情報を取得する方法
-author: arukayies
-type: post
-date: 2020-06-22T12:07:22+00:00
-excerpt: GASでスプレッドシートのセルの文字色を取得する方法を紹介します！
-url: /gas/getfontcolorobject
+title: "GASでスプレッドシートの指定セルから文字色の詳細情報を取得する方法"
+description: "Google Apps Script（GAS）の`getFontColorObject()`メソッドを使い、スプレッドシートのセルの文字色をColorオブジェクトとして詳細に取得する方法を解説します。RGB値の取得、16進数カラーコードへの変換、複数セルの一括処理など、具体的なコードを交えて詳しく紹介します。"
+tags: ["GAS", "getFontColorObject()", "Google Apps Script", "スプレッドシート", "ColorObject"]
+date: "2020-06-22T12:07:22.000Z"
+lastmod: "2025-11-21T00:00:00.000Z"
+url: "/gas/getfontcolorobject"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1592827643
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 22:08:46
-categories:
-  - GAS
-tags:
-  - GAS
-  - getFontColorObject()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年6月"]
 ---
-Google Apps Script（GAS）を使ってスプレッドシートを操作しとると、文字色を取得したり、変更したりする場面に出くわすことがあるっちゃね。そんなときに便利なのが `getFontColorObject()` メソッドばい！
 
-今回は、この `getFontColorObject()` の基本的な使い方から応用的な活用法まで、わかりやすく解説するけ。初心者でもしっかり理解できるようにまとめたばい！
+Google Apps Script（GAS）でスプレッドシートの書式を操作する際、セルの文字色を詳細に扱いたい場面があります。本記事では、従来の`getFontColor()`メソッドよりも高機能な`getFontColorObject()`メソッドに焦点を当て、その基本的な使い方から応用テクニックまでを初心者にも分かりやすく解説します。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-## getFontColorObject() とは？
+## getFontColorObject()メソッドとは？
 
-`getFontColorObject()` は、Googleスプレッドシートのセル内のフォントカラーをオブジェクト形式で取得できるメソッドじゃ。従来の `getFontColor()` では16進数の文字列（例：`#ff0000`）しか取得できんかったけど、新しいメソッドならRGB値やアルファ値（透明度）も扱えるとよ！
+`getFontColorObject()`は、指定したセルのフォントカラーを`Color`オブジェクトとして取得するメソッドです。従来の`getFontColor()`が16進数のカラーコード文字列（例: `#ff0000`）を返すのに対し、このメソッドは色をオブジェクトとして返すため、RGB値や透明度（アルファ値）といった、より詳細な情報にアクセスできます。
 
-<pre class="wp-block-code"><code>const colorObj = range.getFontColorObject();
-const hexCode = colorObj.asRgbColor().asHexString(); // #RRGGBB形式
-</code></pre>
+```js
+function getFontColorAsObject() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1");
+  const colorObject = range.getFontColorObject();
+  
+  // Colorオブジェクトから16進数文字列（#RRGGBB形式）に変換
+  const hexCode = colorObject.asRgbColor().asHexString(); 
+  Logger.log(hexCode);
+}
+```
+**注意:** `getFontColorObject()`は単一セル（範囲指定の場合は左上のセル）の色情報を返します。
 
 ## RGB値の取得と活用
 
-このメソッドを使えば、フォントの色をRGB（赤・緑・青）の各成分に分解して取得できるっちゃね。たとえば、B2セルのフォントカラーを取得して、C2セルにRGB値として表示する方法を紹介するばい！
+`Color`オブジェクトの大きな利点は、色を構成するRGB（赤・緑・青）の各成分値を個別に取得できることです。これにより、色に基づいたより複雑な条件分岐や計算が可能になります。
 
-<pre class="wp-block-code"><code>function getSingleCellRGB() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName('Data');
+以下の例では、B2セルのフォントカラーを取得し、そのRGB値をC2セルに書き出します。
+
+```js
+function getSingleCellRGB() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Data');
   const range = sheet.getRange("B2");
   const color = range.getFontColorObject().asRgbColor();
   
@@ -103,281 +50,88 @@ const hexCode = colorObj.asRgbColor().asHexString(); // #RRGGBB形式
     blue: color.getBlue()
   };
   
-  sheet.getRange("C2").setValue(`RGB(${rgbValues.red},${rgbValues.green},${rgbValues.blue})`);
+  const rgbString = `RGB(${rgbValues.red}, ${rgbValues.green}, ${rgbValues.blue})`;
+  sheet.getRange("C2").setValue(rgbString);
 }
-</code></pre>
+```
 
 ## 16進数カラーコードへの変換
 
-ウェブデザインとの連携を考えると、16進数形式（`#RRGGBB`）のカラーコードを扱うことも多いっちゃろう。その場合は、次のように `asHexString()` を使うと便利ばい！
+Web開発など他のシステムと連携する場合、16進数形式（`#RRGGBB`）のカラーコードが必要になることがよくあります。`Color`オブジェクトの`asHexString()`メソッドを使えば、簡単に変換できます。
 
-<pre class="wp-block-code"><code>function convertToHex() {
-  const cell = SpreadsheetApp.getActive().getRange('A1');
-  const hex = cell.getFontColorObject().asHexString();
+```js
+function convertFontColorToHex() {
+  const cell = SpreadsheetApp.getActiveSpreadsheet().getRange('A1');
+  const hex = cell.getFontColorObject().asRgbColor().asHexString();
   
-  Logger.log(`HEX Code: ${hex}`);
+  Logger.log(`A1セルの16進数カラーコード: ${hex}`);
   return hex;
 }
-</code></pre>
+```
 
-## セル範囲のフォントカラーを一括取得
+## 複数セルのフォントカラーを一括取得する方法
 
-大規模データを扱う場合、セル1つ1つを処理するのは効率が悪かろう？そんなときは `getFontColorObjects()` を使うと、セル範囲全体のフォントカラーを一括で取得できるけ！
+多数のセルを扱う場合、一つずつ処理するのは非効率です。`getFontColorObjects()`（複数形）メソッドを使用すれば、指定範囲全体のフォントカラーを`Color`オブジェクトの二次元配列として一括で取得できます。
 
-<pre class="wp-block-code"><code>function processRangeColors() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName('SalesData');
+以下のスクリプトは、指定範囲内で文字色が赤（`#ff0000`）のセルを検出し、自動で「要確認」というメモを追加します。
+
+```js
+function processRangeColorsInBulk() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('SalesData');
   const dataRange = sheet.getRange("A2:F100");
   const colorMatrix = dataRange.getFontColorObjects();
   
-  colorMatrix.forEach((row, rowIndex) =&gt; {
-    row.forEach((colorObj, colIndex) =&gt; {
-      if(colorObj.asHexString() === '#FF0000') {
-        sheet.getRange(rowIndex+2, colIndex+1)
-          .setNote('要確認: 赤文字項目');
+  colorMatrix.forEach((row, rowIndex) => {
+    row.forEach((colorObj, colIndex) => {
+      if (colorObj.asRgbColor().asHexString() === '#ff0000') {
+        sheet.getRange(rowIndex + 2, colIndex + 1)
+          .setNote('要確認: 赤文字の項目です');
       }
     });
   });
 }
-</code></pre>
+```
 
-このスクリプトを使えば、赤文字（`#FF0000`）のセルに自動で「要確認」のメモを追加できるっちゃね！
+## getFontColor()との比較
 
-## getFontColor() との違い
+`getFontColor()`と`getFontColorObject()`の主な違いは、取得できる情報の粒度です。
 
-`getFontColor()` では単純に `#ff0000` のようなカラーコードしか取得できんかったばってん、 `getFontColorObject()` ならより細かい情報が取れるばい。<figure class="wp-block-table">
+| メソッド               | 取得できる情報                                      | 主な用途                                     |
+| ---------------------- | --------------------------------------------------- | -------------------------------------------- |
+| `getFontColor()`       | 16進数カラーコードの文字列（例: `#ff0000`）         | 単純な色の比較や設定。                       |
+| `getFontColorObject()` | `Color`オブジェクト（RGB値、透明度などを含む） | 詳細な色情報の分析、複雑な条件分岐、計算。 |
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド
-    </th>
-    
-    <th>
-      取得できる情報
-    </th>
-  </tr>
-  
-  <tr>
-    <td>
-      getFontColor()
-    </td>
-    
-    <td>
-      16進数カラーコード（例：<code>#ff0000</code>）
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      getFontColorObject()
-    </td>
-    
-    <td>
-      RGB値、透明度、オブジェクト操作可
-    </td>
-  </tr>
-</table></figure> 
+既存のコードを`getFontColor()`から移行する場合は、以下のように`asHexString()`を追加するだけで簡単に行えます。
 
-移行するなら、次のようなコードを使うとスムーズじゃ！
-
-<pre class="wp-block-code"><code>// 旧方式
-const oldColor = range.getFontColor(); // '#ff0000' など
+```js
+// 旧方式
+const oldColor = range.getFontColor(); // '#ff0000'
 
 // 新方式
-const newColor = range.getFontColorObject().asHexString();
-</code></pre>
+const newColor = range.getFontColorObject().asRgbColor().asHexString();
+```
 
 ## トラブルシューティング
 
-### デフォルト色取得の問題
+### デフォルトカラーの扱い
 
-明示的に色を設定してないセルは `#ff000000`（完全不透明の黒）として扱われることがあるっちゃ。これを回避するには、アルファ値（透明度）を考慮した処理を加えるとよかばい！
-
-<pre class="wp-block-code"><code>function handleDefaultColor() {
-  const cell = SpreadsheetApp.getActive().getRange('A1');
-  const color = cell.getFontColorObject().asRgbColor();
-  
-  // アルファ値を無視した処理
-  const effectiveColor = color.asHexString().slice(0,7);
-  Logger.log(effectiveColor);
-}
-</code></pre>
+ユーザーが明示的に色を設定していないセルの場合、`getFontColorObject()`はデフォルトの色（通常は黒）を返します。テーマなどによって色が異なる場合もあるため、特定の色を期待する処理では注意が必要です。
 
 ## まとめ
 
-`getFontColorObject()` を使えば、スプレッドシートのフォントカラーをもっと柔軟に扱えるようになるばい。特に、大量のデータを処理するときや、色ごとにアクションを設定したい場合にはめちゃくちゃ便利じゃ！
+`getFontColorObject()`メソッドを使いこなすことで、スプレッドシートのフォントカラーをより柔軟かつ詳細に扱うことができます。
 
-**こんな場面で使えるばい！**
+**このメソッドは以下のような場面で特に役立ちます:**
+*   色分けされたデータの分析や自動処理
+*   条件付き書式と連携した動的なデータ表現
+*   WebアプリケーションやCSSと連携したカラーマネジメント
 
-<ul class="wp-block-list">
-  <li>
-    色分けされたデータの自動処理
-  </li>
-  <li>
-    条件付き書式と組み合わせた動的分析
-  </li>
-  <li>
-    WebデザインやCSSと連携したカラーマネジメント
-  </li>
-</ul>
+GASの強力な機能を活用して、日々のスプレッドシート業務をさらに効率化しましょう。
 
-GASを活用して、もっとスマートなスプレッドシート運用をしていこうや！
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://kuronn.com/article/getfontcolorobject-gas/" >}} 
   
-  <br /> <a rel="noopener" href="https://kuronn.com/article/getfontcolorobject-gas/" title="【GAS】スプレッドシートで値・文字列の文字色を取得 | くろんの部屋" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://kuronn.com/wp-content/uploads/2023/09/10.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://kuronn.com/wp-content/uploads/2023/09/10.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートで値・文字列の文字色を取得 | くろんの部屋
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS（Google Apps Script）を用いて、スプレッドシートのセルに入力された値・文字列の文字色（カラーコード）を取得するメソッドは単一セルの場合は『getFontColorObjectメソッド』、範囲の場合は『getFontC
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://kuronn.com/article/getfontcolorobject-gas/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://kuronn.com/article/getfontcolorobject-gas/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          kuronn.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://gsuiteguide.jp/sheets/getfontcolor/" title="セルの文字色を取得する：getFontColor()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セルの文字色を取得する：getFontColor()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getFontColor() セルの文字色を取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.getActiveSpreadsheet(); // そのスプレッドシート...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getfontcolor/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getfontcolor/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://gsuiteguide.jp/sheets/getfontcolor/" >}}

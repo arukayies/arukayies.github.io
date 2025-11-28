@@ -1,487 +1,133 @@
 ---
-title: GASでスプレッドシートの指定範囲を値のみコピーする効率的な方法
-author: arukayies
-type: post
-date: 2020-05-24T15:56:33+00:00
-excerpt: GASでスプレッドシートの値のみをコピーする方法を紹介します！
-url: /gas/copyvaluestorange
+title: "GASでスプレッドシートの値を高速コピーする方法"
+description: "Google Apps Script（GAS）でスプレッドシートの特定範囲の「値のみ」を高速にコピーするcopyValuesToRangeメソッドを解説します。基本的な使い方から、動的な範囲指定、よくあるエラーの対処法まで、サンプルコード付きで分かりやすく紹介します。"
+tags: ["GAS","Google Apps Script","スプレッドシート","copyValuesToRange"]
+date: "2020-05-24T15:56:33.000Z"
+url: "/gas/copyvaluestorange"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1590335793
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 22:51:08
-categories:
-  - GAS
-tags:
-  - copyValuesToRange()
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年5月"]
+lastmod: "2025-11-25T15:22:08.000Z"
 ---
-Google Apps Script（GAS）を使ってスプレッドシート操作を自動化する際に、特定のセル範囲の値を別のシートにコピーする方法って、かなり便利ばい。そのために使うメソッドが`copyValuesToRange`なんだけど、ちょっと難しそうに見えるかもしれんね。でも心配せんで！ここでしっかり解説するけん、すぐに使えるようになるけ。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script（GAS）でスプレッドシートの操作を自動化する際、特定のセル範囲の「値のみ」を別の場所にコピーしたい場面は頻繁に発生します。その際に役立つのが`copyValuesToRange`メソッドです。
 
-## copyValuesToRangeメソッドってどんなもの？
+このメソッドは書式や数式を除外して純粋な値だけをコピーするため、データ転送やバックアップ処理を効率化できます。この記事では、`copyValuesToRange`の基本的な使い方から実践的な応用例までを詳しく解説します。
 
-まず、このメソッドがどんなものか簡単に説明するばい。`copyValuesToRange(gridId, column, columnEnd, row, rowEnd)`って構文なんやけど、要するに「ある範囲の値を、別のシートの指定した範囲にコピーする」ためのものじゃ。これは、値だけをコピーして、書式とか数式は無視するところが特徴的やけ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### 使い方の基本
+## copyValuesToRangeメソッドの基本
 
-<pre class="wp-block-code"><code>sourceRange.copyValuesToRange(gridId, column, columnEnd, row, rowEnd);
-</code></pre>
+`copyValuesToRange`は、指定した範囲の値を、別のシートの特定の座標へコピーするためのメソッドです。数式やセルの書式はコピーせず、値だけを転送するのが最大の特徴です。
 
-このメソッドには5つのパラメータがあるけど、それぞれ簡単に説明するけ。
+### 基本構文
 
-<ol class="wp-block-list">
-  <li>
-    <strong>gridId</strong>（シートID）<br />コピー先シートのIDを指定するんよ。これは<code>SpreadsheetApp.getActiveSpreadsheet().getSheetByName("シート名").getSheetId()</code>で取得できるけんね。
-  </li>
-  <li>
-    <strong>column</strong>（開始列）<br />コピー先の開始列番号を指定するけ。たとえば「C列」は3番目なので、<code>3</code>って指定するんや。
-  </li>
-  <li>
-    <strong>columnEnd</strong>（終了列）<br />コピー先の終了列番号も指定するけ。例えば「F列まで」コピーしたい場合、<code>6</code>って指定すればOKじゃ。
-  </li>
-  <li>
-    <strong>row</strong>（開始行）<br />コピー先の開始行番号を指定するけ。1から始めるけど、例えば「5行目」からスタートしたいなら、<code>5</code>を指定するんや。
-  </li>
-  <li>
-    <strong>rowEnd</strong>（終了行）<br />コピー先の終了行番号を指定するけ。たとえば「10行目」で終わるなら、<code>10</code>を指定するんじゃ。
-  </li>
-</ol>
+```js
+sourceRange.copyValuesToRange(gridId, column, columnEnd, row, rowEnd);
+```
 
-## 実際のコードで見る基本の使い方
+このメソッドは5つの引数を取ります。
 
-<pre class="wp-block-code"><code>function basicCopyExample() {
+*   **gridId**: (`Integer`) コピー先シートのID。`sheet.getSheetId()`で取得できます。
+*   **column**: (`Integer`) コピー先の開始列番号（例: A列なら`1`、C列なら`3`）。
+*   **columnEnd**: (`Integer`) コピー先の終了列番号。
+*   **row**: (`Integer`) コピー先の開始行番号（例: 1行目なら`1`、5行目なら`5`）。
+*   **rowEnd**: (`Integer`) コピー先の終了行番号。
+
+### 簡単なコード例
+
+以下のコードは、「SalesData」シートの`B2:E10`の値を、「Archive」シートの`C5`から始まる範囲にコピーします。
+
+```js
+function basicCopyExample() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sourceSheet = ss.getSheetByName('SalesData');
-  const targetGridId = ss.getSheetByName('Archive').getSheetId();
-  
-  const sourceRange = sourceSheet.getRange('B2:E10');
+  const targetSheet = ss.getSheetByName('Archive');
+
+  // コピー元の範囲を取得
+  const sourceRange = sourceSheet.getRange('B2:E10'); // 9行 x 4列
+
+  // コピー先のシートIDを取得
+  const targetGridId = targetSheet.getSheetId();
+
+  // 値のみコピーを実行
   sourceRange.copyValuesToRange(
     targetGridId,
-    3,  // C列から
-    6,  // F列まで
-    5,  // 5行目から
-    13  // 13行目まで
+    3,  // 開始列: C列
+    6,  // 終了列: F列 (C,D,E,Fの4列)
+    5,  // 開始行: 5行目
+    13  // 終了行: 13行目 (5〜13の9行)
   );
 }
-</code></pre>
+```
 
-このコードは、「SalesData」シートから「Archive」シートにデータをコピーするものやけ。範囲を指定する際に、行数や列数が一致していないとエラーが出るけ、注意せんといけんよ。
+**注意点:** コピー元とコピー先の範囲の行数・列数が一致していないとエラーが発生します。
 
-## 実践的な動的範囲コピー
+## 実践例：動的な範囲のデータをコピーする
 
-次は、データの量が変動する場合のコピー方法について説明するけ。
+データの量が変動する場合、`getLastRow()`メソッドなどを使って範囲を動的に取得するのが一般的です。
 
-<pre class="wp-block-code"><code>function dynamicRangeCopy() {
+以下の例では、「Inventory」シートのA列からD列までの全データ（ヘッダー行を除く）を「Backup」シートの2行目以降にバックアップします。
+
+```js
+function dynamicRangeCopy() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sourceSheet = ss.getSheetByName('Inventory');
-  const lastRow = sourceSheet.getLastRow();
-  
-  const sourceRange = sourceSheet.getRange(2, 1, lastRow-1, 4);
   const targetSheet = ss.getSheetByName('Backup');
-  
+
+  // ヘッダー行（1行目）を除いた最終行を取得
+  const lastRow = sourceSheet.getLastRow();
+  if (lastRow < 2) return; // データがなければ終了
+
+  // コピー元の範囲を動的に取得 (2行目から最終行まで、4列分)
+  const sourceRange = sourceSheet.getRange(2, 1, lastRow - 1, 4);
+
+  // コピーを実行
   sourceRange.copyValuesToRange(
     targetSheet.getSheetId(),
-    1, 
-    4, 
-    2, 
-    lastRow
+    1, // 開始列: A列
+    4, // 終了列: D列
+    2, // 開始行: 2行目
+    lastRow // 終了行: 元データの最終行と同じ
   );
 }
-</code></pre>
+```
 
-このコードは、「Inventory」シートのデータを「Backup」シートにコピーするものやけ。`getLastRow()`を使って最終行を動的に取得し、データの変動に対応しとるんや。
+この方法なら、元データの行数が増減してもスクリプトを修正する必要がありません。
 
-## よくあるエラーとその解決法
+## よくあるエラーと対処法
 
-実装しているときに、よく出るエラーもあるけ。ここではそれに対する対策を紹介するけ。
+### 1. パラメータの型が不一致
 
-### パラメータ不一致エラー
+**エラーメッセージ:** `Exception: The parameters (String,number,number,number,number) don't match the method signature for Range.copyValuesToRange.`
 
-`Exception: Parameters don't match the method signature`ってエラーが出た場合、パラメータの型が違うことがあるけ。数値型を使うべきところで、文字列を使ってしまうことが多いけ、確認してみて。
+**原因:** `gridId`にシート名（文字列）を渡しているなど、引数の型が間違っています。`gridId`は必ず`getSheetId()`で取得した数値でなければなりません。
 
-### 範囲サイズ不一致エラー
+### 2. コピー元とコピー先の範囲サイズが不一致
 
-コピー元とコピー先の範囲が一致しないと、`Exception: The coordinates or dimensions of the range are invalid`が出るけ。範囲をしっかり確認して、合わせるようにしようね。
+**エラーメッセージ:** `Exception: The coordinates or dimensions of the range are invalid.`
 
-## 最後に
+**原因:** コピー元とコピー先の行数または列数が一致していません。例えば、コピー元が10行 x 4列なのに、コピー先の指定が9行 x 4列になっている場合などに発生します。範囲の計算が正しいか確認してください。
 
-`copyValuesToRange`メソッドを使うと、スプレッドシートのデータを簡単にコピーできるけ、特にデータ転送作業を自動化したいときにはとても役立つ機能じゃ。ただし、範囲やパラメータに注意が必要なので、実装前にしっかり確認してから使うようにしてほしいけね。
+## まとめ
 
-これで、スプレッドシートの操作をよりスムーズにできるようになるけ！みんなもぜひ使ってみてね。
+`copyValuesToRange`メソッドは、スプレッドシート間のデータ転送、特に定期的なバックアップや実績データの記録といった作業を自動化する際に非常に役立ちます。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+引数の指定が少し複雑ですが、範囲のサイズを正確に合わせることさえ意識すれば、シンプルかつ高速に値のコピーが実現できます。ぜひ日々の業務効率化に活用してください。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://stackoverflow.com/questions/74161559/google-apps-script-copy-row-paste-as-values" title="Google Apps Script - copy row & paste as values" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Apps Script - copy row & paste as values
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        I am trying to copy one range to another using GAS - but I need the range to 'paste as values'This code works (but paste...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/74161559/google-apps-script-copy-row-paste-as-values" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/74161559/google-apps-script-copy-row-paste-as-values" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          stackoverflow.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://coporilife.com/379/" title="【GAS】CopyTo、行列コピー、スプレッドシートで自動コピーまとめ【Google Apps Script】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://coporilife.com/wp-content/uploads/2022/05/5b3b5b436fa1110245caa5a9039c2924.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://coporilife.com/wp-content/uploads/2022/05/5b3b5b436fa1110245caa5a9039c2924.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】CopyTo、行列コピー、スプレッドシートで自動コピーまとめ【Google Apps Script】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        スプレッドシートのGASでCopyToを使用して行列コピーしたり、自動で別シートにコピーや値のみコピーなど、CopyToでできることをまとめて解説しています。複数行にコピーする時の範囲指定など、なるべくわかりやすく解説してみたいと思います。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://coporilife.com/379/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://coporilife.com/379/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          coporilife.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rmovecopyclear/" title="[GAS]このセル範囲の移動・コピー・削除を行う方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-1.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-1.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]このセル範囲の移動・コピー・削除を行う方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲の移動・コピー・削除を行う方法を説明します。 Range
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rmovecopyclear/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rmovecopyclear/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://note.com/light_mimosa502/n/n7c707ec41748" title="【生成AI×GAS】違うシートに値をコピーする｜オレンジピーチ★トシ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://assets.st-note.com/production/uploads/images/145066185/rectangle_large_type_2_5115ee9419e1a3ce18bbd189606fc007.jpeg?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://assets.st-note.com/production/uploads/images/145066185/rectangle_large_type_2_5115ee9419e1a3ce18bbd189606fc007.jpeg?fit=bounds&#038;quality=85&#038;width=1280" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【生成AI×GAS】違うシートに値をコピーする｜オレンジピーチ★トシ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        オレンジピーチのトシです。 今回は、シートを飛び越えて、値をコピーする方法を紹介します。 　データをコピーするときには、違うシートや、違うファイルにコピーすることが多いですよね。 　GAS(Google Apps Script)でスプレッド...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://note.com/light_mimosa502/n/n7c707ec41748" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://note.com/light_mimosa502/n/n7c707ec41748" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          note.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" title="Spreadsheet Service  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Spreadsheet Service  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://stackoverflow.com/questions/74161559/google-apps-script-copy-row-paste-as-values" >}} 
+
+{{< blog-card "https://coporilife.com/379/" >}} 
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
+
+{{< blog-card "https://techuplife.tech/gas-ss-rmovecopyclear/" >}} 
+
+{{< blog-card "https://note.com/light_mimosa502/n/n7c707ec41748" >}} 
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}} 
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet?hl=ja" >}}

@@ -1,383 +1,216 @@
 ---
-title: GASでスプレッドシートの指定セルから行番号を取得する方法徹底解説
-author: arukayies
-type: post
-date: 2020-08-18T14:04:09+00:00
-excerpt: GASでスプレッドシートの指定セルの行の位置を取得する方法を紹介します！
-url: /gas/getrow
+title: "【GASスプレッドシート】getRow()で正確な行番号取得！自動化とSEO最適化"
+description: "Google Apps Script (GAS) の`getRow()`メソッドを徹底解説。スプレッドシートの指定セルから行番号を正確に取得する方法、`getLastRow()`との組み合わせによる動的なデータ処理、二次元配列での効率的な活用、アドオン開発・API連携への応用例を具体的なコードで紹介します。GAS初心者から上級者まで、スプレッドシート自動化の基本から応用までを網羅し、SEOに強いコンテンツを提供します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getRow", "getLastRow", "行番号", "セル操作", "データ範囲", "自動化", "効率化", "プログラム", "開発", "アドオン"]
+date: "2020-08-18T14:04:09.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getrow"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1597759450
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:07:34
-categories:
-  - GAS
-tags:
-  - GAS
-  - getRow()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年8月"]
 ---
-Google Apps Script（GAS）を使ってスプレッドシートを操作するなら、**getRow()メソッド**は避けて通れんばい！ 「セルが何行目か取得したい！」って時にめちゃくちゃ便利なメソッドじゃけ。 この記事では、**getRow()の基本から実践的な使い方、応用テクニック**までわかりやすく解説するばい。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を用いてスプレッドシートを操作する際、**「今いるセルが何行目か？」「特定のデータが何行目にあるか？」**といった、セルの行番号を正確に把握することは、スクリプトの柔軟性と制御性を高める上で不可欠です。`getRow()`メソッドは、このようなニーズに応える基本的ながら非常に強力な機能です。
 
-## 1. getRow()って何するメソッド？
+本記事では、GASの`Range.getRow()`メソッドを徹底解説します。単一セルから複数範囲の行番号取得の基本、`getLastRow()`との組み合わせによる**動的なデータ範囲の特定**、二次元配列処理におけるインデックス調整の重要性、さらにはアドオン開発や外部API連携といった**実践的な応用例**まで、具体的なコードを交えて分かりやすく紹介します。
 
-`getRow()`は、**指定したセル範囲の最初の行番号を返す**メソッドじゃ。
+GAS初心者の方から、スプレッドシート自動化の効率をさらに高めたい上級者まで、すべての方に役立つ情報が満載です。
 
-たとえば、以下のコードを実行すると
+{{< affsearch keyword="GAS スプレッドシート 行番号取得 自動化 効率化" img="/gas.jpg">}}
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const range = sheet.getRange("B2");
-console.log(range.getRow());
-</code></pre>
+## `getRow()`メソッドとは？GASでセルの行番号を取得する基本
 
-出力結果は `2` になる。 これは「B2セルが2行目にあるから」じゃね。
+`Range.getRow()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）の「最初の行番号」を整数で返す**シンプルな機能です。スプレッドシートの行番号は通常1から始まります。このメソッドを使うことで、プログラム内でセルの位置を行単位で正確に識別できるようになります。
 
-## 2. どんな時に使うと便利？
+### 基本的な使用例：B2セルの行番号を取得する
 
-<ul class="wp-block-list">
-  <li>
-    <strong>データの処理を行う時の基準点として使う</strong>
-  </li>
-  <li>
-    <strong>動的にセル範囲を指定する時に活用</strong>
-  </li>
-  <li>
-    <strong>条件付き書式や自動処理のトリガーとして利用</strong>
-  </li>
-</ul>
+以下のスクリプトは、アクティブなシートの`B2`セルを指定し、その行番号を取得してログに出力する最も基本的な例です。
 
-## 3. よくある使い方
+```javascript
+/**
+ * アクティブなシートのB2セルの行番号を取得し、ログに出力する関数。
+ * 結果は「2」となります。
+ */
+function basicGetRow() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("B2");           // B2セルをRangeオブジェクトとして取得
+  const rowNumber = range.getRow();             // B2セルの行番号を取得
 
-### 単純な行番号取得
-
-<pre class="wp-block-code"><code>function logRowNumber() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getRange("D5");
-  console.log(`D5セルの行番号: ${range.getRow()}`);
+  Logger.log(`B2セルの行番号: ${rowNumber}`); // 結果: 2 が出力される
 }
-</code></pre>
+```
+このコードを実行すると、`B2`セルが2行目に存在するため、コンソールには`2`が出力されます。
 
-これは「D5セルが何行目にあるかをログに出力する」ってだけのシンプルなコードばい。
+## `getRow()`の実用的な活用術
 
-### getLastRow()との組み合わせ
+`getRow()`は、単独で使うだけでなく、他のメソッドやループ処理と組み合わせることで、スプレッドシートの自動化において非常に多岐にわたる場面でその真価を発揮します。
 
-データの最終行を取得しながら、動的に処理したい時は`getLastRow()`と組み合わせるのがポイント。
+### 1. アクティブなセルの行番号を簡単に取得
 
-<pre class="wp-block-code"><code>function processDynamicRange() {
+現在ユーザーが選択しているセルの行番号を、`getActiveRange()`メソッドと組み合わせて簡単に取得できます。これは、ユーザー操作に応じた処理を開始するトリガーとして便利です。
+
+```javascript
+/**
+ * 現在選択されているセルの開始行番号を取得し、ログに出力する関数。
+ * 選択範囲が複数行にわたる場合でも、その範囲の最初の行番号が取得されます。
+ */
+function logActiveCellRow() {
+  const activeCell = SpreadsheetApp.getActiveRange(); // 現在アクティブなRangeオブジェクトを取得
+  Logger.log(`現在選択中のセルの開始行番号: ${activeCell.getRow()}`);
+}
+```
+
+### 2. `getLastRow()`と組み合わせて動的なデータ範囲を処理
+
+スプレッドシートでは、データが日々追加・削除されることがよくあります。このような場合、固定の行範囲でスクリプトを作成すると、データが範囲外になったり、不要な空行を処理したりする問題が発生します。
+
+`getRow()`と`getLastRow()`メソッド（シートにデータが入力されている最終行番号を取得）を組み合わせることで、**データが追加されても自動で最終行までを対象とする動的な処理**を実現できます。
+
+```javascript
+/**
+ * シートの2行目からデータの最終行までをループ処理し、各行のA列のデータをログに出力する関数。
+ * データの増減に自動で対応します。
+ */
+function processAllDataRowsDynamically() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const lastRow = sheet.getLastRow();
+  const lastRow = sheet.getLastRow(); // データが入力されている最終行番号を取得
   
-  for (let i = 1; i &lt;= lastRow; i++) {
-    console.log(`現在の行: ${i}`);
+  Logger.log(`シートの最終データ行: ${lastRow}`);
+
+  // ヘッダー行を除き、2行目から最終行までループ処理
+  for (let i = 2; i <= lastRow; i++) {
+    const value = sheet.getRange(i, 1).getValue(); // i行目のA列の値を取得
+    Logger.log(`行番号: ${i}, A列データ: ${value}`);
+    // ここに各行に対する処理を追加
   }
 }
-</code></pre>
+```
+このパターンは、シート内の全データを繰り返し処理する際の基本的なベストプラクティスです。
 
-スプレッドシートの**最終行まで繰り返し処理**をしたい時に使えるばい！
+### 3. 二次元配列処理における「実際の行番号」の特定
 
-### 2次元配列と組み合わせたデータ処理
+`Range.getValues()`メソッドで取得した二次元配列は、JavaScriptの0ベースのインデックスで扱われます。しかし、スプレッドシートの実際の行番号は1ベースです。
 
-<pre class="wp-block-code"><code>function processArrayData() {
+`getRow()`で取得した開始行番号をオフセットとして利用することで、二次元配列のインデックスとスプレッドシートの実際の行番号を正確に紐づけて管理できます。
+
+```javascript
+/**
+ * シートのデータ範囲を一括で二次元配列として取得し、
+ * 各データの「実際の行番号」と共にログに出力する関数。
+ */
+function processWith2DArrayAndActualRowNumbers() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const dataRange = sheet.getDataRange();
-  const values = dataRange.getValues();
-  const startRow = dataRange.getRow();
+  const dataRange = sheet.getDataRange(); // シート内のデータが存在する全範囲を取得
+  const values = dataRange.getValues();   // データ範囲の値を二次元配列として取得
+  const startRow = dataRange.getRow();    // データ範囲の開始行番号を取得
   
-  values.forEach((row, index) =&gt; {
-    console.log(`行番号: ${startRow + index}, データ: ${row}`);
+  Logger.log(`データ範囲の開始行: ${startRow}`);
+
+  values.forEach((rowData, indexInArray) => {
+    // スプレッドシート上の実際の行番号を計算
+    const actualRowNumber = startRow + indexInArray;
+    Logger.log(`実際の行番号: ${actualRowNumber}, データ: ${rowData.join(", ")}`);
+    // ここに各行データに対する処理を追加
   });
 }
-</code></pre>
+```
+この方法は、大量のデータを効率的に処理しつつ、スプレッドシート上の正確な位置情報を参照する必要がある場合に非常に有効です。
 
-これは、スプレッドシートのデータを配列として取得し、**行番号とデータを紐づけて処理**するサンプルばい。
+## 応用編：GASアドオン開発や外部API連携での`getRow()`活用
 
-## 4. 応用編：GASアドオン開発やAPI連携
+`getRow()`メソッドは、基本的なスプレッドシート操作だけでなく、より高度なスクリプト開発においても中心的な役割を果たします。
 
-### Google Workspaceアドオンでの活用
+### Google Workspaceアドオンでの活用例
 
-<pre class="wp-block-code"><code>function onOpen() {
-  SpreadsheetApp.getUi().createMenu('カスタムメニュー')
-    .addItem('行番号を表示', 'showRowNumbers')
-    .addToUi();
+スプレッドシートにカスタムメニューを追加し、ユーザーが選択したセルの行番号をカスタムダイアログに表示する機能です。これにより、ユーザーは現在の作業行を視覚的に確認できます。
+
+```javascript
+/**
+ * スプレッドシートが開かれた時にカスタムメニューを追加する関数。
+ * GASトリガーの「onOpen」イベントで自動実行されます。
+ */
+function onOpen() {
+  SpreadsheetApp.getUi().createMenu('カスタム機能') // 「カスタム機能」というメニューを作成
+    .addItem('現在の行番号を表示', 'showRowNumberDialog') // メニュー項目とその実行関数を設定
+    .addToUi(); // UIに追加
 }
 
-function showRowNumbers() {
-  const selection = SpreadsheetApp.getActiveRange();
-  const row = selection.getRow();
-  SpreadsheetApp.getUi().alert(`選択範囲の開始行は ${row} 行目ばい！`);
+/**
+ * 現在選択されているセルの行番号をダイアログで表示する関数。
+ */
+function showRowNumberDialog() {
+  const selection = SpreadsheetApp.getActiveRange(); // 現在の選択範囲を取得
+  if (selection) {
+    const row = selection.getRow(); // 選択範囲の開始行番号を取得
+    SpreadsheetApp.getUi().alert(`現在選択中の範囲の開始行は ${row} 行目です。`);
+  } else {
+    SpreadsheetApp.getUi().alert('セルが選択されていません。');
+  }
 }
-</code></pre>
+```
 
-カスタムメニューを追加して、選択したセルの行番号をダイアログに表示する機能じゃ。
+### 外部APIとの連携例
 
-### 外部APIとの連携
+スプレッドシートの特定の行データと、その行番号をユニークな識別子として外部APIに送信するサンプルです。これにより、外部システムでスプレッドシートの特定行データを更新・管理する仕組みを構築できます。
 
-行番号を使ってデータを外部APIに送信することも可能ばい。
-
-<pre class="wp-block-code"><code>function exportRowData() {
+```javascript
+/**
+ * アクティブな行のデータを取得し、その行番号と共に外部APIに送信する関数。
+ * 例として、行番号をデータの識別子として利用します。
+ */
+function exportActiveRowDataToApi() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const row = sheet.getActiveRange().getRow();
-  const rowData = sheet.getRange(row, 1, 1, 5).getValues()&#91;0];
+  const activeRange = sheet.getActiveRange(); // 現在アクティブな範囲を取得
+  const rowNumber = activeRange.getRow();   // アクティブな範囲の開始行番号を取得
   
+  // アクティブな行のA列からE列までのデータ（1行5列）を取得
+  const rowData = sheet.getRange(rowNumber, 1, 1, 5).getValues()[0];
+  
+  // 外部APIに送信するペイロードを構築
   const payload = {
-    rowNumber: row,
+    spreadsheetRowId: rowNumber, // 行番号をデータのユニークIDとして利用
     data: rowData,
-    timestamp: new Date().toISOString()
+    exportedAt: new Date().toISOString()
   };
   
-  UrlFetchApp.fetch('https://api.example.com/import', {
+  const options = {
     method: 'post',
     contentType: 'application/json',
-    payload: JSON.stringify(payload)
-  });
+    payload: JSON.stringify(payload),
+    muteHttpExceptions: true // エラー時に例外をスローしない
+  };
+  
+  try {
+    const response = UrlFetchApp.fetch('https://api.example.com/data/update', options);
+    Logger.log(`API応答: ${response.getResponseCode()} - ${response.getContentText()}`);
+  } catch (e) {
+    Logger.log(`API呼び出しエラー: ${e.message}`);
+  }
 }
-</code></pre>
+```
 
-行番号を**ユニークな識別子**として使って、データの整合性を保つこともできるんじゃ。
+## `getRow()`を使用する際の重要な注意点
 
-## 5. getRow()を使う時の注意点
+`getRow()`は非常に便利ですが、その特性を正しく理解しておくことが、意図しないエラーを防ぎ、堅牢なスクリプトを構築する上で重要です。
 
-<ol class="wp-block-list">
-  <li>
-    <strong>範囲が複数行にまたがると、先頭行しか取得できん</strong>
-  </li>
-  <li>
-    <strong>0ベースのJavaScript配列と違い、1ベースで考える必要がある</strong>
-  </li>
-  <li>
-    <strong>保護された範囲の行を取得する際は、適切な権限を設定すること</strong>
-  </li>
-</ol>
+*   **常に開始行番号を返す**: `getRange("A3:B5")`のように複数行にわたる範囲に対して`getRow()`を実行した場合、常にその範囲の**最初の行番号**である`3`を返します。範囲内の個々のセルの行番号が必要な場合は、ループ処理と組み合わせて`Range.getCell(row, col).getRow()`を使用するか、二次元配列のインデックス計算を慎重に行う必要があります。
+*   **1ベースのインデックス**: `getRow()`が返す行番号はスプレッドシートの表示通り1から始まります。これに対し、JavaScriptの配列インデックスは0から始まります。`getValues()`などで取得した二次元配列を扱う際は、`rowIndex + 1`または`rowIndex + dataRange.getRow()`のようにして、インデックスのずれを適切に調整する必要があります。
+*   **シート保護と権限**: スクリプトが保護されたシートや範囲に対して`getRow()`を含む操作を行おうとする場合、スクリプトに適切な権限（例: `SpreadsheetApp.AuthorizationStatus.REQUIRED`）がないと、エラーが発生したり、処理が実行されなかったりすることがあります。必要に応じて、スクリプトの権限設定を確認してください。
 
-## 6. まとめ
+## まとめ：`getRow()`でGASスプレッドシートの自動化を強化
 
-`getRow()`は、スプレッドシートのデータ処理をする上で**めちゃくちゃ重要なメソッド**ばい。 基本的な使い方から応用までマスターすれば、GASのスクリプトがぐっと便利になるけ。
+Google Apps Scriptの`getRow()`メソッドは、スプレッドシート操作の自動化において、セルの位置情報を正確に特定するための基本的ながら非常に強力なツールです。
 
-**ポイントのおさらい**
+*   **正確な行番号の取得**: 指定したセルまたは範囲の開始行番号を1ベースで取得します。
+*   **動的なデータ処理**: `getLastRow()`と組み合わせることで、データの増減に自動対応する柔軟なスクリプトを構築できます。
+*   **効率的な配列処理**: 二次元配列のインデックスとスプレッドシートの実際の行番号との連携を容易にし、効率的なデータ処理をサポートします。
+*   **高度な用途への応用**: Google Workspaceアドオンや外部API連携など、より複雑な自動化ソリューションの中核としても活用できます。
 
-✔️ `getRow()`は「セルの行番号」を取得するメソッド。 
+`getRow()`メソッドをマスターすることで、あなたのGASスクリプトはより堅牢で、より効率的、そしてより柔軟なスプレッドシート自動化ツールへと進化します。本記事で紹介した知識と実践例を活用し、日々の業務効率化に役立ててください。
 
-✔️ `getLastRow()`と組み合わせると動的な処理ができる。
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}}
 
-✔️ 2次元配列との連携で、より効率的なデータ処理が可能。 
+{{< blog-card "https://gsuiteguide.jp/sheets/getrow/" >}}
 
-✔️ API連携やアドオン開発にも活用できる。
-
-GASを使ってスプレッドシートをもっと便利にしたいなら、ぜひ`getRow()`を活用してみてばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://rinyan-7.com/gas/range_getrow/" title="&#12304;getRow&#12513;&#12477;&#12483;&#12489;&#12434;&#20351;&#12356;&#12371;&#12394;&#12381;&#12358;&#65281;&#12305;&#21177;&#29575;&#30340;&#12394;&#34892;&#30058;&#21495;&#21462;&#24471;&#27861;&#12392;&#23455;&#29992;&#30340;&#12394;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_getrow%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Frinyan-7.com%2Fgas%2Frange_getrow%2F?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        &#12304;getRow&#12513;&#12477;&#12483;&#12489;&#12434;&#20351;&#12356;&#12371;&#12394;&#12381;&#12358;&#65281;&#12305;&#21177;&#29575;&#30340;&#12394;&#34892;&#30058;&#21495;&#21462;&#24471;&#27861;&#12392;&#23455;&#29992;&#30340;&#12394;&#12469;&#12531;&#12503;&#12523;&#12467;&#12540;&#12489;&#12434;&#24505;&#24213;&#35299;&#35500;&#65281; &#8211; AI&#12392;&#23398;&#12406;&#65281;&#27096;&#12293;&#12394;&#12486;&#12540;&#12510;&#12304;&#12426;&#12435;&#12420;&#12435;&#23455;&#39443;&#23460;&#12305;
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_getrow/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://rinyan-7.com/gas/range_getrow/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          rinyan-7.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://jp.tdsynnex.com/blog/google/gas-select-range-of-spreadsheet/" title="GASでのスプレッドシートの範囲選択について – TD SYNNEX BLOG" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://jp.tdsynnex.com/blog/wp-content/uploads/2021/12/spreadsheet-gb43636953_1920.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://jp.tdsynnex.com/blog/wp-content/uploads/2021/12/spreadsheet-gb43636953_1920.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASでのスプレッドシートの範囲選択について – TD SYNNEX BLOG
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        この記事では、GoogleAppsScript（GAS）で扱うスプレッドシートの範囲選択について解説しています。GASでGoogleスプレッドシートを利用する場合、シートのセルを選択してデータを取得したり書き込んだりする場面が多々あるかと思...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://jp.tdsynnex.com/blog/google/gas-select-range-of-spreadsheet/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://jp.tdsynnex.com/blog/google/gas-select-range-of-spreadsheet/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          jp.tdsynnex.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}}

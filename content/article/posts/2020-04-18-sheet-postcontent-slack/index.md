@@ -1,335 +1,185 @@
 ---
-title: GASを使ってスプレッドシートの内容をSlackに通知させる方法
-author: arukayies
-type: post
-date: 2020-04-18T08:10:29+00:00
-excerpt: |
-  スプレッドシートのURLをSlackに貼り付けて中身の共有を行っていませんか？
-  そんな作業はGASとSlackを連携させれば解決です！方法を紹介します！！！
-url: /gas/sheet-postcontent-slack
+title: "【GAS】スプレッドシートの特定セル編集をトリガーにSlackへ自動通知する方法"
+description: "Google Apps Script(GAS)を使い、スプレッドシートのセルが特定の値（例：「新規」）に編集されたことをトリガーにして、その行の内容を自動でSlackに通知する方法を解説します。手動での通知作業を自動化し、業務効率を向上させましょう。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "Slack", "自動化"]
+date: "2020-04-18T08:10:29.000Z"
+url: "/gas/sheet-postcontent-slack"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1587197430
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1251422895009488896";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1251422895009488896";s:5:"pDate";s:19:"2020-04-18 08:10:43";}}";
-categories:
-  - GAS
-tags:
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年4月"]
+lastmod: "2025-11-26T09:52:08.000Z"
 ---
-<figure class="wp-block-embed-twitter aligncenter wp-block-embed is-type-rich is-provider-twitter">
 
-<div class="wp-block-embed__wrapper">
-  <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
-    <p lang="ja" dir="ltr">
-      仕事でGASを使ってよく使っている処理4つ！<br />・入力したら勝手に日付入る＆名前入る<br />・スプレッドシートの指定された情報をSlackへ通知<br />・特定メールが来たら、Slackへ通知<br />・定期的に送るメール内容の自動生成<br />結構ネタがあるから、GASで作れるツールについても記事書いていく
-    </p>&mdash; arukayies (@arukayies) 
-    
-    <a href="https://twitter.com/arukayies/status/1248928918297407491?ref_src=twsrc%5Etfw">April 11, 2020</a>
-  </blockquote>
-</div></figure> 
+スプレッドシートでのタスク管理や情報共有は非常に便利ですが、「ステータスが更新されたらSlackで通知する」といった定型作業を手動で行っていませんか？
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+この記事では、**Google Apps Script (GAS) を使って、スプレッドシートのステータスが「新規」に変更されたら、その内容を自動でSlackに通知する方法**を解説します。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      以前こんなツイートしたので、2個目のスプレッドシートの内容をSlackへ通知させる方法を紹介します！
-    </p>
-  </div>
-</div>
+{{< custom-figure src="実行前-1024x197.png" title="ステータスを「新規」に変更" Fit="1280x1280 webp q90" >}}
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+このスクリプトを使えば、上記のようにステータスを変更するだけで、以下のようにSlackの指定チャンネルへ自動で通知が届きます。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      こんな感じで動作します。
-    </p>
-  </div>
-</div>
+{{< custom-figure src="実行後.png" title="Slackに自動通知が届く" Fit="1280x1280 webp q90" >}}
 
-ステータスを **<span class="fz-20px">新規</span>** に変更すると、
+手動でのコピー＆ペースト作業から解放され、チームの情報共有をスムーズにしましょう。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="実行前-1024x197.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ステータスを新規にする</figcaption></figure>
-</div>
+ちなみに、ステータス変更と同時に担当者名や日付を自動入力する方法はこちらで解説しています。
 
-Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
+{{< self-blog-card "article/posts/2020-04-13-auto-date-name" >}}
 
-{{< custom-figure src="実行後.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>こんな感じに飛ぶ</figcaption></figure> 
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-ちなみに1個目の『入力したら勝手に日付入る＆名前入る』はこちらです。
+## 完成したGASコード
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/auto-date-name" title="GASを使って表の記入者＆日付を自動入力させる方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASを使って表の記入者＆日付を自動入力させる方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        IT系の仕事でよく目にする課題管理票・確認事項一覧の日付と記入者をGASを使って自動入力させる方法を紹介します！
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2020.04.13
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+まずは今回作成するコードの全体像です。コピーしてすぐにお使いいただけます。
 
-## 【Slack】Slackのトークンを取得する
+```javascript
+/*
+ * 関数概要
+ * スプレッドシートのステータスが「新規」に編集されたら、Slackに内容を通知する
+ *
+ * 引数
+ * e イベントオブジェクト(起動時の情報が含まれています)
+ * 
+ * 戻り値
+ * なし
+*/
+function sheet_postContent(e) {
+	// ヘッダーの行番号
+	const hedaerRow = 2;
+	// 通知させる内容が書かれている列番号
+	const contentCol = 5;
 
-スプレッドシートの内容をSlackへ通知させるために、Slackのトークンを取得します。
+	// 編集されたシート
+	const sheet = e.source.getActiveSheet();
+	// 編集されたセル
+	const currentCell = e.source.getActiveCell();
+	// 編集された値
+	const currentValue = currentCell.getValue();
+	// 編集されたセルの行番号
+	const currentRow = currentCell.getRow();
+	// ログ
+	Logger.log("行番号:" + currentRow);
+	Logger.log("編集された値:" + currentValue);
 
-### Slackのアプリを作成します
+	// ヘッダー以降で、編集された値は「新規」の場合にSlack通知させる
+	if (hedaerRow < currentRow && currentValue == "新規") {
+		var content = sheet.getRange(currentRow, contentCol).getValue();
+		Logger.log("送信する内容:" + content);
+		slack_postMessage(content);
+	}
+}
+/*
+ * 関数概要
+ * Slackに指定テキストを#sampleに送信する
+ *
+ * 引数
+ * message Slackに送信したいテキスト
+ * 
+ * 戻り値
+ * なし
+*/
+function slack_postMessage(message) {
+	const token = "Slackで取得したトークン";
+	const apiUrl = "https://slack.com/api/chat.postMessage?token=" + token;
+	const payload = {
+		"channel": "sample",
+		"text": message
+	};
+	const options = {
+		"method": "post",
+		"payload": payload
+	};
+	UrlFetchApp.fetch(apiUrl, options);
+}
+```
 
-下のURLにアクセスします。
+以降のセクションで、このスクリプトを動かすための事前準備と設定方法を詳しく解説します。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-official">
-  <a rel="noopener" href="https://api.slack.com/apps" title="Slack API: Applications | Slack" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapi.slack.com%2Fapps?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fapi.slack.com%2Fapps?w=160&#038;h=90" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Slack API: Applications | Slack
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://api.slack.com/apps" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://api.slack.com/apps" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          api.slack.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+## 事前準備：Slackのアクセストークンを取得する
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="Slackにアプリ情報を入力する-1024x852.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>アプリ情報を入力</figcaption></figure>
-</div>
+GASからSlackへ通知するために、専用のアクセストークンを取得します。
 
-### 取得するトークンの権限を選択する
+### 1. Slackアプリを作成する
 
-「OAuth & Permissions」を選択します。
+まず、以下のURLからSlack APIの管理画面にアクセスし、新しいアプリを作成します。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large">{{< custom-figure src="OAuth-Permissions-1024x733.jpg" title="" Fit="1280x1280 webp q90" >}}<figcaption>「OAuth & Permissions」を選択</figcaption></figure>
-</div>
+{{< blog-card "https://api.slack.com/apps" >}}
 
-Scopesエリアの「chat:write」を選択します。
+「Create New App」をクリックし、「From scratch」を選択。アプリ名（例: GAS-Notification-Bot）と、導入したいワークスペースを指定して作成します。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="chat-writeを選択-1024x942.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>Scopesエリアの「chat:write」を選択</figcaption></figure>
-</div>
+{{< custom-figure src="Slackにアプリ情報を入力する-1024x852.png" title="Slackアプリ情報の入力" Fit="1280x1280 webp q90" >}}
 
-### 作成したアプリをワークスペースにインストールする
+### 2. トークンの権限を設定する
 
-作成したアプリをワークスペースにインストールします。
+次に、作成したアプリに必要な権限（スコープ）を付与します。
+左側メニューから「OAuth & Permissions」を選択してください。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="ワークスペースにアプリをインストールする-1024x946.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>作成したアプリをワークスペースにインストール</figcaption></figure>
-</div>
+{{< custom-figure src="OAuth-Permissions-1024x733.jpg" title="「OAuth & Permissions」を選択" Fit="1280x1280 webp q90" >}}
 
-ワークスペースへのインストールを許可します。
+「Scopes」セクションまでスクロールし、「Bot Token Scopes」にある「Add an OAuth Scope」ボタンをクリック。「**chat:write**」を選択して追加します。これは、アプリがチャンネルにメッセージを書き込むための権限です。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="許可する-1024x855.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>アクセスを許可する</figcaption></figure>
-</div>
+{{< custom-figure src="chat-writeを選択-1024x942.png" title="Scopesに「chat:write」を追加" Fit="1280x1280 webp q90" >}}
 
-### 生成されたトークンをコピーする
+### 3. アプリをワークスペースにインストールする
 
-これでトークンが生成されます！
+ページ上部に戻り、「Install to Workspace」ボタンをクリックして、作成したアプリをワークスペースにインストールします。
 
-<div class="wp-block-image">
-  {{< custom-figure src="トークン生成-1024x624.png" title="" Fit="1280x1280 webp q90" >}}
-</div>
+{{< custom-figure src="ワークスペースにアプリをインストールする-1024x946.png" title="アプリをワークスペースにインストール" Fit="1280x1280 webp q90" >}}
 
-## 【スプレッドシート】Slackに通知させるコードを追加する
+権限リクエストの確認画面が表示されるので、「許可する」をクリックします。
 
-ステータスが **<span class="fz-20px">新規</span>** となったら、スプレッドシートの **<span class="fz-20px">内容</span>** をSlack通知させるコードを追加します。
+{{< custom-figure src="許可する-1024x855.png" title="アクセス許可" Fit="1280x1280 webp q90" >}}
 
-追加方法はこちらを参考してください。
+### 4. トークンをコピーする
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-none">
-  <a href="https://arukayies.com/gas/auto-date-name#toc2" title="GASを使って表の記入者＆日付を自動入力させる方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="auto-date-name-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASを使って表の記入者＆日付を自動入力させる方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        IT系の仕事でよく目にする課題管理票・確認事項一覧の日付と記入者をGASを使って自動入力させる方法を紹介します！
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2020.04.13
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+インストールが完了すると、「Bot User OAuth Token」が生成されます。このトークン（`xoxb-`で始まる文字列）をコピーしてください。後のGASコードで使用します。
 
-追加するコードはこちらです。
+{{< custom-figure src="トークン生成-1024x624.png" title="生成されたトークンをコピー" Fit="1280x1280 webp q90" >}}
 
-## 【スプレッドシート】トリガーを設定する
+## GASの実装とトリガー設定
 
-<span class="keyboard-key">編集</span> > <span class="keyboard-key">現在のプロジェクトのトリガー</span> を選択する。<figure class="wp-block-image size-large is-resized">
+次に、スプレッドシート側でGASの設定を行います。
 
-{{< custom-figure src="トリガー1-1024x904.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>編集 > 現在のプロジェクトのトリガー を選択</figcaption></figure> 
+### 1. スクリプトエディタにコードを追加する
 
-新しいトリガーを作成する。
+対象のスプレッドシートを開き、「拡張機能」>「Apps Script」を選択してスクリプトエディタを起動します。
+エディタ内に、この記事の冒頭で紹介したGASコードを貼り付け、`slack_postMessage`関数内の`token`の値を先ほどコピーしたご自身のトークンに書き換えてください。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large">{{< custom-figure src="トリガー2-1024x536.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>新しいトリガーを作成</figcaption></figure>
-</div>
+スクリプトの追加方法がわからない場合は、こちらの記事も参考にしてください。
 
-以下のようなトリガーを保存します。<figure class="wp-block-image size-large">
+{{< self-blog-card "article/posts/2020-04-13-auto-date-name" >}}
 
-{{< custom-figure src="トリガーの内容-1024x984.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>トリガー情報</figcaption></figure> 
+### 2. トリガーを設定する
 
-## 【実行結果】Slackへ通知させてみた
+最後に、スクリプトが自動で実行されるように「トリガー」を設定します。
+スクリプトエディタの左側メニューから「トリガー」（時計アイコン）を選択し、「トリガーを追加」ボタンをクリックします。
 
-実際に動かしてみます。
+{{< custom-figure src="トリガー1-1024x904.png" title="トリガー設定画面" Fit="1280x1280 webp q90" >}}
 
-ステータスを **<span class="fz-20px">新規</span>** に変更すると、
+以下の通りに設定し、保存してください。
 
-<div class="wp-block-image">
-  <figure class="aligncenter size-large is-resized">{{< custom-figure src="実行前-1024x197.png" title="" Fit="1280x1280 webp q90" >}}<figcaption>ステータスを新規にする</figcaption></figure>
-</div>
+- **実行する関数を選択**: `sheet_postContent`
+- **イベントのソースを選択**: `スプレッドシートから`
+- **イベントの種類を選択**: `編集時`
 
-Slackの指定チャンネルに **<span class="fz-20px">通知</span>** が飛びます！<figure class="wp-block-image size-large is-resized">
+{{< custom-figure src="トリガーの内容-1024x984.png" title="トリガー情報の設定" Fit="1280x1280 webp q90" >}}
 
-{{< custom-figure src="実行後.png" title="" Fit="1280x1280 webp q90" >}} <figcaption>こんな感じに飛ぶ</figcaption></figure> 
+これで、スプレッドシートのいずれかのセルが編集されるたびに`sheet_postContent`関数が実行されるようになりました。
+
+## 実行結果
+
+設定が完了したら、実際にスプレッドシートのステータス列を「新規」に変更してみましょう。
+すぐに指定したSlackチャンネルに通知が届けば成功です！
 
 ## まとめ
 
-<div class="wp-block-cocoon-blocks-balloon-ex-box-1 speech-wrap sb-id-1 sbs-stn sbp-l sbis-cb cf block-box">
-  <div class="speech-person">
-    {{< custom-figure src="icon-1.png" title="" Fit="1280x1280 webp q90" >}}
-    
+今回は、GASを使ってスプレッドシートの更新をSlackに自動通知する方法を紹介しました。
+これまで手動でSlackに連絡事項を投稿していた手間が省け、ヒューマンエラーの防止にも繋がります。
 
-  </div>
-  
-  <div class="speech-balloon">
-    <p>
-      今まではスプレッドシートに書かれている連絡事項をコピーして、それをSlackに貼ってメンバーへ伝達するような場面がありましたが、
-    </p>
-    
-    <p>
-    </p>
-    
-    <p>
-      このスクリプトを応用して、スプレッドシートに書かれている連絡事項をSlackに通知させることで、
-    </p>
-    
-    <p>
-      <strong><span class="fz-22px"><span class="marker-red">わずかな</span>作業がなくなりました</span>。</strong>（大事と思う）
-    </p>
-    
-    <p>
-    </p>
-    
-    <p>
-      他にもいろいろ応用が効きそうなので、活用してみてください！
-    </p>
-  </div>
-</div>
+このスクリプトを応用すれば、
+- タスクの担当者が割り当てられたら、その担当者にメンション付きで通知する
+- 特定の数値を超えたらアラートを飛ばす
+など、さまざまな業務自動化が実現できます。ぜひ活用してみてください！
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}

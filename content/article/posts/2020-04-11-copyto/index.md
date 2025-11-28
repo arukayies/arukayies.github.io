@@ -1,541 +1,139 @@
 ---
-title: GASでスプレッドシートのデータを柔軟にコピー＆貼り付けする方法
-author: arukayies
-type: post
-date: 2020-04-11T10:15:48+00:00
-excerpt: GASでスプレッドシートの指定範囲をコピーする方法を紹介します！
-url: /gas/copyto
+title: "【GAS】copyToメソッドでシートをコピー・複製する基本から応用まで解説"
+description: "Google Apps Script (GAS) の `copyTo` メソッドを使って、スプレッドシートのシートを効率的にコピー・複製する方法を解説します。基本的な使い方から、複数シートの一括コピー、エラーハンドリング、実用的な応用例まで、サンプルコード付きで詳しく紹介。業務効率化に繋がるテクニックが満載です。"
+tags: ["GAS","Google Apps Script","スプレッドシート", "copyTo"]
+date: "2020-04-11T10:15:48.000Z"
+url: "/gas/copyto"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1586600149
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1248917675494920193";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1248917675494920193";s:5:"pDate";s:19:"2020-04-11 10:15:52";}}";
-last_modified:
-  - 2025-03-07 22:50:20
-categories:
-  - GAS
-tags:
-  - copyTo(destination)
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年4月"]
+lastmod: "2025-11-25T23:18:00.000Z"
 ---
-Google Apps Script（GAS）を使って、Google スプレッドシートを操作する際に便利なメソッドの一つが`copyTo(destination)`メソッドだよ。このメソッドをうまく活用すれば、スプレッドシート間でデータのコピーやシートの複製が簡単にできるけん、業務の効率化にもつながるばい。
 
-今回は、この`copyTo(destination)`メソッドの使い方を基本から応用まで、いろんなパターンを紹介していくけ、ぜひ試してみてほしいな！
+Google Apps Script（GAS）でスプレッドシートを操作する際、`copyTo()`メソッドは非常に強力で便利な機能です。このメソッドを活用することで、シートの複製や別スプレッドシートへのデータコピーが簡単に行え、定型業務の自動化や効率化に大きく貢献します。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+この記事では、`copyTo()`メソッドの基本的な使い方から、複数シートの一括コピー、エラー処理を組み込んだ応用テクニックまで、実用的なサンプルコードを交えて分かりやすく解説します。
 
-## copyTo(destination)メソッドの基本構造
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-まずは、`copyTo(destination)`メソッドがどんな風に使われるかを見てみよう。構文はこんな感じだよ。
+## `copyTo()`メソッドの基本構文
 
-<pre class="wp-block-code"><code>Sheet.copyTo(spreadsheet)
-</code></pre>
+はじめに、`copyTo()`メソッドの基本的な構文を確認しましょう。
 
-このメソッドを使うと、指定したシート（`Sheet`オブジェクト）をコピー先のスプレッドシート（`spreadsheet`）に複製できるんだ。ちなみに、コピー先のシートは新しく作られるんだけど、元のシートのセルデータや書式設定もそのまま引き継がれるけん、非常に便利なんだよ。
+```javascript
+// 指定したスプレッドシートにシートをコピーする
+Sheet.copyTo(spreadsheet);
+```
 
-### 基本的な使い方
+このメソッドは、`Sheet`オブジェクト（コピー元のシート）を、引数で指定した`spreadsheet`オブジェクト（コピー先のスプレッドシート）に複製します。コピー先のシートは新しく作成され、元のシートのデータや書式設定、保護範囲などもすべて引き継がれるため、テンプレートからのシート生成などに非常に便利です。
 
-例えば、同じスプレッドシート内でシートを複製したい場合は、こんな風に書けるばい。
+### 同じスプレッドシート内でシートを複製する
 
-<pre class="wp-block-code"><code>function duplicateSheet() {
-  const ss = SpreadsheetApp.getActive();
+最も基本的な使い方として、現在開いているスプレッドシート内でシートを複製する例を見てみましょう。
+
+```javascript
+function duplicateSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
   const templateSheet = ss.getSheetByName('テンプレート');
+
+  // テンプレートシートを同じスプレッドシート内にコピー
   const newSheet = templateSheet.copyTo(ss);
-  newSheet.setName(`データ_${Utilities.formatDate(new Date(), 'JST', 'yyyyMMdd')}`);
+
+  // 分かりやすいように新しいシートに名前を付ける
+  const formattedDate = Utilities.formatDate(new Date(), 'JST', 'yyyyMMdd');
+  newSheet.setName(`データ_${formattedDate}`);
 }
-</code></pre>
+```
 
-これで、テンプレートシートを日付付きで新しいシートとして複製できるんよ。
+このスクリプトを実行すると、「テンプレート」という名前のシートが複製され、「データ_（今日の日付）」という名前の新しいシートが作成されます。
 
-## 複数シートを一度にコピーする方法
+## 応用的な使い方
 
-もし複数のシートを一度にコピーしたい場合、ちょっとした工夫がいるけど、以下のようなコードで対応できるんだ。
+基本的な使い方を理解したところで、より実用的な応用例をいくつか紹介します。
 
-<pre class="wp-block-code"><code>function batchCopySheets(sheetNames, destSS) {
-  const sourceSS = SpreadsheetApp.getActive();
+### 複数シートを一括でコピーする
+
+複数のシートを一度にコピーしたい場合は、ループ処理を利用します。以下の関数は、シート名の配列を受け取り、指定したスプレッドシートに一括でコピーします。
+
+```javascript
+function batchCopySheets(sheetNames, destinationSpreadsheet) {
+  const sourceSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   
-  sheetNames.forEach((name, index) =&gt; {
-    const sourceSheet = sourceSS.getSheetByName(name);
+  sheetNames.forEach((name, index) => {
+    const sourceSheet = sourceSpreadsheet.getSheetByName(name);
     if (sourceSheet) {
-      const newSheet = sourceSheet.copyTo(destSS);
+      // コピーを実行
+      const newSheet = sourceSheet.copyTo(destinationSpreadsheet);
       newSheet.setName(`${name}_COPY_${index + 1}`);
       
-      // パフォーマンス改善のため適宜休止
-      if (index % 5 === 0) Utilities.sleep(1000);
+      // GASの実行時間制限を避けるため、適宜スリープを挟む
+      if ((index + 1) % 5 === 0) {
+        Utilities.sleep(1000); // 1秒待機
+      }
     }
   });
 }
-</code></pre>
+```
 
-これで、複数のシートを一度にコピーできて、さらにコピー処理の効率も良くなるんだよ。
+大量のシートをコピーする際は、GASの実行時間制限（通常6分）に注意が必要です。`Utilities.sleep()`を挟むことで、サーバーへの負荷を軽減し、タイムアウトエラーを防ぐことができます。
 
-## 高度な使い方：エラーハンドリングと最適化
+### エラーハンドリングを組み込んだ安全なコピー処理
 
-もちろん、大規模なシートを扱う際にはエラー処理やパフォーマンスチューニングも重要なポイントだよね。例えば、コピー先のスプレッドシートに適切な権限がない場合や、大量のデータをコピーする際に発生しやすいタイムアウトエラーなどをしっかり処理しておくことが大事なんだよ。
+実務でスクリプトを運用する際には、予期せぬエラーへの対策が不可欠です。「テンプレートシートが存在しなかった」「コピー先のシート名が重複していた」といったケースを想定し、`try...catch`ブロックでエラーハンドリングを実装しましょう。
 
-<pre class="wp-block-code"><code>function safeCopy() {
+```javascript
+function safeCopySheet() {
   try {
-    const ss = SpreadsheetApp.getActive();
-    const template = ss.getSheetByName('テンプレート');
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    const templateSheet = ss.getSheetByName('テンプレート');
     
-    if (!template) throw new Error('テンプレートシートが見つかりません');
+    // テンプレートシートの存在チェック
+    if (!templateSheet) {
+      throw new Error('「テンプレート」シートが見つかりません。');
+    }
     
-    const newSheet = template.copyTo(ss);
+    const newSheet = templateSheet.copyTo(ss);
     
+    // 重複しないシート名を生成
     let sheetName = 'コピーシート';
     let counter = 1;
     while (ss.getSheetByName(sheetName)) {
-      sheetName = `コピーシート_${counter++}`;
+      sheetName = `コピーシート_${counter}`;
+      counter++;
     }
     newSheet.setName(sheetName);
-    
+
   } catch (e) {
-    console.error(`エラー発生: ${e.message}`);
+    // エラー内容をログに出力し、ユーザーに通知する
+    console.error(`エラーが発生しました: ${e.message}`);
     SpreadsheetApp.getUi().alert(`処理に失敗しました: ${e.message}`);
-    throw e;
   }
 }
-</code></pre>
+```
 
-このように、エラーハンドリングをしっかり実装しておけば、実際の業務でエラーが発生しても焦らずに対処できるけ。
+このように堅牢なエラー処理を実装することで、スクリプトが意図せず停止するのを防ぎ、安定した運用が可能になります。
 
-## 実務での応用例
+## まとめ
 
-### テンプレートシートの動的生成
+`copyTo()`メソッドは、GASにおけるスプレッドシート操作の基本でありながら、非常に奥の深い機能です。基本的な使い方をマスターするだけで作業効率は格段に向上し、応用テクニックを組み合わせることで、より複雑な業務プロセスの自動化も実現できます。
 
-「テンプレートシートを複数回使いたいけど、都度データを変えたい！」なんて場面にも対応できる方法があるんだよ。動的にプレースホルダーを置き換えながら新しいシートを作成できるようなシステムを作ることもできるんだ。
+今回紹介したサンプルコードを参考に、ぜひご自身の業務改善に`copyTo()`メソッドを活用してみてください。
 
-<pre class="wp-block-code"><code>function createInstance(destSS, params) {
-  const templateSheet = this.templateSS.getSheetByName(params.templateName);
-  const newSheet = templateSheet.copyTo(destSS);
-  
-  // プレースホルダーの適用
-  this.applyPlaceholders(newSheet, params.placeholders);
-  
-  return newSheet;
-}
-</code></pre>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-この方法を使えば、指定したパラメータに基づいて新しいシートを自動で作成できるけ、業務の手間を省けるんよ。
-
-## 結論
-
-`copyTo(destination)`メソッドは、GASを使ってスプレッドシートを扱う上で非常に便利なツールだよ。基本的な使い方から、複数シートのコピーや大規模なデータの最適化方法まで幅広く応用できるけ、うまく使いこなすことで業務の効率化や自動化がぐんと進むんじゃ。
-
-もし今回紹介した方法を使って、業務の改善ができたら嬉しいな！これからもどんどん活用してみてほしいばい。
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://kuronn.com/article/sheetcopy-gas/" title="【GAS】スプレッドシートのシートをコピーする|copyTo() | くろんの部屋" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://kuronn.com/article/sheetcopy-gas/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://kuronn.com/wp-content/uploads/2023/09/16.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://kuronn.com/wp-content/uploads/2023/09/16.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】スプレッドシートのシートをコピーする|copyTo() | くろんの部屋
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS（Google Apps Script）を用いて、スプレッドシートのシートをコピーしたい方向けに、『copyToメソッド』を紹介していきたいと思います。業務効率化・自動化で、シートをコピーするのは多用するので、活用していただけると嬉し
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://kuronn.com/article/sheetcopy-gas/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://kuronn.com/article/sheetcopy-gas/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          kuronn.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://coporilife.com/423/" >}} 
   
-  <br /> <a rel="noopener" href="https://coporilife.com/423/" title="【GAS】別のスプレッドシートにコピー、値のみ、シート毎などまとめ【Google Apps Script】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://coporilife.com/379/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://coporilife.com/wp-content/uploads/2022/05/01-6.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://coporilife.com/wp-content/uploads/2022/05/01-6.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】別のスプレッドシートにコピー、値のみ、シート毎などまとめ【Google Apps Script】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        スプレッドシートを別のシートにコピーするには、CopyToメソッドやgetValueとsetValueを使用して値をコピー&ペーストするなど様々な方法があります。この記事ではGASでスプレッドシートを別のスプレッドシートにコピーする
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://coporilife.com/423/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://coporilife.com/423/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          coporilife.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://auto-worker.com/blog/?p=2401" >}} 
   
-  <br /> <a rel="noopener" href="https://coporilife.com/379/" title="【GAS】CopyTo、行列コピー、スプレッドシートで自動コピーまとめ【Google Apps Script】" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://for-dummies.net/gas-noobs/how-to-make-a-copy-of-files/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://coporilife.com/wp-content/uploads/2022/05/5b3b5b436fa1110245caa5a9039c2924.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://coporilife.com/wp-content/uploads/2022/05/5b3b5b436fa1110245caa5a9039c2924.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【GAS】CopyTo、行列コピー、スプレッドシートで自動コピーまとめ【Google Apps Script】
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        スプレッドシートのGASでCopyToを使用して行列コピーしたり、自動で別シートにコピーや値のみコピーなど、CopyToでできることをまとめて解説しています。複数行にコピーする時の範囲指定など、なるべくわかりやすく解説してみたいと思います。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://coporilife.com/379/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://coporilife.com/379/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          coporilife.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+{{< blog-card "https://blog.take-it-easy.site/gas/gas-copyto/" >}} 
   
-  <br /> <a rel="noopener" href="https://auto-worker.com/blog/?p=2401" title="GASでスプレッドシートのシートをコピーする方法(copyToメソッド) | AutoWorker〜Google Apps Script(GAS)とSikuliで始める業務改善入門" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://strong-engineer.com/gas/google-drive-folder-copy/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://auto-worker.com/blog/wp-content/uploads/2020/12/20201226_auto_001.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://auto-worker.com/blog/wp-content/uploads/2020/12/20201226_auto_001.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASでスプレッドシートのシートをコピーする方法(copyToメソッド) | AutoWorker〜Google Apps Script(GAS)とSikuliで始める業務改善入門
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script(GAS)でスプレッドシートにあるシートをコピーする方法を解説します。 GASに用意されているcopyToメソッドを使い、スプレッドシート上のシ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://auto-worker.com/blog/?p=2401" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://auto-worker.com/blog/?p=2401" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          auto-worker.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://for-dummies.net/gas-noobs/how-to-make-a-copy-of-files/" title="【コピペで使える】GASで任意のファイルをコピーしてみる" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://i1.wp.com/for-dummies.net/gas-noobs/wp-content/uploads/2022/06/how-to-make-a-copy-of-files.png?fit=1200%2C675&#038;ssl=1" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://i1.wp.com/for-dummies.net/gas-noobs/wp-content/uploads/2022/06/how-to-make-a-copy-of-files.png?fit=1200%2C675&#038;ssl=1" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        【コピペで使える】GASで任意のファイルをコピーしてみる
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GASで任意のファイルをコピーしてみる 今回の投稿では、GASを使って任意のファイルをコピーするメソッドをご紹…
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://for-dummies.net/gas-noobs/how-to-make-a-copy-of-files/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://for-dummies.net/gas-noobs/how-to-make-a-copy-of-files/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          for-dummies.net
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://blog.take-it-easy.site/gas/gas-copyto/" title="Google Apps Scriptでスプレッドシートのシートをコピーする方法" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://blog.take-it-easy.site/images/eye-catch-1499.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://blog.take-it-easy.site/images/eye-catch-1499.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google Apps Scriptでスプレッドシートのシートをコピーする方法
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        概要Google Apps Scriptでスプレッドシートのシートをコピー（複製）する方法です。使用するメソッド構文Sheetオブジェクト.copyTo(spreadsheet)引数パラメーター必須型説明spreadsheet○Spread...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://blog.take-it-easy.site/gas/gas-copyto/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://blog.take-it-easy.site/gas/gas-copyto/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          blog.take-it-easy.site
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://strong-engineer.com/gas/google-drive-folder-copy/" title="Googleドライブのフォルダを一括コピー！GASで実現する自動化手順 – 俺が最強エンジニア" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://strong-engineer.com/wp-content/uploads/2024/08/goodle_drive_file.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://strong-engineer.com/wp-content/uploads/2024/08/goodle_drive_file.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Googleドライブのフォルダを一括コピー！GASで実現する自動化手順 – 俺が最強エンジニア
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GoogleDrive内のフォルダはドラッグ・アンド・ドロップや切り取り＋貼り付けで簡単に移動できますが、コピーは制限がかかっているため、まとめて複製を行うことができません。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://strong-engineer.com/gas/google-drive-folder-copy/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://strong-engineer.com/gas/google-drive-folder-copy/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          strong-engineer.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rmovecopyclear/" title="[GAS]このセル範囲の移動・コピー・削除を行う方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-1.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-1.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]このセル範囲の移動・コピー・削除を行う方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲の移動・コピー・削除を行う方法を説明します。 Range
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rmovecopyclear/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rmovecopyclear/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://techuplife.tech/gas-ss-rmovecopyclear/" >}}

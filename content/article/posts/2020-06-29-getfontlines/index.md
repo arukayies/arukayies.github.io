@@ -1,354 +1,128 @@
 ---
-title: GASでスプレッドシートの指定範囲から下線・取り消し線を一括取得する方法
-author: arukayies
-type: post
-date: 2020-06-28T18:19:16+00:00
-excerpt: GASでスプレッドシートの指定範囲すべての文字線(下線,取り消し線)を取得する方法を紹介します！
-url: /gas/getfontlines
+title: "【GAS高速化】getFontLines()で複数セルのフォント装飾を一括取得！API呼び出しを最適化"
+description: "GASで複数セルの下線や取り消し線をチェックする際に、forループでAPIを何度も呼び出していませんか？getFontLines()を使えば、たった1回のAPI呼び出しで全ての情報を二次元配列として一括取得できます。スクリプトを高速化する必須テクニックを解説します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getFontLines", "高速化", "パフォーマンス", "一括取得", "API"]
+date: "2020-06-28T18:19:16.000Z"
+lastmod: "2025-11-28T00:00:00.000Z"
+url: "/gas/getfontlines"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1593368358
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:58:16
-categories:
-  - GAS
-tags:
-  - GAS
-  - getFontLines()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
 ---
-みんな、Googleスプレッドシートの装飾情報をプログラムで取得したいことってないかい？たとえば、どのセルに下線や取り消し線が付いてるかをチェックしたい時、手作業じゃ面倒だよね？
 
-そこで登場するのがGAS（Google Apps Script）の `getFontLines()` メソッドばい！このメソッドを使えば、セル範囲のフォント装飾をプログラムで取得できるっちゃ。
+Google Apps Script (GAS) でスプレッドシートの書式を扱う際、スクリプトの実行速度が遅くなる主な原因の一つが、**APIの過剰な呼び出し**です。特に、ループ処理の中でセル一つひとつの情報を取得するコードは、パフォーマンスを著しく低下させます。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+この問題を解決し、スクリプトを劇的に高速化するのが**`getFontLines()`**メソッドです。
 
-## getFontLines() ってなんね？
+この記事では、`getFontLine()`（単数形）をループで使うことの非効率性を解説し、`getFontLines()`による一括取得がいかに重要かを、具体的なコードと共に徹底解説します。
 
-GASでスプレッドシートのフォント装飾（下線・取り消し線）を取得するためのメソッドじゃ！使い方はシンプルで、`Range` オブジェクトに対して呼び出せば、各セルの装飾情報を配列で返してくれるんよ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-### 書き方はこんな感じばい！
+## なぜ一括取得（`getFontLines()`）が必須なのか？
 
-<pre class="wp-block-code"><code>const fontLines = range.getFontLines();
-</code></pre>
+例えば、100個のセルの文字装飾（下線・取り消し線）をチェックする場合を考えてみましょう。
 
-これで、`range` 内のセル装飾情報が二次元配列で返ってくるばい。
+```javascript
+// 【非推奨】APIを100回呼び出すため非常に遅いコード
+function slowCheck() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:A100");
+  for (let i = 1; i <= 100; i++) {
+    // ループのたびにAPI呼び出しが発生
+    const fontLine = range.getCell(i, 1).getFontLine();
+    if (fontLine === 'line-through') {
+      // 何らかの処理
+    }
+  }
+}
 
-## どんなデータが返ってくると？
+// 【推奨】API呼び出しは1回のみ。高速なコード
+function fastCheck() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:A100");
+  // ここでAPI呼び出しは1回だけ！
+  const fontLines = range.getFontLines();
+  
+  // 取得済みの配列データをメモリ上で高速に処理
+  fontLines.forEach((row, index) => {
+    if (row[0] === 'line-through') {
+      // 何らかの処理
+    }
+  });
+}
+```
+`slowCheck`関数では、100回のネットワーク通信が発生し、実行に多くの時間がかかります。一方、`fastCheck`関数は、**たった1回の通信**で全ての情報を取得し、その後の処理は高速なメモリ上で行うため、実行時間は比較にならないほど短くなります。
 
-`getFontLines()` の戻り値は、セルの装飾状態を示す文字列の二次元配列ばい。
+## `getFontLines()` の使い方と戻り値
 
-<ul class="wp-block-list">
-  <li>
-    <code>'underline'</code>: 下線付き
-  </li>
-  <li>
-    <code>'line-through'</code>: 取り消し線付き
-  </li>
-  <li>
-    <code>'none'</code>: 装飾なし
-  </li>
-</ul>
+`getFontLines()`は、指定した範囲の各セルのフォント装飾情報を**二次元配列 (`String[][]`)** として返します。
 
-### 例えば、こんな表があるとするばい！
+### 戻り値の構造
 
-<pre class="wp-block-code"><code>+------------+------------+
-|   A1       |   B1       |
-| underline  | none       |
-+------------+------------+
-|   A2       |   B2       |
-| line-through | underline |
-+------------+------------+
-|   A3       |   B3       |
-| none       | line-through |
-+------------+------------+
-</code></pre>
+返される配列の各要素には、以下の3種類の文字列のいずれかが含まれます。
 
-この場合、`getFontLines()` を実行すると、こういう配列が返ってくるばい。
+-   `'underline'` (下線)
+-   `'line-through'` (取り消し線)
+-   `'none'` (装飾なし)
 
-<pre class="wp-block-code"><code>&#91;
-  &#91;'underline', 'none'],
-  &#91;'line-through', 'underline'],
-  &#91;'none', 'line-through']
+例えば、`A1:B2`の範囲で、A1に下線、B2に取り消し線が設定されている場合、戻り値は以下のようになります。
+
+```json
+[
+  ["underline", "none"],
+  ["none", "line-through"]
 ]
-</code></pre>
+```
 
-つまり、セルの装飾状態をそのまま配列として取得できるっちゃ。
+## 実践的コード例：完了タスクにタイムスタンプを自動入力
 
-## 実際のコード例を見てみるばい！
+`getFontLines()` を使った実用的な例として、タスクリストで取り消し線が引かれた項目（完了タスク）の隣のセルに、完了日時を自動で追記するスクリプトを紹介します。
 
-### 1. フォント装飾を取得してコンソールに表示する
+```javascript
+/**
+ * B列のタスクに取り消し線が引かれたら、C列に完了日時を自動入力する
+ */
+function recordCompletionTimestamp() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('タスクリスト');
+  const lastRow = sheet.getLastRow();
+  if (lastRow < 2) return;
 
-<pre class="wp-block-code"><code>function fetchFontDecorations() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName('SalesData');
-  const targetRange = sheet.getRange('B2:D10');
-  const decorationMatrix = targetRange.getFontLines();
+  const taskRange = sheet.getRange(`B2:B${lastRow}`);
+  const statusRange = sheet.getRange(`C2:C${lastRow}`);
   
-  decorationMatrix.forEach((row, rowIndex) =&gt; {
-    row.forEach((cellStyle, colIndex) =&gt; {
-      console.log(`Cell ${rowIndex+2}-${colIndex+2}: ${cellStyle}`);
-    });
-  });
-}
-</code></pre>
+  // フォント装飾と、書き込み先のセルの値を両方一括取得
+  const fontLines = taskRange.getFontLines();
+  const timestamps = statusRange.getValues();
 
-このコードを実行すると、セルごとの装飾状態がコンソールに表示されるばい！
-
-### 2. 取り消し線がついたセルにコメントを追加する
-
-<pre class="wp-block-code"><code>function processSpecialDecorations() {
-  const range = SpreadsheetApp.getActiveRange();
-  const decorations = range.getFontLines();
+  let isChanged = false;
   
-  decorations.forEach((row, i) =&gt; {
-    row.forEach((style, j) =&gt; {
-      if(style === 'line-through') {
-        const cell = range.getCell(i+1, j+1);
-        const comment = cell.getNote();
-        cell.setNote(`${comment}\nCanceled at: ${new Date()}`);
-      }
-    });
+  fontLines.forEach((row, r) => {
+    // 取り消し線が引かれていて、かつタイムスタンプが未入力の場合
+    if (row[0] === 'line-through' && timestamps[r][0] === '') {
+      timestamps[r][0] = new Date(); // 現在時刻をセット
+      isChanged = true;
+    }
   });
+  
+  // 変更があった場合のみ、一括で書き込む
+  if (isChanged) {
+    statusRange.setValues(timestamps);
+  }
 }
-</code></pre>
-
-このスクリプトを実行すると、取り消し線が付いたセルに「キャンセル日時」を自動で追記できるっちゃ！
-
-## こんな場面で使えるばい！
-
-<ul class="wp-block-list">
-  <li>
-    <strong>タスク管理</strong>: 取り消し線が入ったタスクを自動でログに記録
-  </li>
-  <li>
-    <strong>データ検証</strong>: 下線が入ったセルの値が正しいかチェック
-  </li>
-  <li>
-    <strong>履歴管理</strong>: フォント装飾の変更を監視して、変更ログを残す
-  </li>
-</ul>
+```
+このコードのポイントは、読み込み（`getFontLines`, `getValues`）と書き込み（`setValues`）の両方を一括で行っている点です。これにより、スクリプト全体のパフォーマンスを最大限に高めています。
 
 ## まとめ
 
-`getFontLines()` を使えば、Googleスプレッドシート内のフォント装飾を簡単に取得できるばい！
+GASのパフォーマンスを考える上で、**「API呼び出し回数をいかに減らすか」**は最も重要な原則です。`getFontLines()`は、まさにその原則を体現したメソッドです。
 
-「下線付きのセルだけ抽出したい！」「取り消し線が付いたデータをログに残したい！」っていう時に超便利け！GASを活用して、作業を効率化していこうばい！
+-   複数セルの書式を扱う際は、必ず`getFontLines()`のような一括取得メソッドを使う。
+-   取得したデータは二次元配列として変数に格納し、メモリ上で効率的に処理する。
+-   書き込みも`setValues()`や`setBackgrounds()`などを使い、一括で行う。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+この「一括処理」の考え方は、`getValues()`, `getBackgrounds()`, `getFontFamilies()`など、他の多くのメソッドにも共通します。高速で安定したGASを開発するために、必ずマスターしておきましょう。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://techuplife.tech/gas-ss-rfontsetting/" title="[GAS]フォントやフォントの色・線・斜体などを取得・設定する方法 -Rangeクラス-｜テックアップライフ" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-3.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://techuplife.tech/wp-content/uploads/2023/06/techuplife.tech_-3.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        [GAS]フォントやフォントの色・線・斜体などを取得・設定する方法 -Rangeクラス-｜テックアップライフ
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        Google Apps Script (GAS) でこのセル範囲のフォントや、色・線・斜体などのフォント関連の設定を取得
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rfontsetting/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://techuplife.tech/gas-ss-rfontsetting/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          techuplife.tech
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://gsuiteguide.jp/sheets/getfontlines/" title="セル範囲の文字装飾(取り消し線、下線)をセルごとに取得する：getFontLines()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セル範囲の文字装飾(取り消し線、下線)をセルごとに取得する：getFontLines()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getFontLines() セル範囲の文字装飾(取り消し線、下線)をセルごとに取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.getActiveSpreadshee...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getfontlines/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getfontlines/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getfontlines" >}}

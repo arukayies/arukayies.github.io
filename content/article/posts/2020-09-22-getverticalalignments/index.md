@@ -1,362 +1,202 @@
 ---
-title: GASでスプレッドシートのセル範囲から垂直配置設定を一括取得する方法
-author: arukayies
-type: post
-date: 2020-09-22T09:02:02+00:00
-excerpt: GASでスプレッドシートの指定範囲すべての垂直方向を取得する方法を紹介します！
-url: /gas/getverticalalignments
+title: "【GASスプレッドシート】getVerticalAlignments()で複数セルの垂直配置を一括取得・SEO最適化"
+description: "Google Apps Script (GAS)の`getVerticalAlignments()`メソッドを徹底解説。スプレッドシートの複数セルの垂直配置（上寄せ、中央揃え、下寄せ）を効率的に二次元配列で一括取得する方法を、具体的なコード例で紹介します。`getVerticalAlignment()`との違い、`setVerticalAlignments()`での一括設定、内容に応じた条件付き整形、変更履歴ログ化、パフォーマンス最適化まで、GASによるスプレッドシート自動化とレイアウト調整に役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getVerticalAlignments", "getVerticalAlignment", "setVerticalAlignments", "setVerticalAlignment", "垂直配置", "セル書式", "一括取得", "自動化", "効率化", "パフォーマンス", "プログラム", "開発", "UI/UX"]
+date: "2020-09-22T09:02:02.000Z"
+lastmod: "2025-11-18T00:00:00.000Z"
+url: "/gas/getverticalalignments"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1600765324
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:21:40
-categories:
-  - GAS
-tags:
-  - GAS
-  - getVerticalAlignments()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-Google スプレッドシートをカスタマイズするなら、Google Apps Script（GAS）は避けて通れんばい。今回は、その中でもセルの垂直配置を取得する `getVerticalAlignments()` について深掘りしていくけんね！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を用いてスプレッドシートのレイアウトを調整する際、特に**大規模なデータや複数シートを扱う場合**には、複数セルの「垂直配置」（上寄せ、中央揃え、下寄せ）を効率的に管理することが、データの視認性やデザインの整合性を保つ上で非常に重要になります。`getVerticalAlignments()`メソッドは、このニーズに応える強力な一括取得機能を提供します。
 
-## getVerticalAlignments() って何ばい？
+本記事では、GASの`Range.getVerticalAlignments()`メソッドを徹底解説します。複数セルの垂直配置を二次元配列として一括取得する基本から、`getVerticalAlignment()`との違い、`setVerticalAlignments()` / `setVerticalAlignment()`による垂直配置の効率的な設定方法、さらには**コンテンツ長や条件に応じた自動配置調整**、変更履歴の記録、パフォーマンス最適化といった実践的な応用例まで、具体的なコードを交えて分かりやすく紹介します。
 
-このメソッドは、指定した範囲内のセルの垂直配置を取得できる便利な関数たい。スプレッドシートでデータをきれいに整理するには欠かせんとよ。
+GAS初心者から、スプレッドシートの視覚的表現と自動化の効率をさらに高めたい上級者まで、すべての方に役立つ情報が満載です。
 
-**垂直配置の種類は以下の3つ:**
+{{< affsearch keyword="GAS スプレッドシート 垂直配置 一括取得 自動化" img="/gas.jpg">}}
 
-<ul class="wp-block-list">
-  <li>
-    <code>top</code>：セルの上側に寄せる
-  </li>
-  <li>
-    <code>middle</code>：セルの中央に配置（デフォルト）
-  </li>
-  <li>
-    <code>bottom</code>：セルの下側に寄せる
-  </li>
-</ul>
+## `getVerticalAlignments()`メソッドとは？GASで複数セルの垂直配置を一括取得する基本
 
-スプレッドシートのデフォルト設定は `bottom` になっとるけん、Excelとは違うとこに注意せんといかんばい。
+`Range.getVerticalAlignments()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）内のすべてのセルに設定されている垂直配置**を、一度のAPI呼び出しでまとめて**二次元文字列配列**として取得するための機能です。
 
-## getVerticalAlignments() の基本構文
+このメソッドを使用することで、広範囲のセルに設定されている垂直配置（`"top"`, `"middle"`, `"bottom"`）を一括でプログラム的に確認できます。これにより、個々のセルに対して`getVerticalAlignment()`を繰り返し呼び出す非効率性を解消し、スクリプトの実行速度を劇的に向上させることができます。
 
-<pre class="wp-block-code"><code>range.getVerticalAlignments();
-</code></pre>
+### `getVerticalAlignment()`と`getVerticalAlignments()`の違いと効率性
 
-### 戻り値
+| 特徴 | `getVerticalAlignment()` | `getVerticalAlignments()` |
+| :--- | :--- | :--- |
+| **対象セル数** | 指定範囲の**左上の単一セル**のみ | **複数セル範囲**内のすべてのセル |
+| **返り値** | `String` (`"top"`, `"middle"`, `"bottom"`) | `String[][]` (二次元文字列配列) |
+| **効率性** | 単一セル向け。複数セルへのループ処理ではAPI呼び出しが増え非効率 | 一度のAPI呼び出しで複数セルの情報を取得できるため**効率的** |
 
-メソッドを実行すると、対象範囲のセルの垂直配置が**二次元配列**で返ってくるばい！
+### 基本的な使用例：A1からC3範囲の垂直配置を一括取得する
 
-例えば、3行2列のセル範囲で `getVerticalAlignments()` を実行すると、こんな感じの配列が返ってくる
+以下のスクリプトは、アクティブなシートの`A1:C3`範囲の垂直配置を一括で取得し、その二次元配列の内容をログに出力する最も基本的な例です。
 
-<pre class="wp-block-code"><code>&#91;
-  &#91;'top', 'middle'],
-  &#91;'bottom', 'top'],
-  &#91;'middle', 'bottom']
-]
-</code></pre>
-
-## getVerticalAlignments() の活用例
-
-### 1. セルの垂直配置を取得する基本的なスクリプト
-
-<pre class="wp-block-code"><code>function fetchVerticalAlignments() {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
-  const sheet = ss.getSheetByName('データシート');
-  const targetRange = sheet.getRange('B2:D4');
+```javascript
+/**
+ * アクティブなシートのA1:C3範囲の全セルの垂直配置を二次元配列として一括取得し、ログに出力する関数。
+ */
+function getAndLogAllVerticalAlignments() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("A1:C3");      // 対象範囲をA1:C3に設定
   
-  const alignments = targetRange.getVerticalAlignments();
-  
-  console.log('垂直配置データ:', alignments);
-}
-</code></pre>
+  // 指定範囲の各セルの垂直配置を二次元配列として一括取得
+  const alignments = range.getVerticalAlignments();
 
-### 2. 配列データを整理して表示する
+  // 取得した二次元配列の内容をJSON形式でログに出力 (視認性のため整形)
+  Logger.log(`A1:C3範囲の垂直配置:\n${JSON.stringify(alignments, null, 2)}`);
+  /* 例: alignments の出力形式
+   * [
+   *   ["top", "middle", "bottom"],
+   *   ["bottom", "top", "middle"],
+   *   ["middle", "bottom", "top"]
+   */
 
-<pre class="wp-block-code"><code>alignments.forEach((row, rowIndex) =&gt; {
-  row.forEach((alignment, colIndex) =&gt; {
-    console.log(`行 ${rowIndex+1}, 列 ${colIndex+1}: ${alignment}`);
+  // 各セルのアドレスと共に垂直配置を出力する例
+  alignments.forEach((rowAlignments, rowIndex) => {
+    rowAlignments.forEach((alignment, colIndex) => {
+      // getCell(row, column) は1から始まるインデックス
+      const cellAddress = range.getCell(rowIndex + 1, colIndex + 1).getA1Notation();
+      Logger.log(`セル ${cellAddress}: 垂直配置 "${alignment}"`);
+    });
   });
-});
-</code></pre>
+}
+```
+このコードを実行すると、`A1:C3`範囲内のすべてのセルに設定されている垂直配置がログに表示されます。
 
-### 3. すべてのセルの垂直配置を中央寄せに変更
+## `getVerticalAlignments()`の実践的な応用テクニック
 
-<pre class="wp-block-code"><code>function standardizeVerticalAlignment() {
+`getVerticalAlignments()`とその関連メソッドは、スプレッドシートのレイアウトを自動化し、データ表示の視認性を向上させる多岐にわたる場面で真価を発揮します。
+
+### 1. セルの垂直配置を動的に変更する：`setVerticalAlignments()` / `setVerticalAlignment()`
+
+`getVerticalAlignments()`で現在の配置を取得した後、`setVerticalAlignments()`や`setVerticalAlignment()`を使って、目的の垂直配置を設定できます。
+
+#### `setVerticalAlignment(alignment)`で範囲全体に同じ配置を設定
+
+指定したRangeオブジェクト（単一セルまたは複数セル範囲）内のすべてのセルに、同じ垂直配置を一括で設定します。
+
+```javascript
+/**
+ * A1からC3の範囲のすべてのセルの垂直配置を「中央揃え」に設定する関数。
+ */
+function setRangeVerticalAlignmentExample() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:C3");
+  range.setVerticalAlignment("middle"); // 全セルを中央揃えに設定
+  Logger.log(`A1:C3範囲の垂直配置を「中央揃え」に設定しました。`);
+}
+```
+
+#### `setVerticalAlignments(alignments)`でセルごとに異なる配置を一括設定
+
+セルごとに異なる垂直配置を設定したい場合は、`getVerticalAlignments()`が返すような二次元配列で各セルの配置文字列（`"top"`, `"middle"`, `"bottom"`）を渡し、`setVerticalAlignments()`メソッドで一括設定します。この際、渡す二次元配列のサイズは、対象Rangeオブジェクトのサイズと完全に一致している必要があります。
+
+```javascript
+/**
+ * A1からC3範囲の各セルに異なる垂直配置を一括で設定する関数。
+ */
+function setMultipleVerticalAlignmentsExample() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range = sheet.getRange("A1:C3");
+  // 設定したい垂直配置を二次元配列で定義
+  const alignments = [
+    ["top", "middle", "bottom"],   // A1, B1, C1
+    ["bottom", "middle", "top"],   // A2, B2, C2
+    ["middle", "top", "bottom"]    // A3, B3, C3
+  ];
+  range.setVerticalAlignments(alignments); // 垂直配置を一括設定
+  Logger.log(`A1:C3範囲の各セルに異なる垂直配置を設定しました。`);
+}
+```
+
+### 2. コンテンツ長や条件に応じた垂直配置の自動調整
+
+セルの内容（例: テキスト長、特定のキーワードの有無）に基づいて、垂直配置を動的に調整する機能は、スプレッドシートの見た目を自動で最適化し、手動での調整の手間を削減する上で非常に役立ちます。
+
+```javascript
+/**
+ * セルの内容のテキスト長に応じて、垂直配置を自動調整する関数。
+ * テキスト長が50文字を超えるセルは「上寄せ」、それ以外は「中央揃え」に設定します。
+ */
+function autoAdjustVerticalAlignmentBasedOnContent() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const dataRange = sheet.getDataRange(); // シート内のデータが存在する全範囲を取得
+  const values = dataRange.getValues();   // 全範囲のセル値を取得（テキスト長取得用）
+  const newAlignments = [];               // 新しい垂直配置を格納する二次元配列
+
+  values.forEach(rowValues => {
+    const rowAlignments = [];
+    rowValues.forEach(cellValue => {
+      // セル値のテキスト長に基づいて垂直配置を決定
+      if (String(cellValue).length > 50) { // 例: 50文字を超える場合
+        rowAlignments.push("top");       // 上寄せ
+      } else {
+        rowAlignments.push("middle");    // 中央揃え
+      }
+    });
+    newAlignments.push(rowAlignments);
+  });
+  
+  // 生成した新しい垂直配置を一括でシートに適用
+  dataRange.setVerticalAlignments(newAlignments);
+  Logger.log("セルの内容に応じて垂直配置を自動調整しました。");
+}
+```
+
+### 3. 垂直配置の変更履歴をシートに記録する
+
+スプレッドシートのレイアウト変更を追跡したり、誤った変更から復元したりするために、垂直配置の変更履歴を別のシートに記録する機能は非常に有用です。`getVerticalAlignments()`で現在の状態を取得し、`JSON.stringify()`で文字列化してログシートに書き込むことができます。
+
+```javascript
+/**
+ * 指定範囲の垂直配置を現在のタイムスタンプと共に履歴シートに記録する関数。
+ * 「履歴ログシート」という名前のシートが存在することを前提とします。
+ */
+function monitorVerticalAlignmentChanges() {
   const ss = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = ss.getActiveSheet();
-  const range = sheet.getDataRange();
-  
-  const alignments = range.getVerticalAlignments().map(row =&gt; row.map(() =&gt; 'middle'));
-  
-  range.setVerticalAlignments(alignments);
+  const historySheet = ss.getSheetByName('履歴ログシート'); // 履歴を記録するシート名
+
+  if (!historySheet) {
+    Logger.log("エラー: 履歴ログシートが見つかりません。");
+    return;
+  }
+
+  const rangeToMonitor = sheet.getRange('A1:C10'); // 監視対象範囲
+  const currentAlignments = rangeToMonitor.getVerticalAlignments(); // 現在の垂直配置を一括取得
+  const timestamp = new Date(); // 現在のタイムスタンプ
+
+  // 履歴シートに、タイムスタンプと垂直配置のJSON文字列を追記
+  historySheet.appendRow([
+    timestamp.toISOString(), // ISO形式の日時文字列
+    JSON.stringify(currentAlignments) // 垂直配置の二次元配列をJSON文字列に変換
+  ]);
+  Logger.log(`範囲 ${rangeToMonitor.getA1Notation()} の垂直配置変更履歴を記録しました。`);
 }
-</code></pre>
+```
+記録されたJSON文字列を解析することで、過去のレイアウト状態を再現したり、差分を比較したりすることが可能になります。
 
-## getVerticalAlignments() の応用シナリオ
+## まとめ：`getVerticalAlignments()`でGASスプレッドシートのレイアウト自動化を最大化
 
-### 条件付き書式設定と連携
+Google Apps Scriptの`getVerticalAlignments()`メソッドは、スプレッドシートの複数セルの垂直配置をプログラムで効率的に管理するための、非常に強力なツールです。
 
-たとえば、`bottom` になっているセルを `middle` に変更するといった動的書式設定もできるばい！
+*   **高速な垂直配置の一括取得**: 複数セルの垂直配置（上寄せ、中央揃え、下寄せ）を一度のAPI呼び出しで二次元配列として取得できるため、スクリプトの実行速度と効率が大幅に向上します。
+*   **柔軟な垂直配置の設定**: `setVerticalAlignments()`でセルごとに異なる配置を一括設定し、複雑なレイアウト要件にも対応可能です。
+*   **動的なレイアウト調整と履歴管理**: コンテンツ長や条件に基づいた自動調整、レイアウト変更履歴の記録機能など、手動作業を削減し、シートの視認性とデザインの一貫性を保てます。
+*   **効率的なスクリプト開発**: バッチ処理（`getVerticalAlignments()`, `setVerticalAlignments()`）を徹底することで、API呼び出し回数を減らし、スクリプトのパフォーマンスを最大化できます。
 
-<pre class="wp-block-code"><code>function applyConditionalFormatting() {
-  const range = SpreadsheetApp.getActiveRange();
-  const alignments = range.getVerticalAlignments();
+本記事で紹介した`getVerticalAlignments()`の知識と実践例を活用し、あなたのGASスクリプトをより高度で柔軟なスプレッドシート自動化ツールへと進化させてください。垂直配置の細かな制御は、ユーザーエクスペリエンスの向上とデータ表示の正確性に大きく貢献します。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  const updatedAlignments = alignments.map(row =&gt;
-    row.map(alignment =&gt; alignment === 'bottom' ? 'middle' : alignment)
-  );
+{{< blog-card "https://gsuiteguide.jp/sheets/getverticalalignments/" >}} 
   
-  range.setVerticalAlignments(updatedAlignments);
-}
-</code></pre>
-
-### 編集履歴を記録するシステム
-
-変更前後の垂直配置をログに保存する仕組みも簡単に作れるっちゃ！
-
-<pre class="wp-block-code"><code>function monitorAlignmentChanges() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const historySheet = SpreadsheetApp.openById('履歴シートID').getSheetByName('ログ');
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}} 
   
-  const currentAlignments = sheet.getRange('A1:C10').getVerticalAlignments();
-  const timestamp = new Date();
-  
-  historySheet.appendRow(&#91;timestamp, JSON.stringify(currentAlignments)]);
-}
-</code></pre>
-
-## まとめ
-
-<ul class="wp-block-list">
-  <li>
-    <code>getVerticalAlignments()</code> を使えば、セルの垂直配置を簡単に取得できる！
-  </li>
-  <li>
-    データを整理するのに役立つし、動的な書式設定にも活用できる！
-  </li>
-  <li>
-    <code>setVerticalAlignments()</code> と組み合わせることで、配置変更も自由自在！
-  </li>
-</ul>
-
-GAS を使いこなせば、スプレッドシートがもっと便利になるばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://stackoverflow.com/questions/54647812/google-app-scripts-how-to-get-cell-alignments-from-range" title="Google app scripts - how to get cell alignments from range" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Google app scripts - how to get cell alignments from range
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        How do you get the alignments of a range of cells in Google App Scripts?I can see methods for getting colors, background...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/54647812/google-app-scripts-how-to-get-cell-alignments-from-range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/54647812/google-app-scripts-how-to-get-cell-alignments-from-range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          stackoverflow.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://gsuiteguide.jp/sheets/getverticalalignments/" title="セル範囲の垂直方向の配置(上寄せ、中央寄せ、下寄せ)をセルごとに取得する：getVerticalAlignments()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セル範囲の垂直方向の配置(上寄せ、中央寄せ、下寄せ)をセルごとに取得する：getVerticalAlignments()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getVerticalAlignments() セル範囲の垂直方向の配置(上寄せ、中央寄せ、下寄せ)をセルごとに取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.get...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getverticalalignments/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getverticalalignments/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://qiita.com/koichiro-h/items/aa6c1e37fd51f671aa89" >}}

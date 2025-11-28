@@ -1,281 +1,111 @@
 ---
-title: GASでスプレッドシートのセル書式を一括クリアする方法
-author: arukayies
-type: post
-date: 2020-03-14T07:37:29+00:00
-excerpt: GASでスプレッドシートの指定範囲の書式のみを 削除する方法を紹介します！
-url: /gas/clearformat
+title: "GASのclearFormat()でスプレッドシートの書式を一括リセットする方法"
+description: "Google Apps Script (GAS) を使って、スプレッドシートのセルの書式（背景色、フォント、罫線など）のみを一括でクリアする clearFormat() メソッドを解説。データや数式は保持したまま、見た目だけをリセットする具体的な方法や、他のclear系メソッドとの違いも紹介します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "clearFormat()", "書式リセット", "業務効率化"]
+date: "2020-03-14T07:37:29.000Z"
+url: "/gas/clearformat"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-last_modified:
-  - 2025-03-07 22:44:55
-categories:
-  - GAS
-tags:
-  - clearFormat()
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年3月"]
+lastmod: "2025-11-26T22:05:25+09:00"
 ---
-こんにちは！Google Apps Script（GAS）でスプレッドシートを使っているあなたに、便利なメソッド「`clearFormat()`」の使い方を紹介するばい。これを使うことで、スプレッドシートの書式設定をリセットできるんじゃ。データの視覚的な装飾を一括で消したいときや、定型フォーマットを整えたいときにすごく役立つんだ。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使ってスプレッドシートを操作していると、セルの書式だけをリセットしたい場面がよくあります。例えば、定期レポートのテンプレートを初期化したり、手動で設定されたバラバラな書式を統一したりする場合です。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+そんな時に役立つのが `clearFormat()` メソッドです。この記事では、`clearFormat()` の基本的な使い方から、他の類似メソッドとの違い、実践的な活用法までを詳しく解説します。
 
-## clearFormat()メソッドって何？
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-簡単に言うと、`clearFormat()`はスプレッドシートの**セルの書式設定**を消すメソッドばい。でもね、値や数式には影響を与えないんだよ。たとえば、赤い背景色や太字で表示された数字があったとしても、これを使うと背景色や太字だけが消えて、数字自体はそのまま残るってわけ。
+## `clearFormat()`メソッドとは？
 
-<pre class="wp-block-code"><code>// A1からC10の範囲の書式をクリアするサンプルコード
+`clearFormat()` は、指定した範囲の**セルの書式設定のみを削除**するメソッドです。背景色、フォントスタイル（太字、斜体）、文字サイズ、罫線などの視覚的な装飾をすべてクリアしますが、**セルに入力されている値や数式には一切影響を与えません。**
+
+```javascript
+// A1からC10の範囲の書式をクリアするサンプルコード
 const sheet = SpreadsheetApp.getActiveSheet();
-sheet.getRange("A1:C10").clearFormat();
-</code></pre>
+const range = sheet.getRange("A1:C10");
+range.clearFormat();
+```
 
-このコードを実行すれば、A1からC10の範囲に適用されている書式が全てクリアされるけど、データ自体はそのままだよ。
+このコードを実行すると、`A1:C10` の範囲の見た目がデフォルトの状態に戻りますが、データはそのまま保持されます。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+## 他のクリア系メソッドとの違い
 
-## 他のメソッドとの違い
+GASには `clearFormat()` と似た名前のメソッドが存在します。それぞれの違いを理解し、目的に応じて使い分けることが重要です。
 
-`clearFormat()`とよく似たメソッドに、`clear()`や`clearContent()`があるんじゃけど、それぞれの違いを理解しておくと便利だよ。
+| メソッド         | 削除対象                         | 主な用途                                     |
+| ---------------- | -------------------------------- | -------------------------------------------- |
+| `clear()`        | **値、数式、書式、メモなどすべて** | 範囲を完全に初期状態に戻したい場合           |
+| `clearContent()` | **値、数式のみ**                   | 書式は残したまま、データだけを削除したい場合 |
+| `clearFormat()`  | **書式のみ**                       | データは残したまま、見た目だけをリセットしたい場合 |
 
-### 1. clear()
+## 動的範囲に適用する方法
 
-<ul class="wp-block-list">
-  <li>
-    <strong>作用対象</strong>: データも書式も両方クリア
-  </li>
-  <li>
-    <strong>使用例</strong>: テンプレートの完全リセット
-  </li>
-</ul>
+データ量が変動するシートでは、範囲を固定で指定するのではなく、`getLastRow()` や `getLastColumn()` を使って動的に範囲を取得するのがベストプラクティスです。
 
-<pre class="wp-block-code"><code>range.clear(); // 値と書式の完全削除
-</code></pre>
-
-### 2. clearContent()
-
-<ul class="wp-block-list">
-  <li>
-    <strong>作用対象</strong>: データ（値や数式）のみクリア
-  </li>
-  <li>
-    <strong>使用例</strong>: データだけ更新したいとき
-  </li>
-</ul>
-
-<pre class="wp-block-code"><code>range.clearContent(); // 値だけ削除
-</code></pre>
-
-### 3. clearFormat()
-
-<ul class="wp-block-list">
-  <li>
-    <strong>作用対象</strong>: 書式設定のみクリア
-  </li>
-  <li>
-    <strong>使用例</strong>: 視覚的なリセットだけしたいとき
-  </li>
-</ul>
-
-<pre class="wp-block-code"><code>range.clearFormat(); // 書式だけ削除
-</code></pre>
-
-それぞれ、用途によって使い分けるといいけんね。
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## 動的範囲指定での活用法
-
-固定範囲ではなく、動的に範囲を設定して書式をクリアする方法もあるけん。例えば、データが増減するシートの場合、`getLastRow()`メソッドを使うことで、最新のデータ範囲を自動で取得できるんよ。
-
-<pre class="wp-block-code"><code>function dynamicClearFormat() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('SalesData');
+```javascript
+function dynamicClearFormat() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('売上データ');
   const lastRow = sheet.getLastRow();
   const lastColumn = sheet.getLastColumn();
 
-  // ヘッダー行を除いて、データ範囲の書式をクリア
-  if(lastRow > 1) {
-    sheet.getRange(2, 1, lastRow-1, lastColumn).clearFormat();
+  // ヘッダー行（1行目）を除いたデータ範囲の書式をクリア
+  if (lastRow > 1) {
+    const dataRange = sheet.getRange(2, 1, lastRow - 1, lastColumn);
+    dataRange.clearFormat();
   }
 }
-</code></pre>
+```
+このスクリプトなら、データが追加・削除されても常に正しい範囲の書式をリセットできます。
 
-これで、データが追加されても自動で範囲を取得して書式リセットができるんじゃ。
+## 他のメソッドとの組み合わせによる高度な活用
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+`clearFormat()` は他のメソッドと組み合わせることで、より複雑な処理を自動化できます。例えば、月次レポートのテンプレートを準備する際、古いデータを消去し、書式をリセットした上で、新しいデフォルト書式を設定する、といった一連の流れをスクリプト化できます。
 
-## 他のメソッドとの組み合わせ
-
-`clearFormat()`を使うだけでも便利だけど、他のメソッドと組み合わせることで、もっと便利に使えるけんね。たとえば、月次レポートを更新する場合、データを消したり書式をリセットしたりするだけでなく、新しい書式を一括で設定できるんじゃ。
-
-<pre class="wp-block-code"><code>function monthlyReportReset() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('MonthlyReport');
+```javascript
+function setupMonthlyReportTemplate() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('月次レポート');
   const dataRange = sheet.getRange("B2:M50");
   
-  // 段階的なクリア処理
-  dataRange.clearContent();  // 既存データ削除
-  dataRange.clearFormat();   // 書式リセット
+  // 1. 既存データを削除
+  dataRange.clearContent();
   
-  // 新規書式設定
-  dataRange.setBackground('#ffffff');
-  dataRange.setFontFamily('Arial');
-  dataRange.setHorizontalAlignment('center');
+  // 2. 古い書式をリセット
+  dataRange.clearFormat();
+  
+  // 3. 新しい基本書式を設定
+  dataRange.setBackground('#ffffff')
+           .setFontFamily('Arial')
+           .setHorizontalAlignment('center');
 }
-</code></pre>
+```
 
-このように、データと書式を分けてクリアした後、必要な書式を新たに設定できるけん、効率的だよ。
+## 実践的なユースケース：レポートの書式統一
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+複数の担当者が入力したデータなど、書式が不揃いになりがちなシートを定期的にクリーンアップするのに `clearFormat()` は最適です。
 
-## パフォーマンス最適化
+```javascript
+function standardizeSalesReport() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('売上実績');
+  if (sheet.getLastRow() < 2) return; // データがなければ終了
 
-大量のデータを扱う場合、パフォーマンスが気になることがあるけん、最適化を考える必要があるんよ。たとえば、バッチ処理を使って一度に大量の書式を処理することで、スクリプトの実行速度が向上するんだ。
-
-<pre class="wp-block-code"><code>function optimizePerformance() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const range = sheet.getRange("A1:Z1000");
-  
-  // 書式プロパティの一括取得
-  const formats = range.getTextStyles();
-  
-  // 変更処理（例：太字の解除）
-  formats.forEach(row => row.forEach(cell => cell.setBold(false)));
-  
-  // 一括設定
-  range.setTextStyles(formats);
-}
-</code></pre>
-
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-## 実践的なユースケース
-
-例えば、販売データの書式を統一したいときなんかに`clearFormat()`は大活躍するんよ。
-
-<pre class="wp-block-code"><code>function standardizeSalesReport() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Sales');
   const reportRange = sheet.getRange("A2:M" + sheet.getLastRow());
   
+  // 一旦すべての書式をクリア
   reportRange.clearFormat();
-  reportRange.setNumberFormat("#,##0");
-  reportRange.setBorder(true, true, true, true, true, true);
+  
+  // 統一フォーマットを再適用
+  reportRange.setNumberFormat("#,##0")
+             .setBorder(true, true, true, true, true, true, '#cccccc', SpreadsheetApp.BorderStyle.SOLID);
 }
-</code></pre>
+```
+このスクリプトをトリガーで定期実行すれば、レポートの見た目を常に統一された状態に保つことができます。
 
-これで、毎月新しいデータが追加されても、書式が統一されるから便利だね。
+## まとめ
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+`clearFormat()` メソッドは、スプレッドシートのデータと書式を分離して管理するための重要なツールです。値はそのままに見た目だけをリセットできるため、レポート作成の自動化やデータメンテナンスの効率を大幅に向上させます。
 
-## 結論
+他の `clear` 系メソッドとの違いをしっかり理解し、`clearFormat()` を活用して、あなたのスプレッドシート管理をよりスマートにしましょう。
 
-`clearFormat()`は、Google Apps Scriptでスプレッドシートを効率的に管理するために欠かせないメソッドばい。データの視覚的一貫性を保ちながら、書式のリセットや最適化を行えるから、プロジェクトの運営やレポート作成の効率がグッと上がるよ。
-
-これを活用すれば、作業がラクになるし、スプレッドシートの管理がしやすくなるけん、ぜひ試してみてけ！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-<task_progress>
-- [x] Analyze requirements
-- [ ] Examine search implementation
-- [x] Check for search index file
-- [x] Trigger Hugo build
-- [x] Read problematic content file
-- [x] Correct YAML front matter
-- [x] Re-run Hugo build
-- [x] Investigate new file path error
-- [x] Read the actual problematic file
-- [x] Read the next problematic file
-- [x] Read the next problematic file
-- [ ] Verify search index generation
-- [ ] Fix search functionality
-- [ ] Incorporate latest changes
-- [ ] Merge changes
-- [ ] Commit changes
-</task_progress>
-</write_to_file>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}

@@ -1,351 +1,184 @@
 ---
-title: GASでスプレッドシートの複数セルからデータを高速で一括取得する方法完全ガイド
-author: arukayies
-type: post
-date: 2020-09-22T03:49:18+00:00
-excerpt: GASでスプレッドシートの指定範囲すべての値を取得する方法を紹介します！
-url: /gas/getvalues
+title: "【GASスプレッドシート】getValues()で複数セルデータを高速一括取得・SEO最適化"
+description: "Google Apps Script (GAS)の`getValues()`メソッドを徹底解説。スプレッドシートの複数セルデータを二次元配列として高速に一括取得する方法を、具体的なコード例で紹介します。`getValue()`や`getDisplayValues()`との違い、データ型（数値、文字列、日付、真偽値）の挙動、そして大規模データ処理のためのパフォーマンスとメモリ最適化（チャンク処理）まで、GAS初心者から上級者まで役立つ情報満載です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getValues", "getValue", "getDisplayValues", "セル値", "データ型", "二次元配列", "自動化", "一括取得", "高速化", "パフォーマンス", "メモリ最適化", "チャンク処理", "プログラム", "開発"]
+date: "2020-09-22T03:49:18.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getvalues"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1600746560
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 2.5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:23:57
-categories:
-  - GAS
-tags:
-  - GAS
-  - getValues()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年9月"]
 ---
-こんにちは！今回はGoogle Apps Script（GAS）でスプレッドシートのデータを扱ううえで超重要な`getValues()`メソッドについて、詳しく解説していくばい！
 
-このメソッドを使いこなせば、大量のデータを効率よく処理できるようになるけん、しっかり学んでいこうじゃ！
+Google Apps Script (GAS) を用いてスプレッドシートのデータを操作する際、**複数セルの値（データ）を効率的かつ高速に取得する**ことは、自動化スクリプトのパフォーマンスと信頼性を決定づける最も重要な要素の一つです。`getValues()`メソッドは、このニーズに応えるための基本的ながら極めて強力な機能です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+本記事では、GASの`Range.getValues()`メソッドを徹底解説します。複数セルのデータを二次元配列として一括取得する基本から、`getValue()`や`getDisplayValues()`との明確な違い、**各データ型（数値、文字列、日付、真偽値）の挙動**、さらには**大規模データ処理のためのパフォーマンス最適化（チャンク処理）**、そしてよくある「ハマりどころ」と対策まで、具体的なコード例を交えて分かりやすく紹介します。
 
-## 1. getValues()とは？
+GAS初心者の方から、スプレッドシート自動化の効率と信頼性をさらに高めたい上級者まで、すべての方に役立つ情報が満載です。
 
-`getValues()`は、スプレッドシートから複数のセルの値を一括取得するメソッドたい。
+{{< affsearch keyword="GAS スプレッドシート データ取得 高速化 getValues" img="/gas.jpg">}}
 
-例えば、A1からC3の範囲を取得するコードはこうなるとよ。
+## `getValues()`メソッドとは？GASで複数セルのデータを高速一括取得する基本
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSheet();
-const values = sheet.getRange("A1:C3").getValues();
-console.log(values);
-</code></pre>
+`Range.getValues()`メソッドは、Google Apps Scriptにおいて、**指定したセル範囲（Rangeオブジェクト）内のすべてのセルの値（データ）を、一度のAPI呼び出しでまとめて二次元配列として取得する**ための機能です。
 
-取得したデータは二次元配列として返されるっちゃね。
+これは、スプレッドシートのデータ全体や大規模なデータブロックを処理する際に、個々のセルに対して`getValue()`を繰り返し呼び出すことによるパフォーマンスのボトルネックを解消し、スクリプトの実行速度を劇的に向上させるための最も重要なベストプラクティスです。
 
-<pre class="wp-block-code"><code>&#91;
-  &#91;"データ1", "データ2", "データ3"],
-  &#91;"データ4", "データ5", "データ6"],
-  &#91;"データ7", "データ8", "データ9"]
-]
-</code></pre>
+### 基本的な使用例：A1からC3範囲のデータを一括取得する
 
-## 2. getValue()との違い
+以下のスクリプトは、アクティブなシートの`A1:C3`範囲の値を一括で取得し、その二次元配列の内容をログに出力する最も基本的な例です。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド名
-    </th>
-    
-    <th>
-      取得できる範囲
-    </th>
-    
-    <th>
-      戻り値の型
-    </th>
-  </tr>
+```javascript
+/**
+ * アクティブなシートのA1:C3範囲の全セルの値を二次元配列として一括取得し、ログに出力する関数。
+ */
+function getAllValuesBasic() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("A1:C3");      // 対象範囲をA1:C3に設定
+  const values = range.getValues();           // 範囲内の全セルの値を二次元配列として一括取得
   
-  <tr>
-    <td>
-      <code>getValue()</code>
-    </td>
-    
-    <td>
-      単一セル
-    </td>
-    
-    <td>
-      プリミティブ型
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getValues()</code>
-    </td>
-    
-    <td>
-      複数セル
-    </td>
-    
-    <td>
-      二次元配列
-    </td>
-  </tr>
-</table></figure> 
+  // 取得した二次元配列の内容をJSON形式でログに出力 (視認性のため整形)
+  Logger.log(`A1:C3範囲の取得値:\n${JSON.stringify(values, null, 2)}`);
+  /* 例: values の出力形式
+   * [
+   *   ["データ1", "データ2", "データ3"],
+   *   [123, true, new Date("2024-01-01T00:00:00.000Z")],
+   *   ["", "空", null] // 空白セルは空文字列""として取得されます
+   * ]
+   */
+}
+```
+このコードを実行すると、`A1:C3`範囲内のすべてのセルに入力されている内容が、二次元配列としてログに表示されます。
 
-例えば100セル分のデータを取得するとき、`getValue()`を100回繰り返すとめちゃくちゃ遅くなるとばい！ `getValues()`を使えば一括で取得できるけん、処理速度が圧倒的に速くなるとよ。
+## `getValue()` vs `getValues()` vs `getDisplayValues()`：明確な違いと使い分け
 
-## 3. getValues()の活用例
+GASでセルの値を取得するメソッドには、`getValue()`、`getValues()`、`getDisplayValues()`の3種類があります。それぞれの特性を理解し、目的と状況に応じて適切に使い分けることが重要です。
 
-### 3-1. シンプルなデータ取得
+| メソッド名 | 対象範囲 | 戻り値の型 | 特徴 | 主な用途 |
+| :--- | :--- | :--- | :--- | :--- |
+| `getValue()` | 単一セル | プリミティブ型 (`Number`, `String`, `Boolean`, `Date`) | セルの内部値を取得。書式設定は考慮されない。**パフォーマンス注意**。 | 特定の単一セルの値のみが必要な場合。 |
+| `getValues()` | 複数セル | `Array<Array<any>>` (二次元配列) | 範囲内の全セルの内部値を取得。`getValue()`のバッチ版。**最も推奨される**。 | 大量データの内部値が必要な場合（計算、比較）。 |
+| `getDisplayValues()` | 複数セル | `Array<Array<String>>` (二次元文字列配列) | 範囲内の全セルの**表示形式どおりの文字列**を取得。 | 書式設定を含めた表示内容（文字列）が必要な場合（レポート出力、UI表示）。 |
 
-<pre class="wp-block-code"><code>const data = sheet.getRange("A1:B10").getValues();
-data.forEach(row =&gt; console.log(row));
-</code></pre>
+### 取得するデータ型に関する重要な注意点
 
-この方法で、A1からB10までのデータをまとめて取得できるとばい。
+*   **`getValues()`**: セルの内容に応じて、`Number`、`String`、`Boolean`、`Date`オブジェクトを返します。特に日付は`Date`オブジェクトとして取得されるため、その後の処理で日付操作がしやすいメリットがあります。空白セルは空文字列`""`として返されます。
+*   **`getDisplayValues()`**: すべてのセルの値を**文字列として**返します。日付や数値も、スプレッドシート上で表示されている形式（例: `"2024/01/01"`, `"¥1,234"`, `"12.34%"`）の文字列として取得されます。
 
-### 3-2. 数値データを変換して処理
+**使い分けのヒント**:
+*   データを使って計算や比較を行う場合は、内部値を取得する**`getValues()`**が適しています。
+*   スプレッドシートに表示されている内容をそのまま利用したい場合（例: レポート作成、メール本文への挿入）は、**`getDisplayValues()`**が便利です。
+*   単一セルでも、ループ処理を行う場合は**`getValues()`**でまとめて取得する方がパフォーマンスが良いです。
 
-<pre class="wp-block-code"><code>const data = sheet.getRange("A1:A10").getValues();
-const doubled = data.map(row =&gt; &#91;row&#91;0] * 2]);
-sheet.getRange("B1:B10").setValues(doubled);
-</code></pre>
+## `getValues()`の効率的な活用術
 
-A列の数値を2倍してB列に書き込む、って感じの使い方じゃね。
+`getValues()`は、データを高速に読み込むだけでなく、その後のデータ処理を効率的に行うための基盤となります。
 
-### 3-3. 大量データを処理する場合の最適化
+### 1. 取得した二次元配列をループ処理で操作する
 
-<pre class="wp-block-code"><code>function processLargeData() {
+`getValues()`で取得した二次元配列は、JavaScriptの標準的な`Array.prototype.forEach()`や`Array.prototype.map()`などを使って簡単に操作できます。
+
+```javascript
+/**
+ * A1からB10のデータを取得し、各行をログに出力する関数。
+ */
+function processDataWithForEach() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const lastRow = sheet.getLastRow();
-  const data = sheet.getRange(1, 1, lastRow, 1).getValues();
+  const data = sheet.getRange("A1:B10").getValues(); // A1:B10のデータを一括取得
 
-  const processedData = data.map(row =&gt; &#91;row&#91;0] ? row&#91;0] * 1.1 : row&#91;0]]);
-
-  sheet.getRange(1, 2, lastRow, 1).setValues(processedData);
+  Logger.log("A1:B10のデータ:");
+  data.forEach((row, rowIndex) => { // 各行の配列をループ
+    Logger.log(`  行 ${rowIndex + 1} のデータ: [${row.join(', ')}]`);
+    // ここで各行データに対する処理を追加
+  });
 }
-</code></pre>
+```
 
-大量データを扱うときは、`getValues()`で一括取得してループ処理すると高速化できるばい！
+### 2. 数値データを変換して別の列に書き込む
 
-## 4. getValues()の注意点
+取得した数値データを加工（例: 2倍にする）し、別のセル範囲に一括で書き戻すことも`getValues()`と`setValues()`を組み合わせることで効率的に行えます。`setValues()`は、`getValues()`で取得したような二次元配列の形式でデータを設定する必要があります。
 
-### 4-1. 取得するデータの型
+```javascript
+/**
+ * A列の数値を2倍にし、結果をB列に書き込む関数。
+ */
+function doubleColumnAAndSetValues() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const sourceRange = sheet.getRange("A1:A10"); // A1からA10の範囲
+  const values = sourceRange.getValues();       // A列の値を一括取得
 
-スプレッドシートの表示形式によって、取得するデータ型が変わることがあるけん要注意！
-
-<ul class="wp-block-list">
-  <li>
-    数値 → <code>Number</code>
-  </li>
-  <li>
-    文字列 → <code>String</code>
-  </li>
-  <li>
-    日付 → <code>Date</code>
-  </li>
-</ul>
-
-もし表示形式通りのデータを取得したいなら、`getDisplayValues()`を使うとよかよ！
-
-<pre class="wp-block-code"><code>const displayData = sheet.getRange("A1:A10").getDisplayValues();
-</code></pre>
-
-### 4-2. メモリ管理に注意
-
-10,000行以上のデータを扱うときは、一度に全て取得するとメモリを圧迫する可能性があるばい。そんなときは、500行ごとに処理するのがおすすめじゃ。
-
-<pre class="wp-block-code"><code>const chunkSize = 500;
-for (let i = 0; i &lt; totalRows; i += chunkSize) {
-  const chunkData = sheet.getRange(i + 1, 1, chunkSize, 1).getValues();
-  // データ処理
+  // 取得した値を2倍に加工し、新しい二次元配列を作成
+  const doubledValues = values.map(row => [Number(row[0]) * 2]); // row[0]はA列の値
+  
+  const targetRange = sheet.getRange("B1:B10"); // 書き込み先のB1からB10の範囲
+  targetRange.setValues(doubledValues);        // 新しい値を一括でB列に設定
+  Logger.log("A列の値を2倍にし、B列に書き込みました。");
 }
-</code></pre>
+```
+**重要な注意点**: `setValues()`を使用する際、設定する二次元配列の「行数と列数」が、`setValues()`を呼び出すRangeオブジェクトの「行数と列数」と**完全に一致している必要があります**。一致しない場合、エラーが発生します。
 
-## まとめ
+### 3. 大量データ処理のための最適化：`getLastRow()`とチャンク処理
 
-<ul class="wp-block-list">
-  <li>
-    <code>getValues()</code>はスプレッドシートのデータを効率よく取得するために必須！
-  </li>
-  <li>
-    <code>getValue()</code>と比べて大幅にパフォーマンスが良い。
-  </li>
-  <li>
-    <code>getDisplayValues()</code>を使えば、表示通りの値を取得可能。
-  </li>
-  <li>
-    大量データを扱うときは、メモリ負荷を考慮してチャンク処理をする。
-  </li>
-</ul>
+スプレッドシートのデータ量が非常に多い場合（数万行以上）、`getDataRange().getValues()`でシート全体を一括取得しようとすると、GASのメモリ制限に達したり、実行時間が長くなりすぎたりする可能性があります。このような場合は、`getLastRow()`で最終行を特定し、データを小さな「チャンク（塊）」に分割して順次処理する手法が有効です。
 
-GASでスプレッドシートを扱うなら、`getValues()`をマスターして快適な開発ライフを送ろうばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range#getValues" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+```javascript
+/**
+ * シートのデータを1行目から最終行までチャンク（バッチ）に分割して処理する関数。
+ * 各チャンクでA列の値を1.1倍にし、B列に書き込みます。
+ */
+function processLargeDataInChunks() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const lastRow = sheet.getLastRow(); // データが入力されている最終行番号を取得
+  const chunkSize = 1000;             // 一度に処理する行のバッチサイズ
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
+  Logger.log(`シートの最終行: ${lastRow}、チャンクサイズ: ${chunkSize}`);
+
+  for (let i = 1; i <= lastRow; i += chunkSize) {
+    const currentChunkNumRows = Math.min(chunkSize, lastRow - i + 1); // 現在のチャンクの行数を計算
+    // 現在のチャンクのA列範囲を取得 (例: A1:A1000, A1001:A2000 ...)
+    const sourceRange = sheet.getRange(i, 1, currentChunkNumRows, 1); 
+    const values = sourceRange.getValues(); // チャンクのA列の値を一括取得
+
+    // 取得した値を加工 (例: 1.1倍にする)
+    const processedValues = values.map(row => [row[0] ? Number(row[0]) * 1.1 : row[0]]);
+
+    // 加工した値をB列の対応するチャンク範囲に一括で書き込み
+    const targetRange = sheet.getRange(i, 2, currentChunkNumRows, 1);
+    targetRange.setValues(processedValues);
     
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/va726f77ce19c264bc8ae4520f2ee26cc9641a80eead40c2c8c599dc34ccb25d1/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/va726f77ce19c264bc8ae4520f2ee26cc9641a80eead40c2c8c599dc34ccb25d1/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
+    Logger.log(`  チャンク処理済み: ${i}行目から${i + currentChunkNumRows - 1}行目`);
+    // Utilities.sleep(100); // 必要に応じてAPI呼び出し間隔を調整し、API制限回避に役立てる
+  }
+  Logger.log("大規模データのチャンク処理が完了しました。");
+}
+```
+チャンク処理は、メモリの圧迫を避けつつ、GASの実行制限（最大実行時間、API呼び出し回数など）を回避するために非常に効果的な手法です。
+
+## よくあるハマりどころと解決策
+
+*   **`setValues()`の配列形状不一致エラー**:
+    `targetRange.setValues(data)`を実行する際、`data`の二次元配列の`行数`と`列数`が、`targetRange`の`getNumRows()`と`getNumColumns()`で取得される値と完全に一致している必要があります。
+    *   **対策**: `getRange(開始行, 開始列, 行数, 列数)`で範囲を指定する際に、`getValues()`で取得した配列の`length`（行数）と`[0].length`（列数）を考慮して正確に範囲を定義しましょう。
+*   **`getValue()`と`getDisplayValues()`の混同**:
+    「数値12345」が「¥12,345」と表示されている場合、`getValue()`は`12345`（Number型）を返しますが、`getDisplayValues()`は`"¥12,345"`（String型）を返します。用途に応じてどちらのメソッドを使うべきか慎重に選びましょう。
+    *   **対策**: 計算が必要なら`getValues()`、表示内容が重要なら`getDisplayValues()`と明確に使い分ける。
+
+## まとめ：`getValues()`でGASスプレッドシートのデータ取得と処理を加速
+
+Google Apps Scriptの`getValues()`メソッドは、スプレッドシートのデータを効率的かつ高速に取得するための中心的な機能です。これをマスターすることで、あなたのGASスクリプトは格段にパワフルなものへと進化します。
+
+*   **高速な一括取得**: 複数セルのデータを一度のAPI呼び出しで二次元配列として取得し、スクリプトの実行パフォーマンスを最大化します。
+*   **適切なデータ型管理**: `getValue()`、`getValues()`、`getDisplayValues()`の使い分けを理解し、セルの内容に応じた正確なデータ型で情報を取得・処理します。
+*   **大規模データ処理の最適化**: `getLastRow()`との組み合わせやチャンク処理を導入することで、GASの実行制限を回避し、メモリ効率の良い堅牢なスクリプトを構築できます。
+*   **堅牢なスクリプト開発**: `setValues()`の配列形状一致の原則を理解し、エラーが発生しないように正確に範囲とデータを定義します。
+
+本記事で紹介した`getValues()`の知識と実践例を活用し、あなたのGASスプレッドシート自動化プロジェクトを次のレベルへと引き上げてください。データ取得の効率化は、あらゆる自動化の成功の鍵となります。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range" >}} 
   
-  <br /> <a rel="noopener" href="https://qiita.com/kakakaori830/items/288307c7e639ac02ba7f" title="GASからGoogleドキュメントを操作する方法 - Qiita" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://gsuiteguide.jp/sheets/getvalues/" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img loading="lazy" decoding="async" src="https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Fadvent-calendar-ogp-background-7940cd1c8db80a7ec40711d90f43539e.jpg%3Fixlib%3Drb-4.0.0%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMjAwODEyJTJGcHJvZmlsZS1pbWFnZXMlMkYxNTU5NzAyMzU3P2l4bGliPXJiLTQuMC4wJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz0xNDg2NWQwYzFjOWNkZTQzZDQyOWVkY2RhMzE1NDc4ZQ%26blend-x%3D120%26blend-y%3D462%26blend-w%3D90%26blend-h%3D90%26blend-mode%3Dnormal%26mark64%3DaHR0cHM6Ly9xaWl0YS1vcmdhbml6YXRpb24taW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnMzLWFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkZxaWl0YS1vcmdhbml6YXRpb24taW1hZ2UlMkZiNjgxNDgzYzU4ZmYwYTJjZTllNmI1NzgwM2IyMWE2M2Q3Mjk0Mzc4JTJGb3JpZ2luYWwuanBnJTNGMTY1OTMyMjQxOD9peGxpYj1yYi00LjAuMCZ3PTQ0Jmg9NDQmZml0PWNyb3AmbWFzaz1jb3JuZXJzJmNvcm5lci1yYWRpdXM9OCZiZz1GRkZGRkYmYm9yZGVyPTIlMkNGRkZGRkYmZm09cG5nMzImcz1mZDA1MTE4ZTIwNmNiZDA4ZjU2MjI2MjIyZWE0YWM2NA%26mark-x%3D186%26mark-y%3D515%26mark-w%3D40%26mark-h%3D40%26s%3D1da46123be7d8f36c82abfcc7558e76a?ixlib=rb-4.0.0&#038;w=1200&#038;fm=jpg&#038;mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTk2MCZoPTMyNCZ0eHQ9R0FTJUUzJTgxJThCJUUzJTgyJTg5R29vZ2xlJUUzJTgzJTg5JUUzJTgyJUFEJUUzJTgzJUE1JUUzJTgzJUExJUUzJTgzJUIzJUUzJTgzJTg4JUUzJTgyJTkyJUU2JTkzJThEJUU0JUJEJTlDJUUzJTgxJTk5JUUzJTgyJThCJUU2JTk2JUI5JUU2JUIzJTk1JnR4dC1hbGlnbj1sZWZ0JTJDdG9wJnR4dC1jb2xvcj0lMjMzQTNDM0MmdHh0LWZvbnQ9SGlyYWdpbm8lMjBTYW5zJTIwVzYmdHh0LXNpemU9NTYmdHh0LXBhZD0wJnM9M2NmYzU1N2EyYWRiODE5YzUyM2EzY2FmZmRhZmQ5Yjk&#038;mark-x=120&#038;mark-y=112&#038;blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjAuMCZ3PTgzOCZoPTU4JnR4dD0lNDBrYWtha2Fvcmk4MzAmdHh0LWNvbG9yPSUyMzNBM0MzQyZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1mZjY3MWYwNzBmZmZjZGE4ZWUyOWEwZmRkZjk3N2U3Yg&#038;blend-x=242&#038;blend-y=454&#038;blend-w=838&#038;blend-h=46&#038;blend-fit=crop&#038;blend-crop=left%2Cbottom&#038;blend-mode=normal&#038;txt64=5qCq5byP5Lya56S-44Ko44Kk44OB44O844Og44Op44Kk44OV44OH44K244Kk44Oz&#038;txt-x=242&#038;txt-y=539&#038;txt-width=838&#038;txt-clip=end%2Cellipsis&#038;txt-color=%233A3C3C&#038;txt-font=Hiragino%20Sans%20W6&#038;txt-size=28&#038;s=90441b586e851a717f9d06961360a6aa" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" /></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GASからGoogleドキュメントを操作する方法 - Qiita
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        はじめに この記事は「Ateam LifeDesign Advent Calendar 2023」で完走賞を狙って25記事書いているうちの14日目の記事です。今年も完走目指して頑張るぞ！ 今日はGASからGoogleドキュメントを操作する方...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://qiita.com/kakakaori830/items/288307c7e639ac02ba7f" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://qiita.com/kakakaori830/items/288307c7e639ac02ba7f" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          qiita.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://developers.google.com/apps-script/guides/support/best-practices" >}} 
+  
+{{< blog-card "https://qiita.com/kakakaori830/items/288307c7e639ac02ba7f" >}}

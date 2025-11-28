@@ -1,392 +1,154 @@
 ---
-title: GASでスプレッドシートの指定範囲からメモのみを削除する方法
-author: arukayies
-type: post
-date: 2020-03-14T07:55:46+00:00
-excerpt: GASでスプレッドシートの指定範囲のメモのみを 削除する方法を紹介します！
-url: /gas/clearnote
+title: "GASのclearNote()でスプレッドシートのメモを効率的に削除する方法"
+description: "Google Apps Script (GAS) を利用して、スプレッドシートの指定範囲からメモのみを削除する clearNote() メソッドの使い方を解説します。基本的な構文から、条件付きでの削除、ログ記録といった応用例まで、サンプルコード付きで紹介します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "clearNote()", "業務効率化", "メモ削除"]
+date: "2020-03-14T07:55:46.000Z"
+url: "/gas/clearnote"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-snapEdIT:
-  - 1
-last_modified:
-  - 2025-03-07 22:46:42
-categories:
-  - GAS
-tags:
-  - clearNote()
-  - GAS
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年3月"]
+lastmod: "2025-11-26T22:01:10+09:00"
 ---
-Google Apps Script（GAS）の中で、スプレッドシートのメモを管理する方法として、`clearNote()`メソッドを知っておくと便利ばい！このメソッドを使うことで、セルに設定されたメモを簡単に削除できるけん、業務の効率化に繋がるんだ。今回はその使い方について、しっかり解説するけん、ぜひ参考にしてみてな。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使用すると、スプレッドシートの定型業務を自動化できます。その中でも `clearNote()` メソッドは、セルに付与された「メモ」だけをピンポイントで削除できる便利な機能です。
 
-## メモとは？そしてclearNote()メソッドの役割
+この記事では、`clearNote()` メソッドの基本的な使い方から、実務で役立つ応用テクニックまでを詳しく解説します。
 
-まずは、スプレッドシートのメモ機能について簡単に説明しようか。メモは、セルに関連する非表示の注釈やコメントとして使われ、他のユーザーに通知されることはないんだ。コメントとは違って、主に自分用のメモとして使うことが多いさ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-で、この`clearNote()`メソッドは、これらのメモを一括で削除するための方法なんだよ。手動で消す手間を省けるから、定期的なメンテナンスやバッチ処理の際に大活躍するんだよね。
+## スプレッドシートの「メモ」と`clearNote()`メソッドの役割
 
-## clearNote()メソッドの使い方
+スプレッドシートの「メモ」は、セルに対する補足情報や備忘録を記録するための機能です。共同編集者への通知機能がある「コメント」とは異なり、主に個人的な注釈として利用されます。
+
+`clearNote()` メソッドは、このメモをスクリプトによって一括で削除するための機能です。手作業で一つずつ削除する手間を省き、シートのメンテナンスやデータ初期化処理を効率化します。
+
+## `clearNote()`メソッドの使い方
 
 ### 基本的な構文
 
-<pre class="wp-block-code"><code>range.clearNote();
-</code></pre>
+`clearNote()` メソッドは、`Range` オブジェクトに対して呼び出します。
 
-このメソッドは、簡単な構文で、指定した範囲内のメモを削除するよ。ここで重要なのは、`range`が削除対象の範囲を指すってこと。例えば、特定のセルや範囲を指定して削除できるんだ。
+```javascript
+// 指定した範囲（range）内のすべてのメモを削除
+range.clearNote();
+```
 
-### 単一セルのメモ削除
+引数は不要で、指定した範囲内のすべてのメモが削除されます。
 
-<pre class="wp-block-code"><code>function clearSingleCellNote() {
-  const sheet = SpreadsheetApp.getActiveSheet();
+### 単一セルのメモを削除する
+
+特定のセルのメモだけを削除する場合は、以下のように記述します。
+
+```javascript
+function clearSingleCellNote() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('シート1');
+  // B2セルのメモを削除
   sheet.getRange('B2').clearNote();
 }
-</code></pre>
+```
 
-これを実行すると、B2セルに設定されているメモだけを削除することができるんだ。でも、アクティブシートに依存しているから、特定のシートを指定するようにするほうが堅実な方法だよ。
+### 複数セルのメモを一括削除する
 
-### 範囲指定での一括削除
+特定の範囲に含まれるすべてのメモを一括で削除することも可能です。
 
-<pre class="wp-block-code"><code>function clearRangeNotes() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('SalesData');
+```javascript
+function clearRangeNotes() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('売上データ');
+  // C3からF20の範囲にあるメモをすべて削除
   const dataRange = sheet.getRange('C3:F20');
   dataRange.clearNote();
 }
-</code></pre>
+```
+この方法は、定期的に更新されるデータシートのクリーンアップ作業などに役立ちます。
 
-この例では、C3からF20までの範囲内のメモを一括で削除できるよ。特に営業データのように、定期的に更新が必要なシートにとっては、便利な使い方だね。
+## 実用例：条件に応じてメモを削除する
 
-## 実務で役立つ！条件付きメモ削除の活用
+特定の条件に一致するメモだけを選択的に削除することもできます。例えば、メモの内容に `[TEMP]` という文字列が含まれるものだけを削除するスクリプトです。
 
-もし、特定の条件でメモを削除したい場合、`clearNote()`を条件付きで使うこともできるよ。例えば、メモに「[TEMP]」というタグがついている場合にのみ削除する方法を見てみよう。
-
-<pre class="wp-block-code"><code>function clearConditionalNotes() {
+```javascript
+function clearConditionalNotes() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const lastRow = sheet.getLastRow();
-  const notes = sheet.getRange(`A2:A${lastRow}`).getNotes();
-  
-  notes.forEach((note, index) =&gt; {
-    if (note&#91;0].includes('&#91;TEMP]')) {
-      sheet.getRange(index + 2, 1).clearNote();
+  const range = sheet.getRange("A2:A" + sheet.getLastRow());
+  const notes = range.getNotes(); // 範囲内のメモを二次元配列で取得
+
+  for (let i = 0; i < notes.length; i++) {
+    if (notes[i][0].includes('[TEMP]')) {
+      // 条件に一致した場合、対応するセルのメモを削除
+      sheet.getRange(i + 2, 1).clearNote();
     }
-  });
+  }
 }
-</code></pre>
+```
+これにより、一時的なメモだけを効率的に削除でき、重要な情報を誤って消すリスクを防ぎます。
 
-これで、A列のメモに「[TEMP]」が含まれているものだけを削除できるんだ。必要なメモを選んで消せるから、かなり便利ばい。
+## 他のクリア系メソッドとの比較
 
-## いろんなクリアメソッドとの比較
+GASには、`clearNote()` 以外にもデータを削除するためのメソッドがいくつか存在します。目的に応じて適切に使い分けることが重要です。
 
-`clearNote()`の他にも、Google Apps Scriptにはいろんなクリアメソッドがあるけん、どれを使うかは目的に合わせて選ぼうね。<figure class="wp-block-table">
+| メソッド名       | 対象範囲   | 削除内容                             |
+| ---------------- | ---------- | ------------------------------------ |
+| `clear()`        | セル       | 値、書式、メモ、データ検証などすべて |
+| `clearContent()` | セル       | 値と数式のみ                         |
+| `clearNote()`    | セル       | メモのみ                             |
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド名
-    </th>
-    
-    <th>
-      対象範囲
-    </th>
-    
-    <th>
-      削除内容
-    </th>
-    
-    <th>
-      戻り値
-    </th>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>clear()</code>
-    </td>
-    
-    <td>
-      セル
-    </td>
-    
-    <td>
-      値・書式・メモ・入力規則すべて
-    </td>
-    
-    <td>
-      Rangeオブジェクト
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>clearContent()</code>
-    </td>
-    
-    <td>
-      セル
-    </td>
-    
-    <td>
-      値と数式のみ
-    </td>
-    
-    <td>
-      Rangeオブジェクト
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>clearNote()</code>
-    </td>
-    
-    <td>
-      セル
-    </td>
-    
-    <td>
-      メモのみ
-    </td>
-    
-    <td>
-      Rangeオブジェクト
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>clearNotes()</code>
-    </td>
-    
-    <td>
-      シート全体
-    </td>
-    
-    <td>
-      全メモ
-    </td>
-    
-    <td>
-      Sheetオブジェクト
-    </td>
-  </tr>
-</table></figure> 
+`clearNote()` はメモに特化しているため、セルの値や書式を保持したままメモだけを整理したい場合に最適です。
 
-`clearNote()`はメモ専用だから、データや書式などを消したくないときに特に役立つんだよ。
+## 高度なテクニック：ログ記録と安全対策
 
-## 高度な使い方：ログの記録や安全対策
+### メモ削除のログを記録する
 
-### メモ削除前にログを記録
+重要な情報を誤って削除しないために、削除前にメモの内容を別のシートに記録しておくことをお勧めします。
 
-<pre class="wp-block-code"><code>function clearNotesWithLogging() {
+```javascript
+function clearNotesWithLogging() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const notes = sheet.getRange('B2:D10').getNotes();
-  const logSheet = SpreadsheetApp.getActive().getSheetByName('AuditLog') 
-    || SpreadsheetApp.getActive().insertSheet('AuditLog');
+  const range = sheet.getRange('B2:D10');
+  const notes = range.getNotes();
+  const logSheet = SpreadsheetApp.getActive().getSheetByName('監査ログ') || SpreadsheetApp.getActive().insertSheet('AuditLog');
 
-  notes.flat().forEach((note, index) =&gt; {
-    if (note) {
-      const cell = sheet.getRange(2 + Math.floor(index/3), 2 + (index%3));
-      logSheet.appendRow(&#91;new Date(), cell.getA1Notation(), note]);
-      cell.clearNote();
+  for (let r = 0; r < notes.length; r++) {
+    for (let c = 0; c < notes[r].length; c++) {
+      if (notes[r][c] !== '') {
+        const cell = range.getCell(r + 1, c + 1);
+        // ログシートに記録
+        logSheet.appendRow([new Date(), cell.getA1Notation(), notes[r][c]]);
+        // メモを削除
+        cell.clearNote();
+      }
     }
-  });
+  }
 }
-</code></pre>
+```
 
-このように、メモを削除する前にログを記録しておくと、後でどんな変更があったのか確認できて便利だよね。
+### メモの存在を確認してから処理を実行
 
-### メモの存在チェックと最適化
+広大な範囲に対して処理を行う場合、不要な処理を避けるために、メモが存在するかどうかを事前に確認するとパフォーマンスが向上します。
 
-<pre class="wp-block-code"><code>function safeClearNotes() {
+```javascript
+function safeClearNotes() {
   const sheet = SpreadsheetApp.getActiveSheet();
   const range = sheet.getRange('A1:Z1000');
   const notes = range.getNotes();
   
-  if (notes.flat().some(note =&gt; note !== '')) {
+  // flat()で一次元配列に変換し、空でないメモが存在するか確認
+  if (notes.flat().some(note => note !== '')) {
     range.clearNote();
-    console.log('Cleared existing notes in range A1:Z1000');
+    console.log('指定範囲内のメモを削除しました。');
   } else {
-    console.log('No notes found in specified range');
+    console.log('指定範囲にメモは見つかりませんでした。');
   }
 }
-</code></pre>
+```
 
-メモが存在する場合にのみ削除することで、パフォーマンスも最適化できるんだよ。大規模なデータ範囲で使うときに便利さ。
+## まとめ
 
-## 結論
+`clearNote()` メソッドは、スプレッドシート内のメモを効率的に管理するための強力なツールです。基本的な削除から条件付きの処理、安全対策まで、さまざまな応用が可能です。
 
-`clearNote()`メソッドは、Google Apps Scriptを使ってスプレッドシートのメモを効率的に管理できる強力なツールなんだ。業務でよく使うメモ削除を自動化したり、バッチ処理を行ったりする際に特に役立つよ！これをうまく活用すれば、作業の効率がかなりアップするけん、ぜひ使ってみてな！
+手動での煩雑なメモ管理から脱却し、スクリプトによる自動化で作業効率を大幅に向上させましょう。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://excel-ubara.com/apps_script1/GAS029.html" title="メモの挿入・削除と改行文字｜Google Apps Script入門" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+{{< blog-card "https://excel-ubara.com/apps_script1/GAS029.html" >}} 
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://excel-ubara.com/apps_script1/image310.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://excel-ubara.com/apps_script1/image310.jpg" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        メモの挿入・削除と改行文字｜Google Apps Script入門
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GoogleAppsScriptで、スプレッドシートのセルにメモを挿入・削除するスクリプトの書き方です、メモを改行する時の改行コードについても解説します。メモは、まさしくメモとして各種注意事項や、変更履歴等として使う事の出来る機能です。ただ...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://excel-ubara.com/apps_script1/GAS029.html" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://excel-ubara.com/apps_script1/GAS029.html" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          excel-ubara.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://gsuiteguide.jp/sheets/clearnote/" title="セル範囲に設定されているメモのみクリアする：clearNote()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セル範囲に設定されているメモのみクリアする：clearNote()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        セル範囲に設定されているメモのみクリアする。 サンプルコード // 現在アクティブなシートにある A1:B5 のセル範囲を取得 var range = SpreadsheetApp.getActive().getRange(‘A1:B5’)...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/clearnote/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/clearnote/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< blog-card "https://gsuiteguide.jp/sheets/clearnote/" >}}

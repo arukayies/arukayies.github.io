@@ -1,390 +1,149 @@
 ---
-title: GASでスプレッドシートのデータ範囲を見出し付きで簡単取得する方法
-author: arukayies
-type: post
-date: 2020-06-14T16:19:48+00:00
-excerpt: GASでスプレッドシートのグラフのデータ範囲を取得(見出し指定)する方法を紹介します！
-url: /gas/getdatatable-firstrowisheader
+title: "GAS getDataTable(true) でヘッダー行を正しく扱う方法【グラフ作成】"
+description: "Google Apps Script (GAS) の getDataTable() でヘッダー行がデータとして扱われてしまう問題の解決策を解説。firstRowIsHeader パラメータを true に設定する重要性と、false との使い分けを具体例で紹介します。グラフ作成の自動化で失敗しないための必須知識です。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getDataTable", "DataTable", "firstRowIsHeader", "グラフ作成"]
+date: "2020-06-14T16:19:48.000Z"
+url: "/gas/getdatatable-firstrowisheader"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:12:35
-categories:
-  - GAS
-tags:
-  - GAS
-  - getDataTable(firstRowIsHeader)
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
+lastmod: "2025-11-28T00:00:00+00:00"
 ---
-Google Apps Script（GAS）って、スプレッドシートやその他のGoogleサービスを自動化するのに便利なツールやけど、今回はその中でも`getDataTable(firstRowIsHeader)`メソッドの使い方に焦点を当てて、初心者でもわかりやすく解説していくけんね！このメソッド、ほんとうに便利で、データを整然と扱えるようになるばい。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+GASの `getDataTable()` を使ってグラフを作ったら、「ヘッダー（見出し）までデータとして扱われてしまい、グラフがおかしくなった」という経験はありませんか？
 
-## まずはDataTableの基本からさ
+これは `getDataTable()` の非常に重要なパラメータ `firstRowIsHeader` の設定が原因です。この設定を正しく理解するだけで、データ取得の精度が格段に上がり、グラフ作成の自動化がスムーズに進みます。
 
-### DataTableってなに？
+本記事では、`getDataTable()` の `firstRowIsHeader` パラメータに焦点を当て、その役割と `true` / `false` の使い分け、そして実践的な応用例までを分かりやすく解説します。
 
-`getDataTable`メソッドを使うと、スプレッドシートのデータを「DataTable」っていう形で取得できるんだけど、これはスプレッドシートのデータを「表形式」やけど、より扱いやすくするためのものなんじゃ。例えば、文字列や数値、日付が混在したデータも、ちゃんと型を認識して整理してくれるんよ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-データの範囲がちゃんと「列の名前」や「データ」の部分が分かれてて、可視化ツール（グラフ作成など）とも簡単に連携できるようになるばい。
+## `firstRowIsHeader` パラメータの重要性
 
-### firstRowIsHeaderの意味
+`getDataTable()` メソッドは、スプレッドシートのデータをグラフ化などに適した `DataTable` オブジェクトとして取得します。その際、取得範囲の1行目を「ヘッダー」として扱うか、それとも「データ」として扱うかを決めるのが `firstRowIsHeader` パラメータです。
 
-このメソッドには`firstRowIsHeader`ってパラメータがあるけんど、これがポイントじゃけ。もしこれを`true`にしたら、最初の行をヘッダーとして扱って、それ以降の行をデータ行として処理するんよ。もし`false`なら、全ての行をデータとして扱って、列の名前は自動で「Col0」「Col1」みたいに付けられるんよ。
+-   `getDataTable(true)`: 範囲の**1行目をヘッダー**として認識します。グラフの凡例や軸ラベルに自動で設定されるため、グラフ作成時は基本的にこちらを使います。
+-   `getDataTable(false)` または `getDataTable()`: 範囲の**すべての行をデータ**として扱います。ヘッダーが存在しないデータや、ヘッダーもデータの一部として処理したい場合に利用します。
 
-### こんなに便利！従来の方法との違い
+`getValues()` が単純な二次元配列を返すのに対し、`getDataTable()` はこのパラメータによってデータ構造を明確に定義できる点が大きなメリットです。
 
-通常、スプレッドシートからデータを取得するのには`getValues()`を使うことが多いけど、これだとただの2次元配列が返ってきて、データ型や列名がわからんけど、`getDataTable`ならきちんとデータを整理してくれるけん、扱いやすくなるんよね。
+## `true` と `false` の挙動の違いを比較
 
-## getDataTable(firstRowIsHeader)の技術的な仕様
+具体的に、`firstRowIsHeader` の設定値によって `DataTable` の中身がどう変わるのか見てみましょう。
 
-このメソッドを実際に使うには、まず以下のように書くことができるよ。
+仮に、以下のようなデータが `A1:C3` の範囲にあるとします。
 
-<pre class="wp-block-code"><code>Range.getDataTable(firstRowIsHeader)
-</code></pre>
+| Product | Sales | Profit |
+| :--- | :--- | :--- |
+| A | 100 | 20 |
+| B | 150 | 35 |
 
-### パラメータ
+### `getDataTable(true)` の場合
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      名前
-    </th>
-    
-    <th>
-      型
-    </th>
-    
-    <th>
-      説明
-    </th>
-  </tr>
+1行目がヘッダーとして認識され、列ラベル（`ColumnLabel`）に設定されます。
+
+```js
+const range = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('シート1').getRange('A1:C3');
+const dataWithHeader = range.getDataTable(true);
+
+// 取得できるDataTableのイメージ
+// 列ラベル: ['Product', 'Sales', 'Profit']
+// データ行: [['A', 100, 20], ['B', 150, 35]]
+```
+
+### `getDataTable(false)` の場合
+
+1行目もデータとして扱われ、列ラベルは自動的に `Col0`, `Col1`... となります。
+
+```js
+const range = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('シート1').getRange('A1:C3');
+const dataWithoutHeader = range.getDataTable(false);
+
+// 取得できるDataTableのイメージ
+// 列ラベル: ['Col0', 'Col1', 'Col2']
+// データ行: [['Product', 'Sales', 'Profit'], ['A', 100, 20], ['B', 150, 35]]
+```
+
+このように、グラフ化を目的とする場合は `true` を設定しないと、意図しない結果になってしまうことが分かります。
+
+## 実践的なサンプルコード
+
+`getDataTable(true)` を使って、売上データからグラフを生成する簡単なサンプルコードです。
+
+```js
+function createDailySalesReport() {
+  const sheet = SpreadsheetApp.getActive().getSheetByName('売上データ');
+  const dataRange = sheet.getRange('A1:B11'); // A列:日付, B列:売上, 1行目はヘッダー
   
-  <tr>
-    <td>
-      <code>firstRowIsHeader</code>
-    </td>
-    
-    <td>
-      Boolean
-    </td>
-    
-    <td>
-      最初の行をヘッダーとして扱うかどうか
-    </td>
-  </tr>
-</table></figure> 
-
-### 戻り値
-
-<ul class="wp-block-list">
-  <li>
-    <code>DataTable</code>オブジェクト：構造化されたデータの形式で返されるばい。
-  </li>
-</ul>
-
-例えば、`firstRowIsHeader`を`true`に設定した場合、最初の行をヘッダーとして扱って、2行目以降をデータとして扱うことができるよ。
-
-## 実際に使ってみよう！基本のコード
-
-<pre class="wp-block-code"><code>function basicExample() {
-  const sheet = SpreadsheetApp.getActive().getSheetByName('SalesData');
-  const dataRange = sheet.getRange('A1:D10');
-  
-  // ヘッダー行ありでDataTableを取得
+  // 最初の行をヘッダーとしてDataTableを取得
   const dataTable = dataRange.getDataTable(true);
   
-  // チャート生成
+  // 取得したDataTableを基に折れ線グラフを生成
   const chart = Charts.newLineChart()
     .setDataTable(dataTable)
-    .setTitle('Sales Trend')
+    .setTitle('日次売上推移')
+    .setXAxisTitle('日付')
+    .setYAxisTitle('売上')
     .build();
   
-  SpreadsheetApp.getUi().showModalDialog(chart, 'Sales Analysis');
+  // 新しいシートを作成してグラフを挿入
+  const newSheet = SpreadsheetApp.getActiveSpreadsheet().insertSheet('売上グラフ');
+  newSheet.insertChart(chart);
 }
-</code></pre>
+```
+このコードでは、`getDataTable(true)` を使うことで、`'日付'` や `'売上'` といったヘッダー情報がグラフに自動で反映されます。
 
-この例では、`A1:D10`の範囲を指定して、最初の行をヘッダーとして扱い、そのデータを使って折れ線グラフを作成しているんよ。これができると、スプレッドシートのデータから簡単にグラフが作れるけん、すごく便利じゃない？
+## 応用例：レポートメールの自動送信
 
-## ヘッダーあり・なしの違い
+`getDataTable()` を活用すれば、日次レポートの作成とメール送信を自動化できます。
 
-`firstRowIsHeader`を`true`にした場合と`false`にした場合では、得られるデータに違いが出るけん、ちょっと見てみようか。
-
-**ヘッダー行あり：**
-
-<pre class="wp-block-code"><code>const dataWithHeader = range.getDataTable(true);
-// 列名: &#91;'Product', 'Q1', 'Q2', 'Q3']
-// データ行: &#91;&#91;'A', 100, 150, 200], ...]
-</code></pre>
-
-**ヘッダー行なし：**
-
-<pre class="wp-block-code"><code>const dataWithoutHeader = range.getDataTable(false);
-// 列名: &#91;'Col0', 'Col1', 'Col2', 'Col3']
-// データ行: &#91;&#91;'Product', 'Q1', 'Q2', 'Q3'], &#91;'A', 100, 150, 200], ...]
-</code></pre>
-
-これで、どういうふうにデータを解釈するかが大きく変わるけん、使い方には気をつける必要があるよ。
-
-## 実務で使える！レポート自動生成システム
-
-<pre class="wp-block-code"><code>function generateDailyReport() {
-  const templateSheet = SpreadsheetApp.getActive().getSheetByName('ReportTemplate');
-  const dataSheet = SpreadsheetApp.getActive().getSheetByName('DailyData');
+```js
+function sendDailyReportEmail() {
+  const dataSheet = SpreadsheetApp.getActive().getSheetByName('日次データ');
   
+  // データ範囲を最終行まで動的に取得
   const dataRange = dataSheet.getRange('A1:F' + dataSheet.getLastRow());
   const dataTable = dataRange.getDataTable(true);
   
-  // チャート生成
-  const chartBlob = Charts.newLineChart()
+  // データからグラフを生成し、画像Blobとして取得
+  const chartBlob = Charts.newColumnChart()
     .setDataTable(dataTable)
     .setDimensions(800, 600)
+    .setTitle('デイリーパフォーマンス')
     .build()
     .getBlob();
   
-  // PDF生成
-  const pdfContent = &#91;
-    'Daily Sales Report',
-    '',
-    '',
-    'MetricValue'
-  ];
-  
-  for (let i = 0; i &lt; dataTable.getNumberOfColumns(); i++) {
-    pdfContent.push(
-      `${dataTable.getColumnLabel(i)}: ${calculateColumnSum(dataTable, i)}`
-    );
-  }
-  
-  pdfContent.push('');
-  
-  // メール送信
+  // メールの本文を作成
+  let mailBody = '<h1>日次レポート</h1><p>本日のパフォーマンスです。</p>';
+  // ここにDataTableからサマリー情報を作成するコードを追加できます
+  mailBody += '<img src="cid:chartImage">'; // グラフをインラインで表示
+
+  // グラフ画像を添付してメールを送信
   MailApp.sendEmail({
-    to: 'report@company.com',
-    subject: 'Daily Sales Report',
-    htmlBody: pdfContent.join(''),
-    attachments: &#91;chartBlob],
-    inlineImages: {chartImage: chartBlob}
+    to: 'report@example.com',
+    subject: '日次セールスレポート',
+    htmlBody: mailBody,
+    inlineImages: {
+      chartImage: chartBlob
+    }
   });
 }
-</code></pre>
+```
+このスクリプトをトリガー設定で毎日実行すれば、手作業なしで関係者にグラフ付きのレポートを届けられます。
 
-これで、毎日のレポート作成を完全に自動化できるんよ！データの集計、グラフの生成、PDFの作成まで全部自動でできちゃうけん、ほんとうに効率化できるばい。
+## まとめ
 
-## 結論：GASでのデータ管理が劇的に楽になる！
+`getDataTable()` の `firstRowIsHeader` パラメータは、データ構造をスクリプトに正しく伝えるための重要なスイッチです。
 
-`getDataTable(firstRowIsHeader)`メソッドを使えば、スプレッドシートからデータを取得する際に、データ型や列名を気にすることなく、簡単に整然としたデータを扱えるようになるんよ。これを使えば、分析やレポート作成の効率が格段にアップするけん、試してみてほしいんじゃ！
+- **グラフ化が目的なら `getDataTable(true)` を使うのが基本**
+- **1行目をヘッダーとして認識させ、グラフのラベルなどに自動反映できる**
+- **`false` はヘッダーのないデータや、ヘッダー自体を分析したい特殊なケースで使う**
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+この使い分けをマスターするだけで、GASによるデータ処理や可視化の自動化がより簡単かつ正確になります。ぜひ活用してください。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://stackoverflow.com/questions/32206822/manipulating-spreadsheet-data-for-visualization" title="Manipulating Spreadsheet data for visualization" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Manipulating Spreadsheet data for visualization
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        I just started learning Google Apps Script/JavaScript and would like to know how to reshape, manipulate multi-dimensiona...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/32206822/manipulating-spreadsheet-data-for-visualization" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://stackoverflow.com/questions/32206822/manipulating-spreadsheet-data-for-visualization" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          stackoverflow.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/advanced/tables?hl=ja" title="テーブル サービス  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v90b15eef664021f94a1ab8a4ca14c533325a9006d6183b165fb79714a6fcd6a0/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        テーブル サービス  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/advanced/tables?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/advanced/tables?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getDataTable(Boolean)" >}} 
+
+{{< blog-card "https://developers.google.com/chart/interactive/docs/gallery?hl=ja" >}}

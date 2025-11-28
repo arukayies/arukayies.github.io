@@ -1,355 +1,187 @@
 ---
-title: GASでスプレッドシートの指定範囲から数値フォーマットを一括取得する方法
-author: arukayies
-type: post
-date: 2020-08-06T12:29:38+00:00
-excerpt: GASでスプレッドシートの指定範囲すべての数値の書式を取得する方法を紹介します！
-url: /gas/getnumberformats
+title: "【GASスプレッドシート】getNumberFormats()で複数セルの表示形式を一括取得・SEO最適化"
+description: "Google Apps Script (GAS) の`getNumberFormats()`メソッドを徹底解説。スプレッドシートの指定範囲から数値、日付、通貨などのセルの表示形式（NumberFormat）を効率的に一括取得する方法を、具体的なコード例で紹介します。`getNumberFormat()`との違い、データ整合性チェック、フォーマット自動修正といった実践的な応用例を通じて、GASによるスプレッドシート自動化とデータ品質向上に役立つ情報を提供します。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getNumberFormats", "getNumberFormat", "表示形式", "数値書式", "日付書式", "通貨書式", "一括取得", "自動化", "データ検証", "データ品質", "効率化", "プログラム", "開発"]
+date: "2020-08-06T12:29:38.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getnumberformats"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1596716988
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:38:18
-categories:
-  - GAS
-tags:
-  - GAS
-  - getNumberFormats()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年8月"]
 ---
-GoogleスプレッドシートをGAS（Google Apps Script）で操作する時、セルの数値フォーマットを一括取得したいことってあるばい？ そんな時に便利なのが `getNumberFormats()` メソッドさ！
 
-今回は、この `getNumberFormats()` の基本から応用まで、わかりやすく解説していくけんね！
+Google Apps Script (GAS) を用いたスプレッドシートの自動化において、**複数セルの表示形式（数値、日付、通貨、パーセンテージなど）を効率的に管理する**ことは、データの正確性とスクリプトのパフォーマンス向上に不可欠です。個々のセルに対して表示形式を取得する`getNumberFormat()`も便利ですが、広範囲のセルを扱う場合には非効率になります。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+本記事では、スプレッドシートの指定範囲からセルの表示形式を**二次元配列で一括取得できる`getNumberFormats()`メソッド**を徹底解説します。基本的な使い方から、`getNumberFormat()`との違い、さらにはデータ整合性チェックや自動修正といった実用的な応用例までを、具体的なコード例を交えて紹介します。
 
-## 1. getNumberFormats() ってどんなメソッド？
+GASによるスプレッドシート操作の効率を最大化し、データ品質を維持するための強力なツールである`getNumberFormats()`の活用法をマスターしましょう。
 
-### メソッドの概要
+{{< affsearch keyword="GAS スプレッドシート 表示形式 一括取得 自動化" img="/gas.jpg">}}
 
-このメソッドを使えば、指定した範囲内の数値フォーマットや日付フォーマットを一括取得できるばい。データの整合性チェックやフォーマットの統一にも使えるけん、便利さ！
+## getNumberFormats() とは？GASで複数セルの表示形式を一括取得
 
-### 基本構文
+`getNumberFormats()` メソッドは、Google Apps Scriptにおける `Range` オブジェクトの重要な機能の一つです。このメソッドを利用することで、**指定したセル範囲（Range）内のすべてのセルの表示形式を、一度の呼び出しでまとめて文字列として取得**できます。
 
-<pre class="wp-block-code"><code>const formats = range.getNumberFormats();
-</code></pre>
+これは、データが入力された広範囲のセルに対して、表示形式の監査や一括変更を行いたい場合に特に有効です。
 
-この `range` には `SpreadsheetApp.getActiveSheet().getRange()` で取得したセル範囲を指定すればよかばい。
+### `getNumberFormat()` と `getNumberFormats()` の違いと効率性
 
-### 返り値の形式
+| 特徴 | `getNumberFormat()` | `getNumberFormats()` |
+| :--- | :--- | :--- |
+| **対象セル数** | 単一セルのみ | 複数セル範囲 |
+| **返り値** | 文字列 (単一の表示形式) | 二次元配列 (範囲内の全ての表示形式) |
+| **効率性** | 複数セルへのループ処理ではAPI呼び出しが増え非効率 | 一度のAPI呼び出しで複数セルの情報を取得できるため効率的 |
 
-戻り値は**二次元配列**になっていて、各セルのフォーマットが `String` で格納されるっちゃね。
+### 基本的な使用例：A1からC3範囲の表示形式を取得する
 
-例えば、B2からC3までの範囲を取得すると、
+`getNumberFormats()` の使い方は、対象範囲を`getRange()`で取得し、そのRangeオブジェクトに対してメソッドを呼び出すだけです。返り値は、指定した範囲の行と列の構造を反映した二次元配列となります。
 
-<pre class="wp-block-code"><code>&#91;
-  &#91;'#,##0', 'yyyy/MM/dd'],
-  &#91;'0.00%', 'General']
-]
-</code></pre>
-
-こんな感じで返ってくるばい。
-
-## 2. getNumberFormats() の基本的な使い方
-
-### シンプルなサンプルコード
-
-<pre class="wp-block-code"><code>function sampleGetNumberFormats() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('データシート');
-  const range = sheet.getRange('B2:D5');
+```javascript
+/**
+ * アクティブなシートのA1:C3範囲の全セルの表示形式を一括取得し、ログに出力する関数。
+ */
+function getAndLogAllNumberFormats() {
+  const sheet = SpreadsheetApp.getActiveSheet(); // アクティブなシートを取得
+  const range = sheet.getRange("A1:C3");      // 対象範囲をA1:C3に設定
+  
+  // 指定範囲の各セルの表示形式を二次元配列として一括取得
   const formats = range.getNumberFormats();
   
-  formats.forEach((row, rowIndex) =&gt; {
-    row.forEach((format, colIndex) =&gt; {
-      console.log(`セル ${String.fromCharCode(66 + colIndex)}${rowIndex + 2}: ${format}`);
-    });
-  });
+  // 取得した二次元配列の内容をJSON形式でログに出力 (視認性のため整形)
+  Logger.log(`A1:C3範囲の表示形式:\n${JSON.stringify(formats, null, 2)}`);
+  /*
+   * 例: formats の出力形式
+   * [
+   *   ['#,##0', 'yyyy/MM/dd', '0.0%'],
+   *   ['General', 'h:mm:ss', '"$"#,##0.00'],
+   *   ['@', 'yyyy/MM/dd h:mm:ss', '#,##0.00E+00']
+   * ]
+   */
 }
-</code></pre>
+```
+このスクリプトを実行すると、`A1:C3`範囲内のすべてのセルの表示形式が、二次元配列としてログに出力されます。
 
-このコードを実行すると、セルごとのフォーマット情報がコンソールに表示されるばい。
+## `getNumberFormats()` の実践的な活用術
 
-### フォーマットの具体例
+`getNumberFormats()` は、スプレッドシートのデータ管理と自動化において多岐にわたる場面でその真価を発揮します。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      フォーマット種別
-    </th>
-    
-    <th>
-      例
-    </th>
-    
-    <th>
-      表示
-    </th>
-  </tr>
-  
-  <tr>
-    <td>
-      数値
-    </td>
-    
-    <td>
-      <code>#,##0.00</code>
-    </td>
-    
-    <td>
-      12,345.67
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      パーセンテージ
-    </td>
-    
-    <td>
-      <code>0.00%</code>
-    </td>
-    
-    <td>
-      98.76%
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      日付
-    </td>
-    
-    <td>
-      <code>yyyy/MM/dd</code>
-    </td>
-    
-    <td>
-      2025/03/06
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      通貨
-    </td>
-    
-    <td>
-      <code>[$¥-411]#,##0.00</code>
-    </td>
-    
-    <td>
-      ¥12,345.67
-    </td>
-  </tr>
-</table></figure> 
+### 1. 範囲内の各セルの表示形式をループ処理で確認する
 
-## 3. 応用例：フォーマット整合性チェック
+一括取得した二次元配列をループ処理することで、範囲内の各セルの表示形式を個別に確認・操作できます。これは、特定の条件に基づいてセルの書式を調整したい場合に便利です。
 
-データのフォーマットがちゃんと統一されているか確認したい？ そんな時はこのスクリプトを使えばよかばい！
-
-<pre class="wp-block-code"><code>function validateColumnFormats() {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('売上データ');
-  const formatRules = {
-    3: 'yyyy/MM/dd',
-    4: '#,##0',
-    5: '&#91;$¥-411]#,##0.00'
-  };
-
-  const range = sheet.getRange(2, 3, sheet.getLastRow() - 1, 3);
+```javascript
+/**
+ * 指定範囲の各セルの表示形式を読み取り、A1表記と共にログに出力する関数。
+ */
+function iterateAndLogNumberFormats() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('データシート'); // 対象シート名
+  if (!sheet) {
+    Logger.log("エラー: 指定されたシートが見つかりません。");
+    return;
+  }
+  const range = sheet.getRange('A1:B3'); // 検査対象範囲
   const formats = range.getNumberFormats();
-
-  formats.forEach((row, rowIndex) =&gt; {
-    Object.keys(formatRules).forEach(colOffset =&gt; {
-      const expected = formatRules&#91;colOffset];
-      const actual = row&#91;colOffset - 1];
-      if (actual !== expected) {
-        console.error(`エラー: ${String.fromCharCode(64 + 3 + parseInt(colOffset))}${rowIndex + 2} 期待:${expected} 実際:${actual}`);
+  
+  // 取得した二次元配列 (formats[rowIndex][colIndex]) をループ処理
+  formats.forEach((rowFormats, rowIndex) => {
+    rowFormats.forEach((format, colIndex) => {
+      // getCell(row, column) は1から始まるインデックス
+      const cellAddress = range.getCell(rowIndex + 1, colIndex + 1).getA1Notation();
+      Logger.log(`セル ${cellAddress} の表示形式: ${format}`);
+      
+      // 例: 日付フォーマットのセルを検出
+      if (format.includes('yyyy') || format.includes('MM') || format.includes('dd')) {
+        Logger.log(`  -> このセル (${cellAddress}) は日付形式の可能性があります。`);
       }
     });
   });
 }
-</code></pre>
+```
+この例では、日付形式の可能性があるセルを検出するシンプルなロジックを追加しています。
 
-このスクリプトを実行すれば、フォーマットが異なるセルを自動検出してくれるばい！
+### 2. 特定の列・行の表示形式をまとめて検証・修正する
 
-## 4. まとめ
+例えば、データベースからインポートしたデータで、日付列が誤って文字列形式になっていたり、金額列が標準形式になっていたりする場合があります。`getNumberFormats()` を使えば、特定の列や行全体の表示形式をまとめて検証し、必要であれば`setNumberFormat()`で一括修正できます。
 
-`getNumberFormats()` メソッドを使えば、スプレッドシートのフォーマットを一括取得して、整合性チェックやデータのフォーマット統一が簡単にできるばい！
-
-こんな活用法を試してみて、業務の自動化をどんどん進めてみるとよかばい！
-
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
-
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://gsuiteguide.jp/sheets/getnumberformats/" title="セル範囲の書式(数値書式、日付書式)をセルごとに取得する：getNumberFormats()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
+```javascript
+/**
+ * 特定の列（C列、D列、E列）の表示形式を検証し、期待値と異なる場合は警告を出す関数。
+ * 自動修正機能を追加することも可能です。
+ */
+function validateAndCorrectColumnFormats() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('売上データ');
+  if (!sheet) {
+    Logger.log("エラー: '売上データ' シートが見つかりません。");
+    return;
+  }
   
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="http://gsuiteguide.jp/wp-content/uploads/cover_googlespreadsheet-486x290.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        セル範囲の書式(数値書式、日付書式)をセルごとに取得する：getNumberFormats()【GAS】 | G Suite ガイド - G Suite ガイド：G Suite の導入方法や使い方を徹底解説!
-      </div>
+  // 列番号と期待されるフォーマットの定義 (GASの列は1から始まる)
+  const formatRules = {
+    3: 'yyyy/MM/dd',      // C列: 日付
+    4: '#,##0',           // D列: 数量（整数）
+    5: '"¥"#,##0'         // E列: 金額（円）
+  };
+
+  const startRow = 2;     // データ開始行 (ヘッダー行を除く)
+  const lastRow = sheet.getLastRow();
+  // 検証対象範囲を複数の列にまたがるように取得 (C列からE列まで)
+  const rangeToValidate = sheet.getRange(startRow, 3, lastRow - startRow + 1, 3); // C列からE列
+  const formats = rangeToValidate.getNumberFormats(); // 範囲の表示形式を一括取得
+
+  formats.forEach((rowFormats, rowIndex) => {
+    Object.keys(formatRules).forEach(colNumberStr => {
+      const colNumber = parseInt(colNumberStr, 10); // 列番号を数値に変換
+      const colIndexInArray = colNumber - 3; // 取得した配列内での列インデックス (0から始まる)
       
-      <div class="blogcard-snippet external-blogcard-snippet">
-        getNumberFormats() セル範囲の書式(数値書式、日付書式)をセルごとに取得する。 サンプルコード // 現在アクティブなスプレッドシートを取得 var ss = SpreadsheetApp.getActiveSpreads...
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getnumberformats/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://gsuiteguide.jp/sheets/getnumberformats/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          gsuiteguide.jp
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
+      const expectedFormat = formatRules[colNumber];
+      const actualFormat = rowFormats[colIndexInArray];
       
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
+      if (actualFormat !== expectedFormat) {
+        const cellAddress = sheet.getRange(startRow + rowIndex, colNumber).getA1Notation();
+        Logger.warn(`フォーマット不一致を検出: セル ${cellAddress} | 期待: "${expectedFormat}", 実際: "${actualFormat}"`);
         
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+        // ★ オプション: ここで setNumberFormat() を使って自動修正することも可能
+        // sheet.getRange(cellAddress).setNumberFormat(expectedFormat);
+        // Logger.log(`-> セル ${cellAddress} のフォーマットを修正しました。`);
+      }
+    });
+  });
+  Logger.log("表示形式の検証が完了しました。");
+}
+```
+このスクリプトは、指定した列の各セルの表示形式をルールと比較し、不一致があれば警告をログに出力します。コメントアウトされた部分を有効にすることで、自動修正機能も追加できます。
+
+## GASでよく使われる代表的な表示形式の文字列
+
+`getNumberFormats()`で取得できる表示形式の文字列は多種多様ですが、ここではスプレッドシートで頻繁に利用される代表的なフォーマットとその表示例、データの種類をまとめました。これらの文字列を理解しておくことで、スクリプト内での表示形式の判別や`setNumberFormat()`での指定が容易になります。
+
+| フォーマット文字列 | 表示例 | データの種類 | 解説 |
+| :--- | :--- | :--- | :--- |
+| `General` | 12345 | 標準 | 特殊な書式なし（入力値そのまま） |
+| `#,##0` | 12,345 | 整数 | 3桁区切りの整数表示 |
+| `#,##0.00` | 12,345.67 | 小数点付き数値 | 3桁区切り、小数点以下2桁表示 |
+| `0.00%` | 98.76% | パーセンテージ | 小数点以下2桁のパーセンテージ表示 |
+| `yyyy-MM-dd` | 2025-03-06 | 日付 | 年-月-日形式の日付表示 |
+| `h:mm:ss` | 14:30:05 | 時刻 | 時:分:秒形式の時刻表示 |
+| `yyyy/MM/dd h:mm` | 2025/03/06 14:30 | 日付と時刻 | 年/月/日 時:分形式 |
+| `[$¥-411]#,##0` | ¥12,345 | 通貨（円） | 日本円の通貨表示（3桁区切り） |
+| `[$$-409]#,##0.00` | $12,345.67 | 通貨（ドル） | 米ドルの通貨表示（3桁区切り、小数点以下2桁） |
+| `0.0E+00` | 1.2E+03 | 指数表記 | 科学的な指数表記 |
+| `@` | (そのまま表示) | 文字列 | 数値として扱わず、入力値をそのまま文字列として表示 |
+
+これらのフォーマット文字列は、スプレッドシートのメニュー「表示形式」→「カスタム数値形式」で確認できます。スクリプトで表示形式を操作する際には、これらの文字列を正確に指定することが成功の鍵となります。
+
+## まとめ：`getNumberFormats()`でスプレッドシートのデータ管理を自動化・効率化
+
+`getNumberFormats()` メソッドは、Google Apps Scriptでスプレッドシートの広範囲なデータ管理を効率的に自動化するための、非常に強力な機能です。
+
+*   **高速な一括取得**: 複数セルの表示形式を一度のAPI呼び出しで二次元配列として取得できるため、スクリプトの実行速度と効率が大幅に向上します。
+*   **データ整合性の維持**: 取得したフォーマット情報に基づいて、データのバリデーション（検証）や自動修正を行うことで、シート全体のデータ品質を高いレベルで維持できます。
+*   **柔軟なデータ処理**: 特定の表示形式を持つセルを識別し、それに応じた処理を分岐させることで、より柔軟で堅牢なGASスクリプトの開発が可能になります。
+
+本記事で紹介した`getNumberFormats()`の知識と実践的な応用例を活用し、あなたのGASスプレッドシート自動化プロジェクトを次の段階へと進めてください。データの正確性と効率性を両立させることが、ビジネスプロセスの最適化に繋がります。
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}} 
+  
+{{< blog-card "https://gsuiteguide.jp/sheets/getnumberformats/" >}}

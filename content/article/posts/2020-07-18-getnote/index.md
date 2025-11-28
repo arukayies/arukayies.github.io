@@ -1,119 +1,54 @@
 ---
-title: GASでスプレッドシートの指定セルからメモを取得する方法と活用例
-author: arukayies
-type: post
-date: 2020-07-17T16:20:36+00:00
-excerpt: GASでスプレッドシートの指定セルのメモを取得する方法を紹介します！
-url: /gas/getnote
+title: "【GAS】スプレッドシートのセルメモを自在に操作！getNote()徹底解説"
+description: "Google Apps Script (GAS) の`getNote()`メソッドで、スプレッドシートのセルメモを効率的に取得・管理する方法を徹底解説。単一セルから複数メモの一括取得 (`getNotes()`)、カスタム関数での活用、メモの転記、トリガーによる変更監視まで、GASでスプレッドシートのメモ機能を最大限に活用する実践的テクニックを紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "getNote", "getNotes", "メモ", "ノート", "セルメモ", "自動化", "データ管理"]
+date: "2020-07-17T16:20:36.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getnote"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1595002838
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:08:20
-categories:
-  - GAS
-tags:
-  - GAS
-  - getNote()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年7月"]
 ---
-Google Apps Script（GAS）を使ってスプレッドシートのセルに付けたメモを操作する方法、気になるところばい？今回は、`getNote()`メソッドを使ったメモの取得から、ちょっとした応用技まで、実際に役立つ情報をまとめたけん、しっかり見ていってね。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を使ってスプレッドシートの「セルメモ」を管理・活用することで、データに付随する情報を効率的に扱うことができます。手動でのメモ管理は手間がかかりますが、GASの`getNote()`メソッドを使えば、メモの取得、転記、さらには変更の自動監視まで、様々な操作をプログラムで実現可能です。
+
+本記事では、GASにおける`getNote()`メソッドの基本的な使い方から、複数セルのメモを一括で取得する`getNotes()`、スプレッドシート上でメモの有無を判定するカスタム関数、メモ内容の自動転記、そしてトリガーによるメモ変更の自動監視まで、具体的なコード例を交えて徹底解説します。スプレッドシートのメモ機能を最大限に引き出し、よりスマートなデータ管理を実現しましょう。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
 ## getNote()メソッドの基本的な使い方
 
-まずは基本からじゃけど、`getNote()`メソッドは、スプレッドシートのセルに設定されたメモを取得するためのメソッドだよ。コードを書いて実際にセルのメモを取得してみるばい。例えば、以下のコードを実行すれば、`B2`セルのメモ内容を取得できるんよ。
+まず、`getNote()`メソッドの基本的な使い方から見ていきましょう。このメソッドは、スプレッドシートの特定のセルに設定されたメモを取得するために使用します。以下のサンプルコードを実行することで、指定したセルのメモ内容を取得できます。
 
-<pre class="wp-block-code"><code>function fetchSingleNote() {
+```js
+function fetchSingleNote() {
   const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = spreadsheet.getSheetByName('注文管理表');
   const targetCell = sheet.getRange('B2');
   const noteContent = targetCell.getNote();
   Logger.log(`注文備考: ${noteContent}`);
 }
-</code></pre>
+```
 
-このコードでは、`B2`セルに付けられたメモがログに出力されるけん、メモが空なら、何も表示されんけど、メモがあればその内容が表示されるんよ。
+このコードを実行すると、`B2`セルに設定されたメモがログに出力されます。メモが空の場合は何も表示されませんが、メモが存在すればその内容が表示されます。
 
-### ここで気をつけるポイント
+### 注意点
 
-<ul class="wp-block-list">
-  <li>
-    メモが存在しない場合、<code>getNote()</code>は空文字列を返すばい。
-  </li>
-  <li>
-    メモの内容をリアルタイムで取得するには、スプレッドシートのUI更新に少し時間がかかることもあるけ、タイミングに注意したほうがいいけん。
-  </li>
-</ul>
+* メモが存在しないセルに対して`getNote()`を実行すると、空文字列が返されます。
+* スプレッドシートのUI上でメモを更新してからスクリプトで取得するまでには、わずかな遅延が生じることがあります。
 
-## 複数セルのメモを一括取得
+## 複数セルのメモを一括で取得する方法
 
-次は、範囲指定して複数セルのメモを一度に取得する方法じゃけど、`getNotes()`メソッドを使うと、指定した範囲の全セルのメモを一括で取得できるんよ。このメソッドは、二次元配列（行×列）でメモを取得するから、たくさんのセルのメモをまとめて処理したいときに便利ばい。
+次に、範囲を指定して複数のセルのメモを一度に取得する方法です。`getNotes()`メソッドを使用すると、指定した範囲内のすべてのセルのメモを一括で取得できます。このメソッドは、`getNote()`が単一セル向けであるのに対し、範囲内の構造を維持した二次元配列（行×列）でメモを返すため、大量のセルのメモを効率的に処理したい場合に非常に便利です。
 
-<pre class="wp-block-code"><code>function batchNoteProcessing() {
+```js
+function batchNoteProcessing() {
   const dataRange = SpreadsheetApp.getActive().getRange('B2:D10');
   const notesMatrix = dataRange.getNotes();
   
-  notesMatrix.forEach((row, rowIndex) =&gt; {
-    row.forEach((note, colIndex) =&gt; {
+  notesMatrix.forEach((row, rowIndex) => {
+    row.forEach((note, colIndex) => {
       if (note) {
         const cell = dataRange.offset(rowIndex, colIndex, 1, 1);
         console.log(`セル ${cell.getA1Notation()}: ${note}`);
@@ -121,28 +56,30 @@ Google Apps Script（GAS）を使ってスプレッドシートのセルに付�
     });
   });
 }
-</code></pre>
+```
 
-上のコードでは、`B2:D10`範囲のセルに付けられたメモを全部チェックして、メモがあればその内容をログに出力してるけど、この方法を使うと、たくさんのデータを効率的に処理できるんよ。
+上記のコードでは、`B2:D10`の範囲内にあるすべてのセルをチェックし、メモが存在すればその内容とセル番地をログに出力します。
 
-## メモを使ったカスタム関数作成
+## メモの存在を確認するカスタム関数の作成
 
-次は、スプレッドシートの数式として使えるカスタム関数を作ってみる方法じゃけど、`getNote()`を使って、特定のセルにメモがあるかどうかをチェックする関数を作ることもできるんよ。例えば、以下のような関数を作って、`=HAS_NOTE(A1)`みたいに使えるようにできるんよ。
+`getNote()`を利用して、スプレッドシートの数式として利用できるカスタム関数を作成することも可能です。例えば、特定のセルにメモが存在するかどうかを判定する関数を作成できます。
 
-<pre class="wp-block-code"><code>function HAS_NOTE(cellRef) {
+```js
+function HAS_NOTE(cellRef) {
   const sheet = SpreadsheetApp.getActiveSpreadsheet();
   const range = sheet.getRange(cellRef);
   return range.getNote() !== '';
 }
-</code></pre>
+```
 
-これで、特定のセルにメモがあるかどうかを確認できるようになるけん、便利ばい。
+この関数をスクリプトエディタに追加すると、スプレッドシート上で `=HAS_NOTE(A1)` のように入力するだけで、A1セルにメモがあるかどうかを `TRUE` または `FALSE` で確認できるようになります。
 
-## メモ内容を他のシートに転記
+## メモの内容を別のシートに転記する方法
 
-もし、大量のデータを扱っていて、その中でメモを他のシートに転記したい場合、`getNotes()`で一括で取得したメモを新しいシートにコピーすることができるんよ。こんな感じで書けるけど、効率的にデータを書き込めるから、よく使う技じゃけ、覚えておいて損はないばい。
+大量のデータを扱う際、特定のセルのメモを別のシートにまとめて転記したいケースがあります。`getNotes()`で一括取得したメモを新しいシートにコピーすることで、効率的にデータを整理できます。
 
-<pre class="wp-block-code"><code>function exportNotesToLogSheet() {
+```js
+function exportNotesToLogSheet() {
   const sourceSheet = SpreadsheetApp.getActive().getSheetByName('データ入力');
   const logSheet = SpreadsheetApp.getActive().getSheetByName('監査ログ') 
                || SpreadsheetApp.getActive().insertSheet('監査ログ');
@@ -150,23 +87,24 @@ Google Apps Script（GAS）を使ってスプレッドシートのセルに付�
   const sourceRange = sourceSheet.getDataRange();
   const notesData = sourceRange.getNotes();
   
-  // メタデータ付加
+  // タイムスタンプなどのメタデータを付加
   const timestamp = new Date().toISOString();
-  const enrichedData = notesData.map((row, i) =&gt; 
-    row.map((note, j) =&gt; note ? `${timestamp} | ${note}` : ''));
+  const enrichedData = notesData.map((row, i) => 
+    row.map((note, j) => note ? `${timestamp} | ${note}` : ''));
   
-  logSheet.getRange(1, 1, enrichedData.length, enrichedData&#91;0].length)
+  logSheet.getRange(1, 1, enrichedData.length, enrichedData[0].length)
           .setValues(enrichedData);
 }
-</code></pre>
+```
 
-これを使えば、元のシートのメモをそのままログシートに転記できるけん、データ管理がしやすくなるばい。
+このスクリプトを実行すると、元のシートのメモがタイムスタンプと共にログシートに転記され、データ管理が容易になります。
 
-## トリガーを使ってメモ変更を監視
+## トリガーを利用してメモの変更を自動で監視
 
-そして、最後に紹介したいのが、メモ内容が変更されたら自動で通知を送ったり、処理を実行したりする方法じゃけど、Google Apps Scriptのトリガー機能を活用することができるんよ。標準の`onEdit`トリガーではメモの変更を監視できんけど、時間主導型トリガーを使うと、定期的にシートをチェックしてメモの変更を検出することができるばい。
+最後に、メモの内容が変更された際に自動で通知を送信したり、特定の処理を実行したりする方法を紹介します。GASのトリガー機能を利用することで、定期的にシートを監視し、メモの変更を検出できます。標準の`onEdit`トリガーはメモの変更を検知しませんが、時間主導型トリガーを使えば実現可能です。
 
-<pre class="wp-block-code"><code>function createTimeDrivenTrigger() {
+```js
+function createTimeDrivenTrigger() {
   ScriptApp.newTrigger('checkNoteUpdates')
     .timeBased()
     .everyMinutes(10)
@@ -175,8 +113,6 @@ Google Apps Script（GAS）を使ってスプレッドシートのセルに付�
 
 function checkNoteUpdates() {
   const cache = CacheService.getScriptCache();
-  const lastCheck = cache.get('lastNoteCheck') || 0;
-  
   const sheet = SpreadsheetApp.getActive().getSheetByName('重要メモ');
   const notes = sheet.getRange('A1:Z1000').getNotes();
   
@@ -185,9 +121,8 @@ function checkNoteUpdates() {
   
   if (currentHash !== previousHash) {
     sendNotificationEmail();
-    cache.put('notesHash', currentHash, 21600); // 6時間保持
+    cache.put('notesHash', currentHash, 21600); // 6時間キャッシュを保持
   }
-  cache.put('lastNoteCheck', Date.now(), 21600);
 }
 
 function sendNotificationEmail() {
@@ -197,171 +132,25 @@ function sendNotificationEmail() {
     body: '重要メモシートの内容が更新されました'
   });
 }
-</code></pre>
-
-こうすることで、メモが更新されたら自動的にメール通知が届くから、管理が楽になるばい。
+```
+この設定により、メモが更新されると自動的にメールで通知が届くようになり、重要な変更を見逃さなくなります。
 
 ## まとめ
 
-Google Apps Scriptを使ってスプレッドシートのメモを扱う方法は、思ったよりも多くの応用が効くけん、これを活用すれば、スプレッドシートの効率がグンとアップするはずよ。今回は、基本的なメモの取得から、メモを使ったカスタム関数作成、メモ内容の転記まで、いろんな使い方を紹介したけど、これらをうまく組み合わせれば、もっと便利な使い方もできるようになるばい。
+`getNote()`および`getNotes()`メソッドは、Google Apps Scriptでスプレッドシートのセルメモを効率的に取得・管理するための強力なツールです。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+*   **単一メモ取得**: `getNote()`で特定のセルのメモを直接確認。
+*   **一括メモ取得**: `getNotes()`で広範囲のメモを二次元配列で効率的に処理。
+*   **活用例**: カスタム関数、メモの自動転記、トリガーによる変更監視など、高度な自動化に応用可能。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a rel="noopener" href="https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" title="Class Range  |  Apps Script  |  Google for Developers" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://www.gstatic.com/devrel-devsite/prod/v542d3325b8c925a6e7dd14f19a8348c865acec191636e2a431745f59e1ae1e12/developers/images/opengraph/white.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        Class Range  |  Apps Script  |  Google for Developers
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          developers.google.com
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://mebee.info/2023/03/21/post-69157/" title="GAS スプレッドシートのセルにあるメモを取得する" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://mebee.info/wp-content/uploads/2022/04/gas-890x500.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://mebee.info/wp-content/uploads/2022/04/gas-890x500.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        GAS スプレッドシートのセルにあるメモを取得する
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        GAS(Google Apps Script)で、スプレッドシートのセルにあるメモを取得する手順を記述してます。対象のセルに「getNote()」を使うことで可能です。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://mebee.info/2023/03/21/post-69157/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://mebee.info/2023/03/21/post-69157/" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          mebee.info
-        </div>
-      </div>
-    </div>
-  </div></a> 
-  
-  <br /> <a rel="noopener" href="https://teratail.com/questions/227703" title="メモが入力されているかどうかを判断する自作関数を作りたい" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard external-blogcard eb-left cf">
-    <div class="blogcard-label external-blogcard-label">
-      <span class="fa"></span>
-    </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-    
-    <img data-src="https://teratail.com/img/ogpImages/imgFacebookShare.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image lozad lozad-img" loading="lazy" width="160" height="90" />
-    
-    <noscript>
-      <img loading="lazy" decoding="async" src="https://teratail.com/img/ogpImages/imgFacebookShare.png" alt="" class="blogcard-thumb-image external-blogcard-thumb-image" width="160" height="90" />
-    </noscript></figure>
-    
-    <div class="blogcard-content external-blogcard-content">
-      <div class="blogcard-title external-blogcard-title">
-        メモが入力されているかどうかを判断する自作関数を作りたい
-      </div>
-      
-      <div class="blogcard-snippet external-blogcard-snippet">
-        【概要】Googleスプレッドシートにて、メモが入力されているかどうかを判断する自作関数を作成したい getNotes()を使うとメモを取得することが出来る。【実際に試した
-      </div>
-    </div>
-    
-    <div class="blogcard-footer external-blogcard-footer cf">
-      <div class="blogcard-site external-blogcard-site">
-        <div class="blogcard-favicon external-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://teratail.com" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://teratail.com" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain external-blogcard-domain">
-          teratail.com
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+これらのテクニックを組み合わせることで、スプレッドシートのメモ機能を最大限に活用し、よりスマートで効率的なデータ管理を実現できるでしょう。ぜひ、日々の業務効率化に役立ててください。
 
-Google Apps Scriptの力を借りて、あなたのスプレッドシートをもっと便利に活用していこう！
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}} 
+  
+{{< blog-card "https://mebee.info/2023/03/21/post-69157/" >}} 
+  
+{{< blog-card "https://teratail.com/questions/227703" >}}
+
+ぜひ、Google Apps Scriptを活用して、日々の業務を効率化してみてください。

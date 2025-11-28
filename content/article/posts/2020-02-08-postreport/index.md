@@ -1,175 +1,139 @@
 ---
-title: GASを使ってWordPressに自動投稿する方法
-author: arukayies
-type: post
-date: 2020-02-08T12:21:11+00:00
-url: /gas/wordpress-rest-api/postreport
+title: "【コピペOK】GASを使ってWordPressに記事を自動投稿する方法"
+description: "Google Apps Script (GAS) と WordPress REST API を利用して、WordPressブログへの記事投稿を自動化する具体的な手順を解説します。プラグインの導入からコピペで使えるGASコードまで、初心者でも簡単に実践できます。"
+tags: ["GAS", "Google Apps Script", "WordPress", "API", "自動投稿"]
+date: "2020-02-08T12:21:11.000Z"
+url: "/gas/wordpress-rest-api/postreport"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:393:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1245207803716755459";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1245207803716755459";s:5:"pDate";s:19:"2020-04-01 04:34:10";}}";
-last_modified:
-  - 2024-11-19 13:23:34
-categories:
-  - WordpressAPI
-tags:
-  - GAS
-  - Google Apps Script
-  - WordpressAPI
-
+categories: ["WordpressAPI"]
 archives: ["2020年2月"]
+lastmod: "2025-11-27T00:00:00+00:00"
 ---
-WordPress を使って広告収入を得たい！でもサラリーマンで毎日記事を書いてる時間はない！
 
-だったら、自動化だ！と思い立って、年末からいろいろ試していました「くら」です。
+WordPressブログの運営で、記事作成の時間を確保するのは大変ですよね。
 
-まずはメインである。記事の自動投稿をGASを使って自動化します。
+この記事では、**Google Apps Script (GAS) を使ってWordPressに記事を自動投稿し、ブログ運営を効率化する方法**を、プログラミング初心者の方でもコピペで実践できるように分かりやすく解説します。
 
-プログラム未経験者でもコピペで実現できるように手順を紹介します。
+WordPressサイトをお持ちであれば、すぐにでも始められます。
 
-WordPressのサイトを持っている前提で話をすすめます！
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+## GASでWordPressに自動投稿する手順
 
-## 自動投稿できるまでの流れ
+自動投稿を実現するまでの流れは非常にシンプルです。
 
-<ol class="wp-block-list">
-  <li>
-    WordPressにプラグイン「Application Password」をインストール＆設定！
-  </li>
-  <li>
-    GASのコードをコピーし、実行！
-  </li>
-  <li>
-    これだけで自動投稿できます！
-  </li>
-</ol>
+1.  **WordPressの準備**: プラグイン「Application Passwords」をインストールして設定
+2.  **GASの準備**: 自動投稿用のスクリプトをコピーして実行
 
-## WordPressにプラグイン「Application Password」をインストール
+これだけで、面倒な投稿作業を自動化できます。
 
-### 「Application Password」をインストール＆有効化
+## ステップ1: WordPressでApplication Passwordsを設定する
 
-サイドメニューからプラグインを押下。
+GASからWordPressに安全に接続するために、「Application Passwords」というプラグインを利用します。
 
-プラグイン　＞　新規追加を押下し、キーワードに【Application Passwords】と入力。
+### 「Application Passwords」をインストール＆有効化
 
-下の画像が出てきたら、【Application Passwords】をインストールし、有効化する。{{< custom-figure src="スクリーンショット_2020-02-08_20_06_51-1024x375.png" title="" Fit="1280x1280 webp q90" >}} 
+まず、WordPressの管理画面にログインします。
+
+1.  サイドメニューの `プラグイン` > `新規追加` をクリックします。
+2.  検索ボックスに「**Application Passwords**」と入力します。
+3.  表示されたプラグインを `インストール` し、そのまま `有効化` します。
+
+{{< custom-figure src="スクリーンショット_2020-02-08_20_06_51-1024x375.png" title="" Fit="1280x1280 webp q90" >}}
 
 ### パスワードの発行
 
-サイドメニューからユーザーを選択。
+次に、GASがAPI経由で接続するための専用パスワードを発行します。
 
-ユーザー　＞　あなたのプロフィールを押下し、【New Application Password Name】にユーザー名を入力。{{< custom-figure src="スクリーンショット_2020-02-08_20_16_10-1024x389.png" title="" Fit="1280x1280 webp q90" >}} 
+1.  サイドメニューの `ユーザー` > `あなたのプロフィール` をクリックします。
+2.  画面下部の `New Application Password Name` に、わかりやすい名前（例: `gas-auto-post`）を入力し、`Add New` ボタンをクリックします。
 
-ユーザ名とパスワードが表示されるので、これを控えておいてください。{{< custom-figure src="スクリーンショット_2020-02-08_20_18_22.png" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="スクリーンショット_2020-02-08_20_16_10-1024x389.png" title="" Fit="1280x1280 webp q90" >}}
 
-## GASを使ってWordPressに自動投稿するコード
+3.  生成されたユーザー名とパスワードが表示されます。**このパスワードは一度しか表示されない**ため、必ずコピーして安全な場所に保管してください。
 
-以下の部分を書き換えることで、自分のサイトに自動投稿することができます！
+{{< custom-figure src="スクリーンショット_2020-02-08_20_18_22.png" title="" Fit="1280x1280 webp q90" >}}
 
-<pre class="wp-block-preformatted">var siteUrl = 'WordpressサイトのURL';
-var user = 'ユーザ名';
-var pass = 'パスワード';
-var title = '自動投稿テスト';
-var content = 'これは自動投稿です。';</pre>
+これでWordPress側の準備は完了です。
 
-## 実際に自動投稿してみた結果
+## ステップ2: GASで自動投稿スクリプトを作成する
 
-このような感じに記事を自動投稿できます！{{< custom-figure src="スクリーンショット-2020-02-08-20.46.16.png" title="" Fit="1280x1280 webp q90" >}} 
+次に、Google Apps Script側で自動投稿を実行するコードを作成します。
+
+以下のコードをGASのスクリプトエディタにコピー＆ペーストしてください。
+
+```javascript
+/*
+ * 関数概要: WordPressに記事を投稿する
+ * 戻り値: APIからの実行結果
+ */
+function postReport() {
+  // --- 設定項目 ---
+  var siteUrl = 'https://あなたのWordpressサイトのURL'; // 先頭にhttps://を忘れずに
+  var user = 'あなたのユーザー名'; // 先ほど控えたユーザー名
+  var pass = 'xxxx xxxx xxxx xxxx xxxx xxxx';   // 先ほど控えたアプリケーションパスワード
+  var title = 'GASからの自動投稿テスト';
+  var content = 'この記事はGoogle Apps Scriptによって自動的に投稿されました。';
+  // --- 設定項目ここまで ---
+
+  var apiUrl = siteUrl + '/wp-json/wp/v2/posts';
+
+  var headers = {
+    'Content-Type': 'application/json',
+    'Authorization': 'Basic ' + Utilities.base64Encode(user + ":" + pass)
+  };
+
+  var postData = {
+    'title': title,
+    'content': content,
+    'status': 'publish', // 'draft'にすると下書き保存になります
+    'comment_status': 'closed'
+  };
+
+  var options = {
+    'method': 'POST',
+    'muteHttpExceptions': true,
+    'headers': headers,
+    'payload': JSON.stringify(postData)
+  };
+
+  var response = UrlFetchApp.fetch(apiUrl, options);
+  var responseJson = JSON.parse(response.getContentText());
+
+  // 実行結果をログに出力
+  console.log(responseJson);
+
+  return responseJson;
+}
+```
+
+### コードの書き換え箇所
+
+上記のコードの**設定項目**部分を、ご自身の環境に合わせて書き換えてください。
+
+-   `siteUrl`: あなたのWordPressサイトのURL
+-   `user`: 先ほど発行した**アプリケーションパスワードのユーザー名**
+-   `pass`: 先ほど発行した**アプリケーションパスワード**（スペースを含めてそのまま入力）
+-   `title`: 投稿したい記事のタイトル
+-   `content`: 投稿したい記事の本文
+
+設定が完了したら、GASの `実行` ボタンを押してスクリプトを動かします。
+
+## 実行結果：自動投稿の確認
+
+スクリプトが正常に実行されると、WordPressサイトに新しい記事が公開されます。
+
+{{< custom-figure src="スクリーンショット-2020-02-08-20.46.16.png" title="" Fit="1280x1280 webp q90" >}}
+
+このように、GASを使えば簡単に記事の投稿を自動化できます。
 
 ## まとめ
 
-この記事ではシンプルにタイトルと内容のみを自動投稿できる方法を紹介しました。
+この記事では、GASとWordPress REST APIを利用して、記事の自動投稿を行う基本的な方法を紹介しました。
 
-この他にもWordPressAPIを使ったネタが溜まっているので随時紹介していきます！
+今回紹介したのはタイトルと本文のみのシンプルな投稿ですが、カテゴリーやタグの設定、アイキャッチ画像の登録なども自動化することが可能です。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+ぜひこの仕組みを応用して、あなたのブログ運営をさらに効率化してみてください。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}

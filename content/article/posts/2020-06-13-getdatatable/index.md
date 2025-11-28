@@ -1,219 +1,170 @@
 ---
-title: GASでスプレッドシートのグラフデータを効率的に取得する方法
-author: arukayies
-type: post
-date: 2020-06-13T14:27:36+00:00
-excerpt: GASでスプレッドシートのグラフのデータ範囲を取得する方法を紹介します！
-url: /gas/getdatatable
+title: "GAS getDataTable()メソッドでスプレッドシートのデータをグラフ化する徹底解説"
+description: "Google Apps Script (GAS) の getDataTable() を使って、スプレッドシートのデータを効率的にグラフ化する方法を解説します。基本的な使い方から、データ型の指定、動的なグラフ生成、大規模データ処理の最適化まで網羅。この記事を読めば、データ可視化の自動化が実現できます。"
+tags: ["GAS", "Google Apps Script", "スプレッドシート", "getDataTable", "グラフ作成", "Charts", "データ可視化", "自動化"]
+date: "2020-06-13T14:27:36.000Z"
+url: "/gas/getdatatable"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1592058456
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 23:13:07
-categories:
-  - GAS
-tags:
-  - GAS
-  - getDataTable()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: ["GAS"]
 archives: ["2020年6月"]
+lastmod: "2025-11-28T00:00:00+00:00"
 ---
-Google Apps Script（GAS）の`getDataTable()`メソッドって、スプレッドシートのデータを簡単に扱えるとっても便利な機能なんだよね。このメソッドを活用すると、データ分析やグラフ作成が劇的に簡単になるばい。今回は、この`getDataTable()`を基本から応用まで、わかりやすく解説していくけんね！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+スプレッドシートのデータを手動でグラフにする作業、面倒に感じていませんか？ Google Apps Script (GAS) を使えばその作業を自動化できますが、データをグラフに適した形に整えるのは少し手間がかかります。
 
-## まずは基本から！getDataTable()の使い方
+そんな課題を解決するのが `getDataTable()` メソッドです。このメソッドを使えば、**スプレッドシートのデータをたった1行でグラフ用のデータ形式に変換**でき、データ可視化のプロセスを劇的に効率化できます。
 
-### getDataTable()メソッドの基本
+本記事では、`getDataTable()` の基本的な使い方から、`getValues()` との違い、Google Charts APIと連携した動的なグラフ生成、大規模データを扱う際の注意点まで、実用的なサンプルコードを交えて分かりやすく解説します。
 
-`getDataTable()`は、スプレッドシートの特定の範囲からデータを取得し、構造化された形式で返してくれるメソッドなんだ。これにより、データをグラフやチャートに簡単に変換できるけんね。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-例えば、次のように使うんだ。
+## `getDataTable()` とは？ `getValues()` との違い
 
-<pre class="wp-block-code"><code>const range = ss.getSheetByName("サンプルA").getRange("E2:F4");
+GASでセルの値を取得する際によく使われる `getValues()` は、データを二次元配列（`Object[][]`）として返します。これは汎用性が高い一方、グラフ作成で使うには、データ型を自分で変換したり、ヘッダー行を別に処理したりする必要があります。
+
+一方、`getDataTable()` は、データを `DataTable` という**グラフ作成に特化したオブジェクト形式**で直接取得します。
+
+| メソッド | 返り値の型 | 特徴 |
+| :--- | :--- | :--- |
+| `getValues()` | `Object[][]` | 二次元配列。汎用性が高いが、グラフ化には加工が必要。 |
+| `getDataTable()`| `DataTable` | グラフ用に構造化されたオブジェクト。ヘッダーやデータ型を自動認識。 |
+
+`getDataTable()` を使う最大のメリットは、Google Charts APIとシームレスに連携できる点です。データ加工の手間を省き、コードをシンプルに保てます。
+
+## `getDataTable()` の基本的な使い方
+
+それでは、`getDataTable()` の基本的な使い方を見ていきましょう。
+
+### 構文と基本的なコード
+
+`getDataTable()` は、`Range` オブジェクトから呼び出します。
+
+```js
+// "サンプルA" という名前のシートを取得
+const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("サンプルA");
+// E2:F4 の範囲を取得
+const range = sheet.getRange("E2:F4");
+// 範囲内のデータを DataTable として取得
 const dataTable = range.getDataTable();
-</code></pre>
+```
 
-このコードでは、「サンプルA」というシートから、E2:F4の範囲を取得して、それを`getDataTable()`で構造化されたデータに変換しているんだよ。
+これだけで、指定範囲のデータが `DataTable` オブジェクトに変換されます。
 
-### ヘッダー行を使いたい時
+### ヘッダー行を自動で認識させる方法
 
-もし、最初の行をヘッダーとして認識させたい場合は、`getDataTable(true)`を使うことで、Charts APIが自動的に軸ラベルを設定してくれるんだ。
+データ範囲の1行目をヘッダーとして扱いたい場合、引数に `true` を渡します。
 
-<pre class="wp-block-code"><code>const dataTable = range.getDataTable(true);  // ヘッダー行を認識
-</code></pre>
+```js
+// 最初の行をヘッダーとして認識させる
+const dataTableWithHeader = range.getDataTable(true);
+```
 
-これで、さらに便利に使えるようになるばい。
+こうすることで、Charts APIが自動的にヘッダー情報を読み取り、グラフの軸ラベルなどに設定してくれるため非常に便利です。
 
-## getDataTable()の内部構造
+## `DataTable` をカスタマイズする
 
-### カラムのタイプを指定
+`getDataTable()` で取得したデータをそのまま使うだけでなく、`Charts.newDataTable()` を使ってデータ構造をより細かく定義することも可能です。
 
-`getDataTable()`で取得したデータのカラムに、明示的にデータタイプを指定することもできるんだ。例えば、日付型と数値型を組み合わせてデータを処理する場合、こんな感じになるよ。
+### 列のデータ型を厳密に定義する
 
-<pre class="wp-block-code"><code>const dataTable = Charts.newDataTable()
+`addColumn()` メソッドで、各列のデータ型（例: `DATE`, `NUMBER`, `STRING`）を明示的に指定できます。これにより、データの整合性が高まり、意図通りのグラフ描画が可能になります。
+
+```js
+const dataTable = Charts.newDataTable()
     .addColumn(Charts.ColumnType.DATE, '日付')
     .addColumn(Charts.ColumnType.NUMBER, '売上高')
-    .addRow(&#91;new Date(2023, 0, 15), 150000])
+    .addRow([new Date(2023, 0, 15), 150000])
+    .addRow([new Date(2023, 0, 16), 180000])
     .build();
-</code></pre>
+```
 
-このように、カラムのデータ型をしっかり指定することで、データがより整理されて、後の作業が楽になるけんね。
+### `DataTable` のメタ情報を活用する
 
-### メタデータの活用
+`DataTable` オブジェクトは、データそのものだけでなく、列数や列ラベルといったメタデータも保持しています。これらを利用することで、データの構造に応じた動的な処理を実装できます。
 
-`DataTable`には、データそのものだけでなく、メタデータ（データの情報）も含まれているんだ。例えば、列数を取得したり、カラムのラベルを調べたりすることができるばい。
-
-<pre class="wp-block-code"><code>const numberOfColumns = dataTable.getNumberOfColumns();
+```js
+// DataTable の列数を取得
+const numberOfColumns = dataTable.getNumberOfColumns();
+// 最初の列（インデックス0）のラベルを取得
 const columnLabel = dataTable.getColumnLabel(0);
-</code></pre>
 
-これで、データの構造をしっかり把握できるけん、さらに活用の幅が広がるんだよ。
+console.log(`列数: ${numberOfColumns}, 最初の列のラベル: ${columnLabel}`);
+```
 
-## グラフ作成との連携
+## Google Charts API と連携してグラフを生成する
 
-### 動的にグラフを作ろう
+`getDataTable()` の真価は、Google Charts API との連携で発揮されます。
 
-`getDataTable()`を使えば、動的にグラフを作るのも簡単になるばい。例えば、円グラフと棒グラフを組み合わせたグラフを作る時は、こんな感じでコードを組めるんだ。
+### `DataTable` から動的にグラフを作成
 
-<pre class="wp-block-code"><code>const chart = Charts.newComboChart()
+取得した `DataTable` を `setDataTable()` メソッドに渡すだけで、棒グラフ、折れ線グラフ、円グラフなど、様々なグラフを簡単に生成できます。
+
+以下は、棒グラフと折れ線グラフを組み合わせたコンボチャートを作成する例です。
+
+```js
+const chart = Charts.newComboChart()
     .setDataTable(dataTable)
     .setTitle('売上分析')
-    .setSeriesType(Charts.ChartType.COLUMN)
-    .setSecondAxisSeriesType(Charts.ChartType.LINE)
+    .setSeriesType(Charts.ChartType.COLUMN) // デフォルトを棒グラフに
+    .setOption('series', { 1: { type: 'line' } }) // 2番目の系列だけ折れ線グラフに
     .setDimensions(800, 600)
     .build();
-</code></pre>
+```
 
-これで、売上分析のグラフを簡単に作れるけんね。グラフの種類や見た目も細かくカスタマイズできるんだよ。
+### グラフのデザインをカスタマイズする
 
-### グラフのスタイルを設定
+`setOption()` メソッドを使えば、グラフの色、線の太さ、凡例の位置など、デザインを細かく調整できます。
 
-グラフのデザインやスタイルも細かく設定できるんだ。例えば、色や線の太さを変更したり、データラベルを表示したりできるよ。
+```js
+const styledChart = Charts.newAreaChart()
+    .setDataTable(dataTable)
+    .setOption('series', {
+        0: { color: '#FF6D00', lineWidth: 3 }, // 1番目の系列のスタイル
+        1: { dataLabel: 'value', annotations: { textStyle: { color: '#2962FF' } } } // 2番目の系列のスタイル
+    })
+    .build();
+```
 
-<pre class="wp-block-code"><code>.setOption('series', {
-    0: { color: '#FF6D00', lineWidth: 3 },
-    1: { dataLabel: 'value', annotations: { textStyle: {color: '#2962FF'} } }
-})
-</code></pre>
+## 大規模データを扱う際の注意点と最適化
 
-これで、自分の好みに合わせたグラフが作れるんだ。
+数万行を超える大規模なデータセットに `getDataTable()` を使用すると、メモリ上限や実行時間制限に達する可能性があります。
 
-## 大規模データの処理
+### メモリ消費を抑えるバッチ処理
 
-### メモリ最適化のポイント
+対策として、一度に全てのデータを読み込むのではなく、データを小さな塊（バッチ）に分割して処理する方法が有効です。この場合、まず `getValues()` でデータを配列として取得し、`slice()` で分割しながら処理を進めるのが定石です。
 
-`getDataTable()`を使って、大量のデータを処理する場合、メモリの使い方に気をつけなきゃならんばい。例えば、10万行超のデータを扱う時は、バッチ処理やJSONシリアライズを活用することで、パフォーマンスを最適化できるんだ。
+```js
+const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('LargeData');
+const values = sheet.getDataRange().getValues(); // まずは全データを配列で取得
+const totalRows = values.length;
+const batchSize = 5000; // 一度に処理する行数
 
-<pre class="wp-block-code"><code>const batchSize = 5000;
-for (let i = 0; i &lt; totalRows; i += batchSize) {
-    const batch = data.slice(i, i + batchSize);
-    // 処理を行う
+// ヘッダー行(1行目)をスキップしてループ
+for (let i = 1; i < totalRows; i += batchSize) {
+    const batchValues = values.slice(i, i + batchSize);
+    
+    // ここでバッチごとに処理を実行する
+    // 例: データを加工して別のシートに書き出す、APIに送信するなど
+    console.log(`${i}行目から${batchSize}行分のデータを処理しました。`);
 }
-</code></pre>
+```
+大規模データを直接グラフ化する際は、`getDataTable()` よりも、このように手動でデータを間引いたり集計したりするアプローチが必要になることを覚えておきましょう。
 
-これで、大きなデータセットでも効率よく処理できるようになるけんね。
+## まとめ
 
-## 結論
+この記事では、GASの `getDataTable()` メソッドについて解説しました。
 
-`getDataTable()`メソッドを使いこなせば、Google Apps Scriptを使ったデータ分析やグラフ作成が格段に楽になるばい！データを構造化して、チャートを動的に作り、さらに大規模データの処理も問題なくこなせるようになるけん、ぜひ試してみてほしいんだ。最初はちょっと難しいかもしれんけど、コツをつかめば、あっという間に便利なツールになるけんね！
+- **`getDataTable()` はスプレッドシートのデータをグラフ化に適した `DataTable` 形式で取得する**
+- **`getValues()` よりもデータ加工の手間が少なく、コードがシンプルになる**
+- **引数 `true` でヘッダー行を自動認識できる**
+- **Google Charts API との連携がスムーズで、動的なグラフ生成が容易になる**
+- **大規模データを扱う際は、バッチ処理などのメモリ最適化が必要**
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+`getDataTable()` を使いこなせば、面倒なデータ可視化作業を大幅に効率化できます。ぜひ本記事を参考に、あなたの業務自動化に役立ててください。
 
-{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}}
-{{< blog-card "https://qiita.com/cpp0302/items/b6767e32cb05fb804763" >}}
-{{< blog-card "https://engineering.mobalab.net/2024/12/11/google-apps-script-gas%E3%81%A7%E3%82%B9%E3%83%97%E3%83%AC%E3%83%83%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88%E3%82%92get%E3%81%99%E3%82%8B/" >}}
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-これで、GASを使ったデータ処理がさらに楽しくなること間違いなしやけん、ガンガン活用していこうね！
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getDataTable()" >}}
+
+{{< blog-card "https://developers.google.com/chart/interactive/docs/reference?hl=ja" >}}

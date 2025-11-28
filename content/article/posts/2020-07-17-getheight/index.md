@@ -1,310 +1,154 @@
 ---
-title: GASでスプレッドシートの指定範囲から行数を取得する方法と活用例
-author: arukayies
-type: post
-date: 2020-07-17T12:11:38+00:00
-excerpt: GASでスプレッドシートの指定範囲の高さを取得する方法を紹介します！
-url: /gas/getheight
+title: "【GAS】スプレッドシートの行数を効率的に取得！getHeight()メソッド徹底解説"
+description: "Google Apps Script (GAS) でスプレッドシートの指定範囲の行数を取得する`getHeight()`メソッドを徹底解説。`getLastRow()`と連携した動的なデータ範囲の把握から、条件付き書式やデータ分析への応用まで、効率的なスプレッドシート自動化を実現する実践的なコード例を紹介します。"
+tags: ["GAS", "Google Apps Script", "Spreadsheet", "getHeight", "行数取得", "データ範囲", "自動化"]
+date: "2020-07-17T12:11:38.000Z"
+lastmod: "2025-11-20T00:00:00.000Z"
+url: "/gas/getheight"
 share: true
 toc: true
-comment: true
-snap_isAutoPosted:
-  - 1594987898
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-last_modified:
-  - 2025-03-07 21:48:38
-categories:
-  - GAS
-tags:
-  - GAS
-  - getHeight()
-  - Google Apps Script
-  - スプレッドシート
-
+categories: "gas"
 archives: ["2020年7月"]
 ---
-Google Apps Script（GAS）を使ってスプレッドシートを操作するとき、**選択した範囲の行数**を取得する方法として `getHeight()` メソッドがあるとばい。この記事では `getHeight()` の基本的な使い方から応用テクニックまで、分かりやすく解説していくけんね！
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+Google Apps Script (GAS) を用いたスプレッドシートの自動化において、データの「行数」を正確に把握することは極めて重要です。特に、データ量に応じて動的に処理範囲を変えたい場合に役立つのが `getHeight()` メソッドです。
 
-## getHeight() ってなんね？
+本記事では、`getHeight()` の基本的な使い方から、`getLastRow()` と組み合わせた実践的な応用例、さらに条件付き書式やデータ分析への活用方法までを、具体的なコードを交えて徹底解説します。`getHeight()` をマスターし、GASによるスプレッドシート作業の効率化を加速させましょう。
 
-`getHeight()` メソッドは、指定したセル範囲の「縦の長さ」、つまり **行数** を取得するためのものばい。例えば、 `B2:D4` という範囲を指定した場合、 **2行目から4行目までの3行分** を含むけん、戻り値は `3` になるとさ。
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<pre class="wp-block-code"><code>const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-const range = sheet.getRange("B2:D4");
-Logger.log(range.getHeight()); // 3 を出力
-</code></pre>
+## getHeight()メソッドとは？
 
-## getHeight() の類似メソッドとの違い
+`getHeight()` メソッドは、GASで指定したセル範囲の「高さ」、つまり**行数がいくつあるか**を取得するための機能です。
 
-<table class="has-fixed-layout">
-  <tr>
-    <th>
-      メソッド名
-    </th>
-    
-    <th>
-      取得できる内容
-    </th>
-    
-    <th>
-      主な用途
-    </th>
-  </tr>
+例えば、`B2:D4` という範囲に対してこのメソッドを使用した場合、この範囲には2行目、3行目、4行目の**3行**が含まれるため、戻り値は `3` となります。
+
+```javascript
+function sampleGetHeight() {
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const range = sheet.getRange("B2:D4");
   
-  <tr>
-    <td>
-      <code>getHeight()</code>
-    </td>
-    
-    <td>
-      指定範囲の行数
-    </td>
-    
-    <td>
-      範囲のサイズ確認
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getWidth()</code>
-    </td>
-    
-    <td>
-      指定範囲の列数
-    </td>
-    
-    <td>
-      横幅の確認
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getNumRows()</code>
-    </td>
-    
-    <td>
-      シート全体の行数
-    </td>
-    
-    <td>
-      データがある範囲の取得
-    </td>
-  </tr>
-  
-  <tr>
-    <td>
-      <code>getRowHeight()</code>
-    </td>
-    
-    <td>
-      指定行の高さ（ピクセル）
-    </td>
-    
-    <td>
-      行の見た目の調整
-    </td>
-  </tr>
-</table></figure> 
+  // コンソールに "3" を出力
+  Logger.log(range.getHeight());
+}
+```
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+## getHeight()と類似メソッドとの違い
+
+GASには行数や列数を取得するためのメソッドがいくつか存在します。それぞれの違いを理解しておくと、目的に応じて最適なものを選択できます。
+
+| メソッド名 | 取得できる情報 | 主な用途 |
+| --- | --- | --- |
+| `getHeight()` | 指定範囲の **行数** | 範囲の縦の長さを確認したい場合 |
+| `getWidth()` | 指定範囲の **列数** | 範囲の横の長さを確認したい場合 |
+| `getLastRow()` | データが含まれる **最終行の番号** | シート全体のデータ量を把握したい場合 |
+| `getNumRows()` | シート全体の **物理的な総行数** | シート自体のサイズを知りたい場合 |
+
+`getHeight()` はあくまで**指定した範囲内**の行数を返す点がポイントです。
 
 ## getHeight() の基本的な使い方
 
-スプレッドシートの行数を取得する基本的な流れは以下の通りばい！
+スプレッドシートの行数を取得する基本的な使い方を2つのパターンで紹介します。
 
-### ① シンプルな範囲指定
+### 1. 静的な範囲の行数を取得する
 
-<pre class="wp-block-code"><code>function sampleGetHeight() {
+あらかじめ決められた範囲の行数を取得する最もシンプルな例です。
+
+```javascript
+function getStaticRangeHeight() {
   const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
   const dataRange = sheet.getRange("A2:C10");
+  
+  // "選択範囲の行数: 9" と出力
   Logger.log(`選択範囲の行数: ${dataRange.getHeight()}`);
 }
-</code></pre>
+```
+このスクリプトは、`A2:C10` の範囲に含まれる行数（10 - 2 + 1 = 9行）を取得します。
 
-このスクリプトを実行すると、 `A2:C10` の行数（9行）がログに表示されるとばい！
+### 2. データ量に応じた動的な範囲の行数を取得する
 
-### ② データがある範囲の行数を取得する
+`getLastRow()` と組み合わせることで、データの増減に柔軟に対応できるスクリプトを作成できます。
 
-`getLastRow()` を使えば、データがある最終行までの行数を取得できるばい。
-
-<pre class="wp-block-code"><code>function dynamicRangeHeight() {
+```javascript
+function getDynamicRangeHeight() {
   const sheet = SpreadsheetApp.getActiveSheet();
-  const lastRow = sheet.getLastRow();
-  const range = sheet.getRange(2, 1, lastRow - 1, 3);
-  Logger.log(`データ範囲の行数: ${range.getHeight()}`);
+  const lastRow = sheet.getLastRow(); // データのある最終行を取得
+  
+  // ヘッダー行を除いたデータ範囲を動的に指定
+  if (lastRow > 1) {
+    const dataRange = sheet.getRange(2, 1, lastRow - 1, sheet.getLastColumn());
+    Logger.log(`データ範囲の行数: ${dataRange.getHeight()}`);
+  } else {
+    Logger.log("データがありません。");
+  }
 }
-</code></pre>
+```
 
-この方法なら、 **データの増減に対応** できるばい！
+この方法なら、データの量が変わってもスクリプトを修正する必要がありません。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+## getHeight() の実践的な応用例
 
-## getHeight() を応用する！
+`getHeight()` を活用することで、より高度な自動化が可能になります。
 
-### ① 複数データセットの行数を比較
+### 1. データの行数に応じてセルの背景色を変更する
 
-<pre class="wp-block-code"><code>function compareDatasets() {
-  const sheet = SpreadsheetApp.getActiveSheet();
-  const range2023 = sheet.getRange("A2:A100");
-  const range2024 = sheet.getRange("B2:B150");
+取得した行数を条件分岐に利用し、特定の行数を超えた場合に警告として背景色を設定する例です。
 
-  const height2023 = range2023.getHeight();
-  const height2024 = range2024.getHeight();
-
-  Logger.log(`2023年データ行数: ${height2023}`);
-  Logger.log(`2024年データ行数: ${height2024}`);
-}
-</code></pre>
-
-### ② データの行数に応じてセルの色を変える
-
-<pre class="wp-block-code"><code>function applyConditionalFormatting() {
+```javascript
+function applyConditionalFormattingByHeight() {
   const sheet = SpreadsheetApp.getActiveSheet();
   const dataRange = sheet.getDataRange();
   const rowCount = dataRange.getHeight();
   
-  if (rowCount &gt; 100) {
-    dataRange.setBackground("#FFEBEE"); // 赤っぽい色
+  // データ行数が100行を超えたら背景を薄い赤色に設定
+  if (rowCount > 100) {
+    dataRange.setBackground("#FFEBEE");
   } else {
-    dataRange.setBackground("#E8F5E9"); // 緑っぽい色
+    dataRange.setBackground("#E8F5E9");
   }
 }
-</code></pre>
+```
+これにより、データ量を視覚的に把握しやすくなります。
 
-これで、データが100行を超えたら警告色にできるばい！
+### 2. 複数のデータセットの行数を比較分析する
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+異なる範囲の行数をそれぞれ取得し、比較することで簡単なデータ分析ができます。
 
-## getHeight() の注意点
+```javascript
+function compareDatasetHeights() {
+  const sheet = SpreadsheetApp.getActiveSheet();
+  const range2023 = sheet.getRange("A2:A100"); // 仮の範囲
+  const range2024 = sheet.getRange("B2:B150"); // 仮の範囲
 
-### ① 結合セルがあるときの挙動
+  const height2023 = range2023.getHeight();
+  const height2024 = range2024.getHeight();
 
-セルが結合されとる場合、 **結合された全体の行数** が返ってくるばい。例えば、 `B2:B4` を1つのセルに結合しとると、 `getHeight()` は `3` を返すとさ。
+  Logger.log(`2023年のデータ行数: ${height2023}`);
+  Logger.log(`2024年のデータ行数: ${height2024}`);
+  Logger.log(`増減: ${height2024 - height2023}行`);
+}
+```
 
-### ② 空白範囲の扱い
+## 注意点とベストプラクティス
 
-空白の範囲を指定した場合でも、 **1行としてカウントされる** ことがあるばい。
+### 1. 結合されたセルの扱い
 
-<pre class="wp-block-code"><code>const emptyRange = sheet.getRange("A1000:B1000");
-Logger.log(emptyRange.getHeight()); // 1 が出力される
-</code></pre>
+範囲内に結合されたセルがある場合、`getHeight()` は**結合範囲全体の行数**を返します。例えば、`A2:A4` が一つのセルに結合されている範囲に対して `getHeight()` を実行すると、結果は `3` となります。意図しない結果を招く可能性があるため、結合セルの扱いには注意が必要です。
 
-<hr class="wp-block-separator has-alpha-channel-opacity" />
+### 2. 空白範囲の挙動
+
+データが存在しない空白の範囲（例: `A1000:B1000`）を指定した場合でも、その範囲は**1行**としてカウントされ、`getHeight()` は `1` を返します。
 
 ## まとめ
 
-`getHeight()` は **スプレッドシートの範囲内の行数を取得する便利なメソッド** ばい！
+`getHeight()` は、スプレッドシートの指定範囲内の行数を取得するためのシンプルかつ強力なメソッドです。
 
-<ul class="wp-block-list">
-  <li>
-    <code>getHeight()</code> を使うと、指定範囲の行数が簡単に分かる
-  </li>
-  <li>
-    <code>getLastRow()</code> と組み合わせると <strong>データの増減に対応できる</strong>
-  </li>
-  <li>
-    行数に応じて <strong>色を変えたり、データ分析に活用したり</strong> できる
-  </li>
-  <li>
-    <strong>結合セルや空白範囲に注意が必要</strong>
-  </li>
-</ul>
+-   **基本**: `range.getHeight()` で簡単に範囲の行数を取得できます。
+-   **応用**: `getLastRow()` と組み合わせることで、動的なデータ量に対応できます。
+-   **活用**: 取得した行数を使って、条件付き書式やデータ分析など、さまざまな処理に応用可能です。
 
-GAS を使ってスプレッドシートを操作するなら、 `getHeight()` を活用して **効率的なスクリプト** を作っていこうばい！
+GASでスプレッドシートの操作を自動化する上で欠かせないメソッドの一つなので、ぜひマスターして効率的なスクリプト開発に役立ててください。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja" >}}
-{{< blog-card "https://qiita.com/tags/GoogleAppsScript" >}}
-{{< blog-card "https://gsuiteguide.jp/sheets/getheight/" >}}
+{{< blog-card "https://developers.google.com/apps-script/reference/spreadsheet/range?hl=ja#getheight" >}}

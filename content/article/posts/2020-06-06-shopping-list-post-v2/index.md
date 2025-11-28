@@ -1,383 +1,511 @@
 ---
-title: GASだけで作れる買い物リストを管理するLINE BOTの作り方Ver2.0
-author: arukayies
-type: post
-date: 2020-06-06T14:19:51+00:00
-excerpt: 以前作った買い物リストを管理してくれるLINE BOT を少し改良しました！削除の面倒な手間を減らし、V8ランタイムを意識してリファクタリング行いました！
-url: /gas/line_bot/shopping-list-post-v2
+title: "【GASだけで完結】LINEで使える買い物リスト管理BOTの作り方をコード付きで解説"
+description: "Google Apps Script（GAS）とLINE Messaging APIを使って、オリジナルの買い物リスト管理LINE BOTを作成する具体的な手順を解説します。コピペで使える全コードを公開しており、初心者でも簡単に実装できます。"
+tags: ["GAS", "Google Apps Script", "LINE BOT", "買い物リスト"]
+date: "2020-06-06T14:19:51.000Z"
+url: "/gas/line_bot/shopping-list-post-v2"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snap_isAutoPosted:
-  - 1591453192
-last_modified:
-  - 2024-11-19 11:35:07
-snapEdIT:
-  - 1
-snapTW:
-  - |
-    s:214:"a:1:{i:0;a:8:{s:2:"do";s:1:"0";s:9:"msgFormat";s:27:"%TITLE% 
-    %URL% 
-    
-    %HTAGS%";s:8:"attchImg";s:1:"0";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;}}";
-categories:
-  - LINE BOT
-tags:
-  - GAS
-  - Google Apps Script
-  - LINE BOT
-
+categories: ["LINE BOT"]
 archives: ["2020年6月"]
+lastmod: "2025-11-25T14:24:00+09:00"
 ---
-前回作った買い物リストを管理するLINE BOTについてちょっとコードを変更したので、今回はそれを紹介します！
 
-<div class="wp-block-cocoon-blocks-iconlist-box iconlist-box blank-box list-caret-right block-box has-background has-border-color has-icon-color has-watery-blue-background-color has-key-color-border-color has-key-color-icon-color">
-  <div class="iconlist-title">
-    変更点
-  </div>
-  
-  <ul class="wp-block-list">
-    <li>
-      処理が1ファイルに長かったので、細分化しました。
-    </li>
-    <li>
-      買い物リストの削除方法を変更しました。
-    </li>
-  </ul>
-</div>
+「あ、あれ買わなきゃ」と思ったことをすぐにメモしたい、家族やパートナーと買い物リストを共有したい、そんな経験はありませんか？
 
-コード部分のみ変えているのでそれ以外は前回の記事を参考にしてください！
+この記事では、**Google Apps Script (GAS) とLINE Messaging APIを使って、無料で簡単に作成できる「買い物リスト管理LINE BOT」の作り方**を、実際のコードを交えながら詳しく解説します。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-reference">
-  <a href="https://arukayies.com/gas/line_bot/shopping-list-post" title="GASだけで作れる買い物リストを管理するLINE BOTの作り方" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="shopping-list-post-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        GASだけで作れる買い物リストを管理するLINE BOTの作り方
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        GASだけで作れる買い物リストを管理できるLINE BOTの作り方を紹介します！コピペで作れるのでぜひ使ってみてください！
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.15
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+プログラムの知識が少ない方でも、コピー＆ペーストで実装できるように丁寧に説明していくので、ぜひオリジナルのBOT作りに挑戦してみてください。
 
-削除部分はこんな動きになります。<figure class="wp-block-embed is-type-rich is-provider-twitter wp-block-embed-twitter">
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
 
-<div class="wp-block-embed__wrapper">
-  <blockquote class="twitter-tweet" data-width="550" data-dnt="true">
-    <p lang="ja" dir="ltr">
-      以前作った買い物リストを管理してくれるLINE BOT を少し改良しました！<br /><br />・削除時にカルーセルテンプレートを使うようにして、入力する手間を減らしてます！<br />・GASのV8意識して、リファクタしました！<br />・clasp&GitHub環境を整えた！<a href="https://t.co/lSRrD8BVak">https://t.co/lSRrD8BVak</a><a href="https://twitter.com/hashtag/GAS?src=hash&ref_src=twsrc%5Etfw">#GAS</a> <a href="https://twitter.com/hashtag/LINEBOT?src=hash&ref_src=twsrc%5Etfw">#LINEBOT</a> <a href="https://t.co/F2pv7DmZkz">pic.twitter.com/F2pv7DmZkz</a>
-    </p>&mdash; arukayies (@arukayies) 
-    
-    <a href="https://twitter.com/arukayies/status/1265646924654194690?ref_src=twsrc%5Etfw">May 27, 2020</a>
-  </blockquote>
-</div></figure> 
+{{< affsearch keyword="LINE BOT チャットボット 作り方" img="/line.jpg">}}
 
-コードだけ見れればいい！って方は<a href="https://github.com/arukayies/linebot-shopping-list-post-v2" title="https://github.com/arukayies/linebot-shopping-list-post-v2">こちら</a>をどうぞ！
+## このBOTでできること
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎｇ　ＡＰＩを使ったチャットボットの/翔泳社/立花翔</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DLINE%2520bot%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DLINE%2520bot" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+作成する買い物リストBOTは、LINEのトーク画面で以下のような操作ができます。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+*   **リストの表示**: 現在の買い物リストを一覧で表示します。
+{{< custom-figure src="IMG_8151.jpg" title="" Fit="640x640 webp q90" >}}
 
-## コードの説明
+*   **リストへの追加**: 買いたいものをメッセージで送るだけでリストに追加できます。
+{{< custom-figure src="IMG_8149.jpg" title="" Fit="640x640 webp q90" >}}
 
-### メイン処理
+*   **リストからの削除**: 買い物が終わったものをリストから削除します。
+{{< custom-figure src="IMG_8150.jpg" title="" Fit="640x640 webp q90" >}}
 
-LINEから受け取った情報が **メッセージイベント** か **ポストバックイベント** かを判別する処理になります。
+*   **使い方の確認**: 操作方法がわからなくなったときに使い方を表示します。
+{{< custom-figure src="IMG_8148.jpg" title="" Fit="640x640 webp q90" >}}
 
-2行目のトークンはLINEのチャンネルアクセストークンを入力してください。
 
-<div class="wp-block-cocoon-blocks-blogcard blogcard-type bct-related">
-  <a href="https://arukayies.com/gas/line_bot/gettoken" title="LINE Messaging APIアクセストークンの取得方法" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-  
-  <div class="blogcard internal-blogcard ib-left cf">
-    <div class="blogcard-label internal-blogcard-label">
-      <span class="fa"></span>
-    </div>{{< custom-figure src="gettoken-1-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-    
-    <div class="blogcard-content internal-blogcard-content">
-      <div class="blogcard-title internal-blogcard-title">
-        LINE Messaging APIアクセストークンの取得方法
-      </div>
-      
-      <div class="blogcard-snippet internal-blogcard-snippet">
-        LINEBOTに必要なトークンの取得方法を画像付きで解説します。
-      </div>
-    </div>
-    
-    <div class="blogcard-footer internal-blogcard-footer cf">
-      <div class="blogcard-site internal-blogcard-site">
-        <div class="blogcard-favicon internal-blogcard-favicon">
-          <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-          
-          <noscript>
-            <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-          </noscript>
-        </div>
-        
-        <div class="blogcard-domain internal-blogcard-domain">
-          arukayies.com
-        </div>
-      </div>
-      
-      <div class="blogcard-date internal-blogcard-date">
-        <div class="blogcard-post-date internal-blogcard-post-date">
-          2024.11.19
-        </div>
-      </div>
-    </div>
-  </div></a>
-</div>
+日常の買い物をよりスマートに、効率的に管理するための便利なツールです。
 
-#### メッセージイベント処理
+## BOTの技術的なポイント
 
-LINEから受け取った **テキスト内容** によって判別する処理になります。
+このBOTを作成する上での技術的なポイントをいくつか紹介します。
 
-##### 買い物リストを表示する処理
+*   **データ保存**: 買い物リストのデータは、スプレッドシートやデータベースを使わず、GASの**スクリプトプロパティ**に保存しています。データ量が少ないため、カンマ区切りのテキストとして手軽に管理しています。
+*   **リッチメニュー**: トーク画面下部に表示される「表示」「追加」などのボタン（リッチメニュー）の画像は、デザインツールの[Canva](https://www.canva.com/)で簡単に作成しました。プログラミングだけでなく、少しデザインにこだわるだけでBOTがぐっと使いやすくなります。
 
-スクリプトエディタの **文字列を配列** に変換し、買い物リストの文字列を生成します。
+## 事前準備
 
-##### 買い物リストに追加状態にする処理
+このBOTを作成するにあたり、LINE Botアカウントの作成やリッチメニューの設定、GASプロジェクトの準備が必要です。これらの基本的な設定方法については、旧バージョンの記事で詳しく解説していますので、まずはこちらをご覧ください。
 
-スクリプトエディタの **CONFを1** に変え、次のメッセージを買い物リストに追加する状態にする処理です。
+{{< self-blog-card "article/posts/2020-05-04-shopping-list-post" >}}
 
-##### 買い物リストから削除する一覧を送る処理
+## GASのコード解説
 
-買い物リストの内容を **カルーセルテンプレート** でLINEに送ります。
+それでは、BOTを動作させるためのGoogle Apps Scriptのコードを見ていきましょう。機能ごとにファイルを分割して、管理しやすくしています。
 
-カルーセルテンプレートの仕様で一度に送れるのは10個までのため、
+### 1. メイン処理 (`main.js`)
 
-リストを10で割って、余りまで表示したりと、、、ちょっと処理が複雑です。
+LINEプラットフォームからのWebhookを受け取るメインの処理です。受け取ったイベントの種類（メッセージか、ボタンタップなどのポストバックか）を判別し、それぞれの処理に振り分けます。
 
-<div class="wp-block-cocoon-blocks-tab-caption-box-1 tab-caption-box block-box has-border-color has-red-border-color cocoon-block-tab-caption-box">
-  <div class="tab-caption-box-label block-box-label box-label fab-check">
-    <span class="tab-caption-box-label-text block-box-label-text box-label-text">ポイント</span>
-  </div>
-  
-  <div class="tab-caption-box-content block-box-content box-content">
-    <ul class="wp-block-list">
-      <li>
-        買い物リストが10件以上ある場合は複数回のカルーセルテンプレートメッセージが送られます。
-      </li>
-    </ul>
-  </div>
-</div>
+```javascript:main.js
+/*
+関数概要
+ 買い物リストBOTのメイン処理
 
-###### カルーセルテンプレートを組み立てる処理
+引数
+ e LINEから受け取ったイベント情報
 
-買い物リストを元にカルーセルテンプレートの **配列を組み立てる** 処理です。
+戻り値
+ なし
+———————————–*/
+function doPost(e) {
+  /* テキスト内容によって制御 */
+  try {
+    const res = e.postData.getDataAsString();
+    postLog(res);
+    const event = JSON.parse(res).events[0];
 
-##### 使い方を送る処理
+    switch (event.type) {
+      /* メッセージイベントの場合 */
+      case "message":
+        getMessage(event);
+        break;
+      /* ポストバックイベントの場合 */
+      case "postback":
+        getPostback(event);
+        break;
+      default:
+        addLog(res);
+        break;
+    }
+  } catch (e) {
+    addLog(e);
+  }
+}
+```
 
-LINEにBOTの **使い方** を送ります。
+### 2. メッセージイベントの処理 (`getMessage.js`)
 
-### ポストバックイベント処理
+ユーザーから送信されたテキストメッセージの内容に応じて、処理を分岐させます。
 
-指定されたアイテムを買い物リストから **削除** します。
+*   `表示`: `pushShoppingLists`関数を呼び出し、現在のリストを表示します。
+*   `追加`: `addShoppingLists`関数を呼び出し、アイテム追加モードに移行します。
+*   `削除`: `deleteShoppingLists`関数を呼び出し、アイテム削除モードに移行します。
+*   `使い方`: `pushReadme`関数を呼び出し、操作説明を送信します。
+*   上記以外: アイテム追加モードであれば、送られてきたテキストをリストに追加します。
 
-### LINEに送信する処理
+```javascript:getMessage.js
+/*
+関数概要
+ メッセージイベントの処理
 
-受け取ったLINEの **メッセージオブジェクト** を指定宛先に送ります。
+引数
+ event LINEから受け取ったメッセージイベント情報
 
-### 失敗時のログを記録する処理
+戻り値
+ なし
+———————————–*/
+function getMessage(event) {
+  /* テキスト内容によって制御 */
+  try {
+    /* eventの宛先IDを取得 */
+    let to;
+    if (event.source.type == "user") {
+      to = event.source.userId;
+    } else {
+      to = event.source.roomId;
+    }
+    switch (event.message.text) {
+      /* 買い物リストを表示 */
+      case "表示":
+        pushShoppingLists(to);
+        break;
+      /* 買い物リストの追加 */
+      case "追加":
+        addShoppingLists(to);
+        break;
+      /* 買い物リストの削除 */
+      case "削除":
+        deleteShoppingLists(to);
+        break;
+      /* 使い方の表示 */
+      case "使い方":
+        pushReadme(to);
+        break;
+      default:
+        /* スクリプトプロパティ情報を取得 */
+        const prop = PropertiesService.getScriptProperties();
+        /* 現在の設定値を取得 */
+        const CONF = prop.getProperty("CONF");
+        /* 設定値が1なら買い物リストを追加する */
+        if (CONF == 1) {
+          /* 設定値を0にする */
+          prop.setProperty("CONF", 0);
+          /* 空文字は削除する */
+          let shoppingLists = event.message.text.split(/\\n/);
+          shoppingLists = shoppingLists.filter(function (x) {
+            return !(x === null || x === undefined || x === "");
+          })
+          /* 買い物リストを追加する */
+          prop.setProperty("LIST", prop.getProperty("LIST") + "," + shoppingLists.join(","));
+          const lineMessageObject = [
+            {
+              type: "text",
+              text: "追加しました！",
+            },
+          ];
+          pushLine(lineMessageObject, to);
+          pushShoppingLists(to);
+        }
+        break;
+    }
+  } catch (event) {
+    addLog(event);
+  }
+}
+```
 
-メイン処理の **console.log** 部分を **addLog** か **postLog** に書き換えることで、ログをスプレッドシートかSlackへ記録することができます！
+### 3. ポストバックイベントの処理 (`getPostback.js`)
 
-スプレッドシートに記録する場合はこちらです。
+削除モードの際に表示されるリストアイテムがタップされたときの処理です。ポストバックデータに含まれるアイテム名を取得し、リストから該当するアイテムを削除します。
 
-Slackにログを送信する場合はこちらです！
+```javascript:getPostback.js
+/*
+関数概要
+ ポストバックイベントの処理
+
+引数
+ event LINEから受け取ったメッセージイベント情報
+
+戻り値
+ なし
+———————————–*/
+function getPostback(event) {
+  /* eventの宛先IDを取得 */
+  let to;
+  if (event.source.type == "user") {
+    to = event.source.userId;
+  } else {
+    to = event.source.roomId;
+  }
+  /* スクリプトプロパティ情報を取得 */
+  const prop = PropertiesService.getScriptProperties();
+  /* 設定値を0にする */
+  prop.setProperty("CONF", 0);
+  /* 買い物リストの文字列を取得 */
+  const stringLists = prop.getProperty("LIST");
+  /* 買い物リストの文字列を配列に変換して取得 */
+  const ArrayLists = stringLists.split(",");
+
+  /* ポストバックから受け取ったデータを取得 */
+  const data = event.postback.data;
+
+  /* 買い物リストから削除する */
+  const newArrayLists = ArrayLists.filter(function (a) {
+    return a != data.replace("delete=", "");
+  });
+
+  /* 買い物リストを更新する */
+  prop.setProperty("LIST", newArrayLists.join(","));
+
+  /* 削除結果をLINEに送信する */
+  const lineMessageObject = [
+    {
+      type: "text",
+      text: `『${data.replace("delete=", "")}』を削除しました`,
+    },
+  ]
+  return pushLine(lineMessageObject, to);
+}
+```
+
+### 4. 買い物リストの表示 (`pushShoppingLists.js`)
+
+スクリプトプロパティに保存されている買い物リストを読み出し、`createContents`関数で整形してユーザーに送信します。リストが空の場合はその旨を伝えます。
+
+```javascript:pushShoppingLists.js
+/*
+関数概要
+ 買い物リストの内容をLINEに送信する処理
+
+引数
+ to 送る宛先
+
+戻り値
+ 送信した結果のレスポンス
+———————————–*/
+function pushShoppingLists(to) {
+  /* スクリプトプロパティ情報を取得 */
+  const prop = PropertiesService.getScriptProperties();
+  /* 設定値を0にする */
+  prop.setProperty("CONF", 0);
+  /* 買い物リストの文字列を取得 */
+  const stringLists = prop.getProperty("LIST");
+  /* 買い物リストの文字列を配列に変換して取得 */
+  const ArrayLists = stringLists.split(",");
+  /* 先頭の『初期値』は削除する */
+  ArrayLists.shift();
+
+  /* 買い物リストが空の場合 */
+  if (stringLists == "初期値") {
+    let lineMessageObject = [
+      {
+        type: "text",
+        text: "買い物リストは空っぽです。"
+      }
+    ];
+    return pushLine(lineMessageObject, to);
+    /* 買い物リストがある場合 */
+  } else {
+    return pushLine(createContents(ArrayLists, "買い物リスト", "primary"), to);
+  }
+}
+```
+
+### 5. アイテム追加モードへの移行 (`addShoppingLists.js`)
+
+「追加」と送信された際に、BOTを「アイテム追加モード」に設定します。次に送信されるメッセージがリストに追加されるようになります。
+
+```javascript:addShoppingLists.js
+/*
+関数概要
+ 買い物リストを追加モードにする処理
+
+引数
+ to 送る宛先
+
+戻り値
+ 送信した結果のレスポンス
+———————————–*/
+function addShoppingLists(to) {
+  /* スクリプトプロパティ情報を取得 */
+  const prop = PropertiesService.getScriptProperties();
+  /* 設定値を1にする */
+  prop.setProperty("CONF", 1);
+  /* 使い方の内容 */
+  const message =
+    `追加したい品目を入力してください。
+改行すると、複数追加できます。`;
+  const lineMessageObject = [
+    {
+      type: "text",
+      text: message,
+    },
+  ];
+  return pushLine(lineMessageObject, to);
+}
+```
+
+### 6. アイテム削除モードへの移行 (`deleteShoppingLists.js`)
+
+「削除」と送信された際に、現在の買い物リストをタップ可能なボタン形式で送信し、BOTを「アイテム削除モード」に設定します。
+
+```javascript:deleteShoppingLists.js
+/*
+関数概要
+ 買い物リストをカルーセルテンプレートでLINEに送る処理
+
+引数
+ to 送る宛先
+
+戻り値
+ 送信した結果のレスポンス
+———————————–*/
+function deleteShoppingLists(to) {
+  /* スクリプトプロパティ情報を取得 */
+  const prop = PropertiesService.getScriptProperties();
+  /* 設定値を2にする */
+  prop.setProperty("CONF", 2);
+  /* 買い物リストの文字列を取得 */
+  const stringLists = prop.getProperty("LIST");
+  /* 買い物リストの文字列を配列に変換して取得 */
+  const ArrayLists = stringLists.split(",");
+  /* 先頭の『初期値』は削除する */
+  ArrayLists.shift();
+
+  /* 買い物リストが空の場合 */
+  if (stringLists == "初期値") {
+    const lineMessageObject = [
+      {
+        type: "text",
+        text: "買い物リストは空っぽです。"
+      }
+    ];
+    return pushLine(lineMessageObject, to);
+    /* 買い物リストがある場合 */
+  } else {
+    pushLine(createContents(ArrayLists, "削除する品名をタップ", "secondary"), to);
+  }
+}
+```
+
+### 7. 表示メッセージの組み立て (`createContents.js`)
+
+買い物リストの配列データから、LINEで表示するためのFlex Messageオブジェクトを生成します。アイテム一つひとつがボタンになり、タップでアクションを起こせるようになります。
+
+```javascript:createContents.js
+/*
+関数概要
+ 買い物リストのFlex Messageを組み立てる処理
+
+引数
+ shoppingLists  買い物リストの配列
+ message リストのタイトルメッセージ
+
+戻り値
+ lineMessageObjecを返す
+———————————–*/
+function createContents(shoppingLists, message, button_type) {
+  let contents = [];
+
+  /* 買い物リストのカルーセルを組み立てる */
+  for (let i in shoppingLists) {
+    /* 空文字以外 */
+    if (shoppingLists[i] != "") {
+      contents.push({
+        "type": "button",
+        "action": {
+          "type": "postback",
+          "label": shoppingLists[i],
+          "data": "delete=" + shoppingLists[i]
+        },
+        "style": button_type,//買い物リストを表示するときprimary、削除するときは灰色のボタンsecondary
+        "height": "sm"
+      });
+    }
+  }
+
+  /* Flex Messageを組み立てる */
+  const lineMessageObject = [{
+    "type": "flex",
+    "altText": "買い物リスト",
+    "contents": {
+      "type": "bubble",
+      "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [
+          {
+            "type": "text",
+            "text": message,
+            "weight": "bold",
+            "size": "xl"
+          }
+        ]
+      },
+      "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": contents,
+        "flex": 0
+      }
+    }
+  }];
+
+  return lineMessageObject;
+}
+```
+
+### 8. LINEへのプッシュ通知 (`pushLine.js`)
+
+LINE Messaging APIのエンドポイントに対して、生成したメッセージオブジェクトをPOSTリクエストで送信するコアな関数です。
+
+```javascript:pushLine.js
+/*
+関数概要
+ LINEに送信する処理
+
+引数
+ lineMessageObject LINEに送るメッセージオブジェクト
+ to 送る宛先
+
+戻り値
+ 送信した結果のレスポンス
+———————————–*/
+function pushLine(lineMessageObject, to) {
+  /* スクリプトプロパティ情報を取得 */
+  const prop = PropertiesService.getScriptProperties();
+  /* LINEに送信用のURL */
+  const PUSH_API_URL = "https://api.line.me/v2/bot/message/push";
+
+  const headers = {
+    "Content-Type": "application/json",
+    Authorization: "Bearer " + prop.getProperty("TOKEN")
+  };
+  const data = {
+    to: to,
+    messages: lineMessageObject
+  };
+  const options = {
+    method: "POST",
+    headers: headers,
+    payload: JSON.stringify(data)
+  };
+  return UrlFetchApp.fetch(PUSH_API_URL, options);
+}
+```
+
+### 9. 使い方メッセージの送信 (`pushReadme.js`)
+
+BOTの基本的な使い方をテキストメッセージでユーザーに送信します。
+
+```javascript:pushReadme.js
+/*
+関数概要
+ 使い方の内容をLINEに送信する処理
+
+引数
+ to 送る宛先
+
+戻り値
+ 送信した結果のレスポンス
+———————————–*/
+function pushReadme(to) {
+  /* スクリプトプロパティ情報を取得 */
+  const prop = PropertiesService.getScriptProperties();
+  /* 設定値を0にする */
+  prop.setProperty("CONF", 0);
+  /* 使い方の内容 */
+  const message =
+    `以下のキーワードに反応します。
+
+①『表示』:リストを表示。
+②『追加』:リストに追加。
+③『削除』:リストを削除。
+④『使い方』:使い方を表示。`;
+  const lineMessageObject = [
+    {
+      type: "text",
+      text: message,
+    },
+  ];
+  return pushLine(lineMessageObject, to);
+}
+```
 
 ## まとめ
 
-砂糖がなくなったら、LINEに追加しておく。
-</p>
-<p>
-テレビ見ていてこれ作りたい！ってなったら材料をLINEに追加しておく。
-</p>
-<p>
-など、<strong><span class="fz-20px"><span class="fz-32px"><span class="fz-28px"><span class="fz-24px">すぐにメモが出来るので便利です！！！</span></span></span></span></strong>
+今回は、Google Apps Script (GAS) を利用して、実用的な買い物リスト管理LINE BOTを作成する方法を紹介しました。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798150734_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >ＬＩＮＥ　ＢＯＴを作ろう！ Ｍｅｓｓａｇｉｎｇ　ＡＰＩを使ったチャットボットの/翔泳社/立花翔</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2Fe4320d2f4429571200cf25919da31353%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3DLINE%2520bot%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3DLINE%2520bot" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+思いついた時にすぐにLINEでリストに追加できるので、買い忘れを防いだり、家族との情報共有をスムーズにしたりと、日々の生活が少し便利になります。
 
-<div class="cstmreba">
-  <div class="kaerebalink-box">
-    <div class="kaerebalink-image">
-      <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >{{< custom-figure src="20010009784798064741_1.jpg" title="" Fit="1280x1280 webp q90" >}}</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-    </div>
-    
-    <div class="kaerebalink-info">
-      <div class="kaerebalink-name">
-        <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >詳解！Ｇｏｏｇｌｅ　Ａｐｐｓ　Ｓｃｒｉｐｔ完全入門 ＧｏｏｇｌｅアプリケーションとＧｏｏｇｌｅ　Ｗｏｒ 第３版/秀和システム/高橋宣成</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        
-        <div class="kaerebalink-powered-date">
-          posted with <a rel="nofollow noopener" href="https://kaereba.com" target="_blank">カエレバ</a>
-        </div>
-      </div>
-      
-      <div class="kaerebalink-detail">
-      </div>
-      
-      <div class="kaerebalink-link1">
-        <div class="shoplinkrakuten">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612575&#038;p_id=54&#038;pc_id=54&#038;pl_id=616&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fproduct.rakuten.co.jp%2Fproduct%2F-%2F2735ffa9683d4fe24bd8643fa95fab2a%2F%3Frafcid%3Dwsc_i_ps_1087413314923222742" target="_blank" >楽天市場</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612575p_id54pc_id54pl_id616.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkamazon">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1612578&#038;p_id=170&#038;pc_id=185&#038;pl_id=4062&#038;s_v=b5Rz2P0601xu&#038;url=https%3A%2F%2Fwww.amazon.co.jp%2Fgp%2Fsearch%3Fkeywords%3Dgoogle%2520apps%2520script%26__mk_ja_JP%3D%25E3%2582%25AB%25E3%2582%25BF%25E3%2582%25AB%25E3%2583%258A" target="_blank" >Amazon</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1612578p_id170pc_id185pl_id4062.gif" width="1" height="1" style="border:none;" />
-        </div>
-        
-        <div class="shoplinkyahoo">
-          <a rel="noopener" href="//af.moshimo.com/af/c/click?a_id=1615240&#038;p_id=1225&#038;pc_id=1925&#038;pl_id=18502&#038;s_v=b5Rz2P0601xu&#038;url=http%3A%2F%2Fsearch.shopping.yahoo.co.jp%2Fsearch%3Fp%3Dgoogle%2520apps%2520script" target="_blank" >Yahooショッピング</a><img loading="lazy" decoding="async" src="https://arukayies.com/wp-content/uploads/2024/11/impressiona_id1615240p_id1225pc_id1925pl_id18502.gif" width="1" height="1" style="border:none;" />
-        </div>
-      </div>
-    </div>
-    
-    <div class="booklink-footer">
-    </div>
-  </div>
-</div>
+今回紹介したコードをベースに、自分好みに機能を拡張してみるのも面白いでしょう。ぜひ、この記事を参考にオリジナルのLINE BOT開発に挑戦してみてください。
+
+{{< affsearch keyword="Google Apps Script 始め方 スプレッドシート 活用例" img="/gas.jpg">}}
+
+{{< affsearch keyword="LINE BOT チャットボット 作り方" img="/line.jpg">}}

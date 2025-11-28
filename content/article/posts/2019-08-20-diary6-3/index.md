@@ -1,124 +1,32 @@
 ---
-title: 【水耕栽培】オクラの観察日記(39日目)
-author: arukayies
-type: post
-date: 2019-08-20T05:31:55+00:00
-url: /hydroponic_culture/okra/diary6-3
+title: "【水耕栽培39日目】オクラ観察日記：高さ制限との戦いと苗の配置調整"
+description: "水耕栽培で育てているオクラの観察日記39日目。高さ制限がある中で、苗の配置を変えながら成長を促す工夫を写真でご紹介。水耕栽培での空間管理の重要性も解説。"
+tags: ["水耕栽培", "オクラ", "家庭菜園", "観察日記", "植物育成", "DIY", "空間管理"]
+date: "2019-08-20T05:31:55.000Z"
+url: "/hydroponic_culture/okra/diary6-3"
 share: true
 toc: true
-comment: true
-page_type:
-  - default
-update_level:
-  - high
-snap_isAutoPosted:
-  - 1571722479
-the_review_type:
-  - Product
-the_review_rate:
-  - 5
-snapEdIT:
-  - 1
-snapTW:
-  - 's:398:"a:1:{i:0;a:12:{s:2:"do";s:1:"1";s:9:"msgFormat";s:32:"「%TITLE%」 %SITENAME% - %URL%";s:8:"attchImg";s:1:"1";s:9:"isAutoImg";s:1:"A";s:8:"imgToUse";s:0:"";s:9:"isAutoURL";s:1:"A";s:8:"urlToUse";s:0:"";s:4:"doTW";i:0;s:8:"isPosted";s:1:"1";s:4:"pgID";s:19:"1186516348353908737";s:7:"postURL";s:56:"https://twitter.com/arukayies/status/1186516348353908737";s:5:"pDate";s:19:"2019-10-22 05:35:16";}}";'
-archives: ["2019年8月"]
+lastmod: "2025-11-18T00:00:00+00:00"
 ---
+
 こんにちは！
 
-<span class="marker"><strong>水耕栽培</strong></span>で**オクラ**を育成し始めました、「くら(<a rel="noopener" href="http://www.twitter.com/arukayies" target="_blank"><i class="fa fa-twitter" aria-hidden="true" style="color: #55ACEE;font-size:1.2em;"></i>@arukayies</a>)」です！
+**水耕栽培**で**オクラ**を育成し始めました！
 
-<span style="color: blue;">観察39日目</span>の様子です！
+**観察39日目**の様子です！
 
-<div class="blogcard-type bct-together">
-  <div class="blogcard-shortcode-wrap paragraph">
-    前回までの日記はこちらです。<br /> <a href="https://arukayies.com/hydroponic_culture/okra/diary5-3" title="【水耕栽培】オクラの観察日記(29日目)" class="blogcard-wrap internal-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard internal-blogcard ib-left cf">
-      <div class="blogcard-label internal-blogcard-label">
-        <span class="fa"></span>
-      </div>{{< custom-figure src="diary5-3-160x90.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <div class="blogcard-content internal-blogcard-content">
-        <div class="blogcard-title internal-blogcard-title">
-          【水耕栽培】オクラの観察日記(29日目)
-        </div>
-        
-        <div class="blogcard-snippet internal-blogcard-snippet">
-          こんにちは！水耕栽培でオクラを育成し始めました、「くら(twitter@arukayies)」です！観察29日目の様子です！前回までの日記はこちらです。自作水耕栽培装置の紹介はこちらです。観察29日目ちょっと予想以上に育つスピードが早いです...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer internal-blogcard-footer cf">
-        <div class="blogcard-site internal-blogcard-site">
-          <div class="blogcard-favicon internal-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com" alt="" class="blogcard-favicon-image internal-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain internal-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-        
-        <div class="blogcard-date internal-blogcard-date">
-          <div class="blogcard-post-date internal-blogcard-post-date">
-            2019.12.22
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-  
-  <div class="blogcard-shortcode-wrap paragraph">
-    自作水耕栽培装置の紹介はこちらです。<br /> <a href="https://arukayies.com/diy/hydroponic_culture_first_machine" title="ほぼ100均で作る循環式の水耕栽培装置の紹介" class="blogcard-wrap external-blogcard-wrap a-wrap cf" target="_blank">
-    
-    <div class="blogcard external-blogcard eb-left cf">
-      <div class="blogcard-label external-blogcard-label">
-        <span class="fa"></span>
-      </div><figure class="blogcard-thumbnail external-blogcard-thumbnail">
-      
-      {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      
-      <noscript>
-        {{< custom-figure src="hydroponic_culture_first_machine.png" title="" Fit="1280x1280 webp q90" >}}
-      </noscript></figure>
-      
-      <div class="blogcard-content external-blogcard-content">
-        <div class="blogcard-title external-blogcard-title">
-          ほぼ100均で作る循環式の水耕栽培装置の紹介
-        </div>
-        
-        <div class="blogcard-snippet external-blogcard-snippet">
-          こんにちは！自宅で野菜を作ってみたくて、水耕栽培に興味を持った「くら」です！これが実際に自作した水耕栽培装置です。↓今回は私が自作した水耕栽培装置を紹介します！大規模にやるならこれも気になる・・・【2024進化版】LAPOND 水耕栽培シス...
-        </div>
-      </div>
-      
-      <div class="blogcard-footer external-blogcard-footer cf">
-        <div class="blogcard-site external-blogcard-site">
-          <div class="blogcard-favicon external-blogcard-favicon">
-            <img data-src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image lozad lozad-img" loading="lazy" width="16" height="16" />
-            
-            <noscript>
-              <img loading="lazy" decoding="async" src="https://www.google.com/s2/favicons?domain=https://arukayies.com/diy/hydroponic-culture-first-machine" alt="" class="blogcard-favicon-image external-blogcard-favicon-image" width="16" height="16" />
-            </noscript>
-          </div>
-          
-          <div class="blogcard-domain external-blogcard-domain">
-            arukayies.com
-          </div>
-        </div>
-      </div>
-    </div></a>
-  </div>
-</div>
+前回までの日記はこちらです。
+
+{{< self-blog-card "article/posts/2019-08-10-diary5-3" >}}
+
+自作水耕栽培装置の紹介はこちらです。
+
+
 
 ## 観察39日目
 
 苗の配置を変えたりしてみましたが、、、  
 高さがもういっぱい、いっぱいです。  
-{{< custom-figure src="img_5dfa4326a9ce8.jpg" title="" Fit="1280x1280 webp q90" >}} 
+{{< custom-figure src="img_5dfa4326a9ce8.jpg" title="苗の配置調整後のオクラ" Fit="1280x1280 webp q90" >}}
 
-{{< custom-figure src="img_5dfa43278d808.jpg" title="" Fit="1280x1280 webp q90" >}}
+{{< custom-figure src="img_5dfa43278d808.jpg" title="限界に近づく高さ" Fit="1280x1280 webp q90" >}}
