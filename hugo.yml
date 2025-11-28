@@ -8,7 +8,7 @@ disqusShortname:
 
 taxonomies:
   category: categories
-  # tag: tags
+  tag: tags
   # pickup: pickups
   archive: archives
 

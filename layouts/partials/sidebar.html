@@ -180,6 +180,15 @@
                 </ul>
             </nav>
         </div>
+        
+        <div class="partials__sidebar__card">
+            <h3 class="partials__sidebar__title">
+                タグ
+            </h3>
+            <nav class="partials__sidebar__tag">
+                {{ partial "tag-list.html" (dict "tags" .Site.Taxonomies.tags.ByCount) }}
+            </nav>
+        </div>
 
         {{ if .Site.Taxonomies.archives }}
             <div class="partials__sidebar__card">
