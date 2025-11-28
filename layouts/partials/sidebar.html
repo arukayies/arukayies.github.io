@@ -110,22 +110,23 @@
             </div>
         {{ end }}
 
+        {{ with .Site.Data.ranking.items }}
             {{ $ranking := slice }}
-            {{ range $item := sort .Site.Data.ranking.items "pv" "desc" }}
+            {{ range $item := sort . "pv" "desc" }}
                 {{ with $page := $.Site.GetPage (path.Clean $item.pagePath) }}
                     {{ if eq .Section "article" }}
                         {{ $ranking = $ranking | append (dict "page" $page "pv" $item.pv) }}
                     {{ end }}
                 {{ end }}
             {{ end }}
-            {{ if ge (len $ranking) .Site.Params.rankingArticleLimit }}
+            {{ if ge (len $ranking) $.Site.Params.rankingArticleLimit }}
                 <div class="partials__sidebar__card">
                     <h3 class="partials__sidebar__title--ranking">
                         ランキング
                     </h3>
                     <nav class="partials__sidebar__article">
                         <ul class="partials__sidebar__article__items">
-                            {{ range first .Site.Params.rankingArticleLimit $ranking }}
+                            {{ range first $.Site.Params.rankingArticleLimit $ranking }}
                                 {{ $pv := .pv }}
                                 {{ with .page }}
                                     <li class="partials__sidebar__article__item">
@@ -133,10 +134,10 @@
                                             {{ $thumbnail := or
                                                 (.Resources.GetMatch "thumbnail.*")
                                                 (resources.Get .Params.thumbnail)
-                                                (resources.Get .Site.Params.defaultNoimage)
+                                                (resources.Get $.Site.Params.defaultNoimage)
                                             }}
                                             {{ if $thumbnail }}
-                                                {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" .Site.Params.imageQuality) }}
+                                                {{ $thumbnail = $thumbnail.Fill (printf "192x108 center q%d webp" $.Site.Params.imageQuality) }}
                                                 <img src='{{ $thumbnail.Permalink }}' alt="{{ .Title }}" loading="lazy" class="partials__sidebar__article__itemThumbnail">
                                             {{ end }}
                                             <div class="partials__sidebar__article__itemDetail">
