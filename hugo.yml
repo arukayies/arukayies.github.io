@@ -1,4 +1,4 @@
-baseURL: https://arukayies.github.io/
+baseURL: https://arukayies.com/
 languageCode: ja
 title: くらぶろぐ
 publishDir: public
@@ -59,7 +59,7 @@ params:
   author:
     name: arukayies
     # email: my_email@example.com
-    url: https://arukayies.github.io/
+    url: https://arukayies.com/
   description: DIYネタについてまとめてます。
   icon: image/icon.png
   images:
@@ -83,7 +83,7 @@ params:
       # qiita: qiita
       # zenn: zenn
       # email: my_email@example.com
-      other: https://arukayies.github.io/
+      other: https://arukayies.com/
   # publisher:
     # type: Organization
     # name: my_organization
