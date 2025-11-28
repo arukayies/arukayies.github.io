@@ -211,8 +211,6 @@ archives: ["2024年9月"]
 
 {{< affsearch keyword="洗濯用品セット 洗濯袋 折りたたみハンガー ロープ付きクリップ" img="/wash.jpg">}}
 
-{{< affsearch keyword="洗濯用品セット 洗濯袋 折りたたみハンガー ロープ付きクリップ" img="/wash.jpg">}}
-
 ## 3日目：ヒースロー空港からブダペストへ出発！スマートなチェックイン手順
 
 {{< custom-figure src="IMG_4034-768x1024.jpg" title="ヒースロー空港ターミナル移動" Fit="1280x1280 webp q90" >}}

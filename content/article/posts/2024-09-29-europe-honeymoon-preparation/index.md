@@ -193,7 +193,7 @@ archives: ["2024年9月"]
 - **料金**: 30,609円
 - **ホテル名**: プレミア イン ヒースロー エアポート ターミナル 4 (Premier Inn Heathrow Airport Terminal 4)
 - **選択理由**: ロンドン・ヒースロー空港に19時到着予定だったため、移動の負担を考慮し空港直結のホテルを選択。ターミナル移動の地下鉄遅延があったものの、ホテルへのアクセスが非常に良かったため、到着が夜遅くなってもスムーズにチェックインできました。
-- **アゴダリンク**: {{< blog-card "https://www.agoda.com/ja-jp/premier-inn-heathrow-airport-terminal-4/hotel/london-gb.html" >}}
+- **アゴダリンク**
 
 {{< blog-card "https://www.agoda.com/ja-jp/premier-inn-heathrow-airport-terminal-4/hotel/london-gb.html" >}}
 
@@ -201,7 +201,7 @@ archives: ["2024年9月"]
 - **料金**: 67,811円
 - **ホテル名**: ブティック ホテル ヴィクトリア ブタペスト (Boutique Hotel Victoria Budapest)
 - **選択理由**: ドナウ川からの夜景が美しいという口コミに惹かれ、このホテルを予約。口コミ通りの素晴らしいロケーションと質の高いサービスで、ブダペスト滞在を存分に満喫できました。
-- **アゴダリンク**: {{< blog-card "https://www.agoda.com/ja-jp/boutique-hotel-victoria-budapest/hotel/budapest-hu.html" >}}
+- **アゴダリンク**
 
 {{< blog-card "https://www.agoda.com/ja-jp/boutique-hotel-victoria-budapest/hotel/budapest-hu.html" >}}
 
@@ -209,7 +209,7 @@ archives: ["2024年9月"]
 - **料金**: 51,860円
 - **ホテル名**: ホテル ル カルディナル (Hotel Le Cardinal)
 - **選択理由**: パリのホテル選びは治安を考慮すると予算オーバーになりがち。そこで、口コミ評価を参考にしつつ、空港からのアクセスが良く、治安面でも不安の少ないエリアのホテルを選択しました。実際に空港から乗り継ぎ1回で約1時間で到着でき、滞在中も安心して過ごすことができました。
-- **アゴダリンク**: {{< blog-card "https://www.agoda.com/ja-jp/hotel-le-cardinal/hotel/paris-fr.html" >}}
+- **アゴダリンク**
 
 {{< blog-card "https://www.agoda.com/ja-jp/hotel-le-cardinal/hotel/paris-fr.html" >}}
 
