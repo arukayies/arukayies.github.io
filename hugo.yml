@@ -61,7 +61,7 @@ params:
     # email: my_email@example.com
     url: https://arukayies.com/
   description: DIYネタについてまとめてます。
-  icon: image/icon.png
+  # icon: image/icon.png
   images:
     - image/og_large.png
   notFoundImage: image/404.png
