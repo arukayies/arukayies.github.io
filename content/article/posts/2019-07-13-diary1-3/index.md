@@ -17,6 +17,7 @@ tags: ["水耕栽培", "オクラ", "観察日記", "発芽準備", "スポン�
 **観察1日目**の様子です！
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 発芽前の準備

@@ -17,6 +17,7 @@ tags: ["水耕栽培", "ルッコラ", "観察日記", "収穫", "パスタ"]
 **観察34日目**の様子です！
 
 {{< self-blog-card "article/posts/2019-07-20-diary3-2" >}}
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 観察34日目

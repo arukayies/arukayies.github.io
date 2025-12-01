@@ -17,9 +17,11 @@ tags: ["水耕栽培", "ルッコラ", "観察日記", "成長記録", "成長�
 **観察29日目**の様子です！
 
 前回までの日記はこちらです。
+
 {{< self-blog-card "article/posts/2019-07-09-diary2-2" >}}
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 観察29日目

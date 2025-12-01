@@ -17,9 +17,11 @@ tags: ["水耕栽培", "ゴーヤ", "観察日記", "根出し", "発芽"]
 **観察15日目**の様子です！
 
 前回までの日記はこちらです。
+
 {{< self-blog-card "article/posts/2019-07-29-diary1-4" >}}
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 根出し2

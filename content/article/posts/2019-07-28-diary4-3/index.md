@@ -17,9 +17,11 @@ tags: ["水耕栽培", "オクラ", "観察日記", "植え替え", "成長"]
 **観察16日目**の様子です！
 
 前回までの日記はこちらです。
+
 {{< self-blog-card "article/posts/2019-07-20-diary3-3" >}}
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 観察16日目

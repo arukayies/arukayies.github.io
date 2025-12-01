@@ -17,9 +17,11 @@ tags: ["水耕栽培", "ミズナ", "観察日記", "栽培終了", "収穫"]
 **観察68日目**の様子です！
 
 前回までの日記はこちらです。
+
 {{< self-blog-card "article/posts/2019-07-10-diary12" >}}
   
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 68日目

@@ -17,9 +17,11 @@ tags: ["水耕栽培", "オクラ", "観察日記", "成長スピード", "高�
 **観察29日目**の様子です！
 
 前回までの日記はこちらです。
+
 {{< self-blog-card "article/posts/2019-07-28-diary4-3" >}}
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 観察29日目

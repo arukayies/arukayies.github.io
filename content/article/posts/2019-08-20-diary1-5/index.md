@@ -17,6 +17,7 @@ tags: ["水耕栽培", "コマツナ", "観察日記", "発芽", "育て方"]
 **観察1日目**の様子です！
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 発芽

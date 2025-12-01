@@ -17,9 +17,11 @@ tags: ["水耕栽培", "ミズナ", "観察日記", "成長停滞", "長期栽�
 **観察65日目**の様子です！
 
 前回までの日記はこちらです。
+
 {{< self-blog-card "article/posts/2019-07-03-diary11" >}}
 
 自作水耕栽培装置の紹介はこちらです。
+
 {{< self-blog-card "article/posts/2019-09-17-hydroponic-culture-first-machine" >}}
 
 ## 65日目
