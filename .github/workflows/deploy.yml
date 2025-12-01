@@ -36,9 +36,6 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Clean public directory
-        run: rm -rf public
-
       - name: Build
         run: hugo --minify
 
